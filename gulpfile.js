@@ -122,7 +122,9 @@ function browser(done) {
            baseDir: "./dist/html/frontend",
            index: "index.html"
        },
-       port: 3000
+       port: 5500
+      // http://127.0.0.1:5500/
+      //  port: 3000
    });
    watch(['src/html/*.html' , 'src/html/**/*.html' , 'src/layout/*.html' ,] , includeHTML).on('change' , reload);
    watch(['src/sass/*.scss' , 'src/sass/**/*.scss' , 'src/sass/**/**/*.scss'] , sassstyle).on('change' , reload);
