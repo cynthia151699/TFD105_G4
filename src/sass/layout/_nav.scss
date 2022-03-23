@@ -79,6 +79,7 @@ nav.frontnav{
 nav.backnav{
     margin-left: 50px;
     padding-top: 100px;
+
     ul{
         text-align: center;
         li{
@@ -89,7 +90,7 @@ nav.backnav{
             padding-top: 13px;
             box-sizing: border-box;
 
-            background-color: $AccentColor2;
+            background-color: $HFBGColor;
 
             &:first-child{
                 margin-top: 0px;

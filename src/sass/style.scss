@@ -42,7 +42,7 @@ body{
     word-spacing: $WordSpaceing;
     text-align: $TextAlignL;
 
-    background-color: $PrimaryColor;
+    background-color: #E5E5E5;
     color: $TextColor2;
 
     .wrapper{
@@ -59,8 +59,10 @@ body{
 
         article{
             height: calc($Height - 130px);
+            background-color: $PrimaryColor;
         }
 
+        // 後臺表單
         table{
             width: 995px;
             color: $TextColor;
@@ -72,11 +74,12 @@ body{
                 padding: 10px;
             }
             thead{
-                background-color: #9E9A9A;
+                color: $TextColor2;
+                background-color: $HFBGColor;
                 border-bottom: 0.5px solid black;
             }
             tbody{
-                background-color: #D6D6D6;
+                background-color: #F4F4F4;
                 tr{
                     border-bottom: 0.5px solid black;
                 }
