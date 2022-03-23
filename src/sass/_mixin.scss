@@ -1,0 +1,51 @@
+// 圓角、陰影
+
+//垂直置中 (加在父元素上！)
+@mixin VerticalAlignCenter {
+    display: flex;
+    align-items: center
+}
+
+//提示框
+@mixin Remind {
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+
+
+// n欄版面(記得另一欄是要寫 1-$col 的結果，)
+@mixin Col($col: 50%) {
+    width:calc(#{$Width} * #{$col});
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    @include Remind(); // 使用時請先看一下框著的地方是不是預想所需的區域，確認後即可拿掉
+}
+
+// n列版面(記得另一欄是要寫 1-$row 的結果，)
+@mixin Row($row: 50%){
+    width: fit-content;
+    height: calc(#{$Height} * #{$row});
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include Remind(); // 使用時請先看一下框著的地方是不是預想所需的區域，確認後即可拿掉
+}
+
+// 文字單行刪節
+@mixin SingleEllipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// 文字多行刪節(需手動設定第幾行刪節)
+@mixin MultilineEllipsis($row) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $row;
+}

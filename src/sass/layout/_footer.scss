@@ -1,0 +1,14 @@
+/* Footer */
+footer{
+    width: $RWD;
+    height: 50px;
+    
+    background-color: $HFBGColor;
+    
+    @include VerticalAlignCenter();
+    
+    p{
+        font-size: 0.875rem;
+        margin: $HorizontalAlignCenter;
+    }
+}

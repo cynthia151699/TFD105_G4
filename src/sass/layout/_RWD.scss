@@ -1,0 +1,54 @@
+@media screen and (max-width:797.98px){
+    header{
+        display: none;
+    }
+
+    .mf_container{
+        display: none;
+    }
+
+    main{
+        display: none;
+
+
+        width: $RWD;
+        height: calc(100vh - 50px);
+
+        flex-flow: column nowrap;
+
+        figure{
+            display: none;
+
+
+            height: calc(calc(100vh * 0.5) - 25px);
+        }
+
+        figcaption{
+            display: none;
+
+
+            width: $RWD;
+            height: calc(calc(100vh * 0.5) - 25px);
+            overflow-y: auto;
+            section{
+                display: none;
+
+
+                height: $RWD;
+            }
+        }
+    }
+
+    footer{
+        display: none;
+
+
+        width: $RWD;
+        overflow: hidden;
+
+
+        p{
+            display: none;
+        }
+    }
+}

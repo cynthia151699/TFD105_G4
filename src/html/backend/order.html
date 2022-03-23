@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('./../../layout/head.html')
+</head>
+<body>
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./../../layout/backnav.html', {
+            "active5" : "active"
+        })
+
+        <form action="#">
+            <table>
+                <thead>
+                    <tr>
+                        <!-- table row -->
+                        <td>編號</td>
+                        <td>訂單編號</td>
+                        <td>會員帳號</td>
+                        <td>展訊QRcode</td>
+                        <td>付款狀態</td>
+                        <td>訂單狀態</td>
+                        <td>創建時間</td>
+                        <td> </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>xxx</td>
+                        <td>xxx@gmail.com</td>
+                        <td>    </td>
+                        <td>已付款</td>
+                        <td>已完成</td>
+                        <td>2022-02-22<br>00:00:00</td>
+                        <td>編輯</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>xxx</td>
+                        <td>xxx@gmail.com</td>
+                        <td>    </td>
+                        <td>未付款</td>
+                        <td>處理中</td>
+                        <td>2022-02-22<br>00:00:00</td>
+                        <td>編輯</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <!-- <td></td> -->
+                </tfoot>
+            </table>
+        </form>
+        
+        <!-- 頁首 -->
+        @@include('./../../layout/backheader.html')
+
+    </div>
+
+    <!-- 載入js -->
+    <script src="./js/main.min.js"></script>
+</body>
+</html>

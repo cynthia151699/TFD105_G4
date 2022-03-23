@@ -1,0 +1,28 @@
+main{
+    width: $Width;
+    height: $Height;
+    
+    background-color: $PrimaryColor;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    
+    figure{
+        height: calc(#{$Height} - 130px);
+
+        display: flex;
+        flex-flow: row nowrap;
+    
+        img{
+            max-height: $RWD;
+        }
+        figcaption{
+            @include VerticalAlignCenter();
+
+            section{
+                width: 85%;
+                margin: $HorizontalAlignCenter;
+            }
+        }
+    }
+}

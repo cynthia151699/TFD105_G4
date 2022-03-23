@@ -1,0 +1,106 @@
+/* Frontend Navigation Bar */
+nav.frontnav{
+    display: inline-block;
+    width: 100px;
+    height: $Height;
+
+    background-color: $NavBGColor;
+    
+    .nav_container{
+        height: $Height;
+        width: 45px;
+        margin: 0 auto;
+
+        display: flex;
+        flex-flow: column nowrap;
+
+        li{
+            margin: 40px auto 0 auto;
+    
+            &:first-child{
+                margin-top: 50px;
+            }
+    
+            &:nth-child(3){
+                transform: rotate(-35deg);
+            }
+    
+            &:last-child{
+                margin-top: 60px;
+            }
+
+            svg{
+                width: 45px;
+                height: 40px;
+                fill: $AccentColor3;
+                
+                &:hover{
+                    fill: $AccentColor;
+                }
+            }
+            // .st0 {}
+        }
+        .active a svg{
+            fill: $AccentColor;
+        }
+    }
+}
+
+/* Hamburger */
+.hamburger{
+    display: none;
+}
+
+// @media screen and (max-width:797.98px){
+//     nav .frontnav{
+//         display: none;
+
+//         .nav_container{
+//             display: none;
+//         }
+//     }
+    
+//     .hamburger{
+//         padding-top: 65px;
+//         text-align: center;
+//         display: block;
+//         background-color: $NavBGColor;
+//         color: $TextColor2;
+//         h6{
+//             padding-top: 15px;
+//         }
+//         ol{
+//             display: none;
+//         }
+//     }
+// }
+
+/* Backend Navigation Bar */
+nav.backnav{
+    margin-left: 50px;
+    padding-top: 100px;
+    ul{
+        text-align: center;
+        li{
+            width: 175px;
+            height: 50px;
+            
+            margin-top: 20px;
+            padding-top: 13px;
+            box-sizing: border-box;
+
+            background-color: $AccentColor2;
+
+            &:first-child{
+                margin-top: 0px;
+            }
+        }
+
+        .active{
+            background-color: $AccentColor3;
+        }
+        a{
+            color: $TextColor2;
+        }
+    }
+}

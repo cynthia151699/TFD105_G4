@@ -1,0 +1,119 @@
+@import './../../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import './base/var';
+@import './base/reset';
+
+@import './component/space';
+@import './component/button';
+@import './mixin';
+
+@import './layout/login';
+@import './layout/nav';
+@import './layout/header';
+@import './layout/main';
+@import './layout/footer';
+
+@import './layout/RWD';
+
+@import './page/frontend/index';
+@import './page/frontend/exhibition';
+@import './page/frontend/guide';
+@import './page/frontend/tickets';
+@import './page/frontend/about';
+@import './page/frontend/member';
+@import './page/frontend/game';
+
+@import './page/backend/member_manage';
+@import './page/backend/news';
+@import './page/backend/message';
+@import './page/backend/ticket_manage';
+@import './page/backend/order';
+@import './page/backend/discount_code';
+
+// -------------------- HTML --------------------
+
+body{
+    font-weight: map-get($FontWeight, light);
+    font-size: map-get($FontSize, p);
+    line-height: $LineHeight;
+    font-family: $FontFamily;
+
+    letter-spacing: $LetterSpaceing;
+    word-spacing: $WordSpaceing;
+    text-align: $TextAlignL;
+
+    background-color: $PrimaryColor;
+    color: $TextColor2;
+
+    .wrapper{
+        width: $RWD;
+        
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+
+        a{
+            text-decoration: none;
+        }
+
+        article{
+            height: calc($Height - 130px);
+        }
+
+        table{
+            width: 995px;
+            color: $TextColor;
+            margin-top: 100px;
+            text-align: center;
+            margin-left: 35px;
+            
+            td{
+                padding: 10px;
+            }
+            thead{
+                background-color: #9E9A9A;
+                border-bottom: 0.5px solid black;
+            }
+            tbody{
+                background-color: #D6D6D6;
+                tr{
+                    border-bottom: 0.5px solid black;
+                }
+            }
+            tfoot{
+                background-color: #E9E9E9;
+            }
+        }
+
+        h1{
+            font-weight: map-get($FontWeight, medium);
+            font-size: map-get($FontSize, h1);
+        }
+
+        h2{
+            font-weight: map-get($FontWeight, medium);
+            font-size: map-get($FontSize, h2);
+        }
+
+        h3{
+            font-weight: map-get($FontWeight, medium);
+            font-size: map-get($FontSize, h3);
+        }
+
+        h4{
+            font-weight: map-get($FontWeight, regular);
+            font-size: map-get($FontSize, h4);
+        }
+
+        h5{
+            font-weight: map-get($FontWeight, regular);
+            font-size: map-get($FontSize, h5);
+        }
+
+        h6{
+            font-weight: map-get($FontWeight, regular);
+            font-size: map-get($FontSize, h6);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+/* Header */
+header{
+    width: $RWD;
+    height: 80px;
+
+    @include VerticalAlignCenter();
+
+    background-color: $HFBGColor;
+
+    h4{
+        margin-left: 25px;
+    }
+    img{
+        height: 80px;
+        margin-left: 790px; // 要再改
+    }
+}
+
+@media screen and (max-width:797.98px){
+    header{
+        display: none;
+    }
+}

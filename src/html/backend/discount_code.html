@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./../../layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./../../layout/backnav.html', {
+        "active6" : "active"
+        })
+
+        <div class="main"></div>
+        <!-- 頁首 -->
+        @@include('./../../layout/backheader.html')
+
+        <form action="#">
+            <table>
+                <thead>
+                    <tr>
+                        <!-- table row -->
+                        <td>折扣碼編號</td>
+                        <td>折扣碼名稱</td>
+                        <td>折扣碼內容</td>
+                        <td>折扣碼</td>
+                        <td>折扣碼狀態</td>
+                        <td>創建時間</td>
+                        <td> </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>xxxxx</td>
+                        <td>恭喜您獲得小禮物一份</td>
+                        <td>123456</td>
+                        <td>開啟</td>
+                        <td>2022-02-22<br>00:00:00</td>
+                        <td>編輯</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>xxxxx</td>
+                        <td>恭喜您獲得50元折價券</td>
+                        <td>7891011</td>
+                        <td>開啟</td>
+                        <td>2022-02-22<br>00:00:00</td>
+                        <td>編輯</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <!-- <td></td> -->
+                </tfoot>
+            </table>
+        </form>
+
+        <!-- 頁尾 -->
+        <!-- @@include('./../../layout/footer.html') -->
+    </div>
+</body>
+
+</html>

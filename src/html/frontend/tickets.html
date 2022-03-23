@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./../../layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 導覽列 -->
+        @@include('./../../layout/nav.html', {
+            "active3" : "active"
+        })
+
+        <main>
+
+            <!-- 頁首 -->
+            @@include('./../../layout/header.html')
+
+            <article>
+                <!-- coding here -->
+            </article>
+
+            <!-- 頁尾 -->
+            @@include('./../../layout/footer.html')
+
+        </main>
+
+    </div>
+
+    <!-- 載入js、套件 -->
+    <script src="./../../layout/importjs.html"></script>
+</body>
+
+</html>
