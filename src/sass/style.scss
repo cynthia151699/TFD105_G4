@@ -76,16 +76,24 @@ body{
             thead{
                 color: $TextColor2;
                 background-color: $HFBGColor;
-                border-bottom: 0.5px solid black;
+                border: 0.5px solid black;
             }
             tbody{
                 background-color: #F4F4F4;
                 tr{
+                    border-right: 0.5px solid black;
+                    border-left: 0.5px solid black;
                     border-bottom: 0.5px solid black;
+                }
+                tr:nth-child(even){
+                    background-color: #E0E0E0;
                 }
             }
             tfoot{
-                background-color: #E9E9E9;
+                background-color: #F4F4F4;
+                border-right: 0.5px solid black;
+                border-left: 0.5px solid black;
+                border-bottom: 0.5px solid black;
             }
         }
 
