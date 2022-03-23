@@ -34,7 +34,7 @@ dev pull 下來的 push 到自己的分支
 dev merge 自己的分支讓 dev 收自己分支更新的 commit（有衝突不要丟著！）  
 push dev 讓別的組員也能收到更新（不要 push 自己的分支！！！）  
   
-# 已安裝套件：Bootstraps、jQuery、Vue.js、Gasp.js、Email.js
+# 已安裝套件：Bootstraps、jQuery、Vue.js、Gasp.js、Email.js、multiscroll-reactjs
 
 # 小提醒：
 不要改動檔案路徑，輕則跑版，重則網頁失連  
