@@ -50,52 +50,9 @@ body{
         
         box-sizing: border-box;
         position: relative;
+
         display: flex;
         flex-flow: row nowrap;
-
-        a{
-            text-decoration: none;
-        }
-
-        article{
-            height: calc($Height - 130px);
-            background-color: $PrimaryColor;
-        }
-
-        // 後臺表單
-        table{
-            width: 995px;
-            color: $TextColor;
-            margin-top: 100px;
-            text-align: center;
-            margin-left: 35px;
-            
-            td{
-                padding: 10px;
-            }
-            thead{
-                color: $TextColor2;
-                background-color: $HFBGColor;
-                border: 0.5px solid black;
-            }
-            tbody{
-                background-color: #F4F4F4;
-                tr{
-                    border-right: 0.5px solid black;
-                    border-left: 0.5px solid black;
-                    border-bottom: 0.5px solid black;
-                }
-                tr:nth-child(even){
-                    background-color: #E0E0E0;
-                }
-            }
-            tfoot{
-                background-color: #F4F4F4;
-                border-right: 0.5px solid black;
-                border-left: 0.5px solid black;
-                border-bottom: 0.5px solid black;
-            }
-        }
 
         h1{
             font-weight: map-get($FontWeight, medium);
@@ -125,6 +82,59 @@ body{
         h6{
             font-weight: map-get($FontWeight, regular);
             font-size: map-get($FontSize, h6);
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        main{
+            width: $Width;
+            height: calc(#{$Height} + 130px);
+
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        article{
+            height: $Height;
+            background-color: $PrimaryColor;
+        }
+
+        // 後臺表單
+        table{
+            width: 995px;
+            color: $TextColor;
+            text-align: center;
+
+            margin-top: 100px;
+            margin-left: 35px;
+            
+            td{
+                padding: 10px;
+            }
+            thead{
+                color: $TextColor2;
+                background-color: $HFBGColor;
+                border: 0.5px solid black;
+            }
+            tbody{
+                background-color: $TableColor;
+                tr{
+                    border-right: 0.5px solid black;
+                    border-left: 0.5px solid black;
+                    border-bottom: 0.5px solid black;
+                }
+                tr:nth-child(even){
+                    background-color: $EvenColor;
+                }
+            }
+            tfoot{
+                background-color: $TableColor;
+                border-right: 0.5px solid black;
+                border-left: 0.5px solid black;
+                border-bottom: 0.5px solid black;
+            }
         }
     }
 }
