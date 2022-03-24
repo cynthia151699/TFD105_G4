@@ -1,0 +1,21 @@
+figure{
+    width: calc(#{$Width} * 0.5);
+    height: $Height;
+
+    background-image: url('./../img/demo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+figcaption{
+    width: calc(#{$Width} * 0.5);
+    height: $Height;
+
+    @include VerticalAlignCenter();
+
+    section{
+        width: 85%;
+        height: fit-content;
+        margin: $HorizontalAlignCenter;
+    }
+}
