@@ -1,16 +1,29 @@
-.space10 {
-    margin-top: 10px;
+// 上
+.topspace10 {
+    padding-top: 10px;
 }
 
-.space20 {
-    margin-top: 20px;
+.topspace20 {
+    padding-top: 20px;
 }
-
 
 @for $i from 1 through 10 {
+    .topspace#{$i}0 {
+        padding-top: $i *10 + px;
+    }
+}
 
-    .space#{$i}0 {
-        margin-top: $i *10 + px;
+// 右
+.rightspace10 {
+    margin-right: 10px;
+}
 
+.rightspace20 {
+    margin-right: 20px;
+}
+
+@for $i from 1 through 10 {
+    .rightspace#{$i}0 {
+        margin-right: $i *10 + px;
     }
 }

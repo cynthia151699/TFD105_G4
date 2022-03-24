@@ -2,12 +2,12 @@
 nav.frontnav{
     display: inline-block;
     width: 100px;
-    height: $Height;
+    height: calc(#{$Height} + 130px);
 
     background-color: $NavBGColor;
     
     .nav_container{
-        height: $Height;
+        height: calc(#{$Height} + 130px);
         width: 45px;
         margin: 0 auto;
 
@@ -82,6 +82,7 @@ nav.backnav{
 
     ul{
         text-align: center;
+
         li{
             width: 175px;
             height: 50px;
@@ -90,9 +91,8 @@ nav.backnav{
             padding-top: 13px;
             box-sizing: border-box;
 
-            box-shadow: 6px 5px 5px gray ;
-
             background-color: $HFBGColor;
+            box-shadow: 6px 5px 5px gray ;
 
             &:first-child{
                 margin-top: 0px;
