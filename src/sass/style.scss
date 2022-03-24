@@ -7,14 +7,17 @@
 @import './component/button';
 @import './mixin';
 
+// 模版連結
 @import './layout/login';
 @import './layout/nav';
 @import './layout/header';
-@import './layout/main';
 @import './layout/footer';
 
 @import './layout/RWD';
 
+@import './page/prototype';
+
+// 前台頁面連結
 @import './page/frontend/index';
 @import './page/frontend/exhibition';
 @import './page/frontend/guide';
@@ -23,9 +26,10 @@
 @import './page/frontend/member';
 @import './page/frontend/game';
 
+// 後台頁面連結
 @import './page/backend/member_manage';
 @import './page/backend/news';
-@import './page/backend/message';
+@import './page/backend/event';
 @import './page/backend/ticket_manage';
 @import './page/backend/order';
 @import './page/backend/discount_code';
@@ -88,7 +92,7 @@ body{
             text-decoration: none;
         }
 
-        main{
+        .container{
             width: $Width;
             height: calc(#{$Height} + 130px);
 
@@ -96,9 +100,12 @@ body{
             flex-flow: column nowrap;
         }
 
-        article{
+        main{
             height: $Height;
             background-color: $PrimaryColor;
+
+            display: flex;
+            flex-flow: row nowrap;
         }
 
         // 後臺表單
