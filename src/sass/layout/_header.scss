@@ -3,16 +3,19 @@ header{
     width: $RWD;
     height: 80px;
 
-    @include VerticalAlignCenter();
-
     background-color: $HFBGColor;
 
-    h4{
-        margin-left: 25px;
-    }
-    img{
+    display: flex;
+    flex-flow: row nowrap;
+
+    figure.logo{
+        width: 200px;
         height: 80px;
-        margin-left: 790px; // 要再改
+
+        background-image: url('./../img/logo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
 
