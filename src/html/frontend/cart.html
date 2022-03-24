@@ -8,17 +8,18 @@
 <body>
     <div class="wrapper">
         <!-- 導覽列 -->
-        @@include('./../../layout/nav.html', {
-            "tittle1" : "Order", 
-            "tittle2" : "Details", 
-            "tittle3" : "Information", 
-            "tittle4" : "Done"
-        })
+        @@include('./../../layout/nav.html')
 
         <div class="container">
 
             <!-- 頁首 -->
-            @@include('./../../layout/header.html')
+            @@include('./../../layout/header.html', {
+                "tittle1" : "Order", 
+                "tittle2" : "Details", 
+                "tittle3" : "Information", 
+                "tittle4" : "Done", 
+                "active1" : "activeb", 
+            })
 
             <main>
                 <!-- coding here -->

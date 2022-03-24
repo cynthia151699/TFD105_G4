@@ -11,8 +11,7 @@ nav.frontnav{
         width: 45px;
         margin: 0 auto;
 
-        display: flex;
-        flex-flow: column nowrap;
+        @include Flex(column);
 
         li{
             margin: 40px auto 0 auto;
@@ -88,7 +87,7 @@ nav.backnav{
             height: 50px;
             
             margin-top: 20px;
-            padding-top: 13px;
+            
             box-sizing: border-box;
 
             background-color: $HFBGColor;
@@ -103,7 +102,16 @@ nav.backnav{
             background-color: $AccentColor3;
         }
         a{
+            // padding-top: 13px;
+            display: block;
+            width: 175px;
+            height: 50px;
             color: $TextColor2;
+
+            @include VerticalAlignCenter();
+            span{
+                margin: $HorizontalAlignCenter;
+            }
         }
     }
 }

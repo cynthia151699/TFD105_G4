@@ -6,31 +6,33 @@
     align-items: center
 }
 
-//提示框
-@mixin Remind($color) {
+//提示框：預設是紅色
+@mixin Remind($color:red) {
     border: 1px solid $color;
-    box-sizing: border-box;
 }
 
+// flex 排版
+@mixin Flex ($ver){
+    display: flex;
+    flex-flow: $ver nowrap;
+}
 
-// n欄版面(記得另一欄是要寫 1-$col 的結果，)
+// n欄版面(記得另一欄是要寫 1-$col 的結果)
 @mixin Col($col: 50%) {
     width:calc(#{$Width} * #{$col});
     height: fit-content;
 
-    display: flex;
-    flex-flow: row nowrap;
+    @include Flex(row);
 
     @include Remind(); // 使用時請先看一下框著的地方是不是預想所需的區域，確認後即可拿掉
 }
 
-// n列版面(記得另一欄是要寫 1-$row 的結果，)
+// n列版面(記得另一欄是要寫 1-$row 的結果)
 @mixin Row($row: 50%){
     width: fit-content;
     height: calc(#{$Height} * #{$row});
 
-    display: flex;
-    flex-flow: column nowrap;
+    @include Flex(column);
 
     @include Remind(); // 使用時請先看一下框著的地方是不是預想所需的區域，確認後即可拿掉
 }

@@ -44,19 +44,19 @@ body{
 
     letter-spacing: $LetterSpaceing;
     word-spacing: $WordSpaceing;
-    text-align: $TextAlignL;
+    text-align: left;
 
     background-color: #E5E5E5;
     color: $TextColor2;
 
+    box-sizing: border-box;
+
     .wrapper{
         width: $RWD;
         
-        box-sizing: border-box;
         position: relative;
 
-        display: flex;
-        flex-flow: row nowrap;
+        @include Flex(row);
 
         h1{
             font-weight: map-get($FontWeight, medium);
@@ -96,16 +96,14 @@ body{
             width: $Width;
             height: calc(#{$Height} + 130px);
 
-            display: flex;
-            flex-flow: column nowrap;
+            @include Flex(column);
         }
 
         main{
             height: $Height;
             background-color: $PrimaryColor;
 
-            display: flex;
-            flex-flow: row nowrap;
+            @include Flex(row);
         }
 
         // 後臺表單

@@ -1,54 +1,54 @@
-@media screen and (max-width:797.98px){
-    header{
-        display: none;
-    }
+// @media screen and (max-width:797.98px){
+//     header{
+//         display: none;
+//     }
 
-    .mf_container{
-        display: none;
-    }
+//     .mf_container{
+//         display: none;
+//     }
 
-    main{
-        display: none;
-
-
-        width: $RWD;
-        height: calc(100vh - 50px);
-
-        flex-flow: column nowrap;
-
-        figure{
-            display: none;
+//     main{
+//         display: none;
 
 
-            height: calc(calc(100vh * 0.5) - 25px);
-        }
+//         width: $RWD;
+//         height: calc(100vh - 50px);
 
-        figcaption{
-            display: none;
+//         flex-flow: column nowrap;
 
-
-            width: $RWD;
-            height: calc(calc(100vh * 0.5) - 25px);
-            overflow-y: auto;
-            section{
-                display: none;
+//         figure{
+//             display: none;
 
 
-                height: $RWD;
-            }
-        }
-    }
+//             height: calc(calc(100vh * 0.5) - 25px);
+//         }
 
-    footer{
-        display: none;
+//         figcaption{
+//             display: none;
 
 
-        width: $RWD;
-        overflow: hidden;
+//             width: $RWD;
+//             height: calc(calc(100vh * 0.5) - 25px);
+//             overflow-y: auto;
+//             section{
+//                 display: none;
 
 
-        p{
-            display: none;
-        }
-    }
-}
+//                 height: $RWD;
+//             }
+//         }
+//     }
+
+//     footer{
+//         display: none;
+
+
+//         width: $RWD;
+//         overflow: hidden;
+
+
+//         p{
+//             display: none;
+//         }
+//     }
+// }

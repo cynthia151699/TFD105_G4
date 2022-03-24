@@ -5,8 +5,36 @@ header{
 
     background-color: $HFBGColor;
 
-    display: flex;
-    flex-flow: row nowrap;
+    @include Flex(row);
+
+    .header_container{
+        width: calc(#{$Width} - 100px);
+
+        @include Flex(row);
+    }
+
+    h4{
+        margin-left: 50px;
+
+        @include VerticalAlignCenter();
+
+        &:first-child{
+            margin-left: 20px;
+        }
+        &:hover{
+            span{
+                border-bottom: 1.5px solid $TextColor2;
+            }
+        }
+    }
+
+    h4 span.active{
+        display: none;
+    }
+
+    h4 span.activeb{
+        border-bottom: 1.5px solid $TextColor2;
+    }
 
     figure.logo{
         width: 200px;

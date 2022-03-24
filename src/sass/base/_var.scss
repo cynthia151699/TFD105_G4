@@ -59,8 +59,7 @@ $FontFamily: 'Fredoka', 'Noto Sans TC', sans-serif;
 $LetterSpaceing: 0.1em;
 $WordSpaceing: 0.15em;
 
-$TextAlignJ: justify;  // 文字間距自動計算占滿寬度
-$TextAlignL: left;
+$TextAlign: justify;  // 文字間距自動計算占滿寬度
 
 // 排版
 $Width: calc(100% - 100px);
