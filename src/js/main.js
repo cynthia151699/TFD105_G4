@@ -28,36 +28,36 @@ console.log('ok')
 // });
 
 // 計算文字做刪節
-$(function(){
-    var len = 800; // 超過多少個字以"..."取代
-    $(".JQellipsis").each(function(i){  //記得加class
+// $(function(){
+//     var len = 800; // 超過多少個字以"..."取代
+//     $(".JQellipsis").each(function(i){  //記得加class
 
-        // 鼠標滑到刪節的文字段落上會出現全部的內容
-        if($(this).text().length>len){
-            $(this).attr("title",$(this).text());
-            var text=$(this).text().substring(0,len-1)+"...";
-            $(this).text(text);
-        }
-    });
-});
+//         // 鼠標滑到刪節的文字段落上會出現全部的內容
+//         if($(this).text().length>len){
+//             $(this).attr("title",$(this).text());
+//             var text=$(this).text().substring(0,len-1)+"...";
+//             $(this).text(text);
+//         }
+//     });
+// });
 
 // 漢堡子選單
-$("a.ham_link").on("click", function(e){
-    // console.log("aaa");
-    e.preventDefault();
-    $("ol.sub_ham").toggle("-on");
-});
+// $("a.ham_link").on("click", function(e){
+//     // console.log("aaa");
+//     e.preventDefault();
+//     $("ol.sub_ham").toggle("-on");
+// });
 
 
-$(document).ready(function() {
-    $('#myContainer').multiscroll({
-        sectionsColor: ['#ff5f45', '#0798ec', '#fc6c7c'],
-        anchors: ['first', 'second', 'third'],
-        menu: '#menu',
-            navigation: true,
-            navigationTooltips: ['One', 'Two', 'Three'],
-            loopBottom: true,
-            loopTop: true
-    });
-});
+// $(document).ready(function() {
+//     $('#myContainer').multiscroll({
+//         sectionsColor: ['#ff5f45', '#0798ec', '#fc6c7c'],
+//         anchors: ['first', 'second', 'third'],
+//         menu: '#menu',
+//             navigation: true,
+//             navigationTooltips: ['One', 'Two', 'Three'],
+//             loopBottom: true,
+//             loopTop: true
+//     });
+// });
 

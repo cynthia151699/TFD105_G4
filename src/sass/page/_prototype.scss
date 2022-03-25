@@ -2,9 +2,7 @@ figure.demo{
     width: calc(#{$Width} * 0.5);
     height: $Height;
 
-    background-image: url('./../img/demo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+    @include LinkImg(null, 'demo', 'png', contain, no-repeat, null);
 }
 
 figcaption{
