@@ -94,7 +94,7 @@ body{
 
         .container{
             width: $Width;
-            height: calc(#{$Height} + 130px);
+            height: calc(#{$Height} + 90px);
 
             @include Flex(column);
         }
@@ -102,6 +102,7 @@ body{
         main{
             height: $Height;
             background-color: $PrimaryColor;
+            overflow: hidden;
 
             @include Flex(row);
         }
