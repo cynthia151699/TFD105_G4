@@ -56,6 +56,9 @@ __________________________________________________
 # 小提醒：
 1. 記得安裝套件然後按開發（按三角形執行，不要按蟲蟲偵錯！！不要開Watch Sass！！請以live server 上看到的網頁為準）  
 ‧ 不要改動src/layout 資料夾、src/html/backend 資料夾、src/sass/style.scss 的檔案路徑順序！code會連不見的！會大跑版的！  
+  
+‧ 小遊戲的圖檔可以直接放進src/img/game 的資料夾裡
+  
 ‧ dist 資料夾裡的檔案不可以編輯，那是上線用的檔案！！  
 2. 大家只需要寫code 進src/html/frontend 和src/sass/page/frontend 的資料夾的檔案裡（請多多使用sass 裡定義好的變數跟組件）  
 3. 看做好的網頁請在dist 裡看（連連結請以dist 裡的檔案路徑為準 [滑鼠右鍵 複製相對路徑]）！！不要看src 裡的開發檔（但是coding 請在src 開發檔裡寫）  
