@@ -4,6 +4,7 @@ header{
     height: 50px;
 
     background-color: $HFBGColor;
+    font-family: $SpecialFont;
 
     @include Flex(row);
 

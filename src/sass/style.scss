@@ -59,21 +59,25 @@ body{
         @include Flex(row);
 
         h1{
+            font-family: $SpecialFont;
             font-weight: map-get($FontWeight, medium);
             font-size: map-get($FontSize, h1);
         }
 
         h2{
+            font-family: $SpecialFont;
             font-weight: map-get($FontWeight, medium);
             font-size: map-get($FontSize, h2);
         }
 
         h3{
+            font-family: $SpecialFont;
             font-weight: map-get($FontWeight, medium);
             font-size: map-get($FontSize, h3);
         }
 
         h4{
+            font-family: $SpecialFont;
             font-weight: map-get($FontWeight, regular);
             font-size: map-get($FontSize, h4);
         }

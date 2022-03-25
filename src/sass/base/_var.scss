@@ -1,12 +1,12 @@
 // 顏色樣式
-$MainColor: #98C1D9;
-$MainColor2: #7693A5;
+// $MainColor: #98C1D9;
+// $MainColor2: #7693A5;
 
-$SubColor: #E0FBFC;
-$SubColor2: #3D5A80;
-$SubColor3: #293241;
+// $SubColor: #E0FBFC;
+// $SubColor2: #3D5A80;
+// $SubColor3: #293241;
 
-$FocusingColor: #EE6C4D;
+// $FocusingColor: #EE6C4D;
 
 $TextColor: black;
 $TextColor2: #F4F4F4;
@@ -54,7 +54,8 @@ $FontSize: (
 );
 
 $LineHeight: 1.6em;
-$FontFamily: 'Fredoka', 'Noto Sans TC', sans-serif;
+$FontFamily: 'Helvetica', 'Noto Sans TC', sans-serif; 
+$SpecialFont: 'Fredoka', 'Noto Sans TC', sans-serif;
 
 $LetterSpaceing: 0.1em;
 $WordSpaceing: 0.15em;
