@@ -48,6 +48,14 @@ header{
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+
+        // 圖片連結
+        // @mixin LinkImg('Logo/logo_rw.png', $size: contain, $repeat: no-repeat, $position: center) {
+        //     background-image : url(./../img/#{$link});
+        //     background-size: $size;
+        //     background-repeat: $repeat;
+        //     background-position: $position;
+        // }
     }
 }
 

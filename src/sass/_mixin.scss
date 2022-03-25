@@ -1,5 +1,13 @@
 // 圓角、陰影
 
+// 圖片連結Logo/logo_rw.png
+@mixin LinkImg($link, $size: contain, $repeat: no-repeat, $position: center) {
+    background-image : url(./../img/#{$link});
+    background-size: $size;
+    background-repeat: $repeat;
+    background-position: $position;
+}
+
 //垂直置中 (加在父元素上！)
 @mixin VerticalAlignCenter {
     display: flex;
