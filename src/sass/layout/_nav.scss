@@ -14,18 +14,8 @@ nav.frontnav{
         @include Flex(column);
 
         li{
-            margin: 40px auto 0 auto;
-    
-            &:first-child{
-                margin-top: 130px;
-            }
-    
             &:nth-child(3){
                 transform: rotate(-35deg);
-            }
-    
-            &:last-child{
-                margin-top: 70px;
             }
 
             svg{
@@ -39,6 +29,7 @@ nav.frontnav{
             }
             // .st0 {}
         }
+        
         .active a svg{
             fill: $AccentColor;
         }
