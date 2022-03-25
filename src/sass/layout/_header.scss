@@ -23,11 +23,11 @@ header{
         &:first-child{
             margin-left: 20px;
         }
-        &:hover{
-            span{
-                border-bottom: 1.5px solid $TextColor2;
-            }
-        }
+        // &:hover{
+        //     span{
+        //         border-bottom: 1.5px solid $TextColor2;
+        //     }
+        // }
     }
 
     h5 span.active{
