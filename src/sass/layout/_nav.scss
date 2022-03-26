@@ -1,34 +1,28 @@
 /* Frontend Navigation Bar */
-nav.frontnav{
+nav.frontNav{
     display: inline-block;
     width: 70px;
     height: calc(#{$Height} + 90px);
 
     background-color: $NavBGColor;
     
-    .nav_container{
+    .navContainer{
         height: calc(#{$Height} + 90px);
         width: 35px;
         margin: 0 auto;
 
         @include Flex(column);
 
-        li{
-            &:nth-child(3){
-                transform: rotate(-35deg);
-            }
+        svg{
+            width: 35px;
+            height: 30px;
+            fill: $AccentColor3;
 
-            svg{
-                width: 35px;
-                height: 30px;
-                fill: $AccentColor3;
-                
-                &:hover{
-                    fill: $AccentColor;
-                }
+            &:hover{
+                fill: $AccentColor;
             }
-            // .st0 {}
         }
+        // .st0 {}
         
         .active a svg{
             fill: $AccentColor;
@@ -66,7 +60,7 @@ nav.frontnav{
 // }
 
 /* Backend Navigation Bar */
-nav.backnav{
+nav.backNav{
     margin-left: 50px;
     padding-top: 100px;
 
