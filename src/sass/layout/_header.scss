@@ -8,12 +8,12 @@ header{
 
     @include Flex(row);
 
-    .header_container{
+    .HeaderContainer{
         width: calc(#{$Width} - 50px);
 
         @include Flex(row);
 
-        .leftspace30{
+        .LeftSpace30{
             @include VerticalAlignCenter();
             h5{
                 color: $TextColor2;
