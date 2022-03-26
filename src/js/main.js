@@ -51,7 +51,7 @@ $("a.ham_link").on("click", function(e){
 
 $(document).ready(function() {
     $('#myContainer').multiscroll({
-        sectionsColor: ['#ff5f45', '#0798ec', '#fc6c7c'],
+        sectionsColor: ['#583B75', '#293241', '#293241'],
         anchors: ['first', 'second', 'third'],
         menu: '#menu',
             navigation: true,
