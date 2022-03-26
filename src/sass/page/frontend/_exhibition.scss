@@ -1,14 +1,10 @@
 main{
     position: relative;
-    
-
-}
-section.exCurrent{
-    
-}
-
-div.ms-right{
-    div#right1{
-        @include LinkImg('exhibition', 'exhibition_pic1', 'jpeg', cover, no-repeat, center);
+    div.ms-right{
+        div#right1{
+            @include LinkImg('exhibition', 'exhibition_pic1', 'jpeg', cover, no-repeat, center);
+        }
     }
+
 }
+
