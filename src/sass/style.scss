@@ -1,4 +1,8 @@
+// 套件連結
 @import './../../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import './vendor/example.scss';
+@import './vendor/jquery.multiscroll.scss';
 
 @import './base/var';
 @import './base/reset';
@@ -15,9 +19,7 @@
 
 @import './layout/RWD';
 
-// 套件連結
-@import './vendor/example.scss';
-@import './vendor/jquery.multiscroll.scss';
+
 
 
 @import './page/prototype';

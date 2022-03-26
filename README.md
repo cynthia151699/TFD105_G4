@@ -10,8 +10,8 @@ push dev 時間：
 34：21:00～21:20  
 40：21:20～21:40  
 08：21:40～22:00  
-
-已使用class：wrapper、container（大家可以多多使用css 選取器以防吃到自己不想要的數值）
+  
+已使用class：wrapper、container（大家可以多多使用css 選取器以防吃到自己不想要的數值）  
 ‧ class /id 命名駝峰式、語意化、首字母小寫！（頁面 元件或物件 功能 ex.frontNav）  
   
 # Git_sourcetree 指令
