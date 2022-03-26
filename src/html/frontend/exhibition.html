@@ -23,7 +23,7 @@
                 "active4" : "active", 
             })
 
-            <main style="position: relative;">
+            <main>
                 <!-- coding here -->
                                 <!-- <ul id="menu">
                     <li data-menuanchor="first"><a href="#first">First slide</a></li>
@@ -35,14 +35,13 @@
                 
                     <div class="ms-left">
                         <div class="ms-section" id="left1">
-                            <!-- <h1>Left 1</h1> -->
-                            <section class="ex_current">
-                                <div class="ex_title">Break the Classic</div>
-                                <div class="ex_name">TAKIKAW RISA Solo Exhibition</div>
-                                <div class="ex_place">Place：Anno Museum South Building</div>
-                                <div class="ex_date">Date：2022/2/5～2022/5/5</div>
-                                <div class="ex_content_detail"> American-Japanese artist Takikaw Risa brings a series of composite sculptures, showing the conflict between classical art and modern society. It brings childishness and a sense of trend to the solemn atmosphere of the statue and hopes to bring the audience's imagination to break through the classics.</div>
-                                <a class="fancy" href="#">
+                            <section class="exCurrent">
+                                <h1 class="ex_title">Break the Classic</h1>
+                                <h3 class="ex_name">TAKIKAW RISA Solo Exhibition</h3>
+                                <h4 class="ex_place">Place：Anno Museum South Building</h4>
+                                <h4 class="ex_date">Date：2022/2/5～2022/5/5</h4>
+                                <h5 class="ex_content-detail"> American-Japanese artist Takikaw Risa brings a series of composite sculptures, showing the conflict between classical art and modern society. It brings childishness and a sense of trend to the solemn atmosphere of the statue and hopes to bring the audience's imagination to break through the classics.</h5>
+                                <a class="buyTicket" href="#">
                                     <span class="top-key"></span>
                                     <span class="text">Buy Tickets</span>
                                     <span class="bottom-key-1"></span>
@@ -52,8 +51,7 @@
                         </div>
                 
                         <div class="ms-section" id="left2">
-                            <!-- <h1>Left 2 </h1> -->
-                            <img src="../../img/exhibition/exhibition_pic2.jpeg" style="width: 400px; position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); z-index: 31; width: 50%;">
+        
                             <h2>UPCOMINGUPCOMING</h2>
                             <h2>UPCOMINGUPCOMING</h2>
                             <h2>UPCOMINGUPCOMING</h2>
@@ -75,21 +73,21 @@
                 
                     <div class="ms-right">
                         <div class="ms-section" id="right1">
-                            <img src="../../img/exhibition/exhibition_pic1.jpeg" alt="" style="width: 100%;">
+                            
                         </div>
                 
                         <div class="ms-section" id="right2" style="position: relative;">
-                            <img src="../../img/exhibition/exhibition_pic3.jpeg" style="position: relative; border: 2px solid yellow; display: block; height: 100vh; width: 100%;">
-                            <section class="ex_upcoming" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #FFFFFF; border: 2px solid red; text-align: left; z-index: 33; width: 100%; box-sizing: border-box; padding: 40px;">
+                            
+                            <section class="exUpcoming" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #FFFFFF; border: 2px solid red; text-align: left; z-index: 33; width: 100%; box-sizing: border-box; padding: 40px;">
                                 <div class="ex_title" style="font-size: 36px;">Upcoming</div>
                                 <div class="ex_name" style="font-size: 24px; margin-top: 40px;">True Color - KAYLA GILL Solo Exhibition</div>
                                 <div class="ex_place" style="font-size: 24px;">Place：Anno Museum North Building</div>
                                 <div class="ex_date" style="font-size: 24px;">Date：2022/5/15～2022/8/15</div>
-                                <div class="ex_content_detail" style="font-size: 20px; margin-top: 40px;">
+                                <div class="ex_content-detail" style="font-size: 20px; margin-top: 40px;">
                                     What is your true color?<br>
                                     Emerging artist KAYLA GILL will show her work that is using photography and digital techniques. The display of hundreds of works and live interactive installations will bring you to find your true color.
                                 </div>
-                                <a class="fancy" href="#">
+                                <a class="buyTicket" href="#">
                                     <span class="top-key"></span>
                                     <span class="text">Buy Tickets</span>
                                     <span class="bottom-key-1"></span>
@@ -99,13 +97,13 @@
                         </div>
                 
                         <div class="ms-section" id="right3">
-                            <div class="before_ex">
+                            <div class="exBefore">
                                 
-                                <ul class="showbar">
+                                <!-- <ul class="showBar">
                                     <li><img class="smallImg" src="../../img/exhibition/exhibition_pic4.jpeg" alt="" style="width: 300px;"></li>
                                     <li><img class="smallImg" src="../../img/exhibition/exhibition_pic5.jpeg" alt="" style="width: 300px;"></li>
                                     <li><img class="smallImg" src="../../img/exhibition/exhibition_pic6.jpeg" alt="" style="width: 300px;"></li>
-                                </ul>
+                                </ul> -->
                 
                             </div>
                             
@@ -122,6 +120,19 @@
 
     <!-- 載入js、套件 -->
     @@include('./../../layout/importjs.html')
+    <script>
+        $(document).ready(function() {
+            $('#myContainer').multiscroll({
+                sectionsColor: ['#583B75', '#293241', '#293241'],
+                anchors: ['first', 'second', 'third'],
+                menu: '#menu',
+                    navigation: true,
+                    navigationTooltips: ['One', 'Two', 'Three'],
+                    loopBottom: true,
+                    loopTop: true
+            });
+        });
+    </script>
 </body>
 
 </html>
