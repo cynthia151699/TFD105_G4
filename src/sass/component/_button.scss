@@ -1,5 +1,5 @@
 /* From cssbuttons.io */
-.fancy {
+.buyTicket {
     background-color: transparent;
     border: 2px solid #000;
     // border-radius: 0;
@@ -144,7 +144,7 @@
 // }
 
 
-.exampleClass {
+.defaultBtn {
     padding: 12px 24px;
     background-color: white;
     border-radius: 6px;
@@ -152,14 +152,14 @@
     overflow: hidden;
 }
 
-.exampleClass span {
+.defaultBtn span {
     color: black;
     position: relative;
     z-index: 1;
     transition: color 0.6s cubic-bezier(0.53, 0.21, 0, 1);
 }
 
-.exampleClass::before {
+.defaultBtn::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -174,11 +174,11 @@
     opacity: 0;
 }
 
-.exampleClass:hover span {
+.defaultBtn:hover span {
     color: white;
 }
 
-.exampleClass:hover::before {
+.defaultBtn:hover::before {
     transform: translate(0, -50%);
 
     animation-name: show;
