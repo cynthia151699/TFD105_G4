@@ -48,7 +48,7 @@ console.log('ok')
 //     $("ol.sub_ham").toggle("-on");
 // });
 
-
+// 修改顏色!!!
 // $(document).ready(function() {
 //     $('#myContainer').multiscroll({
 //         sectionsColor: ['#ff5f45', '#0798ec', '#fc6c7c'],
@@ -60,4 +60,3 @@ console.log('ok')
 //             loopTop: true
 //     });
 // });
-
