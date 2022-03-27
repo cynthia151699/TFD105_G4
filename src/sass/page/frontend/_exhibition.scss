@@ -9,28 +9,38 @@ main{
             section.exCurrent{
                 @include Remind;
                 position: absolute;
-                top: 0;
-                h1{
+                top: 20px;
+                text-align: left;
+                h2{
                     color: #F0F28D;
                     line-height: $LineHeight;
                 }
-                h3,h4,h5{
+                h3,h5,p{
                     color: $TextColor2;
-                    line-height: $LineHeight;
-                }        
+                } 
             }
             
         }
         div#left2{
             @include Remind;
-            @include LinkImg('exhibition', 'exhibition_pic2', 'jpeg', 70%, no-repeat, center);
             @include VerticalAlignCenter;
             position: relative;
-            h2{
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                line-height: 1;   
+            section.exCurrent{
+                h2{
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    line-height: 1; 
+                    @include Remind(yellow);
+                }
+                div.currentPic-1{
+                    position: absolute;
+                    top: 0;
+                    @include Remind(yellow);
+                    width: 500px;
+                    height: 300px;
+                    @include LinkImg('exhibition', 'exhibition_pic2', 'jpeg', cover, no-repeat, center);
+                }
             }
         }
         div#left3{
@@ -66,10 +76,11 @@ main{
             section.exUpcoming{
                 @include Remind;
                 position: absolute;
-                top: 0;
-                h1,h3,h4,h5{
+                top: 20px;
+                h2,h3,h5,p{
                     color: $TextColor2;
                     line-height: $LineHeight;
+                    text-align: left;
                 } 
             }
         }
@@ -78,8 +89,7 @@ main{
             @include VerticalAlignCenter;
             section.exBefore{
                 @include Remind(blue);
-                // width: 100%;
-                // height: 100%;
+
                 div.beforePic-1{
                     width: 450px;
                     height: 130px;
