@@ -2,8 +2,9 @@
 @import './../../node_modules/bootstrap/scss/bootstrap.scss';
 
 @import './vendor/bootstrap.min';
-@import './vendor/example.scss';
-@import './vendor/jquery.multiscroll.scss';
+@import './vendor/example';
+@import './vendor/jquery.multiscroll';
+@import './vendor/fullpage';
 
 @import './base/var';
 @import './base/reset';
