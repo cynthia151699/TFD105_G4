@@ -1,0 +1,10 @@
+main{
+    position: relative;
+    div.ms-right{
+        div#right1{
+            @include LinkImg('exhibition', 'exhibition_pic1', 'jpeg', cover, no-repeat, center);
+        }
+    }
+
+}
+

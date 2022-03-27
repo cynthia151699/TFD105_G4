@@ -1,6 +1,7 @@
 // 套件連結
 @import './../../node_modules/bootstrap/scss/bootstrap.scss';
 
+@import './vendor/bootstrap.min';
 @import './vendor/example.scss';
 @import './vendor/jquery.multiscroll.scss';
 
@@ -38,12 +39,7 @@
 @import './page/frontend/game';
 
 // 後台頁面連結
-@import './page/backend/member_manage';
-@import './page/backend/news';
-@import './page/backend/event';
-@import './page/backend/ticket_manage';
-@import './page/backend/order';
-@import './page/backend/discount_code';
+@import './page/backend';
 
 // -------------------- HTML --------------------
 
@@ -120,42 +116,6 @@ body{
             overflow: hidden;
 
             @include Flex(row);
-        }
-
-        // 後臺表單
-        table{
-            width: 995px;
-            color: $TextColor;
-            text-align: center;
-
-            margin-top: 100px;
-            margin-left: 35px;
-            
-            td{
-                padding: 10px;
-            }
-            thead{
-                color: $TextColor2;
-                background-color: $HFBGColor;
-                border: 0.5px solid black;
-            }
-            tbody{
-                background-color: $TableColor;
-                tr{
-                    border-right: 0.5px solid black;
-                    border-left: 0.5px solid black;
-                    border-bottom: 0.5px solid black;
-                }
-                tr:nth-child(even){
-                    background-color: $EvenColor;
-                }
-            }
-            tfoot{
-                background-color: $TableColor;
-                border-right: 0.5px solid black;
-                border-left: 0.5px solid black;
-                border-bottom: 0.5px solid black;
-            }
         }
     }
 }
