@@ -1,0 +1,28 @@
+.mainOpenhours{
+    @include LinkImg(visit, visit_pic1, png, cover, null, null);
+    @include VerticalAlignCenter ();
+}
+.wrapperOpenhours{
+    @include Flex(row);
+    width:$RWD;
+   height:calc(100% - 200px);
+   background-color: $PrimaryColor ;
+   
+}
+.openhoursLeft {
+    width:60%;
+    h4{
+        margin: 70px 80px 50px 80px;
+        padding-right: 50px;
+        color:$TextColor2;
+    }
+}
+.openhoursRight{
+    width: 40%;
+    img{
+       display: block;
+       width: 60%;
+       height:calc(100% - 80px);
+        margin:$HorizontalAlignCenter;
+    }
+}

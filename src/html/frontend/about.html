@@ -3,29 +3,47 @@
 
 <head>
     @@include('./../../layout/head.html')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <!-- 導覽列 -->
         @@include('./../../layout/nav.html', {
-            "active4" : "active"
+        "active4" : "active"
         })
 
-        <div class="container">
+        <div class="mainContainer">
 
             <!-- 頁首 -->
             @@include('./../../layout/header.html', {
-                "tittle1" : "ABOUT ANNO", 
-                "tittle2" : "HISTORY OF ANNO", 
-                "active1" : "activeb", 
-                "active3" : "active", 
-                "active4" : "active", 
+            "tittle1" : "ABOUT ANNO",
+            "tittle2" : "HISTORY OF ANNO",
+            "active1" : "activeb",
+            "active3" : "active",
+            "active4" : "active",
             })
 
             <main>
                 <!-- coding here -->
+                <div id="fullpage">
+                    <div class="section " id="section0">
+                        <div class="wrapperAbout">
+                            <h2 class="title1">About ANNO</h2>
+                            <h4 class="content1">Art records the deduction in ANNO,<br>All is exist in the past,
+                                present, and future.</h4>
+                            <h4 class="content2">Not only for us,
+                                You can accomplish every single Dream here,<br>ANNO can be everyone's Utopia,</h4>
+                            <h4 class="content3">Let us open our minds,<br>Create your own Anno.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="section active aboutHistory" id="section1">
+
+                        <h2>History of Anno</h2>
+                        <h4></h4>
+
+                    </div>
+
             </main>
 
             <!-- 頁尾 -->
@@ -35,7 +53,14 @@
     </div>
 
     <!-- 載入js、套件 -->
-    @@include('./../../layout/importjs.html')
+    <script src="./../../js/vendors/fullpage.min.js"></script>
+    <script type="text/javascript">
+
+        var myFullpage = new fullpage('#fullpage', {
+            sectionsColor: ['#293241', '#293241'],
+            lazyLoad: true
+        });
+    </script>
 </body>
 
 </html>

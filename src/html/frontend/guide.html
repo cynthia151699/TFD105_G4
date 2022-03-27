@@ -3,7 +3,6 @@
 
 <head>
     @@include('./../../layout/head.html')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -13,7 +12,7 @@
             "active2" : "active"
         })
 
-        <div class="container">
+        <div class="mainContainer">
 
             <!-- 頁首 -->
             @@include('./../../layout/header.html', {
@@ -24,8 +23,21 @@
                 "active4" : "active", 
             })
 
-            <main>
+            <main class="mainOpenhours">
                 <!-- coding here -->
+                <div class="wrapperOpenhours">
+                    <div class="openhoursLeft " >
+                        <h4>
+                            HOURS<br>Tuesday to Sunday : 09:00 - 17:00<br>Closed on Monday.
+                        </h4>
+                        <h4>
+                            Open on Mondays if they fall on a national holiday or long weekend. The opening hours remain the same as usual.Mondays that the National Palace Museum will be open are listed as follows: 1/31 (09:00-16:00), 2/28, 4/4, and 10/10
+                        </h4>
+                    </div>
+                    <div class="openhoursRight">
+                        <img src="../../img/visit/visit_pic2.jpeg" alt="" class="topSpace40 ">
+                    </div>
+                </div>
             </main>
 
             <!-- 頁尾 -->
@@ -36,6 +48,7 @@
 
     <!-- 載入js、套件 -->
     @@include('./../../layout/importjs.html')
+    <script src="./../../js/vendors/fullpage.min.js"></script>
 </body>
 
 </html>
