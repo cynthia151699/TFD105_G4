@@ -1,0 +1,35 @@
+// 後臺表單
+table{
+    width: 995px;
+    color: $TextColor;
+    text-align: center;
+
+    margin-top: 100px;
+    margin-left: 35px;
+    
+    td{
+        padding: 10px;
+    }
+    thead{
+        color: $TextColor2;
+        background-color: $HFBGColor;
+        border: 0.5px solid black;
+    }
+    tbody{
+        background-color: $TableColor;
+        tr{
+            border-right: 0.5px solid black;
+            border-left: 0.5px solid black;
+            border-bottom: 0.5px solid black;
+        }
+        tr:nth-child(even){
+            // background-color: $EvenColor;
+        }
+    }
+    tfoot{
+        background-color: $TableColor;
+        border-right: 0.5px solid black;
+        border-left: 0.5px solid black;
+        border-bottom: 0.5px solid black;
+    }
+}

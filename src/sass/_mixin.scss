@@ -1,8 +1,8 @@
 // 圓角、陰影
 
-// 圖片連結Logo/logo_rw.png
-@mixin LinkImg($link, $img, $size: contain, $repeat: no-repeat, $position: center) {
-    background-image : url(./../img/#{$link}/#{$img}.png);
+// 圖片連結
+@mixin LinkImg($link, $img, $type, $size: contain, $repeat: no-repeat, $position: center) {
+    background-image : url('./../img/#{$link}/#{$img}.#{$type}');
     background-size: $size;
     background-repeat: $repeat;
     background-position: $position;

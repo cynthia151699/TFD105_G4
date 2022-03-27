@@ -8,7 +8,8 @@
 
 // $FocusingColor: #EE6C4D;
 
-$TextColor: black;
+// 文字顏色樣式
+$TextColor: #000000;
 $TextColor2: #F4F4F4;
 
 // 0318 新增色票
@@ -22,11 +23,9 @@ $AccentColor2: #F29966;
 $AccentColor3: #F25A38;
 
 // 表單色票
-$TableColor: #F4F4F4;
-$EvenColor: #E0E0E0;
+$TableColor: #FFFFFF;
 
-
-$Tr: transparent; // 透明
+// $Tr: transparent; // 透明
 // $Opacity: 1; // 透明度
 
 //載入字型
@@ -54,13 +53,16 @@ $FontSize: (
 );
 
 $LineHeight: 1.6em;
+
+// 系統預設字型
 $FontFamily: 'Helvetica', 'Noto Sans TC', sans-serif; 
+// 特殊字型
 $SpecialFont: 'Fredoka', 'Noto Sans TC', sans-serif;
 
 $LetterSpaceing: 0.1em;
 $WordSpaceing: 0.15em;
 
-$TextAlign: justify;  // 文字間距自動計算占滿寬度
+// $TextAlign: justify;  // 文字間距自動計算占滿寬度
 
 // 排版
 $Width: calc(100% - 70px);
@@ -73,4 +75,4 @@ $HorizontalAlignCenter: 0 auto; //水平置中
 // 垂直置中放在 _mixins.scss
 
 // 滑鼠游標
-$Cursor: pointer;
+// $Cursor: pointer;
