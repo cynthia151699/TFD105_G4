@@ -1,6 +1,6 @@
 // 後臺表單
 .tableContainer{
-    width: calc(100% - 250px);
+    width: calc(100% - 225px);
     @include Flex(column);
     
     table{

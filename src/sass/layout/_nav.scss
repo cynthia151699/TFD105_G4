@@ -61,10 +61,9 @@ nav.frontNav{
 
 /* Backend Navigation Bar */
 nav.backNav{
-    width: 250px;
+    width: 225px;
     background-color: $HFBGColor;
-    text-align: left;
-
+    
     ul{
         li{
             width: 190px;
@@ -87,9 +86,6 @@ nav.backNav{
             color: $TextColor2;
 
             @include VerticalAlignCenter();
-            span{
-                margin: $HorizontalAlignCenter;
-            }
         }
     }
 }

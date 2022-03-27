@@ -21,9 +21,6 @@
 
 @import './layout/RWD';
 
-
-
-
 @import './page/prototype';
 
 // 前台頁面連結
@@ -31,6 +28,8 @@
 @import './page/frontend/exhibition';
 @import './page/frontend/guide';
 @import './page/frontend/tickets';
+@import './page/frontend/current_booking_info';
+@import './page/frontend/past_booking_info';
 @import './page/frontend/about';
 @import './page/frontend/member';
 @import './page/frontend/member_forget';
