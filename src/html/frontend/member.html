@@ -93,37 +93,8 @@
   <script type="text/javascript">
     emailjs.init("rB4cW-mtW8WwyODex");
   </script>
-  <!-- <script src="./../../js/member.js"></script> -->
-  <script>
-      const btn = document.getElementById("button");
-      document
-        .getElementById("form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          btn.value = "Sending...";
-
-          const serviceID = "default_service";
-          const templateID = "template_c3rqluo";
-
-          emailjs.sendForm(serviceID, templateID, this).then(
-            () => {
-              btn.value = "Send Email";
-              alert("Sent!");
-            },
-            (err) => {
-              btn.value = "Send Email";
-              alert("NOT Sent!");
-            }
-          );
-        });
-    </script>
-
-<<<<<<< HEAD
-=======
     <!-- 載入js、套件 -->
     <script src="./../../js/member.min.js"></script>
->>>>>>> 29eb4b8f2ab1686162b93d26dea8b5a723fca111
 </body>
 
 </html>
