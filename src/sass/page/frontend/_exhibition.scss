@@ -17,7 +17,10 @@ main{
                 }
                 h3,h5,p{
                     color: $TextColor2;
-                } 
+                }
+                a.buyTicket{
+                    display: inline-block;
+                }
             }
             
         }
@@ -39,7 +42,7 @@ main{
                     left: 50%;
                     transform: translate(-50%, -50%);
                     width: 500px;
-                    height: 300px;
+                    height: 350px;
                     @include LinkImg('exhibition', 'exhibition_pic2', 'jpeg', cover, no-repeat, center);
                 }
                 h2{
