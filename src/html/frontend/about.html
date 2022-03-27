@@ -25,14 +25,25 @@
 
             <main>
                 <!-- coding here -->
-                <div class="wrapperAbout">
-                    <h2>About ANNO</h2>
-                    <h4>Art records the deduction in ANNO,<br>All is exist in the past, present, and future.</h4>
-                    <h4>Not only for us,
-                        You can accomplish every single Dream here,<br>ANNO can be everyone's Utopia,</h4>
-                    <h4>Let us open our minds,<br>Create your own Anno.
-                    </h4>
-                </div>
+                <div id="fullpage">
+                    <div class="section " id="section0">
+                        <div class="wrapperAbout">
+                            <h2 class="title1">About ANNO</h2>
+                            <h4 class="content1">Art records the deduction in ANNO,<br>All is exist in the past,
+                                present, and future.</h4>
+                            <h4 class="content2">Not only for us,
+                                You can accomplish every single Dream here,<br>ANNO can be everyone's Utopia,</h4>
+                            <h4 class="content3">Let us open our minds,<br>Create your own Anno.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="section active aboutHistory" id="section1">
+
+                        <h2>History of Anno</h2>
+                        <h4></h4>
+
+                    </div>
+
             </main>
 
             <!-- 頁尾 -->
@@ -43,6 +54,13 @@
 
     <!-- 載入js、套件 -->
     <script src="./../../js/vendors/fullpage.min.js"></script>
+    <script type="text/javascript">
+
+        var myFullpage = new fullpage('#fullpage', {
+            sectionsColor: ['#293241', '#293241'],
+            lazyLoad: true
+        });
+    </script>
 </body>
 
 </html>
