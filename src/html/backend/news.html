@@ -1,115 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     @@include('./../../layout/head.html')
 </head>
+
 <body>
     <div class="wrapper">
 
         <!-- 導覽列 -->
         @@include('./../../layout/backnav.html', {
-            "active2" : "active"
+        "active2" : "active"
         })
 
-        <!-- 頁首 -->
-        @@include('./../../layout/backheader.html', {
-            tittle1: "最新消息管理", 
-            tittle2: "以訊息名稱查詢", 
-        })
+        <div class="tableContainer">
+            <!-- 頁首 -->
+            @@include('./../../layout/backheader.html', {
+            tittle1: "最新消息管理",
+            tittle2: "以訊息名稱查詢",
+            })
 
-        <form action="#">
-            <table>
-                <thead>
-                    <tr>
-                        <!-- table row -->
-                        <td>消息編號</td>
-                        <td>消息名稱</td>
-                        <td>消息圖片</td>
-                        <td>消息內容</td>
-                        <td>消息狀態</td>
-                        <td>創建時間</td>
-                        <td> </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>xxxxx</td>
-                        <td></td>
-                        <td>Lorem ipsum dolor sit amet <br>
-                            consectetur adipisicing elit. <br>
-                            Pariatur deserunt, maiores <br>
-                        </td>
-                        <td>開啟</td>
-                        <td>2022-02-22<br>00:00:00</td>
-                        <td><button>編輯</button></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>xxxxx</td>
-                        <td></td>
-                        <td>Lorem ipsum dolor sit amet <br>
-                            consectetur adipisicing elit. <br>
-                            Rerum dolores earum beatae, <br>
-                        </td>
-                        <td>關閉</td>
-                        <td>2022-02-22<br>00:00:00</td>
-                        <td><button>編輯</button></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                    </tr>
-                    
-                </tfoot>
-            </table>
-        </form>
+            <form action="#">
+                <table>
+                    <thead>
+                        <tr>
+                            <!-- table row -->
+                            <td>消息編號</td>
+                            <td>消息名稱</td>
+                            <td>消息圖片</td>
+                            <td>消息內容</td>
+                            <td>消息狀態</td>
+                            <td>創建時間</td>
+                            <td> </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>xxxxx</td>
+                            <td></td>
+                            <td>Lorem ipsum dolor sit amet <br>
+                                consectetur adipisicing elit. <br>
+                                Pariatur deserunt, maiores <br>
+                            </td>
+                            <td>開啟</td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>xxxxx</td>
+                            <td></td>
+                            <td>Lorem ipsum dolor sit amet <br>
+                                consectetur adipisicing elit. <br>
+                                Rerum dolores earum beatae, <br>
+                            </td>
+                            <td>關閉</td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+
+                    </tfoot>
+                </table>
+            </form>
+        </div>
     </div>
 
     <!-- 載入js -->
     <script src="./js/main.min.js"></script>
 </body>
+
 </html>
