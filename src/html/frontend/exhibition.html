@@ -120,20 +120,8 @@
     </div>
 
     <!-- 載入js、套件 -->
-    @@include('./../../layout/importjs.html')
-    <script>
-        $(document).ready(function() {
-            $('#myContainer').multiscroll({
-                sectionsColor: ['#583B75', '#293241', '#293241'],
-                anchors: ['first', 'second', 'third'],
-                menu: '#menu',
-                    navigation: true,
-                    navigationTooltips: ['One', 'Two', 'Three'],
-                    loopBottom: true,
-                    loopTop: true
-            });
-        });
-    </script>
+    <script src="./../../js/vendors/jquery.multiscroll.js"></script>
+    <script src="./../../js/exhibition.min.js"></script>
 </body>
 
 </html>
