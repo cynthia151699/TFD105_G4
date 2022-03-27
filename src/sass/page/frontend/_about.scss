@@ -1,19 +1,17 @@
 .wrapperAbout{
-    @include Remind($color:red);
     width: $Width;
     height: $Height;
-    .wrapperAboutTitle{
+    h2{
+        color:$TextColor2;
+    }
+    h4{
         color:$TextColor2;
     }
     .wrapperAboutCntFr{
-        color:$TextColor2;
+
         text-align: right;
     }
-    .wrapperAboutCntMd{
-        color:$TextColor2;
-    }
     .wrapperAboutCntEn{
-        color:$TextColor2;
         text-align: right;
     }
 }
