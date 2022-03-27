@@ -26,20 +26,27 @@ main{
             @include VerticalAlignCenter;
             position: relative;
             section.exCurrent{
+                @include Remind(yellow);
+                @include VerticalAlignCenter;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                div.currentPic-1{
+                    @include Remind(green);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 500px;
+                    height: 300px;
+                    @include LinkImg('exhibition', 'exhibition_pic2', 'jpeg', cover, no-repeat, center);
+                }
                 h2{
                     position: absolute;
                     left: 0;
                     bottom: 0;
                     line-height: 1; 
-                    @include Remind(yellow);
-                }
-                div.currentPic-1{
-                    position: absolute;
-                    top: 0;
-                    @include Remind(yellow);
-                    width: 500px;
-                    height: 300px;
-                    @include LinkImg('exhibition', 'exhibition_pic2', 'jpeg', cover, no-repeat, center);
                 }
             }
         }
@@ -50,7 +57,8 @@ main{
             h3{
                 color: $TextColor2;
                 position: absolute;
-                top: 0;
+                top: 200px;
+                left: 150px;
             }
             h2{
                 position: absolute;
@@ -87,22 +95,29 @@ main{
         div#right3{
             @include Remind;
             @include VerticalAlignCenter;
+            position: relative;
             section.exBefore{
                 @include Remind(blue);
-
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 div.beforePic-1{
+                    margin: $HorizontalAlignCenter;
                     width: 450px;
-                    height: 130px;
+                    height: 120px;
                     @include LinkImg('exhibition', 'exhibition_pic4', 'jpeg', cover, no-repeat, center);
                 }
                 div.beforePic-2{
+                    margin: $HorizontalAlignCenter;
                     width: 450px;
-                    height: 130px;
+                    height: 120px;
                     @include LinkImg('exhibition', 'exhibition_pic5', 'jpeg', cover, no-repeat, center);
                 }
                 div.beforePic-3{
+                    margin: $HorizontalAlignCenter;
                     width: 450px;
-                    height: 130px;
+                    height: 120px;
                     @include LinkImg('exhibition', 'exhibition_pic6', 'jpeg', cover, no-repeat, center);
                 }
             }
