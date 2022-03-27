@@ -1,8 +1,101 @@
 main{
     position: relative;
+    
+    div.ms-left{
+        div#left1{
+            @include VerticalAlignCenter;
+            @include Remind;
+            position: relative;
+            section.exCurrent{
+                @include Remind;
+                position: absolute;
+                top: 0;
+                h1{
+                    color: #F0F28D;
+                    line-height: $LineHeight;
+                }
+                h3,h4,h5{
+                    color: $TextColor2;
+                    line-height: $LineHeight;
+                }        
+            }
+            
+        }
+        div#left2{
+            @include Remind;
+            @include LinkImg('exhibition', 'exhibition_pic2', 'jpeg', 70%, no-repeat, center);
+            @include VerticalAlignCenter;
+            position: relative;
+            h2{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                line-height: 1;   
+            }
+        }
+        div#left3{
+            @include Remind;
+            @include VerticalAlignCenter;
+            position: relative;
+            h3{
+                color: $TextColor2;
+                position: absolute;
+                top: 0;
+            }
+            h2{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                line-height: 1;   
+            }
+            
+        }
+    }
     div.ms-right{
         div#right1{
+            @include Remind;
             @include LinkImg('exhibition', 'exhibition_pic1', 'jpeg', cover, no-repeat, center);
+            @include VerticalAlignCenter;
+            
+        }
+        div#right2{
+            @include Remind;
+            @include LinkImg('exhibition', 'exhibition_pic3', 'jpeg', cover, no-repeat, center);
+            @include VerticalAlignCenter;
+            position: relative;
+            section.exUpcoming{
+                @include Remind;
+                position: absolute;
+                top: 0;
+                h1,h3,h4,h5{
+                    color: $TextColor2;
+                    line-height: $LineHeight;
+                } 
+            }
+        }
+        div#right3{
+            @include Remind;
+            @include VerticalAlignCenter;
+            section.exBefore{
+                @include Remind(blue);
+                // width: 100%;
+                // height: 100%;
+                div.beforePic-1{
+                    width: 450px;
+                    height: 130px;
+                    @include LinkImg('exhibition', 'exhibition_pic4', 'jpeg', cover, no-repeat, center);
+                }
+                div.beforePic-2{
+                    width: 450px;
+                    height: 130px;
+                    @include LinkImg('exhibition', 'exhibition_pic5', 'jpeg', cover, no-repeat, center);
+                }
+                div.beforePic-3{
+                    width: 450px;
+                    height: 130px;
+                    @include LinkImg('exhibition', 'exhibition_pic6', 'jpeg', cover, no-repeat, center);
+                }
+            }
         }
     }
 
