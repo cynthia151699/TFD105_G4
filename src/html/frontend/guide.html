@@ -9,35 +9,80 @@
     <div class="wrapper">
         <!-- 導覽列 -->
         @@include('./../../layout/nav.html', {
-            "active2" : "active"
+        "active2" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
             @@include('./../../layout/header.html', {
-                "tittle1" : "OPENING HOURS", 
-                "tittle2" : "TICKETS", 
-                "tittle3" : "TRANSPORTATION", 
-                "active1" : "activeb", 
-                "active4" : "active", 
+            "tittle1" : "OPENING HOURS",
+            "tittle2" : "TICKETS",
+            "tittle3" : "TRANSPORTATION",
+            "active1" : "activeb",
+            "active4" : "active",
             })
 
-            <main class="mainOpenhours">
-                <!-- coding here -->
-                <div class="wrapperOpenhours">
-                    <div class="openhoursLeft " >
-                        <h4>
-                            HOURS<br>Tuesday to Sunday : 09:00 - 17:00<br>Closed on Monday.
-                        </h4>
-                        <h4>
-                            Open on Mondays if they fall on a national holiday or long weekend. The opening hours remain the same as usual.Mondays that the National Palace Museum will be open are listed as follows: 1/31 (09:00-16:00), 2/28, 4/4, and 10/10
-                        </h4>
+            <main>
+                <!-- -------開館時間------- -->
+                <div id="fullpage">
+                    <div class="section active mainOpenhours " id="section0">
+                        <div class="wrapperOpenhours">
+                            <div class="openhoursLeft leftSpace80">
+                                <h4>HOURS</h4>
+                                <h4 class="bottomSpace50">
+                                    Tuesday to Sunday : 09:00 - 17:00<br>Closed on Monday.
+                                </h4>
+                                <h4 class="bottomSpace50">
+                                    Open on Mondays if they fall on a national holiday or long weekend. The opening
+                                    hours remain the same as usual.Mondays that the National Palace Museum will be open
+                                    are listed as follows: 1/31 (09:00-16:00), 2/28, 4/4, and 10/10
+                                </h4>
+                            </div>
+                            <div class="openhoursRight">
+                                <div class="openhoursRightImg"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="openhoursRight">
-                        <img src="../../img/visit/visit_pic2.jpeg" alt="" class="topSpace40 ">
+                    <!-- ----------展覽票價資訊----------- -->
+                    <div class="section active guideTicket " id="section1">
+                        <h2>Break the Classic</h2>
+                        <h3>AKIKAW RISA Solo Exhibition</h3>
+                        <span></span>
+                        <h3>Advance Ticket03/08-04/07</h3>
+                        <h3>Rollover Ticket04/08-04/10</h3>
+                        <span></span>
+                        <h3>NTD $400</h3>
+                        <h3>NTD $450</h3>
+                        <button>BUY NOW ></button>
                     </div>
+
+                    <!-- -----交通資訊區塊---------- -->
+
+                    <div class="section" id="section2">
+                        <div class="wapperTrans">
+                            <div class="map">
+                               <span class="mapImg"></span>
+                            </div>
+                            <div class="transCnt leftSpace50">
+                                <h4 class="topSpace100 bottomSpace30">Expressway - to our main building</h4>
+                                <h5 >National Highway no.3→National Highway no.1→Taichung Interchange→Taiwan
+                                    Boulevard→Turn right on Meicun Rd.→Wuquan West Intersection→The Main
+                                    Building</h5>
+                                <h4 class="topSpace100 bottomSpace30">Public Transportation</h4>
+                                <h5>Taiwan High-Speed Rail shuttle bus (about 20 minutes by vehicle)
+                                    Tonglian Passenger Transport - 159 - Tuku Parking Lot (South Zhongming Rd.)*This
+                                    building is a barrier-free space.</h5>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
+
+
+            </main>
+
             </main>
 
             <!-- 頁尾 -->
@@ -48,6 +93,13 @@
     <!-- 載入js、套件 -->
     @@include('./../../layout/importjs.html')
     <script src="./../../js/vendors/fullpage.min.js"></script>
+    <script type="text/javascript">
+
+        var myFullpage = new fullpage('#fullpage', {
+            sectionsColor: ['#293241', '#293241'],
+            lazyLoad: true
+        });
+    </script>
 </body>
 
 </html>
