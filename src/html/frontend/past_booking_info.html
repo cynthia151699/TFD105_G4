@@ -8,15 +8,44 @@
 <body>
     <div class="wrapper">
         <!-- 導覽列 -->
-        @@include('./../../layout/nav.html')
+        @@include('./../../layout/nav.html', {
+        "active3" : "active"
+        })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
-            @@include('./../../layout/header.html')
+            @@include('./../../layout/header.html', {
+            "tittle1" : "Edit your member info.",
+            "tittle2" : "Booking list",
+            "active2" : "activeb",
+            "active3" : "active",
+            "active4" : "active",
+            })
 
             <main>
                 <!-- coding here... -->
+                <div class="past_mainblock">
+                    <div class="past_topblock">
+
+                        <div class="past_textblock">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quasi maiores dignissimos
+                            odio odit sit at amet repudiandae veritatis atque quis incidunt, fugiat saepe magni sunt
+                            iste deleniti quaerat dolore ad culpa vitae quidem. Iste, laboriosam quas dolores, nemo
+                            laborum sint, facilis illum quae numquam maxime quos. Nisi, minus iure.
+                        </div>
+
+
+                        <div class="past_imgblock">
+                            <img src="./../../img/tickets/tickets_pic7.jpeg" alt="">
+                        </div>
+
+                    </div>
+
+
+                    <button>Cancel</button>
+
+                </div>
             </main>
 
             <!-- 頁尾 -->
