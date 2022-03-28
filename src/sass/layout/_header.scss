@@ -13,14 +13,14 @@ header.frontHeader{
 
         @include Flex(row);
 
-        .leftSpace20{
+        .mlSpace20{
             @include VerticalAlignCenter();
             h5{
                 color: $TextColor2;
             }
         }
 
-        .leftSpace30{
+        .mlSpace30{
             @include VerticalAlignCenter();
             h5{
                 color: $TextColor2;
@@ -62,8 +62,30 @@ header.backHeader{
     width: $RWD;
     height: 150px;
     background-color: #B5CDE2;
+    flex-shrink: 0;
 
     .headerContainer{
+        height: 150px;
         @include Flex(row);
+        button{
+            height: 45px;
+            background-color: $HFBGColor;
+            border: none;
+            border-radius: 5px;
+        }
+
+        h3{
+            font-weight: map-get($FontWeight, regular);
+            padding-top: 100px;
+            padding-left: 25px;
+        }
+
+        h4{
+            color: $TextColor2;
+        }
+
+        h5{
+            color: $TextColor2;
+        }
     }
 }
