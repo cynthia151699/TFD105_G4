@@ -1,8 +1,129 @@
 main{
     position: relative;
+    
+    div.ms-left{
+        div#left1{
+            @include VerticalAlignCenter;
+            @include Remind;
+            position: relative;
+            section.exCurrent{
+                @include Remind;
+                position: absolute;
+                top: 20px;
+                text-align: left;
+                h2{
+                    color: #F0F28D;
+                    line-height: $LineHeight;
+                }
+                h3,h5,p{
+                    color: $TextColor2;
+                }
+                a.buyTicket{
+                    display: inline-block;
+                }
+            }
+            
+        }
+        div#left2{
+            @include Remind;
+            @include VerticalAlignCenter;
+            position: relative;
+            section.exCurrent{
+                @include Remind(yellow);
+                @include VerticalAlignCenter;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                div.currentPic-1{
+                    @include Remind(green);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 500px;
+                    height: 350px;
+                    @include LinkImg('exhibition', 'exhibition_pic2', 'jpeg', cover, no-repeat, center);
+                }
+                h2{
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    line-height: 1; 
+                }
+            }
+        }
+        div#left3{
+            @include Remind;
+            @include VerticalAlignCenter;
+            position: relative;
+            h3{
+                color: $TextColor2;
+                position: absolute;
+                top: 200px;
+                left: 150px;
+            }
+            h2{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                line-height: 1;   
+            }
+            
+        }
+    }
     div.ms-right{
         div#right1{
+            @include Remind;
             @include LinkImg('exhibition', 'exhibition_pic1', 'jpeg', cover, no-repeat, center);
+            @include VerticalAlignCenter;
+            
+        }
+        div#right2{
+            @include Remind;
+            @include LinkImg('exhibition', 'exhibition_pic3', 'jpeg', cover, no-repeat, center);
+            @include VerticalAlignCenter;
+            position: relative;
+            section.exUpcoming{
+                @include Remind;
+                position: absolute;
+                top: 20px;
+                h2,h3,h5,p{
+                    color: $TextColor2;
+                    line-height: $LineHeight;
+                    text-align: left;
+                } 
+            }
+        }
+        div#right3{
+            @include Remind;
+            @include VerticalAlignCenter;
+            position: relative;
+            section.exBefore{
+                @include Remind(blue);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                div.beforePic-1{
+                    margin: $HorizontalAlignCenter;
+                    width: 450px;
+                    height: 120px;
+                    @include LinkImg('exhibition', 'exhibition_pic4', 'jpeg', cover, no-repeat, center);
+                }
+                div.beforePic-2{
+                    margin: $HorizontalAlignCenter;
+                    width: 450px;
+                    height: 120px;
+                    @include LinkImg('exhibition', 'exhibition_pic5', 'jpeg', cover, no-repeat, center);
+                }
+                div.beforePic-3{
+                    margin: $HorizontalAlignCenter;
+                    width: 450px;
+                    height: 120px;
+                    @include LinkImg('exhibition', 'exhibition_pic6', 'jpeg', cover, no-repeat, center);
+                }
+            }
         }
     }
 
