@@ -1,12 +1,15 @@
 // 後臺表單
 .tableContainer{
     width: calc(100% - 225px);
+    box-sizing: border-box;
     @include Flex(column);
     
     table{
         width: 995px;
+        height: 500px;
         color: $TextColor;
         text-align: center;
+        flex-shrink: 0;
     
         margin-top: 100px;
         margin-left: 35px;
