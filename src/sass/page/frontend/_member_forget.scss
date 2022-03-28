@@ -1,26 +1,6 @@
-// 整個輸入區域
-.main_block_all{
-    margin: $HorizontalAlignCenter;
-}
-.member_forger_main_block{
-    @include Remind();
-    // 置中跟隨頁面調整
-    margin: $HorizontalAlignCenter;
-    background-color: $TextColor2;
-    // 寬度先暫訂
-    // width: 1000px;
-    // width:calc(100% );
-    margin-left: 175px;  
-    margin-right: 175px;
-    margin-bottom: 50px;
-}
-.member_forger_main_text{
+//
+.member_main_forget{
     @include Remind(blue);
+    // margin: $HorizontalAlignCenter;
     text-align: center;
-    // 先用margin
-    margin-left: 175px;  
-    margin-right: 175px;
-    margin-bottom: 50px;
 }
-
-

@@ -1,10 +1,16 @@
-// 整個輸入區域
-.member_main_block{
-    @include Remind();
-    // 置中跟隨頁面調整
+// 整個輸入區域，套用到所有區域
+.member_main_all{
     margin: $HorizontalAlignCenter;
-    background-color: $TextColor2;
-    
+}
+.member_main_block{
+    // @include Remind();
+    // 置中跟隨頁面調整
+    // margin: $HorizontalAlignCenter;
+    background-color: $TableColor;
+    Width: 1000px;
+    Height: calc(100vh - 190px);
+    max-height: 800px;
+    overflow: hidden;
 }
 
 

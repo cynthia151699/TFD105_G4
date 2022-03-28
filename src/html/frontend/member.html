@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-    @@include('./../../layout/head.html')
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  @@include('./../../layout/head.html')
 </head>
 
 <body>
@@ -18,69 +17,70 @@
       "active4" : "active", })
 
       <main>
-        <div class="member_main_block">
-          <!-- 登入 -->
-          <form class="member_login_block">
-            <h4>EMAIL</h4>
-            <input type="email" />
-            <h4>PASSWORD</h4>
-            <input type="password" />
-            <label><a calss="Forgot_password" href="">Forgot password?</a></label>
-            <button type="button" class="submit">Sign In</button>
-            <button type="button" class="fb-btn">Connect with <span>facebook</span></button>
-          </form>
-          <!-- 移動bar -->
+        <div class="member_main_all topSpace50 ">
+          <div class="member_main_block ">
+            <!-- 登入 -->
+            <form class="member_login_block ">
+              <h4>EMAIL</h4>
+              <input type="email" />
+              <h4>PASSWORD</h4>
+              <input type="password" />
+              <label><a calss="Forgot_password" href="">Forgot password?</a></label>
+              <button type="button" class="submit defaultBtn">Sign In</button>
+              <button type="button" class="fb-btn defaultBtn"> <span>Connect with facebook</span></button>
+            </form>
 
-          <div class="member_sign_img">
-            <div class="member_sign_text">
-              <h2>New here?</h2>
-              <p>Sign up and discover great amount of new opportunities!</p>
+            <!-- 移動bar -->
+            <div class="member_sign_img">
+              <div class="member_sign_text">
+                <h2>New here?</h2>
+                <p>Sign up and discover great amount of new opportunities!</p>
+              </div>
+              <div class="member_sign_text">
+                <h2>One of us?</h2>
+                <p>
+                  If you already has an account, just sign in. We've missed you!
+                </p>
+              </div>
+              <div class="member_sign_btn">
+                <span class="member_sign_up">Sign Up</span>
+                <span class="member_sign_in">Sign In</span>
+              </div>
             </div>
-            <div class="member_sign_text">
-              <h2>One of us?</h2>
-              <p>
-                If you already has an account, just sign in. We've missed you!
-              </p>
-            </div>
-            <div class="member_sign_btn">
-              <span class="member_sign_up">Sign Up</span>
-              <span class="member_sign_in">Sign In</span>
-            </div>
+
+            <!-- 註冊 -->
+            <form class="member_singup_block" id="form">
+              <h4>NAME</h4>
+              <input type="name" />
+              <h4>EMAIL</h4>
+              <input type="text" name="mail" id="mail" />
+              <h4>PASSWORD</h4>
+              <input type="password" />
+              <h4>PASSWORD CONFIRM</h4>
+              <input type="password" />
+              <h4>PHONE NUMBER</h4>
+              <input type="text" />
+
+              <div class="member_login_detail field">
+                <input type="checkbox" class="member_login_choose" />
+                <h4>
+                  I would like to receive news, tips and marketing offers from
+                  Anno.
+                </h4>
+                <input type="checkbox" class="member_login_confirm" />
+                <h4>
+                  I have read and understood the Terms & Conditions and Privacy
+                  Policy.
+                </h4>
+                <!-- <input type="submit" id="button" value="Send Email" /><h4>Sign In</h4> -->
+                <button type="submit" id="button" class="submit defaultBtn">
+                  <h4>Sign In</h4>
+                </button>
+              </div>
+            </form>
           </div>
-
-          <!-- 註冊 -->
-          <form class="member_singup_block" id="form">
-            <h4>NAME</h4>
-            <input type="name" />
-            <h4>EMAIL</h4>
-            <input type="text" name="mail" id="mail" />
-            <h4>PASSWORD</h4>
-            <input type="password" />
-            <h4>PASSWORD CONFIRM</h4>
-            <input type="password" />
-            <h4>PHONE NUMBER</h4>
-            <input type="text" />
-
-            <div class="member_login_detail field">
-              <input type="checkbox" class="member_login_choose" />
-              <h4>
-                I would like to receive news, tips and marketing offers from
-                Anno.
-              </h4>
-              <input type="checkbox" class="member_login_confirm" />
-              <h4>
-                I have read and understood the Terms & Conditions and Privacy
-                Policy.
-              </h4>
-              <!-- <input type="submit" id="button" value="Send Email" /><h4>Sign In</h4> -->
-              <button type="submit" id="button" class="submit exampleClass">
-                <h4>Sign In</h4>
-              </button>
-            </div>
-          </form>
         </div>
       </main>
-
       <!-- 頁尾 -->
       @@include('./../../layout/footer.html')
     </div>
@@ -93,8 +93,8 @@
   <script type="text/javascript">
     emailjs.init("rB4cW-mtW8WwyODex");
   </script>
-    <!-- 載入js、套件 -->
-    <script src="./../../js/member.min.js"></script>
+  <!-- 載入js、套件 -->
+  <script src="./../../js/member.min.js"></script>
 </body>
 
 </html>

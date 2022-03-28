@@ -1,0 +1,12 @@
+.member_forget_change_block{
+    @include Remind(red);
+display: flex ;
+align-items: center;
+}
+.member_forget_change_blockin{
+    display: flex ;
+    flex-flow: column;
+}
+.member_forget_change_button{
+    text-align: center;
+}
