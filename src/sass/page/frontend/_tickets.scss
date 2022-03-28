@@ -1,0 +1,86 @@
+main{
+    @include Remind;
+    
+    // section{
+    section.tickets{
+        @include Remind(blue);
+        margin: $HorizontalAlignCenter;       
+        h4{
+            color: $TextColor2;
+            line-height: $LineHeight;
+        }
+        h6{
+            color: $TextColor2;
+            line-height: $LineHeight;
+            text-align: center;
+        }
+        ul.currentBooking{
+            @include Remind(green);
+            @include VerticalAlignCenter();
+            
+            li.booking{ 
+                @include Remind(blue);
+                
+                div.bookingPic-1{
+                    @include Remind(maroon);
+                    margin: $HorizontalAlignCenter;
+                    width: 180px;
+                    height: 160px;
+                    // width: 170px;
+                    // height: 140px;
+                    @include LinkImg('tickets', 'tickets_pic1', 'jpeg', cover, no-repeat, left);
+                }
+                div.bookingPic-2{
+                    @include Remind(maroon);
+                    width: 180px;
+                    height: 160px;
+                    // width: 170px;
+                    // height: 140px;
+                    @include LinkImg('tickets', 'tickets_pic2', 'jpeg', cover, no-repeat, left);
+                }
+            }
+        }
+        ul.pastBooking{
+            @include Remind(green);
+            @include VerticalAlignCenter();
+
+            li.past{
+                div.pastPic-1{
+                    @include Remind(maroon);
+                    width: 180px;
+                    height: 160px;
+                    // width: 170px;
+                    // height: 140px;
+                    @include LinkImg('tickets', 'tickets_pic3', 'jpeg', cover, no-repeat, left);
+                }
+                div.pastPic-2{
+                    @include Remind(maroon);
+                    width: 180px;
+                    height: 160px;
+                    // width: 170px;
+                    // height: 140px;
+                    @include LinkImg('tickets', 'tickets_pic4', 'jpeg', cover, no-repeat, left);
+                }
+                div.pastPic-3{
+                    @include Remind(maroon);
+                    width: 180px;
+                    height: 160px;
+                    // width: 170px;
+                    // height: 140px;
+                    @include LinkImg('tickets', 'tickets_pic5', 'jpeg', cover, no-repeat, left);
+                }
+                div.pastPic-4{
+                    @include Remind(maroon);
+                    // width: 180px;
+                    // height: 160px;
+                    width: 170px;
+                    height: 140px;
+                    @include LinkImg('tickets', 'tickets_pic6', 'png', cover, no-repeat, null);
+                }
+
+            }
+
+        }
+        
+    }
+}
