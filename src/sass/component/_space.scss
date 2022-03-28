@@ -89,16 +89,16 @@
 }
 
 // 外距下
-.mtSpace10 {
+.mbSpace10 {
     margin-bottom: 10px;
 }
 
-.mtSpace20 {
+.mbSpace20 {
     margin-bottom: 20px;
 }
 
 @for $i from 1 through 100 {
-    .mtSpace#{$i}0 {
+    .mbSpace#{$i}0 {
         margin-bottom: $i *10 + px;
     }
 }
