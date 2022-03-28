@@ -8,14 +8,11 @@
     @include Flex(row);
     @include VerticalAlignCenter;
     width:$RWD;
-<<<<<<< HEAD
-   height:calc(100% - 200px);
-   background-color: #2932419a;
-=======
+//    height:calc(100% - 200px);
+//    background-color: #2932419a;
     height:calc(100% - 200px);
     background-color: $PrimaryColor ;
    
->>>>>>> 45488affbffa37b68ab32753125f0847efef100f
 }
 .openhoursLeft {
     width:60%;

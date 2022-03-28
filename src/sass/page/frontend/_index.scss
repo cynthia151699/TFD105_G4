@@ -1,14 +1,14 @@
 h3{
   color:$TextColor2;
-  text-shadow: 3px 3px 3px #292929;
+  text-shadow: 2px 2px 2px #293241;
 }
 
 h4{
   color:$TextColor2;
-  text-shadow: 3px 3px 3px #292929;
+  text-shadow: 2px 2px 2px #293241;
 }
 
-.first_page{
+.index_page1{
   position: relative;
 }
 
@@ -41,27 +41,36 @@ h4{
   padding-top: 15px;
 }
 
-.second_page{
+.index_page2{
   height: 100%;
-  // mixin裡有組件能用！
-  background-image: url(/src/img/index/index_pic1.png);
+  @include LinkImg(index, index_pic1, png, cover, null, null);
   background-size: cover;
+
 }
 
 .curr_text{
-  border: 1px red solid;
+  border: 1px blue solid;
   padding: 30px;
 
 }
 
 .currTitle{
   color: purple;
-  text-shadow: 3px 3px 3px #292929;
+  text-shadow: 2px 2px 2px #293241;
   line-height:1.6;
 
 }
 
-.second_page h3, h4{
+.currName{
   text-align: right;
   line-height:1.6;
+}
+
+.currDate{
+  text-align: right;
+  line-height:1.6;
+}
+
+.seeMore{
+  text-align: right;
 }
