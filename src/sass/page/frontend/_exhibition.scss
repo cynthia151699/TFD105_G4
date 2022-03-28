@@ -7,7 +7,8 @@ main{
             @include Remind;
             position: relative;
             section.exCurrent{
-                @include Remind;
+                // @include Remind;
+                // @include Remind(green);
                 position: absolute;
                 top: 20px;
                 text-align: left;
@@ -61,7 +62,12 @@ main{
                 color: $TextColor2;
                 position: absolute;
                 top: 200px;
+<<<<<<< HEAD
                 left: 150px;
+=======
+                left: 0;
+                right: 0;
+>>>>>>> 835af5567d0a4cd47ce44178d185cd854701b547
             }
             h2{
                 position: absolute;
@@ -83,6 +89,10 @@ main{
             @include Remind;
             @include LinkImg('exhibition', 'exhibition_pic3', 'jpeg', cover, no-repeat, center);
             @include VerticalAlignCenter;
+<<<<<<< HEAD
+=======
+            margin: $HorizontalAlignCenter;
+>>>>>>> 835af5567d0a4cd47ce44178d185cd854701b547
             position: relative;
             section.exUpcoming{
                 @include Remind;

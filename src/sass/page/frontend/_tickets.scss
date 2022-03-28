@@ -1,7 +1,8 @@
 main{
     @include Remind;
     
-    section{
+    // section{
+    section.tickets{
         @include Remind(blue);
         margin: $HorizontalAlignCenter;       
         h4{
@@ -25,12 +26,16 @@ main{
                     margin: $HorizontalAlignCenter;
                     width: 180px;
                     height: 160px;
+                    // width: 170px;
+                    // height: 140px;
                     @include LinkImg('tickets', 'tickets_pic1', 'jpeg', cover, no-repeat, left);
                 }
                 div.bookingPic-2{
                     @include Remind(maroon);
                     width: 180px;
                     height: 160px;
+                    // width: 170px;
+                    // height: 140px;
                     @include LinkImg('tickets', 'tickets_pic2', 'jpeg', cover, no-repeat, left);
                 }
             }
@@ -44,24 +49,32 @@ main{
                     @include Remind(maroon);
                     width: 180px;
                     height: 160px;
+                    // width: 170px;
+                    // height: 140px;
                     @include LinkImg('tickets', 'tickets_pic3', 'jpeg', cover, no-repeat, left);
                 }
                 div.pastPic-2{
                     @include Remind(maroon);
                     width: 180px;
                     height: 160px;
+                    // width: 170px;
+                    // height: 140px;
                     @include LinkImg('tickets', 'tickets_pic4', 'jpeg', cover, no-repeat, left);
                 }
                 div.pastPic-3{
                     @include Remind(maroon);
                     width: 180px;
                     height: 160px;
+                    // width: 170px;
+                    // height: 140px;
                     @include LinkImg('tickets', 'tickets_pic5', 'jpeg', cover, no-repeat, left);
                 }
                 div.pastPic-4{
                     @include Remind(maroon);
-                    width: 180px;
-                    height: 160px;
+                    // width: 180px;
+                    // height: 160px;
+                    width: 170px;
+                    height: 140px;
                     @include LinkImg('tickets', 'tickets_pic6', 'png', cover, no-repeat, null);
                 }
 
