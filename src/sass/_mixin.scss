@@ -1,5 +1,3 @@
-// 圓角、陰影
-
 // 圖片連結
 @mixin LinkImg($link, $img, $type, $size: contain, $repeat: no-repeat, $position: center) {
     background-image : url('./../img/#{$link}/#{$img}.#{$type}');

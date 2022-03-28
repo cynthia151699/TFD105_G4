@@ -1,4 +1,6 @@
 main{
+    @include Remind;
+    
     section.tickets{
         @include Remind(blue);
         margin: $HorizontalAlignCenter;       
