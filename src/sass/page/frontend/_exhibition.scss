@@ -1,4 +1,4 @@
-main{
+main.exRelative{
     position: relative;
     
     div.ms-left{
@@ -10,16 +10,19 @@ main{
                 @include Remind(green);
                 position: absolute;
                 top: 20px;
-                text-align: left;
+                
                 h2{
                     color: #F0F28D;
+                    text-align: left;
                     line-height: $LineHeight;
                 }
                 h3,h5,p{
                     color: $TextColor2;
+                    text-align: left;
                 }
                 a.buyTicket{
                     display: inline-block;
+
                 }
             }
             
