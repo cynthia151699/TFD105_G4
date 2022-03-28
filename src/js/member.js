@@ -14,7 +14,8 @@ document.getElementById("form").addEventListener("submit", function (event) {
     },
     (err) => {
       btn.value = "Send Email";
-      alert(JSON.stringify(err));
+      alert("Email format error, please re-enter");
+      // alert(JSON.stringify(err));
     }
   );
 });

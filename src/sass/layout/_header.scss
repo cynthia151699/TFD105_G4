@@ -1,4 +1,4 @@
-/* Header */
+/* FrontHeader */
 header.frontHeader{
     width: $RWD;
     height: 50px;
@@ -54,5 +54,16 @@ header.backHeader{
 @media screen and (max-width:797.98px){
     header{
         display: none;
+    }
+}
+
+/* BackHeader */
+header.backHeader{
+    width: $RWD;
+    height: 150px;
+    background-color: #B5CDE2;
+
+    .headerContainer{
+        @include Flex(row);
     }
 }

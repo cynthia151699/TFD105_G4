@@ -1,117 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     @@include('./../../layout/head.html')
 </head>
+
 <body>
     <div class="wrapper">
 
         <!-- 導覽列 -->
         @@include('./../../layout/backnav.html', {
-            "active1" : "active"
+        "active1" : "active"
         })
 
-        <!-- 頁首 -->
-        @@include('./../../layout/backheader.html', {
-            tittle1: "會員管理", 
-            tittle2: "以會員帳號查詢", 
-        })
+        <div class="tableContainer">
+            <!-- 頁首 -->
+            @@include('./../../layout/backheader.html', {
+            tittle1: "會員管理",
+            tittle2: "以會員帳號查詢",
+            })
 
-        <form action="#">
-            <table>
-                <thead>
-                    <tr>
-                        <!-- table row -->
-                        <td>會員編號</td>
-                        <td>帳號</td>
-                        <td>密碼</td>
-                        <td>姓名</td>
-                        <td>手機</td>
-                        <td>創建時間</td>
-                        <td> </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>xxx@gmail.com</td>
-                        <td>xxx</td>
-                        <td>xxx</td>
-                        <td>0912345678</td>
-                        <td>2022-02-22<br>00:00:00</td>
-                        <td><button>編輯</button></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>xxx@gmail.com</td>
-                        <td>xxx</td>
-                        <td>xxx</td>
-                        <td>0912345678</td>
-                        <td>2022-02-22<br>00:00:00</td>
-                        <td><button>編輯</button></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                        <td>&nbsp</td>
-                    </tr>
-                </tfoot>
-            </table>
-        </form>
+            <form action="#">
+                <table>
+                    <thead>
+                        <tr>
+                            <!-- table row -->
+                            <td>會員編號</td>
+                            <td>帳號</td>
+                            <td>密碼</td>
+                            <td>姓名</td>
+                            <td>手機</td>
+                            <td>創建時間</td>
+                            <td> </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>xxx@gmail.com</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>0912345678</td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>xxx@gmail.com</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>0912345678</td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+        </div>
     </div>
 
     <!-- 載入js -->
     <script src="./js/main.min.js"></script>
 </body>
+
 </html>
