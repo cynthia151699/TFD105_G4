@@ -44,13 +44,14 @@ h4{
 .index_page2{
   height: 100%;
   @include LinkImg(index, index_pic1, png, cover, null, null);
-  // background-image: url(/src/img/index/index_pic1.png);
   background-size: cover;
+
 }
 
 .curr_text{
-  border: 1px red solid;
+  border: 1px blue solid;
   padding: 30px;
+
 }
 
 .currTitle{
@@ -60,8 +61,16 @@ h4{
 
 }
 
-.index_page2 h3, h4{
+.currName{
   text-align: right;
   line-height:1.6;
 }
 
+.currDate{
+  text-align: right;
+  line-height:1.6;
+}
+
+.seeMore{
+  text-align: right;
+}
