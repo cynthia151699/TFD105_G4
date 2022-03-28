@@ -1,0 +1,28 @@
+.past_mainblock {
+    @include LinkImg(tickets, tickets_pic7, jpeg, cover, null, null);
+    // background-image: url(./../../../img/tickets/tickets_pic7.jpeg);
+    // background-size: cover;
+
+    // width: 100%;
+    height: $RWD;
+}
+
+.past_textblock {
+    @mixin Flex ($ver) {
+        display: flex;
+        flex-flow: $ver nowrap;
+    }
+}
+
+.past_textblock {
+    width: 50%;
+}
+
+.past_imgblock {
+    width: 50%;
+}
+
+img {
+    width: 500px;
+    height: 370px;
+}
