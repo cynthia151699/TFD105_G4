@@ -1,0 +1,67 @@
+h3{
+  color:$TextColor2;
+  text-shadow: 3px 3px 3px #292929;
+}
+
+h4{
+  color:$TextColor2;
+  text-shadow: 3px 3px 3px #292929;
+}
+
+.first_page{
+  position: relative;
+}
+
+.welcome_video{
+    width: 100%;
+  }
+
+.btn_next{
+    text-align: center;
+    position: absolute;
+    left: 40%;
+    top: 500px;
+    animation: goingOn 2s infinite;
+    cursor: pointer;
+}
+
+ @keyframes goingOn {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -10px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+     }
+}
+
+.btn_img{
+  padding-top: 15px;
+}
+
+.second_page{
+  height: 100%;
+  // mixin裡有組件能用！
+  background-image: url(/src/img/index/index_pic1.png);
+  background-size: cover;
+}
+
+.curr_text{
+  border: 1px red solid;
+  padding: 30px;
+
+}
+
+.currTitle{
+  color: purple;
+  text-shadow: 3px 3px 3px #292929;
+  line-height:1.6;
+
+}
+
+.second_page h3, h4{
+  text-align: right;
+  line-height:1.6;
+}
