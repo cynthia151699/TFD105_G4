@@ -14,18 +14,7 @@
 
         <div class="mainContainer">
 
-            <!-- 頁首 -->
-            @@include('./../../layout/header.html', {
-                "tittle1" : "CURRENT EXHIBITION", 
-                "tittle2" : "LATEST NEWS", 
-                "active1" : "activeb", 
-                "active3" : "active", 
-                "active4" : "active", 
-            })
-
-            <main>
                 <!-- coding here -->
-
                 <div id="fullpage">
                     <div class="section active welcomeVideo" id="section1">
                         <div class="first_page">
@@ -54,34 +43,25 @@
                         </div>
                     </div>
 
-
                     <div class="section active latestNews" id="section1">
                         <div class="third_page">
                             <img src="/src/img/index/index_pic2.jpeg" alt="">
                         </div>
                     </div>
 
-            </main>
-
-            <!-- 頁尾 -->
-            @@include('./../../layout/footer.html')
-
         </div>
     </div>
 
     <!-- 載入js、套件 -->
     @@include('./../../layout/importjs.html')
-
     <script src="./../../js/vendors/fullpage.min.js"></script>
     <script type="text/javascript">
-
         var myFullpage = new fullpage('#fullpage', {
             sectionsColor: ['#293241', '#293241'],
             lazyLoad: true
         });
     </script>
 
-    
 </body>
 
 </html>

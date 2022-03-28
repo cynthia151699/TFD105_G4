@@ -7,8 +7,7 @@ main{
             @include Remind;
             position: relative;
             section.exCurrent{
-                // @include Remind;
-                // @include Remind(green);
+                @include Remind(green);
                 position: absolute;
                 top: 20px;
                 text-align: left;
@@ -129,6 +128,5 @@ main{
             }
         }
     }
-
 }
 

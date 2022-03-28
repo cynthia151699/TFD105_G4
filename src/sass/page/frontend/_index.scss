@@ -43,6 +43,7 @@ h4{
 
 .second_page{
   height: 100%;
+  // mixin裡有組件能用！
   background-image: url(/src/img/index/index_pic1.png);
   background-size: cover;
 }
