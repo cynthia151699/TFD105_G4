@@ -8,46 +8,60 @@
 <body>
     <div class="wrapper">
         <!-- 導覽列 -->
-        @@include('./../../layout/nav.html')
+        @@include('./../../layout/nav.html', {
+            "active4" : "active"
+            })
 
         <div class="mainContainer">
 
-            <!-- 頁首 -->
-            @@include('./../../layout/header.html', {
-                "tittle1" : "CURRENT EXHIBITION", 
-                "tittle2" : "LATEST NEWS", 
-                "active1" : "activeb", 
-                "active3" : "active", 
-                "active4" : "active", 
-            })
-
-            <main>
                 <!-- coding here -->
-                <main class="welcome_page">
-                <video autoplay muted class="welcome">
-                    <source src="/src/img/index/index_video.mp4" type="video/mp4">
-                </video>
+                <div id="fullpage">
+                    <div class="section active welcomeVideo" id="section1">
+                        <div class="first_page">
 
-                <div class="btn_next">
-                    <h3 class="btn_going">See what’s<br>going on today</h3>    
-                    <img class="btn_img" src="/src/img/index/bnt.png" alt="#">
-                </div>
-                </main>
+                        <video autoplay muted loop class="welcome_video">
+                        <source src="/src/img/index/index_video.mp4" type="video/mp4">
+                        </video>
 
-                <div class="second_page">
+                        <div class="btn_next">
+                        <h3 class="btn_going">See what’s<br>going on today</h3>    
+                        <img class="btn_img" src="/src/img/index/bnt.png" alt="#">
+                            </div>
+                        </div>
+                    </div>
 
-                </div>
+                    <div class="section active currExhibition" id="section1">
+                        <div class="second_page">
+                            
+                            <div class="curr_text">
+                                <h1 class="currTitle">Break the Classic</h1>
+                                <h3>TAKIKAW RISA Solo Exhibition</h3>
+                                <h4>FEB. 5 - MAY. 5, 2022</h4>
+                                <h4 class="seeMore">see more ></button>
+                            </div>
 
-            </main>
+                        </div>
+                    </div>
 
-            <!-- 頁尾 -->
-            @@include('./../../layout/footer.html')
+                    <div class="section active latestNews" id="section1">
+                        <div class="third_page">
+                            <img src="/src/img/index/index_pic2.jpeg" alt="">
+                        </div>
+                    </div>
 
         </div>
     </div>
 
     <!-- 載入js、套件 -->
     @@include('./../../layout/importjs.html')
+    <script src="./../../js/vendors/fullpage.min.js"></script>
+    <script type="text/javascript">
+        var myFullpage = new fullpage('#fullpage', {
+            sectionsColor: ['#293241', '#293241'],
+            lazyLoad: true
+        });
+    </script>
+
 </body>
 
 </html>

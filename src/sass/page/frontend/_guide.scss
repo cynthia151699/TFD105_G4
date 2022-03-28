@@ -5,8 +5,8 @@
 .wrapperOpenhours{
     @include Flex(row);
     width:$RWD;
-   height:calc(100% - 200px);
-   background-color: $PrimaryColor ;
+    height:calc(100% - 200px);
+    background-color: $PrimaryColor ;
    
 }
 .openhoursLeft {
@@ -20,9 +20,9 @@
 .openhoursRight{
     width: 40%;
     img{
-       display: block;
-       width: 60%;
-       height:calc(100% - 80px);
+        display: block;
+        width: 60%;
+        height:calc(100% - 80px);
         margin:$HorizontalAlignCenter;
     }
 }
