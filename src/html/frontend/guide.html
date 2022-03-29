@@ -24,6 +24,7 @@
             })
 
             <main>
+                
                 <!-- -------開館時間------- -->
                 <div id="fullpage">
                     <div class="section mainOpenhours " id="section0">
@@ -44,6 +45,7 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- ----------展覽票價資訊----------- -->
                     <div class="section guideTicket " id="section1">
                         <h2>Break the Classic</h2>
@@ -58,7 +60,6 @@
                     </div>
 
                     <!-- -----交通資訊區塊---------- -->
-
                     <div class="section active " id="section2">
                         <div class="wapperTrans ">
                             <div class="map">
@@ -81,13 +82,7 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
-
-            </main>
-
             </main>
 
             <!-- 頁尾 -->
@@ -96,15 +91,10 @@
     </div>
 
     <!-- 載入js、套件 -->
-    @@include('./../../layout/importjs.html')
     <script src="./../../js/vendors/fullpage.min.js"></script>
-    <script type="text/javascript">
 
-        var myFullpage = new fullpage('#fullpage', {
-            sectionsColor: ['#293241', '#293241'],
-            lazyLoad: true
-        });
-    </script>
+    <!-- 大家自己寫的js 在這！ -->
+    <script src="./../../js/guide.min.js"></script>
 </body>
 
 </html>

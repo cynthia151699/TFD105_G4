@@ -40,21 +40,18 @@
   height: 100%;
   @include LinkImg(index, index_pic1, png, cover, null, null);
   background-size: cover;
-
 }
 
 .curr_text{
   border: 1px blue solid;
   padding: 30px;
   padding-top: 200px;
-
 }
 
 .currTitle{
   color: purple;
   text-shadow: 2px 2px 2px #293241;
   line-height:1.6;
-
 }
 
 .currName{
