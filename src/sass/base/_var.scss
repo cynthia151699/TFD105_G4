@@ -9,8 +9,9 @@
 // $FocusingColor: #EE6C4D;
 
 // 文字顏色樣式
-$TextColor: #000000;
-$TextColor2: #F4F4F4;
+$TextColor: #0C0C0C;
+$TextColor2: #F4F4F4; //有點灰色
+$InputColor: #FFFFFF; //純白
 
 // 0318 新增色票
 $NavBGColor: #161829;
@@ -21,6 +22,10 @@ $SecondaryColor: #262A73;
 $AccentColor: #83DCD7;
 $AccentColor2: #F29966;
 $AccentColor3: #F25A38;
+
+// 後台用顏色
+$BackColor: #D6ECFF;
+// $BackColor2: #B5CDE2;
 
 // 圓角
 $BorderRadius: 10px;
@@ -61,6 +66,8 @@ $FontSize: (
     'h6': 1.125rem, //18px
     'p': 1rem, //16px
 );
+
+$MinFontSize: 0.875rem; //14px，chrome支援最小字級到12px
 
 $LineHeight: 1.6em;
 

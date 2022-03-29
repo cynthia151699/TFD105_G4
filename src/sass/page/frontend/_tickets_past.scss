@@ -23,7 +23,7 @@
 }
 
 .past_bottomblock {
-    @include HorizontalAlignCenter;
+    margin: $HorizontalAlignCenter; // 丞哥你好好看看我mixin 跟var 的scss 都寫了什麼...不要都用include...大家的程式都死機了...
 }
 
 .past_bottomblock button {

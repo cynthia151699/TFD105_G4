@@ -9,7 +9,7 @@ footer{
     @include VerticalAlignCenter();
     
     p{
-        font-size: 0.875rem;
+        font-size: $MinFontSize;
         margin: $HorizontalAlignCenter;
     }
 }

@@ -48,7 +48,7 @@
     .mapImg{
          @include VerticalAlignCenter;
         iframe{
-               @include $HorizontalAlignCenter;
+            margin: $HorizontalAlignCenter; //我跟妳在line說過了所以我懶得再打字了...
             width: 400px;
             height: 400px;
         }

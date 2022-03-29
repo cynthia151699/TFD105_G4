@@ -13,21 +13,12 @@ header.frontHeader{
 
         @include Flex(row);
 
-        .mlSpace20{
-            @include VerticalAlignCenter();
-            h5{
-                color: $TextColor2;
-            }
-        }
+        h5{
+            color: $TextColor2;
 
-        .mlSpace30{
             @include VerticalAlignCenter();
-            h5{
-                color: $TextColor2;
-            }
         }
     }
-
 
     .active{
         display: none;
@@ -46,46 +37,83 @@ header.frontHeader{
     }
 }
 
-header.backHeader{
-    width: calc(100% - 250px);
-    
-}
-
-@media screen and (max-width:797.98px){
-    header{
-        display: none;
-    }
-}
-
 /* BackHeader */
 header.backHeader{
     width: $RWD;
-    height: 150px;
-    background-color: #B5CDE2;
-    flex-shrink: 0;
+    height: 130px;
+
+    background-color: $BackColor;
 
     .headerContainer{
-        height: 150px;
+        width: fit-content;
+        height: 130px;
+
         @include Flex(row);
-        button{
-            height: 45px;
-            background-color: $HFBGColor;
-            border: none;
-            border-radius: 5px;
-        }
+
+        display: inline-flex;
 
         h3{
+            color: $TextColor;
             font-weight: map-get($FontWeight, regular);
-            padding-top: 100px;
-            padding-left: 25px;
-        }
-
-        h4{
-            color: $TextColor2;
+            text-shadow: none;
         }
 
         h5{
-            color: $TextColor2;
+            border-bottom: 1.5px solid $TextColor;
+        }
+
+        button{
+            height: 35px;
+
+            background-color: $HFBGColor;
+
+            border: none;
+            border-radius: $BorderRadius;
+
+            box-shadow: $BoxShadow;
+
+            margin-top: 76px;
+
+            h5{
+                color: $TextColor2;
+                font-weight: map-get($FontWeight, light);
+                border: none;
+            }
+        }
+    }
+
+    .search{
+        width: 260px;
+        height: 130px;
+
+        float: right;
+
+        display: flex;
+        flex-flow: row wrap;
+
+        button{
+            height: 35px;
+
+            background-color: $HFBGColor;
+
+            border: none;
+            border-radius: $BorderRadius;
+
+            box-shadow: $BoxShadow;
+            
+            h6{
+                color: $TextColor2;
+                font-weight: map-get($FontWeight, light);
+            }
+        }
+
+        a{
+            display: inline-block;
+            height: fit-content;
+
+            h5{
+                border-bottom: 1.5px solid $TextColor;
+            }
         }
     }
 }
