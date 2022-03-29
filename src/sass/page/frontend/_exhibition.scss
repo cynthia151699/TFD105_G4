@@ -1,4 +1,4 @@
-main{
+main.exRelative{
     position: relative;
     
     div.ms-left{
@@ -9,17 +9,20 @@ main{
             section.exCurrent{
                 @include Remind(green);
                 position: absolute;
-                top: 20px;
-                text-align: left;
+                top: 0;
+                
                 h2{
                     color: #F0F28D;
+                    text-align: left;
                     line-height: $LineHeight;
                 }
                 h3,h5,p{
                     color: $TextColor2;
+                    text-align: left;
                 }
                 a.buyTicket{
                     display: inline-block;
+
                 }
             }
             
@@ -89,7 +92,7 @@ main{
             section.exUpcoming{
                 @include Remind;
                 position: absolute;
-                top: 20px;
+                top: 0;
                 h2,h3,h5,p{
                     color: $TextColor2;
                     line-height: $LineHeight;
@@ -108,18 +111,21 @@ main{
                 left: 50%;
                 transform: translate(-50%, -50%);
                 div.beforePic-1{
+                    @include Remind;
                     margin: $HorizontalAlignCenter;
                     width: 450px;
                     height: 120px;
                     @include LinkImg('exhibition', 'exhibition_pic4', 'jpeg', cover, no-repeat, center);
                 }
                 div.beforePic-2{
+                    @include Remind;
                     margin: $HorizontalAlignCenter;
                     width: 450px;
                     height: 120px;
                     @include LinkImg('exhibition', 'exhibition_pic5', 'jpeg', cover, no-repeat, center);
                 }
                 div.beforePic-3{
+                    @include Remind;
                     margin: $HorizontalAlignCenter;
                     width: 450px;
                     height: 120px;
