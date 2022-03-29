@@ -1,10 +1,25 @@
 // // 整個輸入區域，套用到所有區域
 .member_main_all_block {
     margin: 50px auto;
-    @include Remind(green);
+    // @include Remind(green);
     Width: 1000px;
     Height: calc(100vh - 190px);
     max-height: 800px;
     background-color: $TextColor2;
     @include VerticalAlignCenter;
   }
+  //登入頁面
+.member_login_block{
+    @include Remind(green);
+  width: 800px;
+  text-align: center;
+
+
+
+}
+.member_sign_in{
+  display: none;
+}
+.member_new_login{
+  display: none;
+}

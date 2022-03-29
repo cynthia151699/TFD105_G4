@@ -18,7 +18,8 @@
 
       <main>
         <div class="member_main_all_block">
-          <form class="member_login_block ">
+          <form class="member_login_block">
+            <h2>Welcome back</h2>
             <h4>EMAIL</h4>
             <input type="email" />
             <h4>PASSWORD</h4>
@@ -27,59 +28,58 @@
             <button type="button" class="submit defaultBtn">Sign In</button>
             <button type="button" class="fb-btn defaultBtn"> <span>Connect with facebook</span></button>
           </form>
-
-          <!-- 移動bar -->
-          <div class="member_sign_img">
+          <!-- 移動bar 會員-->
+          <div class="member_sign_up">
             <div class="member_sign_text">
               <h2>New here?</h2>
               <p>Sign up and discover great amount of new opportunities!</p>
             </div>
-            <div class="member_sign_text">
-              <h2>One of us?</h2>
-              <p>
-                If you already has an account, just sign in. We've missed you!
-              </p>
-            </div>
             <div class="member_sign_btn">
-              <span class="member_sign_up">Sign Up</span>
-              <span class="member_sign_in">Sign In</span>
+              <span class="member_sign_up defaultBtn">Sign Up</span>
+            </div>
+          </div>
+          <!-- 移動bar 註冊-->
+          <div class="member_sign_in">
+            <h2>One of us?</h2>
+            <p>
+              If you already has an account, just sign in. We've missed you!
+            </p>
+            <div class="member_sign_btn">
+              <span class="member_sign_in defaultBtn">Sign In</span>
             </div>
           </div>
           <!-- 註冊 -->
-          <form class="member_singup_block" id="form">
-            <h4>NAME</h4>
-            <input type="name" />
-            <h4>EMAIL</h4>
-            <input type="text" name="mail" id="mail" />
-            <h4>PASSWORD</h4>
-            <input type="password" />
-            <h4>PASSWORD CONFIRM</h4>
-            <input type="password" />
-            <h4>PHONE NUMBER</h4>
-            <input type="text" />
-            <div class="member_login_detail field">
-              <input type="checkbox" class="member_login_choose" />
-              <h4>
-                I would like to receive news, tips and marketing offers from
-                Anno.
-              </h4>
-              <input type="checkbox" class="member_login_confirm" />
-              <h4>
-                I have read and understood the Terms & Conditions and Privacy
-                Policy.
-              </h4>
-              <input type="submit" id="button" value="Send Email" />
-              <h4>Sign In</h4>
-              <button type="submit" id="button" class="submit defaultBtn">
-                <h4>Sign In</h4>
-              </button>
-            </div>
+          <div class = "member_new_login">
+            <form class="member_singup_block" id="form">
+              <h4>NAME</h4>
+              <input type="name" />
+              <h4>EMAIL</h4>
+              <input type="text" name="mail" id="mail" />
+              <h4>PASSWORD</h4>
+              <input type="password" />
+              <h4>PASSWORD CONFIRM</h4>
+              <input type="password" />
+              <h4>PHONE NUMBER</h4>
+              <input type="text" />
+              <div class="member_login_detail field">
+                <input type="checkbox" class="member_login_choose" />
+                <h4>
+                  I would like to receive news, tips and marketing offers from
+                  Anno.
+                </h4>
+                <input type="checkbox" class="member_login_confirm" />
+                <h4>
+                  I have read and understood the Terms & Conditions and Privacy
+                  Policy.
+                </h4>
+                <!-- <input type="submit" id="button" value="Send Email" class="defaultBtn"/> -->
+                <button type="submit" id="button" class=" defaultBtn">
+                  <h4>Sign In</h4>
+                </button>
+              </div>
+          </div>
         </div>
       </main>
-      <!-- 輸入錯誤用文本   
-        Something wrong! Please try again
-       Please type in your email address
-      -->
       <!-- 頁尾 -->
       @@include('./../../layout/footer.html')
     </div>
@@ -92,7 +92,6 @@
   <script type="text/javascript">
     emailjs.init("rB4cW-mtW8WwyODex");
   </script>
-  <!--  載入js、套件 -->
   <script src="./../../js/member.min.js"></script>
 </body>
 

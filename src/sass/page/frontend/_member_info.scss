@@ -1,8 +1,8 @@
 // //info相關區域
 .member_info_title {
     margin: 0px auto;
-    @include Remind(red);
-    Width: 1000px;
+    // @include Remind(red);
+    width: 1000px;
     text-align: center;   
 }
 .member_info_text{
@@ -13,12 +13,15 @@
 }
 .member_info_main_block{
     @include Remind(green);
-    Width: 1000px;
-    Height: calc(100vh - 280px);
+    width: 1000px;
+    height: calc(100vh - 280px);
     max-height: 800px;
     background-color: $TextColor2;
     @include VerticalAlignCenter;
     text-align:left;
+}
+.member_info_Bt{
+    background-color: $AccentColor2;
 }
 
 
