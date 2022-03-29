@@ -45,9 +45,12 @@ header.backHeader{
     background-color: $BackColor;
 
     .headerContainer{
-        height: 120px;
+        width: 70%;
+        height: 130px;
 
         @include Flex(row);
+
+        display: inline-flex;
 
         h3{
             color: $TextColor;
@@ -67,17 +70,42 @@ header.backHeader{
             border: none;
             border-radius: $BorderRadius;
 
+            box-shadow: $BoxShadow;
+
             h5{
                 color: $TextColor2;
                 font-weight: map-get($FontWeight, light);
                 border: none;
             }
+        }
+    }
 
+    .search{
+        width: fit-content;
+        height: fit-content;
+        display: inline-block;
+
+        button{
+            height: 35px;
+
+            background-color: $HFBGColor;
+
+            border: none;
+            border-radius: $BorderRadius;
+
+            box-shadow: $BoxShadow;
+            
             h6{
                 color: $TextColor2;
                 font-weight: map-get($FontWeight, light);
             }
         }
+    }
 
+    a{
+        float: right;
+        h5{
+            border-bottom: 1.5px solid $TextColor;
+        }
     }
 }

@@ -65,9 +65,32 @@ nav.backNav{
     height: calc($Height + 90px);
 
     background-color: $HFBGColor;
+
+    figure.logo{
+        width: 100px;
+        height: 50px;
+        @include LinkImg(logo, logo_rw, png);
+        margin: 30px auto 0 auto;
+    }
+
+    figure.admin{
+        width: 75px;
+        height: 75px;
+        @include LinkImg(backend, admin, png);
+        margin: 30px auto 0 auto;
+    }
+
+    h5{
+        display: block;
+        width: fit-content;
+        margin: 20px auto 0 auto;
+        color: $TextColor2;
+    }
     
     ul{
-        
+        width: fit-content;
+        margin: 30px auto 0 auto;
+
         li{
             width: 145px;
             height: 40px;
@@ -75,25 +98,6 @@ nav.backNav{
 
             border: 1px solid $TextColor2;
             border-radius: $BorderRadius;
-
-            &:first-child{
-                width: 100px;
-                height: 50px;
-                @include LinkImg(logo, logo_rw, png);
-
-                border: none;
-            }
-
-            &:nth-child(2){
-                width: 75px;
-                height: 75px;
-                @include LinkImg(backend, admin, png);
-
-                border: none;
-            }
-            &:nth-child(3){
-                border: none;
-            }
         }
 
         svg{
