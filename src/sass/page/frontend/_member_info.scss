@@ -1,3 +1,77 @@
-.main_block_big{
-    margin: $HorizontalAlignCenter;
+//info相關區域
+.member_info_title{
+    margin: auto;
+    @include Remind(pink);
+    // @include VerticalAlignCenter;
+    Width: 1000px;
+    height: 100vh;
+    text-align: center;
 }
+.member_info_main_block {
+    // margin: 50px auto;
+    @include Remind(green);
+    Width: 1000px;
+    Height: calc(100vh - 270px);
+    max-height: 800px;
+    background-color: $TableColor;
+    @include VerticalAlignCenter;
+}
+.member_info_main {
+    @include Remind(blue);
+}
+// 下方按鈕
+.member_info_Bt{
+margin-bottom: 50px;
+}
+.member_info_BtColor{
+    background-color: $AccentColor2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//文字顏色
+.member_forget_text{
+    color:$TextColor;
+}
+.member_forget_input{
+    background-color: $HFBGColor;
+    color:$TextColor2;
+}
+//按鈕顏色
+.member_forget_BtColor1{
+    background-color: #AD9F9F;
+}
+.member_forget_BtColor2{
+    background-color: $AccentColor2;
+}
+
+
+// .main_block_big{
+//     margin: $HorizontalAlignCenter;
+// }

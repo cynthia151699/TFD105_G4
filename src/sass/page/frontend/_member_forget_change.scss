@@ -1,12 +1,30 @@
-.member_forget_change_block{
+//forget相關區域
+.member_forget_main_block {
+    margin: 50px auto;
     @include Remind(red);
-display: flex ;
-align-items: center;
+    Width: 1000px;
+    Height: calc(100vh - 190px);
+    max-height: 800px;
+    background-color: $TableColor;
+    @include VerticalAlignCenter;
 }
-.member_forget_change_blockin{
-    display: flex ;
-    flex-flow: column;
-}
-.member_forget_change_button{
+.member_forget_main {
+    @include Remind(blue);
+    // @include VerticalAlignCenter;
     text-align: center;
+}
+//文字顏色
+.member_forget_text{
+    color:$TextColor;
+}
+.member_forget_input{
+    background-color: $HFBGColor;
+    color:$TextColor2;
+}
+//按鈕顏色
+.member_forget_BtColor1{
+    background-color: #AD9F9F;
+}
+.member_forget_BtColor2{
+    background-color: $AccentColor2;
 }
