@@ -5,12 +5,11 @@
     Width: 1000px;
     Height: calc(100vh - 190px);
     max-height: 800px;
-    background-color: $TableColor;
+    background-color: $InputColor;
     @include VerticalAlignCenter;
 }
 .member_forget_main {
     @include Remind(blue);
-    // @include VerticalAlignCenter;
     text-align: center;
 }
 //文字顏色

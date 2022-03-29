@@ -9,56 +9,70 @@
     <div class="wrapper">
         <!-- 導覽列 -->
         @@include('./../../layout/nav.html', {
-            "active3" : "active"
+        "active3" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
             @@include('./../../layout/header.html', {
-                "tittle1" : "Edit Your Member Info.", 
-                "tittle2" : "Booking List", 
-                "active1" : "activeb", 
-                "active3" : "active", 
-                "active4" : "active", 
+            "tittle1" : "Edit Your Member Info.",
+            "tittle2" : "Booking List",
+            "active1" : "activeb",
+            "active3" : "active",
+            "active4" : "active",
             })
 
             <main>
+
                 <!-- coding here -->
                 <section class="tickets">
-                    <h4 class="topSpace20 bottomSpace10">Current booking management (click it to show QR code)</h4>
-                    <ul class="currentBooking">        
-                        <li class="booking rightSpace50">
+
+                    <h4 class="tickets_bookingName ptSpace30 pbSpace10">
+                        Current booking management (click it to show QR code)
+                    </h4>
+
+                    <ul class="tickets_currentBooking">
+
+                        <li class="tickets_currentBooking-1 mrSpace100">
                             <div class="bookingPic-1"></div>
-                            <h6>BREAK the CLASSIC</h6>
+                            <h6 class="tickets_bookingName2">BREAK the CLASSIC</h6>
                         </li>
-                        <li class="booking">
+
+                        <li class="tickets_currentBooking-1">
                             <div class="bookingPic-2"></div>
-                            <h6>TRUE COLOR</h6>
+                            <h6 class="tickets_bookingName2">TRUE COLOR</h6>
                         </li>
+
                     </ul>
-                    <h4 class="topSpace20 bottomSpace10">Past booking Management</h4>
-                    <ul class="pastBooking">
-                        
-                        <li class="past rightSpace50">
+
+                    <h4 class="tickets_pastbookingName ptSpace30 pbSpace10">
+                        Past booking Management
+                    </h4>
+
+                    <ul class="tickets_pastBooking">
+
+                        <li class="tickets_pastBooking mrSpace100">
                             <div class="pastPic-1"></div>
-                            <h6>INTERWEAVE</h6>
+                            <h6 class="tickets_bookingName2">INTERWEAVE</h6>
                         </li>
-                        <li class="past rightSpace50">
+
+                        <li class="tickets_pastBooking mrSpace100">
                             <div class="pastPic-2"></div>
-                            <h6>FOOD ART</h6>
+                            <h6 class="tickets_bookingName2">FOOD ART</h6>
                         </li>
-                        <li class="past rightSpace50">
+
+                        <li class="tickets_pastBooking mrSpace100">
                             <div class="pastPic-3"></div>
-                            <h6>ABSTRACT</h6>
+                            <h6 class="tickets_bookingName2">ABSTRACT</h6>
                         </li>
-                        <li class="past">
+
+                        <li class="tickets_pastBooking">
                             <div class="pastPic-4"></div>
-                            <h6>MODERN TATTOO</h6>
+                            <h6 class="tickets_bookingName2">MODERN TATTOO</h6>
                         </li>
+                        
                     </ul>
-
-
                 </section>
             </main>
 
@@ -67,9 +81,6 @@
 
         </div>
     </div>
-
-    <!-- 載入js、套件 -->
-    @@include('./../../layout/importjs.html')
 </body>
 
 </html>

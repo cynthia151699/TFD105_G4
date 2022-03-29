@@ -1,4 +1,5 @@
 .wrapperAbout{
+    // @include Remind();
     width: $Width;
     height: $Height;
     h2{
@@ -23,11 +24,10 @@
     }
     h2{
         color:$TextColor2;
-        // @include Remind();
+
     }
     h4{
         color:$TextColor2;
-        // @include Remind();
     }
     .aboutHistoryMid{
         text-align: right;

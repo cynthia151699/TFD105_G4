@@ -1,6 +1,7 @@
 /* Frontend Navigation Bar */
 nav.frontNav{
     display: inline-block;
+
     width: 70px;
     height: calc(#{$Height} + 90px);
 
@@ -22,7 +23,6 @@ nav.frontNav{
                 fill: $AccentColor;
             }
         }
-        // .st0 {}
         
         .active a svg{
             fill: $AccentColor;
@@ -61,28 +61,62 @@ nav.frontNav{
 
 /* Backend Navigation Bar */
 nav.backNav{
-    width: 225px;
+    width: 175px;
+    height: calc($Height + 90px);
+
     background-color: $HFBGColor;
+
+    figure.logo{
+        width: 100px;
+        height: 50px;
+        @include LinkImg(logo, logo_rw, png);
+        margin: 30px auto 0 auto;
+    }
+
+    figure.admin{
+        width: 75px;
+        height: 75px;
+        @include LinkImg(backend, admin, png);
+        margin: 30px auto 0 auto;
+    }
+
+    h5{
+        display: block;
+        width: fit-content;
+        margin: 20px auto 0 auto;
+        color: $TextColor2;
+    }
     
     ul{
-        li{
-            width: 190px;
-            height: 45px;
+        width: fit-content;
+        margin: 30px auto 0 auto;
 
-            border: 1px solid #FFFFFF;
-            border-radius: 5px;
+        li{
+            width: 145px;
+            height: 40px;
+            font-size: $MinFontSize;
+
+            border: 1px solid $TextColor2;
+            border-radius: $BorderRadius;
+        }
+
+        svg{
+            height: 20px;
+
+            fill: $TextColor2;
         }
 
         .active{
             background-color: $AccentColor2;
+
             border: none;
-            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+            box-shadow: $BoxShadow;
         }
 
         a{
             display: block;
-            width: 190px;
-            height: 45px;
+            width: 145px;
+            height: 40px;
             color: $TextColor2;
 
             @include VerticalAlignCenter();

@@ -1,18 +1,7 @@
+//載入字型
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap');
+
 // 顏色樣式
-// $MainColor: #98C1D9;
-// $MainColor2: #7693A5;
-
-// $SubColor: #E0FBFC;
-// $SubColor2: #3D5A80;
-// $SubColor3: #293241;
-
-// $FocusingColor: #EE6C4D;
-
-// 文字顏色樣式
-$TextColor: #000000;
-$TextColor2: #F4F4F4;
-
-// 0318 新增色票
 $NavBGColor: #161829;
 $HFBGColor: #48538D;
 
@@ -21,6 +10,20 @@ $SecondaryColor: #262A73;
 $AccentColor: #83DCD7;
 $AccentColor2: #F29966;
 $AccentColor3: #F25A38;
+
+
+// 文字顏色樣式
+$TextColor: #0C0C0C;
+$TextColor2: #F4F4F4; //有點灰色
+
+// 表單色票
+$InputColor: #FFFFFF; //純白
+
+// 後台用顏色
+$BackColor: #D6ECFF;
+// $BackColor2: #B5CDE2;
+
+
 
 // 圓角
 $BorderRadius: 10px;
@@ -31,19 +34,6 @@ $TextShadow: 2px 2px 2px #293241;
 // 區塊陰影
 $BoxShadow: 3px 3px 5px #293241;
 
-
-// 表單色票
-$TableColor: #FFFFFF;
-
-// $Tr: transparent; // 透明
-// $Opacity: 1; // 透明度
-
-//載入字型
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap');
-
-// text-orientation 文字排列方向
-// font-style, font-variant, font-weight, font-stretch, font-size, line-height, and font-family
-// font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;
 
 //文字樣式
 $FontWeight: (
@@ -62,6 +52,8 @@ $FontSize: (
     'p': 1rem, //16px
 );
 
+$MinFontSize: 0.875rem; //14px，chrome支援最小字級到12px
+
 $LineHeight: 1.6em;
 
 // 系統預設字型
@@ -72,17 +64,16 @@ $SpecialFont: 'Fredoka', 'Noto Sans TC', sans-serif;
 $LetterSpaceing: 0.1em;
 $WordSpaceing: 0.15em;
 
-// $TextAlign: justify;  // 文字間距自動計算占滿寬度
-
 // 排版
 $Width: calc(100% - 70px);
 $Height: calc(100vh - 90px);
 
+$WidthFit: fit-content;
+$HeightFit: fit-content;
+
 $RWD: 100%;
 
-// 單欄版面記得要置中！
-$HorizontalAlignCenter: 0 auto; //水平置中
-// 垂直置中放在 _mixins.scss
+// 後台用排版
 
-// 滑鼠游標
-// $Cursor: pointer;
+// 此變數使用期間只開放到 4/2 23:59，大家請在那之前更新完自己的code！（@include HorizontalAlignCenter() 預設就是水平置中了！）
+$HorizontalAlignCenter: 0 auto;

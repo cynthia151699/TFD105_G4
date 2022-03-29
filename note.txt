@@ -63,3 +63,15 @@ sql 布林值設bit1/烏鴉腳一對多
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" 
 integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" 
 crossorigin="anonymous">
+
+// $Tr: transparent; // 透明
+// $Opacity: 1; // 透明度
+
+// text-orientation 文字排列方向
+// font-style, font-variant, font-weight, font-stretch, font-size, line-height, and font-family
+// font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;
+
+// $TextAlign: justify;  // 文字間距自動計算占滿寬度
+
+// 滑鼠游標
+// $Cursor: pointer;

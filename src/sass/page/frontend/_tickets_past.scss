@@ -1,17 +1,12 @@
 .past_mainblock {
-    @include LinkImg(tickets, tickets_pic7, jpeg, cover, null, null);
-    // background-image: url(./../../../img/tickets/tickets_pic7.jpeg);
-    // background-size: cover;
-
-    // width: 100%;
+    // @include LinkImg(tickets, tickets_pic7, jpeg, cover, null, null);
+    width: 100%;
     height: $RWD;
+    filter: opacity(70%);
 }
 
-.past_textblock {
-    @mixin Flex ($ver) {
-        display: flex;
-        flex-flow: $ver nowrap;
-    }
+.past_topblock {
+    @include Flex(row);
 }
 
 .past_textblock {
@@ -22,7 +17,15 @@
     width: 50%;
 }
 
-img {
+.past_imgblock {
     width: 500px;
     height: 370px;
+}
+
+.past_bottomblock {
+    margin: $HorizontalAlignCenter; // 大哥你好好看看我mixin 跟var 的scss 都寫了什麼...不要都用include...大家的程式都死機了...
+}
+
+.past_bottomblock button {
+    background-color: #F29966;
 }
