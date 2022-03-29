@@ -53,7 +53,6 @@ body{
     word-spacing: $WordSpaceing;
     text-align: left;
 
-    // background-color: #E5E5E5;
     color: $TextColor2;
 
     box-sizing: border-box;
@@ -65,13 +64,8 @@ body{
 
         @include Flex(row);
 
-        $titles : (
-        'h1' : 34px,
-        'h2' : 30px);
-
-
-        @each $title, $value in $titles {
-            #{$title} {
+        @each $FontSize, $value in $FontSize {
+            #{$FontSize} {
                 font-size: $value;
             }
         }
@@ -79,35 +73,29 @@ body{
         h1{
             font-family: $SpecialFont;
             font-weight: map-get($FontWeight, medium);
-            font-size: map-get($FontSize, h1);
         }
 
         h2{
             font-family: $SpecialFont;
             font-weight: map-get($FontWeight, medium);
-            font-size: map-get($FontSize, h2);
         }
 
         h3{
             font-family: $SpecialFont;
             font-weight: map-get($FontWeight, medium);
-            font-size: map-get($FontSize, h3);
         }
 
         h4{
             font-family: $SpecialFont;
             font-weight: map-get($FontWeight, regular);
-            font-size: map-get($FontSize, h4);
         }
 
         h5{
             font-weight: map-get($FontWeight, regular);
-            font-size: map-get($FontSize, h5);
         }
 
         h6{
             font-weight: map-get($FontWeight, regular);
-            font-size: map-get($FontSize, h6);
         }
 
         a{

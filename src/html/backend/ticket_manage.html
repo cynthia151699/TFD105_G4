@@ -13,6 +13,54 @@
         "active4" : "active"
         })
 
+        <div class="popUp" style="position: absolute; width: calc(100% - 175px); height: 100vh; margin-left: 175px;">
+            
+            <div class="mask" style="position: absolute; z-index: 1; width: 100%; height: 100vh; background-color: #293241; opacity: 0.7;"></div>
+            
+            <div class="popUpwindows">
+                <form action="post">
+                    <div class="addTicket" style="position: absolute; z-index: 2; opacity: 1; width: 80%; height: fit-content; right: 10%; background-color: white; top: 70px; border-radius: 10px;">
+                        <h4 style="background-color: blue; border-radius: 10px 10px 0px 0px;">新增票券</h4>
+                        <ul>
+                            <li><h5 style="display: inline-block;">場次編號</h5><input type="text"></li>
+                            <li><h5 style="display: inline-block;">場次名稱</h5><input type="text"></li>
+                            <li><h5 style="display: inline-block;">票別</h5><input type="text"></li>
+                            <li><h5 style="display: inline-block;">票價</h5><input type="text"></li>
+                            <li><h5 style="display: inline-block;">票數總量</h5><input type="text"></li>
+                            <li><h5 style="display: inline-block;">展覽開始日</h5><input type="date"></li>
+                            <li><h5 style="display: inline-block;">展覽結束日</h5><input type="date"></li>
+                            <li><h5 style="display: inline-block;">展覽狀態</h5><input type="text"></li>
+                            <li><h5 style="display: inline-block;">創建時間</h5></li>
+                        </ul>
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+
+                    <div class="editTicket" style="position: absolute; z-index: 2; opacity: 1;top: 200px; display: none;">
+                        <h4>編輯票券</h4>
+                        場次編號<input type="text">
+                        場次名稱<input type="text">
+                        票別<input type="text">
+                        票價<input type="text">
+                        票數總量<input type="text">
+                        展覽開始日<input type="date">
+                        展覽結束日<input type="date">
+                        展覽狀態<input type="text">
+                        創建時間
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+
+                    <div class="storeTicket" style="position: absolute; z-index: 2; opacity: 1;top: 400px; display: none;">
+                        <h4>編輯票券</h4>
+                        尚未儲存，是否確認離開？
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <div class="tableContainer">
             <!-- 頁首 -->
             @@include('./../../layout/backheader.html', {
