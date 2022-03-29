@@ -1,25 +1,66 @@
 // // 整個輸入區域，套用到所有區域
 .member_main_all_block {
-    margin: 50px auto;
-    // @include Remind(green);
-    Width: 1000px;
-    Height: calc(100vh - 190px);
-    max-height: 800px;
-    background-color: $TextColor2;
-    @include VerticalAlignCenter;
-  }
-  //登入頁面
-.member_login_block{
-    @include Remind(green);
-  width: 800px;
-  text-align: center;
-
-
-
+  margin: 50px auto;
+  // @include Remind(green);
+  width: 1000px;
+  height: calc(100vh - 190px);
+  max-height: 800px;
+  background-color: $TextColor2;
+  @include VerticalAlignCenter;
 }
-.member_sign_in{
+
+//登入頁面
+.member_login_block {
+  // @include Remind(green);
+  width: 700px;
+  text-align: center;
+}
+
+// 輸入欄位
+.member_input_text {
+  background-color: $HFBGColor;
+  color: $TextColor2;
+  width: 400px;
+}
+
+.member_input_button1 {
+  background-color: $AccentColor2;
+}
+
+.member_input_button2 {
+  background-color: #9E9A9A;
+}
+
+.member_sign_up {
+  @include Remind(blue);
+  width: 300px;
+  background-color: $HFBGColor;
+  text-align: center;
+  height: calc(100vh - 190px);
+  max-height: 800px;
+  @include VerticalAlignCenter;
+}
+.member_sign_text{
+  color: $InputColor;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.member_sign_in {
   display: none;
 }
-.member_new_login{
+
+.member_new_login {
   display: none;
 }
