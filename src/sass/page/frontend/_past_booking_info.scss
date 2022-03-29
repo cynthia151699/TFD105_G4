@@ -1,0 +1,16 @@
+.past_mainblock{
+    @include LinkImg(tickets, tickets_pic7, jpg, cover, null, null); 
+
+    // width: 100%;
+    height: $RWD;
+    display: flex;
+}
+
+.past_textblock{
+    width: 50%;
+}
+
+.past_imgblock{
+    width: 50%;
+}
+
