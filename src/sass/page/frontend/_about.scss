@@ -1,8 +1,24 @@
+.wrapperAbout{
+    width: $Width;
+    height: $Height;
+    h2{
+        color:$TextColor2;
+    }
+    h4{
+        color:$TextColor2;
+    }
+    .wrapperAboutCntFr{
 
+        text-align: right;
+    }
+    .wrapperAboutCntEn{
+        text-align: right;
+    }
+}
 .aboutHistory{
     @include LinkImg(about, about_pic1, png, cover, null, null);
     .aboutHistoryContent{
-        // @include Remind($color:blue);
+        width: $Width;
         height: $RWD;
     }
     h2{
@@ -13,4 +29,13 @@
         color:$TextColor2;
         // @include Remind();
     }
+    .aboutHistoryMid{
+        text-align: right;
+    }
+}
+.movePic{
+   position: relative;
+}
+.movePictImg{
+    position: absolute;
 }
