@@ -1,17 +1,25 @@
 // 整個輸入區域，套用到所有區域
-.member_main_all{
-    margin: $HorizontalAlignCenter;
-}
 .member_main_block{
-    // @include Remind();
-    // 置中跟隨頁面調整
-    // margin: $HorizontalAlignCenter;
-    background-color: $TableColor;
+  // 垂直距離上水平置中
+  margin: 50px auto;
+  @include Remind(red);
+  Width: 1000px;
+  Height: calc(100vh - 190px);
+  max-height: 800px;
+  background-color: $TableColor;
+}
+
+.member_modify_block{
+    // 垂直距離上水平置中
+    margin: 50px auto;
+    @include Remind(red);
     Width: 1000px;
     Height: calc(100vh - 190px);
     max-height: 800px;
-    overflow: hidden;
+    background-color: $TableColor;
 }
+
+
 
 
 
