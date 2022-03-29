@@ -1,28 +1,71 @@
+// -------開館時間-------
 .mainOpenhours{
     @include LinkImg(visit, visit_pic1, png, cover, null, null);
-    @include VerticalAlignCenter ();
 }
 .wrapperOpenhours{
     @include Flex(row);
+    @include VerticalAlignCenter();
     width:$RWD;
-    height:calc(100% - 200px);
-    background-color: $PrimaryColor ;
-   
+    height:450px;
+    background-color: #2932419a;
+}
+.fp-tableCell {
+    display: block;
 }
 .openhoursLeft {
     width:60%;
     h4{
-        margin: 70px 80px 50px 80px;
-        padding-right: 50px;
         color:$TextColor2;
     }
 }
 .openhoursRight{
     width: 40%;
-    img{
-        display: block;
-        width: 60%;
-        height:calc(100% - 80px);
-        margin:$HorizontalAlignCenter;
+}
+
+.openhoursRightImg{
+    width:400px;
+    height:400px;
+    @include LinkImg(visit, visit_pic2, jpeg, cover, no-repeat, center);
+}
+
+// ----------展覽票價資訊-----------
+.guideTicket{
+    @include LinkImg(visit, visit_pic3-1, png, cover, null, null);
+
+}
+// -----交通資訊----------
+.wapperTrans{
+    @include Flex(row);
+    @include VerticalAlignCenter;
+    height:$RWD;
+    // @include Remind();
+    @include LinkImg(visit, visit_pic4, png, cover, no-repeat, center);
+    
+    .map{
+        // @include Remind($color:blue);
+        width:140%;
+    }
+    .mapImg{
+         @include VerticalAlignCenter;
+        iframe{
+               @include $HorizontalAlignCenter;
+            width: 400px;
+            height: 400px;
+        }
+    }
+    .transCnt{
+        @include Remind($color:green);
+        width:$RWD;
+        height: $RWD;
+       h4{
+        color:$TextColor2;
+       }
+       h5{
+        color:$TextColor2;
+        @include Remind();
+        width: 500px;
+       }
     }
 }
+
+

@@ -1,0 +1,31 @@
+.past_mainblock {
+    @include LinkImg(tickets, tickets_pic7, jpeg, cover, null, null);
+    width: 100%;
+    height: $RWD;
+    filter: opacity(70%);
+}
+
+.past_topblock {
+    @include Flex(row);
+}
+
+.past_textblock {
+    width: 50%;
+}
+
+.past_imgblock {
+    width: 50%;
+}
+
+.past_imgblock {
+    width: 500px;
+    height: 370px;
+}
+
+.past_bottomblock {
+    @include HorizontalAlignCenter;
+}
+
+.past_bottomblock button {
+    background-color: #F29966;
+}

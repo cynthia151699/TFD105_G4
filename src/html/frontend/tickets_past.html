@@ -8,15 +8,62 @@
 <body>
     <div class="wrapper">
         <!-- 導覽列 -->
-        @@include('./../../layout/nav.html')
+        @@include('./../../layout/nav.html', {
+        "active3" : "active"
+        })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
-            @@include('./../../layout/header.html')
+            @@include('./../../layout/header.html', {
+            "tittle1" : "Edit your member info.",
+            "tittle2" : "Booking list",
+            "active2" : "activeb",
+            "active3" : "active",
+            "active4" : "active",
+            })
 
             <main>
                 <!-- coding here... -->
+                <div class="past_mainblock">
+
+                    <div class="past_topblock ptSpace50">
+
+                        <div class="past_textblock plSpace30">
+
+                            <h3 class="leftSpace30 bottomSpace80">
+                                Past booking info
+                            </h3>
+
+                            <h4 class="ptSpace50 bottomSpace50">
+                                Name: ABSTRACT
+                                <br><br>
+                                Time: 2020/08/05 09:00 ~ 2021/02/05 16:00
+                                <br><br>
+                                Location: Anno Museum South Building
+                                <br><br>
+                                Tickets: Advance Ticket x 2
+                                <br><br>
+                                Amout: NTD $800
+                            </h4>
+
+                        </div>
+
+
+                        <div class="past_imgblock">
+                            <img src="./../../img/tickets/tickets_pic7.jpeg" alt="">
+                        </div>
+
+                    </div>
+
+                    <div class="past_bottomblock">
+                        <button type="submit" id="button" class="exampleClass"
+                            style="margin-left: 550px; margin: top 90px;">
+                            <h5>Cancel</h5>
+                        </button>
+                    </div>
+
+                </div>
             </main>
 
             <!-- 頁尾 -->
