@@ -1,5 +1,5 @@
 .past_mainblock {
-    @include LinkImg(tickets, tickets_pic7, jpeg, cover, null, null);
+    // @include LinkImg(tickets, tickets_pic7, jpeg, cover, null, null);
     width: 100%;
     height: $RWD;
     filter: opacity(70%);

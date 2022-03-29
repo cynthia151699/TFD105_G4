@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    @@include('./../../layout/head.html')
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <!-- 導覽列 -->
-      @@include('./../../layout/nav.html', { "active5" : "active" })
+<head>
+  @@include('./../../layout/head.html')
+</head>
 
-      <div class="mainContainer">
-        <!-- 頁首 -->
-        @@include('./../../layout/header.html', { "tittle1" : "LOG IN",
-        "tittle2" : "SIGN UP", "active1" : "activeb", "active3" : "active",
-        "active4" : "active", })
+<body>
+  <div class="wrapper">
+    <!-- 導覽列 -->
+    @@include('./../../layout/nav.html', { "active5" : "active" })
 
-        <main>
-            <div class="topspace80 main_block_all">
-            <div class="member_forger_main_block">
-                <div class="topspace50 main_block_2">
-                    <div class="member_forger_main_text">
-                        <h3 class="topspace50">Password Reset</h3>
-                        <h4 class="topspace50">
-                            Please enter the email address that you used to sign up so we
-                            can send you an email with your username and a link to reset
-                            your password.
-                        </h4>
-                        <div class="topspace50">
-                        <input type="name" style="font-size:24px; width:500px;" />
-                      </div>
-                      <div class="topspace50">
-                        <button type="submit" id="button" class="exampleClass">
-                            <h4>Cancel</h4>
-                        </button>
-                        <button type="submit" id="button" class="exampleClass">
-                            <h4>Send</h4>
-                          </div>
-                        </button>
-                    </div>
-                </div>
+    <div class="mainContainer">
+      <!-- 頁首 -->
+      @@include('./../../layout/header.html', { "tittle1" : "LOG IN",
+      "tittle2" : "SIGN UP", "active1" : "activeb", "active3" : "active",
+      "active4" : "active", })
+
+      <main>
+        <div class="main_block_all ptSpace80">
+          <div class="member_forger_main_block ptSpace50">
+            <div class="member_forger_main_text">
+              <h3 class="ptSpace50">Password Reset</h3>
+              <h4 class="ptSpace50">
+                Please enter the email address that you used to sign up so we
+                can send you an email with your username and a link to reset
+                your password.
+              </h4>
+              <div class="topspace50">
+                <input type="name" class="mtSpace50" style="font-size:24px; width:500px;">
+                <!-- 要寫在scss！ -->
+              </div>
+              <button type="submit" id="button" class="exampleClass mtSpace50">
+                <h4>Cancel</h4>
+              </button>
+              <button type="submit" id="button" class="exampleClass">
+                <h4>Send</h4>
+              </button>
             </div>
+          </div>
         </div>
-        </main>
+      </main>
 
-        <!-- 頁尾 -->
-        @@include('./../../layout/footer.html')
-      </div>
+      <!-- 頁尾 -->
+      @@include('./../../layout/footer.html')
     </div>
+  </div>
+</body>
 
-    <!-- 載入js、套件 -->
-    <script src="./../../layout/importjs.html"></script>
-  </body>
 </html>
