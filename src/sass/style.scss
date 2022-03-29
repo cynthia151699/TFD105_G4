@@ -65,6 +65,17 @@ body{
 
         @include Flex(row);
 
+        $titles : (
+        'h1' : 34px,
+        'h2' : 30px);
+
+
+        @each $title, $value in $titles {
+            #{$title} {
+                font-size: $value;
+            }
+        }
+
         h1{
             font-family: $SpecialFont;
             font-weight: map-get($FontWeight, medium);
