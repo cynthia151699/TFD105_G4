@@ -19,7 +19,8 @@
         border-spacing: 0;
             
         td{
-            padding: 5px;
+            box-sizing: border-box;
+            padding: 10px;
         }
 
         thead{

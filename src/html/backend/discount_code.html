@@ -13,6 +13,14 @@
         "active6" : "active"
         })
 
+        <div class="popUp" style="position: absolute; z-index: 1; width: calc(100% - 175px); height: 100vh; margin-left: 175px; background-color: #293241; opacity: 0.7;">
+            <div class="popUpwindows">
+                <form action="post">
+                    折扣碼編號<input type="text">
+                </form>
+            </div>
+        </div>
+
         <div class="tableContainer">
             <!-- 頁首 -->
             @@include('./../../layout/backheader.html', {
@@ -20,7 +28,7 @@
             tittle2: "以折扣碼名稱查詢",
             })
 
-            <form action="#">
+            <form action="post">
                 <table>
                     <thead>
                         <tr>
@@ -31,7 +39,7 @@
                             <td>折扣碼</td>
                             <td>折扣碼狀態</td>
                             <td>創建時間</td>
-                            <td> </td>
+                            <td>&nbsp</td>
                         </tr>
                     </thead>
                     <tbody>

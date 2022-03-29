@@ -56,7 +56,7 @@ __________________________________________________
 # 上傳到 git（Git bash 上操作，左下角可看到自己所在的分支）
 ‧ 記得先commit 
 1. 點dev 打git merge 自己的分支：讓dev 收自己分支更新的commit（有conflict 請解衝突！點both 舊的code 用成註解）  
-‧ 沒有conflict 就不需要再commit，有conflict 解完衝突需要再commit 一次才能push 上去
+‧ 沒有conflict 就不需要再commit，有conflict 解完衝突需要再commit 、git add "有衝突解決完衝突的那支檔案的名稱" （重新加進暫存區）一次才能push 上去  
 2. 請先確認是在dev 分支上！！！在dev 打git push：讓別的組員也能收到更新（不要push 自己的分支！！！）  
 __________________________________________________
 
