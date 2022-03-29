@@ -6,13 +6,19 @@
     background-position: $position;
 }
 
-//垂直置中 (加在父元素上！)
+// 單欄版面記得要置中！
+// 水平置中（加在目標元素上！）
+@mixin HorizontalAlignCenter($top: 0, $bottom: 0) {
+    margin: $top auto $bottom auto;
+}
+
+// 垂直置中（加在父元素上！）
 @mixin VerticalAlignCenter {
     display: flex;
     align-items: center
 }
 
-//提示框：預設是紅色
+// 提示框：預設是紅色
 @mixin Remind($color:red) {
     border: 1px solid $color;
 }
@@ -23,7 +29,7 @@
     flex-flow: $ver nowrap;
 }
 
-// n欄版面(記得另一欄是要寫 1-$col 的結果)
+// n 欄版面（記得另一欄是要寫 1-$col 的結果）
 @mixin Col($col: 50%) {
     width:calc(#{$Width} * #{$col});
     height: fit-content;
@@ -33,7 +39,7 @@
     @include Remind(); // 使用時請先看一下框著的地方是不是預想所需的區域，確認後即可拿掉
 }
 
-// n列版面(記得另一欄是要寫 1-$row 的結果)
+// n 列版面（記得另一欄是要寫 1-$row 的結果）
 @mixin Row($row: 50%){
     width: fit-content;
     height: calc(#{$Height} * #{$row});
@@ -43,6 +49,11 @@
     @include Remind(); // 使用時請先看一下框著的地方是不是預想所需的區域，確認後即可拿掉
 }
 
+// 底線
+@mixin BorderBottom($color){
+    border-bottom: 1.5px solid $color;
+}
+
 // 文字單行刪節
 @mixin SingleEllipsis {
     overflow: hidden;
@@ -50,7 +61,7 @@
     text-overflow: ellipsis;
 }
 
-// 文字多行刪節(需手動設定第幾行刪節)
+// 文字多行刪節（需手動設定第幾行刪節）
 @mixin MultilineEllipsis($row) {
     overflow: hidden;
     display: -webkit-box;

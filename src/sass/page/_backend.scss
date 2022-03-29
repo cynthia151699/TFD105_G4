@@ -40,7 +40,7 @@
         }
 
         tbody{
-            background-color: $TableColor;
+            background-color: $InputColor;
 
             tr:nth-child(even){
                 td{
@@ -61,8 +61,7 @@
         }
 
         tfoot{
-            background-color: $TableColor;
-
+            background-color: $InputColor;
         }
     }
 }
