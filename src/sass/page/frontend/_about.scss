@@ -30,8 +30,12 @@
         color:$TextColor2;
     }
     .aboutHistoryMid{
-        text-align: right;
+       width:200px;
     }
+}
+.aboutHistoryMd{
+    text-align: right;
+    border:5px solid pink;
 }
 .movePic{
    position: relative;
