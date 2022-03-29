@@ -1,0 +1,28 @@
+.member_modify_title {
+    margin: 0px auto;
+    @include Remind(red);
+    Width: 1000px;
+    text-align: center;   
+}
+.member_modify_text{
+    color: $TextColor2;
+}
+.member_modify_main_block{
+    @include Remind(green);
+    Width: 1000px;
+    Height: calc(100vh - 280px);
+    max-height: 800px;
+    background-color: $TextColor2;
+    @include VerticalAlignCenter;
+    text-align:left;
+}
+.member_modify_flex{
+    @include Flex (1);
+}
+.member_modify_lineHeight{
+    line-height: 32px;
+}
+.member_modify_input{
+    background-color: $HFBGColor;
+    color:$TextColor2;
+}

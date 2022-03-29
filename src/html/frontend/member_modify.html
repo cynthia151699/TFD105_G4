@@ -17,11 +17,52 @@
       "active4" : "active", })
 
       <main>
-        <div class="member_main_all_block">
+        <div class="member_modify_title ptSpace30 ">
+          <h2 class="member_modify_text">Overview</h2>
+          <div class="member_modify_main_block mtSpace30 mbSpace30">
+            <ul class="plSpace30">
+              <li class="mbSpace50">
+                <h3>Member information</h3>
+              </li>
+              <li class="mtSpace40 member_modify_flex">
+                <h3>Name</h3>
+                <h3 class="mlSpace250">XXXXXXXXXXXXXXX</h3>
+              </li>
+              <li class="mtSpace40 member_modify_flex">
+                <h3>Email address</h3>
+                <h3 class="mlSpace100">XXXXXXXXXXXXXXX</h3>
+              </li>
+              <li class="mtSpace40 member_modify_flex">
+                <h3>Password</h3>
+                <input class="mlSpace180  member_modify_input" type="password" style="width: 400px;"/>
+              </li>
+              <li class="mtSpace40 member_modify_flex">
+                <h3 class="member_modify_lineHeight">Password<br>
+                  confirm</h3>
+                <input class="mlSpace180 mtSpace20 member_modify_input" type="password" style="height: 32px;width: 400px;" />
+              </li>
+              <li class="mtSpace40 member_modify_flex">
+                <h3>Phone</h3>
+                <input class="mlSpace240 member_modify_input" type="phone" style="width: 400px;"/>
+              </li>
+            </ul>
+          </div>
+        <div>
+          <h5 class="member_modify_text">I would like to receive news, tips and marketing offers from Anno.</h5>
+        </div>
+          <div class="member_modify_Bt mtSpace30">
+            <button type="submit" id="button" class="defaultBtn mrSpace90 member_forget_BtColor1">
+              <h4 class="member_forget_text">Cancel</h4>
+            </button>
+            <button type="submit" id="button" class="defaultBtn member_forget_BtColor2">
+              <h4 class="member_forget_text">Save</h4>
+            </button>
         </div>
       </main>
-    
-
+      <!-- 輸入錯誤用文本   
+        Something wrong! Please try again
+       Please type in your email address
+      -->
       <!-- 頁尾 -->
       @@include('./../../layout/footer.html')
     </div>

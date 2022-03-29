@@ -1,31 +1,82 @@
-//info相關區域
-.member_info_title{
-    margin: auto;
-    @include Remind(pink);
-    // @include VerticalAlignCenter;
+// //info相關區域
+.member_info_title {
+    margin: 0px auto;
+    @include Remind(red);
     Width: 1000px;
-    height: 100vh;
-    text-align: center;
+    text-align: center;   
 }
-.member_info_main_block {
-    // margin: 50px auto;
+.member_info_text{
+    color: $TextColor2;
+}
+.member_info_flex{
+    @include Flex (1);
+}
+.member_info_main_block{
     @include Remind(green);
     Width: 1000px;
-    Height: calc(100vh - 270px);
+    Height: calc(100vh - 280px);
     max-height: 800px;
-    background-color: $TableColor;
+    background-color: $TextColor2;
     @include VerticalAlignCenter;
+    text-align:left;
 }
-.member_info_main {
-    @include Remind(blue);
-}
-// 下方按鈕
-.member_info_Bt{
-margin-bottom: 50px;
-}
-.member_info_BtColor{
-    background-color: $AccentColor2;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .member_info_title{
+//     margin: auto;
+//     @include Remind(pink);
+//     // @include VerticalAlignCenter;
+//     Width: 1000px;
+//     height: 100vh;
+//     text-align: center;
+// }
+// .member_info_main_block {
+//     // margin: 50px auto;
+//     @include Remind(green);
+//     Width: 1000px;
+//     Height: calc(100vh - 270px);
+//     max-height: 800px;
+//     background-color: $TableColor;
+//     @include VerticalAlignCenter;
+// }
+// .member_info_main {
+//     @include Remind(blue);
+// }
+// // 下方按鈕
+// .member_info_Bt{
+// margin-bottom: 50px;
+// }
+// .member_info_BtColor{
+//     background-color: $AccentColor2;
+// }
 
 
 
