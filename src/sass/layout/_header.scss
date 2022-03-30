@@ -42,7 +42,7 @@ header.backHeader{
     width: $RWD;
     height: 130px;
 
-    background-color: $BackColor;
+    background-color: $BHColor;
 
     .headerContainer{
         width: fit-content;
@@ -74,7 +74,7 @@ header.backHeader{
             margin-top: 76px;
 
             h5{
-                color: $TextColor2;
+                color: $InputColor;
                 font-weight: map-get($FontWeight, light);
                 border: none;
             }
@@ -101,7 +101,7 @@ header.backHeader{
             box-shadow: $BoxShadow;
             
             h6{
-                color: $TextColor2;
+                color: $InputColor;
                 font-weight: map-get($FontWeight, light);
             }
         }
