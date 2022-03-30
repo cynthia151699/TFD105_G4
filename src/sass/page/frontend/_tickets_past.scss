@@ -1,8 +1,7 @@
 .past_mainblock {
-    // @include LinkImg(tickets, tickets_pic7, jpeg, cover, null, null);
+    @include LinkImg(tickets, tickets_pic8, jpg, cover, null, null);
     width: 100%;
     height: $RWD;
-    filter: opacity(70%);
 }
 
 .past_topblock {
@@ -13,19 +12,27 @@
     width: 50%;
 }
 
+.past_textblock>h3,
+.past_textblock>h4 {
+    color: $TextColor2;
+}
+
 .past_imgblock {
     width: 50%;
 }
 
-.past_imgblock {
-    width: 500px;
-    height: 370px;
+.past_imgblock>img {
+    // width: 500px;
+    // height: 370px;
+    width: $Width;
+
 }
 
 .past_bottomblock {
-    margin: $HorizontalAlignCenter; // 大哥你好好看看我mixin 跟var 的scss 都寫了什麼...不要都用include...大家的程式都死機了...
+    @include Flex(row);
 }
 
-.past_bottomblock button {
-    background-color: #F29966;
+.past_bottomblock>.defaultBtn {
+    margin: $HorizontalAlignCenter;
+    background-color: $AccentColor2;
 }
