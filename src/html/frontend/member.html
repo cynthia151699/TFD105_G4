@@ -17,84 +17,107 @@
       "active4" : "active", })
 
       <main>
-        <div class="member_main_all_block">
-          <form class="member_login_block">
-            <h2 class="mbSpace70">Welcome back</h2>
-            <h4 class="mbSpace20">EMAIL</h4>
-            <input type="email" class="mbSpace20 member_input_text" />
-            <h4 class="mbSpace20">PASSWORD</h4>
-            <input type="password" class="mbSpace20 member_input_text" />
-            <br>
-            <label class="mbSpace40"><a calss="Forgot_password" href="./member_forget.html">Forgot password?</a></label>
-            <br>
-            <div class="mbSpace10">
-              <a class="defaultBtn member_input_button1" href="#">
-                <span class="mlSpace60 mrSpace60">Sign In</span>
-              </a>
+        <!-- 中央表單 -->
+        <div class="member_main_all">
+          <div class="cont member_main_all_block mtSpace30">
+            <!-- 登入 -->
+            <div class="sign-in member_form">
+              <h2 class="mbSpace50">Welcome back</h2>
+              <label class="mbSpace20">
+                <span class="member_span">
+                  <h4>EMAIL</h4>
+                </span>
+                <br>
+                <input type="email" class="member_input_text" />
+              </label>
+              <br>
+              <label class="mbSpace10">
+                <span class="member_span">
+                  <h4>PASSWORD</h4>
+                </span>
+                <br>
+                <input type="password" class="member_input_text" />
+              </label>
+              <br>
+              <a calss="Forgot_password" href="./member_forget.html">Forgot password?</a>
+              <button type="button" class="member_submit member_cla_button">LOG IN</button>
+              <button type="button" class="fb-btn member_cla_button">Connect with facebook</button>
             </div>
-            <!-- <button type="button" class="submit defaultBtn">Sign In</button> -->
-            <br>
-            <div class="mbSpace60">
-              <a class="defaultBtn member_input_button2" href="#">
-                <span class="">Connect with facebook</span>
-              </a>
-            </div>
-            <!-- <button type="button" class="fb-btn defaultBtn"> <span>Connect with facebook</span></button> -->
-          </form>
-          <!-- 移動bar 會員-->
-          <div class="member_sign_up ">
-            <div class="member_sign_text_main mbSpace250">
-              <h2 class="mtSpace30 mbSpace60 member_sign_text">New here?</h2>
-              <h4 class="mbSpace60 prSpace50 plSpace50 member_sign_text">Sign up and discover great amount of new
-                opportunities!</h4>
-              <!-- <div class="member_sign_btn">
-                      <span class="member_sign_up defaultBtn">Sign Up</span>
-                  </div> -->
-              <a class="defaultBtn member_forget_BtColor2" href="#">
-                <span class="">Sign Up</span>
-              </a>
-            </div>
-
-          </div>
-          <!-- 移動bar 註冊-->
-          <div class="member_sign_in">
-            <h2>One of us?</h2>
-            <p>
-              If you already has an account, just sign in. We've missed you!
-            </p>
-            <div class="member_sign_btn">
-              <span class="member_sign_in defaultBtn">Sign In</span>
-            </div>
-          </div>
-          <!-- 註冊 -->
-          <div class="member_new_login">
-            <form class="member_singup_block" id="member_form">
-              <h4>NAME</h4>
-              <input type="name" />
-              <h4>EMAIL</h4>
-              <input type="text" name="mail" id="member_mail" />
-              <h4>PASSWORD</h4>
-              <input type="password" />
-              <h4>PASSWORD CONFIRM</h4>
-              <input type="password" />
-              <h4>PHONE NUMBER</h4>
-              <input type="text" />
-              <div class="member_login_detail field">
-                <input type="checkbox" class="member_login_choose" />
-                <h4>
-                  I would like to receive news, tips and marketing offers from
-                  Anno.
-                </h4>
-                <input type="checkbox" class="member_login_confirm" />
-                <h4>
-                  I have read and understood the Terms & Conditions and Privacy
-                  Policy.
-                </h4>
-                <!-- <input type="submit" id="button" value="Send Email" class="defaultBtn"/> -->
-                <button type="submit" id="member_button" class=" defaultBtn">
-                  <h4>Sign In</h4>
-                </button>
+            <!-- 移動框 -->
+            <div class="sub-cont">
+              <div class=" member_img">
+                <div class=" m--up member_img__text">
+                  <h2 class="mbSpace50 member_move_text">New here?</h2>
+                  <p>Sign up and discover great amount of new opportunities!
+                  </p>
+                </div>
+                <div class="m--in member_img__text">
+                  <h2 class="mbSpace50 member_move_text">One of us?</h2>
+                  <p>If you already has an account, just sign in. We've missed you!</p>
+                </div>
+                <div class="member_img__btn">
+                  <span class="m--up member_span">SIGN UP</span>
+                  <span class="m--in member_span">SIGN IN</span>
+                </div>
               </div>
+              <!-- 註冊 -->
+              <div class="sign-up member_form">
+                <form class="member_singup_block" id="member_form">
+                  <label class="mbSpace10">
+                    <span class="member_span">
+                      <h4>NAME</h4>
+                    </span>
+                    <input type="text" class="member_input_text" />
+                  </label>
+                  <label class="mbSpace10">
+                    <span class="member_span">
+                      <h4>EMAIL</h4>
+                    </span>
+                    <input type="text" name="mail" class="member_input_text" id="member_mail" />
+                  </label>
+                  <label class="mbSpace10">
+                    <span class="member_span">
+                      <h4>PASSWORD</h4>
+                    </span>
+                    <input type="password" class="member_input_text" />
+                  </label>
+                  <label class="mbSpace10">
+                    <span class="member_span">
+                      <h4>PASSWORD CONFIRM</h4>
+                    </span>
+                    <input type="password" class="member_input_text" />
+                  </label>
+                  <label class="mbSpace10">
+                    <span class="member_span">
+                      <h4>PHONE NUMBER</h4>
+                    </span>
+                    <input type="text" class="member_input_text" />
+                  </label>
+                  <!-- 確認相關區域 -->
+                  <label>
+                    <span class="member_span">
+                      <input type="checkbox" class="member_login_choose mtSpace10" />
+                      <p class="member_p_style">
+                        I would like to receive news, tips and marketing offers from
+                        Anno.
+                      </p>
+                    </span>
+                  </label>
+                  <label>
+                    <span class="member_span">
+                      <input type="checkbox" class="member_login_confirm mtSpace10" />
+                      <p class="member_p_style">
+                        I have read and understood the Terms & Conditions and Privacy
+                        Policy.
+                      </p>
+                    </span>
+                  </label>
+                  <button type="submit" class="defaultBtn" id="member_button">SIGN UP</button>
+                  <!-- <button type="button" class="fb-btn button1">Connect with<span
+                    class="member_span">facebook</span></button> -->
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -111,6 +134,12 @@
     emailjs.init("rB4cW-mtW8WwyODex");
   </script>
   <script src="./../../js/member.min.js"></script>
+  <!-- 選單左右移動 -->
+  <script>
+    document.querySelector('.member_img__btn').addEventListener('click', function () {
+      document.querySelector('.cont').classList.toggle('s--signup');
+    });
+  </script>
 </body>
 
 </html>
