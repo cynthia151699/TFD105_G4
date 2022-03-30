@@ -13,6 +13,14 @@
         "active6" : "active"
         })
 
+        <div class="popUp" style="position: absolute; z-index: 1; width: calc(100% - 175px); height: 100vh; margin-left: 175px; background-color: #293241; opacity: 0.7;">
+            <div class="popUpwindows">
+                <form action="post">
+                    折扣碼編號<input type="text">
+                </form>
+            </div>
+        </div>
+
         <div class="tableContainer">
             <!-- 頁首 -->
             @@include('./../../layout/backheader.html', {
@@ -20,24 +28,24 @@
             tittle2: "以折扣碼名稱查詢",
             })
 
-            <form action="#">
+            <form action="post">
                 <table>
                     <thead>
                         <tr>
                             <!-- table row -->
-                            <td>折扣碼編號123</td>
-                            <td>折扣碼名稱</td>
+                            <td>折扣碼編號</td>
+                            <td>折扣碼項目</td>
                             <td>折扣碼內容</td>
                             <td>折扣碼</td>
                             <td>折扣碼狀態</td>
                             <td>創建時間</td>
-                            <td> </td>
+                            <td>&nbsp</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>xxxxx</td>
+                            <td>小禮物</td>
                             <td>恭喜您獲得小禮物一份</td>
                             <td>123456</td>
                             <td>開啟</td>
@@ -46,16 +54,16 @@
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>xxxxx</td>
+                            <td>折價券</td>
                             <td>恭喜您獲得50元折價券</td>
-                            <td>7891011</td>
+                            <td>789101</td>
                             <td>開啟</td>
                             <td>2022-02-22<br>00:00:00</td>
                             <td><button>編輯</button></td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>xxxxx</td>
+                            <td>小禮物</td>
                             <td>恭喜您獲得小禮物一份</td>
                             <td>123456</td>
                             <td>開啟</td>
@@ -64,33 +72,15 @@
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>xxxxx</td>
+                            <td>折價券</td>
                             <td>恭喜您獲得50元折價券</td>
-                            <td>7891011</td>
+                            <td>789101</td>
                             <td>開啟</td>
                             <td>2022-02-22<br>00:00:00</td>
                             <td><button>編輯</button></td>
                         </tr>
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                            <td>&nbsp</td>
-                        </tr>
                         <tr>
                             <td>&nbsp</td>
                             <td>&nbsp</td>
