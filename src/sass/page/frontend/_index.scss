@@ -45,35 +45,35 @@
 
 .curr_text{
   @include HorizontalAlignCenter;
-  @include Remind;
   width: 100vmax;
   padding: 0 20px;
-
+  h2.currTitle{
+    font-size: 110px;
+    line-height: 1;
+  }
+  .currTitle{
+    color: purple;
+    text-shadow: $TextShadow;
+    font-weight: map-get($FontWeight ,'medium' );  
+  }
 }
 
-.currTitle{
-  color: purple;
+
+.curr_rightpart{
+  text-align: right;
   text-shadow: $TextShadow;
-  line-height:1.6;
 }
 
 .currName{
-  text-align: right;
-  line-height:1.6;
   color:$TextColor2;
-  text-shadow: $TextShadow;
+  line-height:$LineHeight;
 }
 
 .currDate{
-  text-align: right;
-  line-height:1.6;
   color:$TextColor2;
-  text-shadow: $TextShadow;
+  line-height:$LineHeight;
 }
 
-.seeMore{
-  text-align: right;
-  color:$TextColor2;
-  text-shadow: $TextShadow;
-  cursor: pointer;
+.buyTicket{
+  text-shadow: none;
 }
