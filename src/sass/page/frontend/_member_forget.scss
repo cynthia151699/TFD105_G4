@@ -1,26 +1,27 @@
-// 整個輸入區域
-.main_block_all{
-    margin: $HorizontalAlignCenter;
-}
-.member_forger_main_block{
-    @include Remind();
-    // 置中跟隨頁面調整
-    margin: $HorizontalAlignCenter;
+//forget相關區域
+.member_forget_main_block {
+    margin: 50px auto;
+    width: 1000px;
+    height: calc(100vh - 190px);
+    max-height: 800px;
     background-color: $TextColor2;
-    // 寬度先暫訂
-    // width: 1000px;
-    // width:calc(100% );
-    margin-left: 175px;  
-    margin-right: 175px;
-    margin-bottom: 50px;
+    @include VerticalAlignCenter;
 }
-.member_forger_main_text{
-    @include Remind(blue);
+.member_forget_main {
     text-align: center;
-    // 先用margin
-    margin-left: 175px;  
-    margin-right: 175px;
-    margin-bottom: 50px;
 }
-
-
+//文字顏色
+.member_forget_text{
+    color:$TextColor;
+}
+.member_forget_input{
+    background-color: $HFBGColor;
+    color:$TextColor2;
+}
+//按鈕顏色
+.member_forget_BtColor1{
+    background-color: #AD9F9F;
+}
+.member_forget_BtColor2{
+    background-color: $AccentColor2;
+}

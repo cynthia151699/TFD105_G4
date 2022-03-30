@@ -1,7 +1,8 @@
 emailjs.init("rB4cW-mtW8WwyODex");
 
-const btn = document.getElementById("button");
-document.getElementById("form").addEventListener("submit", function (event) {
+
+const btn = document.getElementById("member_button");
+document.getElementById("member_form").addEventListener("submit", function (event) {
   event.preventDefault();
 
   btn.value = "Sending...";
