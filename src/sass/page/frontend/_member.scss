@@ -30,6 +30,12 @@
   color: $TextColor2;
   line-height: 46px;
 }
+.member_login_choose{
+  zoom:165%;
+}
+.member_login_confirm{
+  zoom:165%;
+}
 
 //文字框顏色
 .member_input_text {
@@ -47,7 +53,6 @@ $switchAT: 1.2s;
 $inputW: 260px;
 $btnH: 36px;
 
-$diffRatio: ($contW - $imgW) / $contW;
 
 @mixin signUpActive {
   .cont.s--signup & {
