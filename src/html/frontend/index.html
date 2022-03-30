@@ -3,6 +3,13 @@
 
 <head>
     @@include('./../../layout/head.html')
+
+    <script>
+		document.documentElement.className = "js";
+		var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+		supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+	</script>
+
 </head>
 
 <body>
@@ -18,12 +25,12 @@
                     <div class="index_page1">
 
                         <video autoplay muted loop class="welcome_video">
-                            <source src="/src/img/index/index_video.mp4" type="video/mp4">
+                            <source src="./../../img/index/index_video.mp4" type="video/mp4">
                         </video>
 
                         <div class="btn_next">
                             <h3 class="btn_going">See what’s<br>going on today</h3>
-                            <img class="btn_img" src="/src/img/index/bnt.png" alt="#">
+                            <img class="btn_img" src="./../../img/index/bnt.png" alt="#">
                         </div>
                     </div>
                 </div>
@@ -48,7 +55,9 @@
 
                 <div class="section active latestNews" id="section1">
                     <div class="index_page3">
-                        <img src="/src/img/index/index_pic2.jpeg" alt="">
+
+
+                        
                     </div>
                 </div>
             </div>
