@@ -1,6 +1,5 @@
 .member_modify_title {
     margin: 0px auto;
-    // @include Remind(red);
     width: 1000px;
     text-align: center;   
 }
@@ -8,7 +7,6 @@
     color: $TextColor2;
 }
 .member_modify_main_block{
-    // @include Remind(green);
     width: 1000px;
     height: calc(100vh - 320px);
     max-height: 800px;

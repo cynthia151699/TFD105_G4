@@ -1,7 +1,6 @@
 // //info相關區域
 .member_info_title {
     margin: 0px auto;
-    // @include Remind(red);
     width: 1000px;
     text-align: center;   
 }
@@ -12,7 +11,6 @@
     @include Flex (1);
 }
 .member_info_main_block{
-    @include Remind(green);
     width: 1000px;
     height: calc(100vh - 280px);
     max-height: 800px;

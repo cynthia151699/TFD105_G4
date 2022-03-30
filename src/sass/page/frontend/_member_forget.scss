@@ -1,7 +1,6 @@
 //forget相關區域
 .member_forget_main_block {
     margin: 50px auto;
-    // @include Remind(green);
     width: 1000px;
     height: calc(100vh - 190px);
     max-height: 800px;
@@ -9,7 +8,6 @@
     @include VerticalAlignCenter;
 }
 .member_forget_main {
-    // @include Remind(blue);
     text-align: center;
 }
 //文字顏色
