@@ -34,7 +34,8 @@
 }
 .wrapperGuideticket{
     @include Remind($color:red);
-    height: 300px;
+    width:$RWD;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -45,9 +46,10 @@
         color:$HFBGColor;
     }
     .guideticketCntMd{
+        @include Remind($color:red);
         color:$SecondaryColor;
     }
-    span{
+    .guideticketCntLine{
         display: block;
         width: 500px;
         height: 4px;
@@ -55,13 +57,17 @@
     }
     .guideticketCntTime{
         @include Flex (row);
-        @include Remind($color:red);
-        width:300px;
+
+        width:520px;
     }
     .guideticketCntPr{
         @include Flex (row);
         @include Remind($color:red);
     }
+    // a{
+    //     width:400px;
+    //     height: 100px;
+    // }
 }
     
 // -----交通資訊----------
