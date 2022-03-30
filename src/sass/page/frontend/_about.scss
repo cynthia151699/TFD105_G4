@@ -1,3 +1,4 @@
+// =====================anno about=======================
 .wrapperAbout{
     // @include Remind();
     width: $Width;
@@ -8,14 +9,17 @@
     h4{
         color:$TextColor2;
     }
-    .wrapperAboutCntFr{
-
-        text-align: right;
-    }
-    .wrapperAboutCntEn{
-        text-align: right;
-    }
 }
+.aboutCntFr{
+    width:$RWD;
+    display: flex;
+    justify-content: flex-end;
+}
+.aboutCntEn{
+    text-align: right;
+}
+
+// ======================anno history======================
 .aboutHistory{
     @include LinkImg(about, about_pic1, png, cover, null, null);
     .aboutHistoryContent{
@@ -29,11 +33,15 @@
     h4{
         color:$TextColor2;
     }
-    .aboutHistoryMid{
-    }
 }
-.aboutHistoryMd{
-    text-align: right;
+
+.wrapperAbhiMd{
+    display: flex;
+   justify-content: flex-end;
+}
+.aboutHistoryMid{
+    width: 800px;
+    
 }
 .movePic{
    position: relative;
