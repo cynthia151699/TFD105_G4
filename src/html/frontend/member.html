@@ -19,24 +19,42 @@
       <main>
         <div class="member_main_all_block">
           <form class="member_login_block">
-            <h2>Welcome back</h2>
-            <h4>EMAIL</h4>
-            <input type="email" />
-            <h4>PASSWORD</h4>
-            <input type="password" />
-            <label><a calss="Forgot_password" href="">Forgot password?</a></label>
-            <button type="button" class="submit defaultBtn">Sign In</button>
-            <button type="button" class="fb-btn defaultBtn"> <span>Connect with facebook</span></button>
+            <h2 class="mbSpace70">Welcome back</h2>
+            <h4 class="mbSpace20">EMAIL</h4>
+            <input type="email" class="mbSpace20 member_input_text" />
+            <h4 class="mbSpace20">PASSWORD</h4>
+            <input type="password" class="mbSpace20 member_input_text" />
+            <br>
+            <label class="mbSpace40"><a calss="Forgot_password" href="./member_forget.html">Forgot password?</a></label>
+            <br>
+            <div class="mbSpace10">
+              <a class="defaultBtn member_input_button1" href="#">
+                <span class="mlSpace60 mrSpace60">Sign In</span>
+              </a>
+            </div>
+            <!-- <button type="button" class="submit defaultBtn">Sign In</button> -->
+            <br>
+            <div class="mbSpace60">
+              <a class="defaultBtn member_input_button2" href="#">
+                <span class="">Connect with facebook</span>
+              </a>
+            </div>
+            <!-- <button type="button" class="fb-btn defaultBtn"> <span>Connect with facebook</span></button> -->
           </form>
           <!-- 移動bar 會員-->
-          <div class="member_sign_up">
-            <div class="member_sign_text">
-              <h2>New here?</h2>
-              <p>Sign up and discover great amount of new opportunities!</p>
+          <div class="member_sign_up ">
+            <div class="member_sign_text_main mbSpace250">
+              <h2 class="mtSpace30 mbSpace60 member_sign_text">New here?</h2>
+              <h4 class="mbSpace60 prSpace50 plSpace50 member_sign_text">Sign up and discover great amount of new
+                opportunities!</h4>
+              <!-- <div class="member_sign_btn">
+                      <span class="member_sign_up defaultBtn">Sign Up</span>
+                  </div> -->
+              <a class="defaultBtn member_forget_BtColor2" href="#">
+                <span class="">Sign Up</span>
+              </a>
             </div>
-            <div class="member_sign_btn">
-              <span class="member_sign_up defaultBtn">Sign Up</span>
-            </div>
+
           </div>
           <!-- 移動bar 註冊-->
           <div class="member_sign_in">
@@ -49,12 +67,12 @@
             </div>
           </div>
           <!-- 註冊 -->
-          <div class = "member_new_login">
-            <form class="member_singup_block" id="form">
+          <div class="member_new_login">
+            <form class="member_singup_block" id="member_form">
               <h4>NAME</h4>
               <input type="name" />
               <h4>EMAIL</h4>
-              <input type="text" name="mail" id="mail" />
+              <input type="text" name="mail" id="member_mail" />
               <h4>PASSWORD</h4>
               <input type="password" />
               <h4>PASSWORD CONFIRM</h4>
@@ -73,7 +91,7 @@
                   Policy.
                 </h4>
                 <!-- <input type="submit" id="button" value="Send Email" class="defaultBtn"/> -->
-                <button type="submit" id="button" class=" defaultBtn">
+                <button type="submit" id="member_button" class=" defaultBtn">
                   <h4>Sign In</h4>
                 </button>
               </div>
