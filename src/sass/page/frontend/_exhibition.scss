@@ -20,10 +20,7 @@ main.exRelative{
                     color: $TextColor2;
                     text-align: left;
                 }
-                a.buyTicket{
-                    display: inline-block;
 
-                }
             }
             
         }
@@ -61,7 +58,6 @@ main.exRelative{
             @include VerticalAlignCenter;
             position: relative;
             h3.exPast_title{
-                @include Remind;
                 color: $TextColor2;
                 position: absolute;
                 top: 200px;
@@ -111,27 +107,6 @@ main.exRelative{
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                div.beforePic-1{
-                    @include Remind;
-                    margin: $HorizontalAlignCenter;
-                    width: 450px;
-                    height: 120px;
-                    @include LinkImg('exhibition', 'exhibition_pic4', 'jpeg', cover, no-repeat, center);
-                }
-                div.beforePic-2{
-                    @include Remind;
-                    margin: $HorizontalAlignCenter;
-                    width: 450px;
-                    height: 120px;
-                    @include LinkImg('exhibition', 'exhibition_pic5', 'jpeg', cover, no-repeat, center);
-                }
-                div.beforePic-3{
-                    @include Remind;
-                    margin: $HorizontalAlignCenter;
-                    width: 450px;
-                    height: 120px;
-                    @include LinkImg('exhibition', 'exhibition_pic6', 'jpeg', cover, no-repeat, center);
-                }
             }
         }
     }
