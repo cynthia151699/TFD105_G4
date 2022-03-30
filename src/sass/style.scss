@@ -70,10 +70,10 @@ body{
             }
         }
 
-        h1{
-            font-family: $SpecialFont;
-            font-weight: map-get($FontWeight, medium);
-        }
+        // h1{ //優化SEO
+        //     font-family: $SpecialFont;
+        //     font-weight: map-get($FontWeight, medium);
+        // }
 
         h2{
             font-family: $SpecialFont;
@@ -86,7 +86,6 @@ body{
         }
 
         h4{
-            font-family: $SpecialFont;
             font-weight: map-get($FontWeight, regular);
         }
 
