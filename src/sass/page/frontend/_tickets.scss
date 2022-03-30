@@ -1,11 +1,11 @@
-@for $i from 1 to 3 {
-    @mixin BorderBg#{$i} {
-        border-left: 3px solid $AccentColor#{$i*2-2};
-        border-bottom: 3px solid $AccentColor#{$i*2-2};
-        border-right: 3px solid $AccentColor#{$i*2-2};
-        border-style:inset;
-    }
-}
+// @for $i from 1 to 3 {
+//     @mixin BorderBg#{$i} {
+//         border-left: 3px solid $AccentColor#{$i*2-2};
+//         border-bottom: 3px solid $AccentColor#{$i*2-2};
+//         border-right: 3px solid $AccentColor#{$i*2-2};
+//         border-style:inset;
+//     }
+// }
 
 
 main.ticketsPage{
@@ -38,7 +38,7 @@ main.ticketsPage{
                         width: 170px;
                         height: 140px;
                         @include LinkImg('tickets', 'tickets_pic1#{$i}', 'jpeg', cover, no-repeat, left);
-                        @include BorderBg2;
+                        // @include BorderBg2;
                         @include HorizontalAlignCenter;
                     }
                 }
@@ -57,7 +57,7 @@ main.ticketsPage{
                             width: 170px;
                             height: 140px;
                             @include LinkImg('tickets', 'tickets_pic#{$i+2}', 'jpeg', cover, no-repeat, left);
-                            @include BorderBg1;
+                            // @include BorderBg1;
                             @include HorizontalAlignCenter;
                         }
                     }
