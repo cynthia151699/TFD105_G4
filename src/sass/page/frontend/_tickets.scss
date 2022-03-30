@@ -1,11 +1,11 @@
-@for $i from 1 to 3 {
-    @mixin BorderBg#{$i} {
-        border-left: 3px solid $AccentColor#{$i*2-2};
-        border-bottom: 3px solid $AccentColor#{$i*2-2};
-        border-right: 3px solid $AccentColor#{$i*2-2};
-        border-style:inset;
-    }
-}
+// @for $i from 1 to 3 {
+//     @mixin BorderBg#{$i} {
+//         border-left: 3px solid $AccentColor#{$i*2-2};
+//         border-bottom: 3px solid $AccentColor#{$i*2-2};
+//         border-right: 3px solid $AccentColor#{$i*2-2};
+//         border-style:inset;
+//     }
+// }
 
 
 main.ticketsPage{
@@ -32,13 +32,12 @@ main.ticketsPage{
             
             li.tickets_currentBooking-1{ 
                 @for $i from 1 to 3 {
-                    a.bookingPic-#{$i}{
+                    a.currentbookingPic-#{$i}{
                         display: block;
                         @include HorizontalAlignCenter;  
                         width: 170px;
                         height: 140px;
-                        @include LinkImg('tickets', 'tickets_pic1#{$i}', 'jpeg', cover, no-repeat, left);
-                        @include BorderBg2;
+                        @include LinkImg('tickets', 'tickets_pic#{$i}', 'jpeg', cover, no-repeat, left);
                         @include HorizontalAlignCenter;
                     }
                 }
@@ -51,13 +50,12 @@ main.ticketsPage{
                 @include VerticalAlignCenter();
                 
                 li.tickets_pastBooking{
-                    @for $i from 1 to 4 {
+                    @for $i from 1 to 10 {
                         a.pastPic-#{$i} {
                             display: block;
                             width: 170px;
                             height: 140px;
                             @include LinkImg('tickets', 'tickets_pic#{$i+2}', 'jpeg', cover, no-repeat, left);
-                            @include BorderBg1;
                             @include HorizontalAlignCenter;
                         }
                     }
