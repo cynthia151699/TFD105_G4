@@ -8,7 +8,7 @@
 
 .btn_going{
     color:$TextColor2;
-    text-shadow: 2px 2px 2px #293241;
+    text-shadow: $TextShadow;
 }
 
 .btn_next{
@@ -40,17 +40,20 @@
   height: 100%;
   @include LinkImg(index, index_pic1, png, cover, null, null);
   background-size: cover;
+  @include VerticalAlignCenter;
 }
 
 .curr_text{
-  border: 1px blue solid;
-  padding: 30px;
-  padding-top: 200px;
+  @include HorizontalAlignCenter;
+  @include Remind;
+  width: 100vmax;
+  padding: 0 20px;
+
 }
 
 .currTitle{
   color: purple;
-  text-shadow: 2px 2px 2px #293241;
+  text-shadow: $TextShadow;
   line-height:1.6;
 }
 
@@ -58,18 +61,19 @@
   text-align: right;
   line-height:1.6;
   color:$TextColor2;
-  text-shadow: 2px 2px 2px #293241;
+  text-shadow: $TextShadow;
 }
 
 .currDate{
   text-align: right;
   line-height:1.6;
   color:$TextColor2;
-  text-shadow: 2px 2px 2px #293241;
+  text-shadow: $TextShadow;
 }
 
 .seeMore{
   text-align: right;
   color:$TextColor2;
-  text-shadow: 2px 2px 2px #293241;
+  text-shadow: $TextShadow;
+  cursor: pointer;
 }
