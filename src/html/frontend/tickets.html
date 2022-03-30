@@ -3,6 +3,27 @@
 
 <head>
     @@include('./../../layout/head.html')
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <!-- Demo styles -->
+    <style>
+
+        @media (max-width: 760px) {
+            .swiper-button-next {
+                right: 20px;
+                transform: rotate(90deg);
+            }
+
+            .swiper-button-prev {
+                left: 20px;
+                transform: rotate(90deg);
+            }
+        }
+
+
+    </style>
 </head>
 
 <body>
@@ -23,10 +44,10 @@
             "active4" : "active",
             })
 
-            <main>
+            <main class="ticketsPage">
 
                 <!-- coding here -->
-                <section class="tickets">
+                <section class="tickets plSpace30 prSpace30">
 
                     <h4 class="tickets_bookingName ptSpace30 pbSpace10">
                         Current booking management (click it to show QR code)
@@ -35,12 +56,12 @@
                     <ul class="tickets_currentBooking">
 
                         <li class="tickets_currentBooking-1 mrSpace100">
-                            <div class="bookingPic-1"></div>
+                            <a class="bookingPic-1" href=""></a>
                             <h6 class="tickets_bookingName2">BREAK the CLASSIC</h6>
                         </li>
 
                         <li class="tickets_currentBooking-1">
-                            <div class="bookingPic-2"></div>
+                            <a class="bookingPic-2" href=""></a>
                             <h6 class="tickets_bookingName2">TRUE COLOR</h6>
                         </li>
 
@@ -50,34 +71,88 @@
                         Past booking Management
                     </h4>
 
-                    <ul class="tickets_pastBooking">
+                    <div class="swiper">
 
-                        <li class="tickets_pastBooking mrSpace100">
-                            <div class="pastPic-1"></div>
-                            <h6 class="tickets_bookingName2">INTERWEAVE</h6>
-                        </li>
+                        <ul class="swiper-wrapper tickets_pastBooking">
+                            <li class="swiper-slide tickets_pastBooking">
+                                <a class="pastPic-1" href=""></a>
+                                <h6 class="tickets_bookingName2">INTERWEAVE</h6>
+                            </li>
 
-                        <li class="tickets_pastBooking mrSpace100">
-                            <div class="pastPic-2"></div>
-                            <h6 class="tickets_bookingName2">FOOD ART</h6>
-                        </li>
+                            <li class="swiper-slide tickets_pastBooking">
+                                <a class="pastPic-2" href=""></a>
+                                <h6 class="tickets_bookingName2">FOOD ART</h6>
+                            </li>
 
-                        <li class="tickets_pastBooking mrSpace100">
-                            <div class="pastPic-3"></div>
-                            <h6 class="tickets_bookingName2">ABSTRACT</h6>
-                        </li>
+                            <li class="swiper-slide tickets_pastBooking">
+                                <a class="pastPic-3" href=""></a>
+                                <h6 class="tickets_bookingName2">ABSTRACT</h6>
+                            </li>
 
-                        <li class="tickets_pastBooking">
-                            <div class="pastPic-4"></div>
-                            <h6 class="tickets_bookingName2">MODERN TATTOO</h6>
-                        </li>
-                        
-                    </ul>
+                            <li class="swiper-slide tickets_pastBooking">
+                                <a class="pastPic-3" href=""></a>
+                                <h6 class="tickets_bookingName2">MODERN TATTOO</h6>
+                            </li>
+
+
+                            <li class="swiper-slide tickets_pastBooking">
+                                <a class="pastPic-3" href=""></a>
+                                <h6 class="tickets_bookingName2">MODERN TATTOO</h6>
+                            </li>
+                            <li class="swiper-slide tickets_pastBooking">
+                                <a class="pastPic-3" href=""></a>
+                                <h6 class="tickets_bookingName2">MODERN TATTOO</h6>
+                            </li>
+                            <li class="swiper-slide tickets_pastBooking">
+                                <a class="pastPic-3" href=""></a>
+                                <h6 class="tickets_bookingName2">MODERN TATTOO</h6>
+                            </li>
+                            <li class="swiper-slide tickets_pastBooking">
+                                <a class="pastPic-3" href=""></a>
+                                <h6 class="tickets_bookingName2">MODERN TATTOO</h6>
+                            </li>
+                            
+                        </ul>
+
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+
+                    </div>
                 </section>
             </main>
 
             <!-- 頁尾 -->
             @@include('./../../layout/footer.html')
+
+            <!-- Swiper JS -->
+            <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper('.swiper', {
+                    slidesPerView: 4,
+                    loop: true,
+                    direction: 'vertical',
+                    direction: getDirection(),
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                },
+                on: {
+                    resize: function () {
+                        swiper.changeDirection(getDirection());
+                    },
+                },
+                });
+        
+                function getDirection() {
+                    var windowWidth = window.innerWidth;
+                    var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+            
+                    return direction;
+                }
+            </script>
 
         </div>
     </div>
