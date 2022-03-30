@@ -7,76 +7,53 @@
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-  <!-- 這邊css確定能跑之後要放進scss啊 -->
-  <!-- Demo styles -->
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
+  <!-- fontawesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 50%;
-      /* cursor: grab; */
-      cursor: grabbing;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: darkblue;
-
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: auto;
-    }
-
-
-    .swiper-wrapper {
-      width: 100%;
-      height: 50vh;
-    }
-  </style>
 </head>
 
-
-
 <body>
+
+  <div class="closebutton">
+    <a class="buyTicket" href="#">
+      <span class="top-key"></span>
+      <span class="text">Close</span>
+      <span class="bottom-key-1"></span>
+      <span class="bottom-key-2"></span>
+    </a>
+  </div>
+
+  <div class="buttons">
+    <!-- rotate -->
+    <div class="rotate">
+      <a href="#">
+        <!-- <i class="fa-solid fa-rotate">Hey</i> -->
+        <img src="./../../img/game/rotate-solid.svg">
+      </a>
+    </div>
+
+    <!-- lock -->
+    <i class="fa-solid fa-lock"></i>
+
+    <!-- unlock -->
+    <i class="fa-solid fa-lock-open"></i>
+
+    <!-- circle-nodes -->
+    <div class="circle">
+      <a href="#">
+        <!-- <i class="fa-solid fa-circle-nodes"></i> -->
+        <img src="./../../img/game/circle-nodes-solid.svg">
+      </a>
+    </div>
+
+  </div>
+
   <!-- Swiper -->
+  <!-- 上半邊圖 -->
   <div class="swiper mySwiper">
 
     <div class="swiper-wrapper">
 
-      <!-- 上半邊圖 -->
       <div class="swiper-slide">
         <img src="./../../img/game/1.png">
       </div>
@@ -85,11 +62,17 @@
         <img src="./../../img/game/2.png">
       </div>
 
-      <div class="swiper-slide"></div>
+      <div class="swiper-slide">
+        <img src="./../../img/game/3.png" alt="">
+      </div>
 
-      <div class="swiper-slide"></div>
+      <div class="swiper-slide">
+        <img src="./../../img/game/4.png" alt="">
+      </div>
 
-      <div class="swiper-slide"></div>
+      <div class="swiper-slide">
+        <img src="./../../img/game/5.png" alt="">
+      </div>
 
     </div>
 
@@ -97,12 +80,11 @@
 
 
 
-
+  <!-- 下半邊圖 -->
   <div class="swiper mySwiper">
 
     <div class="swiper-wrapper">
 
-      <!-- 下半邊圖 -->
       <div class="swiper-slide">
         <img src="./../../img/game/1-1.png">
       </div>
@@ -111,11 +93,17 @@
         <img src="./../../img/game/2-1.png">
       </div>
 
-      <div class="swiper-slide"></div>
+      <div class="swiper-slide">
+        <img src="./../../img/game/3-1.png" alt="">
+      </div>
 
-      <div class="swiper-slide"></div>
+      <div class="swiper-slide">
+        <img src="./../../img/game/4-1.png" alt="">
+      </div>
 
-      <div class="swiper-slide"></div>
+      <div class="swiper-slide">
+        <img src="./../../img/game/5-1.png" alt="">
+      </div>
 
     </div>
   </div>
@@ -124,7 +112,9 @@
 
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <!-- <script src="./slick-random.js"></script> 這是哪支程式？ -->
+
+  <!-- 參考不一定會用，待刪 -->
+  <!-- <script src="./slick-random.js"></script> -->
 
   <!-- 大家自己寫的js 在這！ -->
   <script src="./../../js/game.min.js"></script>
