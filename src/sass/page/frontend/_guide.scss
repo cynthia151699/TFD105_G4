@@ -30,12 +30,11 @@
 
 // ----------展覽票價資訊-----------
 .guideTicket{
-    @include LinkImg(visit, visit_pic3-1-1, png, 60%, no-repeat,  left top );
+    @include LinkImg(visit, visit_pic3, jpeg, 100% 100%, no-repeat,  left top );
 }
 .wrapperGuideticket{
-    @include Remind($color:red);
     width:$RWD;
-    height: 400px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -46,28 +45,25 @@
         color:$HFBGColor;
     }
     .guideticketCntMd{
-        @include Remind($color:red);
         color:$SecondaryColor;
     }
     .guideticketCntLine{
+        border:2px solid $NavBGColor;
         display: block;
-        width: 500px;
+        width: 600px;
         height: 4px;
         background-color: $NavBGColor;
     }
     .guideticketCntTime{
-        @include Flex (row);
 
-        width:520px;
+        @include Flex (row);
+        line-height: 1.6;
+        width:550px;
     }
     .guideticketCntPr{
         @include Flex (row);
-        @include Remind($color:red);
+        width:550px;
     }
-    // a{
-    //     width:400px;
-    //     height: 100px;
-    // }
 }
     
 // -----交通資訊----------
