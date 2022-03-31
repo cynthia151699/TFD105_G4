@@ -43,6 +43,15 @@
   color: $TextColor2;
   width: 400px;
 }
+// 
+.member_Terms{
+
+
+}
+.member_Privacy{
+
+
+}
 
 // 移動距離
 $contW: 1000px;
@@ -53,7 +62,7 @@ $switchAT: 1.2s;
 $inputW: 260px;
 $btnH: 36px;
 
-
+//整個首頁滑動效果
 @mixin signUpActive {
   .cont.s--signup & {
     @content;
