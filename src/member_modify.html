@@ -2,23 +2,23 @@
 <html lang="en">
 
 <head>
-  @@include('./../../layout/head.html')
+  @@include('./layout/head.html')
 </head>
 
 <body>
   <div class="wrapper">
     <!-- 導覽列 -->
-    @@include('./../../layout/nav.html', { "active5" : "active" })
+    @@include('./layout/nav.html', { "active5" : "active" })
 
     <div class="mainContainer">
       <!-- 頁首 -->
-      @@include('./../../layout/header.html', { "tittle1" : "LOG IN",
+      @@include('./layout/header.html', { "tittle1" : "LOG IN",
       "tittle2" : "SIGN UP", "active1" : "activeb", "active3" : "active",
       "active4" : "active", })
 
       <main>
         <div class="member_modify_title ptSpace30 ">
-          <h2 class="member_modify_text">Overview</h2>
+          <h2 class="member_modify_text">Edit your member information</h2>
           <div class="member_modify_main_block mtSpace30 mbSpace30">
             <ul class="plSpace30">
               <li class="mbSpace40">
@@ -48,7 +48,7 @@
             </ul>
           </div>
         <div>
-          <h5 class="member_modify_text"><input type="radio" class="mrSpace20">I would like to receive news, tips and marketing offers from Anno.</h5>
+          <h5 class="member_modify_text"><input type="checkbox" class="mrSpace20">I would like to receive news, tips and marketing offers from Anno.</h5>
         </div>
           <div class="member_modify_Bt mtSpace30">
             <a class="defaultBtn mrSpace90 member_forget_BtColor1" href="#">
@@ -60,12 +60,12 @@
         </div>
       </main>
       <!-- 頁尾 -->
-      @@include('./../../layout/footer.html')
+      @@include('./layout/footer.html')
     </div>
   </div>
 
   <!-- 載入js、套件 -->
-  <script src="./../../layout/importjs.html"></script>
+  <script src="#"></script>
 </body>
 
 </html>

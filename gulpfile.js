@@ -14,6 +14,19 @@ const rename = require('gulp-rename');
 
 exports.p = package;
 
+// // 圖片壓縮
+// const imagemin = require('gulp-imagemin');
+
+// function min_images(){
+//     return src(['src/images/*.*', 'src/img/**/*.*'])
+//     .pipe(imagemin([
+//         imagemin.mozjpeg({quality: 70, progressive: true}) // 壓縮品質      quality越低 -> 壓縮越大 -> 品質越差 
+//     ]))
+//     .pipe(dest('dist/images'))
+// }
+
+// exports.mini_img = min_images;
+
 // css minify
 const cleanCSS = require('gulp-clean-css');
 
@@ -93,25 +106,24 @@ exports.s = sassstyle;
 const fileinclude = require('gulp-file-include');
 
 function includeHTML() {
-   return src(['./src/html/*.html' , './src/html/**/*.html'])
+   return src('./src/*.html')
        .pipe(fileinclude({
            prefix: '@@',
            basepath: '@file'
        }))
-       .pipe(dest('./dist/html'));
+       .pipe(dest('./dist'));
 }
 
 exports.html = includeHTML;
 
 
 function watchall(){
-   watch(['src/html/*.html' , 'src/html/**/*.html' , 'src/layout/*.html' ,] , includeHTML);
+   watch(['src/*.html', 'src/layout/*.html' ,] , includeHTML);
    watch(['src/sass/*.scss' , 'src/sass/**/*.scss' , 'src/sass/**/**/*.scss'] , sassstyle);
    
 }
 
 exports.w = watchall
-
 
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
@@ -119,13 +131,13 @@ const reload = browserSync.reload;
 function browser(done) {
    browserSync.init({
        server: {
-           baseDir: "./dist/html/frontend",
+           baseDir: "./dist",
            index: "index.html"
        },
        port: 3000
    // http://127.0.0.1:5500/ 防火牆的關係會沒辦法正常顯示網頁的樣子...  
    });
-   watch(['src/html/*.html' , 'src/html/**/*.html' , 'src/layout/*.html' ,] , includeHTML).on('change' , reload);
+   watch(['src/*.html', 'src/layout/*.html' ,] , includeHTML).on('change' , reload);
    watch(['src/sass/*.scss' , 'src/sass/**/*.scss' , 'src/sass/**/**/*.scss'] , sassstyle).on('change' , reload);
    watch(['src/js/*.js' , 'src/js/**/*.js'] , minijs).on('change' , reload);
    watch(['src/img/*.*' ,  'src/img/**/*.*'] , package).on('change' , reload);
