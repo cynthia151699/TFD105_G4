@@ -1,3 +1,17 @@
+@mixin BorderBg1{
+    border-left: 4px solid $AccentColor2;
+    border-bottom: 4px solid $AccentColor2;
+    border-right: 4px solid $AccentColor2;
+    border-style:inset;
+}
+
+@mixin BorderBg2{
+    border-left: 4px solid $AccentColor;
+    border-bottom: 4px solid $AccentColor;
+    border-right: 4px solid $AccentColor;
+    border-style:inset;
+}
+
 
 main.ticketsPage{
     
@@ -29,6 +43,7 @@ main.ticketsPage{
                         height: 140px;
                         @include LinkImg('tickets', 'tickets_pic#{$i}', 'jpeg', cover, no-repeat, left);
                         @include HorizontalAlignCenter;
+                        @include BorderBg1;
                     }
                 }
             }
@@ -50,6 +65,7 @@ main.ticketsPage{
                             height: 140px;
                             @include LinkImg('tickets', 'tickets_pic#{$i+2}', 'jpeg', cover, no-repeat, left);
                             @include HorizontalAlignCenter;
+                            @include BorderBg2;
                         }
                     }
                 }

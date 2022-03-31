@@ -5,11 +5,8 @@ main.exRelative{
         div#left1{
             @include VerticalAlignCenter;
             @include Remind;
-            position: relative;
             section.exCurrent{
                 @include Remind(green);
-                position: absolute;
-                top: 0;
                 
                 h2{
                     color: #F0F28D;
@@ -21,26 +18,20 @@ main.exRelative{
                     text-align: left;
                 }
 
-            }
-            
+            }            
         }
         div#left2{
             @include Remind;
             @include VerticalAlignCenter;
-            position: relative;
             section.exCurrent{
                 @include Remind(yellow);
                 @include VerticalAlignCenter;
-                position: absolute;
-                top: 0;
                 width: 100%;
                 height: 100%;
                 div.currentPic-1{
                     @include Remind(green);
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+                    @include HorizontalAlignCenter;
+                    z-index: 31;
                     width: 500px;
                     height: 350px;
                     @include LinkImg('exhibition', 'exhibition_pic2', 'jpeg', cover, no-repeat, center);
@@ -50,6 +41,7 @@ main.exRelative{
                     left: 0;
                     bottom: 0;
                     line-height: 1; 
+                    z-index: 30;
                 }
             }
         }
@@ -84,12 +76,9 @@ main.exRelative{
             @include Remind;
             @include LinkImg('exhibition', 'exhibition_pic3', 'jpeg', cover, no-repeat, center);
             @include VerticalAlignCenter;
-            margin: $HorizontalAlignCenter;
-            position: relative;
             section.exUpcoming{
                 @include Remind;
-                position: absolute;
-                top: 0;
+                @include HorizontalAlignCenter;
                 h2,h3,h5,p{
                     color: $TextColor2;
                     line-height: $LineHeight;
@@ -100,25 +89,14 @@ main.exRelative{
         div#right3{
             @include Remind;
             @include VerticalAlignCenter;
-            position: relative;
+
             section.exBefore{
                 @include Remind(blue);
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-
-                // @for $i from 1 to 4 {
-                //     div.beforePic-#{$i}{
-                //         @include Remind;
-                //         margin: $HorizontalAlignCenter;
-                //         width: 450px;
-                //         height: 120px;
-                //         @include LinkImg('exhibition', 'exhibition_pic #{$i+3}', 'jpeg', cover, no-repeat, center);
-                //     }
-                // }
+                @include HorizontalAlignCenter;
             }
         }
     }
 }
+
+
 
