@@ -1,0 +1,106 @@
+.game_body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+}
+
+// closebutton
+.closebutton {
+    background-color: $AccentColor2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+}
+
+// rotatebutton
+.buttons>.rotate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 9;
+    background-color: $AccentColor2;
+    // border-radius: $BorderRadius;
+    border-radius: 50%;
+}
+
+.buttons>.rotate>a>i {
+    font-size: map-get($FontSize, h3);
+    color: $NavBGColor;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+}
+
+// linkbutton
+.buttons>.link {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    z-index: 9;
+    background-color: $AccentColor2;
+    // border-radius: $BorderRadius;
+    border-radius: 50%;
+}
+
+.buttons>.link>a>i {
+    font-size: map-get($FontSize, h3);
+    color: $NavBGColor;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.swiper {
+    width: 100%;
+    height: 50%;
+    /* cursor: grab; */
+    cursor: grabbing;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: $PrimaryColor;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    // width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: auto;
+    border: 4px solid $NavBGColor;
+}
+
+
+.swiper-wrapper {
+    width: 100%;
+    height: 50vh;
+}

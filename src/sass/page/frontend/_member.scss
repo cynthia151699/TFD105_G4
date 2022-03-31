@@ -261,11 +261,17 @@ $btnH: 36px;
   }
 }
 
-.sign-up {
-  transform: translate3d($contW * -1, 0, 0);
-  text-align: center;
+// .sign-up {
+//   transform: translate3d($contW * -1, 0, 0);
+//   text-align: center;
 
-  @include signUpActive {
-    transform: translate3d(0, 0, 0);
-  }
-}
+//   @include signUpActive {
+//     transform: translate3d(0, 0, 0);
+//   }
+// // 整個輸入區域
+// .member_main_block{
+//     @include Remind();
+//     // 置中跟隨頁面調整
+//     margin: $HorizontalAlignCenter;
+//     background-color: $TextColor2; 
+// }

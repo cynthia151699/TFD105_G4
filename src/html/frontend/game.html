@@ -7,175 +7,121 @@
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-  <!-- 這邊css確定能跑之後要放進scss啊 -->
-  <!-- Demo styles -->
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
-
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 50%;
-      /* cursor: grab; */
-      cursor: grabbing;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: darkblue;
-
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: auto;
-    }
-
-
-    .swiper-wrapper {
-      width: 100%;
-      height: 50vh;
-    }
-
-    /* --------------------------------下半邊--------------------------------- */
-    /* .swiper2 {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide2 {
-      text-align: center;
-      font-size: 18px;
-      background: darkblue;
-
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-    }
-
-    .swiper-slide2 img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .swiper-wrapper2{
-      width: 100%;
-      height: 50vh;
-    } */
-  </style>
 </head>
 
-
-
 <body>
-  <!-- Swiper -->
-  <div class="swiper mySwiper">
+  <div class="game_body">
 
-    <div class="swiper-wrapper">
+    <!-- closebutton -->
+    <div class="closebutton">
+      <a class="buyTicket" href="#">
+        <span class="top-key"></span>
+        <span class="text">Close</span>
+        <span class="bottom-key-1"></span>
+        <span class="bottom-key-2"></span>
+      </a>
+    </div>
 
-      <div class="swiper-slide">
-        <img src="./../../img/game/1.png">
+    <!-- icons -->
+
+    <div class="buttons">
+
+      <!-- rotate -->
+      <div class="rotate">
+        <a href="#">
+          <i class="fa-solid fa-rotate"></i>
+          <!-- <img src="./../../img/game/rotate-solid.svg"> -->
+        </a>
       </div>
 
-      <div class="swiper-slide">
-        <img src="./../../img/game/2.png">
+      <!-- lock -->
+      <!-- <i class="fa-solid fa-lock"></i> -->
+
+      <!-- unlock -->
+      <!-- <i class="fa-solid fa-lock-open"></i> -->
+
+      <!-- link -->
+      <div class="link">
+        <a href="#">
+          <i class="fa-solid fa-link"></i>
+          <!-- <img src="./../../img/game/circle-nodes-solid.svg"> -->
+        </a>
       </div>
 
-      <div class="swiper-slide">
+    </div>
 
-      </div>
+    <!-- Swiper -->
+    <!-- 上半邊圖 -->
+    <div class="swiper mySwiper">
 
-      <div class="swiper-slide">
+      <div class="swiper-wrapper">
 
-      </div>
+        <div class="swiper-slide" id="g1">
+          <img src="./../../img/game/1.png">
+        </div>
 
-      <div class="swiper-slide">
+        <div class="swiper-slide" id="g2">
+          <img src="./../../img/game/2.png">
+        </div>
+
+        <div class="swiper-slide" id="g3">
+          <img src="./../../img/game/3.png">
+        </div>
+
+        <div class="swiper-slide" id="g4">
+          <img src="./../../img/game/4.png">
+        </div>
+
+        <div class="swiper-slide" id="g5">
+          <img src="./../../img/game/5.png">
+        </div>
 
       </div>
 
     </div>
 
-  </div>
 
 
+    <!-- 下半邊圖 -->
+    <div class="swiper mySwiper">
 
+      <div class="swiper-wrapper">
 
-  <div class="swiper mySwiper">
+        <div class="swiper-slide" id="g1_1">
+          <img src="./../../img/game/1-1.png">
+        </div>
 
-    <div class="swiper-wrapper">
+        <div class="swiper-slide" id="g2_1">
+          <img src="./../../img/game/2-1.png">
+        </div>
 
-      <div class="swiper-slide">
-        <img src="./../../img/game/1-1.png">
+        <div class="swiper-slide" id="g3_1">
+          <img src="./../../img/game/3-1.png">
+        </div>
+
+        <div class="swiper-slide" id="g4_1">
+          <img src="./../../img/game/4-1.png">
+        </div>
+
+        <div class="swiper-slide" id="g5_1">
+          <img src="./../../img/game/5-1.png">
+        </div>
+
       </div>
-
-      <div class="swiper-slide">
-        <img src="./../../img/game/2-1.png">
-      </div>
-
-      <div class="swiper-slide">
-
-      </div>
-
-      <div class="swiper-slide">
-
-      </div>
-
-      <div class="swiper-slide">
-
-      </div>
-
     </div>
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- 參考不一定會用，待刪 -->
+    <!-- <script src="./slick-random.js"></script> -->
+
+    <!-- 大家自己寫的js 在這！ -->
+    <script src="./../../js/game.min.js"></script>
+
   </div>
-
-
-
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="./slick-random.js"></script> <!-- 這是哪支程式？ -->
-
-  <!-- 大家自己寫的js 在這！ -->
-  <script src="./../../js/game.min.js"></script>
-
 </body>
 
 </html>

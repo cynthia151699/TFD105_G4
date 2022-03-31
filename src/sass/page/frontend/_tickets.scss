@@ -1,16 +1,26 @@
-main{
+// @for $i from 1 to 3 {
+//     @mixin BorderBg#{$i} {
+//         border-left: 3px solid $AccentColor#{$i*2-2};
+//         border-bottom: 3px solid $AccentColor#{$i*2-2};
+//         border-right: 3px solid $AccentColor#{$i*2-2};
+//         border-style:inset;
+//     }
+// }
+
+
+main.ticketsPage{
     
     section.tickets{
         @include Remind(blue);
-        margin: $HorizontalAlignCenter;       
-        h4.tickets_bookingName{
+        @include HorizontalAlignCenter; 
+        position: relative;
+        width: 100%;    
+        h4.tickets_bookingName, h4.tickets_pastbookingName{
             color: $TextColor2;
             line-height: $LineHeight;
             text-align: left;
         }
-        h4.tickets_pastbookingName{
-            text-align: left;
-        }
+
         h6.tickets_bookingName2{
             color: $TextColor2;
             line-height: $LineHeight;
@@ -21,73 +31,51 @@ main{
             @include VerticalAlignCenter();
             
             li.tickets_currentBooking-1{ 
-                @include Remind(blue);
-                
-                div.bookingPic-1{
-                    @include Remind(maroon);
-                    margin: $HorizontalAlignCenter;
-                    width: 170px;
-                    height: 140px;
-                    @include LinkImg('tickets', 'tickets_pic1', 'jpeg', cover, no-repeat, left);
-                    border-left: 3px solid $AccentColor2;
-                    border-bottom: 3px solid $AccentColor2;
-                    border-right: 3px solid $AccentColor2;
-                    border-style:inset;
-                }
-                div.bookingPic-2{
-                    @include Remind(maroon);
-                    width: 170px;
-                    height: 140px;
-                    @include LinkImg('tickets', 'tickets_pic2', 'jpeg', cover, no-repeat, left);
-                    border-left: 3px solid $AccentColor2;
-                    border-bottom: 3px solid $AccentColor2;
-                    border-right: 3px solid $AccentColor2;
-                    border-style:inset;
+                @for $i from 1 to 3 {
+                    a.bookingPic-#{$i}{
+                        display: block;
+                        @include HorizontalAlignCenter;  
+                        width: 170px;
+                        height: 140px;
+                        @include LinkImg('tickets', 'tickets_pic1#{$i}', 'jpeg', cover, no-repeat, left);
+                        // @include BorderBg2;
+                        @include HorizontalAlignCenter;
+                    }
                 }
             }
         }
-        ul.tickets_pastBooking{
-            @include Remind(green);
-            @include VerticalAlignCenter();
 
-            li.tickets_pastBooking{
-                div.pastPic-1{
-                    width: 170px;
-                    height: 140px;
-                    @include LinkImg('tickets', 'tickets_pic3', 'jpeg', cover, no-repeat, left);
-                    border-left: 3px solid $AccentColor;
-                    border-bottom: 3px solid $AccentColor;
-                    border-right: 3px solid $AccentColor;
-                    border-style:inset;
+        div.swiper{
+            width: 100%;
+            ul.tickets_pastBooking{
+                @include VerticalAlignCenter();
+                
+                li.tickets_pastBooking{
+                    @for $i from 1 to 4 {
+                        a.pastPic-#{$i} {
+                            display: block;
+                            width: 170px;
+                            height: 140px;
+                            @include LinkImg('tickets', 'tickets_pic#{$i+2}', 'jpeg', cover, no-repeat, left);
+                            // @include BorderBg1;
+                            @include HorizontalAlignCenter;
+                        }
+                    }
                 }
-                div.pastPic-2{
-                    width: 170px;
-                    height: 140px;
-                    @include LinkImg('tickets', 'tickets_pic4', 'jpeg', cover, no-repeat, left);
-                    border-left: 3px solid $AccentColor;
-                    border-bottom: 3px solid $AccentColor;
-                    border-right: 3px solid $AccentColor;
-                    border-style:inset;
+            }
+            div.swiper-button-prev{
+                color: $TextColor2;
+                &::after{
+                    font-size: map-get($FontSize , h3);
                 }
-                div.pastPic-3{
-                    width: 170px;
-                    height: 140px;
-                    @include LinkImg('tickets', 'tickets_pic5', 'jpeg', cover, no-repeat, left);
-                    border-left: 3px solid $AccentColor;
-                    border-bottom: 3px solid $AccentColor;
-                    border-right: 3px solid $AccentColor;
-                    border-style:inset;
-                }
-                div.pastPic-4{
-                    width: 170px;
-                    height: 140px;
-                    @include LinkImg('tickets', 'tickets_pic6', 'png', cover, no-repeat, center);
-                    border-left: 3px solid $AccentColor;
-                    border-bottom: 3px solid $AccentColor;
-                    border-right: 3px solid $AccentColor;
-                    border-style:inset;
-                }
+                
+            }
 
+            div.swiper-button-next{
+                color: $TextColor2;
+                &::after{
+                    font-size: map-get($FontSize , h3);
+                }
             }
 
         }

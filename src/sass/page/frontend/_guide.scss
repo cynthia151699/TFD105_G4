@@ -1,6 +1,8 @@
+
 // -------開館時間-------
 .mainOpenhours{
     @include LinkImg(visit, visit_pic1, png, cover, null, null);
+    
 }
 .wrapperOpenhours{
     @include Flex(row);
@@ -9,9 +11,7 @@
     height:450px;
     background-color: #2932419a;
 }
-.fp-tableCell {
-    display: block;
-}
+
 .openhoursLeft {
     width:60%;
     h4{
@@ -30,39 +30,78 @@
 
 // ----------展覽票價資訊-----------
 .guideTicket{
-    @include LinkImg(visit, visit_pic3-1, png, cover, null, null);
-
+    @include LinkImg(visit, visit_pic3-1-1, png, 60%, no-repeat,  left top );
 }
+.wrapperGuideticket{
+    @include Remind($color:red);
+    width:$RWD;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    h2{
+        color:$AccentColor3;
+    }
+    h3{
+        color:$HFBGColor;
+    }
+    .guideticketCntMd{
+        @include Remind($color:red);
+        color:$SecondaryColor;
+    }
+    .guideticketCntLine{
+        display: block;
+        width: 500px;
+        height: 4px;
+        background-color: $NavBGColor;
+    }
+    .guideticketCntTime{
+        @include Flex (row);
+
+        width:520px;
+    }
+    .guideticketCntPr{
+        @include Flex (row);
+        @include Remind($color:red);
+    }
+    // a{
+    //     width:400px;
+    //     height: 100px;
+    // }
+}
+    
 // -----交通資訊----------
 .wapperTrans{
     @include Flex(row);
     @include VerticalAlignCenter;
-    height:$RWD;
+    height:$Height;
     // @include Remind();
-    @include LinkImg(visit, visit_pic4, png, cover, no-repeat, center);
+    @include LinkImg(visit, visit_pic4, png, cover, no-repeat,  center);
+    // background-size: 500px 300px;
     
     .map{
-        // @include Remind($color:blue);
         width:140%;
     }
-    .mapImg{
-         @include VerticalAlignCenter;
+    .wrapperMapImg{
+        @include VerticalAlignCenter;
+        width: 400px;
+        height: 400px;
+        margin: $HorizontalAlignCenter; 
+        border:4px solid black;
         iframe{
-            margin: $HorizontalAlignCenter; //我跟妳在line說過了所以我懶得再打字了...
-            width: 400px;
-            height: 400px;
+            width: $RWD;
+            height: $RWD;
         }
     }
     .transCnt{
-        @include Remind($color:green);
         width:$RWD;
         height: $RWD;
        h4{
+        font-weight: map-get($FontWeight, medium);
         color:$TextColor2;
        }
        h5{
         color:$TextColor2;
-        @include Remind();
         width: 500px;
        }
     }

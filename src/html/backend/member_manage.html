@@ -13,6 +13,31 @@
         "active1" : "active"
         })
 
+        <div class="popUp">
+            <div class="popUpwindows">
+                <form action="post">
+                    <div class="editMember">
+                        <h4>編輯會員</h4>
+                        會員編號
+                        帳號<input type="text">
+                        姓名<input type="text">
+                        密碼<input type="text">
+                        手機<input type="text">
+                        創建時間
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+
+                    <div class="storeMember">
+                        <h4>編輯會員</h4>
+                        尚未儲存，是否確認離開？
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <div class="tableContainer">
             <!-- 頁首 -->
             @@include('./../../layout/backheader.html', {
