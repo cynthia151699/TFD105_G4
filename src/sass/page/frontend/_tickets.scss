@@ -7,6 +7,19 @@
 //     }
 // }
 
+@mixin BorderBg1 {
+        border-left: 4px solid $AccentColor;
+        border-bottom: 4px solid $AccentColor;
+        border-right: 4px solid $AccentColor;
+        border-style:inset; 
+}
+
+@mixin BorderBg2 {
+    border-left: 4px solid $AccentColor2;
+    border-bottom: 4px solid $AccentColor2;
+    border-right: 4px solid $AccentColor2;
+    border-style:inset; 
+}
 
 main.ticketsPage{
     
@@ -34,11 +47,11 @@ main.ticketsPage{
                 @for $i from 1 to 3 {
                     a.currentbookingPic-#{$i}{
                         display: block;
-                        @include HorizontalAlignCenter;  
                         width: 170px;
                         height: 140px;
                         @include LinkImg('tickets', 'tickets_pic#{$i}', 'jpeg', cover, no-repeat, left);
                         @include HorizontalAlignCenter;
+                        @include BorderBg2;
                     }
                 }
             }
@@ -46,37 +59,32 @@ main.ticketsPage{
 
         div.swiper{
             width: 100%;
+            height: auto;
             ul.tickets_pastBooking{
-                @include VerticalAlignCenter();
-                
+                height: 100%;
+                @include VerticalAlignCenter;
                 li.tickets_pastBooking{
+                    display: block;
+                    @include Remind;
                     @for $i from 1 to 10 {
                         a.pastPic-#{$i} {
                             display: block;
                             width: 170px;
                             height: 140px;
                             @include LinkImg('tickets', 'tickets_pic#{$i+2}', 'jpeg', cover, no-repeat, left);
-                            // @include BorderBg1;
                             @include HorizontalAlignCenter;
+                            @include BorderBg1;
                         }
                     }
                 }
             }
-            div.swiper-button-prev{
+            div.swiper-button-prev, div.swiper-button-next{
                 color: $TextColor2;
                 &::after{
                     font-size: map-get($FontSize , h3);
                 }
                 
             }
-
-            div.swiper-button-next{
-                color: $TextColor2;
-                &::after{
-                    font-size: map-get($FontSize , h3);
-                }
-            }
-
         }
         
     }
