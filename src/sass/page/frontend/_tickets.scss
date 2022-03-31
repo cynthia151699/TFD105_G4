@@ -29,7 +29,6 @@ main.ticketsPage{
                         height: 140px;
                         @include LinkImg('tickets', 'tickets_pic#{$i}', 'jpeg', cover, no-repeat, left);
                         @include HorizontalAlignCenter;
-                        @include BorderBg2;
                     }
                 }
             }
@@ -51,7 +50,6 @@ main.ticketsPage{
                             height: 140px;
                             @include LinkImg('tickets', 'tickets_pic#{$i+2}', 'jpeg', cover, no-repeat, left);
                             @include HorizontalAlignCenter;
-                            @include BorderBg1;
                         }
                     }
                 }
