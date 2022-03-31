@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-    @@include('./../../layout/head.html')
+    @@include('./layout/head.html')
 </head>
 
 <body>
     <div class="wrapper">
         <!-- 導覽列 -->
-        @@include('./../../layout/nav.html', {
+        @@include('./layout/nav.html', {
         "active1" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
-            @@include('./../../layout/header.html', {
+            @@include('./layout/header.html', {
             "tittle1" : "CURRENT",
             "tittle2" : "UPCOMING",
             "tittle3" : "PAST",
@@ -113,15 +113,15 @@
 
                             <section class="exBefore">
                                 <div class="beforePic1  mbSpace30">
-                                    <img class="banimg" src="./../../img/exhibition/exhibition_pic4.jpeg"
+                                    <img class="banimg" src="./img/exhibition/exhibition_pic4.jpeg"
                                         style="height: 200px;" alt="">
                                 </div>
                                 <div class="beforePic2  mbSpace30">
-                                    <img class="banimg" src="./../../img/exhibition/exhibition_pic5.jpeg"
+                                    <img class="banimg" src="./img/exhibition/exhibition_pic5.jpeg"
                                         style="height: 200px;" alt="">
                                 </div>
                                 <div class="beforePic3">
-                                    <img class="banimg" src="./../../img/exhibition/exhibition_pic6.jpeg"
+                                    <img class="banimg" src="./img/exhibition/exhibition_pic6.jpeg"
                                         style="height: 200px;" alt="">
                                 </div>
                             </section>
@@ -132,16 +132,16 @@
             </main>
 
             <!-- 頁尾 -->
-            @@include('./../../layout/footer.html')
+            @@include('./layout/footer.html')
 
         </div>
     </div>
 
     <!-- 載入js、套件 -->
-    <script src="./../../js/vendors/jquery.multiscroll.min.js"></script>
+    <script src="./js/vendors/jquery.multiscroll.min.js"></script>
 
     <!-- 大家自己寫的js 在這！ -->
-    <script src="./../../js/exhibition.min.js"></script>
+    <script src="./js/exhibition.min.js"></script>
 
     <!-- <script>
         let banimg = document.querySelectorAll(".banimg");
