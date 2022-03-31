@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  @@include('./layout/head.html')
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 導覽列 -->
+    @@include('./layout/nav.html', { "active5" : "active" })
+
+    <div class="mainContainer">
+      <!-- 頁首 -->
+      @@include('./layout/header.html', { "tittle1" : "LOG IN",
+      "tittle2" : "SIGN UP", "active1" : "activeb", "active3" : "active",
+      "active4" : "active", })
+
+      <main>
+        <!-- 中央表單 -->
+        <div class="member_main_all">
+          <div class="cont member_main_all_block mtSpace30">
+            <!-- 登入 -->
+            <div class="sign-in member_form">
+              <h2 class="mbSpace50">Welcome back</h2>
+              <label class="mbSpace20">
+                <span class="member_span">
+                  <h4>EMAIL</h4>
+                </span>
+                <br>
+                <input type="email" class="member_input_text" />
+              </label>
+              <br>
+              <label class="mbSpace10">
+                <span class="member_span">
+                  <h4>PASSWORD</h4>
+                </span>
+                <br>
+                <input type="password" class="member_input_text" />
+              </label>
+              <br>
+              <a calss="Forgot_password" href="./member_forget.html">Forgot password?</a>
+              <button type="button" class="member_submit member_cla_button">LOG IN</button>
+              <button type="button" class="fb-btn member_cla_button">Connect with facebook</button>
+            </div>
+            <!-- 移動框 -->
+            <div class="sub-cont">
+              <div class=" member_img">
+                <div class=" m--up member_img__text">
+                  <h2 class="mbSpace50 member_move_text">New here?</h2>
+                  <p>Sign up and discover great amount of new opportunities!
+                  </p>
+                </div>
+                <div class="m--in member_img__text">
+                  <h2 class="mbSpace50 member_move_text">One of us?</h2>
+                  <p>If you already has an account, just sign in. We've missed you!</p>
+                </div>
+                <div class="member_img__btn">
+                  <span class="m--up member_span">SIGN UP</span>
+                  <span class="m--in member_span">SIGN IN</span>
+                </div>
+              </div>
+              <!-- 註冊 -->
+              <div class="sign-up member_form">
+                <form class="member_singup_block" id="member_form">
+                  <label class="mbSpace10">
+                    <span class="member_span">
+                      <h4>NAME</h4>
+                    </span>
+                    <input type="text" class="member_input_text" />
+                  </label>
+                  <label class="mbSpace10">
+                    <span class="member_span">
+                      <h4>EMAIL</h4>
+                    </span>
+                    <input type="text" name="mail" class="member_input_text" id="member_mail" />
+                  </label>
+                  <label class="mbSpace10">
+                    <span class="member_span">
+                      <h4>PASSWORD</h4>
+                    </span>
+                    <input type="password" class="member_input_text" />
+                  </label>
+                  <label class="mbSpace10">
+                    <span class="member_span">
+                      <h4>PASSWORD CONFIRM</h4>
+                    </span>
+                    <input type="password" class="member_input_text" />
+                  </label>
+                  <label class="mbSpace10">
+                    <span class="member_span">
+                      <h4>PHONE NUMBER</h4>
+                    </span>
+                    <input type="text" class="member_input_text" />
+                  </label>
+                  <!-- 確認相關區域 -->
+                  <label>
+                    <span class="member_span">
+                      <input type="checkbox" class="member_login_choose mrSpace30" />
+                      <p class="member_p_style  mrSpace10">
+                        I would like to receive news, tips and marketing offers from
+                        Anno.
+                      </p>
+                    </span>
+                  </label>
+                  <label>
+                    <span class="member_span">
+                      <input type="checkbox" class="member_login_confirm mrSpace10" />
+                      <p class="member_p_style">
+                        I have read and understood the Terms & Conditions and Privacy
+                        Policy.
+                      </p>
+                    </span>
+                  </label>
+                  <button type="submit" class="defaultBtn" id="member_button">SIGN UP</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- 頁尾 -->
+      @@include('./layout/footer.html')
+    </div>
+  </div>
+
+  <!-- 載入js、套件 -->
+  <script src="./layout/importjs.html"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+    emailjs.init("rB4cW-mtW8WwyODex");
+  </script>
+  <script src="./js/member.min.js"></script>
+  <!-- 選單左右移動 -->
+  <script>
+    document.querySelector('.member_img__btn').addEventListener('click', function () {
+      document.querySelector('.cont').classList.toggle('s--signup');
+    });
+  </script>
+</body>
+
+</html>

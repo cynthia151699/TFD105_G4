@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  @@include('./layout/head.html')
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 導覽列 -->
+    @@include('./layout/nav.html', { "active5" : "active" })
+
+    <div class="mainContainer">
+      <!-- 頁首 -->
+      @@include('./layout/header.html', { "tittle1" : "LOG IN",
+      "tittle2" : "SIGN UP", "active1" : "activeb", "active3" : "active",
+      "active4" : "active", })
+
+      <main>
+        <div class="member_info_title ptSpace30 ">
+          <h2 class="member_info_text">Overview</h2>
+          <div class="member_info_main_block mtSpace30 mbSpace30">
+                <ul class="plSpace30">
+                  <li class="mbSpace70">
+                    <h3>Member information</h3>
+                  </li>
+                  <li class="mtSpace70 member_info_flex">
+                    <h3>Name</h3>        
+                    <h3 class="mlSpace250" >XXXXXXXXXXXXXXX</h3>
+                  </li>
+                  <li class="mtSpace70 member_info_flex">
+                    <h3>Email address</h3>
+                    <h3 class="mlSpace100">XXXXXXXXXXXXXXX</h3>
+                  </li>
+                  <li class="mtSpace70 member_info_flex">
+                    <h3>Password</h3>
+                    <h3 class="mlSpace180">XXXXXXXXXXXXXXX</h3>
+                  </li>
+                  <li class="mtSpace70 member_info_flex">
+                    <h3>Phone</h3>
+                    <h3 class="mlSpace240">XXXXXXXXXXXXXXX</h3>
+                  </li>
+                </ul>
+          </div>
+          <a class="defaultBtn member_info_Bt mtSpace30" href="#">
+            <span class="member_forget_text">change</span>
+          </a>
+        </div>
+      </main>
+      <!-- 頁尾 -->
+      @@include('./layout/footer.html')
+    </div>
+  </div>
+
+  <!-- 載入js、套件 -->
+  <script src="./layout/importjs.html"></script>
+</body>
+
+</html>

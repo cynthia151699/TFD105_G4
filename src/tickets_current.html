@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+            "active3" : "active"
+            })
+
+        <div class="mainContainer">
+
+            <!-- 頁首 -->
+            @@include('./layout/header.html', {
+                "tittle1" : "Edit Your Member Info.",
+                "tittle2" : "Booking List",
+                "active2" : "activeb",
+                "active3" : "active",
+                "active4" : "active",
+                })
+
+            <main>
+                <!-- coding here... -->
+                <div class="wrapperTicketsCur">
+                    <div class="ticketsCurCon">
+                        <div class="ticketsCurLt">
+                            <h2>Current booking info</h2>
+                            <h4>Name:<span>BREAK the CLASSIC</span></h4>
+                            <h4>Time:<span>2022/2/5 09:00～2022/5/5 17:00</span></h4>
+                            <h4>Location:<span>Anno Museum South Building</span></h4>
+                            <h4>Tickets:<span>Advance Ticket X 2 </span></h4>
+                            <h4>Amount:<span>NTD$800</span></h4>
+                        </div>
+                        <div class="ticketsCurRi">
+                            <img src="../../img/tickets/anno_qr.png" alt="">
+                        </div>
+                    </div>
+                    <button class="ticketsCurBtn">cancel</button>
+                </div>
+            </main>
+
+            <!-- 頁尾 -->
+            @@include('./layout/footer.html')
+
+        </div>
+    </div>
+</body>
+
+</html>

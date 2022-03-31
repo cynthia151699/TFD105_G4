@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active2" : "active"
+        })
+
+        <div class="mainContainer">
+
+            <!-- 頁首 -->
+            @@include('./layout/header.html', {
+            "tittle1" : "OPENING HOURS",
+            "tittle2" : "TICKETS",
+            "tittle3" : "TRANSPORTATION",
+            "active1" : "activeb",
+            "active4" : "active",
+            })
+
+            <main class="guideAll">
+
+                <!-- -------開館時間------- -->
+                <div id="fullpage">
+                    <div class="section mainOpenhours " id="section0">
+                        <div class="wrapperOpenhours mbSpace80  ">
+                            <div class="openhoursLeft plSpace80 prSpace80">
+                                <h4>HOURS</h4>
+                                <h4 class="pbSpace60 ">
+                                    Tuesday to Sunday : 09:00 - 17:00<br>Closed on Monday.
+                                </h4>
+                                <h4>
+                                    Open on Mondays if they fall on a national holiday or long weekend. The opening
+                                    hours remain the same as usual.Mondays that the National Palace Museum will be open
+                                    are listed as follows: 1/31 (09:00-16:00), 2/28, 4/4, and 10/10
+                                </h4>
+                            </div>
+                            <div class="openhoursRight">
+                                <div class="openhoursRightImg"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ----------展覽票價資訊----------- -->
+                    <div class="section active guideTicket " id="section1">
+                        <div class="wrapperGuideticket prSpace50 ">
+                            <h2 class="mbSpace30">Break the Classic</h2>
+                            <h3 class="guideticketCntMd mbSpace10">TAKIKAW RISA Solo Exhibition</h3>
+                            <span class="guideticketCntLine mbSpace20"></span>
+                            <div class="guideticketCntTime mbSpace20">
+                                <h3>Advance Ticket03/08-04/07</h3>
+                                <h3>Rollover Ticket04/08-04/10</h3>
+                            </div>
+                            <span class="guideticketCntLine mbSpace20"></span>
+                            <div class="guideticketCntPr pbSpace50">
+                                <h3>NTD $400</h3>
+                                <h3>NTD $450</h3>
+                            </div>
+                            <a class="buyTicket" href="#">
+                                <span class="top-key"></span>
+                                <span class="text">Buy Tickets</span>
+                                <span class="bottom-key-1"></span>
+                                <span class="bottom-key-2"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- -----交通資訊區塊---------- -->
+                    <div class="section " id="section2">
+                        <div class="wapperTrans ">
+                            <div class="map">
+                                <div class="mapImg">
+                                    <div class="wrapperMapImg">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.46783034314!2d121.54106421484241!3d25.05212798396386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abe6b0446815%3A0xf006dde8c27afcc7!2z57ev6IKyVGliYU1l6ZmE6Kit5Y-w5YyX6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1648536930648!5m2!1szh-TW!2stw"
+                                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transCnt">
+                                <h4 class="mtSpace80 pbSpace30 ">Expressway - to our main building</h4>
+                                <h5>National Highway no.3→National Highway no.1→Taichung Interchange→Taiwan
+                                    Boulevard→Turn right on Meicun Rd.→Wuquan West Intersection→The Main
+                                    Building</h5>
+                                <h4 class="mtSpace80 pbSpace30">Public Transportation</h4>
+                                <h5 class="pbSpace20">Taiwan High-Speed Rail shuttle bus (about 20 minutes by vehicle)
+                                    Tonglian Passenger Transport - 159 - Tuku Parking Lot (South Zhongming Rd.)</h5>
+                                <h5>*This building is a barrier-free space.</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- 頁尾 -->
+            @@include('./layout/footer.html')
+        </div>
+    </div>
+
+    <!-- 載入js、套件 -->
+    <script src="./js/vendors/fullpage.min.js"></script>
+
+    <!-- 大家自己寫的js 在這！ -->
+    <script src="./js/guide.min.js"></script>
+</body>
+
+</html>

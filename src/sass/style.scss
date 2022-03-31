@@ -13,34 +13,6 @@
 @import './component/button';
 @import './mixin';
 
-// 模版連結
-@import './layout/login';
-@import './layout/nav';
-@import './layout/header';
-@import './layout/footer';
-
-@import './layout/RWD';
-
-@import './page/prototype';
-
-// 前台頁面連結
-@import './page/frontend/index';
-@import './page/frontend/exhibition';
-@import './page/frontend/guide';
-@import './page/frontend/tickets';
-@import './page/frontend/tickets_current';
-@import './page/frontend/tickets_past';
-@import './page/frontend/about';
-@import './page/frontend/member';
-@import './page/frontend/member_forget';
-@import './page/frontend/member_info';
-@import './page/frontend/member_modify';
-@import './page/frontend/member_forget_change';
-@import './page/frontend/game';
-
-// 後台頁面連結
-@import './page/backend';
-
 // -------------------- HTML --------------------
 
 body{
@@ -53,7 +25,6 @@ body{
     word-spacing: $WordSpaceing;
     text-align: left;
 
-    // background-color: #E5E5E5;
     color: $TextColor2;
 
     box-sizing: border-box;
@@ -65,38 +36,37 @@ body{
 
         @include Flex(row);
 
-        h1{
-            font-family: $SpecialFont;
-            font-weight: map-get($FontWeight, medium);
-            font-size: map-get($FontSize, h1);
+        @each $FontSize, $value in $FontSize {
+            #{$FontSize} {
+                font-size: $value;
+            }
         }
+
+        // h1{ //優化SEO
+        //     font-family: $SpecialFont;
+        //     font-weight: map-get($FontWeight, medium);
+        // }
 
         h2{
             font-family: $SpecialFont;
             font-weight: map-get($FontWeight, medium);
-            font-size: map-get($FontSize, h2);
         }
 
         h3{
             font-family: $SpecialFont;
             font-weight: map-get($FontWeight, medium);
-            font-size: map-get($FontSize, h3);
         }
 
         h4{
-            font-family: $SpecialFont;
             font-weight: map-get($FontWeight, regular);
-            font-size: map-get($FontSize, h4);
         }
 
         h5{
             font-weight: map-get($FontWeight, regular);
-            font-size: map-get($FontSize, h5);
         }
 
         h6{
             font-weight: map-get($FontWeight, regular);
-            font-size: map-get($FontSize, h6);
         }
 
         a{
@@ -119,3 +89,31 @@ body{
         }
     }
 }
+
+// 模版連結
+@import './layout/login';
+@import './layout/nav';
+@import './layout/header';
+@import './layout/footer';
+    
+@import './layout/RWD';
+    
+@import './page/prototype';
+    
+// 前台頁面連結
+@import './page/frontend/index';
+@import './page/frontend/exhibition';
+@import './page/frontend/guide';
+@import './page/frontend/tickets';
+@import './page/frontend/tickets_current';
+@import './page/frontend/tickets_past';
+@import './page/frontend/about';
+@import './page/frontend/member';
+@import './page/frontend/member_forget';
+@import './page/frontend/member_info';
+@import './page/frontend/member_modify';
+@import './page/frontend/member_forget_change';
+@import './page/frontend/game';
+
+// 後台頁面連結
+@import './page/backend';

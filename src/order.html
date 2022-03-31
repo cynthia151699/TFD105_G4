@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./layout/backnav.html', {
+        "active5" : "active"
+        })
+
+        <div class="popUp">
+            <div class="popUpWindows">
+                <form action="post">
+                    <div class="editOrder">
+                        <h4>編輯訂單</h4>
+                        編號<input type="text">
+                        訂單編號<input type="text">
+                        會員帳號<input type="text">
+                        付款狀態<input type="text">
+                        訂單狀態<input type="text">
+                        展覽QR code 請選擇圖片上傳
+                        訂單內容
+                        展覽名稱
+                        展覽時間
+                        展覽地點
+                        預售單人票
+                        展期單人票
+                        購票金額
+                        使用折扣
+                        總金額
+                        創建時間
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+
+                    <div class="storeOrder">
+                        <h4>編輯訂單</h4>
+                        尚未儲存，是否確認離開？
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="tableContainer">
+            <!-- 頁首 -->
+            @@include('./layout/backheader.html', {
+            tittle1: "訂單管理",
+            tittle2: "以訂單編號查詢",
+            })
+
+            <form action="#">
+                <table>
+                    <thead>
+                        <tr>
+                            <!-- table row -->
+                            <td>編號</td>
+                            <td>訂單編號</td>
+                            <td>會員帳號</td>
+                            <td>展訊QRcode</td>
+                            <td>付款狀態</td>
+                            <td>訂單狀態</td>
+                            <td>創建時間</td>
+                            <td> </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>404</td>
+                            <td>asdfg@gmail.com</td>
+                            <td> </td>
+                            <td>已付款</td>
+                            <td>已完成</td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>502</td>
+                            <td>hjkl@gmail.com</td>
+                            <td> </td>
+                            <td>未付款</td>
+                            <td>處理中</td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <!-- 載入js -->
+    <script src="./js/main.min.js"></script>
+</body>
+
+</html>

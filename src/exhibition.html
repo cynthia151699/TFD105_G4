@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active1" : "active"
+        })
+
+        <div class="mainContainer">
+
+            <!-- 頁首 -->
+            @@include('./layout/header.html', {
+            "tittle1" : "CURRENT",
+            "tittle2" : "UPCOMING",
+            "tittle3" : "PAST",
+            "active1" : "activeb",
+            "active4" : "active",
+            })
+
+            <main class="exRelative">
+                <!-- coding here -->
+                <!-- <ul id="menu">
+                    <li data-menuanchor="first"><a href="#first">First slide</a></li>
+                    <li data-menuanchor="second"><a href="#second">Second slide</a></li>
+                    <li data-menuanchor="third"><a href="#third">Third slide</a></li>
+                </ul> -->
+
+                <div id="myContainer">
+
+                    <div class="ms-left">
+                        <div class="ms-section" id="left1">
+                            <section class="exCurrent plSpace30 prSpace30 ptSpace30">
+                                <h2 class="ex_title">Break the Classic</h2>
+                                <h3 class="ex_name">TAKIKAW RISA Solo Exhibition</h3>
+                                <h5 class="ex_place mtSpace30">Place：Anno Museum South Building</h5>
+                                <h5 class="ex_date">Date：2022/2/5～2022/5/5</h5>
+                                <p class="ex_content-detail mtSpace30 mbSpace30"> American-Japanese artist Takikaw Risa
+                                    brings a series of composite sculptures, showing the conflict between classical art
+                                    and modern society. It brings childishness and a sense of trend to the solemn
+                                    atmosphere of the statue and hopes to bring the audience's imagination to break
+                                    through the classics.</p>
+                                <a class="buyTicket" href="#">
+                                    <span class="top-key"></span>
+                                    <span class="text">Buy Tickets</span>
+                                    <span class="bottom-key-1"></span>
+                                    <span class="bottom-key-2"></span>
+                                </a>
+                            </section>
+
+                        </div>
+
+                        <div class="ms-section" id="left2">
+                            <section class="exCurrent">
+                                <h2>
+                                    UPCOMINGUPCOMING<br>
+                                    UPCOMINGUPCOMING<br>
+                                    UPCOMINGUPCOMING<br>
+                                    UPCOMINGUPCOMING<br>
+                                    UPCOMINGUPCOMING<br>
+                                </h2>
+                                <div class="currentPic-1"></div>
+                            </section>
+
+                        </div>
+
+                        <div class="ms-section" id="left3">
+                            <h3 class="exPast_title">PAST EXHIBITION</h3>
+                            <h2>
+                                PAST EXHIBITION<br>
+                                PAST EXHIBITION<br>
+                                PAST EXHIBITION<br>
+                                PAST EXHIBITION<br>
+                                PAST EXHIBITION<br>
+                            </h2>
+
+                        </div>
+                    </div>
+
+                    <div class="ms-right">
+                        <div class="ms-section" id="right1">
+
+                        </div>
+
+                        <div class="ms-section" id="right2">
+
+                            <section class="exUpcoming plSpace30 prSpace30 ptSpace30">
+                                <h2 class="ex_title">Upcoming</h2>
+                                <h5 class="ex_name mtSpace30">True Color - KAYLA GILL Solo Exhibition</h5>
+                                <h5 class="ex_place">Place：Anno Museum North Building</h5>
+                                <h5 class="ex_date">Date：2022/5/15～2022/8/15</h5>
+                                <p class="ex_content-detail mtSpace30 mbSpace30">
+                                    What is your true color?<br>
+                                    Emerging artist KAYLA GILL will show her work that is using photography and digital
+                                    techniques. The display of hundreds of works and live interactive installations will
+                                    bring you to find your true color.
+                                </p>
+                                <a class="buyTicket" href="#">
+                                    <span class="top-key"></span>
+                                    <span class="text">Buy Tickets</span>
+                                    <span class="bottom-key-1"></span>
+                                    <span class="bottom-key-2"></span>
+                                </a>
+                            </section>
+                        </div>
+
+                        <div class="ms-section" id="right3">
+
+                            <section class="exBefore">
+                                <div class="beforePic1  mbSpace30">
+                                    <img class="banimg" src="./img/exhibition/exhibition_pic4.jpeg"
+                                        style="height: 200px;" alt="">
+                                </div>
+                                <div class="beforePic2  mbSpace30">
+                                    <img class="banimg" src="./img/exhibition/exhibition_pic5.jpeg"
+                                        style="height: 200px;" alt="">
+                                </div>
+                                <div class="beforePic3">
+                                    <img class="banimg" src="./img/exhibition/exhibition_pic6.jpeg"
+                                        style="height: 200px;" alt="">
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- 頁尾 -->
+            @@include('./layout/footer.html')
+
+        </div>
+    </div>
+
+    <!-- 載入js、套件 -->
+    <script src="./js/vendors/jquery.multiscroll.min.js"></script>
+
+    <!-- 大家自己寫的js 在這！ -->
+    <script src="./js/exhibition.min.js"></script>
+
+    <!-- <script>
+        let banimg = document.querySelectorAll(".banimg");
+        console.log(banimg)
+        let mainImg = document.querySelector("#left3");
+        mainImg.appendChild("img");
+        document.createElement(Image);
+        console.log(mainImg);
+        for (let i = 1; i <= banimg.length; i++) {
+
+        }
+    </script> -->
+</body>
+
+</html>

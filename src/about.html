@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active4" : "active"
+        })
+
+        <div class="mainContainer">
+
+            <!-- 頁首 -->
+            @@include('./layout/header.html', {
+            "tittle1" : "ABOUT ANNO",
+            "tittle2" : "HISTORY OF ANNO",
+            "active1" : "activeb",
+            "active3" : "active",
+            "active4" : "active",
+            })
+
+            <main>
+                <!-- coding here -->
+                <div id="fullpage">
+                    <div class="section active " id="section0">
+                        <div class="wrapperAbout plSpace40  ptSpace80">
+                            <h2 class="aboutTitle pbSpace80">About ANNO</h2>
+                            <h4 class="aboutCntFr pbSpace50 rightSpace80">Art records the deduction in
+                                ANNO,<br>All is exist in the past,present, and future.</h4>
+                            <h4 class="aboutCntMd pbSpace50">Not only for us,<br>You can accomplish every single
+                                Dream here,<br>ANNO can be everyone's Utopia,</h4>
+                            <h4 class="aboutCntEn pbSpace50">Let us open our minds,<br>Create your own Anno.</h4>
+                        </div>
+                    </div>
+                    <div class="section  aboutHistory ptSpace80" id="section1">
+                        <div class="aboutHistoryContent plSpace60 ">
+                            <h2 class="plSpace30 pbSpace80">History of Anno</h2>
+                            <h4 class="aboutHistoryFirst pbSpace50">Anno Museum is a young museum located in
+                                Taipei.<br>
+                                The museum was founded in 2015, by
+                                six students in <br> TIBAMI who have a lot of enthusiasm for art and life.
+                            </h4>
+                            <div class="wrapperAbhiMd ">
+                                <h4 class="aboutHistoryMid pbSpace50 plSpace100">
+                                    They hope that through the establishment of the museum,education, and culture can be promoted so that more people can know and getclose to art.
+                                </h4>
+                            </div>
+                            <h4 class="aboutHistoryEnd pbSpace50">Without setting limits on style, they want to show a
+                                <br>wide range of artworks from
+                                classic to trendy for the<br> general public.
+                            </h4>
+                        </div>
+                    </div>
+
+                    <!-- <div class="movePic">
+                            <img class="movePictImg" src="../../img/about/about_pic1.png" alt="" />
+                            <img class="movePictImg" src="../../img/about/about_spic1.jpeg" alt="" />
+                            <img class="movePictImg" src="../../img/about/about_spic2.jpeg" alt="" />
+                            <img class="movePictImg" src="../../img/about/about_spic3.jpeg" alt="" />
+                            <img class="movePictImg" src="../../img/about/about_spic4.jpeg" alt="" />
+                            <img class="movePictImg" src="../../img/about/about_spic5.jpeg" alt="" />
+                            <img class="movePictImg" src="../../img/about/about_spic6.jpeg" alt="" />
+                            <img class="movePictImg" src="../../img/about/about_spic7.jpeg" alt="" />
+                            <img class="movePictImg" src="../../img/about/about_spic8.jpeg" alt="" />
+                    </div> -->
+
+            </main>
+
+            <!-- 頁尾 -->
+            @@include('./layout/footer.html')
+
+        </div>
+    </div>
+
+    <!-- 載入js、套件 -->
+    <script src="./js/vendors/fullpage.min.js"></script>
+
+    <!-- 大家自己寫的js 在這！ -->
+    <script src="./js/about.min.js"></script>
+</body>
+
+</html>
