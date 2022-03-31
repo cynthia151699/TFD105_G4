@@ -1,120 +1,123 @@
 // 彈窗
-.popUp{
-    position: absolute; 
-    width: calc(100% - 175px); 
-    height: 100vh; 
+.popUp {
+    position: absolute;
+    width: calc(100% - 175px);
+    height: 100vh;
     margin-left: 175px;
 
-    .mask{
-        position: absolute; 
-        z-index: 1; 
-        width: 100%; 
-        height: 100vh; 
-        background-color: #293241; 
+    .mask {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100vh;
+        background-color: #293241;
         opacity: 0.7;
+        display: none;
+        display: block;
     }
 
-    .popUpWindows{
-        position: absolute; 
-        z-index: 2; 
-        opacity: 1; 
-        width: 80%; 
-        right: 10%; 
-        height: fit-content; 
-        background-color: white; 
-        top: 70px; 
+    @mixin PopUp {
+        position: absolute;
+        width: 80%;
+        right: 10%;
+        height: fit-content;
+        z-index: 2;
+        opacity: 1;
+        top: 70px;
         border-radius: 10px;
+        background-color: aliceblue;
+        display: none;
 
-        h4{
-            background-color: blue; border-radius: 10px 10px 0px 0px;
+        h5 {
+            background-color: $RemindBlue;
+            border-radius: 10px 10px 0px 0px;
+            padding: 10px;
         }
 
-        h5{
+        h6 {
             display: inline-block;
         }
+    }
 
-        .addTicket{
-            position: absolute; 
-            z-index: 2; 
-            opacity: 1;
-            top: 70px; 
-            display: none;
-        }
+    .addTicket {
+        @include PopUp();
+        display: block;
+    }
 
-        .editTicket{
-            
-        }
+    .editTicket {
+        @include PopUp();
+    }
 
-        .storeTicket{
-            
-        }
+    .storeTicket {
+        @include PopUp();
+    }
 
-        .addDiscount{
+    .addDiscount {
+        @include PopUp();
+    }
 
-        }
+    .editDiscount {
+        @include PopUp();
+    }
 
-        .editDiscount{
+    .storeDiscount {
+        @include PopUp();
+    }
 
-        }
+    .addEvent {
+        @include PopUp();
+    }
 
-        .storeDiscount{
+    .editEvent {
+        @include PopUp();
+    }
 
-        }
+    .storeEvent {
+        @include PopUp();
+    }
 
-        .addEvent{
+    .editMember {
+        @include PopUp();
+    }
 
-        }
+    .storeMember {
+        @include PopUp();
+    }
 
-        .editEvent{
+    .addNews {
+        @include PopUp();
+    }
 
-        }
+    .editNews {
+        @include PopUp();
+    }
 
-        .storeEvent{
+    .storeNews {
+        @include PopUp();
+    }
 
-        }
+    .editOrder {
+        @include PopUp();
+    }
 
-        .editMember{
-
-        }
-
-        .storeMember{
-
-        }
-
-        .addNews{
-
-        }
-
-        .editNews{
-
-        }
-
-        .storeNews{
-
-        }
-
-        .editOrder{
-
-        }
-
-        .storeOrder{
-            
-        }
+    .storeOrder {
+        @include PopUp();
     }
 }
 
 // 後臺表單
-.tableContainer{
+.tableContainer {
     width: calc(100% - 175px);
     background-color: $InputColor;
 
     @include Flex(column);
-        
-    form{
+
+    form {
         background-color: $InputColor;
     }
 
-    table{ // thead、tr 設置border 會沒效果，設置在td 上才會有
+    table {
+        // thead、tr 設置border 會沒效果，設置在td 上才會有
         width: 93%;
         color: $TextColor;
         text-align: center;
@@ -122,50 +125,53 @@
 
         border-collapse: separate;
         border-spacing: 0;
-            
-        td{
+
+        td {
             box-sizing: border-box;
             padding: 10px;
         }
 
-        thead{
+        thead {
             background-color: #CDDBE8;
-            tr{
-                td{
-                    &:first-child{
+
+            tr {
+                td {
+                    &:first-child {
                         border-radius: 10px 0px 0px 10px;
-                        
+
                     }
 
-                    &:last-child{
+                    &:last-child {
                         border-radius: 0px 10px 10px 0px;
                     }
                 }
             }
         }
 
-        tbody{
+        tbody {
             background-color: $InputColor;
 
-            tr:nth-child(even){
-                td{
+            tr:nth-child(even) {
+                td {
                     border-top: 3px solid $BHColor;
                     border-bottom: 3px solid $BHColor;
-                    &:first-child{
+
+                    &:first-child {
                         border-left: 3px solid $BHColor;
                         border-top-left-radius: 10px;
                         border-bottom-left-radius: 10px;
                     }
-                    &:last-child{
+
+                    &:last-child {
                         border-right: 3px solid $BHColor;
                         border-top-right-radius: 10px;
                         border-bottom-right-radius: 10px;
                     }
-                }               
+                }
             }
         }
 
-        tfoot{
+        tfoot {
             background-color: $InputColor;
         }
     }

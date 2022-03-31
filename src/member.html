@@ -65,31 +65,31 @@
                 <form class="member_singup_block" id="member_form">
                   <label class="mbSpace10">
                     <span class="member_span">
-                      <h4>NAME</h4>
+                      <h5>NAME</h5>
                     </span>
                     <input type="text" class="member_input_text" />
                   </label>
                   <label class="mbSpace10">
                     <span class="member_span">
-                      <h4>EMAIL</h4>
+                      <h5>EMAIL</h5>
                     </span>
                     <input type="text" name="mail" class="member_input_text" id="member_mail" />
                   </label>
                   <label class="mbSpace10">
                     <span class="member_span">
-                      <h4>PASSWORD</h4>
+                      <h5>PASSWORD</h5>
                     </span>
                     <input type="password" class="member_input_text" />
                   </label>
                   <label class="mbSpace10">
                     <span class="member_span">
-                      <h4>PASSWORD CONFIRM</h4>
+                      <h5>PASSWORD CONFIRM</h5>
                     </span>
                     <input type="password" class="member_input_text" />
                   </label>
                   <label class="mbSpace10">
                     <span class="member_span">
-                      <h4>PHONE NUMBER</h4>
+                      <h5>PHONE NUMBER</h5>
                     </span>
                     <input type="text" class="member_input_text" />
                   </label>
@@ -107,8 +107,8 @@
                     <span class="member_span">
                       <input type="checkbox" class="member_login_confirm mrSpace10" />
                       <p class="member_p_style">
-                        I have read and understood the Terms & Conditions and Privacy
-                        Policy.
+                        I have read and understood the<a href="#0" class="member_Terms">Terms & Conditions</a> and <a href="#0" class="member_Privacy">Privacy
+                        Policy.</a>
                       </p>
                     </span>
                   </label>
@@ -137,6 +137,11 @@
     document.querySelector('.member_img__btn').addEventListener('click', function () {
       document.querySelector('.cont').classList.toggle('s--signup');
     });
+  </script>
+  <!-- 跳出閱讀詳細事項 -->
+  <script>
+    let member_Terms = document.querySelector(".member_Terms")
+    let member_Privacy = document.querySelector(".member_Privacy")
   </script>
 </body>
 
