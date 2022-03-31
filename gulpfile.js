@@ -14,19 +14,6 @@ const rename = require('gulp-rename');
 
 exports.p = package;
 
-// // 圖片壓縮
-// const imagemin = require('gulp-imagemin');
-
-// function min_images(){
-//     return src(['src/images/*.*', 'src/img/**/*.*'])
-//     .pipe(imagemin([
-//         imagemin.mozjpeg({quality: 70, progressive: true}) // 壓縮品質      quality越低 -> 壓縮越大 -> 品質越差 
-//     ]))
-//     .pipe(dest('dist/images'))
-// }
-
-// exports.mini_img = min_images;
-
 // css minify
 const cleanCSS = require('gulp-clean-css');
 
@@ -135,7 +122,6 @@ function browser(done) {
            index: "index.html"
        },
        port: 3000
-   // http://127.0.0.1:5500/ 防火牆的關係會沒辦法正常顯示網頁的樣子...  
    });
    watch(['src/*.html', 'src/layout/*.html' ,] , includeHTML).on('change' , reload);
    watch(['src/sass/*.scss' , 'src/sass/**/*.scss' , 'src/sass/**/**/*.scss'] , sassstyle).on('change' , reload);
@@ -144,4 +130,44 @@ function browser(done) {
    done();
 }
 
+// 圖片壓縮
+const imagemin = require('gulp-imagemin');
+
+function min_images(){
+    return src(['src/img/*.*' , 'src/img/**/*.*'])
+    .pipe(imagemin())
+    .pipe(dest('dist/img'))
+}
+
+ // js 瀏覽器適應 babel es6 -> es5
+
+ const babel = require('gulp-babel');
+
+ function babel5() {
+     return src(['src/js/*.js' , 'src/js/**/*.js'])
+         .pipe(babel({
+             presets: ['@babel/env']
+         }))
+         .pipe(uglify())
+         .pipe(dest('dist/js'));
+ }
+
+ exports.es5 =babel5
+
+ // 清除舊檔案
+
+const clean = require('gulp-clean');
+
+function clear() {
+  return src('dist' ,{ read: false ,allowEmpty: true })//不去讀檔案結構，增加刪除效率  / allowEmpty : 允許刪除空的檔案
+  .pipe(clean({force: true})); //強制刪除檔案 
+}
+
+
+exports.cls = clear
+
+// dev
 exports.default = series(parallel(includeHTML ,sassstyle, minijs ,package),browser)
+
+// online
+exports.online = series(clear, parallel(includeHTML ,sassstyle , babel5 , min_images))
