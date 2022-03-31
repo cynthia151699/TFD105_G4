@@ -1,11 +1,10 @@
-// @for $i from 1 to 3 {
-//     @mixin BorderBg#{$i} {
-//         border-left: 3px solid $AccentColor#{$i*2-2};
-//         border-bottom: 3px solid $AccentColor#{$i*2-2};
-//         border-right: 3px solid $AccentColor#{$i*2-2};
-//         border-style:inset;
-//     }
-// }
+@mixin BorderBg {
+    border-left: 3px solid $AccentColor;
+    border-bottom: 3px solid $AccentColor2;
+    border-right: 3px solid $AccentColor3;
+    border-style:inset;
+}
+
 
 @mixin BorderBg1 {
         border-left: 4px solid $AccentColor;
@@ -86,6 +85,5 @@ main.ticketsPage{
                 
             }
         }
-        
     }
 }
