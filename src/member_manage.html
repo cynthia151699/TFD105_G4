@@ -2,22 +2,47 @@
 <html lang="en">
 
 <head>
-    @@include('./../../layout/head.html')
+    @@include('./layout/head.html')
 </head>
 
 <body>
     <div class="wrapper">
 
         <!-- 導覽列 -->
-        @@include('./../../layout/backnav.html', {
-        "active2" : "active"
+        @@include('./layout/backnav.html', {
+        "active1" : "active"
         })
+
+        <div class="popUp">
+            <div class="popUpwindows">
+                <form action="post">
+                    <div class="editMember">
+                        <h4>編輯會員</h4>
+                        會員編號
+                        帳號<input type="text">
+                        姓名<input type="text">
+                        密碼<input type="text">
+                        手機<input type="text">
+                        創建時間
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+
+                    <div class="storeMember">
+                        <h4>編輯會員</h4>
+                        尚未儲存，是否確認離開？
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <div class="tableContainer">
             <!-- 頁首 -->
-            @@include('./../../layout/backheader.html', {
-            tittle1: "最新消息管理",
-            tittle2: "以訊息名稱查詢",
+            @@include('./layout/backheader.html', {
+            tittle1: "會員管理",
+            tittle2: "以會員帳號查詢",
             })
 
             <form action="#">
@@ -25,11 +50,11 @@
                     <thead>
                         <tr>
                             <!-- table row -->
-                            <td>消息編號</td>
-                            <td>消息名稱</td>
-                            <td>消息圖片</td>
-                            <td>消息內容</td>
-                            <td>消息狀態</td>
+                            <td>會員編號</td>
+                            <td>帳號</td>
+                            <td>密碼</td>
+                            <td>姓名</td>
+                            <td>手機</td>
                             <td>創建時間</td>
                             <td> </td>
                         </tr>
@@ -37,23 +62,19 @@
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>最新消息</td>
-                            <td></td>
-                            <td>Lorem ipsum dolor sit amet <br>
-                                consectetur adipisicing elit. <br>
-                            </td>
-                            <td>開啟</td>
+                            <td>abc@gmail.com</td>
+                            <td>12345</td>
+                            <td>王小明</td>
+                            <td>0912345678</td>
                             <td>2022-02-22<br>00:00:00</td>
                             <td><button>編輯</button></td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>得獎訊息</td>
-                            <td></td>
-                            <td>Lorem ipsum dolor sit amet <br>
-                                consectetur adipisicing elit. <br>
-                            </td>
-                            <td>關閉</td>
+                            <td>def@gmail.com</td>
+                            <td>asdfg</td>
+                            <td>李美麗</td>
+                            <td>0912345678</td>
                             <td>2022-02-22<br>00:00:00</td>
                             <td><button>編輯</button></td>
                         </tr>
@@ -61,12 +82,10 @@
                     <tfoot>
                         <tr>
                             <td>3</td>
-                            <td>休館時間</td>
-                            <td>&nbsp</td>
-                            <td>Lorem ipsum dolor sit amet <br>
-                                consectetur adipisicing elit. <br>
-                            </td>
-                            <td>開啟</td>
+                            <td>ghi@gmail.com</td>
+                            <td>67890</td>
+                            <td>陳小花</td>
+                            <td>0912345678</td>
                             <td>2022-02-22<br>00:00:00</td>
                             <td><button>編輯</button></td>
                         </tr>

@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-    @@include('./../../layout/head.html')
+    @@include('./layout/head.html')
 </head>
 
 <body>
     <div class="wrapper">
         <!-- 導覽列 -->
-        @@include('./../../layout/nav.html', {
+        @@include('./layout/nav.html', {
         "active4" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
-            @@include('./../../layout/header.html', {
+            @@include('./layout/header.html', {
             "tittle1" : "ABOUT ANNO",
             "tittle2" : "HISTORY OF ANNO",
             "active1" : "activeb",
@@ -71,16 +71,16 @@
             </main>
 
             <!-- 頁尾 -->
-            @@include('./../../layout/footer.html')
+            @@include('./layout/footer.html')
 
         </div>
     </div>
 
     <!-- 載入js、套件 -->
-    <script src="./../../js/vendors/fullpage.min.js"></script>
+    <script src="./js/vendors/fullpage.min.js"></script>
 
     <!-- 大家自己寫的js 在這！ -->
-    <script src="./../../js/about.min.js"></script>
+    <script src="./js/about.min.js"></script>
 </body>
 
 </html>

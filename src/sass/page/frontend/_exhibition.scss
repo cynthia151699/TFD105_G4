@@ -107,6 +107,16 @@ main.exRelative{
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+
+                @for $i from 1 through 3 {
+                    div.beforePic-#{$i}{
+                        @include Remind;
+                        margin: $HorizontalAlignCenter;
+                        width: 450px;
+                        height: 120px;
+                        @include LinkImg('exhibition', 'exhibition_pic #{$i+3}', 'jpeg', cover, no-repeat, center);
+                    }
+                }
             }
         }
     }

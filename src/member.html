@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-  @@include('./../../layout/head.html')
+  @@include('./layout/head.html')
 </head>
 
 <body>
   <div class="wrapper">
     <!-- 導覽列 -->
-    @@include('./../../layout/nav.html', { "active5" : "active" })
+    @@include('./layout/nav.html', { "active5" : "active" })
 
     <div class="mainContainer">
       <!-- 頁首 -->
-      @@include('./../../layout/header.html', { "tittle1" : "LOG IN",
+      @@include('./layout/header.html', { "tittle1" : "LOG IN",
       "tittle2" : "SIGN UP", "active1" : "activeb", "active3" : "active",
       "active4" : "active", })
 
@@ -120,18 +120,18 @@
         </div>
       </main>
       <!-- 頁尾 -->
-      @@include('./../../layout/footer.html')
+      @@include('./layout/footer.html')
     </div>
   </div>
 
   <!-- 載入js、套件 -->
-  <script src="./../../layout/importjs.html"></script>
+  <script src="./layout/importjs.html"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
   <script type="text/javascript">
     emailjs.init("rB4cW-mtW8WwyODex");
   </script>
-  <script src="./../../js/member.min.js"></script>
+  <script src="./js/member.min.js"></script>
   <!-- 選單左右移動 -->
   <script>
     document.querySelector('.member_img__btn').addEventListener('click', function () {
