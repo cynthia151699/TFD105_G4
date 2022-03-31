@@ -1,27 +1,42 @@
-//forget相關區域
-.member_forget_main_block {
-    margin: 50px auto;
-    width: 1000px;
-    height: calc(100vh - 190px);
-    max-height: 800px;
-    background-color: $TextColor2;
+// 主要區域置中
+.member_forget_main_area {
     @include VerticalAlignCenter;
+    @include Remind(green);
+    width: calc(100vw - 70px);
+    height: calc(100vh - 90px);
+
 }
+
+.member_forget_main_block {
+    @include HorizontalAlignCenter;
+    @include VerticalAlignCenter;
+    @include Remind(blue);
+    width: 900px;
+    height: 400px;
+    background-color: $TextColor2;
+}
+
 .member_forget_main {
     text-align: center;
 }
+
 //文字顏色
-.member_forget_text{
-    color:$TextColor;
+.member_forget_text {
+    color: $TextColor;
 }
-.member_forget_input{
+
+.member_forget_input {
     background-color: $HFBGColor;
-    color:$TextColor2;
+    color: $TextColor2;
+    font-size:24px;
+    width:600px;
 }
+
 //按鈕顏色
-.member_forget_BtColor1{
+.member_forget_BtColor1 {
     background-color: #AD9F9F;
 }
-.member_forget_BtColor2{
+
+.member_forget_BtColor2 {
     background-color: $AccentColor2;
 }
