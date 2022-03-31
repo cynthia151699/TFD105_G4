@@ -11,18 +11,18 @@ $AccentColor: #83DCD7;
 $AccentColor2: #F29966;
 $AccentColor3: #F25A38;
 
-
 // 文字顏色樣式
-$TextColor: #0C0C0C;
+$TextColor: #293241; // backend_maskcolor
 $TextColor2: #F4F4F4; //有點灰色
 
 // 表單色票
 $InputColor: #FFFFFF; //純白
 
 // 後台用顏色
-$BackColor: #D6ECFF;
-// $BackColor2: #B5CDE2;
-
+$BHColor: #D6ECFF;
+$THColor: #CDDBE8;
+$TextColor3: #000000;
+$PopUpWindow: #E9E9E9;
 
 
 // 圓角
@@ -37,7 +37,7 @@ $BoxShadow: 3px 3px 5px #293241;
 
 //文字樣式
 $FontWeight: (
-    'medium': 500, // 大標題
+    'medium': 800, // 大標題
     'regular': 400, // 副標題
     'light': 300 //內文
 );

@@ -13,6 +13,43 @@
         "active2" : "active"
         })
 
+        <div class="popUp">
+            <div class="popUpwindows">
+                <form action="post">
+                    <div class="addNews">
+                        <h4>新增消息</h4>
+                        消息編號<input type="text">
+                        消息名稱<input type="text">
+                        消息圖片<input type="file">請選擇圖片上傳
+                        消息內容<input type="text">
+                        展覽狀態<input type="text">
+                        創建時間
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+
+                    <div class="editNews">
+                        <h4>編輯消息</h4>
+                        消息編號<input type="text">
+                        消息名稱<input type="text">
+                        消息圖片<input type="file">請選擇圖片上傳
+                        消息內容<input type="text">
+                        展覽狀態<input type="text">
+                        創建時間
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+
+                    <div class="storeNews">
+                        <h4>編輯消息</h4>
+                        尚未儲存，是否確認離開？
+                        <button>取消</button>
+                        <button>確定</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <div class="tableContainer">
             <!-- 頁首 -->
             @@include('./../../layout/backheader.html', {

@@ -56,6 +56,7 @@ main.ticketsPage{
                             width: 170px;
                             height: 140px;
                             @include LinkImg('tickets', 'tickets_pic#{$i+2}', 'jpeg', cover, no-repeat, left);
+                            // @include BorderBg1;
                             @include HorizontalAlignCenter;
                         }
                     }
