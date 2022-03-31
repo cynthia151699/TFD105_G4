@@ -1,24 +1,3 @@
-@mixin BorderBg {
-    border-left: 3px solid $AccentColor;
-    border-bottom: 3px solid $AccentColor2;
-    border-right: 3px solid $AccentColor3;
-    border-style:inset;
-}
-
-
-@mixin BorderBg1 {
-        border-left: 4px solid $AccentColor;
-        border-bottom: 4px solid $AccentColor;
-        border-right: 4px solid $AccentColor;
-        border-style:inset; 
-}
-
-@mixin BorderBg2 {
-    border-left: 4px solid $AccentColor2;
-    border-bottom: 4px solid $AccentColor2;
-    border-right: 4px solid $AccentColor2;
-    border-style:inset; 
-}
 
 main.ticketsPage{
     
