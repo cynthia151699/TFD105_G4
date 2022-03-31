@@ -66,7 +66,7 @@ __________________________________________________
 已安裝套件：Bootstraps、jQuery、Vue.js、Gasp.js、Email.js  
   
 # 小提醒：
-1. 記得安裝套件然後按開發（按三角形執行，不要按蟲蟲偵錯！！不要開Watch Sass！！請以live server 上看到的網頁為準）  
+1. 記得安裝套件然後按開發（按三角形執行，不要按蟲蟲偵錯！！不要開Watch Sass！！不要開live server！！）  
   
 ‧ 不要改動src/layout 資料夾、src/html/backend 資料夾、src/sass/style.scss 的檔案路徑順序！code會連不見的！會大跑版的！  
   
