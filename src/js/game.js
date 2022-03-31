@@ -17,5 +17,25 @@ var g5_1 = document.getElementById('g5_1');
 
 //抓到img陣列，準備跑迴圈做配對
 let ccc = document.getElementsByTagName("img");
-// console.log(ccc);
+// console.log(ccc[5]);
+for (let i = 0; i < ccc.length; i++) {
+    if (i == 1 && 6) {
+        alert("congrats!");
+    }else{
 
+    }
+};
+
+// transform:translate3d (0px, 0px, 0px); //0 5
+// transform:translate3d (-755px, 0px, 0px); //1 6
+// transform:translate3d (-1510px, 0px, 0px); //2 7
+// transform:translate3d (-2265px, 0px, 0px); //3 8
+// transform:translate3d (-3020px, 0px, 0px); //4 9
+
+
+//亂數
+// let rotation = document.getElementsByClassName("rotate");
+// console.log(rotation);
+// rotation.addEventListener("click", function(array){
+    // array.sort(() => Math.random() - 0.5);
+// });
