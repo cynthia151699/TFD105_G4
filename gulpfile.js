@@ -14,6 +14,19 @@ const rename = require('gulp-rename');
 
 exports.p = package;
 
+// // 圖片壓縮
+// const imagemin = require('gulp-imagemin');
+
+// function min_images(){
+//     return src(['src/images/*.*', 'src/img/**/*.*'])
+//     .pipe(imagemin([
+//         imagemin.mozjpeg({quality: 70, progressive: true}) // 壓縮品質      quality越低 -> 壓縮越大 -> 品質越差 
+//     ]))
+//     .pipe(dest('dist/images'))
+// }
+
+// exports.mini_img = min_images;
+
 // css minify
 const cleanCSS = require('gulp-clean-css');
 
@@ -111,7 +124,6 @@ function watchall(){
 }
 
 exports.w = watchall
-
 
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
