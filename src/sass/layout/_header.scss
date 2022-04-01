@@ -3,7 +3,7 @@ header.frontHeader{
     width: $RWD;
     height: 50px;
 
-    background-color: $HFBGColor;
+    background-color: $HFBGColorO;
     font-family: $SpecialFont;
 
     @include Flex(row);
