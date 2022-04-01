@@ -3,9 +3,14 @@ $(document).ready(function() {
         sectionsColor: ['#583B75', '#293241', '#293241'],
         anchors: ['first', 'second', 'third'],
         menu: '#menu',
-            navigation: true,
-            navigationTooltips: ['One', 'Two', 'Three'],
-            loopBottom: true,
-            loopTop: true
+        navigation: true,
+        navigationTooltips: ['One', 'Two', 'Three'],
+        loopBottom: true,
+        loopTop: true,
+        sectionSelector: '.section',
+		leftSelector: '.left',
+		rightSelector: '.right',
+        css3: true    
     });
 });
+

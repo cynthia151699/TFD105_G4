@@ -1,27 +1,61 @@
-.member_modify_title {
-    margin: 0px auto;
-    width: 1000px;
-    text-align: center;   
-}
-.member_modify_text{
-    color: $TextColor2;
-}
-.member_modify_main_block{
-    width: 1000px;
-    height: calc(100vh - 320px);
-    max-height: 800px;
-    background-color: $TextColor2;
+// 主要區域置中
+.member_modify_area {
     @include VerticalAlignCenter;
-    text-align:left;
+    @include Remind(green);
+    width: calc(100vw - 70px);
+    height: calc(100vh - 90px);
+    text-align: center;
 }
-.member_modify_flex{
+// 下方多一條確認框框高度降低
+.member_modify_title {
+    @include HorizontalAlignCenter;
+    @include VerticalAlignCenter;
+    @include Remind(blue);
+    width: 900px;
+    height: 330px;
+    background-color: $TextColor2;
+    position: relative;
+}
+
+// 相對框框絕對定位title
+.member_modify_text {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: $TextColor2;
+    width:720px;
+}
+// 相對框框絕對定位button
+.member_mail_Bt {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: $TextColor2;
+    width:720px;
+}
+.member_modify_Bt{
+    position: absolute;
+    bottom: -65px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.member_modify_main_block {
+    @include VerticalAlignCenter;
+    text-align: left;
+}
+
+.member_modify_flex {
     @include Flex (1);
+    
 }
-.member_modify_lineHeight{
-    line-height: 32px;
-}
+
 .member_modify_input{
     background-color: $HFBGColor;
     color:$TextColor2;
+    height: 32px;
+    width: 400px; 
 }
-//按鈕顏色同forget
+

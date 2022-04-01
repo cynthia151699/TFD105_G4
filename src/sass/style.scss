@@ -13,6 +13,34 @@
 @import './component/button';
 @import './mixin';
 
+// 模版連結
+@import './layout/login';
+@import './layout/nav';
+@import './layout/header';
+@import './layout/footer';
+    
+@import './layout/RWD';
+    
+@import './page/prototype';
+    
+// 前台頁面連結
+@import './page/frontend/index';
+@import './page/frontend/exhibition';
+@import './page/frontend/guide';
+@import './page/frontend/tickets';
+@import './page/frontend/tickets_current';
+@import './page/frontend/tickets_past';
+@import './page/frontend/about';
+@import './page/frontend/member';
+@import './page/frontend/member_forget';
+@import './page/frontend/member_info';
+@import './page/frontend/member_modify';
+@import './page/frontend/member_forget_change';
+@import './page/frontend/game';
+
+// 後台頁面連結
+@import './page/backend';
+
 // -------------------- HTML --------------------
 
 body{
@@ -75,7 +103,7 @@ body{
 
         .mainContainer{
             width: $Width;
-            height: calc(#{$Height} + 90px);
+            height: calc(#{$Height} + 80px);
 
             @include Flex(column);
         }
@@ -89,31 +117,3 @@ body{
         }
     }
 }
-
-// 模版連結
-@import './layout/login';
-@import './layout/nav';
-@import './layout/header';
-@import './layout/footer';
-    
-@import './layout/RWD';
-    
-@import './page/prototype';
-    
-// 前台頁面連結
-@import './page/frontend/index';
-@import './page/frontend/exhibition';
-@import './page/frontend/guide';
-@import './page/frontend/tickets';
-@import './page/frontend/tickets_current';
-@import './page/frontend/tickets_past';
-@import './page/frontend/about';
-@import './page/frontend/member';
-@import './page/frontend/member_forget';
-@import './page/frontend/member_info';
-@import './page/frontend/member_modify';
-@import './page/frontend/member_forget_change';
-@import './page/frontend/game';
-
-// 後台頁面連結
-@import './page/backend';

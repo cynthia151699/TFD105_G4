@@ -8,12 +8,12 @@
  *
  * Copyright (C) 2018 http://alvarotrigo.com/multiScroll/ - A project by Alvaro Trigo
  */
-(function($, window, document, Math, undefined) {
+(function ($, window, document, Math, undefined) {
 
-    $.fn.multiscroll = function(options) {
+    $.fn.multiscroll = function (options) {
         var MS = $.fn.multiscroll;
-        var isOK = options && new RegExp('([\\d\\w]{8}-){3}[\\d\\w]{8}|^(?=.*?[A-Y])(?=.*?[a-y])(?=.*?[0-8])(?=.*?[#?!@$%^&*-]).{8,}$').test(options['li'+'cen'+'seK' + 'e' + 'y']) || document.domain.indexOf('al'+'varotri' +'go' + '.' + 'com') > -1;
-        var NO_TRANSITION =         'ms-notransition';
+        var isOK = options && new RegExp('([\\d\\w]{8}-){3}[\\d\\w]{8}|^(?=.*?[A-Y])(?=.*?[a-y])(?=.*?[0-8])(?=.*?[#?!@$%^&*-]).{8,}$').test(options['li' + 'cen' + 'seK' + 'e' + 'y']) || document.domain.indexOf('al' + 'varotri' + 'go' + '.' + 'com') > -1;
+        var NO_TRANSITION = 'ms-notransition';
         var canScroll = true;
         var scrollings = [];
         var afterSectionLoadsId;
@@ -21,13 +21,13 @@
 
         // Create some defaults, extending them with any options that were provided
         options = $.extend({
-            'verticalCentered' : true,
+            'verticalCentered': true,
             'scrollingSpeed': 700,
             'easing': 'easeInQuart',
             'easingcss3': 'ease-out',
             'menu': false,
             'sectionsColor': [],
-            'anchors':[],
+            'anchors': [],
             'navigation': false,
             'navigationPosition': 'right',
             'navigationColor': '#000',
@@ -57,7 +57,7 @@
         // adding default easing
         $.extend($.easing, {
             easeInQuart: function (x, t, b, c, d) {
-              return c*(t/=d)*t*t*t + b;
+                return c * (t /= d) * t * t * t + b;
             }
         });
 
@@ -78,8 +78,8 @@
         var windowHeight = $(window).height();
         var MSPointer = getMSPointer();
         var events = {
-            touchmove: 'ontouchmove' in window ? 'touchmove' :  MSPointer.move,
-            touchstart: 'ontouchstart' in window ? 'touchstart' :  MSPointer.down
+            touchmove: 'ontouchmove' in window ? 'touchmove' : MSPointer.move,
+            touchstart: 'ontouchstart' in window ? 'touchstart' : MSPointer.down
         };
 
         //only once my friend!
@@ -92,18 +92,18 @@
         addTouchHandler();
 
         //if css3 is not supported, it will use jQuery animations
-        if(options.css3){
+        if (options.css3) {
             options.css3 = support3d();
         }
 
         $('html, body').css({
-            'overflow' : 'hidden',
-            'height' : '100%'
+            'overflow': 'hidden',
+            'height': '100%'
         });
 
         //adding class names to each sections
         if (options.sectionSelector !== '.ms-section') {
-            $(options.sectionSelector).each(function(){
+            $(options.sectionSelector).each(function () {
                 $(this).addClass('ms-section');
             });
         }
@@ -139,14 +139,14 @@
         });
 
 
-        $('.ms-left .ms-section, .ms-right .ms-section').each(function(){
+        $('.ms-left .ms-section, .ms-right .ms-section').each(function () {
             var sectionIndex = $(this).index();
 
-            if(options.paddingTop || options.paddingBottom){
-                $(this).css('padding', options.paddingTop  + ' 0 ' + options.paddingBottom + ' 0');
+            if (options.paddingTop || options.paddingBottom) {
+                $(this).css('padding', options.paddingTop + ' 0 ' + options.paddingBottom + ' 0');
             }
 
-            if (typeof options.sectionsColor[sectionIndex] !==  'undefined') {
+            if (typeof options.sectionsColor[sectionIndex] !== 'undefined') {
                 $(this).css('background-color', options.sectionsColor[sectionIndex]);
             }
 
@@ -154,18 +154,18 @@
                 $(this).attr('data-anchor', options.anchors[sectionIndex]);
             }
 
-            if(options.verticalCentered){
+            if (options.verticalCentered) {
                 addTableClass($(this));
             }
 
             //only for the left panel
-            if($(this).closest('.ms-left').length && options.navigation) {
+            if ($(this).closest('.ms-left').length && options.navigation) {
                 var link = '';
-                if(options.anchors.length){
+                if (options.anchors.length) {
                     link = options.anchors[sectionIndex];
                 }
                 var tooltip = options.navigationTooltips[sectionIndex];
-                if(typeof tooltip === 'undefined'){
+                if (typeof tooltip === 'undefined') {
                     tooltip = '';
                 }
                 if (options.navigation) {
@@ -175,9 +175,9 @@
         });
 
         //inverting the right panel
-        $('.ms-right').html( $('.ms-right').find('.ms-section').get().reverse());
+        $('.ms-right').html($('.ms-right').find('.ms-section').get().reverse());
 
-        $('.ms-left .ms-section, .ms-right .ms-section').each(function(){
+        $('.ms-left .ms-section, .ms-right .ms-section').each(function () {
             var sectionIndex = $(this).index();
 
             $(this).css({
@@ -185,23 +185,23 @@
             });
 
 
-            if(!sectionIndex && options.navigation ){
+            if (!sectionIndex && options.navigation) {
                 //activating the navigation bullet
                 nav.find('li').eq(sectionIndex).find('a').addClass('active');
             }
-        }).promise().done(function(){
+        }).promise().done(function () {
 
             //if no active section is defined, the 1st one will be the default one
-            if(!$('.ms-left .ms-section.active').length){
+            if (!$('.ms-left .ms-section.active').length) {
                 $('.ms-right').find('.ms-section').last().addClass('active');
                 $('.ms-left').find('.ms-section').first().addClass('active');
             }
 
             //vertical centered of the navigation + first bullet active
-            if(options.navigation){
-                nav.css('margin-top', '-' + (nav.height()/2) + 'px');
+            if (options.navigation) {
+                nav.css('margin-top', '-' + (nav.height() / 2) + 'px');
             }
-            $.isFunction( options.afterRender ) && options.afterRender.call( this);
+            $.isFunction(options.afterRender) && options.afterRender.call(this);
 
             //scrolling to the defined active section and adjusting right and left panels
             silentScroll();
@@ -209,10 +209,10 @@
             //setting the class for the body element
             setBodyClass();
 
-            if (document.readyState == 'complete'){
+            if (document.readyState == 'complete') {
                 scrollToAnchor();
-            }else{
-                $(window).on('load', function() {
+            } else {
+                $(window).on('load', function () {
                     scrollToAnchor();
                 });
             }
@@ -223,17 +223,17 @@
         //(a way to detect back history button as we play with the hashes on the URL)
         $(window).on('hashchange', hashChangeHandler);
 
-        function hashChangeHandler(){
-            var value =  window.location.hash.replace('#', '');
+        function hashChangeHandler() {
+            var value = window.location.hash.replace('#', '');
             var sectionAnchor = value;
 
-            if(sectionAnchor.length){
-                var section = $('.ms-left').find('[data-anchor="'+sectionAnchor+'"]');
+            if (sectionAnchor.length) {
+                var section = $('.ms-left').find('[data-anchor="' + sectionAnchor + '"]');
 
-                if(section.length){
-                    var isFirstScrollMove = (typeof lastScrolledDestiny === 'undefined' );
+                if (section.length) {
+                    var isFirstScrollMove = (typeof lastScrolledDestiny === 'undefined');
 
-                    if (isFirstScrollMove || sectionAnchor !== lastScrolledDestiny){
+                    if (isFirstScrollMove || sectionAnchor !== lastScrolledDestiny) {
                         scrollPage(section);
                     }
                 }
@@ -253,30 +253,30 @@
 
             var activeElement = $(document.activeElement);
 
-            if(!activeElement.is('textarea') && !activeElement.is('input') && !activeElement.is('select') &&
-                options.keyboardScrolling){
+            if (!activeElement.is('textarea') && !activeElement.is('input') && !activeElement.is('select') &&
+                options.keyboardScrolling) {
                 var keyCode = e.which;
 
                 //preventing the scroll with arrow keys & spacebar & Page Up & Down keys
                 var keyControls = [40, 38, 32, 33, 34];
-                if($.inArray(keyCode, keyControls) > -1){
+                if ($.inArray(keyCode, keyControls) > -1) {
                     e.preventDefault();
                 }
 
-                keydownId = setTimeout(function(){
+                keydownId = setTimeout(function () {
                     onkeydown(e);
-                },150);
+                }, 150);
             }
         }
 
         /**
          * Sliding with arrow keys, both, vertical and horizontal
          */
-        function onkeydown(e){
+        function onkeydown(e) {
             var shiftPressed = e.shiftKey;
 
             //do nothing if we can not scroll 
-            if(!canScroll){
+            if (!canScroll) {
                 return;
             }
 
@@ -289,7 +289,7 @@
 
                 //down
                 case 32: //spacebar
-                    if(shiftPressed){
+                    if (shiftPressed) {
                         MS.moveSectionUp();
                         break;
                     }
@@ -305,7 +305,7 @@
 
                 //End
                 case 35:
-                    MS.moveTo( $('.ms-left .ms-section').length);
+                    MS.moveTo($('.ms-left .ms-section').length);
                     break;
 
                 default:
@@ -316,8 +316,8 @@
         /**
          * Disabling any action when pressing of the mouse wheel (Chrome, IE, Opera, Safari)
          */
-        $(document).mousedown(function(e) {
-            if(e.button == 1){
+        $(document).mousedown(function (e) {
+            if (e.button == 1) {
                 e.preventDefault();
                 return false;
             }
@@ -334,11 +334,11 @@
 
         function navMouseEnterHandler() {
             var tooltip = $(this).data('tooltip');
-            $('<div class="multiscroll-tooltip ' + options.navigationPosition +'">' + tooltip + '</div>').hide().appendTo($(this)).fadeIn(200);
+            $('<div class="multiscroll-tooltip ' + options.navigationPosition + '">' + tooltip + '</div>').hide().appendTo($(this)).fadeIn(200);
         }
 
         function navMouseLeaveHandler() {
-            $(this).find('.multiscroll-tooltip').fadeOut(200, function() {
+            $(this).find('.multiscroll-tooltip').fadeOut(200, function () {
                 $(this).remove();
             });
         }
@@ -350,12 +350,12 @@
         }, '#multiscroll-nav li');
 
 
-        if(options.normalScrollElements){
+        if (options.normalScrollElements) {
             $(document).on('mouseenter', options.normalScrollElements, function () {
                 MS.setMouseWheelScrolling(false);
             });
 
-            $(document).on('mouseleave', options.normalScrollElements, function(){
+            $(document).on('mouseleave', options.normalScrollElements, function () {
                 MS.setMouseWheelScrolling(true);
             });
         }
@@ -380,17 +380,17 @@
                     var currentHeight = $(window).height();
 
                     //making sure the change in the viewport size is enough to force a rebuild. (20 % of the window to avoid problems when hidding scroll bars)
-                    if( Math.abs(currentHeight - previousHeight) > (20 * Math.max(previousHeight, currentHeight) / 100) ){
+                    if (Math.abs(currentHeight - previousHeight) > (20 * Math.max(previousHeight, currentHeight) / 100)) {
                         reBuild(true);
                         previousHeight = currentHeight;
                     }
                 }
-            }else{
+            } else {
                 //in order to call the functions only when the resize is finished
                 //http://stackoverflow.com/questions/4298612/jquery-how-to-call-resize-event-only-once-its-finished-resizing
                 clearTimeout(resizeId);
 
-                resizeId = setTimeout(function(){
+                resizeId = setTimeout(function () {
                     reBuild(true);
                 }, 350);
             }
@@ -399,32 +399,32 @@
         /**
          * When resizing is finished, we adjust the slides sizes and positions
          */
-        function reBuild(resizing){
+        function reBuild(resizing) {
             windowHeight = $(window).height();
-            $('.ms-tableCell').each(function() {
+            $('.ms-tableCell').each(function () {
                 $(this).css({ height: getTableHeight($(this).parent()) });
             });
 
-            if(options.scrollOverflow){
+            if (options.scrollOverflow) {
                 scrollBarHandler.createScrollBarForAll();
             }
 
             silentScroll();
-            $.isFunction( options.afterResize ) && options.afterResize.call( this);
+            $.isFunction(options.afterResize) && options.afterResize.call(this);
         }
 
-        function silentScroll(){
+        function silentScroll() {
             //moving the right section to the bottom
-            if(options.css3){
+            if (options.css3) {
                 transformContainer($('.ms-left'), 'translate3d(0px, -' + $('.ms-left').find('.ms-section.active').position().top + 'px, 0px)', false);
                 transformContainer($('.ms-right'), 'translate3d(0px, -' + $('.ms-right').find('.ms-section.active').position().top + 'px, 0px)', false);
-            }else{
-                $('.ms-left').css('top', -$('.ms-left').find('.ms-section.active').position().top );
-                $('.ms-right').css('top', -$('.ms-right').find('.ms-section.active').position().top );
+            } else {
+                $('.ms-left').css('top', -$('.ms-left').find('.ms-section.active').position().top);
+                $('.ms-right').css('top', -$('.ms-right').find('.ms-section.active').position().top);
             }
         }
 
-        MS.moveSectionUp = function(){
+        MS.moveSectionUp = function () {
             var prev = $('.ms-left .ms-section.active').prev('.ms-section');
 
             // if(!prev.length && options.loopTop){
@@ -436,47 +436,47 @@
             }
         };
 
-        MS.moveSectionDown = function (){
+        MS.moveSectionDown = function () {
             var next = $('.ms-left .ms-section.active').next('.ms-section');
 
             // if(!next.length && options.loopBottom ){
             //     next = $('.ms-left .ms-section').first();
             // }
 
-            if(next.length){
+            if (next.length) {
                 scrollPage(next);
             }
         };
 
-        MS.moveTo = function (section){
+        MS.moveTo = function (section) {
             var destiny = '';
 
-            if(isNaN(section)){
-                destiny = $('.ms-left [data-anchor="'+section+'"]');
-            }else{
-                destiny = $('.ms-left .ms-section').eq( (section -1) );
+            if (isNaN(section)) {
+                destiny = $('.ms-left [data-anchor="' + section + '"]');
+            } else {
+                destiny = $('.ms-left .ms-section').eq((section - 1));
             }
 
             scrollPage(destiny);
         };
 
-        function scrollPage(leftDestination){
+        function scrollPage(leftDestination) {
             var leftDestinationIndex = leftDestination.index();
-            var rightDestination = $('.ms-right').find('.ms-section').eq( numberSections -1 - leftDestinationIndex);
+            var rightDestination = $('.ms-right').find('.ms-section').eq(numberSections - 1 - leftDestinationIndex);
             var rightDestinationIndex = numberSections - 1 - leftDestinationIndex;
-            var anchorLink  = leftDestination.data('anchor');
+            var anchorLink = leftDestination.data('anchor');
             var activeSection = $('.ms-left .ms-section.active');
             var leavingSection = activeSection.index() + 1;
             var yMovement = getYmovement(leftDestination);
             var isFastSpeed = options.scrollingSpeed < 700;
-            var transitionLapse = isFastSpeed ? 700 : options.scrollingSpeed; 
+            var transitionLapse = isFastSpeed ? 700 : options.scrollingSpeed;
 
             //preventing from activating the MouseWheelHandler event
             //more than once if the page is scrolling
             canScroll = false;
 
             var topPos = {
-                'left' : leftDestination.position().top,
+                'left': leftDestination.position().top,
                 'right': rightDestination.position().top
             };
 
@@ -486,7 +486,7 @@
             setURLHash(anchorLink);
 
             // Use CSS3 translate functionality or...
-            if (options.css3){
+            if (options.css3) {
 
                 //callback (onLeave)
                 $.isFunction(options.onLeave) && options.onLeave.call(this, leavingSection, (leftDestinationIndex + 1), yMovement);
@@ -497,25 +497,25 @@
                 transformContainer($('.ms-left'), translate3dLeft, true);
                 transformContainer($('.ms-right'), translate3dRight, true);
 
-                if(options.scrollingSpeed){
+                if (options.scrollingSpeed) {
                     clearTimeout(afterSectionLoadsId);
                     afterSectionLoadsId = setTimeout(function () {
                         //callback (afterLoad)
                         $.isFunction(options.afterLoad) && options.afterLoad.call(this, anchorLink, (leftDestinationIndex + 1));
 
                         //disabling canScroll when using fastSpeed
-                        canScroll = !isFastSpeed;     
+                        canScroll = !isFastSpeed;
                     }, options.scrollingSpeed);
-                }else{
+                } else {
                     $.isFunction(options.afterLoad) && options.afterLoad.call(this, anchorLink, (leftDestinationIndex + 1));
                 }
-            }else{
+            } else {
                 //callback (onLeave)
                 $.isFunction(options.onLeave) && options.onLeave.call(this, leavingSection, (leftDestinationIndex + 1), yMovement);
 
                 $('.ms-left').animate({
                     'top': -topPos['left']
-                }, options.scrollingSpeed, options.easing, function(){
+                }, options.scrollingSpeed, options.easing, function () {
                     $.isFunction(options.afterLoad) && options.afterLoad.call(this, anchorLink, (leftDestinationIndex + 1));
 
                     canScroll = !isFastSpeed;
@@ -533,9 +533,9 @@
             activateNavDots(anchorLink, leftDestinationIndex);
 
             // enabling canScroll after the minimum transition laps
-            if(isFastSpeed){
+            if (isFastSpeed) {
                 clearTimeout(g_transitionLapseId);
-                g_transitionLapseId = setTimeout(function(){
+                g_transitionLapseId = setTimeout(function () {
                     canScroll = true;
                 }, transitionLapse);
             }
@@ -545,7 +545,7 @@
         * Removes the auto scrolling action fired by the mouse wheel and tackpad.
         * After this function is called, the mousewheel and trackpad movements won't scroll through sections.
         */
-        function removeMouseWheelHandler(){
+        function removeMouseWheelHandler() {
             if (document.addEventListener) {
                 document.removeEventListener('mousewheel', MouseWheelHandler, false); //IE9, Chrome, Safari, Oper
                 document.removeEventListener('wheel', MouseWheelHandler, false); //Firefox
@@ -558,7 +558,7 @@
         * Adds the auto scrolling action for the mouse wheel and tackpad.
         * After this function is called, the mousewheel and trackpad movements will scroll through sections
         */
-        function addMouseWheelHandler(){
+        function addMouseWheelHandler() {
             if (document.addEventListener) {
                 document.addEventListener("mousewheel", MouseWheelHandler, false); //IE9, Chrome, Safari, Oper
                 document.addEventListener("wheel", MouseWheelHandler, false); //Firefox
@@ -577,17 +577,17 @@
 
         function MouseWheelHandler(e) {
             var curTime = new Date().getTime();
-            
+
             // cross-browser wheel delta
-            e = e || window.event;
+            e = e || window.event;
             var value = e.wheelDelta || -e.deltaY || -e.detail;
             var delta = Math.max(-1, Math.min(1, value));
 
             var horizontalDetection = typeof e.wheelDeltaX !== 'undefined' || typeof e.deltaX !== 'undefined';
-            var isScrollingVertically = (Math.abs(e.wheelDeltaX) < Math.abs(e.wheelDelta)) || (Math.abs(e.deltaX ) < Math.abs(e.deltaY) || !horizontalDetection);
+            var isScrollingVertically = (Math.abs(e.wheelDeltaX) < Math.abs(e.wheelDelta)) || (Math.abs(e.deltaX) < Math.abs(e.deltaY) || !horizontalDetection);
 
             //time difference between the last scroll and the current one
-            var timeDiff = curTime-prevTime;
+            var timeDiff = curTime - prevTime;
             prevTime = curTime;
 
             //keeping record of the previous scrollings
@@ -595,7 +595,7 @@
 
             //haven't they scrolled in a while?
             //(enough to be consider a different scrolling action to scroll another section)
-            if(timeDiff > 200){
+            if (timeDiff > 200) {
                 //emptying the array, we dont care about old scrollings for our averages
                 scrollings = [];
             }
@@ -605,7 +605,7 @@
                 var averageMiddle = getAverage(scrollings, 70);
                 var isAccelerating = averageEnd >= averageMiddle;
 
-                if(isAccelerating && isScrollingVertically){
+                if (isAccelerating && isScrollingVertically) {
                     //scrolling down?
                     if (delta < 0) {
                         MS.moveSectionDown();
@@ -624,26 +624,26 @@
         /**
         * Gets the average of the last `number` elements of the given array.
         */
-        function getAverage(elements, number){
+        function getAverage(elements, number) {
             var sum = 0;
 
             //taking `number` elements from the end to make the average, if there are not enought, 1
             var lastElements = elements.slice(Math.max(elements.length - number, 1));
 
-            for(var i = 0; i < lastElements.length; i++){
+            for (var i = 0; i < lastElements.length; i++) {
                 sum = sum + lastElements[i];
             }
 
-            return Math.ceil(sum/number);
+            return Math.ceil(sum / number);
         }
 
         /**
         * Adds a css3 transform property to the container class with or without animation depending on the animated param.
         */
-        function transformContainer(container, translate3d, animated){
-            if(animated){
+        function transformContainer(container, translate3d, animated) {
+            if (animated) {
                 addAnimation(container);
-            }else{
+            } else {
                 removeAnimation(container);
             }
 
@@ -653,7 +653,7 @@
         /**
         * Adds transition animations for the given element
         */
-         function addAnimation(element){
+        function addAnimation(element) {
             var transition = 'all ' + options.scrollingSpeed + 'ms ' + options.easingcss3;
 
             element.removeClass(NO_TRANSITION);
@@ -666,18 +666,18 @@
         /**
         * Remove transition animations for the given element
         */
-         function removeAnimation(element){
+        function removeAnimation(element) {
             return element.addClass(NO_TRANSITION);
         }
 
         /**
         * Returns the transform styles for all browsers
         */
-        function getTransforms(translate3d){
+        function getTransforms(translate3d) {
             return {
                 '-webkit-transform': translate3d,
                 '-moz-transform': translate3d,
-                '-ms-transform':translate3d,
+                '-ms-transform': translate3d,
                 'transform': translate3d
             };
         }
@@ -685,12 +685,12 @@
         /**
          * Activating the website navigation dots according to the given slide name.
          */
-        function activateNavDots(name, sectionIndex){
-            if(options.navigation){
+        function activateNavDots(name, sectionIndex) {
+            if (options.navigation) {
                 $('#multiscroll-nav').find('.active').removeClass('active');
-                if(name){
+                if (name) {
                     $('#multiscroll-nav').find('a[href="#' + name + '"]').addClass('active');
-                }else{
+                } else {
                     $('#multiscroll-nav').find('li').eq(sectionIndex).find('a').addClass('active');
                 }
             }
@@ -699,10 +699,10 @@
         /**
          * Activating the website main menu elements according to the given slide name.
          */
-        function activateMenuElement(name){
-            if(options.menu){
+        function activateMenuElement(name) {
+            if (options.menu) {
                 $(options.menu).find('.active').removeClass('active');
-                $(options.menu).find('[data-menuanchor="'+name+'"]').addClass('active');
+                $(options.menu).find('[data-menuanchor="' + name + '"]').addClass('active');
             }
         }
 
@@ -710,11 +710,11 @@
         * Retuns `up` or `down` depending on the scrolling movement to reach its destination
         * from the current section.
         */
-        function getYmovement(destiny){
+        function getYmovement(destiny) {
             var fromIndex = $('.ms-left .ms-section.active').index();
             var toIndex = destiny.index();
 
-            if(fromIndex > toIndex){
+            if (fromIndex > toIndex) {
                 return 'up';
             }
             return 'down';
@@ -724,30 +724,30 @@
         /**
         * Sets the URL hash for a section with slides
         */
-        function setURLHash(anchorLink){
-            if(options.anchors.length){
+        function setURLHash(anchorLink) {
+            if (options.anchors.length) {
                 location.hash = anchorLink;
             }
 
             setBodyClass();
         }
 
-         /**
-        * Sets a class for the body of the page depending on the active section / slide
-        */
-        function setBodyClass(){
+        /**
+       * Sets a class for the body of the page depending on the active section / slide
+       */
+        function setBodyClass() {
             var section = $('.ms-left .ms-section.active');
             var sectionAnchor = section.data('anchor');
             var sectionIndex = section.index();
 
             var text = String(sectionIndex);
 
-            if(options.anchors.length){
+            if (options.anchors.length) {
                 text = sectionAnchor;
             }
 
             //changing slash for dash to make it a valid CSS style
-            text = text.replace('/', '-').replace('#','');
+            text = text.replace('/', '-').replace('#', '');
 
             //removing previous anchor classes
             var classRe = new RegExp('\\b\\s?' + 'ms-viewing' + '-[^\\s]+\\b', "g");
@@ -767,11 +767,11 @@
             var el = document.createElement('p'),
                 has3d,
                 transforms = {
-                    'webkitTransform':'-webkit-transform',
-                    'OTransform':'-o-transform',
-                    'msTransform':'-ms-transform',
-                    'MozTransform':'-moz-transform',
-                    'transform':'transform'
+                    'webkitTransform': '-webkit-transform',
+                    'OTransform': '-o-transform',
+                    'msTransform': '-ms-transform',
+                    'MozTransform': '-moz-transform',
+                    'transform': 'transform'
                 };
 
             // Add it to the body to get the computed style.
@@ -792,17 +792,25 @@
         /**
         * Wraps an element in order to center it vertically by using a class style.
         */
-        function addTableClass(element){
-            element.addClass('ms-table').wrapInner('<div class="ms-tableCell" style="height: ' + getTableHeight(element) + 'px" />');
+        // function addTableClass(element){
+        //     element.addClass('ms-table').wrapInner('<div class="ms-tableCell" style="height: ' + getTableHeight(element) + 'px" />');
+        // }
+
+
+        function addTableClass(element) {
+            // element.addClass('ms-table').wrapInner('<div class="ms-tableCell" style="height: 100 + %" />');
+            //element.addClass('ms-table').wrapInner('<div class="ms-tableCell"/>').style = 'height: 90%';
+            element.addClass('ms-table').wrapInner.style = 'height: 100%';
         }
+
 
         /**
         * Gets the height of the section after removing the paddings.
         */
-        function getTableHeight(section){
+        function getTableHeight(section) {
             var sectionHeight = windowHeight;
 
-            if(options.paddingTop || options.paddingBottom){
+            if (options.paddingTop || options.paddingBottom) {
                 var paddings = parseInt(section.css('padding-top')) + parseInt(section.css('padding-bottom'));
                 sectionHeight = (windowHeight - paddings);
             }
@@ -814,12 +822,12 @@
         /**
         * Scrolls the page to the existent anchor in the URL
         */
-        function scrollToAnchor(){
+        function scrollToAnchor() {
             //getting the anchor link in the URL and deleting the `#`
-            var sectionAnchor =  window.location.hash.replace('#', '');
-            var section = $('.ms-left .ms-section[data-anchor="'+sectionAnchor+'"]');
+            var sectionAnchor = window.location.hash.replace('#', '');
+            var section = $('.ms-left .ms-section[data-anchor="' + sectionAnchor + '"]');
 
-            if(sectionAnchor.length && section.length){
+            if (sectionAnchor.length && section.length) {
                 scrollPage(section);
             }
         }
@@ -827,17 +835,17 @@
         /**
         * Adds or remove the possiblity of scrolling through sections by using the keyboard arrow keys
         */
-        MS.setKeyboardScrolling = function (value){
+        MS.setKeyboardScrolling = function (value) {
             options.keyboardScrolling = value;
         };
 
         /**
         * Adds or remove the possiblity of scrolling through sections by using the mouse wheel or the trackpad.
         */
-        MS.setMouseWheelScrolling = function (value){
-            if(value){
+        MS.setMouseWheelScrolling = function (value) {
+            if (value) {
                 addMouseWheelHandler();
-            }else{
+            } else {
                 removeMouseWheelHandler();
             }
         };
@@ -845,7 +853,7 @@
         /**
         * Defines the scrolling speed
         */
-        MS.setScrollingSpeed = function(value){
+        MS.setScrollingSpeed = function (value) {
             options.scrollingSpeed = value;
         };
 
@@ -862,9 +870,9 @@
         * This way, the touchstart and the touch moves shows an small difference between them which is the
         * used one to determine the direction.
         */
-        function touchMoveHandler(e){
+        function touchMoveHandler(e) {
 
-            if(isReallyTouch(e)){
+            if (isReallyTouch(e)) {
                 //preventing the easing on iOS devices
                 event.preventDefault();
 
@@ -893,7 +901,7 @@
         * As IE >= 10 fires both touch and mouse events when using a mouse in a touchscreen
         * this way we make sure that is really a touch event what IE is detecting.
         */
-        function isReallyTouch(e){
+        function isReallyTouch(e) {
             //if is not IE   ||  IE is detecting `touch` or `pen`
             return typeof e.pointerType === 'undefined' || e.pointerType != 'mouse';
         }
@@ -902,9 +910,9 @@
         /**
         * Handler to get he coordinates of the starting touch
         */
-        function touchStartHandler(e){
+        function touchStartHandler(e) {
 
-            if(isReallyTouch(e)){
+            if (isReallyTouch(e)) {
                 var touchEvents = getEventsPage(e);
                 touchStartY = touchEvents['y'];
                 touchStartX = touchEvents['x'];
@@ -915,23 +923,23 @@
         /**
         * Adds the possibility to auto scroll through sections on touch devices.
         */
-        function addTouchHandler(){
-            if(isTouch || isTouchDevice){
+        function addTouchHandler() {
+            if (isTouch || isTouchDevice) {
                 document.removeEventListener(events.touchstart, touchStartHandler);
-                document.removeEventListener(events.touchmove, touchMoveHandler, {passive: false});
+                document.removeEventListener(events.touchmove, touchMoveHandler, { passive: false });
 
                 document.addEventListener(events.touchstart, touchStartHandler);
-                document.addEventListener(events.touchmove, touchMoveHandler, {passive: false});
+                document.addEventListener(events.touchmove, touchMoveHandler, { passive: false });
             }
         }
 
         /**
         * Removes the auto scrolling for touch devices.
         */
-        function removeTouchHandler(){
-            if(isTouch || isTouchDevice){
+        function removeTouchHandler() {
+            if (isTouch || isTouchDevice) {
                 document.removeEventListener(events.touchstart, touchStartHandler);
-                document.removeEventListener(events.touchmove, touchMoveHandler, {passive: false});
+                document.removeEventListener(events.touchmove, touchMoveHandler, { passive: false });
             }
         }
 
@@ -939,17 +947,17 @@
         * Returns and object with Microsoft pointers (for IE<11 and for IE >= 11)
         * http://msdn.microsoft.com/en-us/library/ie/dn304886(v=vs.85).aspx
         */
-        function getMSPointer(){
+        function getMSPointer() {
             var pointer;
 
             //IE >= 11
-            if(window.PointerEvent){
-                pointer = { down: "pointerdown", move: "pointermove"};
+            if (window.PointerEvent) {
+                pointer = { down: "pointerdown", move: "pointermove" };
             }
 
             //IE < 11
-            else{
-                pointer = { down: "MSPointerDown", move: "MSPointerMove"};
+            else {
+                pointer = { down: "MSPointerDown", move: "MSPointerMove" };
             }
 
             return pointer;
@@ -959,14 +967,14 @@
         * Gets the pageX and pageY properties depending on the browser.
         * https://github.com/alvarotrigo/fullPage.js/issues/194#issuecomment-34069854
         */
-        function getEventsPage(e){
+        function getEventsPage(e) {
             var events = [];
 
             events.y = (typeof e.pageY !== 'undefined' && (e.pageY || e.pageX) ? e.pageY : e.touches[0].pageY);
             events.x = (typeof e.pageX !== 'undefined' && (e.pageY || e.pageX) ? e.pageX : e.touches[0].pageX);
 
             //in touch devices with scrollBar:true, e.pageY is detected, but we have to deal with touch events. #1008
-            if(isTouch && isReallyTouch(e) && typeof e.touches !== 'undefined'){
+            if (isTouch && isReallyTouch(e) && typeof e.touches !== 'undefined') {
                 events.y = e.touches[0].pageY;
                 events.x = e.touches[0].pageX;
             }
@@ -977,7 +985,7 @@
         /**
         * Destroy multiscroll.js plugin's events
         */
-        MS.destroy = function() {
+        MS.destroy = function () {
             MS.setKeyboardScrolling(false);
             MS.setMouseWheelScrolling(false);
             removeTouchHandler();
@@ -995,7 +1003,7 @@
         /**
         * Build multiscroll.js plugin's events after destroy
         */
-        MS.build = function() {
+        MS.build = function () {
             MS.setKeyboardScrolling(true);
             MS.setMouseWheelScrolling(true);
             addTouchHandler();
@@ -1013,7 +1021,7 @@
         /**
         * Displays warnings
         */
-         function displayWarnings(){
+        function displayWarnings() {
             var l = options['li' + 'c' + 'enseK' + 'e' + 'y'];
             var msgStyle = 'font-size: 15px;background:yellow;';
 
@@ -1026,7 +1034,7 @@
         /**
         * Shows a message in the console of the given type.
         */
-        function showError(type, text){
+        function showError(type, text) {
             window.console && window.console[type] && window.console[type]('multiScroll: ' + text);
         }
     };
