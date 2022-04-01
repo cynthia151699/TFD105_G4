@@ -15,7 +15,7 @@
 // 垂直置中（加在父元素上！）
 @mixin VerticalAlignCenter {
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
 // 提示框：預設是紅色

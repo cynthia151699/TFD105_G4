@@ -1,12 +1,16 @@
 /* FrontHeader */
 header.frontHeader{
-    width: $RWD;
+    width: $Width;
     height: 50px;
 
-    background-color: $HFBGColor;
+    background-color: $NavBGColor;
     font-family: $SpecialFont;
 
     @include Flex(row);
+
+    position: absolute;
+    z-index: 999;
+    opacity: 0.6;
 
     .headerContainer{
         width: calc(#{$Width} - 50px);

@@ -4,6 +4,7 @@
 // 顏色樣式
 $NavBGColor: #161829;
 $HFBGColor: #48538D;
+$HFBGColorO: rgba(72, 83, 141, 0.5);
 
 $PrimaryColor: #293241;
 $SecondaryColor: #262A73;
@@ -67,7 +68,8 @@ $WordSpaceing: 0.15em;
 
 // 排版
 $Width: calc(100% - 70px);
-$Height: calc(100vh - 90px);
+$Height: 100vh; // 大家的內容應有的高度
+// $Height: calc(100vh - 50px); // 大家的內容應有的高度
 
 $WidthFit: fit-content;
 $HeightFit: fit-content;
