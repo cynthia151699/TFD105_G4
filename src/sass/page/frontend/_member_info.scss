@@ -1,100 +1,48 @@
-// //info相關區域
-.member_info_title {
-    margin: 0px auto;
-    width: 1000px;
-    text-align: center;   
+// 主要區域置中
+.member_info_area {
+    @include VerticalAlignCenter;
+    @include Remind(green);
+    width: calc(100vw - 70px);
+    height: calc(100vh - 90px);
+    text-align: center;
+    // display: flex;
+    // flex-direction:column;
 }
-.member_info_text{
+
+.member_info_title {
+    @include HorizontalAlignCenter;
+    @include VerticalAlignCenter;
+    @include Remind(blue);
+    width: 900px;
+    height: 350px;
+    background-color: $TextColor2;
+    position: relative;
+}
+
+// 相對框框絕對定位title
+.member_info_text {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, 0%);
     color: $TextColor2;
 }
-.member_info_flex{
-    @include Flex (1);
+// 相對框框絕對定位button
+.member_info_Bt {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: $TextColor2;
+    background-color: $AccentColor2;
 }
-.member_info_main_block{
-    width: 1000px;
-    height: calc(100vh - 280px);
-    max-height: 800px;
-    background-color: $TextColor2;
+
+.member_info_main_block {
     @include VerticalAlignCenter;
-    text-align:left;
-}
-.member_info_Bt{
-    background-color: $AccentColor2;
+    text-align: left;
 }
 
-// .member_info_title{
-//     margin: auto;
-//     @include Remind(pink);
-//     // @include VerticalAlignCenter;
-//     Width: 1000px;
-//     height: 100vh;
-//     text-align: center;
-// }
-// .member_info_main_block {
-//     // margin: 50px auto;
-//     @include Remind(green);
-//     Width: 1000px;
-//     Height: calc(100vh - 270px);
-//     max-height: 800px;
-//     background-color: $TableColor;
-//     @include VerticalAlignCenter;
-// }
-// .member_info_main {
-//     @include Remind(blue);
-// }
-// // 下方按鈕
-// .member_info_Bt{
-// margin-bottom: 50px;
-// }
-// .member_info_BtColor{
-//     background-color: $AccentColor2;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//文字顏色
-.member_forget_text{
-    color:$TextColor;
+.member_info_flex {
+    @include Flex (1);
+    
 }
-.member_forget_input{
-    background-color: $HFBGColor;
-    color:$TextColor2;
-}
-//按鈕顏色
-.member_forget_BtColor1{
-    background-color: #AD9F9F;
-}
-.member_forget_BtColor2{
-    background-color: $AccentColor2;
-}
-
-
-// .main_block_big{
-//     margin: $HorizontalAlignCenter;
-// }
