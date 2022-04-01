@@ -1,15 +1,16 @@
-// .wrapperTicketsCur{
-// //     // width: $RWD;
-// //     // height: $RWD;
-// // 
-// }
+.wrapperTicketsCur{
+    @include Remind($color:red);
+    width: $Width;
+}
 .ticketsCurCon{
     @include Flex(row);
     @include Remind($color:red);
-    // margin: $HorizontalAlignCenter; 
+    width: 80%;
+    height: 500px;
+    margin: $HorizontalAlignCenter;
 }
 .ticketsCurLt{
-    margin: $HorizontalAlignCenter; 
+    margin: $HorizontalAlignCenter;
     h2{
         color:$TextColor2;
     }
