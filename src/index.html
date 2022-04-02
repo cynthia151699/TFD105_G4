@@ -5,15 +5,17 @@
     @@include('./layout/head.html')
 
     <script>
-		document.documentElement.className = "js";
-		var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
-		supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
-	</script>
+        document.documentElement.className = "js";
+        var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+        supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+    </script>
 
 </head>
 
 <body>
+
     <div class="wrapper">
+
         <!-- 導覽列 -->
         @@include('./layout/nav.html')
 
@@ -24,44 +26,56 @@
 
                 <!-- part 1  -->
                 <div class="section active welcomeVideo" id="section1">
+
                     <div class="index_page1">
+
                         <video autoplay muted loop class="welcome_video">
                             <source src="./img/index/index_video.mp4" type="video/mp4">
                         </video>
 
                         <div class="btn_next">
-                            <h3 class="btn_going">See what’s<br>going on today</h3>
+                            <h3 class="btn_going">
+                                See what’s
+                                <br>
+                                going on today
+                            </h3>
+
                             <img class="btn_img" src="./img/index/bnt.png" alt="#">
                         </div>
                     </div>
                 </div>
 
+
                 <!-- part 2  -->
                 <div class="section active currExhibition" id="section1">
+                    
                     <div class="index_page2">
+
                         <div class="curr_text">
+
                             <h2 class="currTitle">Break the Classic</h2>
-                                <div class="curr_rightpart"> 
-                            <h3 class="currName">TAKIKAW RISA Solo Exhibition</h3>
-                            <h4 class="mbSpace20 currDate">FEB. 5 - MAY. 5, 2022</h4>
-                            <a class="buyTicket" href="#">
-                                <span class="top-key"></span>
-                                <span class="text">SEE MORE ></span>
-                                <span class="bottom-key-1"></span>
-                                <span class="bottom-key-2"></span>
-                            </a>
+
+                            <div class="curr_rightpart">
+
+                                <h3 class="currName">TAKIKAW RISA Solo Exhibition</h3>
+
+                                <h4 class="currDate mbSpace20">FEB. 5 - MAY. 5, 2022</h4>
+
+                                <a class="buyTicket" href="#">
+                                    <span class="top-key"></span>
+                                    <span class="text">SEE MORE ></span>
+                                    <span class="bottom-key-1"></span>
+                                    <span class="bottom-key-2"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
+
                 <!-- part 3  -->
                 <div class="section active latestNews" id="section1">
-                    <div class="index_page3">
-
-
-                        
-                    </div>
+                    <div class="index_page3"></div>
                 </div>
             </div>
         </div>

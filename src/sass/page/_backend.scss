@@ -23,8 +23,8 @@
         height: fit-content;
         z-index: 2;
         opacity: 1;
-        top: 70px;
-        border-radius: 10px;
+        top: 80px;
+        border-radius: 10px 10px 0px 0px;
         background-color: aliceblue;
         display: none;
 
@@ -36,72 +36,100 @@
 
         h6 {
             display: inline-block;
+            padding: 7px;
+        }
+
+        ul{
+            width: 650px;
+            @include HorizontalAlignCenter();
+        }
+
+        button{
+            
         }
     }
 
     .addTicket {
         @include PopUp();
-        display: block;
+        
     }
 
     .editTicket {
         @include PopUp();
+        
     }
 
     .storeTicket {
         @include PopUp();
+        
     }
 
     .addDiscount {
         @include PopUp();
+        
     }
 
     .editDiscount {
         @include PopUp();
+        
     }
 
     .storeDiscount {
         @include PopUp();
+        
     }
 
     .addEvent {
         @include PopUp();
+        
     }
 
     .editEvent {
         @include PopUp();
+        
     }
 
     .storeEvent {
         @include PopUp();
+        
     }
 
     .editMember {
         @include PopUp();
+        
     }
 
     .storeMember {
         @include PopUp();
+        
     }
 
     .addNews {
         @include PopUp();
+        
     }
 
     .editNews {
         @include PopUp();
+        
     }
 
     .storeNews {
         @include PopUp();
+        
     }
 
     .editOrder {
         @include PopUp();
+        
     }
 
     .storeOrder {
         @include PopUp();
+        display: block;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 

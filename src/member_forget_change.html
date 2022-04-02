@@ -6,23 +6,36 @@
 </head>
 
 <body>
+
     <div class="wrapper">
+
         <!-- 導覽列 -->
-        @@include('./layout/nav.html', { "active5" : "active" })
+        @@include('./layout/nav.html', { 
+            "active5" : "active" 
+        })
 
         <div class="mainContainer">
             <!-- 頁首 -->
-            @@include('./layout/header.html', { "tittle1" : "LOG IN",
-            "tittle2" : "SIGN UP", "active1" : "activeb", "active3" : "active",
-            "active4" : "active", })
+            @@include('./layout/header.html', { 
+                "tittle1" : "LOG IN",
+                "tittle2" : "SIGN UP", 
+                "active1" : "activeb", 
+                "active3" : "active",
+                "active4" : "active", 
+            })
 
             <main>
+
                 <div class="member_forget_main_area">
+
                     <div class="member_forget_main_block">
+
                         <div class="member_forget_main plSpace50 prSpace50">
-                            <h5 class="mbSpace90 member_forget_change_text">The password has already sent into your email
-                                address
-                                , please check it.</h5>
+
+                            <h5 class="member_forget_change_text mbSpace90">
+                                The password has already sent into your email address, please check it.
+                            </h5>
+                            
                             <div>
                                 <a class="defaultBtn member_forget_change_BtColor1 mrSpace90" href="#">
                                     <!-- 按鈕先暫時調整 待確認格式 -->
@@ -36,13 +49,11 @@
                     </div>
                 </div>
             </main>
+
             <!-- 頁尾 -->
             @@include('./layout/footer.html')
         </div>
     </div>
-
-    <!-- 載入js、套件 -->
-    <script src="./layout/importjs.html"></script>
 </body>
 
 </html>
