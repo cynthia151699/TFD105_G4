@@ -10,41 +10,33 @@
     <div class="wrapper">
 
         <!-- 導覽列 -->
-        @@include('./layout/nav.html', { 
-            "active5" : "active" 
+        @@include('./layout/nav.html', {
+        "active5" : "active"
         })
 
         <div class="mainContainer">
             <!-- 頁首 -->
-            @@include('./layout/header.html', { 
-                "tittle1" : "LOG IN",
-                "tittle2" : "SIGN UP", 
-                "active1" : "activeb", 
-                "active3" : "active",
-                "active4" : "active", 
+            @@include('./layout/header.html', {
+            "tittle1" : "LOG IN",
+            "tittle2" : "SIGN UP",
+            "active1" : "activeb",
+            "active3" : "active",
+            "active4" : "active",
             })
 
             <main>
-
-                <div class="member_forget_main_area">
-
-                    <div class="member_forget_main_block">
-
-                        <div class="member_forget_main plSpace50 prSpace50">
-
-                            <h5 class="member_forget_change_text mbSpace90">
-                                The password has already sent into your email address, please check it.
-                            </h5>
-                            
-                            <div>
-                                <a class="defaultBtn member_forget_change_BtColor1 mrSpace90" href="#">
-                                    <!-- 按鈕先暫時調整 待確認格式 -->
-                                    <span class="prSpace50 plSpace50">Cancel</span>
-                                </a>
-                                <a class="defaultBtn member_forget_change_BtColor2" href="#">
-                                    <span>Back to login page</span>
-                                </a>
+                <!-- 多包一層推開上方區域member_top -->
+                <div>
+                    <div class="member_top"></div>
+                    <div class="member_forget_main_area">
+                        <div class="member_forget_main_block">
+                            <div class="member_forget_main plSpace60 prSpace60">
+                                <h5 class="mbSpace member_forget_change_text">The password has already sent into your
+                                    email address, please check it.</h5>
                             </div>
+                            <a class="defaultBtn member_forget_change_Bt" href="./member.html">
+                                <span>Back to login page</span>
+                            </a>
                         </div>
                     </div>
                 </div>
