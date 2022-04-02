@@ -25,6 +25,7 @@ document.getElementById("member_form").addEventListener("submit", function (even
 });
 
 
+
 // 選單左右移動 
 
   document.querySelector('.member_img__btn').addEventListener('click', function () {

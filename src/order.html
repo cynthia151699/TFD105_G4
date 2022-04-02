@@ -10,7 +10,7 @@
 
         <!-- 導覽列 -->
         @@include('./layout/backnav.html', {
-        "active5" : "active"
+            "active5" : "active"
         })
 
         <div class="popUp">
@@ -78,8 +78,10 @@
                     <div class="storeOrder">
                         <h5>編輯訂單</h5>
                         <h6>尚未儲存，是否確認離開？</h6>
-                        <button>取消</button>
-                        <button>確定</button>
+                        <div class="cc">
+                            <button>取消</button>
+                            <button>確定</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -88,8 +90,8 @@
         <div class="tableContainer">
             <!-- 頁首 -->
             @@include('./layout/backheader.html', {
-            tittle1: "訂單管理",
-            tittle2: "以訂單編號查詢",
+                tittle1: "訂單管理",
+                tittle2: "以訂單編號查詢",
             })
 
             <form action="#">

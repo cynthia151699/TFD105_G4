@@ -12,8 +12,16 @@
 .member_span {
   @include Flex (1);
 }
-.member_p_style {
+// 選框區域 框和文字水平排列
+.member_span_choose{
+  @include Flex (1);
+  height: 12px;
+  line-height: 12px;
+
+}
+.member_span_choose .member_p_style {
   color: $TextColor;
+  font-size: 12px;
 }
 // 主要區域  註冊內容  高度470 比內頁略高
 .member_main_all_block {
@@ -33,14 +41,6 @@
 // 移動bar文字顏色
 .member_move_text {
   color: $TextColor2;
-}
-// 框框大小
-.member_login_choose {
-  zoom: 165%;
-}
-
-.member_login_confirm {
-  zoom: 165%;
 }
 
 //文字框顏色
@@ -136,16 +136,11 @@ $btnH: 36px;
 }
 
 .member_cla_button {
-  display: block;
-  margin: 0 auto;
-  margin-top: 30px;
-  padding-bottom: 30px;
-  border: 2px solid #d3dae9;
-  width: $inputW;
-  height: $btnH;
-  color: #fff;
-  cursor: pointer;
-  color :$TextColor
+  display:block;
+  // margin-top: 30px;
+  width: 400px;
+  color :$TextColor;
+  @include HorizontalAlignCenter(20px ,20px);
 }
 
 .member_img {

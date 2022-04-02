@@ -5,25 +5,46 @@
     @@include('./layout/head.html')
 
     <!-- Link Swiper's CSS -->
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+=======
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- Demo styles -->
+    <style>
+        @media (max-width: 760px) {
+            .swiper-button-next {
+                right: 20px;
+                transform: rotate(90deg);
+            }
+
+            .swiper-button-prev {
+                left: 20px;
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+>>>>>>> dev
 </head>
 
 <body>
+
     <div class="wrapper">
+
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
-        "active3" : "active"
+            "active3" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
-            "tittle1" : "Edit Your Member Info.",
-            "tittle2" : "Booking List",
-            "active1" : "activeb",
-            "active3" : "active",
-            "active4" : "active",
+                "tittle1" : "Edit Your Member Info.",
+                "tittle2" : "Booking List",
+                "active1" : "activeb",
+                "active3" : "active",
+                "active4" : "active",
             })
 
             <main class="ticketsPage">
@@ -114,39 +135,7 @@
             <!-- Swiper JS -->
             <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-
-            <!-- Initialize Swiper -->
-            <script>
-                var swiper = new Swiper('.swiper', {
-                    slidesPerView: 4,
-                    loop: true,
-                    paginationClickable: true,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                    breakpoints: {
-                        1200: {
-                            slidesPerView: 4,
-                        },
-                        768: {
-                            slidesPerView: 3,
-                            spaceBetween: 10
-                        },
-                        576: {
-                            slidesPerView: 2,
-                            spaceBetween: 10
-                        },
-
-                        375: {
-                            slidesPerView: 1,
-                        }
-
-                    }
-                });
-        
-            </script>
-
+            <script src="./js/tickets.min.js"></script>
         </div>
     </div>
 </body>

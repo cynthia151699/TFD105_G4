@@ -47,7 +47,7 @@ document.addEventListener("click", function(){
 // congrats
 
 // active1.addEventListener("click", function(){
-//     if ( active2.ddd[0] - active1.ddd[5] == 5){
+//     if ( active2.ddd[0] - actixve1.ddd[5] == 5){
 //         console.log(active2.ddd.length);
 //         console.log(active1.ddd.length);
 //         alert(congrats);

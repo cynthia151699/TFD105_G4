@@ -2,126 +2,150 @@
 <html lang="en">
 
 <head>
-  @@include('./layout/head.html')
+	@@include('./layout/head.html')
 
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
-  <div class="game_body">
 
-    <!-- closebutton -->
-    <div class="closebutton">
-      <a class="buyTicket" href="./index.html">
-        <span class="top-key"></span>
-        <span class="text">Close</span>
-        <span class="bottom-key-1"></span>
-        <span class="bottom-key-2"></span>
-      </a>
-    </div>
+	<div class="game_body">
+		
+		<!-- closebutton -->
+		<div class="closebutton">
+			<a class="buyTicket" href="./index.html">
+				<span class="top-key"></span>
+				<span class="text">Close</span>
+				<span class="bottom-key-1"></span>
+				<span class="bottom-key-2"></span>
+			</a>
+		</div>
 
-    <!-- icons -->
-
-    <div class="buttons">
-
-      <!-- rotate -->
-      <div class="rotate">
-        <a href="#">
-          <i class="fa-solid fa-rotate"></i>
-          <!-- <img src="./img/game/rotate-solid.svg"> -->
-        </a>
-      </div>
-
-      <!-- lock -->
-      <!-- <i class="fa-solid fa-lock"></i> -->
-
-      <!-- unlock -->
-      <!-- <i class="fa-solid fa-lock-open"></i> -->
-
-      <!-- link -->
-      <div class="link">
-        <a href="#">
-          <i class="fa-solid fa-link"></i>
-          <!-- <img src="./img/game/circle-nodes-solid.svg"> -->
-        </a>
-      </div>
-
-    </div>
-
-    <!-- Swiper -->
-    <!-- 上半邊圖 -->
-    <div class="swiper mySwiper">
-
-      <div class="swiper-wrapper">
-
-        <div class="swiper-slide" id="g1">
-          <img src="./img/game/1.png">
-        </div>
-
-        <div class="swiper-slide" id="g2">
-          <img src="./img/game/2.png">
-        </div>
-
-        <div class="swiper-slide" id="g3">
-          <img src="./img/game/3.png">
-        </div>
-
-        <div class="swiper-slide" id="g4">
-          <img src="./img/game/4.png">
-        </div>
-
-        <div class="swiper-slide" id="g5">
-          <img src="./img/game/5.png">
-        </div>
-
-      </div>
-
-    </div>
+		<!-- closebutton -->
+		<div class="closebutton">
+			<a class="buyTicket" href="#">
+				<span class="top-key"></span>
+				<span class="text">Close</span>
+				<span class="bottom-key-1"></span>
+				<span class="bottom-key-2"></span>
+			</a>
+		</div>
 
 
+		<!-- icons -->
+		<div class="buttons">
 
-    <!-- 下半邊圖 -->
-    <div class="swiper mySwiper">
+			<!-- rotate -->
+			<div class="rotate">
+				<a href="#">
+					<i class="fa-solid fa-rotate"></i>
+					<!-- <img src="./img/game/rotate-solid.svg"> -->
+				</a>
+			</div>
 
-      <div class="swiper-wrapper">
+			<!-- lock -->
+			<!-- <i class="fa-solid fa-lock"></i> -->
 
-        <div class="swiper-slide" id="g1_1">
-          <img src="./img/game/1-1.png">
-        </div>
+			<!-- unlock -->
+			<!-- <i class="fa-solid fa-lock-open"></i> -->
 
-        <div class="swiper-slide" id="g2_1">
-          <img src="./img/game/2-1.png">
-        </div>
+			<!-- link -->
+			<div class="link">
+				<a href="#">
+					<i class="fa-solid fa-link"></i>
+					<!-- <img src="./img/game/circle-nodes-solid.svg"> -->
+				</a>
+			</div>
+		</div>
 
-        <div class="swiper-slide" id="g3_1">
-          <img src="./img/game/3-1.png">
-        </div>
+		<div class="swiper-slide" id="g2_1">
+			<img src="./img/game/2-1.png">
+		</div>
 
-        <div class="swiper-slide" id="g4_1">
-          <img src="./img/game/4-1.png">
-        </div>
+		<div class="swiper-slide" id="g3_1">
+			<img src="./img/game/3-1.png">
+		</div>
 
-        <div class="swiper-slide" id="g5_1">
-          <img src="./img/game/5-1.png">
-        </div>
+		<div class="swiper-slide" id="g4_1">
+			<img src="./img/game/4-1.png">
+		</div>
 
-      </div>
-    </div>
+		<div class="swiper-slide" id="g5_1">
+			<img src="./img/game/5-1.png">
+		</div>
+
+	</div>
 
 
+	<!-- Swiper -->
+	<!-- 上半邊圖 -->
+	<div class="swiper mySwiper">
 
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<div class="swiper-wrapper">
 
-    <!-- 參考不一定會用，待刪 -->
-    <!-- <script src="./slick-random.js"></script> -->
+			<div class="swiper-slide" id="g1">
+				<img src="./img/game/1.png">
+			</div>
 
-    <!-- 大家自己寫的js 在這！ -->
-    <script src="./js/game.min.js"></script>
+			<div class="swiper-slide" id="g2">
+				<img src="./img/game/2.png">
+			</div>
 
-  </div>
+			<div class="swiper-slide" id="g3">
+				<img src="./img/game/3.png">
+			</div>
+
+			<div class="swiper-slide" id="g4">
+				<img src="./img/game/4.png">
+			</div>
+
+			<div class="swiper-slide" id="g5">
+				<img src="./img/game/5.png">
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- 下半邊圖 -->
+	<div class="swiper mySwiper">
+
+		<div class="swiper-wrapper">
+
+			<div class="swiper-slide" id="g1_1">
+				<img src="./img/game/1-1.png">
+			</div>
+
+			<div class="swiper-slide" id="g2_1">
+				<img src="./img/game/2-1.png">
+			</div>
+
+			<div class="swiper-slide" id="g3_1">
+				<img src="./img/game/3-1.png">
+			</div>
+
+			<div class="swiper-slide" id="g4_1">
+				<img src="./../../img/game/4-1.png">
+			</div>
+
+			<div class="swiper-slide" id="g5_1">
+				<img src="./img/game/5-1.png">
+			</div>
+
+		</div>
+	</div>
+
+
+	<!-- Swiper JS -->
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+	<!-- 參考不一定會用，待刪 -->
+	<!-- <script src="./slick-random.js"></script> -->
+
+	<!-- 大家自己寫的js 在這！ -->
+	<script src="./js/game.min.js"></script>
 </body>
 
 </html>
