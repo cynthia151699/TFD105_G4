@@ -1,48 +1,11 @@
-// 主要區域置中
-.member_info_area {
-    @include VerticalAlignCenter;
-    @include Remind(green);
-    width: calc(100vw - 70px);
-    height: calc(100vh - 90px);
-    text-align: center;
-    // display: flex;
-    // flex-direction:column;
-}
-
-.member_info_title {
-    @include HorizontalAlignCenter;
-    @include VerticalAlignCenter;
-    @include Remind(blue);
-    width: 900px;
-    height: 350px;
-    background-color: $TextColor2;
-    position: relative;
-}
-
-// 相對框框絕對定位title
-.member_info_text {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    color: $TextColor2;
-}
-// 相對框框絕對定位button
-.member_info_Bt {
+// 基本框架同member_modify
+// 單個按鈕位置
+.member_info_btc {
     position: absolute;
     bottom: -60px;
     left: 50%;
     transform: translate(-50%, 0%);
-    color: $TextColor2;
+    display: block;
+    width: 150px;
     background-color: $AccentColor2;
-}
-
-.member_info_main_block {
-    @include VerticalAlignCenter;
-    text-align: left;
-}
-
-.member_info_flex {
-    @include Flex (1);
-    
 }

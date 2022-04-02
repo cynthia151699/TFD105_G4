@@ -1,16 +1,14 @@
 // 主要區域置中
 .member_forget_main_area {
     @include VerticalAlignCenter;
-    @include Remind(green);
     width: calc(100vw - 70px);
-    height: calc(100vh - 90px);
+    height: calc(100vh - 50px);
 
 }
 
 .member_forget_main_block {
     @include HorizontalAlignCenter;
     @include VerticalAlignCenter;
-    @include Remind(blue);
     width: 900px;
     height: 400px;
     background-color: $TextColor2;
@@ -32,7 +30,11 @@
     width:600px;
 }
 
-//按鈕顏色
+//按鈕顏色,寬度
+.member_forget_width{
+    width: 150px;
+    display: inline-block;
+}
 .member_forget_BtColor1 {
     background-color: #AD9F9F;
 }

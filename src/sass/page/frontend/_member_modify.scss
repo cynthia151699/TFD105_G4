@@ -1,18 +1,17 @@
 // 主要區域置中
 .member_modify_area {
     @include VerticalAlignCenter;
-    @include Remind(green);
     width: calc(100vw - 70px);
-    height: calc(100vh - 90px);
+    height: calc(100vh - 50px);
     text-align: center;
 }
-// 下方多一條確認框框高度降低
+
+// 主框框
 .member_modify_title {
     @include HorizontalAlignCenter;
     @include VerticalAlignCenter;
-    @include Remind(blue);
     width: 900px;
-    height: 330px;
+    height: 400px;
     background-color: $TextColor2;
     position: relative;
 }
@@ -20,42 +19,68 @@
 // 相對框框絕對定位title
 .member_modify_text {
     position: absolute;
-    top: -50px;
+    top: -45px;
     left: 50%;
     transform: translate(-50%, 0%);
     color: $TextColor2;
-    width:720px;
-}
-// 相對框框絕對定位button
-.member_mail_Bt {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    color: $TextColor2;
-    width:720px;
-}
-.member_modify_Bt{
-    position: absolute;
-    bottom: -65px;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    width: 720px;
 }
 
+// 輸入框置中
 .member_modify_main_block {
-    @include VerticalAlignCenter;
+    @include HorizontalAlignCenter;
     text-align: left;
+    width: 80%;
+
+    ul.member_modify_main_ul {
+
+        li.member_modify_main_li {
+            @include VerticalAlignCenter;
+
+            // 內文屬性
+            .member_modify_inf {
+                width: 40%;
+            }
+
+            // 內文不可修改
+            .member_modify_uninput {
+                width: 50%;
+            }
+
+            // 內文修改
+            .member_modify_input {
+                width: 50%;
+                background-color: $HFBGColor;
+                color: $TextColor2;
+                height: 32px;
+                width: 400px;
+            }
+        }
+    }
 }
 
-.member_modify_flex {
-    @include Flex (1);
-    
+//輸入框預設文字
+.member_modify_input::placeholder {
+    color: $TextColor2;
+  }
+
+// 相對框框絕對定位button
+.member_modify_Bt1 {
+    position: absolute;
+    bottom: -58px;
+    left: 35%;
+    transform: translate(-50%, 0%);
+    display: block;
+    width: 150px;
+    background-color: #AD9F9F;
 }
 
-.member_modify_input{
-    background-color: $HFBGColor;
-    color:$TextColor2;
-    height: 32px;
-    width: 400px; 
+.member_modify_Bt2 {
+    position: absolute;
+    bottom: -58px;
+    left: 65%;
+    transform: translate(-50%, 0%);
+    display: block;
+    width: 150px;
+    background-color: $AccentColor2;
 }
-
