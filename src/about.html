@@ -11,18 +11,18 @@
 
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
-            "active4" : "active"
+        "active4" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
-                "tittle1" : "ABOUT ANNO",
-                "tittle2" : "HISTORY OF ANNO",
-                "active1" : "activeb",
-                "active3" : "active",
-                "active4" : "active",
+            "tittle1" : "ABOUT ANNO",
+            "tittle2" : "HISTORY OF ANNO",
+            "active1" : "activeb",
+            "active3" : "active",
+            "active4" : "active",
             })
 
             <main>
@@ -78,7 +78,8 @@
                             <div class="wrapperAbhiMd ">
 
                                 <h4 class="aboutHistoryMid pbSpace50 plSpace100">
-                                    They hope that through the establishment of the museum, education, and culture can be
+                                    They hope that through the establishment of the museum, education, and culture can
+                                    be
                                     promoted so that more people can know and getclose to art.
                                 </h4>
 
@@ -117,7 +118,24 @@
     </div>
 
     <!-- 載入js、套件 -->
-    <script src="./js/vendors/fullpage.min.js"></script>
+    <!-- <script src="./js/vendors/fullpage.min.js"></script> -->
+
+    <script src="./../node_modules/jquery/src/jquery.js"></script>
+    <script>
+        const { JSDOM } = require("jsdom");
+        const { window } = new JSDOM("");
+        const $ = require("jquery")(window);
+    </script>
+
+    <!-- fullpage -->
+    <script src="./../node_modules/fullpage.js/dist/fullpage.js"></script>
+    <script src="./../node_modules/fullpage.js/vendors/easings.min.js"></script>
+    <script src="./../node_modules/fullpage.js/vendors/scrolloverflow.min.js"></script>
+    <!-- Aos -->
+    <script src="./../node_modules/aos/src/js/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
     <!-- 大家自己寫的js 在這！ -->
     <script src="./js/about.min.js"></script>

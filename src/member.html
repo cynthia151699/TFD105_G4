@@ -11,194 +11,213 @@
 
 		<!-- 導覽列 -->
 		@@include('./layout/nav.html', {
-		"active5" : "active"
+			"active5" : "active"
 		})
 
-		<main>
+		<div class="mainContainer">
 
-			<div class="member_main_all_area">
+			<!-- 頁首 -->
+			@@include('./layout/header.html', {
+				"tittle1" : "LOG IN",
+				"tittle2" : "SIGN UP",
+				"active1" : "activeb",
+				"active3" : "active",
+                "active4" : "active",
+			})
 
-				<!-- 中央表單 -->
-				<div class="member_main_all">
+			<main>
 
-					<div class="cont member_main_all_block ">
+				<div class="member_main_all_area">
 
-						<!-- 登入 -->
-						<div class="sign-in member_main_form">
+					<!-- 中央表單 -->
+					<div class="member_main_all">
 
-							<h3 class="mbSpace30">Welcome back</h3>
+						<div class="cont member_main_all_block ">
 
-							<label class="mbSpace20">
+							<!-- 登入 -->
+							<div class="sign-in member_main_form">
 
-								<span class="member_span">
-									<h6>EMAIL</h6>
-								</span>
+								<h3 class="mbSpace30">Welcome back</h3>
 
-								<input type="email" class="member_input_text" />
-							</label>
+								<label class="mbSpace20">
 
-							<br>
+									<span class="member_span">
+										<h6>EMAIL</h6>
+									</span>
 
-							<label class="mbSpace20">
+									<input type="email" class="member_input_text" />
+								</label>
 
-								<span class="member_span">
-									<h6>PASSWORD</h6>
-								</span>
+								<br>
 
-								<input type="password" class="member_input_text " />
-							</label>
+								<label class="mbSpace20">
 
-							<br>
+									<span class="member_span">
+										<h6>PASSWORD</h6>
+									</span>
 
-							<a calss="Forgot_password" href="./member_forget.html">Forgot password?</a>
+									<input type="password" class="member_input_text " />
+								</label>
 
-							<a class="defaultBtn member_cla_button member_forget_BtColor1" href="#">
-								<span class="member_forget_text">LOG IN</span>
-							</a>
+								<br>
 
-							<a class="defaultBtn member_cla_button member_forget_BtColor2" href="#">
-								<span class="member_forget_text">Connect with facebook</span>
-							</a>
+								<a calss="Forgot_password" href="./member_forget.html">Forgot password?</a>
 
-						</div>
+								<a class="defaultBtn member_cla_button member_forget_BtColor1" href="#">
+									<span class="member_forget_text">LOG IN</span>
+								</a>
 
-
-						<!-- 移動框 -->
-						<div class="sub-cont">
-
-							<div class="member_img">
-
-								<div class=" m--up member_img__text">
-
-									<h3 class="mbSpace30 member_move_text">New here?</h3>
-									<h4 class="member_move_text">Sign up and discover great amount of new opportunities!
-									</h4>
-
-								</div>
-
-								<div class="m--in member_img__text">
-
-									<h3 class="mbSpace30 member_move_text">One of us?</h3>
-									<h4 class="member_move_text">If you already has an account, just sign in. We've
-										missed you!</h4>
-
-								</div>
-
-								<div class="member_img__btn">
-
-									<span class="m--up member_span">SIGN UP</span>
-									<span class="m--in member_span">SIGN IN</span>
-
-								</div>
+								<a class="defaultBtn member_cla_button member_forget_BtColor2" href="#">
+									<span class="member_forget_text">Connect with facebook</span>
+								</a>
 
 							</div>
 
-							<!-- 註冊 -->
-							<div class="sign-up member_main_form">
 
-								<form class="member_singup_block" id="member_form">
+							<!-- 移動框 -->
+							<div class="sub-cont">
 
-									<label>
-										<span class="member_span">
-											<h6>NAME</h6>
-										</span>
+								<div class="member_img">
 
-										<input type="text" class="member_input_text" />
-									</label>
+									<div class=" m--up member_img__text">
 
-									<label>
-										<span class="member_span">
-											<h6>EMAIL</h6>
-										</span>
+										<h3 class="mbSpace30 member_move_text">New here?</h3>
+										<h4 class="member_move_text">Sign up and discover great amount of new
+											opportunities!
+										</h4>
 
-										<input type="text" name="mail" class="member_input_text" id="member_mail" />
-									</label>
+									</div>
 
-									<label>
-										<span class="member_span">
-											<h6>PASSWORD</h6>
-										</span>
+									<div class="m--in member_img__text">
 
-										<input type="password" class="member_input_text" />
-									</label>
+										<h3 class="mbSpace30 member_move_text">One of us?</h3>
+										<h4 class="member_move_text">If you already has an account, just sign in. We've
+											missed you!</h4>
 
-									<label>
-										<span class="member_span">
-											<h6>PASSWORD CONFIRM</h6>
-										</span>
+									</div>
 
-										<input type="password" class="member_input_text" />
-									</label>
+									<div class="member_img__btn">
 
-									<label>
-										<span class="member_span">
-											<h6>PHONE NUMBER</h6>
-										</span>
+										<span class="m--up member_span">SIGN UP</span>
+										<span class="m--in member_span">SIGN IN</span>
 
-										<input type="text" class="member_input_text" />
-									</label>
+									</div>
 
-									<!-- 確認相關區域  待調整-->
-									<label class="mtSpace20">
-										<span class="member_span_choose">
-											<input type="checkbox" class="member_login_choose" />
-											<p class="member_p_style">
-												I would like to receive news, tips and marketing offers from Anno.
-											</p>
-										</span>
-									</label>
+								</div>
 
-									<label>
-										<span class="member_span_choose">
-											<input type="checkbox" class="member_login_confirm" />
-											<p class="member_p_style">
-												I have read and understood the
-												<a href="#0" class="member_Terms">Terms & Conditions and Privacy
-													Policy.</a>
-											</p>
-										</span>
-									</label>
+								<!-- 註冊 -->
+								<div class="sign-up member_main_form">
 
-									<button type="submit" class="defaultBtn mtSpace20" id="member_button">SIGN UP</button>
+									<form class="member_singup_block" id="member_form">
 
-								</form>
+										<label>
+											<span class="member_span">
+												<h6>NAME</h6>
+											</span>
+
+											<input type="text" class="member_input_text" />
+										</label>
+
+										<label>
+											<span class="member_span">
+												<h6>EMAIL</h6>
+											</span>
+
+											<input type="text" name="mail" class="member_input_text" id="member_mail" />
+										</label>
+
+										<label>
+											<span class="member_span">
+												<h6>PASSWORD</h6>
+											</span>
+
+											<input type="password" class="member_input_text" />
+										</label>
+
+										<label>
+											<span class="member_span">
+												<h6>PASSWORD CONFIRM</h6>
+											</span>
+
+											<input type="password" class="member_input_text" />
+										</label>
+
+										<label>
+											<span class="member_span">
+												<h6>PHONE NUMBER</h6>
+											</span>
+
+											<input type="text" class="member_input_text" />
+										</label>
+
+										<!-- 確認相關區域  待調整-->
+										<label class="mtSpace20">
+											<span class="member_span_choose">
+												<input type="checkbox" class="member_login_choose" />
+												<p class="member_p_style">
+													I would like to receive news, tips and marketing offers from Anno.
+												</p>
+											</span>
+										</label>
+
+										<label>
+											<span class="member_span_choose">
+												<input type="checkbox" class="member_login_confirm" />
+												<p class="member_p_style">
+													I have read and understood the
+													<a href="#0" class="member_Terms">Terms & Conditions and Privacy
+														Policy.</a>
+												</p>
+											</span>
+										</label>
+
+										<button type="submit" class="defaultBtn mtSpace20" id="member_button">
+											SIGN UP
+										</button>
+
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
 
-				<!-- 跳窗樣式待確認更改 -->
-				<div class="member_Terms_text">
+					<!-- 跳窗樣式待確認更改 -->
+					<div class="member_Terms_text">
 
-					<div class="member_Terms_del">
+						<div class="member_Terms_del">
 
-						<h2>X</h2>
+							<h2>X</h2>
 
-						<h6>Anno Account, Personal Information, and Security
-							By signing up for an account or placing an Order you agree and understand that we may collect, use,
-							store and process your Personal Information in accordance with our Privacy & Cookie Policy.
-							Anno Museum fully respects the privacy of individuals who access and use the Platforms. For details on
-							the manner in which we use cookies, the type of information we collect, how and for what purpose, 
-							we use your information and under what circumstances we disclose information please see our 
-							Privacy & Cookie Policy, which are incorporated into and form part of these Terms.
-						</h6>
+							<h6>Anno Account, Personal Information, and Security
+								By signing up for an account or placing an Order you agree and understand that we may
+								collect, use,
+								store and process your Personal Information in accordance with our Privacy & Cookie
+								Policy.
+								Anno Museum fully respects the privacy of individuals who access and use the Platforms.
+								For details on
+								the manner in which we use cookies, the type of information we collect, how and for what
+								purpose,
+								we use your information and under what circumstances we disclose information please see
+								our
+								Privacy & Cookie Policy, which are incorporated into and form part of these Terms.
+							</h6>
+
+						</div>
 
 					</div>
 
 				</div>
-				
-			</div>
-		</main>
+			</main>
 
-		<!-- 頁尾 -->
-		@@include('./layout/footer.html')
-	</div>
+			<!-- 頁尾 -->
+			@@include('./layout/footer.html')
+		</div>
 
-	<!-- 載入js、套件 -->
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+		<!-- 載入js、套件 -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-	<script src="./js/member.min.js"></script>
+		<script src="./js/member.min.js"></script>
 </body>
 
 </html>

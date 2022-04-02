@@ -1,3 +1,37 @@
+- commit規範
+    
+    書寫方式:  [分類] 詳細說明
+    
+    分類如下
+    
+    - style: 格式 (不影響程式碼運行的變動 white-space, formatting, missing semi colons, etc)。
+        - 針對所有被壓縮的程式碼做 Beautifier
+        - 移除被註解的程式碼，原本被註解的程式碼應該是壓縮前的程式碼，但是經測試後發現這些被註解的程式碼都是舊 Code，故移除。
+    - feat: 新增/修改/刪除功能 (feature)
+        - mail_template.php，新增 message 區塊。
+        - Message_model_api.php，新增 $where 參數，以便取得每日訊息。
+        - Assessment_form.php，匯出表單統計時，新增訓練計畫名欄位。
+        - 初始化 unload 事件處理器：排除新增表單時，頁面自動建立空白題組調用 sort_item 的情境
+    - fix: 修補 bug (bug fix)。
+    - refactor: 重構 (功能轉移、既不是新增功能，也不是修補 bug 的程式碼變動)。
+        - Workflow_api.php，get_process_name() 方法是為了取得流程名稱，現在以 Process:: get_type_name() 取代，故刪除
+        - 其他檔案：改用 Process:: get_type_name() 取得流程名稱。
+        - 把取得「系統通知」邏輯搬移至 System_notify_handler.php
+        - 將「系統通知」與「站內訊息」的 Email 頁面獨立出來。
+    - chore: 建構程序或輔助工具的變動 (maintain)。
+        - 版本更新
+        - Bootstrap.php，引入 AdminTestCase.php 共測試案例繼承用。
+        - 加入 tests/unit 與 tests/integration 目錄，並將測試檔案移至合宜的位置。
+        - Login.php，因測試案例中不能有 header 的設定，更動系統登入邏輯，在測試環境中改用 redirect 轉址。
+    - revert: 撤銷回覆先前的 commit 例如：revert: type(scope): subject (回覆版本：xxxx)。
+    - docs: 文件 (documentation)。
+        - 新增註解
+        - 移除過期的註解
+    - perf: 改善效能 (A code change that improves performance)。
+        - 原程式碼每個表單迴圈進入 DB 取得受評者資料。改成進 DB 一次撈取全部受評者資料，再回到 PHP 分配資料
+    - test: 增加測試 (when adding missing tests)。
+    - data: 增加圖片、excel檔等文件
+
 url,homepage到時候專案建好要改package jason
 
 終端機terminal > Git bash

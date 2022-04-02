@@ -1,11 +1,15 @@
 // 套件連結
 @import './../../node_modules/bootstrap/scss/bootstrap.scss';
+@import './../../node_modules/aos/src/sass/aos.scss';
+@import './../../node_modules/fullpage.js/dist/fullpage.css';
 
-@import './vendor/bootstrap.min';
+// @import './vendor/bootstrap.min';
 @import './vendor/example';
-@import './vendor/jquery.multiscroll';
 @import './vendor/fullpage';
+@import './vendor/jquery.multiscroll';
 
+
+// 基礎設定
 @import './base/var';
 @import './base/reset';
 
@@ -18,11 +22,15 @@
 @import './layout/nav';
 @import './layout/header';
 @import './layout/footer';
-    
+  
 @import './layout/RWD';
-    
+
 @import './page/prototype';
-    
+
+// 前後台頁面連結
+@import './page/inter';
+@import './page/switch';
+
 // 前台頁面連結
 @import './page/frontend/index';
 @import './page/frontend/exhibition';
@@ -32,13 +40,15 @@
 @import './page/frontend/tickets_past';
 @import './page/frontend/about';
 @import './page/frontend/member';
-@import './page/frontend/member_forget';
 @import './page/frontend/member_info';
 @import './page/frontend/member_modify';
+@import './page/frontend/member_forget';
 @import './page/frontend/member_forget_change';
 @import './page/frontend/game';
+@import './page/frontend/cart';
 
 // 後台頁面連結
+@import './page/backend_login';
 @import './page/backend';
 
 // -------------------- HTML --------------------
