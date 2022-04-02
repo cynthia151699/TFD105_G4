@@ -2,19 +2,28 @@
 <html lang="en">
 
 <head>
-  @@include('./layout/head.html')
+	@@include('./layout/head.html')
 </head>
 
 <body>
-  <div class="wrapper">
-    <!-- 導覽列 -->
-    @@include('./layout/nav.html', { "active5" : "active" })
 
-    <div class="mainContainer">
-      <!-- 頁首 -->
-      @@include('./layout/header.html', { "tittle1" : "LOG IN",
-      "tittle2" : "SIGN UP", "active1" : "activeb", "active3" : "active",
-      "active4" : "active", })
+	<div class="wrapper">
+
+		<!-- 導覽列 -->
+		@@include('./layout/nav.html', {
+		"active5" : "active"
+		})
+
+		<div class="mainContainer">
+			<!-- 頁首 -->
+			@@include('./layout/header.html', {
+			"tittle1" : "LOG IN",
+			"tittle2" : "SIGN UP",
+			"active1" : "activeb",
+			"active3" : "active",
+			"active4" : "active",
+			})
+
 
       <main>
         <!-- 多包一層推開上方區域member_top -->
@@ -69,13 +78,10 @@
           </div>
         </div>
       </main>
-     <!-- 頁尾 -->
-     @@include('./layout/footer.html')
-    </div>
-  </div>
-
-  <!-- 載入js、套件 -->
-  <script src="./layout/importjs.html"></script>
+    	<!-- 頁尾 -->
+			@@include('./layout/footer.html')
+		</div>
+	</div>
 </body>
 
 </html>

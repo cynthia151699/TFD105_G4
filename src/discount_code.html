@@ -6,11 +6,12 @@
 </head>
 
 <body>
+    
     <div class="wrapper">
 
         <!-- 導覽列 -->
         @@include('./layout/backnav.html', {
-        "active6" : "active"
+            "active6" : "active"
         })
 
         <div class="popUp">
@@ -81,11 +82,12 @@
             </div>
         </div>
 
+
         <div class="tableContainer">
             <!-- 頁首 -->
             @@include('./layout/backheader.html', {
-            tittle1: "折扣碼管理",
-            tittle2: "以折扣碼名稱查詢",
+                tittle1: "折扣碼管理",
+                tittle2: "以折扣碼名稱查詢",
             })
 
             <form action="post">

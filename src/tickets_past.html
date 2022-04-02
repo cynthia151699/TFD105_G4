@@ -9,21 +9,23 @@
     <div class="wrapper">
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
-        "active3" : "active"
+            "active3" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
-            "tittle1" : "Edit your member info.",
-            "tittle2" : "Booking list",
-            "active2" : "activeb",
-            "active3" : "active",
-            "active4" : "active",
+                "tittle1" : "Edit your member info.",
+                "tittle2" : "Booking list",
+                "active2" : "activeb",
+                "active3" : "active",
+                "active4" : "active",
             })
 
             <main>
+
+                <!-- 這註解寫的真令我感動...不用瞎猜debug了...QAQ -->
                 <!-- 放背景圖的 -->
                 <div class="past_mainblock">
 
@@ -53,12 +55,10 @@
 
                         </div>
 
-
                         <!-- 放展覽圖的 -->
                         <div class="past_imgblock">
                             <img src="./img/tickets/tickets_pic7.jpeg" alt="">
                         </div>
-
                     </div>
 
                     <!-- 按鈕區塊 -->
@@ -67,13 +67,11 @@
                             <span>Cancel</span>
                         </a>
                     </div>
-
                 </div>
             </main>
 
             <!-- 頁尾 -->
             @@include('./layout/footer.html')
-
         </div>
     </div>
 </body>
