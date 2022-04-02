@@ -1,30 +1,37 @@
 // =====================anno about=======================
 .wrapperAbout{
-    // @include Remind();
     width: $Width;
     height: $Height;
-    h2{
-        color:$TextColor2;
+    @include VerticalAlignCenter();
+    .aboutCnt{
+        width: $Width;
+        height: 500px;
+        @include HorizontalAlignCenter();
+        h2{
+            color:$TextColor2;
+        }
+        h4{
+            color:$TextColor2;
+        }
+        .aboutCntFr{
+    
+            width:$RWD;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .aboutCntEn{
+            text-align: right;
+        }
     }
-    h4{
-        color:$TextColor2;
-    }
-}
-.aboutCntFr{
-    width:$RWD;
-    display: flex;
-    justify-content: flex-end;
-}
-.aboutCntEn{
-    text-align: right;
 }
 
 // ======================anno history======================
 .aboutHistory{
+    @include VerticalAlignCenter();
     @include LinkImg(about, about_pic1, png, cover, null, null);
     .aboutHistoryContent{
-        width: $Width;
-        height: $RWD;
+        width: $RWD;
+        height: 500px;
     }
     h2{
         color:$TextColor2;

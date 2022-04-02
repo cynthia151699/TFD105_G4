@@ -1,15 +1,21 @@
 //基本同forget相關區域
-//字形先粗體，再確認
 .member_forget_main {
-    .member_forget_change_text {
+  
+    .member_forget_main_block .member_forget_change_text {
         font-weight: map-get($FontWeight, 'medium');
     }
-}
 
-.member_forget_change_BtColor1 {
-    background-color: #AD9F9F;
-}
 
-.member_forget_change_BtColor2 {
+}
+//  選框於下方置中
+.member_forget_main_block{
+    position: relative;
+}
+.member_forget_change_Bt {
+    position: absolute;
     background-color: $AccentColor2;
+    display: block;
+    bottom:50px;
+    left:50%;
+    transform: translate(-50%, 0%);
 }

@@ -4,20 +4,50 @@
 var swiper = new Swiper(".mySwiper", {});
 
 // 變數宣告
-var g1 = document.getElementById('g1');
-var g2 = document.getElementById('g2');
-var g3 = document.getElementById('g3');
-var g4 = document.getElementById('g4');
-var g5 = document.getElementById('g5');
-var g1_1 = document.getElementById('g1_1');
-var g2_1 = document.getElementById('g2_1');
-var g3_1 = document.getElementById('g3_1');
-var g4_1 = document.getElementById('g4_1');
-var g5_1 = document.getElementById('g5_1');
+// var g1 = document.getElementById('g1');
+// var g2 = document.getElementById('g2');
+// var g3 = document.getElementById('g3');
+// var g4 = document.getElementById('g4');
+// var g5 = document.getElementById('g5');
+// var g1_1 = document.getElementById('g1_1');
+// var g2_1 = document.getElementById('g2_1');
+// var g3_1 = document.getElementById('g3_1');
+// var g4_1 = document.getElementById('g4_1');
+// var g5_1 = document.getElementById('g5_1');
+
+// console.log(document.getElementsByClassName("swiper-slide-active")[1]);
+// let active1 = document.getElementsByClassName("swiper-slide-active")[0];
+// console.log(active1);
+// let active2 = document.getElementsByClassName("swiper-slide-active")[1];
+var active = document.querySelectorAll('.swiper-slide-active');
+// console.log(active);
 
 var ddd = document.querySelectorAll("img");
 // console.log(ddd);
 // console.log(ddd.length);
+// console.log(ddd[0]);
+
+var imgTop = active[0].querySelector('img');
+// ddd.findIndex(function(){
+    // img === imgTop
+// });
+
+// Array.prototype.findIndex
+// let index = -1;
+
+for (let i = 0; i < ddd.length; i++) {
+    if (ddd[i] === imgTop) {
+        let index = i;
+        break;
+    }
+}
+
+console.log(index);
+
+
+
+
+
 
 // ddd.forEach(function(value,index,arr){
 //     console.log(index);
@@ -27,16 +57,11 @@ var ddd = document.querySelectorAll("img");
 //     if (ddd[0] && ddd[5] == )
 // });
 
-// console.log(document.getElementsByClassName("swiper-slide-active")[1]);
-let active1 = document.getElementsByClassName("swiper-slide-active")[0];
-// console.log(active1);
-let active2 = document.getElementsByClassName("swiper-slide-active")[1];
-
 
 // if active1 active2 在這兩個class的時候做動作
-document.addEventListener("click", function(){
-    if (active1);
-});
+// document.addEventListener("click", function(){
+//     if (active1);
+// });
 
 
 // switch
