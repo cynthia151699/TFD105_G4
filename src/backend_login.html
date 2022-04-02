@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- <style>
+<style>
 
 .be_wrapper{
     height: 100vh;
     width: 100vw;
     background-color: #B5CDE2;
-}
-
-.be_logo{
-    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 .be_center{
-    border: 1px red solid;
+    /* border: 1px red solid; */
     text-align: center;
-    padding-top: 150px;
-
 }
 
-input{
-    width: 250px;
+.be_logo{
+    width: 300px;
+}
+
+.management{
+    font-size: 24px;
+}
+
+.be_account{
+    width: 350px;
+    height: 30px;
     background-color: #E1E1E1;
-    padding: 5px;
     margin: 10px;
     border: none;
     text-align: center;
 }
 
+
 .btn_login{
     background-color: #F29966;
     width: 100px;
+    height: 30px;
+    margin: 15px;
     cursor:pointer;
+    border: none;
     box-shadow: 1px 1px 1px #000;
 }
 
 .btn_login:hover {
     opacity: 0.8;
 }
-
-</style> -->
-
+</style>
 
 
 <body>
@@ -52,23 +59,20 @@ input{
         <img class="be_logo" src="./img/Logo/logo_rb.png" alt="">
         <h5 class="management">後台管理</h5>
 
-        <form class="be_login" action="">
-
-            <input type="text" name="" id="" placeholder="輸入帳號" required>
+        <form class="be_text" action="">
+            <input class="be_account" type="text" name="" id="" placeholder="輸入帳號" required>
             <br>
-            <input type="password" name="" id="" placeholder="輸入密碼" required>
+            <input class="be_account" type="password" name="" id="" placeholder="輸入密碼" required>
             <br>
             <input class="btn_login" type="submit" value="登入">
         </form>
-
-
 
     </div>
 </div>
 
 
     <!-- 頁尾 -->
-    @@include('./layout/footer.html')
+    <!-- @@include('./layout/footer.html') -->
 
 </body>
 
