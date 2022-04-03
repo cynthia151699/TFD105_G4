@@ -21,15 +21,12 @@
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
-            "tittle1" : "Edit Your Member Info.",
-            "tittle2" : "Booking List",
+            "tittle1" : "EDIT YOUR MEMBER INFO.",
+            "tittle2" : "BOOKING LIST",
             "active1" : "activeb",
             "active3" : "active",
             "active4" : "active",
             })
-
-            <a href="./tickets_current.html">當期票券管理</a>
-            <a href="./tickets_past.html">過往票券管理</a>
 
             <main class="ticketsPage">
 
@@ -38,6 +35,9 @@
 
                     <h4 class="tickets_bookingName ptSpace40 pbSpace10">
                         Current booking management (click it to show QR code)
+                        <a href="./tickets_current.html">當期票券管理</a>
+                        <a href="./tickets_past.html">過往票券管理</a>
+                        <a href="./cart_order.html">購物車訂單</a>
                     </h4>
 
                     <ul class="tickets_currentBooking">
@@ -110,6 +110,7 @@
                     </div>
  
                 </section>
+
             </main>
 
             <!-- 頁尾 -->
