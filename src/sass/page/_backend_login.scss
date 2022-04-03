@@ -18,6 +18,7 @@
 
 .management{
     font-size: 24px;
+    margin: 20px;
 }
 
 .be_account{
@@ -26,9 +27,14 @@
     background-color: #E1E1E1;
     margin: 10px;
     border: none;
+
     text-align: center;
 }
 
+.be_account:focus{
+    outline: none;
+    box-shadow:rgba(0,0,0,0.4)2px 2px 2px inset;  
+}
 
 .btn_login{
     background-color: #F29966;

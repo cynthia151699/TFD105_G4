@@ -1,5 +1,9 @@
 main.exRelative{
     position: relative;
+    h2,h3,h5,p{
+        color: $TextColor2;
+        text-align: left;
+    }
  
     div.ms-left{
         div#left1{
@@ -13,11 +17,6 @@ main.exRelative{
                     text-align: left;
                     line-height: $LineHeight;
                 }
-                h3,h5,p{
-                    color: $TextColor2;
-                    text-align: left;
-                }
-
             }            
         }
         div#left2{
@@ -42,25 +41,57 @@ main.exRelative{
                     bottom: 0;
                     line-height: 1; 
                     z-index: 30;
+                    opacity: .1;
                 }
             }
         }
         div#left3{
-            @include Remind;
-            @include VerticalAlignCenter;
-            position: relative;
-            h3.exPast_title{
-                color: $TextColor2;
-                position: absolute;
-                top: 200px;
-                left: 0;
-                right: 0;
-            }
-            h2{
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                line-height: 1;   
+            //@include Remind;
+            div.tab_content{
+                //@include Remind(blue);
+                @include VerticalAlignCenter; 
+                width: 100%;
+                height: 100%;
+                div.tabs_item{
+                    @include Remind(pink);
+                    @include VerticalAlignCenter;                  
+                    display: none;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+
+                    &:first-child {display: block;}
+                    h3{
+                        text-align: center;
+                    }
+                    h2{
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        line-height: 1; 
+                        opacity: .1;
+                    }
+                                     
+                    @for $i from 1 to 4 {
+                        div.exPast_contentBg#{$i}{ 
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        @include LinkImg('exhibition', 'exhibition_pic#{$i+3}', 'jpeg', cover, no-repeat, center);
+                        opacity: .1;
+                        z-index: 31;
+                        }
+                    }                        
+                    div.exPast_content{
+                        @include Remind(green);
+                        z-index: 32;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 100%;
+                    }
+                }
             }
             
         }
@@ -79,21 +110,24 @@ main.exRelative{
             section.exUpcoming{
                 @include Remind;
                 @include HorizontalAlignCenter;
-                h2,h3,h5,p{
-                    color: $TextColor2;
-                    line-height: $LineHeight;
-                    text-align: left;
-                } 
             }
         }
         div#right3{
             @include Remind;
             @include VerticalAlignCenter;
 
-            section.exBefore{
+            ul.exBefore{
                 @include Remind(blue);
                 @include HorizontalAlignCenter;
+                h3{
+                    text-align: center
+                }
+                .on a> img{
+                    display: inline-block;
+                    border: 4px solid $AccentColor2;
+                }
             }
+            
         }
     }
 }
