@@ -5,9 +5,6 @@
     @@include('./layout/head.html')
 
     <!-- Link Swiper's CSS -->
-<<<<<<< HEAD
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-=======
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
     <!-- Demo styles -->
@@ -24,7 +21,6 @@
             }
         }
     </style>
->>>>>>> dev
 </head>
 
 <body>
@@ -33,18 +29,18 @@
 
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
-            "active3" : "active"
+        "active3" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
-                "tittle1" : "Edit Your Member Info.",
-                "tittle2" : "Booking List",
-                "active1" : "activeb",
-                "active3" : "active",
-                "active4" : "active",
+            "tittle1" : "Edit Your Member Info.",
+            "tittle2" : "Booking List",
+            "active1" : "activeb",
+            "active3" : "active",
+            "active4" : "active",
             })
 
             <main class="ticketsPage">
@@ -116,7 +112,7 @@
                                     <a class="pastPic-8" href="./tickets_past.html"></a>
                                     <h6 class="tickets_bookingName2">Eye Contact</h6>
                                 </li>
-                                
+
                             </ul>
                             <!-- pagination -->
                             <div class="swiper-pagination"></div>
@@ -131,13 +127,13 @@
 
             <!-- 頁尾 -->
             @@include('./layout/footer.html')
-
-            <!-- Swiper JS -->
-            <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
-            <script src="./js/tickets.min.js"></script>
         </div>
     </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- 大家自己寫的js 在這！ -->
+    <script src="./js/tickets.min.js"></script>
 </body>
 
 </html>
