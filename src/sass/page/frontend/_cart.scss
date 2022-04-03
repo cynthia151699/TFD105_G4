@@ -1,0 +1,64 @@
+.stepDecorate::before{
+    content: ' ';
+    height: 50%;
+    width: 5px;
+    background-color: #E9E9E9;
+    position: absolute;
+    top: 25%;
+    left: 17.5%;
+    z-index: 0;
+}
+
+.stepDecorate{
+    width: 70px;
+
+    margin-left: 120px;
+
+    .step{
+        
+        width: 40px;
+        height: 40px;
+
+        background-color: #E9E9E9;
+        color: black;
+
+        text-align: center;
+        border-radius: 50%;
+
+        position: absolute;
+        z-index: 2;
+
+        span{
+            width: 40px;
+
+            font-weight: map-get($FontWeight, regular);
+            font-size: map-get($FontSize, h4);
+            font-family: $SpecialFont;
+
+            position: absolute;
+            z-index: 3;
+
+            top: 20px;
+            left: 0px;
+        }
+    }
+}
+
+.step.one{
+    background-color: $AccentColor3;
+
+    top: 15%;
+}
+
+.step.two{
+    top: 32%;
+}
+
+
+.step.three{
+    top: 49%;
+}
+
+.step.four{
+    top: 66%;
+}
