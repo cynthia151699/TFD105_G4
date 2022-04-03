@@ -1,0 +1,45 @@
+.be_wrapper{
+    height: 100vh;
+    width: 100vw;
+    background-color: #B5CDE2;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.be_center{
+    /* border: 1px red solid; */
+    text-align: center;
+}
+
+.be_logo{
+    width: 300px;
+}
+
+.management{
+    font-size: 24px;
+}
+
+.be_account{
+    width: 350px;
+    height: 30px;
+    background-color: #E1E1E1;
+    margin: 10px;
+    border: none;
+    text-align: center;
+}
+
+
+.btn_login{
+    background-color: #F29966;
+    width: 100px;
+    height: 30px;
+    margin: 15px;
+    cursor:pointer;
+    border: none;
+    box-shadow: 1px 1px 1px #000;
+}
+
+.btn_login:hover {
+    opacity: 0.8;
+}

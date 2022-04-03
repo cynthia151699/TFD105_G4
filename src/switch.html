@@ -1,70 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- <style>
-
-.s_wrapper{
-    height: 100vh;
-    width: 100vw;
-    background-color: #B5CDE2;
-}
-
-.btn_center{
-    border: 1px red solid;
-    list-style:none;
-    display: flex;
-}
-
-
-
-.be_logo{
-    width: 350px;
-}
-
-.btn_switch{
-    width: 100px;
-    background-color: #F29966;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    margin: 80px;
-    box-shadow: 1px 1px 1px #000;
-}
-
-.btn_switch:hover {
-    opacity: 0.8;
-}
-
-
-</style> -->
-
+<head>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
 
 
 <body>
+    
+<div class="s_wrapper">
 
-    <div class="s_wrapper">
+        <div class="s_space">
+            <div class="btn_switch">
+            <input type="submit" value="前台">
+            </div>
 
-        <div class="s_center">
-            <ul class="btn_center">
-                <li>
-                    <input class="btn_switch" type="submit" value="前台">
-                </li>
+            <div>
+            <img class="s_logo" src="./img/Logo/logo_rb.png" alt="">
+            </div>
 
-                <li>
-                    <img class="be_logo" src="./img/Logo/logo_rb.png" alt="">
-                </li>
-
-                <li>
-                    <input class="btn_switch" type="submit" value="後台">
-                </li>
-            </ul>
+            <div class="btn_switch">
+            <input type="submit" value="後台">
+            </div>
         </div>
 
-
-    </div>
-
     <!-- 頁尾 -->
-    @@include('./layout/footer.html')
+    <!-- @@include('./layout/footer.html') -->
+
 </body>
 
 </html>
