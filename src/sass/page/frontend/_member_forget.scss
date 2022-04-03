@@ -8,13 +8,9 @@
 
 .member_forget_main_block {
     @include HorizontalAlignCenter;
-    @include VerticalAlignCenter;
     width: 900px;
     height: 400px;
     background-color: $TextColor2;
-}
-
-.member_forget_main {
     text-align: center;
 }
 
@@ -23,6 +19,7 @@
     color: $TextColor;
 }
 
+//輸入框顏色
 .member_forget_input {
     background-color: $HFBGColor;
     color: $TextColor2;
@@ -42,3 +39,25 @@
 .member_forget_BtColor2 {
     background-color: $AccentColor2;
 }
+
+// .member_top{
+//     @include Remind(green);
+// }
+// .member_forget_main_area{
+//     @include Remind(red);
+// }
+// .member_forget_main_block{
+//     @include Remind(blue);
+// }
+// .member_forget_main{
+//     @include Remind(pink);
+// }
+
+
+
+
+
+
+
+
+
