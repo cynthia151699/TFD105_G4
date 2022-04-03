@@ -1,3 +1,11 @@
+//上方header不影響輸入框 
+.member_top {
+  height: 50px;
+  display: block;
+  width: 100vw;
+  display: flex;
+}
+
 // 主要區域置中
 .member_main_all_area {
   @include VerticalAlignCenter;
@@ -10,21 +18,14 @@
   @include HorizontalAlignCenter;
 }
 
-//上方header不影響輸入框 
-.member_top {
-  height: 50px;
-  display: block;
-  width: 100vw;
-  display: flex;
-}
 
 .member_span {
-  @include Flex (row);
+  // @include Flex (row);
 }
 
 // 選框區域 框和文字水平排列
 .member_span_choose {
-  @include Flex (1);
+  @include Flex (row);
   height: 12px;
   line-height: 12px;
 
@@ -169,7 +170,7 @@ $btnH: 36px;
 
 .member_img {
   overflow: hidden;
-  z-index: 2;
+  z-index: 11;
   position: absolute;
   left: 0;
   top: 0;
@@ -206,12 +207,12 @@ $btnH: 36px;
   }
 
   &__text {
-    z-index: 2;
+    z-index: 11;
     position: absolute;
     left: 0;
     top: 50px;
     width: 100%;
-    padding: 0 20px;
+    // padding: 0 20px;
     text-align: center;
     color: #fff;
     transition: transform $switchAT ease-in-out;
@@ -234,7 +235,7 @@ $btnH: 36px;
 
   &__btn {
     overflow: hidden;
-    z-index: 2;
+    z-index: 11;
     position: relative;
     width: 100px;
     height: $btnH;
@@ -247,7 +248,7 @@ $btnH: 36px;
 
     &:after {
       content: '';
-      z-index: 2;
+      z-index: 11;
       position: absolute;
       left: 0;
       top: 0;
@@ -255,6 +256,7 @@ $btnH: 36px;
       height: 100%;
       border: 2px solid #fff;
       border-radius: 30px;
+      box-sizing: border-box;
     }
 
     .member_span {
@@ -303,4 +305,47 @@ $btnH: 36px;
   @include signUpActive {
     transform: translate3d(0, 0, 0);
   }
+}
+
+
+
+// .member_top {
+//   @include Remind(green);
+//   background-color: aqua
+// }
+
+.member_main_all_area {
+  @include Remind(red);
+}
+
+.member_main_all {
+  @include Remind(blue);
+  // background-color: aqua;
+}
+
+.member_main_all_block {
+  @include Remind(pink);
+  // background-color: red
+}
+
+.member_main_form {
+  @include Remind(black);
+  // background-color: blue
+}
+
+.member_span{
+  @include Remind(black);
+  // background-color: green
+}
+
+
+.cont{
+  // background-color: purple
+
+}
+
+.sign-in{
+  // background-color: yellow
+
+
 }
