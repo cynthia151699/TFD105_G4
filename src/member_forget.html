@@ -15,6 +15,7 @@
 		})
 
 		<div class="mainContainer">
+
 			<!-- 頁首 -->
 			@@include('./layout/header.html', {
 			"tittle1" : "LOG IN",
@@ -24,30 +25,40 @@
 			"active4" : "active",
 			})
 
-
 			<main>
+				
 				<!-- 多包一層推開上方區域member_top -->
 				<div>
+
 					<div class="member_top"></div>
+
 					<div class="member_forget_main_area">
+
 						<!-- 主要區域 -->
 						<div class="member_forget_main_block">
+
 							<div class="member_forget_main">
+
 								<h3 class="mtSpace50 mbSpace50 member_forget_text">Password Reset</h3>
+
 								<h4 class="mbSpace50 member_forget_text prSpace30 plSpace30">
 									Please enter the email address that you used to sign up so we
 									can send you an email with your username and a link to reset
 									your password.
 								</h4>
+
 								<!-- 按鈕-->
 								<div class="mbSpace30">
 									<input class="member_forget_input" type="name" />
 								</div>
+
 								<div class="mbSpace30">
+
 									<a class="defaultBtn member_forget_BtColor1 member_forget_width mrSpace60"
 										href="./member.html">
 										<span class="member_forget_text">Cancel</span>
 									</a>
+
 									<a class="defaultBtn member_forget_BtColor2 member_forget_width" href="#">
 										<span class="member_forget_text">Send</span>
 									</a>
@@ -55,8 +66,10 @@
 							</div>
 						</div>
 					</div>
+				</div>
 			</main>
-			<!-- 輸入錯誤用文本    之後寫JS Something wrong! Please try again Please type in your email address -->
+			<!-- 輸入錯誤用文本 之後寫JS Something wrong! Please try again Please type in your email address -->
+
 			<!-- 頁尾 -->
 			@@include('./layout/footer.html')
 		</div>

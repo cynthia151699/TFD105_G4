@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+
+    <style>
+        .timeline-small {
+            max-width: 350px;
+            max-height: 630px;
+            overflow: hidden;
+            margin: 30px auto 0;
+            display: none;
+        }
+
+        .timeline-small-body ul {
+            padding: 1em 0 0 2em;
+            margin: 0;
+            list-style: none;
+            position: relative;
+        }
+
+        .timeline-small-body ul::before {
+            content: ' ';
+            height: 100%;
+            width: 5px;
+            background-color: #d9d9d9;
+            position: absolute;
+            top: 0;
+            left: 2.4em;
+            z-index: -1;
+        }
+
+        .timeline-small-body li div {
+            display: inline-block;
+            margin: 1em 0;
+            vertical-align: top;
+        }
+
+        .timeline-small-body .bullet {
+            width: 1rem;
+            height: 1rem;
+            box-sizing: border-box;
+            border-radius: 50%;
+            background: #fff;
+            z-index: 1;
+            margin-right: 1rem;
+            margin-top: 7%;
+        }
+
+        .timeline-small-body .bullet.pink {
+            background-color: hotpink;
+            border: 3px solid #F93B69;
+        }
+
+        .timeline-small-body .bullet.green {
+            background-color: lightseagreen;
+            border: 3px solid #B0E8E2;
+        }
+
+        .timeline-small-body .bullet.blue {
+            background-color: aquamarine;
+            border: 3px solid cadetblue;
+        }
+
+        .timeline-small-body .bullet.orange {
+            background-color: salmon;
+            border: 3px solid #EB8B6E;
+        }
+
+        .timeline-small-body .date {
+            width: 23%;
+            font-size: 0.75em;
+            padding-top: 0.40rem;
+            padding-right: 2rem;
+        }
+
+        .timeline-small-body .desc {
+            width: 50%;
+        }
+
+        .timeline-small-body h3 {
+            font-size: 0.9em;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .timeline-small-body h4 {
+            margin: 0;
+            font-size: 0.7em;
+            font-weight: 400;
+            color: #808080;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active4" : "active"
+        })
+
+        <div class="mainContainer">
+
+            <!-- 頁首 -->
+            @@include('./layout/header.html', {
+            "tittle1" : "Order",
+            "tittle2" : "Details",
+            "tittle3" : "Information",
+            "tittle4" : "Done",
+            "active1" : "activeb",
+            })
+
+            <main>
+                <!-- coding here -->
+
+                <!-- 主要內容部分 -->
+                <div class="timeline-small">
+                    <div class="timeline-small-body">
+                        <ul>
+                            <li>
+                                <div class="bullet pink"></div>
+                                <div class="date">XXXX年XX月XX日</div>
+                                <div class="desc">
+                                    <h3>內容段落1</h3>
+                                    <h4>內容段落2內容段落2內容段落2內容段落2</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet orange"></div>
+                                <div class="date">XXXX年XX月XX日</div>
+                                <div class="desc">
+                                    <h3>內容段落1</h3>
+                                    <h4>內容段落2內容段落2內容段落2內容段落2</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet blue"></div>
+                                <div class="date">XXXX年XX月XX日</div>
+                                <div class="desc">
+                                    <h3>內容段落1</h3>
+                                    <h4>內容段落2內容段落2內容段落2內容段落2</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet green"></div>
+                                <div class="date">XXXX年XX月XX日</div>
+                                <div class="desc">
+                                    <h3>內容段落1</h3>
+                                    <h4>內容段落2內容段落2內容段落2內容段落2</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cartOrder">
+
+                    <h3 style="padding-top: 10%; margin-left: 5%;">STEP 1.Order tickets</h3>
+
+                    <div class="stepDecorate">
+                        <div class="step one"><span>1</span></div>
+                        <div class="step two"><span>2</span></div>
+                        <div class="step three"><span>3</span></div>
+                        <div class="step four"><span>4</span></div>
+                    </div>
+
+                    <div style="margin-top: 5%; margin-left: 20%; width: 950px; background-color: white;">
+                        <h4>Break the Classic - TAKIKAW RISA Solo Exhibition</h4>
+                        <h4>Date: 2022/2/5~2022/5/5</h4>
+                        <h4>Place: Anno Museum South Buliding</h4>
+                        <h4>Rollover Ticket NTD $450 <input type="text"></h4>
+                    </div>
+
+                    <div style="margin-top: 5%; margin-left: 20%; width: 950px; background-color: white;">
+                        <h4>True Color - KAYLA GILL Solo Exhibition (Upcoming)</h4>
+                        <h4>Date: 2022/5/15~2022/8/15</h4>
+                        <h4>Place: Anno Museum North Buliding</h4>
+                        <h4>Advance Ticket NTD $400 <input type="text"></h4>
+                    </div>
+                </div>
+            </main>
+
+            <!-- 頁尾 -->
+            @@include('./layout/footer.html')
+        </div>
+    </div>
+</body>
+
+</html>

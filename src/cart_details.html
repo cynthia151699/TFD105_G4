@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active4" : "active"
+        })
+
+        <div class="mainContainer">
+
+            <!-- 頁首 -->
+            @@include('./layout/header.html', {
+            "tittle1" : "Order",
+            "tittle2" : "Details",
+            "tittle3" : "Information",
+            "tittle4" : "Done",
+            "active2" : "activeb",
+            })
+
+            <main>
+                <!-- coding here -->
+                1234
+                Break the Classic - TAKIKAW RISA Solo Exhibition
+                Date: 2022/2/5~2022/5/5
+                Place: Anno Museum South Buliding
+                ticket types price of tickets number of tickets delete
+                early bird - Single NT $400 <input type="text">
+                Exbition - Single NT $450 <input type="text">
+                Discount
+                <input type="text" value="pleace type the discount code here"><button>send</button> discount: NT$100
+                Total: NT$100
+                previous next
+            </main>
+
+            <!-- 頁尾 -->
+            @@include('./layout/footer.html')
+        </div>
+    </div>
+</body>
+
+</html>
