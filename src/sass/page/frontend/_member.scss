@@ -1,35 +1,47 @@
 // 主要區域置中
-.member_main_all_area{
+.member_main_all_area {
   @include VerticalAlignCenter;
-  width:calc(100vw - 70px);
-  height:calc(100vh - 90px);
+  width: calc(100vw - 70px);
+  height: calc(100vh - 50px);
 }
 
 //整個輸入區域，套用到所有區域
 .member_main_all {
   @include HorizontalAlignCenter;
 }
-.member_span {
-  @include Flex (1);
+
+//上方header不影響輸入框 
+.member_top {
+  height: 50px;
+  display: block;
+  width: 100vw;
+  display: flex;
 }
+
+.member_span {
+  @include Flex (row);
+}
+
 // 選框區域 框和文字水平排列
-.member_span_choose{
+.member_span_choose {
   @include Flex (1);
   height: 12px;
   line-height: 12px;
 
 }
+
 .member_span_choose .member_p_style {
   color: $TextColor;
   font-size: 12px;
 }
+
 // 主要區域  註冊內容  高度470 比內頁略高
 .member_main_all_block {
   width: 900px;
   height: 470px;
   background-color: $TextColor2;
-
 }
+
 // 註冊按鈕id
 #member_button {
   background-color: $AccentColor2;
@@ -49,13 +61,15 @@
   color: $TextColor2;
   width: 400px;
 }
+
+
 // 按鈕顏色
-.member_button_color1{
+.member_button_color1 {
   background-color: $AccentColor2;
 }
 
-.member_button_color2{
-  background-color: #9E9A9A;
+.member_button_color2 {
+  background-color: #AD9F9F;
 }
 
 // 跳窗
@@ -66,7 +80,7 @@
   height: 50%;
   background-color: $TextColor2;
   position: fixed;
-  width: 500px;
+  width: 600px;
   height: 300px;
   left: 50%;
   top: 50%;
@@ -74,13 +88,24 @@
   overflow-y: scroll;
 }
 
-//跳窗刪除
-.member_Terms_del {
-  color: $TextColor;
-  font-size: 30px;
+//跳窗標題
+.member_Terms_title {
+  color: $TextColor2;
+  background-color: $TextColor;
+  text-align: center;
+  position: relative;
 }
 
-// 移動距離
+// 跳窗刪除
+.member_Terms_del {
+  position: absolute;
+  top: 0%;
+  right: 3%;
+  color: $TextColor2;
+  cursor: pointer;
+}
+
+// 滑動移動距離
 $contW: 900px;
 $imgW: 260px;
 $formW: $contW - $imgW;
@@ -106,7 +131,7 @@ $btnH: 36px;
   overflow: hidden;
   position: relative;
   width: $contW;
- 
+
   margin: 0px auto;
   background: #fff;
 }
@@ -136,11 +161,10 @@ $btnH: 36px;
 }
 
 .member_cla_button {
-  display:block;
-  // margin-top: 30px;
+  display: block;
   width: 400px;
-  color :$TextColor;
-  @include HorizontalAlignCenter(20px ,20px);
+  color: $TextColor;
+  @include HorizontalAlignCenter(20px, 20px);
 }
 
 .member_img {

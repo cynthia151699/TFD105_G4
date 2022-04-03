@@ -11,18 +11,18 @@
 
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
-            "active4" : "active"
+        "active4" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
-                "tittle1" : "ABOUT ANNO",
-                "tittle2" : "HISTORY OF ANNO",
-                "active1" : "activeb",
-                "active3" : "active",
-                "active4" : "active",
+            "tittle1" : "ABOUT ANNO",
+            "tittle2" : "HISTORY OF ANNO",
+            "active1" : "activeb",
+            "active3" : "active",
+            "active4" : "active",
             })
 
             <main>
@@ -30,44 +30,44 @@
                 <!-- coding here -->
                 <div id="fullpage">
 
-                    <div class="section active " id="section0">
+                    <div class="section  active  " id="section0">
 
                         <div class="wrapperAbout plSpace40 ptSpace80">
+                            <div class="aboutCnt">
+                                <h2 class="aboutTitle pbSpace80">About ANNO</h2>
 
-                            <h2 class="aboutTitle pbSpace80">About ANNO</h2>
+                                <h4 class="aboutCntFr pbSpace80">
+                                    Art records the deduction in ANNO,
+                                    <br>
+                                    All is exist in the past, present, and future.
+                                </h4>
 
-                            <h4 class="aboutCntFr pbSpace50 mrSpace80">
-                                Art records the deduction in ANNO,
-                                <br>
-                                All is exist in the past, present, and future.
-                            </h4>
+                                <h4 class="aboutCntMd pbSpace80">
+                                    Not only for us,
+                                    <br>
+                                    You can accomplish every single dream here,
+                                    <br>
+                                    ANNO can be everyone's Utopia,
+                                </h4>
 
-                            <h4 class="aboutCntMd pbSpace50">
-                                Not only for us,
-                                <br>
-                                You can accomplish every single dream here,
-                                <br>
-                                ANNO can be everyone's Utopia,
-                            </h4>
-
-                            <h4 class="aboutCntEn pbSpace50">
-                                Let us open our minds,
-                                <br>
-                                Create your own Anno.
-                            </h4>
-
+                                <h4 class="aboutCntEn pbSpace80">
+                                    Let us open our minds,
+                                    <br>
+                                    Create your own Anno.
+                                </h4>
+                            </div>
                         </div>
 
                     </div>
 
 
-                    <div class="section aboutHistory ptSpace80" id="section1">
+                    <div class="section aboutHistory " id="section1">
 
                         <div class="aboutHistoryContent plSpace60 ">
 
-                            <h2 class="plSpace30 pbSpace80">History of Anno</h2>
+                            <h2 class="plSpace30 ptSpace50">History of Anno</h2>
 
-                            <h4 class="aboutHistoryFirst pbSpace50">
+                            <h4 class="aboutHistoryFirst ptSpace80">
                                 Anno Museum is a new museum located in Taipei.
                                 <br>
                                 The museum was founded in 2015, by six students in
@@ -77,14 +77,15 @@
 
                             <div class="wrapperAbhiMd ">
 
-                                <h4 class="aboutHistoryMid pbSpace50 plSpace100">
-                                    They hope that through the establishment of the museum, education, and culture can be
+                                <h4 class="aboutHistoryMid ptSpace40 plSpace100">
+                                    They hope that through the establishment of the museum, education, and culture can
+                                    be
                                     promoted so that more people can know and getclose to art.
                                 </h4>
 
                             </div>
 
-                            <h4 class="aboutHistoryEnd pbSpace50">
+                            <h4 class="aboutHistoryEnd ptSpace80">
 
                                 Without setting limits on style, they want to show a
                                 <br>
@@ -118,6 +119,8 @@
 
     <!-- 載入js、套件 -->
     <script src="./js/vendors/fullpage.min.js"></script>
+    <script src="./js/vendors/TweenMax.min.js"></script>
+    <script src="./js/vendors/imagesloaded.pkgd.min.js"></script>
 
     <!-- 大家自己寫的js 在這！ -->
     <script src="./js/about.min.js"></script>

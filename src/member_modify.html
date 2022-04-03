@@ -6,76 +6,72 @@
 </head>
 
 <body>
+
 	<div class="wrapper">
 
 		<!-- 導覽列 -->
-		@@include('./layout/nav.html', { 
-			"active5" : "active" 
+		@@include('./layout/nav.html', {
+		"active5" : "active"
 		})
 
 		<div class="mainContainer">
-
 			<!-- 頁首 -->
-			@@include('./layout/header.html', { 
-				"tittle1" : "LOG IN",
-				"tittle2" : "SIGN UP", 
-				"active1" : "activeb", 
-				"active3" : "active",
-				"active4" : "active", 
+			@@include('./layout/header.html', {
+			"tittle1" : "LOG IN",
+			"tittle2" : "SIGN UP",
+			"active1" : "activeb",
+			"active3" : "active",
+			"active4" : "active",
 			})
 
+
 			<main>
-
-				<div class="member_modify_main_area">
-
-					<div class="member_modify_area">
-
-						<div class="member_modify_title">
-
-							<h2 class="member_modify_text">Edit your member information</h2>
-
-							<div class="member_modify_main_block">
-
-								<ul class="plSpace100">
-									<li>
-										<h4>Member information</h4>
-									</li>
-									<li class="mtSpace30 member_info_flex">
-										<h4>Name</h4>
-										<h4 class="mlSpace250">XXXXXXXXXXXXXXX</h4>
-									</li>
-									<li class="mtSpace30 member_info_flex">
-										<h4>Email address</h4>
-										<h4 class="mlSpace140">XXXXXXXXXXXXXXX</h4>
-									</li>
-									<li class="mtSpace30 member_modify_flex">
-										<h4>Password</h4>
-										<input class="mlSpace200  member_modify_input" type="password" />
-									</li>
-									<li class="mtSpace30 member_modify_flex">
-										<h4>Password confirm</h4>
-										<input class="mlSpace100 member_modify_input" type="password" />
-									</li>
-									<li class="mtSpace30 member_modify_flex">
-										<h4>Phone</h4>
-										<input class="mlSpace240 member_modify_input" type="phone" />
-									</li>
-								</ul>
-
-								<!-- 按鈕待調整 -->
-
-							</div>
-
-							<h6 class="member_mail_Bt">
-								<input type="checkbox" class="mrSpace20">
-								I would like to receive news, tips and marketing offers from Anno.
-							</h6>
-
-							<div class="member_modify_Bt">
-								<a class="defaultBtn mrSpace10 member_forget_BtColor1" href="#">
+				<!-- 多包一層推開上方區域member_top -->
+				<div>
+					<div class="member_top"></div>
+					<div class="member_modify_main_area">
+						<div class="member_modify_area">
+							<div class="member_modify_title">
+								<!-- 上方title -->
+								<h3 class="member_modify_text">Edit your member information</h3>
+								<!-- 清單內容 -->
+								<div class="member_modify_main_block">
+									<ul class="member_modify_main_ul">
+										<li class="member_modify_main_li">
+											<h5>Member information</h5>
+										</li>
+										<li class="mtSpace20 member_modify_main_li">
+											<h5 class="member_modify_inf">Name</h5>
+											<h5 class="member_modify_uninput">王大明</h5>
+										</li>
+										<li class="mtSpace20  member_modify_main_li">
+											<h5 class="member_modify_inf">Email address</h5>
+											<h5 class="member_modify_uninput">testtest@gmail.com</h5>
+										</li>
+										<li class="mtSpace20 member_modify_main_li">
+											<h5 class="member_modify_inf">Password</h5>
+											<input class="member_modify_input" type="password" placeholder="請輸入密碼" />
+										</li>
+										<li class="mtSpace20 member_modify_main_li">
+											<h5 class="member_modify_inf">Password confirm</h5>
+											<input class="member_modify_input" type="password" placeholder="請再次輸入密碼" />
+										</li>
+										<li class="mtSpace20 member_modify_main_li">
+											<h5 class="member_modify_inf">Phone</h5>
+											<input class="member_modify_input" type="phone" placeholder="請輸入手機" />
+										</li>
+										<li class="mtSpace20 member_modify_main_li">
+											<h6><input type="checkbox" class="mrSpace20">I would like to receive news,
+												tips
+												and marketing offers from Anno.</h6>
+										</li>
+									</ul>
+								</div>
+								<!-- 按鈕 -->
+								<a class="defaultBtn member_modify_Bt1" href="./member_info.html">
 									<span class="member_forget_text">Cancel</span>
 								</a>
-								<a class="defaultBtn mlSpace90 member_forget_BtColor2" href="#">
+								<a class="defaultBtn member_modify_Bt2" href="#">
 									<span class="member_forget_text">Save</span>
 								</a>
 							</div>
@@ -83,12 +79,11 @@
 					</div>
 				</div>
 			</main>
-
+			
 			<!-- 頁尾 -->
 			@@include('./layout/footer.html')
 		</div>
 	</div>
-	
 </body>
 
 </html>

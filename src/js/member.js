@@ -19,26 +19,15 @@ document.getElementById("member_form").addEventListener("submit", function (even
     (err) => {
       btn.value = "Send Email";
       alert("Email format error, please re-enter");
-      // alert(JSON.stringify(err));
     }
   );
 });
-
-
 
 // 選單左右移動 
 
   document.querySelector('.member_img__btn').addEventListener('click', function () {
     document.querySelector('.cont').classList.toggle('s--signup');
   });
-
-
-
-
-
-
-
-
 
 
 // 跳出閱讀詳細事項 

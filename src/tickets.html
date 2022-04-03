@@ -14,18 +14,18 @@
 
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
-            "active3" : "active"
+        "active3" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
-                "tittle1" : "Edit Your Member Info.",
-                "tittle2" : "Booking List",
-                "active1" : "activeb",
-                "active3" : "active",
-                "active4" : "active",
+            "tittle1" : "Edit Your Member Info.",
+            "tittle2" : "Booking List",
+            "active1" : "activeb",
+            "active3" : "active",
+            "active4" : "active",
             })
 
             <main class="ticketsPage">
@@ -111,13 +111,13 @@
 
             <!-- 頁尾 -->
             @@include('./layout/footer.html')
-
-            <!-- Swiper JS -->
-            <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
-            <script src="./js/tickets.min.js"></script>
         </div>
     </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- 大家自己寫的js 在這！ -->
+    <script src="./js/tickets.min.js"></script>
 </body>
 
 </html>

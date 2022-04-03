@@ -2,7 +2,8 @@
 // -------開館時間-------
 .mainOpenhours{
     @include LinkImg(visit, visit_pic1, png, cover, null, null);
-    
+    @include VerticalAlignCenter();
+    @include HorizontalAlignCenter();
 }
 .wrapperOpenhours{
     @include Flex(row);
@@ -20,6 +21,8 @@
 }
 .openhoursRight{
     width: 40%;
+    @include VerticalAlignCenter();
+    @include HorizontalAlignCenter();
 }
 
 .openhoursRightImg{
@@ -31,10 +34,12 @@
 // ----------展覽票價資訊-----------
 .guideTicket{
     @include LinkImg(visit, visit_pic3, jpeg, 100% 100%, no-repeat,  left top );
+    @include VerticalAlignCenter();
+    @include HorizontalAlignCenter();
 }
 .wrapperGuideticket{
+    @include HorizontalAlignCenter();
     width:$RWD;
-    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -70,10 +75,9 @@
 .wapperTrans{
     @include Flex(row);
     @include VerticalAlignCenter;
+    @include HorizontalAlignCenter();
     height:$Height;
-    // @include Remind();
     @include LinkImg(visit, visit_pic4, png, cover, no-repeat,  center);
-    // background-size: 500px 300px;
     
     .map{
         width:140%;
@@ -89,18 +93,25 @@
             height: $RWD;
         }
     }
-    .transCnt{
-        width:$RWD;
-        height: $RWD;
-       h4{
-        font-weight: map-get($FontWeight, medium);
-        color:$TextColor2;
-       }
-       h5{
-        color:$TextColor2;
-        width: 500px;
-       }
+}
+.transCnt{
+    // @include Remind($color:red);
+    flex-direction: column;
+    width:$RWD;
+    height: $RWD;
+    .transCntIn{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // @include Remind($color:green);
+        h4{
+            font-weight: map-get($FontWeight, medium);
+            color:$TextColor2;
+           }
+           h5{
+            color:$TextColor2;
+            width: 500px;
+           }
     }
 }
-
 
