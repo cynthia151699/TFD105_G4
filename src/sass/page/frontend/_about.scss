@@ -71,9 +71,20 @@
     width: 800px;
     
 }
-.movePic{
-   position: relative;
-}
-.movePictImg{
-    position: absolute;
-}
+// .movePic{
+//     height: 300px;
+// 	position: relative;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	isolation: isolate;
+// }
+// .movePictImg{
+//     max-width: var(--img-maxwidth);
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	opacity: 0;
+// 	will-change: transform;
+// 	filter: var(--filter-img);
+// }
