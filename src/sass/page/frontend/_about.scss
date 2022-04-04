@@ -51,7 +51,7 @@
     @include VerticalAlignCenter();
     @include LinkImg(about, about_pic1, png, cover, null, null);
     .aboutHistoryContent{
-        width: $RWD;
+        width: $Width;
         height: 500px;
     }
     h2{

@@ -3,6 +3,9 @@ var myFullpage = new fullpage('#fullpage', {
     lazyLoad: true
 });
 
+AOS.init();
+
+
 // {
 //     // body element
 //     const body = document.body;
