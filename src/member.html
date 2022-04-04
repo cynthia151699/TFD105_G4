@@ -9,25 +9,26 @@
 
   <div class="wrapper">
 
-    <!-- 導覽列 -->
-    @@include('./layout/nav.html', {
-    "active5" : "active"
-    })
+		<!-- 導覽列 -->
+		@@include('./layout/nav.html', {
+		"active5" : "active"
+		})
 
     <div class="mainContainer">
 
-      <!-- 頁首 -->
-      @@include('./layout/header.html', {
-      "tittle1" : "LOG IN",
-      "tittle2" : "SIGN UP",
-      "active1" : "activeb",
-      "active3" : "active",
-      "active4" : "active",
-      })
 
-      <main>
+			<!-- 頁首 -->
+			@@include('./layout/header.html', {
+			"tittle1" : "LOG IN",
+			"tittle2" : "SIGN UP",
+			"active1" : "activeb",
+			"active3" : "active",
+			"active4" : "active",
+			})
 
-        <!-- 你包太多層了！！！我都看不懂你要做什麼了？這樣我很難debug！而且縮排可以拉開一點嗎？我找不到有問題的code在哪裡？？？不要讓我一直按ctrl+F在找 -->
+			<main>
+				<!-- 盡量多用html5語意化標籤，然後麻煩縮排推開一點，太擠不方便找除錯你的程式碼，再然後不要一直包div 標籤來推間距，
+					容易跑版，盡量用百分比訂尺寸跟寫距離比較不容易跑版，或者寫程式讓它自己算間距置中 -->
         <!-- 多包一層推開上方區域member_top 讓區塊在下方區域能夠置中 -->
         <div>
 
@@ -44,6 +45,15 @@
 
                 <!-- 登入 -->
                 <div class="sign-in member_main_form">
+
+
+
+										<!-- a -->
+										<!-- <h3 class="mbSpace30">Welcome back</h3>
+										<a href="./member_forget.html">forget</a>
+										<a href="./member_forget_change.html">forget_change</a>
+										<a href="./member_info.html">info</a>
+										<a href="./member_modify.html">modify</a> -->
 
 
                   <h3 class="">Welcome back</h3>
@@ -82,11 +92,23 @@
 
                     <span class="member_forget_text">LOG IN</span>
 
+
+					<!-- a -->
+												<!-- <h4 class="member_move_text">Sign up and discover great amount of new
+													opportunities!</h4>
+
+											</div> -->
+
                   </a>
 
                   <a class="defaultBtn member_cla_button member_button_color2" href="#">
 
                     <span class="member_forget_text">Connect with facebook</span>
+
+
+<!-- a -->
+												<!-- <h4 class="member_move_text">If you already has an account, just sign
+													in. We've missed you!</h4> -->
 
                   </a>
 
@@ -113,6 +135,16 @@
                       <h4 class="member_move_text">If you already has an account, just sign in. We've missed you!</h4>
 
                     </div>
+
+
+<!-- a -->
+													<!-- <input type="text" name="mail" class="member_input_text"
+														id="member_mail" />
+												</label> -->
+
+
+
+
 
                     <div class="member_img__btn">
 
@@ -148,6 +180,15 @@
 
                       <!-- </label> -->
 
+<!-- a -->
+													<!-- <span class="member_span_choose">
+														<input type="checkbox" class="member_login_choose" />
+														<p class="member_p_style">I would like to receive news, tips and
+															marketing offers from Anno.</p>
+													</span> -->
+
+
+
                       <!-- <label> -->
 
                         <span class="member_span">
@@ -167,6 +208,17 @@
                           <input type="password" class="member_input_text" />
                         </span>
                       <!-- </label> -->
+
+
+<!-- a -->
+												<!-- 註冊按鈕綁定JS   先不改成a樣式套用特效 -->
+												<!-- <button type="submit" class="mtSpace20" id="member_button">
+													SIGN UP</button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div> -->
 
                       <!-- <label> -->
 
@@ -242,6 +294,43 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- 大家自己寫的js 在這！ -->
     <script src="./js/member.min.js"></script>
+
+
+
+
+	<!-- a -->
+								<!-- <h6>Anno Account, Personal Information, and Security
+									By signing up for an account or placing an Order you agree and understand that we
+									may collect, use, store and process your Personal Information in accordance with our
+									Privacy & Cookie Policy. Anno Museum fully respects the privacy of individuals who
+									access
+									and use the Platforms. For details on the manner in which we use cookies, the type
+									of
+									information we collect, how and for what purpose, we use your information and under
+									what
+									circumstances we disclose information please see our Privacy & Cookie Policy, which
+									are
+									incorporated into and form part of these Terms.
+								</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main> -->
+
+			<!-- 頁尾 -->
+			<!-- @@include('./layout/footer.html')
+		</div> -->
+
+		<!-- 載入js、套件 -->
+		<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
+		<!-- 大家自己寫的js 在這！ -->
+		<!-- <script src="./js/member.min.js"></script> -->
+
+
+
+
+		
 </body>
 
 </html>

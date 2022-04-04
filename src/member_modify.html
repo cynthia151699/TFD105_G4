@@ -26,6 +26,8 @@
 
 
 			<main>
+				<!-- 盡量多用html5語意化標籤，然後麻煩縮排推開一點，太擠不方便找除錯你的程式碼，再然後不要一直包div 標籤來推間距，
+					容易跑版，盡量用百分比訂尺寸跟寫距離比較不容易跑版，或者寫程式讓它自己算間距置中 -->
 				<!-- 多包一層推開上方區域member_top 讓區塊在下方區域能夠置中 -->
 				<div>
 
@@ -63,7 +65,7 @@
 										<h5 class="member_modify_inf">Email address</h5>
 
 										<h5 class="member_modify_uninput">testtest@gmail.com</h5>
-									
+
 									</li>
 
 									<li class="mtSpace20 member_modify_main_li">
@@ -71,7 +73,7 @@
 										<h5 class="member_modify_inf">Password</h5>
 
 										<input class="member_modify_input" type="password" placeholder="請輸入密碼" />
-									
+
 									</li>
 
 									<li class="mtSpace20 member_modify_main_li">
@@ -79,7 +81,7 @@
 										<h5 class="member_modify_inf">Password confirm</h5>
 
 										<input class="member_modify_input" type="password" placeholder="請再次輸入密碼" />
-									
+
 									</li>
 
 									<li class="mtSpace20 member_modify_main_li">
@@ -87,7 +89,7 @@
 										<h5 class="member_modify_inf">Phone</h5>
 
 										<input class="member_modify_input" type="phone" placeholder="請輸入手機" />
-									
+
 									</li>
 
 									<li class="mtSpace20 member_modify_main_li">
@@ -100,32 +102,43 @@
 
 								</ul>
 
+
 							</div>
 
 							<!-- 按鈕 -->
 							<a class="defaultBtn member_modify_Bt1" href="./member_info.html">
-								
 								<span class="member_forget_text">Cancel</span>
-
 							</a>
 
 							<a class="defaultBtn member_modify_Bt2" href="#">
-								
 								<span class="member_forget_text">Save</span>
-
 							</a>
-
 						</div>
+
+						<!-- 按鈕 -->
+						<a class="defaultBtn member_modify_Bt1" href="./member_info.html">
+
+							<span class="member_forget_text">Cancel</span>
+
+						</a>
+
+						<a class="defaultBtn member_modify_Bt2" href="#">
+
+							<span class="member_forget_text">Save</span>
+
+						</a>
 
 					</div>
 
 				</div>
 
-			</main>
-
-			<!-- 頁尾 -->
-			@@include('./layout/footer.html')
 		</div>
+
+		</main>
+
+		<!-- 頁尾 -->
+		@@include('./layout/footer.html')
+	</div>
 	</div>
 </body>
 
