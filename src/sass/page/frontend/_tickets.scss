@@ -1,106 +1,137 @@
 // 麵包屑位置
-.headerContainer{
-    h5.tickets{
-        &:first-child{
+.headerContainer {
+    h5.tickets {
+        &:first-child {
             left: 20px;
         }
 
-        &:nth-child(2){
+        &:nth-child(2) {
             left: 340px;
         }
 
-        &:nth-child(3){
+        &:nth-child(3) {
             left: 0px;
         }
 
-        &:last-child{
+        &:last-child {
             left: 0px;
         }
     }
 }
 
-@mixin BorderBg1{
-    border-left: 4px solid $AccentColor2;
-    border-bottom: 4px solid $AccentColor2;
-    border-right: 4px solid $AccentColor2;
-    border-style:inset;
-}
+main.ticketsPage {
 
-@mixin BorderBg2{
-    border-left: 4px solid $AccentColor;
-    border-bottom: 4px solid $AccentColor;
-    border-right: 4px solid $AccentColor;
-    border-style:inset;
-}
+    // 東西請不要用推的！！！盡量用設寬度百分比加置中的方式讓它自己算，要不然很容易跑版！然後請正確使用html5標籤，賓哥跟丸子要哭了！
 
+    // @include Remind(maroon);
 
-main.ticketsPage{
-    @include Remind(maroon);
     @include VerticalAlignCenter;
 
-    section.tickets{
-        @include Remind(blue);
+    article.tickets {
+
+        // @include Remind(blue);
         width: 100%;
-        h4.tickets_bookingName, h4.tickets_pastbookingName{
+
+        h4.tickets_bookingName,
+        h4.tickets_pastbookingName {
+
+            width: 95%;
+
+            @include HorizontalAlignCenter();
+
             color: $TextColor2;
             line-height: $LineHeight;
             text-align: left;
         }
 
-        h6.tickets_bookingName2{
+        h6.tickets_bookingName {
+
             color: $TextColor2;
             line-height: $LineHeight;
             text-align: center;
+
             @include SingleEllipsis;
         }
-        ul.tickets_currentBooking{
-            @include Remind(green);
+
+        ul.tickets_currentBooking {
+
+            // @include Remind(green);
+
+            width: 95%;
+
+            @include HorizontalAlignCenter();
             @include VerticalAlignCenter();
-            
-            li.tickets_currentBooking-1{ 
+
+            li.tickets_currentBooking {
+
+                width: fit-content;
+
                 @for $i from 1 to 3 {
-                    a.currentbookingPic-#{$i}{
+                    a.currentbookingPic-#{$i} {
+
                         display: block;
                         width: 160px;
                         height: 140px;
+
                         @include LinkImg('tickets', 'tickets_pic#{$i}', 'jpeg', cover, no-repeat, left);
                         @include HorizontalAlignCenter;
-                        @include BorderBg1;
+
+                        border-left: 4px solid $AccentColor2;
+                        border-bottom: 4px solid $AccentColor2;
+                        border-right: 4px solid $AccentColor2;
+                        border-style: inset;
                     }
                 }
             }
         }
 
-        div.pastBooking_Management{
-            @include Remind(#008000);
-            width: 100%;
-            height: 100%;
-            ul.tickets_pastBooking{
-                @include VerticalAlignCenter;
+        div.pastBooking_Management {
+
+            // @include Remind(orange);
+
+            width: 95%;
+
+            @include HorizontalAlignCenter();
+
+            ul.tickets_pastBooking {
+
                 width: 100%;
-                height: 100%;
-                li.tickets_pastBooking{
+
+                li.tickets_pastBooking {
+
                     display: block;
-                    @include Remind;
+
+                    // @include Remind(yellow);
+
                     @for $i from 1 to 10 {
-                        a.pastPic-#{$i}{
+                        a.pastPic-#{$i} {
+
                             display: block;
+
                             width: 160px;
                             height: 140px;
+
                             @include LinkImg('tickets', 'tickets_pic#{$i+2}', 'jpeg', cover, no-repeat, center);
                             @include HorizontalAlignCenter;
-                            @include BorderBg2;
                             @include SingleEllipsis;
+
+                            border-left: 4px solid $AccentColor;
+                            border-bottom: 4px solid $AccentColor;
+                            border-right: 4px solid $AccentColor;
+                            border-style: inset;
                         }
                     }
                 }
             }
-            div.swiper-button-prev, div.swiper-button-next{
+
+            div.swiper-button-prev,
+            div.swiper-button-next {
+
                 color: $TextColor2;
-                &::after{
-                    font-size: map-get($FontSize , h3);
-                };
-                
+
+                &::after {
+                    font-size: map-get($FontSize, h3);
+                }
             }
         }
     }
