@@ -1,6 +1,9 @@
 // 主要區域置中
 .member_modify_area {
     @include VerticalAlignCenter;
+    position: fixed;
+    // 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
+    top:50px;
     width: calc(100vw - 70px);
     height: calc(100vh - 50px);
     text-align: center;

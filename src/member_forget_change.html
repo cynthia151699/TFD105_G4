@@ -27,33 +27,29 @@
             <main>
                 <!-- 盡量多用html5語意化標籤，然後麻煩縮排推開一點，太擠不方便找除錯你的程式碼，再然後不要一直包div 標籤來推間距，
                     容易跑版，盡量用百分比訂尺寸跟寫距離比較不容易跑版，或者寫程式讓它自己算間距置中 -->
-                <!-- 多包一層推開上方區域member_top 讓區塊在下方區域能夠置中 -->
-                <div>
 
-                    <!-- 這邊是隱藏在header後面的區塊   所以只包在這塊區域 </div>會在這邊-->
-                    <div class="member_top"></div>
+                <!-- 實際頁面作用區域 -->
+                <div class="member_forget_change_area">
 
-                    <!-- 實際頁面作用區域 -->
-                    <div class="member_forget_change_area">
+                    <!-- 中央白框區域 -->
+                    <article class="member_forget_change_block">
 
-                        <!-- 中央白框區域 -->
-                        <div class="member_forget_change_block">
+                        <!-- 讓文字區塊置中 -->
+                        <h5 class="member_forget_change_text">
+                            The password has already sent into your email address, please check it.
+                        </h5>
 
-                            <!-- 讓文字區塊置中 -->
-                            <h5 class="member_forget_change_text">
-                                The password has already sent into your email address, please check it.
-                            </h5>
+                        <!-- 按鈕置中位於下方 -->
+                        <a class="defaultBtn member_forget_change_Bt" href="./member.html">
 
-                            <!-- 按鈕置中位於下方 -->
-                            <a class="defaultBtn member_forget_change_Bt" href="./member.html">
-                                <span>Back to login page</span>
-                            </a>
+                            <span>Back to login page</span>
+                            
+                        </a>
 
-                        </div>
+                    </article>
 
-                    <!-- </div> -->
+                </div>
 
-                <!-- </div> -->
             </main>
 
             <!-- 頁尾 -->

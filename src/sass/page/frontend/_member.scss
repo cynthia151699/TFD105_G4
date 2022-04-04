@@ -1,34 +1,34 @@
-//上方header不影響輸入框 
-.member_top {
-  height: 50px;
-  display: block;
-  width: 100vw;
-  display: flex;
-}
-
 // 主要區域置中
 .member_main_all_area {
   @include VerticalAlignCenter;
+  position: fixed;
+  // 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
+  top:50px;
   width: calc(100vw - 70px);
   height: calc(100vh - 50px);
 }
 
-//整個輸入區域，套用到所有區域
-.member_main_all {
-  @include HorizontalAlignCenter;
+.member_main_form{
+  @include VerticalAlignCenter;
+}
+
+.member_main_form_area{
+   @include HorizontalAlignCenter;
+}
+
+.member_text_span{
+  width: 100%;
 }
 
 
-.member_span {
-  // @include Flex (row);
+.member_text_title{
+  text-align: left;
 }
 
 // 選框區域 框和文字水平排列
 .member_span_choose {
   @include Flex (row);
-  height: 12px;
   line-height: 12px;
-
 }
 
 .member_span_choose .member_p_style {
@@ -46,22 +46,27 @@
 // 註冊按鈕id
 #member_button {
   background-color: $AccentColor2;
-  width: 370px;
+  width: 100%;
   height: 40px;
-  line-height: 10px;
+  line-height: 20px;
+  cursor: pointer;
 }
 
 // 移動bar文字顏色
 .member_move_text {
   color: $TextColor2;
+  padding: 0 15px;
 }
 
 //文字框顏色
 .member_input_text {
   background-color: $HFBGColor;
   color: $TextColor2;
-  width: 400px;
+  width: 100%;
+  height: 26px;
+  box-sizing: border-box;
 }
+
 
 
 // 按鈕顏色
@@ -75,6 +80,8 @@
 
 // 跳窗
 .member_Terms_text {
+  // 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
+  top:50px;
   display: none;
   z-index: 11;
   width: 50%;
@@ -111,7 +118,6 @@ $contW: 900px;
 $imgW: 260px;
 $formW: $contW - $imgW;
 $switchAT: 1.2s;
-
 $inputW: 390px;
 $btnH: 36px;
 
@@ -122,17 +128,12 @@ $btnH: 36px;
   }
 }
 
-.tip {
-  font-size: 20px;
-  margin: 40px auto 50px;
-  text-align: center;
-}
+
 
 .cont {
   overflow: hidden;
   position: relative;
   width: $contW;
-
   margin: 0px auto;
   background: #fff;
 }
@@ -142,7 +143,6 @@ $btnH: 36px;
   width: $formW;
   height: 100%;
   transition: transform $switchAT ease-in-out;
-  padding: 30px 30px 0;
 }
 
 .sub-cont {
@@ -212,7 +212,6 @@ $btnH: 36px;
     left: 0;
     top: 50px;
     width: 100%;
-    // padding: 0 20px;
     text-align: center;
     color: #fff;
     transition: transform $switchAT ease-in-out;
@@ -269,6 +268,7 @@ $btnH: 36px;
       width: 100%;
       height: 100%;
       transition: transform $switchAT;
+      box-sizing: border-box;
 
       &.m--in {
         transform: translateY($btnH*-2);
@@ -300,52 +300,8 @@ $btnH: 36px;
 
 .sign-up {
   transform: translate3d($contW * -1, 0, 0);
-  text-align: center;
 
   @include signUpActive {
     transform: translate3d(0, 0, 0);
   }
-}
-
-
-
-// .member_top {
-//   @include Remind(green);
-//   background-color: aqua
-// }
-
-.member_main_all_area {
-  @include Remind(red);
-}
-
-.member_main_all {
-  @include Remind(blue);
-  // background-color: aqua;
-}
-
-.member_main_all_block {
-  @include Remind(pink);
-  // background-color: red
-}
-
-.member_main_form {
-  @include Remind(black);
-  // background-color: blue
-}
-
-.member_span{
-  @include Remind(black);
-  // background-color: green
-}
-
-
-.cont{
-  // background-color: purple
-
-}
-
-.sign-in{
-  // background-color: yellow
-
-
 }
