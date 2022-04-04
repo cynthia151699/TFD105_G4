@@ -1,21 +1,51 @@
 //基本同forget相關區域
-.member_forget_main {
-  
-    .member_forget_main_block .member_forget_change_text {
-        font-weight: map-get($FontWeight, 'medium');
+// 中央文字置中
+.member_forget_change_area {
+
+    @include VerticalAlignCenter;
+    position: fixed;
+    // 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
+    top:50px;
+    width: calc(100vw - 70px);
+    height: calc(100vh - 50px);
+    @include LinkImg('Logo', 'logo', 'png', scale-down, repeat-y, left);
+    background-position:top 0% left 0%;
+    background-size:20%;
+
+
+
+    .member_forget_change_block {
+
+        @include HorizontalAlignCenter;
+        @include VerticalAlignCenter;
+        width: 900px;
+        height: 400px;
+        background-color: $TextColor2;
+        text-align: center;
+
+        .member_forget_change_text {
+
+            @include HorizontalAlignCenter;
+
+        }
+        
     }
 
-
 }
+
 //  選框於下方置中
-.member_forget_main_block{
+.member_forget_change_block {
     position: relative;
 }
+
 .member_forget_change_Bt {
     position: absolute;
     background-color: $AccentColor2;
     display: block;
-    bottom:50px;
-    left:50%;
+    bottom: 50px;
+    left: 50%;
     transform: translate(-50%, 0%);
 }
+
+
+

@@ -2,45 +2,58 @@
 <html lang="en">
 
 <head>
-    @@include('./layout/head.html')
+	@@include('./layout/head.html')
 </head>
 
 <body>
 
-    <div class="wrapper">
+	<div class="wrapper">
 
-        <!-- 導覽列 -->
-        @@include('./layout/nav.html', {
-        "active5" : "active"
-        })
+		<!-- 導覽列 -->
+		@@include('./layout/nav.html', {
+		"active5" : "active"
+		})
 
-        <div class="mainContainer">
-            <!-- 頁首 -->
-            @@include('./layout/header.html', {
-            "tittle1" : "LOG IN",
-            "tittle2" : "SIGN UP",
-            "active1" : "activeb",
-            "active3" : "active",
-            "active4" : "active",
-            })
+		<div class="mainContainer">
+
+
+			<!-- 頁首 -->
+			@@include('./layout/header.html', {
+			"breadcrumb" : "member", 
+			"tittle1" : "LOG IN",
+			"tittle2" : "SIGN UP",
+			"active1" : "activeb",
+			"active3" : "active",
+			"active4" : "active",
+			})
+
 
             <main>
-                <!-- 多包一層推開上方區域member_top -->
-                <div>
-                    <div class="member_top"></div>
-                    <div class="member_forget_main_area">
-                        <div class="member_forget_main_block">
-                            <div class="member_forget_main plSpace60 prSpace60">
-                                <h5 class="mbSpace member_forget_change_text">
-                                    The password has already sent into your email address, please check it.
-                                </h5>
-                            </div>
-                            <a class="defaultBtn member_forget_change_Bt" href="./member.html">
-                                <span>Back to login page</span>
-                            </a>
-                        </div>
-                    </div>
+                <!-- 盡量多用html5語意化標籤，然後麻煩縮排推開一點，太擠不方便找除錯你的程式碼，再然後不要一直包div 標籤來推間距，
+                    容易跑版，盡量用百分比訂尺寸跟寫距離比較不容易跑版，或者寫程式讓它自己算間距置中 -->
+
+                <!-- 實際頁面作用區域 -->
+                <div class="member_forget_change_area">
+
+                    <!-- 中央白框區域 -->
+                    <article class="member_forget_change_block">
+
+                        <!-- 讓文字區塊置中 -->
+                        <h5 class="member_forget_change_text">
+                            The password has already sent into your email address, please check it.
+                        </h5>
+
+                        <!-- 按鈕置中位於下方 -->
+                        <a class="defaultBtn member_forget_change_Bt" href="./member.html">
+
+                            <span>Back to login page</span>
+                            
+                        </a>
+
+                    </article>
+
                 </div>
+
             </main>
 
             <!-- 頁尾 -->
