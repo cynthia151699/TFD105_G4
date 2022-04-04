@@ -42,7 +42,7 @@
                     <!-- part1 -->
                     <div class="order_info">
                         <form>
-                            Order info:<input type="checkbox" value="first_checkbox">Same as member info
+                            Order info:<input class="check_box" type="checkbox" value="first_checkbox">Same as member info
                             <br>
                             Name：<input type="text" name="input_name">
                             <br>
@@ -50,7 +50,7 @@
                             <br>
                             Email：<input type="text" name="input_email">
                             <br>
-                            <h5>Ticket Collection: By (QR code)</h5>
+                            <p>Ticket Collection: By (QR code)</p>
 
                         </form>
 
@@ -58,50 +58,53 @@
 
                     <!-- part2 -->
                     <div class="order_list">
-                            <h4>Your Order:</h4>
+                            <h6>Your Order:</h6>
                             <div class="list_box">
-                                <h5>Break the Classic - TAKIKAW RISA Solo Exhibition</h5>
-                                <h6>Date：2022/2/5～2022/5/5</h6>
-                                <h6>Place：Anno Museum South Building</h6>
-                                
+                                <table class="list_table">
+                                    <tr>
+                                        <td colspan="4">
+                                            Break the Classic - TAKIKAW RISA Solo Exhibition
+                                            <br>
+                                            Date: 2022/2/5~2022/5/5
+                                            <br>
+                                            Place: Anno Museum South Buliding
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tickets</td>
+                                        <td>Price</td>
+                                        <td>Number</td>
+                                        <td>Amount</td>
+                                    </tr>
 
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                                
-                                <p>Type of Tickets</p>
-                                <p>Tickets Price</p>
-                                <p>Number of Tickets</p>
-                                <p>Amount</p>
+                                    <tr>
+                                        <td>Early Bird - Single</td>
+                                        <td>NT$400</td>
+                                        <td>2</td>
+                                        <td>NT$800</td>
+                                    </tr>
 
-                                <p>Early bird - Single</p>
-                                <p>NTD$400</p>
-                                <p>2</p>
-                                <p>NTD$800</p>
+                                    <tr>
+                                        <td>Current - Single</td>
+                                        <td>NT$450</td>
+                                        <td>2</td>
+                                        <td>NT$900</td>
+                                    </tr>
 
-                                <p>Early bird - Single</p>
-                                <p>NTD$450</p>
-                                <p>2</p>
-                                <p>NTD$900</p>
+                                    <tr>
+                                        <td colspan="4">
+                                            <p>Amount:</p>
+                                            <p>4</p>
 
-
-                                <div class="amount">
-                                    <p>Amount:</p>
-                                    <p>4</p>
-                                </div>
-
-                                <div class="discount">
-                                    <p>Discount:</p>
-                                    <p>Without Using Discount</p>
-                                </div>
-
-                                <div class="total">
-                                    <p>Total:</p>
-                                    <p>NTD$1,700</p>
-                                </div>
+                                            <p>Discount:</p>
+                                            <p>Without Using Discount</p>
+                                        </td>
+                                    </tr>
+                                  
+                                    <tr>
+                                        <td>Total: NT$1,700</td>
+                                    </tr>
+                                </table>
                             </div>
 
 
@@ -109,8 +112,8 @@
 
                     <!-- part3 -->
                     <div class="payment">
-                        <h4>Payment:</h4>
-                        <h5>Payment Methods:</h5>
+                        <h6>Payment:</h6>
+                        <p>Payment Methods:</p>
                         <select>
                             <option>Credit Card</option>
                             <option>TaiShin Bank (812)</option>
@@ -120,13 +123,13 @@
                         </select>
 
 
-                        <h5>Card Holder:</h5>
+                        <p>Card Holder:</p>
                         <input placeholder="Please type in the name...">
 
-                        <h5>Card Numbers:</h5>
+                        <p>Card Numbers:</p>
                         <input placeholder="Please type in the card numbers... (Example:1234-5678-8907-5674)">
                         
-                        <h5>Expiration Date:</h5>
+                        <p>Expiration Date:</p>
                         <select>
                             <option>Month</option>
                             <option>1</option>
@@ -155,24 +158,24 @@
                             <option>2029</option>
                         </select>
 
-                        <h5>CVC Code:</h5>
+                        <p>CVC Code:</p>
                         <input placeholder="Please type in the CVC security code on the back of the credit card...">
 
-                        <h5>Invioce Numbers:</h5>
+                        <p>Invioce Numbers:</p>
                         <select>
                             <option>Uniform Invoice</option>
                             <option>e-Invoice</option>
                             <option>Mobile Barcode</option>
                         </select>
                         <br>
-                        <input type="checkbox" value="second_checkbox">If I follow up on refund or abandonment, I agree that ANNO handle the sales voucher (for example: invoice processing or discount).
+                        <input class="check_box" type="checkbox" value="second_checkbox">If I follow up on refund or abandonment, I agree that ANNO handle the sales voucher (for example: invoice processing or discount).
 
                         <div class="cautions_box">
-                            <h4>Cautions:</h4>
+                            <p>Cautions:</p>
                             <p>xxxxx</p>
                         </div>
 
-                        <input type="checkbox" value="third_checkbox">I agree to the terms of service and return policy on Anno Meseum.
+                        <input class="check_box" type="checkbox" value="third_checkbox">I agree to the terms of service and return policy on Anno Meseum.
                     </div>
 
                     <input type="submit" value="Previous">
