@@ -1,3 +1,24 @@
+// 麵包屑位置
+.headerContainer{
+    h5.tickets{
+        &:first-child{
+            left: 20px;
+        }
+
+        &:nth-child(2){
+            left: 340px;
+        }
+
+        &:nth-child(3){
+            left: 0px;
+        }
+
+        &:last-child{
+            left: 0px;
+        }
+    }
+}
+
 @mixin BorderBg1{
     border-left: 4px solid $AccentColor2;
     border-bottom: 4px solid $AccentColor2;
