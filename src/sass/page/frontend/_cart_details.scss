@@ -24,5 +24,16 @@ li.step.two{
         color: black;
 
         box-sizing: border-box;
+
+        thead{
+            &:nth-child(2){
+                tr{
+                    background-color: $HFBGColor;
+                }
+            }
+            &:last-child{
+                background-color: $HFBGColor;
+            }
+        }
     }
 }
