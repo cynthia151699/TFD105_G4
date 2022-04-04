@@ -1,3 +1,23 @@
+// 麵包屑位置
+.headerContainer{
+    h5.guide{
+        &:first-child{
+            left: 20px;
+        }
+
+        &:nth-child(2){
+            left: 220px;
+        }
+
+        &:nth-child(3){
+            left: 330px;
+        }
+
+        &:last-child{
+            left: 0px;
+        }
+    }
+}
 
 // -------開館時間-------
 .mainOpenhours{
