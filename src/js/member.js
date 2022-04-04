@@ -14,7 +14,7 @@ document.getElementById("member_form").addEventListener("submit", function (even
   emailjs.sendForm(serviceID, templateID, this).then(
     () => {
       btn.value = "Send Email";
-      alert("Sent!");
+      alert("Welcome to Anno");
     },
     (err) => {
       btn.value = "Send Email";

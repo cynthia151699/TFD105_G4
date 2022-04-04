@@ -3,6 +3,34 @@
 
 <head>
     @@include('./layout/head.html')
+
+
+
+<style>
+
+main{
+    overflow: auto;
+}
+
+.main_box{
+
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 1px yellow solid;   
+}
+
+.order_info{
+    border: 1px red solid;
+}
+
+
+.order_list{
+    border: 1px blue solid;   
+}
+
+
+</style>
+
 </head>
 
 <body>
@@ -16,15 +44,162 @@
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
-            "tittle1" : "Order",
-            "tittle2" : "Details",
-            "tittle3" : "Information",
-            "tittle4" : "Done",
-            "active1" : "activeb",
+            "tittle1" : "ORDER",
+            "tittle2" : "DETAILS",
+            "tittle3" : "INFORMATION",
+            "tittle4" : "DONE",
+            "active3" : "activeb",
             })
 
             <main>
                 <!-- coding here -->
+                <div class="main_box">
+
+                    <!-- part1 -->
+                    <div class="order_info">
+                        <form>
+                            <h4>Order information</h4>
+                            Order info:<input type="checkbox" value="first_checkbox">Same as member info
+                            <br>
+                            Name：<input type="text" name="input_name">
+                            <br>
+                            Phone：<input type="text" name="input_phone:">
+                            <br>
+                            Email：<input type="text" name="input_email">
+                            <br>
+                            <h5>Ticket Collection: By (QR code)</h5>
+
+                        </form>
+
+                    </div>
+
+                    <!-- part2 -->
+                    <div class="order_list">
+                            <h4>Your Order:</h4>
+                            <div class="list_box">
+                                <h5>Break the Classic - TAKIKAW RISA Solo Exhibition</h5>
+                                <h6>Date：2022/2/5～2022/5/5</h6>
+                                <h6>Place：Anno Museum South Building</h6>
+                                
+
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                                
+                                <p>Type of Tickets</p>
+                                <p>Tickets Price</p>
+                                <p>Number of Tickets</p>
+                                <p>Amount</p>
+
+                                <p>Early bird - Single</p>
+                                <p>NTD$400</p>
+                                <p>2</p>
+                                <p>NTD$800</p>
+
+                                <p>Early bird - Single</p>
+                                <p>NTD$450</p>
+                                <p>2</p>
+                                <p>NTD$900</p>
+
+
+                                <div class="amount">
+                                    <p>Amount:</p>
+                                    <p>4</p>
+                                </div>
+
+                                <div class="discount">
+                                    <p>Discount:</p>
+                                    <p>Without Using Discount</p>
+                                </div>
+
+                                <div class="total">
+                                    <p>Total:</p>
+                                    <p>NTD$1,700</p>
+                                </div>
+                            </div>
+
+
+                    </div>
+
+                    <!-- part3 -->
+                    <div class="payment">
+                        <h4>Payment:</h4>
+                        <h5>Payment Methods:</h5>
+                        <select>
+                            <option>Credit Card</option>
+                            <option>TaiShin Bank (812)</option>
+                            <option>CTBC Bank (822)</option>
+                            <option>Cathay Bank (013)</option>
+                            <option>Taipei Fubon Bank (012)</option>
+                        </select>
+
+
+                        <h5>Card Holder:</h5>
+                        <input placeholder="Please type in the name...">
+
+                        <h5>Card Numbers:</h5>
+                        <input placeholder="Please type in the card numbers... (Example:1234-5678-8907-5674)">
+                        
+                        <h5>Expiration Date:</h5>
+                        <select>
+                            <option>Month</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+
+                        <select>
+                            <option>Year</option>
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                            <option>2027</option>
+                            <option>2028</option>
+                            <option>2029</option>
+                        </select>
+
+                        <h5>CVC Code:</h5>
+                        <input placeholder="Please type in the CVC security code on the back of the credit card...">
+
+                        <h5>Invioce Numbers:</h5>
+                        <select>
+                            <option>Uniform Invoice</option>
+                            <option>e-Invoice</option>
+                            <option>Mobile Barcode</option>
+                        </select>
+                        <br>
+                        <input type="checkbox" value="second_checkbox">If I follow up on refund or abandonment, I agree that ANNO handle the sales voucher (for example: invoice processing or discount).
+
+                        <div class="cautions_box">
+                            <h4>Cautions:</h4>
+                            <p>xxxxx</p>
+                        </div>
+
+                        <input type="checkbox" value="third_checkbox">I agree to the terms of service and return policy on Anno Meseum.
+                    </div>
+
+                    <input type="submit" value="Previous">
+                    <input type="submit" value="Next">
+
+
+                </div>
+
+
+                <a href="./cart_done.html" style="padding-top: 200px;">完成訂單</a>
             </main>
 
             <!-- 頁尾 -->

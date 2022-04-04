@@ -3,6 +3,44 @@
 
 <head>
     @@include('./layout/head.html')
+
+
+<style>
+
+.done_center{
+    border: 1px yellow solid;       
+    /* @include VerticalAlignCenter; */
+    width: 100vmax;
+    margin-top: 50px;
+}
+
+.main_info{
+    width: 1000px;
+    border: 1px red solid;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content:space-between;
+
+}
+
+.info_left{
+    border: 1px #fff solid;
+    width: 400px;
+
+
+}
+
+.info_right{
+    border: 1px #fff solid;
+    width: 400px;
+
+
+}
+
+
+</style>
+
 </head>
 
 <body>
@@ -16,15 +54,41 @@
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
-            "tittle1" : "Order",
-            "tittle2" : "Details",
-            "tittle3" : "Information",
-            "tittle4" : "Done",
-            "active1" : "activeb",
+            "tittle1" : "ORDER",
+            "tittle2" : "DETAILS",
+            "tittle3" : "INFORMATION",
+            "tittle4" : "DONE",
+            "active4" : "activeb",
             })
 
             <main>
                 <!-- coding here -->
+                <div class="done_center">
+                <h3>STEP 4.Order Status</h3>
+                <h3>Order Completed !</h3>
+
+                <div class="main_info">
+                    <div class="info_left">
+                        <h4>Your Order:</h4>
+                        <div class="left_text">
+                        <p>Name:</p>
+                        <p>Mobile:</p>
+                        <p>Email:</p>
+                        <p>Ticket collection: By (QR code)</p>
+                     </div>
+                    </div>
+
+                    <div class="info_right">
+                        <h4>Break the Classic</h4>
+                        <h5>TAKIKAW RISA Solo Exhibition</h5>
+                        <h5>Date：2022/2/5～2022/5/5</h5>
+                        <h5>Place：Anno Museum South Building</h5>
+                        <p>qrcode space</p>
+                    </div>
+                </div>
+
+
+                </div>
             </main>
 
             <!-- 頁尾 -->

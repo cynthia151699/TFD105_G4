@@ -15,8 +15,11 @@
 		})
 
 		<div class="mainContainer">
+
+
 			<!-- 頁首 -->
 			@@include('./layout/header.html', {
+			"breadcrumb" : "member", 
 			"tittle1" : "LOG IN",
 			"tittle2" : "SIGN UP",
 			"active1" : "activeb",
@@ -25,62 +28,86 @@
 			})
 
 			<main>
+		
+					<!-- 盡量多用html5語意化標籤，然後麻煩縮排推開一點，太擠不方便找除錯你的程式碼，再然後不要一直包div 標籤來推間距，
+						容易跑版，盡量用百分比訂尺寸跟寫距離比較不容易跑版，或者寫程式讓它自己算間距置中 -->
 
-				<div>
 
-					<div class="member_top"></div>
+					<!-- 實際頁面作用區域 -->
+					<div class="member_modify_area">
 
-					<div class="member_modify_main_area">
 
-						<div class="member_modify_area">
+						<!-- 中央白框區域 -->
+						<article class="member_modify_main">
 
-							<div class="member_modify_title">
 
-								<!-- 上方title -->
-								<h3 class="member_modify_text">Overview</h3>
+							<!-- 上方title -->
+							<h3 class="member_modify_text">Overview</h3>
 
-								<!-- 清單內容 -->
-								<div class="member_modify_main_block">
 
-									<ul class="member_modify_main_ul">
+							<!-- 清單內容 -->
+							<div class="member_modify_main_block">
 
-										<li class="member_modify_main_li">
-											<h5>Member information</h5>
-										</li>
 
-										<li class="mtSpace50 member_modify_main_li">
-											<h5 class="member_modify_inf">Name</h5>
-											<h5 class="member_modify_uninput">王大明</h5>
-										</li>
+								<ul class="member_modify_main_ul">
 
-										<li class="mtSpace40  member_modify_main_li">
-											<h5 class="member_modify_inf">Email address</h5>
-											<h5 class="member_modify_uninput">testtest@gmail.com</h5>
-										</li>
 
-										<li class="mtSpace40 member_modify_main_li">
-											<h5 class="member_modify_inf">Password</h5>
-											<h5 class="member_modify_uninput">XXXXXXXXXXXXXXXXXXXXXXXXXX</h5>
-										</li>
+									<li class="member_modify_main_li">
 
-										<!-- 整體調整 -->
-										<li class="mtSpace40 mbSpace20 member_modify_main_li">
-											<h5 class="member_modify_inf">Phone</h5>
-											<h5 class="member_modify_uninput">0999999999</h5>
-										</li>
 
-									</ul>
-								</div>
+										<h5>Member information</h5>
 
-								<!-- 按鈕待調整 -->
-								<a class="defaultBtn member_info_btc" href="./member_modify.html">
-									<span>modify</span>
-								</a>
+
+									</li>
+
+									<li class="mtSpace50 member_modify_main_li">
+
+										<h5 class="member_modify_inf">Name</h5>
+
+										<h5 class="member_modify_uninput">王大明</h5>
+
+									</li>
+
+									<li class="mtSpace40  member_modify_main_li">
+
+										<h5 class="member_modify_inf">Email address</h5>
+
+										<h5 class="member_modify_uninput">testtest@gmail.com</h5>
+
+									</li>
+
+									<li class="mtSpace40 member_modify_main_li">
+
+										<h5 class="member_modify_inf">Password</h5>
+
+										<h5 class="member_modify_uninput">XXXXXXXXXXXXXXXXXXXXXXXXXX</h5>
+
+									</li>
+
+									<!-- 整體調整 -->
+									<li class="mtSpace40 mbSpace20 member_modify_main_li">
+
+										<h5 class="member_modify_inf">Phone</h5>
+
+										<h5 class="member_modify_uninput">0999999999</h5>
+
+									</li>
+
+								</ul>
 
 							</div>
-						</div>
+
+							<!-- 按鈕待調整 -->
+							<a class="defaultBtn member_info_btc" href="./member_modify.html">
+
+								<span>modify</span>
+
+							</a>
+
+						</article>
+
 					</div>
-				</div>
+
 			</main>
 
 			<!-- 頁尾 -->
