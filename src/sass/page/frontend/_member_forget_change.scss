@@ -1,19 +1,33 @@
 //基本同forget相關區域
-.member_forget_main_area {
-   
-    .member_forget_main_block {
-     
+// 中央文字置中
+.member_forget_change_area {
+
+    @include VerticalAlignCenter;
+    width: calc(100vw - 70px);
+    height: calc(100vh - 50px);
+
+
+    .member_forget_change_block {
+
+        @include HorizontalAlignCenter;
+        @include VerticalAlignCenter;
+        width: 900px;
+        height: 400px;
+        background-color: $TextColor2;
+        text-align: center;
+
         .member_forget_change_text {
-            
+
             @include HorizontalAlignCenter;
 
         }
+        
     }
 
 }
 
 //  選框於下方置中
-.member_forget_main_block {
+.member_forget_change_block {
     position: relative;
 }
 
@@ -25,6 +39,9 @@
     left: 50%;
     transform: translate(-50%, 0%);
 }
+
+
+
 
 // .member_forget_main_area {
 //     @include Remind(green);
