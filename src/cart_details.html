@@ -18,6 +18,7 @@
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
+            "breadcrumb" : "cart",
             "tittle1" : "ORDER",
             "tittle2" : "DETAILS",
             "tittle3" : "INFORMATION",
@@ -26,19 +27,71 @@
             })
 
             <main>
+
                 <!-- coding here -->
-                1234
-                Break the Classic - TAKIKAW RISA Solo Exhibition
-                Date: 2022/2/5~2022/5/5
-                Place: Anno Museum South Buliding
-                ticket types price of tickets number of tickets delete
-                early bird - Single NT $400 <input type="text">
-                Exbition - Single NT $450 <input type="text">
-                Discount
-                <input type="text" value="pleace type the discount code here"><button>send</button> discount: NT$100
-                Total: NT$100
-                previous next
-                <a href="./cart_information.html">訂單資料</a>
+                <div class="cartDetails">
+
+                    <h3>STEP 2. Order details</h3>
+
+                    <ul class="stepDecorate">
+                        <li class="step one"><span>1</span></li>
+                        <li class="step two"><span>2</span></li>
+                        <li class="step three"><span>3</span></li>
+                        <li class="step four"><span>4</span></li>
+                    </ul>
+
+                    <table class="shopping">
+                        <tr>
+                            <td colspan="4">
+                                Break the Classic - TAKIKAW RISA Solo Exhibition
+                                <br>
+                                Date: 2022/2/5~2022/5/5
+                                <br>
+                                Place: Anno Museum South Buliding
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ticket types</td>
+                            <td>price of tickets</td>
+                            <td>number of tickets</td>
+                            <td>delete</td>
+                        </tr>
+                        <tr>
+                            <td>early bird - Single</td>
+                            <td>NT $400</td>
+                            <td><input type="text"></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Exbition - Single</td>
+                            <td>NT $450</td>
+                            <td><input type="text"></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <h4>Discount</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="text" value="pleace type the discount code here">
+                            </td>
+                            <td><button>send</button></td>
+                            <td>Discount: NT$100</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">&nbsp;</td>
+                            <td>
+                                Total: NT$100
+                            </td>
+                        </tr>
+                    </table>
+
+                    <a href="./cart_order.html">previous</a>
+
+                    <a href="./cart_information.html">next</a>
+                </div>
             </main>
 
             <!-- 頁尾 -->

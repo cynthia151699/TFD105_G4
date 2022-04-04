@@ -1,0 +1,28 @@
+li.step.one{
+    background-color: #E9E9E9 !important;
+}
+
+li.step.two{
+    background-color: $AccentColor3 !important;
+}
+
+.cartDetails{
+    h3{
+        color: $TextColor2;
+        padding-top: 10%;
+        margin-left: 5%;
+    }
+
+    table.shopping{
+        width: 950px;
+
+        margin-top: 5%; 
+        margin-left: 20%; 
+        padding: 20px;
+
+        background-color: #E9E9E9;
+        color: black;
+
+        box-sizing: border-box;
+    }
+}
