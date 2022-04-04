@@ -20,7 +20,7 @@ $(function(){
         $(this).siblings().removeClass("on");
 
         let tabs_itemAll=$(this).index();
-        console.log(tabs_itemAll);
+        //console.log(tabs_itemAll);
         $(".tabs_item").eq(tabs_itemAll).show();
         $(".tabs_item").eq(tabs_itemAll).siblings().hide();
     });

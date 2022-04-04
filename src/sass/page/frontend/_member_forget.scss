@@ -6,7 +6,9 @@
     top:50px;
     width: calc(100vw - 70px);
     height: calc(100vh - 50px);
-
+    @include LinkImg('Logo', 'logo', 'png', scale-down, repeat-y, left);
+    background-position:top 0% left 0%;
+    background-size:20%;
 }
 
 .member_forget_main_block {
