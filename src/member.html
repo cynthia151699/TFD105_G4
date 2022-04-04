@@ -277,12 +277,21 @@
 									</label>
 
 									<!-- 註冊按鈕綁定JS   先不改成a樣式套用特效 -->
-									<!-- 註冊成功到會員資料檢視  連結先放上-->
-									<a href="./member_info.html"></a>
-									<button type="submit" class="mtSpace10" id="member_button">
-										SIGN UP
+									<!-- 註冊成功到會員資料檢視  連結先放上    JS判斷先關掉節省流量-->
+									<!-- 測試路徑先包a   實際上線a會拿掉 -->
+
+
+									<button type="submit" class="mtSpace10" id="member_button"  href="./member_info.html">
+										<a id="member_button_text" href="./member_info.html">	
+										SIGN UP 
+										</a>
 									</button>
-									</a>
+
+
+									<!-- 實際上線版本先註解   -->
+									<!-- <button type="submit" class="mtSpace10" id="member_button">
+										SIGN UP
+									</button> -->
 
 								</form>
 
