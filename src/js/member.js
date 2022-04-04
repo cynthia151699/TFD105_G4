@@ -15,10 +15,13 @@ document.getElementById("member_form").addEventListener("submit", function (even
     () => {
       btn.value = "Send Email";
       alert("Welcome to Anno");
+      window.location.assign("../../dist/member_info.html")
     },
     (err) => {
       btn.value = "Send Email";
       alert("Email format error, please re-enter");
+      //這邊JS判斷先不檢查信箱格式先連結路徑
+      window.location.assign("../../dist/member_info.html")
     }
   );
 });
