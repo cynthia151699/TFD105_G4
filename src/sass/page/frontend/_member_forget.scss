@@ -1,6 +1,9 @@
 // 主要區域置中
 .member_forget_main_area {
     @include VerticalAlignCenter;
+    position: fixed;
+    // 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
+    top:50px;
     width: calc(100vw - 70px);
     height: calc(100vh - 50px);
 
@@ -8,13 +11,9 @@
 
 .member_forget_main_block {
     @include HorizontalAlignCenter;
-    @include VerticalAlignCenter;
     width: 900px;
     height: 400px;
     background-color: $TextColor2;
-}
-
-.member_forget_main {
     text-align: center;
 }
 
@@ -23,6 +22,7 @@
     color: $TextColor;
 }
 
+//輸入框顏色
 .member_forget_input {
     background-color: $HFBGColor;
     color: $TextColor2;
@@ -42,3 +42,12 @@
 .member_forget_BtColor2 {
     background-color: $AccentColor2;
 }
+
+
+
+
+
+
+
+
+
