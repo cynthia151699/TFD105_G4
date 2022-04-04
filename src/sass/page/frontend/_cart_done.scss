@@ -1,8 +1,8 @@
-.cartDone li.step.three{
+.cartDone li.step.two{
     background-color: #E9E9E9 !important;
 }
 
-.cartDone li.step.two{
+.cartDone li.step.four{
     background-color: $AccentColor3 !important;
 }
 // 流程裝飾線
@@ -79,34 +79,57 @@ li.step.four{
 }
 
 .done_center{
-    border: 1px yellow solid;       
+    // border: 1px yellow solid;       
     width: 950px;
     margin-top: 5%; 
     margin-left: 20%; 
     padding: 20px;
     box-sizing: border-box;
 
+    h3{
+        padding: 0;
+        margin-left: 0; 
+    }
+
 }
 
 .main_info{
-    border: 1px red solid;
-    margin: 0 auto;
-    margin-top: 50px;
     display: flex;
-    justify-content:space-between;
-
 }
 
-.info_left{
-    border: 1px #fff solid;
-    width: 400px;
 
+.info_left{
+    width: 400px;
+    // border: 1px #fff solid;
+    line-height: 3;
+
+    h4{
+        color: $TextColor2;
+    }
 
 }
 
 .info_right{
-    border: 1px #fff solid;
+    padding-left: 10%;
     width: 400px;
+    // border: 1px #fff solid;
+    line-height: 1.6;
+    text-align: center;
 
+    h4{
+        font-family: Fredoka;
+        color: $AccentColor3;
+    }
+
+    h6{
+        color: $InputColor;
+    }
+
+    p{
+        margin: 20px auto;
+        @include LinkImg(Logo, anno_qr, png, cover, null, null);
+        width: 200px;
+        height: 200px;
+    }
 
 }
