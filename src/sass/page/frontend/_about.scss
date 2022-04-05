@@ -21,6 +21,7 @@
 
 // =====================anno about=======================
 .wrapperAbout{
+    position: relative;
     width: $Width;
     height: $Height;
     @include VerticalAlignCenter();
@@ -44,7 +45,21 @@
             text-align: right;
         }
     }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        isolation: isolate;
+    }
+    .content__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
 }
+
+
 
 // ======================anno history======================
 .aboutHistory{
