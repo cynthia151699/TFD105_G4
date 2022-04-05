@@ -88,3 +88,29 @@
 // 	will-change: transform;
 // 	filter: var(--filter-img);
 // }
+
+
+
+// -------------sns----------------
+
+.sns{
+    @include VerticalAlignCenter();
+    @include Flex(row);
+    h3{
+        color:$TextColor2;
+        text-align: center;
+    }
+    .snsFb{
+        width: 500px;
+        height:500px;
+    }
+    .snsIg{
+        width: 500px;
+        height:500px;
+    }
+   
+    .snsTwitter{
+        width: 500px;
+        height:500px;
+    }
+}
