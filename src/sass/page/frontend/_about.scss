@@ -21,6 +21,7 @@
 
 // =====================anno about=======================
 .wrapperAbout{
+    position: relative;
     width: $Width;
     height: $Height;
     @include VerticalAlignCenter();
@@ -44,14 +45,28 @@
             text-align: right;
         }
     }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        isolation: isolate;
+    }
+    .content__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
 }
+
+
 
 // ======================anno history======================
 .aboutHistory{
     @include VerticalAlignCenter();
     @include LinkImg(about, about_pic1, png, cover, null, null);
     .aboutHistoryContent{
-        width: $RWD;
+        width: $Width;
         height: 500px;
     }
     h2{
@@ -88,3 +103,29 @@
 // 	will-change: transform;
 // 	filter: var(--filter-img);
 // }
+
+
+
+// -------------sns----------------
+
+.sns{
+    @include VerticalAlignCenter();
+    @include Flex(row);
+    h3{
+        color:$TextColor2;
+        text-align: center;
+    }
+    .snsFb{
+        width: 500px;
+        height:500px;
+    }
+    .snsIg{
+        width: 500px;
+        height:500px;
+    }
+   
+    .snsTwitter{
+        width: 500px;
+        height:500px;
+    }
+}

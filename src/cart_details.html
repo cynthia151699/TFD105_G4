@@ -11,25 +11,25 @@
 
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
-        "active4" : "active"
+        "active3" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
-            @@include('./layout/header.html', {
+            <!-- @@include('./layout/header.html', {
             "breadcrumb" : "cart",
             "tittle1" : "ORDER",
             "tittle2" : "DETAILS",
             "tittle3" : "INFORMATION",
             "tittle4" : "DONE",
             "active2" : "activeb",
-            })
+            }) -->
 
             <main>
 
                 <!-- coding here -->
-                <div class="cartDetails">
+                <article class="cartDetails">
 
                     <h3>STEP 2. Order details</h3>
 
@@ -65,10 +65,10 @@
 
                         <tbody>
                             <tr style="border-bottom: 1px solid black;">
-                                <td>early bird - Single</td>
+                                <td>Early bird - Single</td>
                                 <td>NT $400</td>
                                 <td><input type="text"></td>
-                                <td><svg width="43" height="43" viewBox="0 0 43 43" fill="none"
+                                <td><svg width="26" height="26" viewBox="0 0 43 43" fill="none"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <rect width="43" height="43" fill="url(#pattern0)" />
                                         <defs>
@@ -214,20 +214,20 @@
                                         </defs>
                                     </svg></td>
                             </tr>
+
                             <tr>
                                 <td>Exbition - Single</td>
                                 <td>NT $450</td>
                                 <td><input type="text"></td>
                                 <td><svg width="43" height="43" viewBox="0 0 43 43" fill="none"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <rect width="43" height="43" fill="url(#pattern0)" />
+                                        <rect width="26" height="26" fill="url(#pattern0)" />
                                         <defs>
                                             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1"
                                                 height="1">
                                                 <use xlink:href="#image0_530_310" transform="scale(0.00195312)" />
                                             </pattern>
-                                            <image id="image0_530_310" width="512" height="512"
-                                                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAA
+                                            <image id="image0_530_310" width="512" height="512" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAA
                                                 AN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACAASURBVHic7d17rKVndd/x3/JtbDxj02LseIAkVTFtIA
                                                 lVIcJuk9ihwgFiYyxCg6gcKFVDUC0C1FyaUohJgnJxwKGuVC4NkJEQLSBj7ECC1WBatR4kKA3EBAwtlMuA7THYM2N7xnNZ/WO/hzk+cy577/d53v
                                                 Vcvh/paJCSc57lfdZe7+88+72YuwtonZmdKunvSDpf0s7h6/w1/+6UtD2qRkzigKQ9kr47/Lv6f6/8+3V3PxxWITARIwCgVWa2Q9KzJT1f0nMlPT
@@ -358,7 +358,8 @@
                                                 nbIusBUKRDkj6l2QH/z9z9G7HlIDcCQGfM7ExJPy3pfEk/ssG/50o6JapGAMkdkXS3pO9q9lje9f79grs/EFYhJvf/AXguTQgL2G8VAAAAAElFT
                                                 kSuQmCC" />
                                         </defs>
-                                    </svg></td>
+                                    </svg>
+                                </td>
                             </tr>
                         </tbody>
 
@@ -371,7 +372,8 @@
                         </thead>
                         <tr>
                             <td colspan="2">
-                                <input type="text" value="pleace type the discount code here">
+                                <input type="text" value="pleace type the discount code here" 
+                                    style="width: 300px; height: 25px;">
                             </td>
                             <td><button>send</button></td>
                             <td>Discount: NT$100</td>
@@ -384,10 +386,19 @@
                         </tr>
                     </table>
 
-                    <a href="./cart_order.html">previous</a>
-                    <a href="./cart_information.html">next</a>
+                    <section class="cartButton mtSpace10">
+
+                        <a href="./cart_order.html" class="mrSpace40">
+                            <h4>Previous</h4>
+                        </a>
+
+                        <a href="./cart_information.html">
+                            <h4>Next</h4>
+                        </a>
+
+                    </section>
                     <!-- <input type="submit" value="Next" onclick="location.href='#'"> -->
-                </div>
+                </article>
             </main>
 
             <!-- 頁尾 -->

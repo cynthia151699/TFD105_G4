@@ -19,12 +19,38 @@
     }
 }
 
+@mixin APic ($var, $position, $color) {
+
+    display: block;
+
+    width: 160px;
+    height: 140px;
+
+    @include LinkImg('tickets', 'tickets_pic#{$var}', 'jpeg', cover, no-repeat, $position);
+    @include HorizontalAlignCenter;
+
+    border-left: 4px solid $color;
+    border-bottom: 4px solid $color;
+    border-right: 4px solid $color;
+    border-style: inset;
+}
+
+@mixin TicketsBase($position) {
+    color: $TextColor2;
+    line-height: $LineHeight;
+    text-align: $position;
+}
+
+@mixin TicketsWidth {
+    width: 95%;
+    @include HorizontalAlignCenter();
+}
+
+
 main.ticketsPage {
 
     // 東西請不要用推的！！！盡量用設寬度百分比加置中的方式讓它自己算，要不然很容易跑版！然後請正確使用html5標籤，賓哥跟丸子要哭了！
-
     // @include Remind(maroon);
-
     @include VerticalAlignCenter;
 
     article.tickets {
@@ -34,32 +60,19 @@ main.ticketsPage {
 
         h4.tickets_bookingName,
         h4.tickets_pastbookingName {
-
-            width: 95%;
-
-            @include HorizontalAlignCenter();
-
-            color: $TextColor2;
-            line-height: $LineHeight;
-            text-align: left;
+            @include TicketsWidth();
+            @include TicketsBase(left);
         }
 
         h6.tickets_bookingName {
-
-            color: $TextColor2;
-            line-height: $LineHeight;
-            text-align: center;
-
+            @include TicketsBase(center);
             @include SingleEllipsis;
         }
 
         ul.tickets_currentBooking {
 
             // @include Remind(green);
-
-            width: 95%;
-
-            @include HorizontalAlignCenter();
+            @include TicketsWidth();
             @include VerticalAlignCenter();
 
             li.tickets_currentBooking {
@@ -68,18 +81,7 @@ main.ticketsPage {
 
                 @for $i from 1 to 3 {
                     a.currentbookingPic-#{$i} {
-
-                        display: block;
-                        width: 160px;
-                        height: 140px;
-
-                        @include LinkImg('tickets', 'tickets_pic#{$i}', 'jpeg', cover, no-repeat, left);
-                        @include HorizontalAlignCenter;
-
-                        border-left: 4px solid $AccentColor2;
-                        border-bottom: 4px solid $AccentColor2;
-                        border-right: 4px solid $AccentColor2;
-                        border-style: inset;
+                        @include APic($i, left, $AccentColor2);
                     }
                 }
             }
@@ -88,10 +90,7 @@ main.ticketsPage {
         div.pastBooking_Management {
 
             // @include Remind(orange);
-
-            width: 95%;
-
-            @include HorizontalAlignCenter();
+            @include TicketsWidth();
 
             ul.tickets_pastBooking {
 
@@ -105,20 +104,8 @@ main.ticketsPage {
 
                     @for $i from 1 to 10 {
                         a.pastPic-#{$i} {
-
-                            display: block;
-
-                            width: 160px;
-                            height: 140px;
-
-                            @include LinkImg('tickets', 'tickets_pic#{$i+2}', 'jpeg', cover, no-repeat, center);
-                            @include HorizontalAlignCenter;
-                            @include SingleEllipsis;
-
-                            border-left: 4px solid $AccentColor;
-                            border-bottom: 4px solid $AccentColor;
-                            border-right: 4px solid $AccentColor;
-                            border-style: inset;
+                            @include APic($i+2, center, $AccentColor);
+                            // @include SingleEllipsis;
                         }
                     }
                 }

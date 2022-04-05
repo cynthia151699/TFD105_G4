@@ -22,6 +22,12 @@ header.frontHeader{
     left: 70px;
     z-index: 59;
 
+    button{
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
     .headerContainer{
         width: calc(#{$Width} - 50px);
 

@@ -3,6 +3,7 @@ var myFullpage = new fullpage('#fullpage', {
     lazyLoad: true
 });
 
+AOS.init();
 
 var options = {
     container:document.querySelector(".openhoursRightImg"),

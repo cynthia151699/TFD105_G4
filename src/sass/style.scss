@@ -92,30 +92,17 @@ body{
             }
         }
 
-        // h1{ //優化SEO
+        // h1{ // SEO
         //     font-family: $SpecialFont;
         //     font-weight: map-get($FontWeight, medium);
         // }
 
-        h2{
+        h2, h3{
             font-family: $SpecialFont;
             font-weight: map-get($FontWeight, medium);
         }
 
-        h3{
-            font-family: $SpecialFont;
-            font-weight: map-get($FontWeight, medium);
-        }
-
-        h4{
-            font-weight: map-get($FontWeight, regular);
-        }
-
-        h5{
-            font-weight: map-get($FontWeight, regular);
-        }
-
-        h6{
+        h4, h5, h6{
             font-weight: map-get($FontWeight, regular);
         }
 
@@ -136,6 +123,12 @@ body{
             overflow: hidden;
 
             @include Flex(row);
+        }
+
+        button{
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 }
