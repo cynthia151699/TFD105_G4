@@ -28,14 +28,13 @@ ul.stepDecorate::before{
 
     position: absolute;
     top: 25%;
-    left: 193px;
+    left: 150px;
     z-index: 0;
 }
 
 ul.stepDecorate{
     width: 70px;
-
-    margin-left: 100px;
+    margin-left: 57px;
 
     li.step{
         
@@ -68,7 +67,7 @@ ul.stepDecorate{
 }
 
 li.step.one{
-    background-color: $AccentColor3 !important;
+    background-color: $AccentColor3;
 
     top: 22%;
 }
@@ -85,6 +84,8 @@ li.step.three{
 li.step.four{
     top: 70%;
 }
+
+
 
 .cartOrder{
 
