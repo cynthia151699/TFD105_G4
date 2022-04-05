@@ -101,7 +101,9 @@ li.step.four{
 }
 
 .order_list{
-
+    h6{
+        color:$TextColor2;
+    }
     margin-top: 5%; 
 }
 
@@ -132,6 +134,7 @@ table.list_table{
     text-align: right;
     h6{
         display: inline-block;
+        color:$TextColor2;
     }
 }
 
@@ -140,51 +143,44 @@ table.list_table{
     h6{
         display: inline-block;
         text-align: right;
+        color:$TextColor2;
     }
 }
 
 .c_total{
     text-align: right;
+    color:$TextColor2;
 }
-
 
 .payment{
     margin-top: 5%; 
-
     p{
     margin-top: 20px; 
     }
 }
 
-h6{
-    color:$TextColor2;
-}
-
-input{
-    width: 300px;
+.input_type{
+    width: 330px;
     height: 30px;
     background-color: #E1E1E1;
     margin: 10px;
     border: none;
 }
 
-input:focus{
+.input_type:focus{
     outline: none;
     box-shadow:rgba(0,0,0,0.4)2px 2px 2px inset;  
 }
 
 //選取框check box
 
-label{
+.s-check_box{
     font-size: 12px;
     letter-spacing: normal;
 }
 
 .check_box{
     margin: 0;
-    width: 15px;
-    height: 15px;
-    background-color: #E1E1E1;
     vertical-align: middle;
 }
 
@@ -193,7 +189,7 @@ label{
 select{
     margin: 10px;
     background: $RemindBlue;
-    width: 130px;
+    width: 150px;
     font-size: 12px;
     height: 30px; 
     padding: 0 5px;
