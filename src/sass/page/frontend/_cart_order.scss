@@ -24,7 +24,7 @@ ul.stepDecorate::before{
     content: ' ';
     height: 50%;
     width: 5px;
-    background-color: #C4C4C4;
+    background-color: $Gray;
 
     position: absolute;
     top: 25%;
@@ -41,8 +41,8 @@ ul.stepDecorate{
         width: 50px;
         height: 50px;
 
-        background-color: #C4C4C4;
-        color: black;
+        background-color: $Gray;
+        color: $TextColor3;
 
         text-align: center;
         border-radius: 50%;
@@ -85,8 +85,6 @@ li.step.four{
     top: 70%;
 }
 
-
-
 article.cartOrder{
     width: $RWD;
 
@@ -96,20 +94,28 @@ article.cartOrder{
         margin-left: 5%;
     }
 
-    .rollover{
+    h4{
+        span{
+            color: $AccentColor3; 
+            font-family: $SpecialFont
+        }
+    }
+
+    section.rollover{
+
         width: 80%; 
         height: 150px;
     
-        margin-top: 6%; 
+        margin-top: 5%; 
         margin-left: 13%; 
         padding: 20px;
 
         box-sizing: border-box;
         
-        background-color: #E9E9E9;
+        background-color: $PopUpWindow;
     }
     
-    .advance{
+    section.advance{
         width: 80%; 
         height: 150px;
     
@@ -119,6 +125,25 @@ article.cartOrder{
 
         box-sizing: border-box;
     
-        background-color: #E9E9E9;
+        background-color: $PopUpWindow;
+    }
+
+    section.cartButton{
+        width: 35%; 
+        float: right; 
+
+        a{
+            width: 125px; 
+            height: 40px; 
+            background-color: $Gray; 
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+            box-sizing: border-box;
+
+            &:last-child{
+                background-color: $AccentColor3;
+            }
+        }
     }
 }
