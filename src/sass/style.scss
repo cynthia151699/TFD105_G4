@@ -124,5 +124,11 @@ body{
 
             @include Flex(row);
         }
+
+        button{
+            &:hover{
+                cursor: pointer;
+            }
+        }
     }
 }
