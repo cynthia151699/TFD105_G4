@@ -43,14 +43,22 @@
                     <!-- part1 -->
                     <div class="order_info">
                         <form>
-                            Order info:<input class="check_box" type="checkbox" value="first_checkbox">Same as member info
-                            <br>
-                            Name：<input type="text" name="input_name">
-                            <br>
-                            Phone：<input type="text" name="input_phone:">
-                            <br>
-                            Email：<input type="text" name="input_email">
-                            <br>
+                            <label>
+                                <input class="check_box" type="checkbox"/>&nbsp;&nbsp;Same as member info
+                            </label>
+
+                            <div class="order_info_text">
+                                <p>Name:</p>
+                                <input type="text" name="input_name" placeholder="  Name" required>
+                            </div>
+                            <div class="order_info_text">
+                                <p>Phone:</p>
+                                <input type="text" name="input_phone:" placeholder="  Phone Number" required>
+                            </div>
+                            <div class="order_info_text">
+                                <p>Email:</p>
+                                <input type="text" name="input_email" placeholder="  Email" required>
+                            </div>
                             <p>Ticket Collection: By (QR code)</p>
 
                         </form>
@@ -169,8 +177,6 @@
                             <option>Mobile Barcode</option>
                         </select>
                         <br>
-                        <input class="check_box" type="checkbox" value="second_checkbox">If I follow up on refund or abandonment, I agree that ANNO handle the sales voucher (for example: invoice processing or discount).
-
                         <div class="cautions_box">
 
                             <p class="caution_text">
@@ -192,7 +198,12 @@
                                 If you need a refund, please contact the website administrator by email within 7 days after purchasing the ticket.</p>
                         </div>
 
-                        <input class="check_box" type="checkbox" value="third_checkbox">I agree to the terms of service and return policy on Anno Meseum.
+                        <label>
+                            <input class="check_box" type="checkbox" value="second_checkbox"/>&nbsp;&nbsp; I agree to the terms of service and return policy on Anno Museum.
+                        </label>
+
+                       </div>
+
                     </div>
 
                     <div class="btn_group">

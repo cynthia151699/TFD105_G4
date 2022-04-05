@@ -84,7 +84,7 @@ li.step.four{
 // main information
 
 .main_box{
-    border: 1px yellow solid;   
+    // border: 1px yellow solid;   
     margin-top: 5%; 
     margin-left: 20%; 
     padding: 20px;
@@ -92,9 +92,16 @@ li.step.four{
 }
 
 .order_info{
-    border: 1px red solid;
+    // border: 1px red solid;
 }
 
+.order_info_text{
+    
+    p{
+        display : inline-block;
+        width: 50px;
+    }
+}
 
 .order_list{
     border: 1px blue solid;   
@@ -102,8 +109,12 @@ li.step.four{
 }
 
 .payment{
-    border: 1px green solid;   
+    // border: 1px green solid;   
     margin-top: 5%; 
+
+    p{
+    margin-top: 20px; 
+    }
 }
 
 h6{
@@ -123,11 +134,21 @@ input:focus{
     box-shadow:rgba(0,0,0,0.4)2px 2px 2px inset;  
 }
 
+//選取框check box
+
+label{
+    font-size: 12px;
+    letter-spacing: normal;
+}
+
 .check_box{
+    margin: 0;
     width: 15px;
     height: 15px;
     background-color: #E1E1E1;
+    vertical-align: middle;
 }
+
 
 //下拉選單
 select{
@@ -147,13 +168,14 @@ select{
     height: 200px;
     overflow: auto; 
     margin: 10px;
-    padding: 30px;
+    padding: 0 30px 30px 30px;
 }
 
 .caution_text{
     color:#000;
     line-height: 1;
     letter-spacing: normal;
+    margin: 0px;
 }
 
 
@@ -166,6 +188,7 @@ select{
     border: none;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000;
+    margin-bottom: 50px;
 }
 
 .btn_done{
