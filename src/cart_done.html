@@ -2,15 +2,9 @@
 <html lang="en">
 
 <head>
+
     @@include('./layout/head.html')
-
-
-<style>
-
-
-
-
-</style>
+    <style></style>
 
 </head>
 
@@ -24,19 +18,22 @@
         <div class="mainContainer">
 
             <!-- 頁首 -->
-            @@include('./layout/header.html', {
+            <!-- @@include('./layout/header.html', {
             "breadcrumb" : "cart",
             "tittle1" : "ORDER",
             "tittle2" : "DETAILS",
             "tittle3" : "INFORMATION",
             "tittle4" : "DONE",
             "active4" : "activeb",
-            })
+            }) -->
 
             <main>
+
                 <!-- coding here -->
                 <div class="cartDone">
-                    <h3>STEP 4.Order Status</h3>
+
+                    <h3>STEP 4. Order Status</h3>
+
                     <ul class="stepDecorate">
                         <li class="step one"><span>1</span></li>
                         <li class="step two"><span>2</span></li>
@@ -44,32 +41,42 @@
                         <li class="step four" style="background-color: #F25A38;"><span>4</span></li>
                     </ul>
 
-                <div class="done_center">
-                <h4>Order Completed !</h4>
+                    <div class="done_center">
 
-                <div class="main_info">
-                    <div class="info_left">
-                        <h4>Your Order:</h4>
-                        <div class="left_text">
-                        <p>Name:</p>
-                        <p>Mobile:</p>
-                        <p>Email:</p>
-                        <p>Ticket collection: By (QR code)</p>
-                     </div>
-                    </div>
+                        <h4>Order Completed !</h4>
 
-                    <div class="info_right">
-                        <h4>Break the Classic</h4>
-                        <h5>TAKIKAW RISA Solo Exhibition</h5>
-                        <h5>Date：2022/2/5～2022/5/5</h5>
-                        <h5>Place：Anno Museum South Building</h5>
-                        <p>qrcode space</p>
+                        <div class="main_info">
+
+                            <div class="info_left">
+
+                                <h4>Your Order:</h4>
+
+                                <div class="left_text">
+                                    <p>Name:</p>
+                                    <p>Mobile:</p>
+                                    <p>Email:</p>
+                                    <p>Ticket collection: By (QR code)</p>
+                                </div>
+
+                            </div>
+
+                            <div class="info_right">
+
+                                <h4>Break the Classic</h4>
+
+                                <h5>TAKIKAW RISA Solo Exhibition</h5>
+
+                                <h5>Date：2022/2/5～2022/5/5</h5>
+
+                                <h5>Place：Anno Museum South Building</h5>
+
+                                <p>qrcode space</p>
+
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-
-
-                </div>
-            </div>
             </main>
 
             <!-- 頁尾 -->
