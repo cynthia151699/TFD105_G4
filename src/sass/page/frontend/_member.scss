@@ -19,6 +19,17 @@
 	}
 }
 
+
+// 這邊是測試用連結按鈕  之後會拔掉
+#member_button_text{
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height:35px;
+  z-index: 12;
+}
+
 // 主要區域置中
 .member_main_all_area {
   @include VerticalAlignCenter;

@@ -4,7 +4,7 @@
 // 顏色樣式
 $NavBGColor: #161829;
 $HFBGColor: #48538D;
-$HFBGColorO: rgba(72, 83, 141, 0.5);
+// $HFBGColorO: rgba(72, 83, 141, 0.5);
 
 $PrimaryColor: #293241;
 $SecondaryColor: #262A73;
@@ -18,6 +18,7 @@ $TextColor2: #F4F4F4; //有點灰色
 
 // 表單色票
 $InputColor: #FFFFFF; //純白
+$Gray: #C4C4C4;
 
 // 後台用顏色
 $BHColor: #D6ECFF;
@@ -45,7 +46,7 @@ $FontWeight: (
 );
 
 $FontSize: (
-    'h1': 4rem, //64px, 為了SEO 暫時不要用
+    'h1': 4rem, //64px, SEO
     'h2': 3rem, //48px
     'h3': 2.25rem, //36px
     'h4': 1.5rem, //24px

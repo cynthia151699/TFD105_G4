@@ -1,27 +1,30 @@
 // 歡迎信件
 
-emailjs.init("rB4cW-mtW8WwyODex");
+// 測試路徑期間先關掉JS
 
-const btn = document.getElementById("member_button");
-document.getElementById("member_form").addEventListener("submit", function (event) {
-  event.preventDefault();
+// emailjs.init("rB4cW-mtW8WwyODex");
 
-  btn.value = "Sending...";
+// const btn = document.getElementById("member_button");
+// document.getElementById("member_form").addEventListener("submit", function (event) {
+//   event.preventDefault();
 
-  const serviceID = "default_service";
-  const templateID = "template_c3rqluo";
+//   btn.value = "Sending...";
 
-  emailjs.sendForm(serviceID, templateID, this).then(
-    () => {
-      btn.value = "Send Email";
-      alert("Welcome to Anno");
-    },
-    (err) => {
-      btn.value = "Send Email";
-      alert("Email format error, please re-enter");
-    }
-  );
-});
+//   const serviceID = "default_service";
+//   const templateID = "template_c3rqluo";
+
+//   emailjs.sendForm(serviceID, templateID, this).then(
+//     () => {
+//       btn.value = "Send Email";
+//       alert("Welcome to Anno");
+//       window.location.assign("../../dist/member_info.html")
+//     },
+//     (err) => {
+//       btn.value = "Send Email";
+//       alert("Email format error, please re-enter");
+//     }
+//   );
+// });
 
 // 選單左右移動 
 
