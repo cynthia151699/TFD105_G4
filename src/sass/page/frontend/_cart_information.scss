@@ -98,10 +98,12 @@ li.step.four{
 
 .order_list{
     border: 1px blue solid;   
+    margin-top: 5%; 
 }
 
 .payment{
     border: 1px green solid;   
+    margin-top: 5%; 
 }
 
 h6{
@@ -109,7 +111,7 @@ h6{
 }
 
 input{
-    width: 350px;
+    width: 300px;
     height: 30px;
     background-color: #E1E1E1;
     margin: 10px;
@@ -127,3 +129,54 @@ input:focus{
     background-color: #E1E1E1;
 }
 
+//下拉選單
+select{
+    margin: 10px;
+    background: $RemindBlue;
+    width: 130px;
+    font-size: 12px;
+    height: 30px; 
+    padding: 0 5px;
+    outline:none;
+}
+
+//聲明文字
+.cautions_box{
+    background-color: #EFEBEB;
+    width: 600px;
+    height: 200px;
+    overflow: auto; 
+    margin: 10px;
+    padding: 30px;
+}
+
+.caution_text{
+    color:#000;
+    line-height: 1;
+    letter-spacing: normal;
+}
+
+
+
+// 完成按鈕
+.btn_previous{
+    width: 100px;
+    height: 30px;
+    background-color: #C4C4C4;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+}
+
+.btn_done{
+    width: 100px;
+    height: 30px;
+    background-color: #F29966;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+}
+
+.btn_group{
+    text-align: right;
+}
