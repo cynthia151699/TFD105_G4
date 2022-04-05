@@ -18,7 +18,7 @@
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
-            "breadcrumb" : "about", 
+            "breadcrumb" : "about",
             "tittle1" : "ABOUT ANNO",
             "tittle2" : "HISTORY OF ANNO",
             "active1" : "activeb",
@@ -31,12 +31,12 @@
                 <!-- coding here -->
                 <div id="fullpage">
 
-                    <div class="section  active  " id="section0">
+                    <div class="section active " id="section0">
 
-                        <div class="wrapperAbout plSpace40 ptSpace80">
+                        <div class="wrapperAbout plSpace40 ptSpace50" data-aos="fade-down" data-aos-easing="linear"
+                            data-aos-duration="1500">
                             <div class="aboutCnt">
                                 <h2 class="aboutTitle pbSpace80">About ANNO</h2>
-                                <a href="./community.html">社群api串接</a>
 
                                 <h4 class="aboutCntFr pbSpace80">
                                     Art records the deduction in ANNO,
@@ -58,17 +58,17 @@
                                     Create your own Anno.
                                 </h4>
                             </div>
-                            <!-- <div class="movePic">
-                                <img class="movePictImg" src="./img/about/about_pic1.png" alt="" />
-                                <img class="movePictImg" src="./img/about/about_spic1.jpeg" alt="" />
-                                <img class="movePictImg" src="./img/about/about_spic2.jpeg" alt="" />
-                                <img class="movePictImg" src="./img/about/about_spic3.jpeg" alt="" />
-                                <img class="movePictImg" src="./img/about/about_spic4.jpeg" alt="" />
-                                <img class="movePictImg" src="./img/about/about_spic5.jpeg" alt="" />
-                                <img class="movePictImg" src="./img/about/about_spic6.jpeg" alt="" />
-                                <img class="movePictImg" src="./img/about/about_spic7.jpeg" alt="" />
-                                <img class="movePictImg" src="./img/about/about_spic8.jpeg" alt="" />
-                        </div> -->
+                            <div class="content">
+                                <img class="content__img" src="./src/img/about/22.jpg" alt="Some image" />
+                                <img class="content__img" src="./src/img/about/22.jpg" alt="Some image" />
+                                <img class="content__img" src="./src/img/about/22.jpg" alt="Some image" />
+                                <img class="content__img" src="./src/img/about/22.jpg" alt="Some image" />
+                                <img class="content__img" src="./src/img/about/22.jpg" alt="Some image" />
+                                <img class="content__img" src="./src/img/about/22.jpg" alt="Some image" />
+                                <img class="content__img" src="./src/img/about/22.jpg" alt="Some image" />
+                                <img class="content__img" src="./src/img/about/22.jpg" alt="Some image" />
+
+                            </div>
                         </div>
 
                     </div>
@@ -76,7 +76,7 @@
 
                     <div class="section aboutHistory " id="section1">
 
-                        <div class="aboutHistoryContent plSpace60 ">
+                        <div class="aboutHistoryContent plSpace60">
 
                             <h2 class="plSpace30 ptSpace50">History of Anno</h2>
 
@@ -90,7 +90,7 @@
 
                             <div class="wrapperAbhiMd ">
 
-                                <h4 class="aboutHistoryMid ptSpace40 plSpace100">
+                                <h4 class="aboutHistoryMid ptSpace60 plSpace80">
                                     They hope that through the establishment of the museum, education, and culture can
                                     be
                                     promoted so that more people can know and getclose to art.
@@ -98,7 +98,7 @@
 
                             </div>
 
-                            <h4 class="aboutHistoryEnd ptSpace80">
+                            <h4 class="aboutHistoryEnd ptSpace60">
 
                                 Without setting limits on style, they want to show a
                                 <br>
@@ -111,6 +111,29 @@
 
                     </div>
 
+                    <div class="section " id="section2">
+                        <div class="sns mtSpace100">
+                            <div class="snsFb ">
+                                <H3 class="pbSpace80">Facebook</H3>
+                                <div class="fb-page mlSpace50" data-href="https://www.facebook.com/ANNO_Taiwan-102648079085520"
+                                    data-tabs="timeline" data-width="" data-height="" data-small-header="true"
+                                    data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                    <blockquote cite="https://www.facebook.com/ANNO_Taiwan-102648079085520"
+                                        class="fb-xfbml-parse-ignore"><a
+                                            href="https://www.facebook.com/ANNO_Taiwan-102648079085520">ANNO_Taiwan</a>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="snsIg">
+                                <H3>Instagram</H3>
+                                <span></span>
+                            </div>
+                            <div class="snsTwitter">
+                                <H3>Twitter</H3>
+                            </div>
+                        </div>
+                    </div>
+
             </main>
 
             <!-- 頁尾 -->
@@ -119,6 +142,7 @@
     </div>
 
     <!-- 載入js、套件 -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v13.0" nonce="NxXdDjCx"></script>
     <script src="./js/vendors/fullpage.min.js"></script>
     <script src="./js/vendors/TweenMax.min.js"></script>
     <script src="./js/vendors/imagesloaded.pkgd.min.js"></script>
