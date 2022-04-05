@@ -1,39 +1,31 @@
 li.step.one{
-    background-color: #E9E9E9 !important;
+    background-color: #E9E9E9;
 }
 
 li.step.two{
-    background-color: $AccentColor3 !important;
+    background-color: $AccentColor3;
 }
 
 .cartDetails{
     h3{
         color: $TextColor2;
-        padding-top: 10%;
+        padding-top: 7%;
         margin-left: 5%;
     }
 
     table.shopping{
         width: 950px;
 
-        margin-top: 5%; 
+        margin-top: 3%; 
         margin-left: 20%; 
-        padding: 20px;
 
         background-color: #E9E9E9;
         color: black;
 
         box-sizing: border-box;
 
-        thead{
-            &:nth-child(2){
-                tr{
-                    background-color: $HFBGColor;
-                }
-            }
-            &:last-child{
-                background-color: $HFBGColor;
-            }
+        td{
+            padding: 10px;
         }
     }
 }
