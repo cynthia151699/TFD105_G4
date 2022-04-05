@@ -41,14 +41,11 @@ main.exRelative{
             @include VerticalAlignCenter;
             section.exCurrent{
                 @include VerticalAlignCenter;
-                width: 100%;
-                height: 100%;
-                div.currentPic-1{
+                img.currentPic-1{
+                    display: inline-block;
+                    width: 80%;
                     @include HorizontalAlignCenter;
-                    z-index: 31;
-                    width: 500px;
-                    height: 350px;
-                    @include LinkImg('exhibition', 'exhibition_pic2', 'jpeg', cover, no-repeat, center);
+                    z-index: 31;    
                 }
                 h2{
                     position: absolute;
@@ -124,8 +121,9 @@ main.exRelative{
 
             ul.exBefore{
                 @include HorizontalAlignCenter;
-                h3{
-                    text-align: center
+                h3, h6{
+                    text-align: center;
+                    color: $TextColor2;
                 }
                 .on a > img{
                     display: inline-block;
