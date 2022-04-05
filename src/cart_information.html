@@ -4,35 +4,6 @@
 <head>
     @@include('./layout/head.html')
 
-
-
-<style>
-
-main{
-    /* overflow: auto; 不能加在這... */
-}
-
-.main_box{
-    overflow: auto; 
-    /* 要加在自己設定的div 裡才會出現卷軸！ */
-
-    margin: 0 auto;
-    margin-top: 50px;
-    border: 1px yellow solid;   
-}
-
-.order_info{
-    border: 1px red solid;
-}
-
-
-.order_list{
-    border: 1px blue solid;   
-}
-
-
-</style>
-
 </head>
 
 <body>
@@ -55,12 +26,22 @@ main{
 
             <main>
                 <!-- coding here -->
-                <div class="main_box">
 
+                <div class="cartInformation">
+                    
+                    <h3>Step 3.Order information</h3>
+                    <ul class="stepDecorate">
+                        <li class="step one"><span>1</span></li>
+                        <li class="step two"><span>2</span></li>
+                        <li class="step three"><span>3</span></li>
+                        <li class="step four"><span>4</span></li>
+                    </ul>
+
+
+                <div class="main_box">
                     <!-- part1 -->
                     <div class="order_info">
                         <form>
-                            <h4>Order information</h4>
                             Order info:<input type="checkbox" value="first_checkbox">Same as member info
                             <br>
                             Name：<input type="text" name="input_name">
@@ -195,13 +176,13 @@ main{
                     </div>
 
                     <input type="submit" value="Previous">
-                    <input type="submit" value="Next">
+                    <input type="submit" value="Next" onclick="location.href='./cart_done.html'">
 
 
                 </div>
 
-
-                <a href="./cart_done.html" style="padding-top: 200px;">完成訂單</a>
+            </div>
+                <!-- <a href="./cart_done.html" style="padding-top: 200px;">完成訂單</a> -->
             </main>
 
             <!-- 頁尾 -->
