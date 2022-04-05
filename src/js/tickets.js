@@ -2,7 +2,7 @@
 
 var swiper = new Swiper('.swiper', {
     slidesPerView: 4,
-    loop: true,
+    loop: false,
     paginationClickable: true,
     navigation: {
         nextEl: '.swiper-button-next',
