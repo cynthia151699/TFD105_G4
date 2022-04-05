@@ -16,10 +16,11 @@ $(document).ready(function() {
 
 $(function(){
     $(".ms-section >ul >li").click(function(){
+        //console.log(this);
         $(this).addClass("on");
         $(this).siblings().removeClass("on");
 
-        let tabs_itemAll=$(this).index();
+        let tabs_itemAll=$(this).index()-1;
         //console.log(tabs_itemAll);
         $(".tabs_item").eq(tabs_itemAll).show();
         $(".tabs_item").eq(tabs_itemAll).siblings().hide();
