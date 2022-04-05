@@ -104,12 +104,54 @@ li.step.four{
 }
 
 .order_list{
-    border: 1px blue solid;   
+
     margin-top: 5%; 
 }
 
+table.list_table{
+    margin-top: 10px; 
+    width: 700px;
+    background-color: #E9E9E9;
+    color: black;
+    box-sizing: border-box;
+    td{
+        padding: 10px;
+    }
+}
+
+.first_order{
+    border-bottom: 1px solid #000;
+}
+
+.count{
+
+    width: 700px;
+    margin-top: 10px; 
+    display: inline-block;
+
+}
+
+.c_amount{
+    text-align: right;
+    h6{
+        display: inline-block;
+    }
+}
+
+.c_discount{
+    text-align: right;
+    h6{
+        display: inline-block;
+        text-align: right;
+    }
+}
+
+.c_total{
+    text-align: right;
+}
+
+
 .payment{
-    // border: 1px green solid;   
     margin-top: 5%; 
 
     p{
