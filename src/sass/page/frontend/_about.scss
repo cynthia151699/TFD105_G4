@@ -111,12 +111,10 @@
     @include VerticalAlignCenter();
     width: $Width;
     height: $Height;
-    border:4px solid red;
 }
 .sns{
     @include HorizontalAlignCenter();
     @include Flex(row);
-    border:4px solid green;
     h3{
         color:$TextColor2;
         text-align: center;
