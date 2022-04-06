@@ -172,29 +172,40 @@
 
                     <section class="rollover">
                         <h4><span>Break the Classic - TAKIKAW RISA Solo Exhibition</span>
-                            <br>Date: 2022/2/5~2022/5/5
+                            <h5>Date: 2022/2/5~2022/5/5
                             <br>Place: Anno Museum South Buliding
-                            <br>Rollover Ticket NTD $450 <input type="text">
-                        </h4>
+                            <br>Rollover Ticket NTD $450
+                                <select>
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                        </h5>
                     </section>
 
                     <section class="advance">
                         <h4><span>True Color - KAYLA GILL Solo Exhibition (Upcoming)</span>
                             <br>Date: 2022/5/15~2022/8/15
                             <br>Place: Anno Museum North Buliding
-                            <br>Advance Ticket NTD $400 <input type="text">
+                            <br>Advance Ticket NTD $400 
+                                <select>
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
                         </h4>
                     </section>
 
                     <section class="cartButton mtSpace20">
 
-                        <a href="./tickets.html" class="mrSpace40">
-                            <h4>Cancel</h4>
-                        </a>
-    
-                        <a href="./cart_details.html">
-                            <h4>Next</h4>
-                        </a>
+                        <div class="btn_group">
+                            <input class="btn_order_cancel" type="submit" value="Cancel" onclick="location.href='./tickets.html'">
+                            <input class="btn_order_next" type="submit" value="Next" onclick="location.href='./cart_details.html'">
+                        </div>
 
                     </section>
 

@@ -5,12 +5,12 @@
     @include VerticalAlignCenter;
     position: fixed;
     // 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
-    top:50px;
+    top: 50px;
     width: calc(100vw - 70px);
     height: calc(100vh - 50px);
     @include LinkImg('Logo', 'logo', 'png', scale-down, repeat-y, left);
-    background-position:top 0% left 0%;
-    background-size:20%;
+    background-position: top 0% left 0%;
+    background-size: 20%;
 
 
 
@@ -28,7 +28,7 @@
             @include HorizontalAlignCenter;
 
         }
-        
+
     }
 
 }
@@ -49,3 +49,54 @@
 
 
 
+// RWD
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .member_forget_change_area {
+
+        .member_forget_change_block {
+
+            width: 700px;
+
+        }
+
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+
+    .member_forget_change_area {
+
+        .member_forget_change_block {
+
+            width: 500px;
+
+
+        }
+
+    }
+
+}
+
+
+
+@media screen and (max-width: 575.98px) {
+
+
+    .member_forget_change_area {
+
+        .member_forget_change_block {
+
+            width: 350px;
+            height: 300px;
+
+            .member_forget_change_Bt {
+                width:70%;
+                font-size: 1rem;
+            }
+
+        }
+
+    }
+
+}
