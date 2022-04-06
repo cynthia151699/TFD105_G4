@@ -14,7 +14,7 @@ const swiper = new Swiper('.mySwiper', {
         slideChangeTransitionEnd: function (e) { // 圖片改變完後執行下面function
             let slides = e.slides; // 取得所有的圖片
             for (let i in slides) { //看圖片資訊
-                if ("swiper-slide swiper-slide-active" == slides[i].className) { //當圖片為當前圖片時
+                if ("swiper-slide game swiper-slide-active" == slides[i].className) { //當圖片為當前圖片時
                     let elementId = slides[i].id; //取得圖片id
                     if (elementId.includes("_")) { // id裡面有_ 表示是下邊圖片
                         lowerImgId = elementId; //紀錄下面圖片
