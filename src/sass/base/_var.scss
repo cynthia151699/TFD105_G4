@@ -1,5 +1,6 @@
 //載入字型
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
 
 // 顏色樣式
 $NavBGColor: #161829;
@@ -40,19 +41,19 @@ $BoxShadow: 3px 3px 5px #293241;
 
 //文字樣式
 $FontWeight: (
-    'medium': 800, // 大標題
-    'regular': 400, // 副標題
+    'medium': 700, // 大標題
+    'regular': 500, // 副標題
     'light': 300 //內文
 );
 
 $FontSize: (
-    'h1': 4rem, //64px, SEO
-    'h2': 3rem, //48px
-    'h3': 2.25rem, //36px
-    'h4': 1.5rem, //24px
-    'h5': 1.25rem, //20px
-    'h6': 1.125rem, //18px
-    'p': 1rem, //16px
+    'h1': 3rem, //48px, SEO
+    'h2': 2.25rem, //36px
+    'h3': 1.875rem, //30px
+    'h4': 20px, //24px
+    'h5': 18px, //20px
+    'h6': 16px, //18px
+    'p': 14px, //16px
 );
 
 $MinFontSize: 0.875rem; //14px，chrome支援最小字級到12px
@@ -60,7 +61,7 @@ $MinFontSize: 0.875rem; //14px，chrome支援最小字級到12px
 $LineHeight: 1.6em;
 
 // 系統預設字型
-$FontFamily: 'Helvetica', 'Noto Sans TC', sans-serif; 
+$FontFamily: 'Open Sans', 'Noto Sans TC', sans-serif;
 // 特殊字型
 $SpecialFont: 'Fredoka', 'Noto Sans TC', sans-serif;
 
