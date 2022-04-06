@@ -1,7 +1,7 @@
 
 import { randomNumber } from './utils.min.js';
 // import { gsap } from './../../../node_modules/gsap/dist/gsap.min.js';
-//路徑還是有問題,先掛gsap的cdn
+
 
 
 const DOM = {
@@ -9,15 +9,17 @@ const DOM = {
     enterBackground: document.querySelector('.enter__bg')
 };
 
+
 export class Intro {
+
     constructor(el) {
         // the SVG element
-        this.DOM = {el: el};
+        this.DOM = { el: el };
         // SVG texts
         this.DOM.circleText = [...this.DOM.el.querySelectorAll('text.circles__text')];
         // total
         this.circleTextTotal = this.DOM.circleText.length;
-        
+
         this.setup();
     }
     setup() {
@@ -27,14 +29,14 @@ export class Intro {
         // hide on start
         //gsap.set([this.DOM.circleText, DOM.content.children], {opacity: 0});
         // don't allow to hover
-        gsap.set(DOM.enterCtrl, {pointerEvents: 'none'});
+        gsap.set(DOM.enterCtrl, { pointerEvents: 'none' });
 
         this.initEvents();
     }
     initEvents() {
         this.enterMouseEnterEv = () => {
-            gsap.killTweensOf([DOM.enterBackground,this.DOM.circleText]);
-            
+            gsap.killTweensOf([DOM.enterBackground, this.DOM.circleText]);
+
             gsap.to(DOM.enterBackground, {
                 duration: 1,
                 ease: 'expo',
@@ -44,9 +46,9 @@ export class Intro {
                 duration: 1,
                 ease: 'expo',
                 scale: 1.15,
-                rotation: i => i%2 ? '-=90' : '+=90',
+                rotation: i => i % 2 ? '-=90' : '+=90',
                 opacity: 0.4,
-                
+
             });
         };
         this.enterMouseLeaveEv = () => {
@@ -60,7 +62,7 @@ export class Intro {
                 duration: 1,
                 ease: 'expo',
                 scale: 1,
-                rotation: i => i%2 ? '+=120' : '-=120',
+                rotation: i => i % 2 ? '+=120' : '-=120',
                 opacity: 1,
                 stagger: {
                     amount: -0.2
@@ -70,62 +72,63 @@ export class Intro {
         DOM.enterCtrl.addEventListener('mouseenter', this.enterMouseEnterEv);
         DOM.enterCtrl.addEventListener('mouseleave', this.enterMouseLeaveEv);
 
-        this.enterClickEv = () => this.enter();
+        //this.enterClickEv = () => this.enter();
         DOM.enterCtrl.addEventListener('click', this.enterClickEv);
     }
     start() {
         this.startTL = gsap.timeline()
-        .addLabel('start', 0)
-        // rotation for all texts
-        .to(this.DOM.circleText, {
-            duration: 3,
-            ease: 'expo.inOut',
-            rotation: i => i%2 ? 90 : -90,
-            stagger: {
-                amount: 0.4
-            }
-        }, 'start')
-        // scale in the texts & enter button and fade them in
-        .to([this.DOM.circleText, DOM.enterCtrl], {
-            duration: 3,
-            ease: 'expo.inOut',
-            startAt: {opacity: 0, scale: 0.8},
-            scale: 1,
-            opacity: 1,
-            stagger: {
-                amount: 0.4
-            }
-        }, 'start')
-        // at start+1 allow the hover over the enter ctrl
-        .add(() => {
-            gsap.set(DOM.enterCtrl, {pointerEvents: 'auto'});
-        }, 'start+=2');
+            .addLabel('start', 0)
+            // rotation for all texts
+            .to(this.DOM.circleText, {
+                duration: 3,
+                ease: 'expo.inOut',
+                rotation: i => i % 2 ? 90 : -90,
+                stagger: {
+                    amount: 0.4
+                }
+            }, 'start')
+            // scale in the texts & enter button and fade them in
+            .to([this.DOM.circleText, DOM.enterCtrl], {
+                duration: 3,
+                ease: 'expo.inOut',
+                startAt: { opacity: 0, scale: 0.8 },
+                scale: 1,
+                opacity: 1,
+                stagger: {
+                    amount: 0.4
+                }
+            }, 'start')
+            // at start+1 allow the hover over the enter ctrl
+            .add(() => {
+                gsap.set(DOM.enterCtrl, { pointerEvents: 'auto' });
+            }, 'start+=2');
     }
-    enter() {
-        this.startTL.kill();
-        
-        gsap.set(DOM.enterCtrl, {pointerEvents: 'none'});
-        DOM.enterCtrl.removeEventListener('mouseenter', this.enterMouseEnterEv);
-        DOM.enterCtrl.removeEventListener('mouseleave', this.enterMouseLeaveEv);
+    // enter() {
+    //     this.startTL.kill();
 
-        gsap.set([DOM.content], {opacity: 1});
+    //     gsap.set(DOM.enterCtrl, { pointerEvents: 'none' });
+    //     DOM.enterCtrl.removeEventListener('mouseenter', this.enterMouseEnterEv);
+    //     DOM.enterCtrl.removeEventListener('mouseleave', this.enterMouseLeaveEv);
 
-        gsap.timeline()
-        .addLabel('start', 0)
-        .to(DOM.enterCtrl, {
-            duration: 0.6,
-            ease: 'back.in',
-            scale: 0.2,
-            opacity: 0
-        }, 'start')
-        .to(this.DOM.circleText, {
-            duration: 0.8,
-            ease: 'back.in',
-            scale: 0,
-            opacity: 0,
-            stagger: {
-                amount: -0.4
-            }
-        }, 'start')
-    }
+    //     gsap.set([DOM.content], { opacity: 1 });
+
+    //     gsap.timeline()
+    //         .addLabel('start', 0)
+    //         .to(DOM.enterCtrl, {
+    //             duration: 0.6,
+    //             ease: 'back.in',
+    //             scale: 0.2,
+    //             opacity: 0
+    //         }, 'start')
+    //         .to(this.DOM.circleText, {
+    //             duration: 0.8,
+    //             ease: 'back.in',
+    //             scale: 0,
+    //             opacity: 0,
+    //             stagger: {
+    //                 amount: -0.4
+    //             }
+    //         }, 'start')
+    // }
+
 }

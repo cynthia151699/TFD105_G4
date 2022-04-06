@@ -3,12 +3,12 @@
     @include VerticalAlignCenter;
     position: fixed;
     // 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
-    top:50px;
+    top: 50px;
     width: calc(100vw - 70px);
     height: calc(100vh - 50px);
     @include LinkImg('Logo', 'logo', 'png', scale-down, repeat-y, left);
-    background-position:top 0% left 0%;
-    background-size:20%;
+    background-position: top 0% left 0%;
+    background-size: 20%;
 }
 
 .member_forget_main_block {
@@ -24,19 +24,20 @@
     color: $TextColor;
 }
 
-//輸入框顏色
+//輸入框
 .member_forget_input {
     background-color: $HFBGColor;
     color: $TextColor2;
-    font-size:24px;
-    width:600px;
+    font-size: 24px;
+    width: 80%;
 }
 
 //按鈕顏色,寬度
-.member_forget_width{
+.member_forget_width {
     width: 150px;
     display: inline-block;
 }
+
 .member_forget_BtColor1 {
     background-color: #AD9F9F;
 }
@@ -48,8 +49,60 @@
 
 
 
+// RWD
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .member_forget_main_block {
+        width: 700px;
+    }
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+    .member_forget_main_block {
+        width: 500px;
+
+        .member_forget_text {
+            font-size: 1rem;
+        }
+
+        .member_forget_width {
+            width: 60px;
+        }
 
 
 
+    }
+
+}
 
 
+
+@media screen and (max-width: 575.98px) {
+
+    .member_forget_main_block {
+        width: 350px;
+        height: 500px;
+
+        .member_forget_text_title {
+            font-size: 1.5rem;
+
+
+        }
+
+
+
+        .member_forget_text {
+            font-size: 1rem;
+
+        }
+
+    }
+
+    .member_forget_width {
+        @include HorizontalAlignCenter;
+        width: 70%;
+        display: block;
+        margin-bottom: 10px;
+    }
+}
