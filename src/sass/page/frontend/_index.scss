@@ -20,7 +20,10 @@
     top: 500px;
     animation: goingOn 2s infinite;
     cursor: pointer;
+    // display: none;
+    // transition-delay:10s;
 }
+
 
  @keyframes goingOn {
     0% {

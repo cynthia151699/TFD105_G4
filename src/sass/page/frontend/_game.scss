@@ -45,7 +45,8 @@
 }
 
 .buttons>.rotate>a>i {
-    font-size: map-get($FontSize, h3);
+    font-size: 35px;
+    // font-size: map-get($FontSize, h3);
     color: $NavBGColor;
     position: absolute;
     top: 50%;
@@ -67,7 +68,8 @@
 }
 
 .buttons>.link>a>i {
-    font-size: map-get($FontSize, h3);
+    font-size: 35px;
+    // font-size: map-get($FontSize, h3);
     color: $NavBGColor;
     position: absolute;
     top: 50%;
