@@ -81,7 +81,7 @@ header.backHeader{
             font-weight: map-get($FontWeight, regular);
         }
 
-        h5{
+        h6{
             border-bottom: 1.5px solid $TextColor;
         }
 
@@ -97,7 +97,7 @@ header.backHeader{
 
             margin-top: 76px;
 
-            h5{
+            h6{
                 color: $InputColor;
                 font-weight: map-get($FontWeight, light);
                 border: none;
