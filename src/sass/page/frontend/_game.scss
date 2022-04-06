@@ -1,13 +1,6 @@
 .game_body {
-    /* background: #eee; */
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
     position: relative;
     height: 100vh;
-    /* background-color: #48538D; */
     background: -webkit-linear-gradient($HFBGColor, $NavBGColor);
     background: -o-linear-gradient($HFBGColor, $NavBGColor);
     background: -moz-linear-gradient($HFBGColor, $NavBGColor);
@@ -78,7 +71,7 @@
 }
 
 
-.swiper.mySwiper{
+.swiper.mySwiper {
     width: 100%;
     height: 50%;
     /* cursor: grab; */
@@ -121,12 +114,14 @@
 
 
 
-
-
 .congrats {
-    width: 640px;
-    height: 460px;
+    // width: 640px;
+    // height: 460px;
+    width: 50%;
+    height: 80%;
     @include Flex (column);
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -136,20 +131,20 @@
 }
 
 .congrats_top {
-    width: 640px;
+    width: 100%;
     height: 100px;
     background-color: $NavBGColor;
 }
 
 .congrats_text {
-    width: 640px;
+    width: 100%;
     height: 320px;
     background-color: $AccentColor2;
     text-align: center;
 }
 
 .congrats_bottom {
-    width: 640px;
+    width: 100%;
     height: 100px;
     background-color: $NavBGColor;
     @include Flex (row);
