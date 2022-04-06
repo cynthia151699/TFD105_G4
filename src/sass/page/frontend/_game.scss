@@ -1,5 +1,5 @@
 .game_body {
-    background: #eee;
+    /* background: #eee; */
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #000;
@@ -7,9 +7,22 @@
     padding: 0;
     position: relative;
     height: 100vh;
+    /* background-color: #48538D; */
+    background: -webkit-linear-gradient($HFBGColor, $NavBGColor);
+    background: -o-linear-gradient($HFBGColor, $NavBGColor);
+    background: -moz-linear-gradient($HFBGColor, $NavBGColor);
+    background: linear-gradient($HFBGColor, $NavBGColor);
 }
 
-// closebutton
+#g1,
+#g2,
+#g3,
+#g4,
+#g5 {
+    background-color: $HFBGColor;
+}
+
+/* closebutton */
 .closebutton {
     background-color: $AccentColor2;
     position: absolute;
@@ -18,7 +31,7 @@
     z-index: 9;
 }
 
-// rotatebutton
+/* rotatebutton */
 .buttons>.rotate {
     width: 50px;
     height: 50px;
@@ -28,7 +41,6 @@
     transform: translateY(-50%);
     z-index: 9;
     background-color: $AccentColor2;
-    // border-radius: $BorderRadius;
     border-radius: 50%;
 }
 
@@ -41,7 +53,7 @@
     transform: translateY(-50%);
 }
 
-// linkbutton
+/* linkbutton */
 .buttons>.link {
     width: 50px;
     height: 50px;
@@ -51,7 +63,6 @@
     transform: translateY(-50%);
     z-index: 9;
     background-color: $AccentColor2;
-    // border-radius: $BorderRadius;
     border-radius: 50%;
 }
 
@@ -64,17 +75,20 @@
     transform: translateY(-50%);
 }
 
+
 .swiper {
     width: 100%;
     height: 50%;
     /* cursor: grab; */
     cursor: grabbing;
+    display: block;
+    border: 3px solid $NavBGColor;
 }
 
 .swiper-slide {
     text-align: center;
-    font-size: 18px;
-    background: $PrimaryColor;
+    font-size: map-get($FontSize, h6);
+    background: $NavBGColor;
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -92,15 +106,74 @@
 
 .swiper-slide img {
     display: block;
-    // width: 100%;
     height: 100%;
     object-fit: cover;
     pointer-events: auto;
-    border: 4px solid $NavBGColor;
 }
 
 
 .swiper-wrapper {
     width: 100%;
     height: 50vh;
+}
+
+
+
+
+
+.congrats {
+    width: 640px;
+    height: 460px;
+    @include Flex (column);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    display: none;
+}
+
+.congrats_top {
+    width: 640px;
+    height: 100px;
+    background-color: $NavBGColor;
+}
+
+.congrats_text {
+    width: 640px;
+    height: 320px;
+    background-color: $AccentColor2;
+    text-align: center;
+}
+
+.congrats_bottom {
+    width: 640px;
+    height: 100px;
+    background-color: $NavBGColor;
+    @include Flex (row);
+    justify-content: center;
+    align-items: center;
+}
+
+.play_again_button>.defaultBtn {
+    background-color: $HFBGColor;
+    font-weight: map-get($FontWeight, medium);
+}
+
+.play_bye_button>.defaultBtn {
+    background-color: $HFBGColor;
+    font-weight: map-get($FontWeight, medium);
+}
+
+.congrats_text>h2 {
+    font-weight: map-get($FontWeight, medium);
+    font-size: map-get($FontSize, h3);
+    // color: $AccentColor3;
+    color: red;
+    @include HorizontalAlignCenter ($top: 50px, $bottom: 50px);
+}
+
+.congrats_text>h3 {
+    font-weight: map-get($FontWeight, medium);
+    font-size: map-get($FontSize, h4);
 }
