@@ -25,17 +25,18 @@
     width: $RWD;
     height: $Height;
     @include VerticalAlignCenter();
-    @include LinkImg(about, 222, jpeg, cover, null, null);
+    @include LinkImg(about, about_pic1, jpg, cover, null, null);
     .aboutCnt{
         width: $Width;
-        border:2px solid red;
         height: 500px;
         @include HorizontalAlignCenter();
         h2{
             color:$TextColor2;
+            text-shadow: $TextShadow;
         }
         h4{
             color:$TextColor2;
+            text-shadow: $TextShadow;
         }
         .aboutCntFr{
     
@@ -72,10 +73,11 @@
     }
     h2{
         color:$TextColor2;
-
+        text-shadow: $TextShadow;
     }
     h4{
         color:$TextColor2;
+        text-shadow: $TextShadow;
     }
 }
 
@@ -102,6 +104,7 @@
     @include Flex(row);
     h3{
         color:$TextColor2;
+        text-shadow: $TextShadow;
         text-align: center;
     }
     .snsFb{
