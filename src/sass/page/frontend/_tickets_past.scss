@@ -12,9 +12,10 @@
     width: 50%;
 }
 
-.past_textblock>h3,
-.past_textblock>h4 {
-    color: $TextColor2;
+.past_textblock{
+    h3, h5{
+        color: $TextColor2;
+    }
 }
 
 .past_imgblock {
