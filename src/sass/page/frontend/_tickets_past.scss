@@ -5,27 +5,19 @@
 }
 
 .past_topblock {
+    height: 75vh;
     @include Flex(row);
+    justify-content: center;
+    align-items: center;
 }
 
 .past_textblock {
-    width: 50%;
+    width: 35%;
 }
 
 .past_textblock>h3,
 .past_textblock>h4 {
     color: $TextColor2;
-}
-
-.past_imgblock {
-    width: 50%;
-}
-
-.past_imgblock>img {
-    // width: 500px;
-    // height: 370px;
-    width: $Width;
-
 }
 
 .past_bottomblock {
@@ -35,4 +27,15 @@
 .past_bottomblock>.defaultBtn {
     margin: $HorizontalAlignCenter;
     background-color: $AccentColor2;
+}
+
+.past_imgblock {
+    width: 65%;
+}
+
+.past_imgblock>img {
+    // width: 500px;
+    // height: 370px;
+    width: $Width;
+
 }
