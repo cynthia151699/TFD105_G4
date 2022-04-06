@@ -35,7 +35,7 @@
 
 .openhoursLeft {
     width:60%;
-    h4, h5{
+    h4, h6{
         color:$TextColor2;
     }
 }
@@ -53,7 +53,7 @@
 
 // ----------展覽票價資訊-----------
 .guideTicket{
-    @include LinkImg(visit, visit_pic3, jpeg, 100% 100%, no-repeat,  left top );
+    @include LinkImg(visit, visit_pic3-2, jpg, 50% 50%, no-repeat,  left top );
     @include VerticalAlignCenter();
     @include HorizontalAlignCenter();
 }
@@ -125,10 +125,9 @@
         justify-content: center;
         // @include Remind($color:green);
         h4{
-            
             color:$TextColor2;
            }
-           h5{
+           h5, h6{
             color:$TextColor2;
             width: 500px;
            }

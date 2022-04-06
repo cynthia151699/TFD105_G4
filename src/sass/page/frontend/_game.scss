@@ -45,7 +45,8 @@
 }
 
 .buttons>.rotate>a>i {
-    font-size: map-get($FontSize, h3);
+    font-size: 35px;
+    // font-size: map-get($FontSize, h3);
     color: $NavBGColor;
     position: absolute;
     top: 50%;
@@ -67,7 +68,8 @@
 }
 
 .buttons>.link>a>i {
-    font-size: map-get($FontSize, h3);
+    font-size: 35px;
+    // font-size: map-get($FontSize, h3);
     color: $NavBGColor;
     position: absolute;
     top: 50%;
@@ -76,7 +78,7 @@
 }
 
 
-.swiper {
+.swiper.mySwiper{
     width: 100%;
     height: 50%;
     /* cursor: grab; */
@@ -85,7 +87,7 @@
     border: 3px solid $NavBGColor;
 }
 
-.swiper-slide {
+.swiper-slide.game {
     text-align: center;
     font-size: map-get($FontSize, h6);
     background: $NavBGColor;
