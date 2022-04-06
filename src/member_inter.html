@@ -8,59 +8,46 @@
     .member_inter_main {
         width: calc(100vw - 70px);
         display: flex;
-
+        background-image: url(../dist/img/member/member-pic2.jpg);
+        background-size: cover;
+        background-position: center center;
+        position: relative;
     }
 
     .member_inter_member {
-        height: 100vh;
-        width: 50%;
-        background-image: url(../dist/img/demo.png);
-        background-size: cover;
-        background-position: center center;
+        position: absolute;
+        left: 30%;
+        top: 50%
     }
-
 
     .member_inter_tickets {
-        height: 100vh;
-        width: 50%;
-        background-image: url(../dist/img/demo.png);
-        background-size: cover;
-        background-position: center center;
+        position: absolute;
+        left: 55%;
+        top: 50%
     }
 
-    /* 
-    .member_inter_tickets_1 {
-
-        margin: 50% auto;
-
+    .member_inter_member .member_inter_member_text {
+        color: black;
+        margin-bottom: 10px;
     }
 
-
-
-    .member_inter_tickets_2 {
-
-        margin: 50% auto;
-
-    } */
-
-    .member_inter_member_text {}
-
-    .member_inter_tickets_text {}
+    .member_inter_tickets .member_inter_tickets_text {
+        color: white;
+        margin-bottom: 10px;
+    }
 
     .member_inter_Bt1 {
         display: block;
-        width: 20%;
+        width: 100px;
         text-align: center;
-        background-color: #372828;
-        margin: 50% auto;
+        margin: 0 auto;
     }
 
     .member_inter_Bt2 {
         display: block;
-        width: 20%;
+        width: 100px;
         text-align: center;
-        background-color: #AD9F9F;
-        margin: 50% auto;
+        margin: 0 auto;
     }
 </style>
 
@@ -91,12 +78,11 @@
 
                     <div class="member_inter_member">
 
-
-                        <h5 class="member_inter_member_text">member</h5>
+                        <h4 class="member_inter_member_text">Member Management</h4>
 
                         <a class="defaultBtn member_inter_Bt1" href="./member_info.html">
 
-                            <span>Enter</span>
+                            <span class="member_inter_Btc1">Enter</span>
 
                         </a>
 
@@ -105,17 +91,17 @@
 
                     <div class="member_inter_tickets">
 
-                        <div class="member_inter_tickets_text">
-                            <h5>tickets</h5>
+                        <h4 class="member_inter_tickets_text">Ticket Management</h4>
 
-                            <a class="defaultBtn member_inter_Bt2" href="./member_info.html">
+                        <a class="defaultBtn member_inter_Bt2" href="./member_info.html">
 
-                                <span>Enter</span>
+                            <span class="member_inter_Btc2">Enter</span>
 
-                            </a>
+                        </a>
 
-                        </div>
+
                     </div>
+
             </main>
 
             <!-- 頁尾 -->
