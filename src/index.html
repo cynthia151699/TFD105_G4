@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlScroll">
 
 <head>
     @@include('./layout/head.html')
@@ -33,13 +33,12 @@
                             <source src="./img/index/index_video.mp4" type="video/mp4">
                         </video>
 
-                        <div class="btn_next">
+                        <div class="btn_next" id="btn_scroll">
                             <h3 class="btn_going">
                                 See what’s
                                 <br>
                                 going on today
                             </h3>
-
                             <img class="btn_img" src="./img/index/bnt.png" alt="#">
                         </div>
                     </div>
@@ -47,7 +46,7 @@
 
 
                 <!-- part 2  -->
-                <div class="section active currExhibition" id="section1">
+                <div class="section active currExhibition" id="section1" >
 
                     <div class="index_page2">
 
@@ -219,7 +218,6 @@
 
     <!-- 載入js、套件 -->
     <script src="./js/vendors/fullpage.min.js"></script>
-
     <script src="./js/vendors/imagesloaded.pkgd.min.js"></script>
     <script src="./js/vendors/charming.min.js"></script>
     <script src="./js/vendors/TweenMax.min.js"></script>

@@ -68,62 +68,71 @@ main.ticketsPage {
             @include TicketsBase(left);
         }
 
-        h6.tickets_bookingName {
+        h6.tickets_bookingName{
             @include TicketsBase(center);
             @include SingleEllipsis;
-        }
-
-        ul.tickets_currentBooking {
-
-            // @include Remind(green);
-            @include TicketsWidth();
-            @include VerticalAlignCenter();
-
-            li.tickets_currentBooking {
-
-                width: fit-content;
-
-                @for $i from 1 to 3 {
-                    a.currentbookingPic-#{$i} {
-                        @include APic($i, left, $AccentColor2);
-                    }
-                }
-            }
-        }
-
-        div.pastBooking_Management {
-
-            // @include Remind(orange);
-            @include TicketsWidth();
-
-            ul.tickets_pastBooking {
-
-                width: 100%;
-
-                li.tickets_pastBooking {
-
-                    display: block;
-
-                    // @include Remind(yellow);
-
-                    @for $i from 1 to 10 {
-                        a.pastPic-#{$i} {
-                            @include APic($i+2, center, $AccentColor);
-                            // @include SingleEllipsis;
-                        }
-                    }
-                }
-            }
-
-            div.swiper-button-prev,
-            div.swiper-button-next {
-
+            line-height: 3;
+            a{
                 color: $TextColor2;
-
-                &::after {
-                    font-size: map-get($FontSize, h3);
+                span{
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 20px;
+                    height: 20px;
+                    @include LinkImg('tickets', 'tickets_point', 'png', cover, no-repeat, center);
                 }
             }
+        }
+    }
+}
+
+
+//======================當期票券管理===============================//
+ul.tickets_currentBooking {
+
+    @include TicketsWidth();
+    @include VerticalAlignCenter();
+
+    li.tickets_currentBooking {
+
+        width: fit-content;
+
+        @for $i from 1 to 3 {
+            a.currentbookingPic-#{$i} {
+                @include APic($i, center, $AccentColor2);
+            }
+        }
+    }
+}
+
+//======================過去票券管理===============================//
+div.pastBooking_Management {
+
+    @include TicketsWidth();
+
+    ul.tickets_pastBooking {
+
+        width: 100%;
+
+        li.tickets_pastBooking {
+
+            display: block;
+
+            @for $i from 1 to 10 {
+                a.pastPic-#{$i} {
+                    @include APic($i+2, center, $AccentColor);
+                }
+            }
+        }
+    }
+
+    div.swiper-button-prev,
+    div.swiper-button-next {
+
+        color: $TextColor2;
+
+        &::after {
+            font-size: map-get($FontSize, h3);
         }
     }
 }

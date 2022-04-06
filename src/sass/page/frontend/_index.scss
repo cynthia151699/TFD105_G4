@@ -7,19 +7,28 @@
 	width: 100%;
 }
 
-.btn_going {
-	color: $TextColor2;
-	line-height: 0.9;
-	text-shadow: $TextShadow;
+.btn_next{
+    text-align: center;
+    position: absolute;
+    left: 40%;
+    top: 500px;
+    animation: goingOn 2s infinite;
+    cursor: pointer;
+    // display: none;
+    // transition-delay:10s;
 }
 
-.btn_next {
-	text-align: center;
-	position: absolute;
-	left: 40%;
-	top: 500px;
-	animation: goingOn 2s infinite;
-	cursor: pointer;
+
+ @keyframes goingOn {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -10px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+     }
 }
 
 @keyframes goingOn {
