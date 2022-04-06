@@ -22,18 +22,21 @@
 // =====================anno about=======================
 .wrapperAbout{
     position: relative;
-    width: $Width;
+    width: $RWD;
     height: $Height;
     @include VerticalAlignCenter();
+    @include LinkImg(about, about_pic1, jpg, cover, null, null);
     .aboutCnt{
         width: $Width;
         height: 500px;
         @include HorizontalAlignCenter();
         h2{
             color:$TextColor2;
+            text-shadow: $TextShadow;
         }
-        h4{
+        h6{
             color:$TextColor2;
+            text-shadow: $TextShadow;
         }
         .aboutCntFr{
     
@@ -45,20 +48,19 @@
             text-align: right;
         }
     }
-    .content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        isolation: isolate;
-    }
-    .content__img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-    }
 }
-
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    isolation: isolate;
+}
+.content__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
 
 
 // ======================anno history======================
@@ -71,10 +73,11 @@
     }
     h2{
         color:$TextColor2;
-
+        text-shadow: $TextShadow;
     }
-    h4{
+    h6{
         color:$TextColor2;
+        text-shadow: $TextShadow;
     }
 }
 
@@ -86,23 +89,7 @@
     width: 800px;
     
 }
-// .movePic{
-//     height: 300px;
-// 	position: relative;
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	isolation: isolate;
-// }
-// .movePictImg{
-//     max-width: var(--img-maxwidth);
-// 	position: absolute;
-// 	top: 0;
-// 	left: 0;
-// 	opacity: 0;
-// 	will-change: transform;
-// 	filter: var(--filter-img);
-// }
+
 
 
 
@@ -117,6 +104,7 @@
     @include Flex(row);
     h3{
         color:$TextColor2;
+        text-shadow: $TextShadow;
         text-align: center;
     }
     .snsFb{

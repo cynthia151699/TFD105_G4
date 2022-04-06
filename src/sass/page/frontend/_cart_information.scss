@@ -71,8 +71,14 @@ li.step.four{
     top: 70%;
 }
 
+
+//滾動區塊
 .cartInformation{
-    overflow: auto; 
+    // @include HorizontalAlignCenter;
+    scrollbar-width: none; /* firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    overflow-x: hidden;
+    overflow-y: auto;
     width: 950px;
     h3{
         color: $TextColor2;
@@ -80,6 +86,10 @@ li.step.four{
         margin-left: 5%;
     }
 }
+
+.cartInformation::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
 
 // main information
 
@@ -94,9 +104,10 @@ li.step.four{
 
 .order_info_text{
     
-    p{
+    h6{
         display : inline-block;
         width: 50px;
+        color:$TextColor2;
     }
 }
 
@@ -154,8 +165,12 @@ table.list_table{
 
 .payment{
     margin-top: 5%; 
-    p{
+    h5{
+        color: $TextColor2;
+    }
+    h6{
     margin-top: 20px; 
+    color: $TextColor2;
     }
 }
 

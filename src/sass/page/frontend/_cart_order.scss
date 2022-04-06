@@ -97,7 +97,7 @@ article.cartOrder{
     h4{
         span{
             color: $AccentColor3; 
-            font-family: $SpecialFont
+            font-family: $SpecialFont;
         }
     }
 
@@ -147,3 +147,28 @@ article.cartOrder{
         }
     }
 }
+
+// 按鈕
+.btn_group{
+    text-align: right;
+}
+
+.btn_order_cancel{
+    width: 100px;
+    height: 30px;
+    background-color: #C4C4C4;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+    margin-bottom: 50px;
+}
+
+.btn_order_next{
+    width: 100px;
+    height: 30px;
+    background-color: #F29966;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+}
+

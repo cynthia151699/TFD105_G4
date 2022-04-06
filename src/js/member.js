@@ -37,9 +37,16 @@ document.querySelector('.member_img__btn').addEventListener('click', function ()
 let member_Terms = document.querySelector(".member_Terms");
 let member_Terms_text = document.querySelector(".member_Terms_text");
 let member_Terms_del = document.querySelector(".member_Terms_del");
+let member_Terms_area = document.querySelector(".member_Terms_area");
 member_Terms.addEventListener('click', function () {
 	member_Terms_text.style.display = "block";
+	member_Terms_area.style.display = "block";
 })
 member_Terms_del.addEventListener('click', function () {
 	member_Terms_text.style.display = "none";
+	member_Terms_area.style.display = "none";
+})
+member_Terms_text.addEventListener('click', function () {
+	member_Terms_text.style.display = "none";
+	member_Terms_area.style.display = "none";
 })
