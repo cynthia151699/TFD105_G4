@@ -6,7 +6,7 @@ let lowerImgId = "";// 紀錄下邊圖片ID
 const swiper = new Swiper('.mySwiper', {
     loop: true,
     // slidesPerGroup: 1,
-    // speed: 1500,
+    // speed: 700,
     on: {
         init: function () {
             // console.log('swiper initialized');
