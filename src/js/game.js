@@ -1,6 +1,6 @@
 "use strict";
 
-
+//rotation亂數
 let rotation = document.getElementsByClassName('rotate')[0];
 rotation.addEventListener("click", function (e) {
     // e.preventDefault();
@@ -31,8 +31,8 @@ const swiper = new Swiper('.mySwiper', {
                     } else { // upper images
                         upperImgId = elementId; //紀錄上面圖片
                     }
-                    let disappear = document.querySelectorAll(".swiper");
-                    let appear = document.getElementsByClassName("congrats")[0];
+                    let disappear = document.querySelectorAll(".swiper"); //獲獎後消失圖層
+                    let appear = document.getElementsByClassName("congrats")[0]; //獲獎後應出現圖層
                     if (upperImgId != "" && lowerImgId != "" && lowerImgId.includes(upperImgId)) { //符合需求
                         alert("Congrats");
                         for (let i = 0; i < disappear.length; i++) {
@@ -46,44 +46,3 @@ const swiper = new Swiper('.mySwiper', {
     },
 
 });
-
-// let disappear = document.querySelectorAll(".swiper");
-
-// let disappear1 = document.getElementsByClassName("swiper")[0];
-// disappear1.style = "display:none";
-// let disappear2 = document.getElementsByClassName("swiper")[1];
-// disappear2.style = "display:none;";
-// let appear = document.getElementsByClassName("congrats")[0];
-// appear.style = "display:flex";
-
-// let rotation = document.getElementsByClassName('rotate')[0];
-// console.log(rotation);
-
-// rotation.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     const swiper = new Swiper(".mySwiper", {
-//         loop: true,
-//         slidesPerGroup: 1,
-//         speed: 5000,
-
-//     });
-// });
-
-//亂數
-// let rotation = document.getElementsByClassName("rotate")[0];
-// console.log(rotation);
-// rotation.addEventListener("click", function(array){
-    // array.sort(() => Math.random() - 0.5);
-// });
-
-
-
-// const swiper = new Swiper(".mySwiper", {
-//     loop: true,
-//     slidesPerGroup: 3,
-//     speed: 700,
-// });
-
-// 1. 速度問題
-// 2. 陣列改css
-// 3. 亂數的作法
