@@ -64,62 +64,67 @@ main.ticketsPage {
             @include TicketsBase(left);
         }
 
-        h6.tickets_bookingName {
+        h6.tickets_bookingName > a {
             @include TicketsBase(center);
             @include SingleEllipsis;
+            color: $TextColor2;
+            line-height: 2;
+            display: block;
         }
+    }
+}
 
-        ul.tickets_currentBooking {
 
-            // @include Remind(green);
-            @include TicketsWidth();
-            @include VerticalAlignCenter();
+//======================當期票券管理===============================//
+ul.tickets_currentBooking {
 
-            li.tickets_currentBooking {
+    // @include Remind(green);
+    @include TicketsWidth();
+    @include VerticalAlignCenter();
 
-                width: fit-content;
+    li.tickets_currentBooking {
 
-                @for $i from 1 to 3 {
-                    a.currentbookingPic-#{$i} {
-                        @include APic($i, left, $AccentColor2);
-                    }
+        width: fit-content;
+
+        @for $i from 1 to 3 {
+            a.currentbookingPic-#{$i} {
+                @include APic($i, center, $AccentColor2);
+            }
+        }
+    }
+}
+
+//======================過去票券管理===============================//
+div.pastBooking_Management {
+
+    // @include Remind(orange);
+    @include TicketsWidth();
+
+    ul.tickets_pastBooking {
+
+        width: 100%;
+
+        li.tickets_pastBooking {
+
+            display: block;
+
+            // @include Remind(yellow);
+
+            @for $i from 1 to 10 {
+                a.pastPic-#{$i} {
+                    @include APic($i+2, center, $AccentColor);
                 }
             }
         }
+    }
 
-        div.pastBooking_Management {
+    div.swiper-button-prev,
+    div.swiper-button-next {
 
-            // @include Remind(orange);
-            @include TicketsWidth();
+        color: $TextColor2;
 
-            ul.tickets_pastBooking {
-
-                width: 100%;
-
-                li.tickets_pastBooking {
-
-                    display: block;
-
-                    // @include Remind(yellow);
-
-                    @for $i from 1 to 10 {
-                        a.pastPic-#{$i} {
-                            @include APic($i+2, center, $AccentColor);
-                            // @include SingleEllipsis;
-                        }
-                    }
-                }
-            }
-
-            div.swiper-button-prev,
-            div.swiper-button-next {
-
-                color: $TextColor2;
-
-                &::after {
-                    font-size: map-get($FontSize, h3);
-                }
-            }
+        &::after {
+            font-size: map-get($FontSize, h3);
         }
     }
 }
