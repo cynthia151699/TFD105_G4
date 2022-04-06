@@ -86,11 +86,6 @@ li.step.four{
     padding: 20px;
     box-sizing: border-box;
 
-    h3{
-        padding: 0;
-        margin-left: 0; 
-    }
-
 }
 
 .main_info{
@@ -104,6 +99,10 @@ li.step.four{
     line-height: 3;
 
     h4{
+        color: $TextColor2;
+    }
+
+    h6{
         color: $TextColor2;
     }
 

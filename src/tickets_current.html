@@ -29,9 +29,10 @@
                 <!-- coding here... -->
                 <div class="wrapperTicketsCur">
 
-                    <div class="ticketsCurCon ptSpace80">
+                    <div class="ticketsCurCon ptSpace80" data-aos="fade-down"
+                    data-aos-easing="linear" data-aos-duration="1500">
                         <div class="ticketsCurConUp pbSpace50">
-                            <div class="ticketsCurLt">
+                            <div class="ticketsCurLt" >
 
                                 <h2>Current booking info</h2>
 
@@ -64,6 +65,11 @@
             @@include('./layout/footer.html')
         </div>
     </div>
+
+    <script>
+        AOS.init();
+    </script>
+
 </body>
 
 </html>
