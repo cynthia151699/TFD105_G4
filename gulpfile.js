@@ -130,6 +130,8 @@ function browser(done) {
    done();
 }
 
+
+// 上線用
 // 圖片壓縮
 const imagemin = require('gulp-imagemin');
 
@@ -149,6 +151,12 @@ function min_images(){
              presets: ['@babel/env']
          }))
          .pipe(uglify())
+         .pipe(rename({
+            extname: '.min.js' // 修改附檔名
+            //prefix : 'web-' // 前綴字
+            //suffix : '-min'  // 後綴字
+            //basename : 'all' //更名
+         }))
          .pipe(dest('dist/js'));
  }
 

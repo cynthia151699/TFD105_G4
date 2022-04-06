@@ -22,11 +22,13 @@
 // =====================anno about=======================
 .wrapperAbout{
     position: relative;
-    width: $Width;
+    width: $RWD;
     height: $Height;
     @include VerticalAlignCenter();
+    @include LinkImg(about, 222, jpeg, cover, null, null);
     .aboutCnt{
         width: $Width;
+        border:2px solid red;
         height: 500px;
         @include HorizontalAlignCenter();
         h2{
@@ -45,20 +47,19 @@
             text-align: right;
         }
     }
-    .content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        isolation: isolate;
-    }
-    .content__img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-    }
 }
-
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    isolation: isolate;
+}
+.content__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
 
 
 // ======================anno history======================
@@ -86,23 +87,7 @@
     width: 800px;
     
 }
-// .movePic{
-//     height: 300px;
-// 	position: relative;
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	isolation: isolate;
-// }
-// .movePictImg{
-//     max-width: var(--img-maxwidth);
-// 	position: absolute;
-// 	top: 0;
-// 	left: 0;
-// 	opacity: 0;
-// 	will-change: transform;
-// 	filter: var(--filter-img);
-// }
+
 
 
 
