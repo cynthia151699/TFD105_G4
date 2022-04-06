@@ -74,6 +74,7 @@ li.step.four{
 
 //滾動區塊
 .cartInformation{
+    // @include HorizontalAlignCenter;
     scrollbar-width: none; /* firefox */
     -ms-overflow-style: none; /* IE 10+ */
     overflow-x: hidden;
@@ -103,9 +104,10 @@ li.step.four{
 
 .order_info_text{
     
-    p{
+    h6{
         display : inline-block;
         width: 50px;
+        color:$TextColor2;
     }
 }
 
@@ -163,8 +165,12 @@ table.list_table{
 
 .payment{
     margin-top: 5%; 
-    p{
+    h5{
+        color: $TextColor2;
+    }
+    h6{
     margin-top: 20px; 
+    color: $TextColor2;
     }
 }
 
