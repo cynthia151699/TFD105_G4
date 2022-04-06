@@ -170,7 +170,7 @@ $contW: 900px;
 $imgW: 260px;
 $formW: $contW - $imgW;
 $switchAT: 1.2s;
-$inputW: 390px;
+// $inputW: 390px;
 $btnH: 36px;
 
 
@@ -367,55 +367,63 @@ $btnH: 36px;
 
 
 
-// @media screen and (min-width: 768px) and (max-width: 991.98px) {
-// 	.member_main_all_block {
-// 		width: 700px;
-// 	}
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+	.member_main_all_block {
+		width: 700px;
+	}
 
-// 	// 滑動移動距離
-// 	$contW: 700px;
-// 	$imgW: 260px;
-// 	$formW: $contW - $imgW;
-// 	$switchAT: 1.2s;
-// 	$inputW: 390px;
-// 	$btnH: 36px;
-// 	.member_main_form {
-// 		width: $formW;
+	.member_span_choose .member_p_style {
+		word-wrap:break-word;
+	}
 
-// 	}
-// 	.member_img {
-// 		width: 200px;
-// 	}
-// 	.sub-cont{
-// 		width: 440px;
+	// 滑動移動距離
+	$contW: 700px;
+	$imgW: 260px;
+	$formW: $contW - $imgW;
+	$switchAT: 1.2s;
+	$btnH: 36px;
 
-// 	}
-// 	// .sub-cont{
-// 	// 	width: 260px;
-// 	// }
-// 	.member_cla_button {
-// 		width: 300px;
-// 		color: $TextColor;
-// 		@include HorizontalAlignCenter(20px, 20px);
-// 	}
+	.member_main_form {
+		width: $formW;
+	}
 
-// }
+	.sub-cont {
+		overflow: hidden;
+		position: absolute;
+		left: $formW;
+		top: 0;
+		width: $contW;
+		height: 100%;
+		padding-left: $imgW;
+		background: #fff;
+		transition: transform $switchAT ease-in-out;
 
-// @media screen and (min-width: 576px) and (max-width: 767.98px) {
+		@include signUpActive {
+			transform: translate3d($formW * -1, 0, 0);
+		}
+	}
 
-// 	.member_main_all_block {
-// 		width: 500px;
+	.member_cla_button {
+		width: 350px;
+	}
 
-// 	}
-// }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+	.member_main_all_block {
+		width: 500px;
+
+	}
+}
 
 
 
-// @media screen and (max-width: 575.98px) {
+@media screen and (max-width: 575.98px) {
 
 
-// 	.member_main_all_block {
-// 		width: 350px;
-// 	}
+	.member_main_all_block {
+		width: 350px;
+	}
 
-// }
+}
