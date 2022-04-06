@@ -33,6 +33,7 @@ main.exRelative{
 div#left1{
     @include VerticalAlignCenter;
     section.exCurrent{
+        @include HorizontalAlignCenter;
         h2{
             color: #F0F28D;
             text-align: left;
