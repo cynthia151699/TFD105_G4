@@ -1,10 +1,20 @@
 "use strict";
 
+
+let rotation = document.getElementsByClassName('rotate')[0];
+rotation.addEventListener("click", function (e) {
+    // e.preventDefault();
+    for (let i = 0; i < swiper.length; i++) {
+        swiper[i].slideTo(Math.floor(Math.random() * 10));
+    }
+});
+
 // <!-- Initialize Swiper -->
 let upperImgId = ""; // 紀錄上邊圖片ID
 let lowerImgId = ""; // 紀錄下邊圖片ID
 const swiper = new Swiper('.mySwiper', {
     loop: true,
+    grabCursor: true,
     // slidesPerGroup: 4,
     // speed: 500,
     on: {
@@ -21,13 +31,13 @@ const swiper = new Swiper('.mySwiper', {
                     } else { // upper images
                         upperImgId = elementId; //紀錄上面圖片
                     }
-                    let disappear1 = document.getElementsByClassName("swiper")[0];
-                    let disappear2 = document.getElementsByClassName("swiper")[1];
+                    let disappear = document.querySelectorAll(".swiper");
                     let appear = document.getElementsByClassName("congrats")[0];
                     if (upperImgId != "" && lowerImgId != "" && lowerImgId.includes(upperImgId)) { //符合需求
                         alert("Congrats");
-                        disappear1.style = "display:none";
-                        disappear2.style = "display:none;";
+                        for (let i = 0; i < disappear.length; i++) {
+                            disappear[i].style = "display:none";
+                        }
                         appear.style = "display:flex";
                     }
                 }
