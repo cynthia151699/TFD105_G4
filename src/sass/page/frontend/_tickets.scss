@@ -64,12 +64,13 @@ main.ticketsPage {
             @include TicketsBase(left);
         }
 
-        h6.tickets_bookingName > a {
+        h6.tickets_bookingName{
             @include TicketsBase(center);
             @include SingleEllipsis;
-            color: $TextColor2;
-            line-height: 2;
-            display: block;
+            line-height: 3;
+            a{
+                color: $TextColor2;
+            }
         }
     }
 }
@@ -107,8 +108,6 @@ div.pastBooking_Management {
         li.tickets_pastBooking {
 
             display: block;
-
-            // @include Remind(yellow);
 
             @for $i from 1 to 10 {
                 a.pastPic-#{$i} {
