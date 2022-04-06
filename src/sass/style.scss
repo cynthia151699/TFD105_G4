@@ -102,8 +102,12 @@ body{
             font-weight: map-get($FontWeight, medium);
         }
 
-        h4, h5, h6{
+        h4, h5{
             font-weight: map-get($FontWeight, regular);
+        }
+
+        h6{
+            font-weight: map-get($FontWeight, light);
         }
 
         a{

@@ -58,6 +58,10 @@ main.ticketsPage {
         // @include Remind(blue);
         width: 100%;
 
+        h6{
+            font-weight: map-get($FontWeight, regular)
+        }
+
         h4.tickets_bookingName,
         h4.tickets_pastbookingName {
             @include TicketsWidth();
