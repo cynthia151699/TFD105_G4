@@ -5,86 +5,52 @@ var myFullpage = new fullpage('#fullpage', {
 
 AOS.init();
 
-var options = {
-    container:document.querySelector(".openhoursRightImg"),
-    piecesNum:60,
-    imgSrc : "../img/visit/visit_pic2.jpeg"
-  }
-  
-  
-  function ImageCollage(defaults)
-  {
-    var container = defaults.container;
-    var containerWidth = container.offsetWidth;
-    var containerHeight = container.offsetHeight;
-    var containerStyle = container.currentStyle || window.getComputedStyle(container);
-    var piecesNum = defaults.piecesNum;
-    var levelIndex = Math.floor(piecesNum * 0.75);
-    var maxsizeX = Math.round(container.offsetWidth/2);
-    var maxsizeY = Math.round(container.offsetHeight/2);
-    var offset = 15;
-    var strength = 3;
-    
-    for (var i=0; i < piecesNum; i++)
-      {
-        var piece = document.createElement('div');
-        piece.className = "collage_piece";   //新增class
-        
-       
-        if(i < levelIndex){
-          piece.classList += " level_1";     
-          piece.dataset.level = 1;
-          piece.style.width = getRandomInt(100,  maxsizeX) + "px";
-          piece.style.height = getRandomInt(100, maxsizeY) + "px";
-          
-        }else{
-          piece.classList += " level_2";
-          piece.dataset.level = 2;
-          piece.style.width = getRandomInt(40,  maxsizeX/2) + "px";
-          piece.style.height = getRandomInt(40, maxsizeY/2) + "px";
-        }
-              
-        piece.style.backgroundImage = "url("+defaults.imgSrc+")";      
-        container.appendChild(piece);
-        
-        piece.dataset.offset = getRandomInt(strength, strength*2*piece.dataset.level);
-        piece.style.backgroundSize = ""+ containerWidth +"px "+ containerHeight +"px";
-        piece.style.left = getRandomInt(0, containerWidth-piece.offsetWidth) + "px";
-        piece.style.top = getRandomInt(0, containerHeight-piece.offsetHeight) + "px";
-        piece.style.backgroundPosition = -(piece.offsetLeft) + "px " + (-piece.offsetTop) + "px";
-        
-        console.log(containerStyle.marginLeft, containerStyle.marginTop);
-      }
-    
-    window.addEventListener("mousemove", function(e){
-      var pieces = container.querySelectorAll(".collage_piece");
-      var xpos, ypos, mouseX, mouseY, levelNum, off;
-      
-      
-      if (!mie) {
-          mouseX = e.pageX; 
-          mouseY = e.pageY;
-      }
-      else {
-          mouseX = event.clientX + document.body.scrollLeft;
-          mouseY = event.clientY + document.body.scrollTop;
-      }
-      
-      for (var p=0, l=pieces.length; p < l ; p++)
-        {
-          levelNum = pieces[p].dataset.level;
-          off = pieces[p].dataset.offset;
-          xpos = ( -mouseX/2 + containerWidth/2) / (off - levelNum);
-          ypos = ( -mouseY/2 + containerHeight/2) / (off - levelNum);
-          TweenMax.set(pieces[p],  {x:xpos, y:ypos});
-        }
-    })
-    
-    
-    var mie = (navigator.appName == "Microsoft Internet Explorer") ? true : false;  
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+// ---------圖片飛入------------
+const openhoursRightImg = document.querySelector('.openhoursRightImg');
+const list = Array.from(Array(25).keys());
+ //快速生成一个length为100的数组 生成一個100的數組
+list.sort((a, b) => Math.random() - 0.5);
+//亂數排序
+// console.log(list);
+
+
+let index = 0;
+//初始化索引值
+function fly() {
+
+  // if (index === 100) return;
+  // //index=100时直接return
+  let currentBox = list[index++];
+  // console.log(currentBox); 
+  //得到每個小方塊的位置
+  const left = currentBox % 5 * 100;
+  const top = Math.floor(currentBox / 5) * 80
+  //得到每個小方塊的left和top
+
+
+
+
+  const box = document.createElement('div');
+  //寫一個外框
+  box.classList.add('box');
+  //加class
+  box.style.cssText = `background:url('./../../img/visit/visit_pic2.jpg') ${-left}px ${-top}px no-repeat;background-size: 400px 400px;`;
+  //設置圖片的大小，放進去外框
+  openhoursRightImg.appendChild(box);
+  //飛入動畫
+  let animation = anime({
+    targets: box, //飛入位置
+    left: left + 'px', //每一個小方塊的left
+    top: top + 'px', //每一個小方塊的top
+    duration: 100, //飛入時間
+    easing: 'linear', 
+    complete: function () {
+      fly();
     }
-  }
-  
-  ImageCollage(options);
+    //執行完一塊在繼續下一塊
+  })
+}
+
+fly();
+
+
