@@ -71,8 +71,13 @@ li.step.four{
     top: 70%;
 }
 
+
+//滾動區塊
 .cartInformation{
-    overflow: auto; 
+    scrollbar-width: none; /* firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    overflow-x: hidden;
+    overflow-y: auto;
     width: 950px;
     h3{
         color: $TextColor2;
@@ -80,6 +85,10 @@ li.step.four{
         margin-left: 5%;
     }
 }
+
+.cartInformation::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
 
 // main information
 
