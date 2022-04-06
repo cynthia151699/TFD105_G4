@@ -43,7 +43,6 @@
 	background-size: 20%;
 }
 
-
 .member_main_form {
 	@include VerticalAlignCenter;
 }
@@ -112,22 +111,45 @@
 	background-color: #AD9F9F;
 }
 
-// 跳窗
+// 跳窗背景
+// .member_main_form_area.-on{
+// 	height: 900px;
+// 	width: 100vw;
+// 	background-color: aqua;
+// }
+
+
+// 跳窗背景
 .member_Terms_text {
 	// 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
 	top: 50px;
+	position: fixed;
 	display: none;
 	z-index: 11;
-	width: 50%;
-	height: 50%;
-	background-color: $TextColor2;
-	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: $PrimaryColor;
+	opacity: 0.8;
+}
+// 跳窗
+.member_Terms_area{
+	top: 50px;
+	display: none;
+	z-index: 11;
 	width: 600px;
 	height: 300px;
+	background-color: $TextColor2;
+	position: fixed;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
+	
+}
+.member_Terms_inner{
 	overflow-y: scroll;
+	width: 600px;
+	height: 270px;
+
 }
 
 //跳窗標題

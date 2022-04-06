@@ -19,7 +19,7 @@
 
 			<!-- 頁首 -->
 			@@include('./layout/header.html', {
-			"breadcrumb" : "member", 
+			"breadcrumb" : "member",
 			"tittle1" : "LOG IN",
 			"tittle2" : "SIGN UP",
 			"active1" : "activeb",
@@ -93,31 +93,47 @@
 
 								<li class="mtSpace20 member_modify_main_li">
 
-									<h6><input type="checkbox" class="mrSpace20">I would like to receive news,
+									<h6 class="member_modify_link"><input type="checkbox" class="mrSpace20">I would like
+										to receive news,
 										tips
 										and marketing offers from Anno.</h6>
 
 								</li>
 
+
+								<li class="mtSpace20 member_modify_button">
+
+									<a class="defaultBtn member_modify_Bt1" href="./member_info.html">
+
+										<span class="member_forget_text">Cancel</span>
+
+									</a>
+
+									<a class="defaultBtn member_modify_Bt2" href="./member_info.html">
+										
+										<span class="member_forget_text">Save</span>
+
+									</a>
+
+								</li>
+
 							</ul>
-
-
 						</div>
 
 						<!-- 按鈕 -->
 						<!-- 取消修改回到會員資料檢視 -->
-						<a class="defaultBtn member_modify_Bt1" href="./member_info.html">
+						<!-- <a class="defaultBtn member_modify_Bt1" href="./member_info.html">
 							<span class="member_forget_text">Cancel</span>
-						</a>
+						</a> -->
 
 						<!-- 更改成功回到會員資料檢視 -->
-						<a class="defaultBtn member_modify_Bt2" href="./member_info.html">
+						<!-- <a class="defaultBtn member_modify_Bt2" href="./member_info.html">
 							<span class="member_forget_text">Save</span>
-						</a>
+						</a> -->
 					</article>
 
 					<!-- 按鈕 -->
-					<a class="defaultBtn member_modify_Bt1" href="./member_info.html">
+					<!-- <a class="defaultBtn member_modify_Bt1" href="./member_info.html">
 
 						<span class="member_forget_text">Cancel</span>
 
@@ -127,16 +143,16 @@
 
 						<span class="member_forget_text">Save</span>
 
-					</a>
+					</a> -->
 
 				</div>
 
 
-		</main>
+			</main>
 
-		<!-- 頁尾 -->
-		@@include('./layout/footer.html')
-	</div>
+			<!-- 頁尾 -->
+			@@include('./layout/footer.html')
+		</div>
 	</div>
 </body>
 

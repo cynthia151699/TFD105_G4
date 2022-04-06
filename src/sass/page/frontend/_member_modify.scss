@@ -3,13 +3,13 @@
     @include VerticalAlignCenter;
     position: fixed;
     // 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
-    top:50px;
+    top: 50px;
     width: calc(100vw - 70px);
     height: calc(100vh - 50px);
     text-align: center;
     @include LinkImg('Logo', 'logo', 'png', scale-down, repeat-y, left);
-    background-position:top 0% left 0%;
-    background-size:20%;
+    background-position: top 0% left 0%;
+    background-size: 20%;
 }
 
 // 主框框
@@ -17,7 +17,7 @@
     @include HorizontalAlignCenter;
     @include VerticalAlignCenter;
     width: 900px;
-    height: 400px;
+    height: 450px;
     background-color: $TextColor2;
     position: relative;
 }
@@ -30,6 +30,7 @@
     transform: translate(-50%, 0%);
     color: $TextColor2;
     width: 720px;
+
 }
 
 // 輸入框置中
@@ -39,18 +40,24 @@
     width: 80%;
 
     ul.member_modify_main_ul {
+        li.member_modify_button{
+            display: flex;
+            padding: 0 20%;
+        }
+
 
         li.member_modify_main_li {
             @include VerticalAlignCenter;
 
             // 內文屬性
             .member_modify_inf {
-                width: 40%;
+                width: 50%;
             }
 
             // 內文不可修改
             .member_modify_uninput {
                 width: 50%;
+                display: block;
             }
 
             // 內文修改
@@ -59,7 +66,6 @@
                 background-color: $HFBGColor;
                 color: $TextColor2;
                 height: 32px;
-                width: 400px;
             }
         }
     }
@@ -68,28 +74,128 @@
 //輸入框預設文字
 .member_modify_input::placeholder {
     color: $TextColor2;
-  }
+}
 
 // 相對框框絕對定位button
 .member_modify_Bt1 {
-    position: absolute;
-    bottom: -56px;
-    left: 35%;
-    transform: translate(-50%, 0%);
-    display: block;
-    width: 150px;
+    // position: absolute;
+    // bottom: -56px;
+    // left: 35%;
+    // transform: translate(-50%, 0%);
+    // display:block;
+    // width: 20%;
     background-color: #AD9F9F;
+    margin-right: 50%;
 }
 
 .member_modify_Bt2 {
-    position: absolute;
-    bottom: -56px;
-    left: 65%;
-    transform: translate(-50%, 0%);
-    display: block;
-    width: 150px;
+    // position: absolute;
+    // bottom: -56px;
+    // left: 65%;
+    // transform: translate(-50%, 0%);
+    // display:block;
+    // width: 150px;
     background-color: $AccentColor2;
 }
 
 
 
+// RWD
+// @media screen and (min-width: 768px) and (max-width: 991.98px) {
+//     .member_modify_main {
+//         width: 700px;
+//     }
+
+// }
+
+// @media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+//     .member_modify_main {
+//         width: 500px;
+
+//         .member_modify_text {
+//             font-size: 1.5rem;
+
+
+//             .member_modify_Bt1 {
+//                 width: 80px;
+
+
+//                 .member_modify_Bt2 {
+//                     width: 80px;
+
+
+//                 }
+
+//             }
+//         }
+//     }
+//     .member_modify_Bt1 {
+//         left: 30%;
+//         width: 80px;
+
+//     }
+
+//     .member_modify_Bt2 {
+//         left: 70%;
+//         width: 80px;
+
+//     }
+// }
+
+
+
+// @media screen and (max-width: 575.98px) {
+
+
+//     .member_modify_main {
+//         width: 350px;
+//         height: 400px;
+
+//         .member_modify_text {
+//             font-size: 1rem;
+//         }
+
+//         // 內文屬性
+//         .member_modify_inf {
+//             width: 50%;
+//             font-size: 1rem;
+//         }
+
+//         // 內文不可修改
+//         .member_modify_uninput {
+//             width: 50%;
+        
+//             font-size: 1rem;
+//         }
+
+//         // 內文修改
+//         .member_modify_input {
+//             width: 50%;
+//             background-color: $HFBGColor;
+//             color: $TextColor2;
+//             height: 32px;
+//             font-size: 1rem;
+//         }
+
+//         .member_modify_link{
+//             font-size: 0.8rem;
+//         }
+
+
+//     }
+
+//     .member_modify_Bt1 {
+//         left: 30%;
+//         width: 60px;
+
+//     }
+
+//     .member_modify_Bt2 {
+//         left: 70%;
+//         width: 60px;
+
+//     }
+   
+
+// }
