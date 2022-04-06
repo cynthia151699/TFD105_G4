@@ -1,0 +1,52 @@
+li.step.one{
+    background-color: #E9E9E9;
+}
+
+li.step.two{
+    background-color: $AccentColor3;
+}
+
+article.cartDetails{
+    width: $RWD;
+
+    h3{
+        color: $TextColor2;
+        padding-top: 7%;
+        margin-left: 5%;
+    }
+
+    table.shopping{
+        width: 83%; 
+
+        margin-top: 2%; 
+        margin-left: 13%; 
+
+        background-color: $PopUpWindow;
+        color: $TextColor3;
+
+        box-sizing: border-box;
+
+        td{
+            padding: 10px;
+        }
+    }
+
+    section.cartButton{
+        width: 35%; 
+        float: right; 
+
+        a{
+            width: 125px; 
+            height: 40px; 
+            background-color: $Gray; 
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+            box-sizing: border-box;
+
+            &:last-child{
+                background-color: $AccentColor3;
+            }
+        }
+    }
+}

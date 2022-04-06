@@ -11,226 +11,339 @@
 
 		<!-- 導覽列 -->
 		@@include('./layout/nav.html', {
-			"active5" : "active"
+		"active5" : "active"
 		})
 
 		<div class="mainContainer">
 
+
 			<!-- 頁首 -->
 			@@include('./layout/header.html', {
-				"tittle1" : "LOG IN",
-				"tittle2" : "SIGN UP",
-				"active1" : "activeb",
-				"active3" : "active",
-				"active4" : "active",
+			"breadcrumb" : "member",
+			"tittle1" : "LOG IN",
+			"tittle2" : "SIGN UP",
+			"active1" : "activeb",
+			"active3" : "active",
+			"active4" : "active",
 			})
 
 			<main>
-				
-				<!-- 你包太多層了！！！我都看不懂你要做什麼了？這樣我很難debug！而且縮排可以拉開一點嗎？我找不到有問題的code在哪裡？？？不要讓我一直按ctrl+F在找 -->
-				<!-- 多包一層推開上方區域member_top -->
-				<div>
+				<!-- 盡量多用html5語意化標籤，然後麻煩縮排推開一點，太擠不方便找除錯你的程式碼，再然後不要一直包div 標籤來推間距，
+					容易跑版，盡量用百分比訂尺寸跟寫距離比較不容易跑版，或者寫程式讓它自己算間距置中 -->
 
-					<div class="member_top">
+				<!-- 實際頁面作用區域 -->
+				<div class="member_main_all_area">
 
-						<div class="member_main_all_area">
 
-							<!-- 中央表單 -->
-							<div class="member_main_all">
+					<!-- 中央表單 -->
+					<article class="cont member_main_all_block ">
 
-								<div class="cont member_main_all_block ">
 
-									<!-- 登入 -->
-									<div class="sign-in member_main_form">
+						<!-- 登入 -->
+						<div class="sign-in member_main_form">
 
-										<h3 class="mbSpace30">Welcome back</h3>
 
-										<label class="mbSpace20">
+							<!-- <a href="./member_forget.html">forget</a>
+										<a href="./member_forget_change.html">forget_change</a>
+										<a href="./member_info.html">info</a>
+										<a href="./member_modify.html">modify</a>
+								 -->
+							<form class="member_main_form_area">
 
-											<span class="member_span">
-												<h6>EMAIL</h6>
-											</span>
 
-											<input type="email" class="member_input_text" />
+								<h3 class="mbSpace30">Welcome back</h3>
 
-										</label>
 
-										<br>
+								<span class="member_text_span">
 
-										<label class="mbSpace20">
 
-											<span class="member_span">
-												<h6>PASSWORD</h6>
-											</span>
+									<h6 class="member_text_title">EMAIL</h6>
 
-											<input type="password" class="member_input_text " />
 
-										</label>
+									<input type="email" class="member_input_text mbSpace20" />
 
-										<br>
 
-										<a calss="Forgot_password" href="./member_forget.html">Forgot password?</a>
+								</span>
 
-										<!-- 按鈕 -->
-										<a class="defaultBtn member_cla_button member_button_color1" href="#">
-											<span class="member_forget_text">LOG IN</span>
-										</a>
 
-										<a class="defaultBtn member_cla_button member_button_color2" href="#">
-											<span class="member_forget_text">Connect with facebook</span>
-										</a>
+								<span class="member_text_span">
 
-									</div>
 
+									<h6 class="member_text_title">PASSWORD</h6>
 
-									<!-- 移動框 -->
-									<div class="sub-cont">
 
-										<div class="member_img">
+									<input type="password" class="member_input_text mbSpace20" />
 
-											<div class=" m--up member_img__text">
+								</span>
 
-												<h3 class="mbSpace30 member_move_text">New here?</h3>
 
-												<h4 class="member_move_text">Sign up and discover great amount of new opportunities!</h4>
-											
-											</div>
+								<span class="member_text_span">
 
-											<div class="m--in member_img__text">
+									<h6>
 
-												<h3 class="mbSpace30 member_move_text">One of us?</h3>
+										<a calss="forgot_password" href="./member_forget.html">Forgot password?</a>
 
-												<h4 class="member_move_text">If you already has an account, just sign in. We've missed you!</h4>
+									</h6>
+								</span>
 
-											</div>
 
-											<div class="member_img__btn">
+								<!-- 按鈕 -->
+								<span class="member_text_span">
 
-												<span class="m--up member_span">SIGN UP</span>
-												<span class="m--in member_span">SIGN IN</span>
+									<a class="defaultBtn member_cla_button member_button_color1"
+										href="./member_info.html">
 
-											</div>
-										</div>
+										<span class="member_forget_text">LOG IN</span>
 
-										<!-- 註冊 -->
-										<div class="sign-up member_main_form">
 
-											<form class="member_singup_block" id="member_form">
+									</a>
 
-												<label>
+								</span>
 
-													<span class="member_span">
-														<h6>NAME</h6>
-													</span>
 
-													<input type="text" class="member_input_text" />
+								<span class="member_text_span">
 
-												</label>
+									<a class="defaultBtn member_cla_button member_button_color2" href="#">
 
-												<label>
+										<span class="member_forget_text">Connect with facebook</span>
 
-													<span class="member_span">
-														<h6>EMAIL</h6>
-													</span>
+									</a>
 
-													<input type="text" name="mail" class="member_input_text" id="member_mail" />
-												</label>
 
-												<label>
+								</span>
 
-													<span class="member_span">
-														<h6>PASSWORD</h6>
-													</span>
 
-													<input type="password" class="member_input_text" />
+							</form>
 
-												</label>
 
-												<label>
-
-													<span class="member_span">
-														<h6>PASSWORD CONFIRM</h6>
-													</span>
-
-													<input type="password" class="member_input_text" />
-
-												</label>
-
-												<label>
-
-													<span class="member_span">
-														<h6>PHONE NUMBER</h6>
-													</span>
-
-													<input type="text" class="member_input_text" />
-
-												</label>
-
-												<!-- 確認相關區域  待調整-->
-												<label class="mtSpace20">
-
-													<span class="member_span_choose">
-														<input type="checkbox" class="member_login_choose" />
-														<p class="member_p_style">I would like to receive news, tips and marketing offers from Anno.</p>
-													</span>
-
-												</label>
-
-												<label>
-
-													<span class="member_span_choose">
-
-														<input type="checkbox" class="member_login_confirm" />
-
-														<p class="member_p_style">
-															I have read and understood the<a href="#0"
-																class="member_Terms">Terms & Conditions and
-																Privacy Policy.</a>
-														</p>
-
-													</span>
-
-												</label>
-
-												<!-- 註冊按鈕綁定JS   先不改成a樣式套用特效 -->
-												<button type="submit" class="mtSpace20" id="member_button">SIGN UP</button>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-
-
-							<!-- 跳窗樣式待確認更改 -->
-							<div class="member_Terms_text">
-
-								<h6 class="member_Terms_title">Terms & Conditions and Privacy Policy.</h6>
-
-								<h6 class="member_Terms_del">X</h6>
-
-								<h6>Anno Account, Personal Information, and Security
-									By signing up for an account or placing an Order you agree and understand that we
-									may collect, use, store and process your Personal Information in accordance with our 
-									Privacy & Cookie Policy. Anno Museum fully respects the privacy of individuals who access 
-									and use the Platforms. For details on the manner in which we use cookies, the type of 
-									information we collect, how and for what purpose, we use your information and under what 
-									circumstances we disclose information please see our Privacy & Cookie Policy, which are 
-									incorporated into and form part of these Terms.
-								</h6>
-							</div>
 						</div>
+
+						<!-- 移動框 -->
+						<div class="sub-cont">
+
+
+							<div class="member_img">
+
+
+								<div class=" m--up member_img__text">
+
+
+									<h3 class="mbSpace40 member_move_text">New here?</h3>
+
+
+									<h5 class="member_move_text">Sign up and discover great amount of new
+										opportunities!</h5>
+
+
+								</div>
+
+
+								<div class="m--in member_img__text">
+
+
+									<h3 class="mbSpace40 member_move_text">One of us?</h3>
+
+
+									<h5 class="member_move_text">If you already has an account, just sign in.
+										We've missed you!</h5>
+
+
+								</div>
+
+
+								<div class="member_img__btn">
+
+
+									<span class="m--up member_span">SIGN UP</span>
+
+
+									<span class="m--in member_span">SIGN IN</span>
+
+
+								</div>
+
+
+							</div>
+
+
+							<!-- 註冊 -->
+							<div class="sign-up member_main_form">
+
+
+								<form class="member_main_form_area" id="member_form">
+
+
+									<span class="member_text_span">
+
+
+										<h6>NAME</h6>
+
+
+										<input type="text" class="member_input_text mbSpace10" />
+
+
+									</span>
+
+
+									<span class="member_text_span">
+
+
+										<h6>EMAIL</h6>
+
+
+										<input type="text" name="mail" class="member_input_text mbSpace10"
+											id="member_mail" />
+
+
+									</span>
+
+
+									<span class="member_text_span">
+
+
+										<h6>PASSWORD</h6>
+
+
+										<input type="password " class="member_input_text mbSpace10" />
+
+
+									</span>
+
+
+									<span class="member_text_span">
+
+
+										<h6>PASSWORD CONFIRM</h6>
+
+
+										<input type="password" class="member_input_text mbSpace10" />
+
+
+									</span>
+
+
+									<span class="member_text_span">
+
+
+										<h6>PHONE NUMBER</h6>
+
+
+										<input type="text" class="member_input_text mbSpace10" />
+
+
+									</span>
+
+
+									<!-- 確認相關區域  待調整-->
+									<label class="mtSpace20">
+
+
+										<span class="member_span_choose  mbSpace10">
+
+
+											<input type="checkbox" class="member_login_choose" />
+
+
+											<p class="member_p_style">I would like to receive news, tips and
+												marketing offers from Anno.
+											</p>
+
+
+										</span>
+
+
+									</label>
+
+
+									<label>
+
+
+										<span class="member_span_choose">
+
+
+											<input type="checkbox" class="member_login_confirm" />
+
+
+											<p class="member_p_style">
+												I have read and understood the <a href="#0" class="member_Terms">Terms &
+													Conditions and Privacy Policy.</a>
+											</p>
+
+
+										</span>
+
+
+									</label>
+
+									<!-- 註冊按鈕綁定JS   先不改成a樣式套用特效 -->
+									<!-- 註冊成功到會員資料檢視  連結先放上    JS判斷先關掉節省流量-->
+									<!-- 測試路徑先這樣用  實際版本在下面 -->
+									<button type="submit" class="mtSpace10" id="member_button"  href="./member_info.html">
+										<a id="member_button_text" href="./member_info.html">	
+										SIGN UP 
+										</a>
+									</button>
+
+
+									<!-- 實際上線版本先註解   -->
+									<!-- <button type="submit" class="mtSpace10" id="member_button">
+										SIGN UP
+									</button> -->
+
+								</form>
+
+
+							</div>
+
+
+						</div>
+
+
+					</article>
+
+
+					<!-- 跳窗樣式待確認更改 -->
+					<div class="member_Terms_text">
+
+
+						<h6 class="member_Terms_title">Terms & Conditions and Privacy Policy.</h6>
+
+
+						<h6 class="member_Terms_del">X</h6>
+
+
+						<h6>Anno Account, Personal Information, and Security
+							By signing up for an account or placing an Order you agree and understand that we
+							may collect, use, store and process your Personal Information in accordance with our
+							Privacy & Cookie Policy. Anno Museum fully respects the privacy of individuals who
+							access
+							and use the Platforms. For details on the manner in which we use cookies, the type
+							of
+							information we collect, how and for what purpose, we use your information and under
+							what
+							circumstances we disclose information please see our Privacy & Cookie Policy, which
+							are
+							incorporated into and form part of these Terms.
+						</h6>
+
+
 					</div>
+
+
 				</div>
+
+
 			</main>
 
 			<!-- 頁尾 -->
 			@@include('./layout/footer.html')
 		</div>
-	
+	</div>
 	<!-- 載入js、套件 -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 	<!-- 大家自己寫的js 在這！ -->
 	<script src="./js/member.min.js"></script>
+
 </body>
 
 </html>

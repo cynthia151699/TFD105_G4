@@ -100,21 +100,23 @@
 
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
-        "active4" : "active"
+        "active3" : "active"
         })
 
         <div class="mainContainer">
 
             <!-- 頁首 -->
-            @@include('./layout/header.html', {
-            "tittle1" : "Order",
-            "tittle2" : "Details",
-            "tittle3" : "Information",
-            "tittle4" : "Done",
+            <!-- @@include('./layout/header.html', {
+            "breadcrumb" : "cart", 
+            "tittle1" : "ORDER",
+            "tittle2" : "DETAILS",
+            "tittle3" : "INFORMATION",
+            "tittle4" : "DONE",
             "active1" : "activeb",
-            })
+            }) -->
 
             <main>
+
                 <!-- coding here -->
 
                 <!-- 主要內容部分 -->
@@ -157,23 +159,47 @@
                     </div>
                 </div>
 
-                <div class="cartOrder">
-                    <h3>1</h3>
-                    <h3>2</h3>
-                    <h3>3</h3>
-                    <h3>4</h3>
+                <article class="cartOrder">
 
-                    <h3>STEP 1.Order tickets</h3>
-                    Break the Classic - TAKIKAW RISA Solo Exhibition
-                    Date: 2022/2/5~2022/5/5
-                    Place: Anno Museum South Buliding
-                    Rollover Ticket NTD $450 <input type="text">
+                    <h3>STEP 1. Order tickets</h3>
 
-                    True Color - KAYLA GILL Solo Exhibition (Upcoming)
-                    Date: 2022/5/15~2022/8/15
-                    Place: Anno Museum North Buliding
-                    Advance Ticket NTD $400 <input type="text">
-                </div>
+                    <ul class="stepDecorate">
+                        <li class="step one" style="background-color: #F25A38;"><span>1</span></li>
+                        <li class="step two"><span>2</span></li>
+                        <li class="step three"><span>3</span></li>
+                        <li class="step four"><span>4</span></li>
+                    </ul>
+
+                    <section class="rollover">
+                        <h4><span>Break the Classic - TAKIKAW RISA Solo Exhibition</span>
+                            <br>Date: 2022/2/5~2022/5/5
+                            <br>Place: Anno Museum South Buliding
+                            <br>Rollover Ticket NTD $450 <input type="text">
+                        </h4>
+                    </section>
+
+                    <section class="advance">
+                        <h4><span>True Color - KAYLA GILL Solo Exhibition (Upcoming)</span>
+                            <br>Date: 2022/5/15~2022/8/15
+                            <br>Place: Anno Museum North Buliding
+                            <br>Advance Ticket NTD $400 <input type="text">
+                        </h4>
+                    </section>
+
+                    <section class="cartButton mtSpace20">
+
+                        <a href="./tickets.html" class="mrSpace40">
+                            <h4>Cancel</h4>
+                        </a>
+    
+                        <a href="./cart_details.html">
+                            <h4>Next</h4>
+                        </a>
+
+                    </section>
+
+                </article>
+
             </main>
 
             <!-- 頁尾 -->

@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
     @@include('./layout/head.html')
+
 </head>
 
 <body>
@@ -15,16 +17,198 @@
         <div class="mainContainer">
 
             <!-- 頁首 -->
-            @@include('./layout/header.html', {
-            "tittle1" : "Order",
-            "tittle2" : "Details",
-            "tittle3" : "Information",
-            "tittle4" : "Done",
-            "active1" : "activeb",
-            })
+            <!-- @@include('./layout/header.html', {
+            "breadcrumb" : "cart",
+            "tittle1" : "ORDER",
+            "tittle2" : "DETAILS",
+            "tittle3" : "INFORMATION",
+            "tittle4" : "DONE",
+            "active3" : "activeb",
+            }) -->
 
             <main>
                 <!-- coding here -->
+
+                <div class="cartInformation">
+
+                    <h3>STEP 3. Order information</h3>
+
+                    <ul class="stepDecorate">
+                        <li class="step one"><span>1</span></li>
+                        <li class="step two"><span>2</span></li>
+                        <li class="step three" style="background-color: #F25A38;"><span>3</span></li>
+                        <li class="step four"><span>4</span></li>
+                    </ul>
+
+
+                <div class="main_box">
+                    <!-- part1 -->
+                    <div class="order_info">
+                        <form>
+                            <label class="s-check_box">
+                                <input class="check_box" type="checkbox"/>&nbsp;&nbsp;Same as member info
+                            </label>
+
+                            <div class="order_info_text">
+                                <p>Name:</p>
+                                <input class="input_type" type="text" name="input_name" placeholder="  Name" required>
+                            </div>
+                            <div class="order_info_text">
+                                <p>Phone:</p>
+                                <input class="input_type" type="text" name="input_phone:" placeholder="  Phone Number" required>
+                            </div>
+                            <div class="order_info_text">
+                                <p>Email:</p>
+                                <input class="input_type" type="text" name="input_email" placeholder="  Email" required>
+                            </div>
+                            <p>Ticket Collection: By (QR code)</p>
+                        </div>
+                    <!-- part2 -->
+                    <div class="order_list">
+                            <h6>Your Order:</h6>
+                            <div class="list_box">
+                                <table class="list_table">
+                                    <tr>
+                                        <td colspan="4">
+                                            Break the Classic - TAKIKAW RISA Solo Exhibition
+                                            <br>
+                                            Date: 2022/2/5~2022/5/5
+                                            <br>
+                                            Place: Anno Museum South Buliding
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #48538D; color:#fff;">
+                                        <td>Tickets</td>
+                                        <td>Price</td>
+                                        <td>Number</td>
+                                        <td>Amount</td>
+                                    </tr>
+
+                                    <tr class="first_order">
+                                        <td>Early Bird - Single</td>
+                                        <td>NT$400</td>
+                                        <td>2</td>
+                                        <td>NT$800</td>
+                                    </tr>
+
+                                    <tr class="second_order">
+                                        <td>Current - Single</td>
+                                        <td>NT$450</td>
+                                        <td>2</td>
+                                        <td>NT$900</td>
+                                    </tr>
+                                </table>
+
+                                <div class="count">
+
+                                    <div class="c_amount">
+                                        <h6>Amount:</h6>
+                                        <h6>4</h6>
+                                    </div>
+                                    <div class="c_discount">
+                                        <h6>Discount:</h6>
+                                        <h6>Without Using Discount</h6>
+                                    </div>
+                                        <h6 class="c_total">Total: NT$1,700</p>
+                            </div>
+                            </div>
+
+                            <br>
+
+                    <!-- part3 -->
+                    <div class="payment">
+                        <h6>Payment:</h6>
+                        <p>Payment Methods:</p>
+                        <select>
+                            <option>Credit Card</option>
+                            <option>TaiShin Bank (812)</option>
+                            <option>CTBC Bank (822)</option>
+                            <option>Cathay Bank (013)</option>
+                            <option>Taipei Fubon Bank (012)</option>
+                        </select>
+
+
+                        <p>Card Holder:</p>
+                        <input class="input_type" placeholder="Please type in the name...">
+
+                        <p>Card Numbers:</p>
+                        <input class="input_type" placeholder="Please type in the card numbers... (Example:1234-5678-8907-5674)">
+                        
+                        <p>Expiration Date:</p>
+                        <select>
+                            <option>Month</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+
+                        <select>
+                            <option>Year</option>
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                            <option>2027</option>
+                            <option>2028</option>
+                            <option>2029</option>
+                        </select>
+
+                        <p>CVC Code:</p>
+                        <input class="input_type" placeholder="Please type in the CVC security code on the back of the credit card...">
+
+                        <p>Invioce Numbers:</p>
+                        <select>
+                            <option>Uniform Invoice</option>
+                            <option>e-Invoice</option>
+                            <option>Mobile Barcode</option>
+                        </select>
+                        <br>
+                        <div class="cautions_box">
+
+                            <p class="caution_text">
+                                Cautions:
+                                <br>
+                                <br>
+                                If you purchase according to the system program and complete all the programs, the ordering behavior is regarded as the transaction is completed, and the system has fulfilled the relevant notification obligations. and other factors), and claim to stop payment or refuse payment, this system will not accept.
+                                <br>
+                                <br>
+                                Taxable/tax-exempt invoices shall be issued for exhibition tickets in accordance with the law.
+                                Tickets are regarded as securities, if lost, damaged or unrecognizable, they will not be reissued, please keep them properly.
+                                After checkout, please check your order in the member area to confirm whether the order is successful, so as to avoid repeated ticket purchases.
+                                <br>
+                                <br>
+                                In order to ensure the safety of online transactions, you agree that the company shall inform the issuing bank, the acquirer and the cardholder whether the transaction information is true, and remind you that if you fraudulently use another person's credit card or other personal information for the transaction, the If found, they must be brought to justice.
+                                <br>
+                                <br>
+                                It is strictly prohibited to resell tickets at a higher price for profit in any form not for personal use. Those who are verified to be true may be reported to the police in accordance with Article 64, paragraph 2, of the Social Order Maintenance Act.
+                                If you need a refund, please contact the website administrator by email within 7 days after purchasing the ticket.</p>
+                        </div>
+
+                        <label class="s-check_box">
+                            <input class="check_box" type="checkbox" value="second_checkbox"/>&nbsp;&nbsp; I agree to the terms of service and return policy on Anno Museum.
+                        </label>
+
+                       </div>
+
+                    </div>
+
+                    <div class="btn_group">
+                    <input class="btn_previous" type="submit" value="Previous">
+                    <input class="btn_done" type="submit" value="Next" onclick="location.href='./cart_done.html'">
+                    </div>
+
+                </div>
+                <!-- <a href="./cart_done.html" style="padding-top: 200px;">完成訂單</a> -->
             </main>
 
             <!-- 頁尾 -->

@@ -1,5 +1,27 @@
+// 麵包屑位置
+.headerContainer{
+    h5.about{
+        &:first-child{
+            left: 20px;
+        }
+
+        &:nth-child(2){
+            left: 190px;
+        }
+
+        &:nth-child(3){
+            left: 0px;
+        }
+
+        &:last-child{
+            left: 0px;
+        }
+    }
+}
+
 // =====================anno about=======================
 .wrapperAbout{
+    position: relative;
     width: $Width;
     height: $Height;
     @include VerticalAlignCenter();
@@ -23,14 +45,28 @@
             text-align: right;
         }
     }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        isolation: isolate;
+    }
+    .content__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
 }
+
+
 
 // ======================anno history======================
 .aboutHistory{
     @include VerticalAlignCenter();
     @include LinkImg(about, about_pic1, png, cover, null, null);
     .aboutHistoryContent{
-        width: $RWD;
+        width: $Width;
         height: 500px;
     }
     h2{
@@ -50,9 +86,50 @@
     width: 800px;
     
 }
-.movePic{
-   position: relative;
+// .movePic{
+//     height: 300px;
+// 	position: relative;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	isolation: isolate;
+// }
+// .movePictImg{
+//     max-width: var(--img-maxwidth);
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	opacity: 0;
+// 	will-change: transform;
+// 	filter: var(--filter-img);
+// }
+
+
+
+// -------------sns----------------
+.wrapperSns{
+    @include VerticalAlignCenter();
+    width: $Width;
+    height: $Height;
 }
-.movePictImg{
-    position: absolute;
+.sns{
+    @include HorizontalAlignCenter();
+    @include Flex(row);
+    h3{
+        color:$TextColor2;
+        text-align: center;
+    }
+    .snsFb{
+       flex-grow: 1;
+       .fb-page{
+    
+       }
+    }
+    .snsIg{
+        flex-grow: 2;
+    }
+   
+    .snsTwitter{
+        flex-grow: 2;
+    }
 }

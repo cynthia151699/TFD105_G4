@@ -12,14 +12,14 @@
         @@include('./layout/backnav.html', {
         "active1" : "active"
         })
-
+        
         <div class="popUp">
 
             <div class="mask"></div>
 
             <div class="popUpWindows">
-                <form action="post">
-                    <div class="editMember">
+                <form>
+                    <div class="member -edit">
                         <h5>編輯會員</h5>
                         <ul>
                             <li>
@@ -45,7 +45,7 @@
                         <button>確定</button>
                     </div>
 
-                    <div class="storeMember">
+                    <div class="member -store">
                         <h5>編輯會員</h5>
                         <h6>尚未儲存，是否確認離開？</h6>
                         <button>取消</button>
@@ -63,7 +63,7 @@
             tittle2: "以會員帳號查詢",
             })
 
-            <form action="#">
+            <form>
                 <table>
                     <thead>
                         <tr>
@@ -130,6 +130,8 @@
             </form>
         </div>
     </div>
+
+    <script src="./js/backend.min.js"></script>
 </body>
 
 </html>

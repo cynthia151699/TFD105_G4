@@ -13,6 +13,7 @@
 @import './base/var';
 @import './base/reset';
 
+// 元件
 @import './component/space';
 @import './component/button';
 @import './mixin';
@@ -22,30 +23,41 @@
 @import './layout/nav';
 @import './layout/header';
 @import './layout/footer';
-  
+
 @import './layout/RWD';
 
 @import './page/prototype';
 
 // 前後台頁面連結
-@import './page/inter';
 @import './page/switch';
+@import './page/inter';
 
 // 前台頁面連結
 @import './page/frontend/index';
+
 @import './page/frontend/exhibition';
+
 @import './page/frontend/guide';
+
 @import './page/frontend/tickets';
 @import './page/frontend/tickets_current';
 @import './page/frontend/tickets_past';
+
 @import './page/frontend/about';
+@import './page/frontend/community';
+
 @import './page/frontend/member';
 @import './page/frontend/member_info';
 @import './page/frontend/member_modify';
 @import './page/frontend/member_forget';
 @import './page/frontend/member_forget_change';
+
 @import './page/frontend/game';
-@import './page/frontend/cart';
+
+@import './page/frontend/cart_order';
+@import './page/frontend/cart_details';
+@import './page/frontend/cart_information';
+@import './page/frontend/cart_done';
 
 // 後台頁面連結
 @import './page/backend_login';
@@ -80,30 +92,17 @@ body{
             }
         }
 
-        // h1{ //優化SEO
+        // h1{ // SEO
         //     font-family: $SpecialFont;
         //     font-weight: map-get($FontWeight, medium);
         // }
 
-        h2{
+        h2, h3{
             font-family: $SpecialFont;
             font-weight: map-get($FontWeight, medium);
         }
 
-        h3{
-            font-family: $SpecialFont;
-            font-weight: map-get($FontWeight, medium);
-        }
-
-        h4{
-            font-weight: map-get($FontWeight, regular);
-        }
-
-        h5{
-            font-weight: map-get($FontWeight, regular);
-        }
-
-        h6{
+        h4, h5, h6{
             font-weight: map-get($FontWeight, regular);
         }
 
@@ -124,6 +123,12 @@ body{
             overflow: hidden;
 
             @include Flex(row);
+        }
+
+        button{
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 }

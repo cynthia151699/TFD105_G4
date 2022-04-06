@@ -1,26 +1,43 @@
 /* FrontHeader */
-header.frontHeader{
+.FHBGC{
     width: $Width;
     height: 50px;
 
     background-color: $NavBGColor;
-    font-family: $SpecialFont;
-
-    @include Flex(row);
+    opacity: 0.5;
 
     position: absolute;
-    z-index: 999;
-    opacity: 0.6;
+    z-index: 58;
+    left: 70px;
+}
+
+header.frontHeader{
+    width: $RWD;
+    height: 50px;
+
+    background-color: transparent;
+    font-family: $SpecialFont;
+
+    position: absolute;
+    left: 70px;
+    z-index: 59;
+
+    button{
+        &:hover{
+            cursor: pointer;
+        }
+    }
 
     .headerContainer{
         width: calc(#{$Width} - 50px);
 
-        @include Flex(row);
+        position: absolute;
+        top: 10px;
 
         h5{
             color: $TextColor2;
 
-            @include VerticalAlignCenter();
+            position: absolute;
         }
     }
 
@@ -35,7 +52,10 @@ header.frontHeader{
     figure.logo{
         width: 100px;
         height: 40px;
-        margin-top: 5px;
+
+        position: absolute;
+        top: 5px;
+        right: 75px;
 
         @include LinkImg('logo', 'logo_rw', 'png');
     }

@@ -1,0 +1,149 @@
+// 麵包屑位置
+.headerContainer{
+    h5.cart{
+        &:first-child{
+            left: 20px;
+        }
+
+        &:nth-child(2){
+            left: 115px;
+        }
+
+        &:nth-child(3){
+            left: 225px;
+        }
+
+        &:last-child{
+            left: 395px;
+        }
+    }
+}
+
+// 流程裝飾線
+ul.stepDecorate::before{
+    content: ' ';
+    height: 50%;
+    width: 5px;
+    background-color: $Gray;
+
+    position: absolute;
+    top: 25%;
+    left: 150px;
+    z-index: 0;
+}
+
+ul.stepDecorate{
+    width: 70px;
+    margin-left: 57px;
+
+    li.step{
+        
+        width: 50px;
+        height: 50px;
+
+        background-color: $Gray;
+        color: $TextColor3;
+
+        text-align: center;
+        border-radius: 50%;
+
+        position: absolute;
+        z-index: 2;
+
+        span{
+            width: 50px;
+
+            font-weight: map-get($FontWeight, regular);
+            font-size: map-get($FontSize, h4);
+            font-family: $SpecialFont;
+
+            position: absolute;
+            z-index: 3;
+
+            top: 10px;
+            left: 0px;
+        }
+    }
+}
+
+li.step.one{
+    background-color: $AccentColor3;
+
+    top: 22%;
+}
+
+li.step.two{
+    top: 38%;
+}
+
+
+li.step.three{
+    top: 54%;
+}
+
+li.step.four{
+    top: 70%;
+}
+
+article.cartOrder{
+    width: $RWD;
+
+    h3{
+        color: $TextColor2;
+        padding-top: 7%;
+        margin-left: 5%;
+    }
+
+    h4{
+        span{
+            color: $AccentColor3; 
+            font-family: $SpecialFont
+        }
+    }
+
+    section.rollover{
+
+        width: 80%; 
+        height: 150px;
+    
+        margin-top: 5%; 
+        margin-left: 13%; 
+        padding: 20px;
+
+        box-sizing: border-box;
+        
+        background-color: $PopUpWindow;
+    }
+    
+    section.advance{
+        width: 80%; 
+        height: 150px;
+    
+        margin-top: 35px; 
+        margin-left: 13%; 
+        padding: 20px;
+
+        box-sizing: border-box;
+    
+        background-color: $PopUpWindow;
+    }
+
+    section.cartButton{
+        width: 35%; 
+        float: right; 
+
+        a{
+            width: 125px; 
+            height: 40px; 
+            background-color: $Gray; 
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+            box-sizing: border-box;
+
+            &:last-child{
+                background-color: $AccentColor3;
+            }
+        }
+    }
+}

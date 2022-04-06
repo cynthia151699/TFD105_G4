@@ -6,21 +6,6 @@
 
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
-    <!-- Demo styles -->
-    <style>
-        @media (max-width: 760px) {
-            .swiper-button-next {
-                right: 20px;
-                transform: rotate(90deg);
-            }
-
-            .swiper-button-prev {
-                left: 20px;
-                transform: rotate(90deg);
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -36,8 +21,9 @@
 
             <!-- 頁首 -->
             @@include('./layout/header.html', {
-            "tittle1" : "Edit Your Member Info.",
-            "tittle2" : "Booking List",
+            "breadcrumb" : "tickets",
+            "tittle1" : "EDIT YOUR MEMBER INFO.",
+            "tittle2" : "BOOKING LIST",
             "active1" : "activeb",
             "active3" : "active",
             "active4" : "active",
@@ -46,83 +32,105 @@
             <main class="ticketsPage">
 
                 <!-- coding here -->
-                <section class="tickets plSpace30 prSpace30">
+                <article class="tickets">
 
-                    <h4 class="tickets_bookingName ptSpace40 pbSpace10">
-                        Current booking management (click it to show QR code)
-                    </h4>
+                    <h4 class="tickets_bookingName ptSpace40 pbSpace10">Current booking management (click it to show QR code)</h4>
 
-                    <ul class="tickets_currentBooking">
+                    <ul class="tickets_currentBooking"> 
+                        
+                        <!-- 這不說沒人知道能點啊... -->
+                        <li class="tickets_currentBooking mrSpace50">
 
-                        <li class="tickets_currentBooking-1 mrSpace100">
                             <a class="currentbookingPic-1" href="./tickets_current.html"></a>
-                            <h6 class="tickets_bookingName2">BREAK the CLASSIC</h6>
+                            <h6 class="tickets_bookingName">BREAK the CLASSIC</h6>
+
                         </li>
 
-                        <li class="tickets_currentBooking-1">
+                        <li class="tickets_currentBooking">
+
                             <a class="currentbookingPic-2" href="./tickets_current.html"></a>
-                            <h6 class="tickets_bookingName2">TRUE COLOR</h6>
+                            <h6 class="tickets_bookingName">TRUE COLOR</h6>
+
                         </li>
 
                     </ul>
 
-                    <h4 class="tickets_pastbookingName ptSpace40 pbSpace10">
-                        Past booking Management
-                    </h4>
-
-                    <!-- Slider main container -->
-                    <div class="swiper-container">
-                        <div class="swiper">
-
-                            <ul class="swiper-wrapper tickets_pastBooking">
-                                <li class="swiper-slide tickets_pastBooking">
-                                    <a class="pastPic-1" href="./tickets_past.html"></a>
-                                    <h6 class="tickets_bookingName2">INTERWEAVE</h6>
-                                </li>
-
-                                <li class="swiper-slide tickets_pastBooking">
-                                    <a class="pastPic-2" href="./tickets_past.html"></a>
-                                    <h6 class="tickets_bookingName2">FOOD ART</h6>
-                                </li>
-
-                                <li class="swiper-slide tickets_pastBooking">
-                                    <a class="pastPic-3" href="./tickets_past.html"></a>
-                                    <h6 class="tickets_bookingName2">ABSTRACT</h6>
-                                </li>
-
-                                <li class="swiper-slide tickets_pastBooking">
-                                    <a class="pastPic-4" href="./tickets_past.html"></a>
-                                    <h6 class="tickets_bookingName2">MODERN TATTOO</h6>
-                                </li>
+                    <h4 class="tickets_pastbookingName ptSpace40 pbSpace10">Past booking Management</h4>
 
 
-                                <li class="swiper-slide tickets_pastBooking">
-                                    <a class="pastPic-5" href="./tickets_past.html"></a>
-                                    <h6 class="tickets_bookingName2">ABSTRACT</h6>
-                                </li>
-                                <li class="swiper-slide tickets_pastBooking">
-                                    <a class="pastPic-6" href="./tickets_past.html"></a>
-                                    <h6 class="tickets_bookingName2">Mémoire</h6>
-                                </li>
-                                <li class="swiper-slide tickets_pastBooking">
-                                    <a class="pastPic-7" href="./tickets_past.html"></a>
-                                    <h6 class="tickets_bookingName2">Renaissance</h6>
-                                </li>
-                                <li class="swiper-slide tickets_pastBooking">
-                                    <a class="pastPic-8" href="./tickets_past.html"></a>
-                                    <h6 class="tickets_bookingName2">Eye Contact</h6>
-                                </li>
+                    <div class="swiper pastBooking_Management">
 
-                            </ul>
-                            <!-- pagination -->
-                            <div class="swiper-pagination"></div>
+                        <ul class="swiper-wrapper tickets_pastBooking">
 
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
+                            <li class="swiper-slide tickets_pastBooking">
 
-                        </div>
+                                <a class="pastPic-1" href="./tickets_past.html"></a>
+                                <h6 class="tickets_bookingName">INTERWEAVE</h6>
+
+                            </li>
+
+                            <li class="swiper-slide tickets_pastBooking">
+
+                                <a class="pastPic-2" href="./tickets_past.html"></a>
+                                <h6 class="tickets_bookingName">FOOD ART</h6>
+
+                            </li>
+
+                            <li class="swiper-slide tickets_pastBooking">
+
+                                <a class="pastPic-3" href="./tickets_past.html"></a>
+                                <h6 class="tickets_bookingName">ABSTRACT</h6>
+
+                            </li>
+
+                            <li class="swiper-slide tickets_pastBooking">
+
+                                <a class="pastPic-4" href="./tickets_past.html"></a>
+                                <h6 class="tickets_bookingName">MODERN TATTOO</h6>
+
+                            </li>
+
+
+                            <li class="swiper-slide tickets_pastBooking">
+
+                                <a class="pastPic-5" href="./tickets_past.html"></a>
+                                <h6 class="tickets_bookingName">ABSTRACT</h6>
+
+                            </li>
+
+                            <li class="swiper-slide tickets_pastBooking">
+
+                                <a class="pastPic-6" href="./tickets_past.html"></a>
+                                <h6 class="tickets_bookingName">Mémoire</h6>
+
+                            </li>
+
+                            <li class="swiper-slide tickets_pastBooking">
+
+                                <a class="pastPic-7" href="./tickets_past.html"></a>
+                                <h6 class="tickets_bookingName">Renaissance</h6>
+
+                            </li>
+
+                            <li class="swiper-slide tickets_pastBooking">
+
+                                <a class="pastPic-8" href="./tickets_past.html"></a>
+                                <h6 class="tickets_bookingName">Eye Contact</h6>
+
+                            </li>
+
+                        </ul>
+
+                        <!-- pagination -->
+                        <!-- <div class="swiper-pagination"></div> -->
+
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+
                     </div>
-                </section>
+
+                </article>
+
             </main>
 
             <!-- 頁尾 -->
