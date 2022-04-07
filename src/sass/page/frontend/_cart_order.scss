@@ -116,54 +116,7 @@ article.cartOrder{
         margin-top: 1%; 
         margin-left: 18%; 
         padding: 20px;
-
         box-sizing: border-box;
-    
         background-color: $PopUpWindow;
     }
-
-    section.cartButton{
-        width: 35%; 
-        float: right; 
-
-        a{
-            width: 125px; 
-            height: 40px; 
-            background-color: $Gray; 
-            display: inline-block;
-            text-align: center;
-            padding: 5px;
-            box-sizing: border-box;
-
-            &:last-child{
-                background-color: $AccentColor3;
-            }
-        }
-    }
 }
-
-// 按鈕
-.btn_group{
-    text-align: right;
-    margin-right: 33%; 
-}
-
-.btn_order_cancel{
-    width: 100px;
-    height: 30px;
-    background-color: #C4C4C4;
-    border: none;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000;
-    margin-bottom: 50px;
-}
-
-.btn_order_next{
-    width: 100px;
-    height: 30px;
-    background-color: #F29966;
-    border: none;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000;
-}
-
