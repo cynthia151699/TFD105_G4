@@ -103,90 +103,45 @@
     }
 }
 
-/* From cssbuttons.io */
-// 統一一下，感覺效果不太好
-// .defaultBtn {
-//     padding: 12px 24px;
-//     background-color: white;
-//     border-radius: 6px;
-//     position: relative;
-//     overflow: hidden;
-// }
-
-// .defaultBtn span {
-//     color: black;
-//     position: relative;
-//     z-index: 1;
-//     transition: color 0.6s cubic-bezier(0.53, 0.21, 0, 1);
-
-// 	&::before {
-// 		content: '';
-// 		position: absolute;
-// 		top: 50%;
-// 		left: 0;
-// 		border-radius: 6px;
-// 		transform: translate(-100%, -50%);
-// 		width: 100%;
-// 		height: 100%;
-// 		background-color: hsl(244, 63%, 69%);
-// 		transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
-// 	}
-
-// 	&:hover {
-// 		span {
-// 			color: white;
-// 		}
-
-// 		&:before {
-// 			transform: translate(0, -50%);
-// 		}
-// 	}
-// }
-
 
 .defaultBtn {
-    padding: 12px 24px;
-    background-color: white;
-    border-radius: 6px;
-    position: relative;
-    overflow: hidden;
+    // padding: 12px 24px;
+    // background-color: white;
+    // border-radius: 6px;
+    // position: relative;
+    // overflow: hidden;
+    width: 100px;
+    height: 30px;
+    background-color: #F29966;
+    // border: none;
+    // cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+    display: inline-flex;
+    align-items: center;
+
+    &:hover {
+		span {
+			color: white;
+		}
+    }
+
 }
 
 .defaultBtn span {
     color: black;
-    position: relative;
-    z-index: 1;
-    transition: color 0.6s cubic-bezier(0.53, 0.21, 0, 1);
-}
+    // position: relative;
+    // z-index: 1;
+    // transition: color 0.6s cubic-bezier(0.53, 0.21, 0, 1);
+    width: fit-content;
+    margin: 0 auto;
 
-.defaultBtn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    border-radius: 6px;
-    transform: translate(-100%, -50%);
-    width: 100%;
-    height: 100%;
-    background-color: hsl(244, 63%, 69%);
-    transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
+	&:hover {
+		span {
+			color: white;
+		}
 
-    opacity: 0;
-}
-
-.defaultBtn:hover span {
-    color: white;
-}
-
-.defaultBtn:hover::before {
-    transform: translate(0, -50%);
-
-    animation-name: show;
-    animation-duration: 1s;
-    opacity: 1;
-}
-
-@keyframes show{
-    0%{opacity: 0;}
-    100%{opacity: 1;}
+		&:before {
+			// transform: translate(0, -50%);
+		}
+	}
 }
