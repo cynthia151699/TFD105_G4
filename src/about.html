@@ -6,7 +6,6 @@
 </head>
 
 <body>
-
     <div class="wrapper">
 
         <!-- 導覽列 -->
@@ -14,31 +13,21 @@
         "active4" : "active"
         })
 
-        <div class="mainContainer">
+        <main>
+            <!-- coding here -->
 
-            <!-- 頁首 -->
-            @@include('./layout/header.html', {
-            "breadcrumb" : "about",
-            "tittle1" : "ABOUT ANNO",
-            "tittle2" : "HISTORY OF ANNO",
-            "active1" : "activeb",
-            "active3" : "active",
-            "active4" : "active",
-            })
+            <div id="fullpage">
 
-            <main>
+                <div class="section active " id="section0">
 
-                <!-- coding here -->
-                <div id="fullpage">
+                    <div class="wrapperAbout plSpace10" data-aos="fade-down" data-aos-easing="linear"
+                        data-aos-duration="1500">
 
-                    <div class="section active " id="section0">
+                        <div class="aboutCnt ptSpace60 ">
 
-                        <div class="wrapperAbout plSpace10" data-aos="fade-down" data-aos-easing="linear"
-                            data-aos-duration="1500">
-                            <div class="aboutCnt ptSpace60">
-                                <h2 class="aboutTitle pbSpace50">About ANNO Museum</h2>
+                            <h2 class="aboutTitle pbSpace50 animate__animated animate__bounce">About ANNO Museum</h2>
 
-                                <h6 class="aboutCntFr pbSpace50">
+                                <h6 class="aboutCntFr pbSpace30">
                                     Art records the deduction in ANNO Museum,
                                     <br>
                                     All is exist in the past, present, and future.
@@ -50,102 +39,121 @@
                                     You can accomplish every single dream here,
                                     <br>
                                     ANNO can be everyone's Utopia,
-                                </h6>
+                                    </h6>
 
-                                <h6 class="aboutCntEn pbSpace80">
-                                    Let us open our minds,
-                                    <br>
-                                    Create your own Anno.
-                                </h6>
-                            </div>
-                            <div class="content">
-                                <img class="content__img" src="./img/about/about_spic1.jpg" alt="Some image" />
-                                <img class="content__img" src="./img/about/about_spic2.jpg" alt="Some image" />
-                                <img class="content__img" src="./img/about/about_spic3.jpg" alt="Some image" />
-                                <img class="content__img" src="./img/about/about_spic4.jpg" alt="Some image" />
-                                <img class="content__img" src="./img/about/about_spic5.jpg" alt="Some image" />
-                                <img class="content__img" src="./img/about/about_spic6.jpg" alt="Some image" />
-                            </div>
+                                    <h6 class="aboutCntEn pbSpace80">
+                                        Let us open our minds,
+                                        <br>
+                                        Create your own Anno.
+                                    </h6>
                         </div>
 
+                        <div class="content">
+                            <img class="content__img" src="./img/about/about_spic1.jpg" alt="Some image" />
+                            <img class="content__img" src="./img/about/about_spic2.jpg" alt="Some image" />
+                            <img class="content__img" src="./img/about/about_spic3.jpg" alt="Some image" />
+                            <img class="content__img" src="./img/about/about_spic4.jpg" alt="Some image" />
+                            <img class="content__img" src="./img/about/about_spic5.jpg" alt="Some image" />
+                            <img class="content__img" src="./img/about/about_spic6.jpg" alt="Some image" />
+                        </div>
                     </div>
+                </div>
 
+                <div class="section aboutHistory " id="section1">
 
-                    <div class="section aboutHistory " id="section1">
+                    <h2 class=" text ptSpace50">History of Anno</h2>
 
-                        <div class="aboutHistoryContent plSpace90">
+                    <div class="aboutHistoryContent plSpace90" style="display:none;">
 
-                            <h2 class="ptSpace50">History of Anno</h2>
+                        <h2 class="ptSpace50">History of Anno</h2>
 
-                            <h6 class="aboutHistoryFirst ptSpace80">
-                                Anno Museum is a new museum located in Taipei.
-                                <br>
-                                The museum was founded in 2015, by six students in
-                                <br>
-                                TIBAMI who have a lot of enthusiasm for art and life.
-                            </h6>
+                        <h6 class="aboutHistoryFirst ptSpace80">
+                            Anno Museum is a new museum located in Taipei.
+                            <br>
+                            The museum was founded in 2015, by six students in
+                            <br>
+                            TIBAMI who have a lot of enthusiasm for art and life.
+                        </h6>
 
-                            <div class="wrapperAbhiMd ">
+                        <div class="wrapperAbhiMd ">
 
-                                <h6 class="aboutHistoryMid ptSpace60 plSpace80">
-                                    They hope that through the establishment of the museum, education, and culture can
-                                    be
-                                    promoted so that more people can know and getclose to art.
-                                </h6>
-
-                            </div>
-
-                            <h6 class="aboutHistoryEnd ptSpace60">
-
-                                Without setting limits on style, they want to show a
-                                <br>
-                                wide range of artworks from classic to trendy for the
-                                <br>
-                                general public.
-
+                            <h6 class="aboutHistoryMid ptSpace60 plSpace80">
+                                They hope that through the establishment of the museum, education, and culture can
+                                be
+                                promoted so that more people can know and getclose to art.
                             </h6>
                         </div>
 
+                        <h6 class="aboutHistoryEnd ptSpace60">
+                            Without setting limits on style, they want to show a
+                            <br>
+                            wide range of artworks from classic to trendy for the
+                            <br>
+                            general public.
+                        </h6>
                     </div>
+                </div>
 
-                    <div class="section wrapperSns " id="section2">
-                        <div class="sns mtSpace100">
-                            <div class="snsFb ">
-                                <h3 class="pbSpace50">Facebook</h3>
-                                <div class="fb-page mlSpace150 " data-href="https://www.facebook.com/ANNO_Taiwan-102648079085520"
-                                    data-tabs="timeline" data-width="" data-height="" data-small-header="true"
-                                    data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                    <blockquote cite="https://www.facebook.com/ANNO_Taiwan-102648079085520"
-                                        class="fb-xfbml-parse-ignore"><a
-                                            href="https://www.facebook.com/ANNO_Taiwan-102648079085520">ANNO_Taiwan</a>
-                                    </blockquote>
-                                </div>
-                            </div>
-                            <div class="snsIg">
-                                <H3>Instagram</H3>
-                                <span></span>
-                            </div>
-                            <div class="snsTwitter">
-                                <h3>Twitter</h3>
+                <div class="section wrapperSns " id="section2">
+
+                    <div class="sns mtSpace100">
+
+                        <div class="snsFb ">
+
+                            <h3 class="pbSpace50">Facebook</h3>
+
+                            <div class="fb-page mlSpace150 "
+                                data-href="https://www.facebook.com/ANNO_Taiwan-102648079085520" data-tabs="timeline"
+                                data-width="" data-height="" data-small-header="true" data-adapt-container-width="true"
+                                data-hide-cover="false" data-show-facepile="true">
+
+                                <blockquote cite="https://www.facebook.com/ANNO_Taiwan-102648079085520"
+                                    class="fb-xfbml-parse-ignore"><a
+                                        href="https://www.facebook.com/ANNO_Taiwan-102648079085520">ANNO_Taiwan</a>
+                                </blockquote>
                             </div>
                         </div>
+
+                        <div class="snsIg">
+                            <h3>Instagram</h3>
+                            <span></span>
+                        </div>
+
+                        <div class="snsTwitter">
+                            <h3>Twitter</h3>
+                        </div>
                     </div>
-
-            </main>
-
-            <!-- 頁尾 -->
-            @@include('./layout/footer.html')
-        </div>
+                </div>
+            </div>
+        </main>
     </div>
 
-    <!-- 載入js、套件 -->
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v13.0" nonce="NxXdDjCx"></script>
+    <!-- 載入套件 -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v13.0"
+        nonce="NxXdDjCx"></script>
+
     <script src="./js/vendors/fullpage.min.js"></script>
     <script src="./js/vendors/TweenMax.min.js"></script>
     <script src="./js/vendors/imagesloaded.pkgd.min.js"></script>
 
-    <!-- 大家自己寫的js 在這！ -->
+    <!-- 載入js -->
     <script src="./js/about.min.js"></script>
+    <script>
+          $(".text").click(function () {
+            restart()
+            
+            console.log("ddd");
+        });
+
+        function restart(){
+  $('.aboutHistoryContent').css({'top': '80px'}),
+  $('.text').css({'display': 'none'}),
+  $(".aboutHistoryContent").css({'display': 'block'}),
+  $('.aboutHistoryContent').animate({'top': 0}, {"duration":2000,"queue":false});
+  $('.aboutHistoryContent').fadeIn(2000);
+  
+}
+    </script>
 </body>
 
 </html>

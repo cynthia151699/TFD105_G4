@@ -48,26 +48,30 @@
             text-align: right;
         }
     }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        isolation: isolate;
+    }
+    .content__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
 }
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    isolation: isolate;
-}
-.content__img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
+
 
 
 // ======================anno history======================
 .aboutHistory{
+    position: relative;
     @include VerticalAlignCenter();
     @include LinkImg(about, about_pic1, png, cover, null, null);
     .aboutHistoryContent{
+        position: relative;
+        top: 80px;
         width: $Width;
         height: 500px;
     }
@@ -90,11 +94,21 @@
     
 }
 
+.text{
+    text-align: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+}
 
+.none{
+    display: none;
+}
 
 
 // -------------sns----------------
 .wrapperSns{
+    @include LinkImg(about, about_spic7, jpeg, cover, null, null);
     @include VerticalAlignCenter();
     width: $Width;
     height: $Height;
@@ -102,6 +116,7 @@
 .sns{
     @include HorizontalAlignCenter();
     @include Flex(row);
+    width:1200px;
     h3{
         color:$TextColor2;
         text-shadow: $TextShadow;
@@ -109,15 +124,13 @@
     }
     .snsFb{
        flex-grow: 1;
-       .fb-page{
-    
-       }
     }
     .snsIg{
-        flex-grow: 2;
+        flex-grow: 3;
     }
    
     .snsTwitter{
         flex-grow: 2;
     }
 }
+
