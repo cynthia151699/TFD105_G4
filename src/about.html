@@ -61,7 +61,7 @@
 
                 <div class="section aboutHistory " id="section1">
 
-                    <h2 class=" text ptSpace50">History of Anno</h2>
+                    <h2 class=" aboutHistoryText ptSpace50">History of Anno</h2>
 
                     <div class="aboutHistoryContent plSpace90" style="display:none;">
 
@@ -139,7 +139,7 @@
     <!-- 載入js -->
     <script src="./js/about.min.js"></script>
     <script>
-          $(".text").click(function () {
+          $(".aboutHistoryText").click(function () {
             restart()
             
             console.log("ddd");
@@ -147,7 +147,7 @@
 
         function restart(){
   $('.aboutHistoryContent').css({'top': '80px'}),
-  $('.text').css({'display': 'none'}),
+  $('.aboutHistoryText').css({'display': 'none'}),
   $(".aboutHistoryContent").css({'display': 'block'}),
   $('.aboutHistoryContent').animate({'top': 0}, {"duration":2000,"queue":false});
   $('.aboutHistoryContent').fadeIn(2000);
