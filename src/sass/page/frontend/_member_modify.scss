@@ -7,7 +7,7 @@
     width: calc(100vw - 70px);
     height: calc(100vh - 50px);
     text-align: center;
-    @include LinkImg('Logo', 'logo', 'png', scale-down, repeat-y, left);
+    @include LinkImg('Logo', 'logo-o40-01', 'png', scale-down, repeat-y, left);
     background-position: top 0% left 0%;
     background-size: 20%;
 
