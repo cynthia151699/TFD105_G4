@@ -6,6 +6,13 @@ nav.frontNav{
     height: calc(#{$Height} + 90px);
 
     background-color: $NavBGColor;
+
+    figure.home{
+        width: 60px;
+        height: 35px;
+        @include LinkImg(logo, logo_rw, png);
+        margin: 0 auto;
+    }
     
     .navContainer{
         height: calc(#{$Height} + 90px);
@@ -13,6 +20,14 @@ nav.frontNav{
         margin: 0 auto;
 
         @include Flex(column);
+
+        li{
+            padding-top: 125%;
+
+            &:nth-child(6){
+                padding-top: 275%;
+            }
+        }
 
         svg{
             width: 35px;
