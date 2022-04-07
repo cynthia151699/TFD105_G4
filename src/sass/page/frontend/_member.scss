@@ -19,23 +19,9 @@
 	}
 }
 
-
-// 這邊是測試用連結按鈕  之後會拔掉
-#member_button_text {
-	box-sizing: border-box;
-	display: block;
-	width: 100%;
-	height: 40px;
-	line-height: 35px;
-	z-index: 12;
-}
-
 // 主要區域置中
 .member_main_all_area {
 	@include VerticalAlignCenter;
-	position: fixed;
-	// 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
-	top: 50px;
 	width: calc(100vw - 70px);
 	height: calc(100vh - 50px);
 	@include LinkImg('Logo', 'logo', 'png', scale-down, repeat-y, left);
@@ -51,24 +37,8 @@
 	@include HorizontalAlignCenter;
 }
 
-.member_text_span {
-	width: 100%;
-}
-
-
 .member_text_title {
 	text-align: left;
-}
-
-// 選框區域 框和文字水平排列
-.member_span_choose {
-	@include Flex (row);
-	line-height: 12px;
-}
-
-.member_span_choose .member_p_style {
-	color: $TextColor;
-	font-size: 12px;
 }
 
 // 主要區域  註冊內容  高度470 比內頁略高
@@ -78,28 +48,17 @@
 	background-color: $TextColor2;
 }
 
-// 註冊按鈕id
-#member_button {
-	background-color: $AccentColor2;
-	width: 100%;
-	height: 40px;
-	line-height: 20px;
-	cursor: pointer;
-}
-
 // 移動bar文字顏色
 .member_move_text {
 	color: $TextColor2;
-	padding: 0 15px;
 }
 
 //文字框顏色
 .member_input_text {
-	background-color: $HFBGColor;
+	// background-color: ;
 	color: $TextColor2;
 	width: 100%;
-	height: 26px;
-	box-sizing: border-box;
+	height: 25px;
 }
 
 // 按鈕顏色
@@ -115,8 +74,6 @@
 
 // 跳窗背景
 .member_Terms_text {
-	// 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
-	top: 50px;
 	position: fixed;
 	display: none;
 	z-index: 11;
@@ -128,12 +85,14 @@
 
 // 跳窗
 .member_Terms_area {
-	top: 50px;
+
 	display: none;
 	z-index: 11;
+
 	width: 600px;
 	height: 300px;
 	background-color: $TextColor2;
+	
 	position: fixed;
 	left: 50%;
 	top: 50%;
@@ -142,18 +101,17 @@
 }
 
 .member_Terms_inner {
-	overflow-y: scroll;
+
 	width: 600px;
 	height: 270px;
-
 }
 
 //跳窗標題
 .member_Terms_title {
 	color: $TextColor2;
 	background-color: $TextColor;
+
 	text-align: center;
-	position: relative;
 }
 
 // 跳窗刪除
@@ -170,7 +128,7 @@ $contW: 900px;
 $imgW: 260px;
 $formW: $contW - $imgW;
 $switchAT: 1.2s;
-$inputW: 390px;
+// $inputW: 390px;
 $btnH: 36px;
 
 
@@ -181,8 +139,6 @@ $btnH: 36px;
 		@content;
 	}
 }
-
-
 
 .cont {
 	overflow: hidden;
@@ -372,31 +328,39 @@ $btnH: 36px;
 // 		width: 700px;
 // 	}
 
+// 	.member_span_choose .member_p_style {
+// 		word-wrap:break-word;
+// 	}
+
 // 	// 滑動移動距離
 // 	$contW: 700px;
 // 	$imgW: 260px;
 // 	$formW: $contW - $imgW;
 // 	$switchAT: 1.2s;
-// 	$inputW: 390px;
 // 	$btnH: 36px;
+
 // 	.member_main_form {
 // 		width: $formW;
+// 	}
 
-// 	}
-// 	.member_img {
-// 		width: 200px;
-// 	}
-// 	.sub-cont{
-// 		width: 440px;
+// 	.sub-cont {
+// 		overflow: hidden;
+// 		position: absolute;
+// 		left: $formW;
+// 		top: 0;
+// 		width: $contW;
+// 		height: 100%;
+// 		padding-left: $imgW;
+// 		background: #fff;
+// 		transition: transform $switchAT ease-in-out;
 
+// 		@include signUpActive {
+// 			transform: translate3d($formW * -1, 0, 0);
+// 		}
 // 	}
-// 	// .sub-cont{
-// 	// 	width: 260px;
-// 	// }
+
 // 	.member_cla_button {
-// 		width: 300px;
-// 		color: $TextColor;
-// 		@include HorizontalAlignCenter(20px, 20px);
+// 		width: 350px;
 // 	}
 
 // }

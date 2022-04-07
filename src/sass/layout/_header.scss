@@ -103,6 +103,10 @@ header.backHeader{
                 border: none;
             }
         }
+
+        .btn{
+            display: none;
+        }
     }
 
     .search{
@@ -138,5 +142,19 @@ header.backHeader{
                 border-bottom: 1.5px solid $TextColor;
             }
         }
+
+        input{
+            height: 35px;
+
+            // background-color: $HFBGColor;
+
+            // border: none;
+            // border-radius: $BorderRadius;
+
+            // box-shadow: $BoxShadow;
+
+            // margin-top: 76px;
+        }
+
     }
 }
