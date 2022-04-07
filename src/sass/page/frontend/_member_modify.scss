@@ -69,33 +69,41 @@
 }
 
 // button位置
-.member_modify_main_bt {
+
+.memberButton{
     @include VerticalAlignCenter;
-    width: 100%;
-
-    .member_modify_Bt1 {
-        display: block;
-        width: 20%;
-        text-align: center;
-        background-color: #AD9F9F;
-        left: 20%
-    }
-
-    .member_modify_Bt2 {
-        display: block;
-        width: 20%;
-        text-align: center;
-        background-color: $AccentColor2;
-        left: 25%;
-    }
-
+    padding-left: 180px;
 }
+
+
+// .member_modify_main_bt {
+//     @include VerticalAlignCenter;
+//     width: 100%;
+
+//     .member_modify_Bt1 {
+//         display: block;
+//         width: 20%;
+//         text-align: center;
+//         background-color: #AD9F9F;
+//         left: 20%
+//     }
+
+//     .member_modify_Bt2 {
+//         display: block;
+//         width: 20%;
+//         text-align: center;
+//         background-color: $AccentColor2;
+//         left: 25%;
+//     }
+
+// }
 
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
     .member_modify_main {
         width: 700px;
     }
+
 
 }
 
@@ -120,6 +128,10 @@
             .member_modify_Bt2 {
                 width: 20%;
 
+            }
+
+            .memberButton{
+                padding-left: 0px;
             }
 
     }
