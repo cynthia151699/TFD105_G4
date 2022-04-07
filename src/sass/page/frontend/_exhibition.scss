@@ -24,6 +24,7 @@ main.exRelative{
     h2,h3,h5,p{
         color: $TextColor2;
         text-align: left;
+        line-height: $LineHeight;
     }
  
 }
@@ -34,18 +35,20 @@ div#left1{
     @include VerticalAlignCenter;
     section.exCurrent{
         @include HorizontalAlignCenter;
-        h2{
+        h2.ex_title{
             color: #F0F28D;
-            text-align: left;
-            line-height: $LineHeight;
+        }
+        a.ex_buyTicket{
+            position: absolute;
+            right: 60px;
         }
     }            
 }
 div#left2{
     @include VerticalAlignCenter;
-    section.exCurrent{
+    section.exUpcoming{
         @include VerticalAlignCenter;
-        img.currentPic-1{
+        img.upcomingPic-1{
             display: inline-block;
             width: 80%;
             @include HorizontalAlignCenter;
@@ -110,15 +113,19 @@ div#left3{
 
 //===============================右邊區塊===============================================//
 div#right1{
-    @include LinkImg('exhibition', 'exhibition_pic1', 'jpeg', cover, no-repeat, center);
+    @include LinkImg('exhibition', 'exhibition_pic1', 'png', cover, no-repeat, center);
     @include VerticalAlignCenter;
     
 }
 div#right2{
-    @include LinkImg('exhibition', 'exhibition_pic3', 'jpeg', cover, no-repeat, center);
+    @include LinkImg('exhibition', 'exhibition_pic3', 'png', cover, no-repeat, center);
     @include VerticalAlignCenter;
     section.exUpcoming{
         @include HorizontalAlignCenter;
+    }
+    a.ex_buyTicket{
+        position: absolute;
+        right: 60px;
     }
 }
 div#right3{
@@ -145,6 +152,62 @@ ul.exBefore > li > a >img{
 }
 
 
+//===============================RWD ===============================================//
+ //當瀏覽器寬度小於992的時候
+// main.exRelative {
+//     div.mobile h2 {
+//         font-size: 24px;
+//         text-align: center;
+//     }
+//     div.mobile h3 {
+//         font-size: 18px;
+//     } 
+//     div.mobile h4 {
+//         font-size: 16px;
+//     } 
+//     div.mobile h5 {
+//         font-size: 14px;
+//     } 
+//     div.mobile p {
+//         font-size: 12px;
+//     } 
+// }
+
+// div.mobile{
+//     @include Remind;
+//     section{
+//         @include Remind(blue);
+//         width: 100%;
+//         @include HorizontalAlignCenter;
+//     }
+// }
+
+// @media screen and (max-width: 991.98px){
+//     div.desktop{
+//         display: none;
+//     }
+//     div.mobile{
+//         display: block;
+//         overflow-y:auto;
+//     }
+// }
 
 
 
+//===============================RWD 當期展覽 ===============================================//
+
+// section.exBlock1_current{
+//     h2.current_title{
+//         color: #F0F28D;
+//     }
+    
+// }
+//===============================RWD 未來展覽 ===============================================//
+// section.exBlock2_upcoming{
+//     @include LinkImg('exhibition', 'exhibition_pic3', 'png', cover, no-repeat, center);
+//     img.upcomingPic-1{
+//         width: 100%;
+//     }
+// }
+
+//===============================RWD 過往展覽 ===============================================//
