@@ -23,13 +23,12 @@
 .mainOpenhours{
     @include LinkImg(visit, visit_pic1, png, cover, null, null);
     @include VerticalAlignCenter();
-    @include HorizontalAlignCenter();
 }
 .wrapperOpenhours{
     @include Flex(row);
     @include VerticalAlignCenter();
     width:$RWD;
-    height:450px;
+    height:500px;
     background-color: #2932419a;
 }
 
@@ -71,34 +70,40 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+.guideTicketsCnt{
     h2{
         color:$AccentColor3;
+        text-align: center;
+       
     }
     h3{
         color:$HFBGColor;
-    }
-    .guideticketCntMd{
-        color:$SecondaryColor;
-    }
-    .guideticketCntLine{
-        border:2px solid $NavBGColor;
-        display: block;
-        width: 600px;
-        height: 2px;
-        background-color: $NavBGColor;
-    }
-    .guideticketCntTime{
-
-        @include Flex (row);
-        line-height: 1.6;
-        width:550px;
-    }
-    .guideticketCntPr{
-        @include Flex (row);
-        width:550px;
+        text-align: center;
     }
 }
+.guideticketCntMd{
+    color:$SecondaryColor;
     
+}
+.guideticketCntLine{
+    border:2px solid $NavBGColor;
+    display: block;
+    width: 600px;
+    height: 2px;
+    background-color: $NavBGColor;
+}
+.guideticketCntTime{
+    @include Flex (row);
+    @include HorizontalAlignCenter();
+    line-height: 1.6;
+    width:550px;
+}
+.guideticketCntPr{
+    @include Flex (row);
+    @include HorizontalAlignCenter();
+    width:550px;
+}
 // -----交通資訊----------
 .wapperTrans{
     @include Flex(row);

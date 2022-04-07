@@ -7,69 +7,44 @@
 
 <body>
     <div class="wrapper">
+
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
         "active3" : "active"
         })
 
-        <div class="mainContainer">
+        <main>
+            <!-- coding here... -->
 
-            <!-- 頁首 -->
-            @@include('./layout/header.html', {
-            "breadcrumb" : "tickets",
-            "tittle1" : "EDIT YOUR MEMBER INFO.",
-            "tittle2" : "BOOKING LIST",
-            "active1" : "activeb",
-            "active3" : "active",
-            "active4" : "active",
-            })
+            <div class="wrapperTicketsCur">
 
-            <main>
+                <div class="ticketsCurCon ptSpace80">
 
-                <!-- coding here... -->
-                <div class="wrapperTicketsCur">
+                    <div class="ticketsCurConUp pbSpace50">
 
-                    <div class="ticketsCurCon ptSpace80" data-aos="fade-down"
-                    data-aos-easing="linear" data-aos-duration="1500">
-                        <div class="ticketsCurConUp pbSpace50">
-                            <div class="ticketsCurLt" >
+                        <div class="ticketsCurLt">
 
-                                <h2>Current booking info</h2>
-
-                                <h4>Name:<span>BREAK the CLASSIC</span></h4>
-
-                                <h4>Time:<span>2022/2/5 09:00～2022/5/5 17:00</span></h4>
-
-                                <h4>Location:<span>Anno Museum South Building</span></h4>
-
-                                <h4>Tickets:<span>Advance Ticket X 2 </span></h4>
-
-                                <h4>Amount:<span>NTD$800</span></h4>
-
-                            </div>
-
-                            <div class="ticketsCurRi ptSpace20">
-                                <img src="./img/tickets/anno_qr.png" alt="">
-                            </div>
+                            <h2>Current booking info</h2>
+                            <h4>Name:<span>BREAK the CLASSIC</span></h4>
+                            <h4>Time:<span>2022/2/5 09:00 ~ 2022/5/5 17:00</span></h4>
+                            <h4>Location:<span>Anno Museum South Building</span></h4>
+                            <h4>Tickets:<span>Advance Ticket X 2 </span></h4>
+                            <h4>Amount:<span>NTD$800</span></h4>
                         </div>
-                        <!-- 普通按鈕 -->
-                        <a class="defaultBtn " href="./tickets.html">
-                            <span>cancel</span>
-                        </a>
+
+                        <div class="ticketsCurRi ptSpace20">
+                            <img src="./img/tickets/anno_qr.png" alt="">
+                        </div>
                     </div>
 
+                    <!-- 普通按鈕 -->
+                    <a class="defaultBtn " href="./tickets.html">
+                        <span>cancel</span>
+                    </a>
                 </div>
-            </main>
-
-            <!-- 頁尾 -->
-            @@include('./layout/footer.html')
-        </div>
+            </div>
+        </main>
     </div>
-
-    <script>
-        AOS.init();
-    </script>
-
 </body>
 
 </html>

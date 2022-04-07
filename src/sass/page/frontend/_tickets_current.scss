@@ -1,3 +1,5 @@
+
+// ---外框&按鈕------
 .wrapperTicketsCur{
     @include VerticalAlignCenter();
     width: $RWD;
@@ -7,22 +9,6 @@
         align-content: center;
         width: $RWD;
         margin: $HorizontalAlignCenter;
-        .ticketsCurConUp{
-            @include Flex(row);
-            @include HorizontalAlignCenter();
-            width: 1200px;
-            justify-content: space-between;
-            .ticketsCurLt{
-
-                line-height: 2.5;
-                h2{
-                    color:$TextColor2;
-                }
-                h4{
-                    color:$TextColor2;
-                }
-            }
-        }
        .defaultBtn{
         width: 200px;
         background-color:$AccentColor2; 
@@ -30,5 +16,25 @@
         text-align: center;
        } 
     }
-    
+}
+// -----內容文字------
+.ticketsCurConUp{
+    @include Flex(row);
+    @include HorizontalAlignCenter();
+    width: 1000px;
+    justify-content: space-between;
+    .ticketsCurLt{
+
+        line-height: 2.5;
+        h2{
+            color:$TextColor2;
+        }
+        h4{
+            color:$TextColor2;
+        }
+    }
+}
+// ------qr code-----
+.ticketsCurRi img{
+    width:350px;
 }

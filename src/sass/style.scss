@@ -124,6 +124,7 @@ body{
         }
 
         main{
+            width: $RWD;
             height: $Height;
             background-color: $PrimaryColor;
             overflow: hidden;
