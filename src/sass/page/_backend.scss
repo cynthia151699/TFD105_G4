@@ -87,6 +87,11 @@
     .discount {
         @include PopUp();
     }
+
+    .checkButtons{
+        width: fit-content; 
+        margin: 20px auto 20px auto;
+    }
 }
 
 // 後臺表單

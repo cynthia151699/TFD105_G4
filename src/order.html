@@ -21,7 +21,7 @@
                 <form>
                     <div class="order -edit">
                         <h5>編輯訂單</h5>
-                        <ul>
+                        <ul style="height: 400px; overflow-y: auto;">
                             <li>
                                 <h6>編號<input type="text"></h6>
                             </li>
@@ -71,15 +71,19 @@
                                 <h6>創建時間</h6>
                             </li>
                         </ul>
-                        <button>取消</button>
-                        <button>確定</button>
+
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
                     </div>
 
                     <div class="order -store">
                         <h5>編輯訂單</h5>
                         <h6>尚未儲存，是否確認離開？</h6>
-                        <div class="cc">
-                            <button>取消</button>
+                        
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
                             <button>確定</button>
                         </div>
                     </div>
@@ -92,6 +96,7 @@
             @@include('./layout/backheader.html', {
             tittle1: "訂單管理",
             tittle2: "以訂單編號查詢",
+            btn: "btn", 
             })
 
             <form>

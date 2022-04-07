@@ -41,15 +41,21 @@
                                 <h6>創建時間</h6>
                             </li>
                         </ul>
-                        <button>取消</button>
-                        <button>確定</button>
+
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
                     </div>
 
                     <div class="member -store">
                         <h5>編輯會員</h5>
                         <h6>尚未儲存，是否確認離開？</h6>
-                        <button>取消</button>
-                        <button>確定</button>
+                        
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -61,6 +67,7 @@
             @@include('./layout/backheader.html', {
             tittle1: "會員管理",
             tittle2: "以會員帳號查詢",
+            btn: "btn", 
             })
 
             <form>
