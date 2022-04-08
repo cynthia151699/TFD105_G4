@@ -22,10 +22,10 @@ nav.frontNav{
         @include Flex(column);
 
         li{
-            padding-top: 125%;
+            padding-top: 110%;
 
             &:nth-child(6){
-                padding-top: 275%;
+                padding-top: 225%;
             }
         }
 
