@@ -38,3 +38,17 @@
 .ticketsCurRi img{
     width:350px;
 }
+
+
+
+
+//============================= 過往票券 RWD ======================================//
+@media screen and (max-width: 768px) {
+    div.ticketsCurCon{
+        display: block;
+        @include HorizontalAlignCenter();
+    }
+    div.ticketsCurConUp{
+        display: block;
+    }
+}

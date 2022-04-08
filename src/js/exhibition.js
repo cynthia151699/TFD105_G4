@@ -26,3 +26,35 @@ $(function(){
         $(".tabs_item").eq(tabs_itemAll).siblings().hide();
     });
 });
+
+
+
+// <!-- Initialize Swiper -->
+var swiper = new Swiper('.swiper', {
+    slidesPerView: 4,
+    loop: false,
+    pagination: {
+    el: '.swiper-pagination',
+    clickable :true,
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30
+        },
+        576: {
+            slidesPerView: 1,
+        },
+
+        320: {
+            slidesPerView: 1,
+        }
+
+    }
+});

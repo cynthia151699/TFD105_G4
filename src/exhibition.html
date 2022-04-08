@@ -4,6 +4,9 @@
 <head>
     @@include('./layout/head.html')
 
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -18,7 +21,7 @@
         <main class="exRelative">
             <!-- coding here -->
 
-            <div id="myContainer" class="desktop"><!--1440版-->
+            <div id="myContainer" class="desktop"><!--桌機版-->
 
                 <div class="ms-left"><!--左邊區塊-->
 
@@ -56,7 +59,7 @@
 
                         <section class="exUpcoming">
 
-                            <h2>
+                            <h2><!--隱藏字-->
                                 UPCOMING UPCOMING<br>
                                 UPCOMING UPCOMING<br>
                                 UPCOMING UPCOMING<br>
@@ -64,7 +67,7 @@
                                 UPCOMING UPCOMING<br>
                             </h2>
 
-                            <img class="upcomingPic-1" src="./img/exhibition/exhibition_pic2.png" alt="">
+                            <img class="upcomingPic-1" src="./img/exhibition/exhibition_pic2.png" alt=""><!--左二圖片-->
 
                         </section>
                     </div><!--左邊第二區 end-->
@@ -77,7 +80,7 @@
 
                                 <h3 class="exPast_title ptSpace200">PAST EXHIBITION</h3>
                                 
-                                <h2>
+                                <h2><!--隱藏字-->
                                     PAST EXHIBITION<br>
                                     PAST EXHIBITION<br>
                                     PAST EXHIBITION<br>
@@ -87,11 +90,11 @@
 
                             </div>  
 
-                            <div class="tabs_item"><!--展覽訊息1-->
+                            <div class="tabs_item"><!--點擊顯示展覽訊息1-->
 
-                                <div class="exPast_contentBg1"></div>
+                                <div class="exPast_contentBg1"></div><!--展訊背景圖片-->
 
-                                <div class="exPast_content">
+                                <div class="exPast_content"><!--文字內容-->
 
                                     <h3 class="ex_title mbSpace50">PAST</h3>
 
@@ -107,14 +110,14 @@
                                         The exhibition room is only presented in black and white so that the audience can think and experience without all interference.
                                     </p>
 
-                                </div>
+                                </div><!--文字內容 end-->
                             </div> <!-- / tabs_item -->
 
-                            <div class="tabs_item"><!--展覽訊息2-->
+                            <div class="tabs_item"><!--點擊顯示展覽訊息2-->
 
-                                <div class="exPast_contentBg2"></div>
+                                <div class="exPast_contentBg2"></div><!--展訊背景圖片-->
 
-                                <div class="exPast_content">
+                                <div class="exPast_content"><!--文字內容-->
 
                                     <h3 class="ex_title mbSpace50">PAST</h3>
 
@@ -130,15 +133,15 @@
                                         The exhibition room is only presented in black and white so that the audience can think and experience without all interference.
                                     </p>
 
-                                </div>
+                                </div><!--文字內容 end-->
 
                             </div> <!-- / tabs_item -->
 
-                            <div class="tabs_item"><!--展覽訊息3-->
+                            <div class="tabs_item"><!--點擊顯示展覽訊息3-->
 
-                                <div class="exPast_contentBg3"></div>
+                                <div class="exPast_contentBg3"></div><!--展訊背景圖片-->
 
-                                <div class="exPast_content">
+                                <div class="exPast_content"><!--文字內容-->
 
                                     <h3 class="ex_title mbSpace50">PAST</h3>
 
@@ -156,7 +159,7 @@
                                     
                                     </p>
 
-                                </div>
+                                </div><!--文字內容 end-->
                             </div> <!-- / tabs_item -->
                                                     
                         </div> <!-- / tab_content -->
@@ -216,26 +219,32 @@
             </div><!--desktop end-->
 
                 
-            <div class="mobile"><!--RWD-->
+            <div class="ex_mobile"><!--RWD-->
 
                 <section class="exBlock1_current"><!--當期展覽-->
 
                     <h2 class="current_title mtSpace30 mbSpace30">CURRENT EXHIBITION</h2>
-                    <h3>Break the Classic</h3>
 
-                    <h3 class="ex_name">TAKIKAW RISA Solo Exhibition</h3>
+                    <div class="currentPic-1"></div><!--當期圖片-->
+                    
+                    <div class="currentContent"><!--當期文字內容-->
 
-                    <h5 class="ex_place mtSpace30">Place: Anno Museum South Building</h5>
+                        <h2 class="ex_title mtSpace30">Break the Classic</h2>
+                        <h3 class="ex_name">TAKIKAW RISA Solo Exhibition</h3>
 
-                    <h5 class="ex_date">Date: Februrary 5, 2022 - May 5, 2022</h5>
+                        <h5 class="ex_place mtSpace30">Place: Anno Museum South Building</h5>
 
-                    <p class="ex_content-detail mtSpace30 mbSpace30">
-                        American-Japanese artist Takikaw Risa brings a series of composite sculptures,
-                        showing the conflict between classical art and modern society.
-                        It brings childishness and a sense of trend to the solemn atmosphere of the statue
-                        and
-                        hopes to bring the audience's imagination to break through the classics.
-                    </p>
+                        <h5 class="ex_date">Date: Februrary 5, 2022 - May 5, 2022</h5>
+
+                        <p class="ex_content-detail mtSpace30 mbSpace30">
+                            American-Japanese artist Takikaw Risa brings a series of composite sculptures,
+                            showing the conflict between classical art and modern society.
+                            It brings childishness and a sense of trend to the solemn atmosphere of the statue
+                            and
+                            hopes to bring the audience's imagination to break through the classics.
+                        </p>
+
+                    </div><!--當期文字內容 end-->
 
                 </section>
 
@@ -245,31 +254,80 @@
 
                     <img class="upcomingPic-1" src="./img/exhibition/exhibition_pic2.png" alt="">
 
-                    <h5 class="ex_name mtSpace30">True Color - KAYLA GILL Solo Exhibition</h5>
+                    <div class="upcomingContent"><!--未來文字內容-->
 
-                    <h5 class="ex_place">Place：Anno Museum North Building</h5>
+                        <h5 class="ex_name mtSpace30">True Color - KAYLA GILL Solo Exhibition</h5>
 
-                    <h5 class="ex_date">Date：May 5, 2022 - August 15, 2022</h5>
+                        <h5 class="ex_place">Place：Anno Museum North Building</h5>
 
-                    <p class="ex_content-detail mtSpace30 mbSpace30">
+                        <h5 class="ex_date">Date：May 5, 2022 - August 15, 2022</h5>
 
-                        What is your true color?<br>
-                        Emerging artist KAYLA GILL will show her work that is using photography and digital
-                        techniques. The display of hundreds of works and live interactive installations will
-                        bring you to find your true color.
+                        <p class="ex_content-detail mtSpace30 mbSpace30">
 
-                    </p>
+                            What is your true color?<br>
+                            Emerging artist KAYLA GILL will show her work that is using photography and digital
+                            techniques. The display of hundreds of works and live interactive installations will
+                            bring you to find your true color.
+
+                        </p>
+                    </div><!--未來文字內容 end-->
 
                 </section>
 
-                <section class="exBlock3_past "><!--過往展覽-->
+                <section class="exBlock3_past"><!--過往展覽-->
 
                     <h2 class="past_title mtSpace30 mbSpace30">PAST EXHIBITION</h2>
-                    <ul class="exBefore">
-                        <li class="tabs_beforePic"><a href="#"></a></li>
-                        <li class="tabs_beforePic"><a href="#"></a></li>
-                        <li class="tabs_beforePic"><a href="#"></a></li>
-                    </ul> 
+
+                    <h2 class="past_title mbSpace10">2021</h2>
+
+                    <div class="swiper pastPic_swiper mbSpace30"><!--過往圖片輪播-->
+                        <div class="swiper-wrapper pastPic_swiper-wrapper">
+
+                            <div class="swiper-slide pastPic_swiper-slide"><!--past-slide 1-->
+                                <div class="pastPic_img1"></div>
+
+                                <div class="pastContent"><!--過往文字內容-->
+
+                                    <h5 class="ex_name mtSpace30">INTERWEAVE - LORIN DROGO Solo Exhibition</h5>
+
+                                    <h5 class="ex_place">Place：Anno Museum South Building</h5>
+
+                                    <h5 class="ex_date">Date：Apr 10 - Sep 15, 2021</h5>
+
+                                </div><!--過往文字內容 end-->
+                            </div>
+
+                            <div class="swiper-slide pastPic_swiper-slide"><!--past-slide 2-->
+                                <div class="pastPic_img2"></div>
+
+                                <div class="pastContent"><!--過往文字內容-->
+
+                                    <h5 class="ex_name mtSpace30">ABSTRACT - SHELDON PAUL Solo Exhibition</h5>
+
+                                    <h5 class="ex_place">Place：Anno Museum South Building</h5>
+
+                                    <h5 class="ex_date">Date：Jan 6 -  Apr 2, 2021</h5>
+                                </div><!--過往文字內容 end-->
+
+                            </div>
+
+                            <div class="swiper-slide pastPic_swiper-slide"><!--past-slide 3-->
+                                <div class="pastPic_img3"></div>
+
+                                <div class="pastContent"><!--過往文字內容-->
+                                    <h5 class="ex_name mtSpace30">FOOD ART - CARSON HARRIS Solo Exhibition</h5>
+
+                                    <h5 class="ex_place">Place：Anno Museum South Building</h5>
+
+                                    <h5 class="ex_date mbSpace50">Date：Oct 13 - Dec 31, 2020</h5>
+                                </div><!--過往文字內容 end-->
+
+                            </div>
+                        </div>
+                        <!-- 分頁器 -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    
 
                 </section>
 
@@ -281,9 +339,15 @@
     <!-- 載入套件 -->
     <script src="./js/vendors/jquery.multiscroll.min.js"></script>
 
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
     <!-- 載入js -->
     <script src="./js/exhibition.min.js"></script>
 
+    <script>
+        
+    </script>
 
 </body>
 

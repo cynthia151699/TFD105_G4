@@ -136,3 +136,14 @@ div.pastBooking_Management {
         }
     }
 }
+
+//============================= 票券 RWD ======================================//
+@media screen and (max-width: 576px) {
+
+    ul.tickets_currentBooking {
+        display: block;
+        li.tickets_currentBooking {
+            @include HorizontalAlignCenter();
+        }
+    }   
+}

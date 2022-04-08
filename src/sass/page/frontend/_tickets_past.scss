@@ -38,3 +38,23 @@
 .past_imgblock>img {
     width: $Width;
 }
+
+
+
+//============================= 過往票券 RWD ======================================//
+@media screen and (max-width: 768px) {
+    div.past_topblock{
+        display: block;
+    }
+    div.past_textblock{
+        width: 100%;
+    } 
+    div.past_imgblock{
+        width: 100%;
+        img{
+            display: block;
+            @include HorizontalAlignCenter;
+
+        }
+    }
+}
