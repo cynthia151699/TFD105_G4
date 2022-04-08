@@ -89,7 +89,7 @@
 	width: 100%;
 	height: 100%;
 
-	@include LinkImg('LOGO', 'logo_rw', 'png', contain, no-repeat, center);
+	@include LinkImg('logo', 'logo_rw', 'png', contain, no-repeat, center);
 }
 
 .enter__text {
