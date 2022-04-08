@@ -154,60 +154,60 @@ ul.exBefore > li > a >img{
 
 //===============================RWD ===============================================//
  //當瀏覽器寬度小於992的時候
-// main.exRelative {
-//     div.mobile h2 {
-//         font-size: 24px;
-//         text-align: center;
-//     }
-//     div.mobile h3 {
-//         font-size: 18px;
-//     } 
-//     div.mobile h4 {
-//         font-size: 16px;
-//     } 
-//     div.mobile h5 {
-//         font-size: 14px;
-//     } 
-//     div.mobile p {
-//         font-size: 12px;
-//     } 
-// }
+main.exRelative {
+    div.mobile h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+    div.mobile h3 {
+        font-size: 18px;
+    } 
+    div.mobile h4 {
+        font-size: 16px;
+    } 
+    div.mobile h5 {
+        font-size: 14px;
+    } 
+    div.mobile p {
+        font-size: 12px;
+    } 
+}
 
-// div.mobile{
-//     @include Remind;
-//     section{
-//         @include Remind(blue);
-//         width: 100%;
-//         @include HorizontalAlignCenter;
-//     }
-// }
+div.mobile{
+    @include Remind;
+    section{
+        @include Remind(blue);
+        width: 100%;
+        @include HorizontalAlignCenter;
+    }
+}
 
-// @media screen and (max-width: 991.98px){
-//     div.desktop{
-//         display: none;
-//     }
-//     div.mobile{
-//         display: block;
-//         overflow-y:auto;
-//     }
-// }
+@media screen and (max-width: 991.98px){
+    div.desktop{
+        display: none;
+    }
+    div.mobile{
+        display: block;
+        overflow-y:auto;
+    }
+}
 
 
 
 //===============================RWD 當期展覽 ===============================================//
 
-// section.exBlock1_current{
-//     h2.current_title{
-//         color: #F0F28D;
-//     }
+section.exBlock1_current{
+    h2.current_title{
+        color: #F0F28D;
+    }
     
-// }
+}
 //===============================RWD 未來展覽 ===============================================//
-// section.exBlock2_upcoming{
-//     @include LinkImg('exhibition', 'exhibition_pic3', 'png', cover, no-repeat, center);
-//     img.upcomingPic-1{
-//         width: 100%;
-//     }
-// }
+section.exBlock2_upcoming{
+    @include LinkImg('exhibition', 'exhibition_pic3', 'png', cover, no-repeat, center);
+    img.upcomingPic-1{
+        width: 100%;
+    }
+}
 
 //===============================RWD 過往展覽 ===============================================//
