@@ -1,0 +1,290 @@
+//漢堡內容
+.wrapperHamCnt {
+    .hamburgerCnt {
+        height: 100vh;
+        background-color: $PrimaryColor;
+
+        li {
+            background-color: $NavBGColor;
+            line-height: 50px;
+            border: 1px solid $InputColor;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: $AccentColor3;
+        }
+
+        h2 {
+            font-family: $SpecialFont;
+            color: $InputColor;
+            text-align: center;
+            font-size: 24px;
+        }
+    }
+}
+
+// 漢堡icon
+.wrapperHam {
+    width: 100%;
+
+    section {
+        background-color: $HFBGColor;
+        display: flex;
+        padding: 15px 15px 5px 15px;
+        justify-content: space-between;
+        width: 100%;
+
+        img {
+            height: 60px;
+            display: inline-block;
+        }
+    }
+
+    .hamburgerCnt {
+        display: none;
+        color: $TextColor2;
+    }
+}
+
+.hamAni {
+    display: inline-block;
+    padding-top: 5px;
+}
+
+.hamburger {
+    width: 50px;
+    display: inline-block;
+
+    .menu_icon {
+        position: relative;
+        width: 50px;
+        height: 35px;
+        margin: 0 auto 10px;
+    }
+
+    .border {
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+        height: 4px;
+        border-radius: 5px;
+        transition: all .3s;
+    }
+
+    .border1 {
+        top: 0;
+    }
+
+    .border2 {
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    .border3 {
+        bottom: 0px;
+    }
+
+    //漢堡下方文字
+    .hamText {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: $InputColor;
+        font-weight: bolder;
+
+        &::after {
+            display: block;
+            content: "MENU";
+        }
+    }
+
+    .active {
+        &+.text {
+            &::after {
+                content: "CLOSE";
+            }
+        }
+    }
+}
+
+.hamAni {
+    overflow: hidden;
+
+    .border {
+        background: transparent;
+
+        &::before {
+            position: absolute;
+            left: 0;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 4px;
+            border-radius: 5px;
+            background: $InputColor;
+            transition: all .3s;
+        }
+
+        &::after {
+            position: absolute;
+            left: -100px;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 4px;
+            border-radius: 5px;
+            background: $TextColor;
+            transition: all .3s;
+        }
+    }
+
+    .border1,
+    .border2,
+    .border3 {
+        &::before {
+            transition: all 0s linear;
+        }
+    }
+
+    &:hover {
+        .border {
+            &::before {
+                left: 100px;
+            }
+
+            &::after {
+                left: 0;
+            }
+        }
+
+
+        .border1 {
+            &::before {
+                transition: all .2s linear;
+            }
+
+            &::after {
+                transition: all .2s linear;
+            }
+        }
+
+        .border2 {
+            &::before {
+                transition: all .25s linear;
+            }
+
+            &::after {
+                transition: all .25s linear;
+            }
+        }
+
+        .border3 {
+            &::before {
+                transition: all .3s linear;
+            }
+
+            &::after {
+                transition: all .3s linear;
+            }
+        }
+    }
+
+    .border1 {
+        animation: hamAni_menu_bar01 0.5s;
+        animation-fill-mode: forwards; //動畫結束後保持最後結束的樣子
+    }
+
+    .border3 {
+        animation: hamAni_menu_bar03 0.5s;
+        animation-fill-mode: forwards;
+    }
+
+    .active {
+        .border {
+            background: $white;
+            transition: none;
+
+            &::before {
+                transition: none;
+            }
+
+            &::after {
+                transition: none;
+            }
+        }
+
+        .border1 {
+            animation: hamAni_active_menu_bar01 0.5s forwards;
+        }
+
+        .border2 {
+            opacity: 0;
+        }
+
+        .border3 {
+            animation: hamAni_active_menu_bar03 0.5s forwards;
+        }
+
+        //關menu的動畫
+        @keyframes hamAni_menu_bar01 {
+            0% {
+                transform: translateY(16px) rotate(45deg);
+            }
+
+            50% {
+                transform: translateY(16px) rotate(0);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+        }
+
+        @keyframes hamAni_menu_bar03 {
+            0% {
+                transform: translateY(-16px) rotate(-45deg);
+            }
+
+            50% {
+                transform: translateY(-16px) rotate(0);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+        }
+
+        //開menu的動畫
+        @keyframes hamAni_active_menu_bar01 {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(16px) rotate(0);
+            }
+
+            100% {
+                transform: translateY(16px) rotate(45deg);
+            }
+        }
+
+        @keyframes hamAni_active_menu_bar03 {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(0);
+            }
+
+            100% {
+                transform: translateY(-15px) rotate(-45deg);
+            }
+        }
+    }
+}
