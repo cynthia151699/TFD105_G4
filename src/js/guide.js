@@ -34,7 +34,7 @@ function fly() {
   //寫一個外框
   box.classList.add('box');
   //加class
-  box.style.cssText = `background:url('./../../img/visit/visit_pic2.jpg') ${-left}px ${-top}px no-repeat;background-size: 400px 400px;`;
+  box.style.cssText = `background:url('./img/visit/visit_pic2.jpg') ${-left}px ${-top}px no-repeat;background-size: 400px 400px;`;
   //設置圖片的大小，放進去外框
   openhoursRightImg.appendChild(box);
   //飛入動畫

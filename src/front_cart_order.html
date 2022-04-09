@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active3" : "active"
+        })
+
+        <main class="cartOrder">
+            <!-- coding here -->
+
+            <article class="cartOrder">
+
+                <h3>STEP 1. Order tickets</h3>
+
+                <ul class="stepDecorate">
+                    <li class="step one" style="background-color: #F25A38;"><span>1</span></li>
+                    <li class="step two"><span>2</span></li>
+                    <li class="step three"><span>3</span></li>
+                    <li class="step four"><span>4</span></li>
+                </ul>
+
+                <section class="rollover">
+                    <h4 class="ticketsType"><span>Rollover Ticket</span>
+                        <h6>Break the Classic - TAKIKAW RISA Solo Exhibition
+                            <br>Date: Feb 5 - May 5, 2022
+                            <br>Place: Anno Museum South Buliding
+                            <h5>NTD $450
+                                <select>
+                                    <option>Number of Tickets</option>
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    </select></h5>
+                            </h5>
+                        </h6>
+                    </h4>
+                </section>
+
+                <section class="advance">
+                    <h4 class="ticketsType" ><span>Advance Ticket</span>
+                        <h6>True Color - KAYLA GILL Solo Exhibition (Upcoming)
+                        <br>Date: May 15 - Aug 17, 2022
+                        <br>Place: Anno Museum North Buliding
+                        <h5>NTD $400 
+                            <select>
+                            <option>Number of Tickets</option>
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            </select></h5>
+                    </h4>
+                </section>
+                
+                <section class="cartButton mtSpace20">
+
+                    <div class="btn_group">
+                        <input class="btn_order_cancel" type="submit" value="Cancel"
+                            onclick="location.href='./tickets.html'">
+                        <input class="btn_order_next" type="submit" value="Next"
+                            onclick="location.href='./cart_details.html'">
+                    </div>
+                </section>
+            </article>
+        </main>
+    </div>
+</body>
+
+</html>

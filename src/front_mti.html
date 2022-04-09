@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<style>
+    .member_inter_main {
+        width: calc(100vw - 70px);
+        display: flex;
+        background-image: url(../dist/img/member/member-pic2.jpg);
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+    }
+
+    .member_inter_member {
+        position: absolute;
+        left: 30%;
+        top: 50%
+    }
+
+    .member_inter_tickets {
+        position: absolute;
+        left: 55%;
+        top: 50%
+    }
+
+    .member_inter_member .member_inter_member_text {
+        color: black;
+        margin-bottom: 10px;
+    }
+
+    .member_inter_tickets .member_inter_tickets_text {
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .member_inter_Bt1 {
+        display: block;
+        width: 100px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .member_inter_Bt2 {
+        display: block;
+        width: 100px;
+        text-align: center;
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active5" : "active"
+        })
+
+        <main>
+            <div class="member_inter_main">
+
+                <div class="member_inter_member">
+                    <h4 class="member_inter_member_text">Member Management</h4>
+                    <a class="defaultBtn member_inter_Bt1" href="./member_info.html">
+                        <span class="member_inter_Btc1">Enter</span>
+                    </a>
+                </div>
+
+                <div class="member_inter_tickets">
+                    <h4 class="member_inter_tickets_text">Ticket Management</h4>
+                    <a class="defaultBtn member_inter_Bt2" href="./member_info.html">
+                        <span class="member_inter_Btc2">Enter</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

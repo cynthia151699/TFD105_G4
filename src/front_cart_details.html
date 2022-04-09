@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active3" : "active"
+        })
+
+        <main class="cartDetails">
+            <!-- coding here -->
+
+            <article class="cartDetails">
+
+                <h3>STEP 2. Order details</h3>
+
+                <!-- 流程裝飾線 -->
+                <ul class="stepDecorate">
+                    <li class="step one"><span>1</span></li>
+                    <li class="step two" style="background-color: #F25A38;"><span>2</span></li>
+                    <li class="step three"><span>3</span></li>
+                    <li class="step four"><span>4</span></li>
+                </ul>
+
+                <div class="order_list">
+                    <div class="list_box">
+
+                        <table class="shopping">
+
+                            <tr style="background-color: #48538D; color:#fff;">
+                                <td>Tickets</td>
+                                <td>Price</td>
+                                <td>Number</td>
+                                <td>Amount</td>
+                                <td>
+                                    <h6>Delete</h6>
+                                </td>
+                            </tr>
+
+                            <tr class="first_order">
+                                <td>Rollover Ticket</td>
+                                <td>NT$400</td>
+                                <td>2</td>
+                                <td>NT$800</td>
+                                <td>Delete</td>
+                            </tr>
+
+                            <tr class="second_order">
+                                <td>Advance Ticket</td>
+                                <td>NT$450</td>
+                                <td>2</td>
+                                <td>NT$900</td>
+                                <td> Delete</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="5" style="background-color: #48538D; color:#fff;">
+                                    <h6>Discount</h6>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="4">
+                                    <input class="order_input_type" type="text"
+                                        value="pleace type the discount code here" style="width: 300px; height: 25px;">
+                                    <button class="discount_send">send</button>
+                                </td>
+                                <td>
+                                    <h5>Discount: NT$---</h5>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="4">&nbsp;</td>
+                                <td>
+                                    <h5>Total: NT$1,700</h5>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <section class="cartButton mtSpace20">
+
+                            <div class="btn_group">
+                                <input class="btn_order_previous" type="submit" value="Previous"
+                                    onclick="location.href='./cart_order.html'">
+                                <input class="btn_order_next" type="submit" value="Next"
+                                    onclick="location.href='./cart_information.html'">
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+</body>
+
+</html>

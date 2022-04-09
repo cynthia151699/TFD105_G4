@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active3" : "active"
+        })
+
+        <main>
+            <!-- 放背景圖的 -->
+            <div class="past_mainblock">
+
+                <!-- 上面放文字跟圖片的區塊 -->
+                <div class="past_topblock ptSpace50 mtSpace50">
+
+                    <!-- 文字區塊 -->
+                    <div class="past_textblock plSpace30">
+
+                        <!-- 文字標題 -->
+                        <h3 class="mbSpace40 plSpace30">
+                            Past booking info
+                        </h3>
+
+                        <!-- 文字內文 -->
+                        <h5 class="mbSpace50 plSpace30">
+                            Name: ABSTRACT
+                            <br><br>
+                            Time: 2020/08/05 09:00~ 2021/02/05 16:00
+                            <br><br>
+                            Location: Anno Museum South Building
+                            <br><br>
+                            Tickets: Advance Ticket x 2
+                            <br><br>
+                            Amout: NTD $800
+                        </h5>
+
+                        <!-- 按鈕區塊 -->
+                        <div class="past_bottomblock mtSpace40">
+                            <a class="defaultBtn" href="./tickets.html">
+                                <span>Cancel</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- 放展覽圖的 -->
+                    <div class="past_imgblock mlSpace10">
+                        <img src="./img/tickets/tickets_pic7.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
