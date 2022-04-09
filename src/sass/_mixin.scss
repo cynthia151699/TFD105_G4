@@ -12,10 +12,18 @@
     margin: $top auto $bottom auto;
 }
 
-// 垂直置中（加在父元素上！）
+// 垂直置中（寫在父元素上！）
 @mixin VerticalAlignCenter {
     display: flex;
     align-items: center;
+}
+
+// 絕對定位的置中寫法（寫在子元素上！）
+@mixin PositionAlignCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 // 提示框：預設是紅色
@@ -24,7 +32,7 @@
 }
 
 // flex 排版
-@mixin Flex ($ver){
+@mixin Flex ($ver) {
     display: flex;
     flex-flow: $ver nowrap;
 }
@@ -40,7 +48,7 @@
 }
 
 // n 列版面（記得另一欄是要寫 1-$row 的結果）
-@mixin Row($row: 50%){
+@mixin Row($row: 50%) {
     width: fit-content;
     height: calc(#{$Height} * #{$row});
 
@@ -50,7 +58,7 @@
 }
 
 // 底線
-@mixin BorderBottom($color){
+@mixin BorderBottom($color) {
     border-bottom: 1.5px solid $color;
 }
 

@@ -1,21 +1,22 @@
 //載入字型
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;500;700&family=Open+Sans:wght@300;500;700&family=Noto+Sans+TC:wght@300;500;700&display=swap');
 
 // 顏色樣式
 $NavBGColor: #161829;
 $HFBGColor: #48538D;
-// $HFBGColorO: rgba(72, 83, 141, 0.5);
 
 $PrimaryColor: #293241;
 $SecondaryColor: #262A73;
 $AccentColor: #83DCD7;
 $AccentColor2: #F29966;
 $AccentColor3: #F25A38;
+$FocusingColor: #F0F28D;
+$FocusingColor2: purple;
 
 // 文字顏色樣式
 $TextColor: #293241; // backend_maskcolor
 $TextColor2: #F4F4F4; //有點灰色
+$TextColor3: #000000;
 
 // 表單色票
 $InputColor: #FFFFFF; //純白
@@ -24,45 +25,43 @@ $Gray: #C4C4C4;
 // 後台用顏色
 $BHColor: #D6ECFF;
 $THColor: #CDDBE8;
-$TextColor3: #000000;
 $PopUpWindow: #E9E9E9;
 $RemindBlue: #B5CDE2;
 
+// ！需再增加色票：按鈕、表單輸入框、表格
 
 // 圓角
 $BorderRadius: 10px;
 
 // 文字陰影
-$TextShadow: 2px 2px 2px #293241;
+$TextShadow: 2px 2px 2px $PrimaryColor;
 
 // 區塊陰影
-$BoxShadow: 2px 2px 2px #293241;
-
+$BoxShadow: 2px 2px 2px $PrimaryColor;
 
 //文字樣式
 $FontWeight: (
     'medium': 700, // 大標題
-    'regular': 500, // 副標題
-    'light': 300 //內文
+    'regular': 450, // 副標題
+    'light': 350 //內文
 );
 
 $FontSize: (
     'h1': 3rem, //48px, SEO
     'h2': 2.25rem, //36px
     'h3': 1.875rem, //30px
-    'h4': 20px, //24px
-    'h5': 18px, //20px
-    'h6': 16px, //18px
-    'p': 14px, //16px
+    'h4': 1.25rem, //20px
+    'h5': 1.125rem, //18px
+    'h6': 1rem, //16px
+    'min': 0.875rem, //14px，chrome支援最小字級到12px
 );
-
-$MinFontSize: 0.875rem; //14px，chrome支援最小字級到12px
 
 $LineHeight: 1.6em;
 
 // 系統預設字型
 $FontFamily: 'Open Sans', 'Noto Sans TC', sans-serif;
-// 特殊字型
+
+// 特殊字型（較耗效能）
 $SpecialFont: 'Fredoka', 'Noto Sans TC', sans-serif;
 
 $LetterSpaceing: 0.1em;
@@ -70,15 +69,6 @@ $WordSpaceing: 0.15em;
 
 // 排版
 $Width: calc(100% - 70px);
-$Height: 100vh; // 大家的內容應有的高度
-// $Height: calc(100vh - 50px); // 大家的內容應有的高度
-
-$WidthFit: fit-content;
-$HeightFit: fit-content;
+$Height: 100vh;
 
 $RWD: 100%;
-
-// 後台用排版
-
-// 此變數使用期間只開放到 4/2 23:59，大家請在那之前更新完自己的code！（@include HorizontalAlignCenter() 預設就是水平置中了！）
-$HorizontalAlignCenter: 0 auto;
