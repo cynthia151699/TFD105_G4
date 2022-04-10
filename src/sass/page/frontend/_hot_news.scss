@@ -1,38 +1,42 @@
-article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:0.67em 0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"\201C" "\201D" "\2018" "\2019";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:0;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em;}legend{border:0;padding:0;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,select{text-transform:none;}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}
-*,
-*::after,
-*::before {
-	box-sizing: border-box;
-}
+// article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:0.67em 0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"\201C" "\201D" "\2018" "\2019";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:0;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em;}legend{border:0;padding:0;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,select{text-transform:none;}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}
+// *,
+// *::after,
+// *::before {
+// 	box-sizing: border-box;
+// }
 
-body{
+body.hotNews_page{
 	--color-text: #f1f1f1;
     --color-bg: #293241;
     --color-link: #1ab3de;
     --color-link-hover: #f1f1f1;
-	--color-deco: #3349b8;
+	--color-deco: #48538D;
 	--color-side: #F4F4F4;
-	font-family: Futura, "futura-pt", sans-serif;
-	min-height: 100vh;
+	//font-family: Futura, "futura-pt", sans-serif;
+	//min-height: 100vh;
 	color: #57585c;
 	color: var(--color-text);
 	background-color: var(--color-bg);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	padding-top: 10rem;
+	//padding-top: 10rem;
+	overflow-y: auto;
+	height: 100%;
 }
 
-
-a {
-	text-decoration: none;
-	color: var(--color-link);
-	outline: none;
+h3,h4,h6{
+	color: $TextColor2;
+	line-height: $LineHeight;
 }
 
-a:hover,
-a:focus {
-	color: var(--color-link-hover);
-	outline: none;
+main.infoBlock{
+	width: calc(100% - 70px);
+	height: 100vh;;
+}
+
+/* Icons */
+.icon {
+	fill: #fff;
 }
 
 .hidden {
@@ -42,6 +46,12 @@ a:focus {
 	height: 0;
 	pointer-events: none;
 }
+
+// main.infoBlock{
+// 	width: calc(100vh - 70px);
+// 	@include Remind;
+// 	overflow-y: auto;
+// }
 
 
 .slideshow {
@@ -114,6 +124,7 @@ a:focus {
 .nav--next {
 	bottom: 1rem;
 	right: 1rem;
+	border: 1px solid;
 }
 
 .icon--navarrow-next {
@@ -123,6 +134,7 @@ a:focus {
 .nav--prev {
 	top: 1rem;
 	left: 1rem;
+	border: 1px solid;
 }
 
 .icon--navarrow-prev {
@@ -226,14 +238,14 @@ a:focus {
 	top: 1rem;
 	left: 1rem;
 	background: none;
-	color: currentColor;
+	color: #F4F4F4;
 	border: 0;
 	margin: 0;
 	padding: 0;
 }
 
 .icon--longarrow {
-	width: 2rem;
+	width: 3rem;
 }
 
 .content__close:focus {
@@ -278,17 +290,17 @@ a:focus {
 		padding: 0;
 	}
 
-	.codrops-header {
-		grid-area: header;
-		padding: 1rem 0.5rem;
-		display: block;
-	}
-	.codrops-header__title {
-		padding: 0 0.5rem;
-	}
-	.codrops-links {
-		margin: 0.25rem auto 0 0.25rem;
-	}
+	// .codrops-header {
+	// 	grid-area: header;
+	// 	padding: 1rem 0.5rem;
+	// 	display: block;
+	// }
+	// .codrops-header__title {
+	// 	padding: 0 0.5rem;
+	// }
+	// .codrops-links {
+	// 	margin: 0.25rem auto 0 0.25rem;
+	// }
 	.slideshow {
 		height: 100vh;
 		grid-template-columns: 27% 27% 27%;
@@ -339,7 +351,8 @@ a:focus {
 	}
 	.content__close {
 		left: 42%;
-		top: calc(10vh + 1rem);
+		// top: calc(10vh + 1rem);
+		top: 6vh;
 	}
 	.content__number {
 		position: absolute;
