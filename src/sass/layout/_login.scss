@@ -1,62 +1,64 @@
 // -------LOADING-----------
- .wrapperLoading{
-    position: absolute;
-    top:0;
-    left:0;
-    z-index: 999;
-    width:100vw;
-    height:100vh;
-    display: flex;
-    align-items: center;
-    background-color: $NavBGColor;
- }
-
-.loadingPattern,
-.loadingPattern > div {
-    position: relative;
-    box-sizing: border-box;
-}
- .loadingPattern {
-    margin: 0 auto;
-}
-
-.loadingPattern > div {
-    width: 64px;
-    height: 64px;
-    display: inline-block;
-    border: 0 solid white;
+div.wrapperLoading {
     position: absolute;
     top: 0;
     left: 0;
-    border-width: 2px;
-    border-radius: 100%;
-    opacity: 0;
-    animation: loadingPattern 1.5s  infinite ;
-}
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: $NavBGColor;
 
-.loadingPattern > div:nth-child(1) {
+    .loadingPattern,
+    .loadingPattern>div {
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .loadingPattern {
+        margin: 0 auto;
+    }
+    
+    .loadingPattern>div {
+        width: 64px;
+        height: 64px;
+        display: inline-block;
+        border: 0 solid white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-width: 2px;
+        border-radius: 100%;
+        opacity: 0;
+        animation: loadingPattern 1.5s infinite;
+
+        &:nth-child(1) {
             animation-delay: 0s;
-}
-.loadingPattern > div:nth-child(2) {
-            animation-delay: .25s;
-}
-.loadingPattern > div:nth-child(3) {
-            animation-delay: .5s;
-}
+        }
 
+        &:nth-child(2) {
+            animation-delay: .25s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: .5s;
+        }
+    }
+}
 
 /*Animation*/
-
-
 @keyframes loadingPattern {
     0% {
         opacity: 1;
         transform: scale(0.1);
     }
+
     70% {
         opacity: .5;
         transform: scale(1);
     }
+
     95% {
         opacity: 0;
     }

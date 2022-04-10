@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./layout/backnav.html', {
+        "active4" : "active"
+        })
+
+        <div class="popUp">
+
+            <div class="mask"></div>
+
+            <div class="popUpWindows">
+                <form>
+                    <div class="ticket -add">
+                        <h5>新增票券</h5>
+                        <ul>
+                            <li>
+                                <h6>場次編號</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>場次名稱</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>票別</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>票價</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>票數總量</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>展覽開始日</h6><input type="date">
+                            </li>
+                            <li>
+                                <h6>展覽結束日</h6><input type="date">
+                            </li>
+                            <li>
+                                <h6>展覽狀態</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>創建時間</h6>
+                            </li>
+                        </ul>
+
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
+                    </div>
+
+                    <div class="ticket -edit">
+                        <h5>編輯票券</h5>
+                        <ul>
+                            <li>
+                                <h6>場次編號</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>場次名稱</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>票別</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>票價</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>票數總量</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>展覽開始日</h6><input type="date">
+                            </li>
+                            <li>
+                                <h6>展覽結束日</h6><input type="date">
+                            </li>
+                            <li>
+                                <h6>展覽狀態</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>創建時間</h6>
+                            </li>
+                        </ul>
+
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
+                    </div>
+
+                    <div class="ticket -store">
+                        <h5>編輯票券</h5>
+                        <h6>尚未儲存，是否確認離開？</h6>
+                        
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="tableContainer">
+            <!-- 頁首 -->
+            @@include('./layout/header.html', {
+            tittle1: "票券管理",
+            tittle2: "以展覽名稱查詢",
+            })
+
+            <form>
+                <table>
+                    <thead>
+                        <tr>
+                            <!-- table row -->
+                            <td>場次編號</td>
+                            <td>場次名稱</td>
+                            <td>票別</td>
+                            <td>票價</td>
+                            <td>票數總量</td>
+                            <td>展覽時間</td>
+                            <td>票券開放狀態</td>
+                            <td>創建時間</td>
+                            <td> </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>湯姆．沃克的一生</td>
+                            <td>預售票</td>
+                            <td>NT.400</td>
+                            <td>1/100</td>
+                            <td>2022-02-22 ~ <br>2022-03-22</td>
+                            <td>關閉</td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>湯姆．沃克的一生</td>
+                            <td>展期票</td>
+                            <td>NT.450</td>
+                            <td>2/120</td>
+                            <td>2022-02-22 ~ <br>2022-03-22</td>
+                            <td>開放</td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/backend.min.js"></script>
+</body>
+
+</html>

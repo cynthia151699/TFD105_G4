@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#myContainer').multiscroll({
+    $('#multiscroll').multiscroll({
         sectionsColor: ['#583B75', '#293241', '#293241'],
         anchors: ['first', 'second', 'third'],
         menu: '#menu',
@@ -22,8 +22,8 @@ $(function(){
 
         let tabs_itemAll=$(this).index();
         //console.log(tabs_itemAll);
-        $(".tabs_item").eq(tabs_itemAll).show();
-        $(".tabs_item").eq(tabs_itemAll).siblings().hide();
+        $(".tab_item").eq(tabs_itemAll).show();
+        $(".tab_item").eq(tabs_itemAll).siblings().hide();
     });
 });
 

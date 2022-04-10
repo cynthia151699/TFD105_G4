@@ -1,0 +1,120 @@
+// =====================about anno=======================
+main.about {
+
+    h2,
+    h6 {
+        color: $TextColor2;
+        text-shadow: $TextShadow;
+    }
+
+    article.about {
+        position: relative;
+
+        width: $RWD;
+        height: $Height;
+
+        @include VerticalAlignCenter();
+        @include LinkImg(about, about_pic1, jpg, cover, null, null);
+
+        section.about {
+            width: $Width;
+            height: 500px;
+
+            @include HorizontalAlignCenter();
+
+            h2,
+            h6 {
+                width: $RWD;
+                text-align: left;
+            }
+
+            h6.first,
+            h6.end {
+                text-align: right;
+            }
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            isolation: isolate;
+        }
+
+        .content__img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+    }
+
+    // ======================history of anno======================
+    div.history {
+        position: relative;
+
+        @include VerticalAlignCenter();
+        @include LinkImg(about, about_pic1, png, cover, null, null);
+
+        h2.text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            &:hover {
+                color: $AccentColor2;
+            }
+        }
+
+        div.content {
+            display: none;
+
+            position: absolute;
+            top: 80px;
+
+            width: $Width;
+            height: 500px;
+        }
+
+        div.middle {
+
+            display: flex;
+            justify-content: flex-end;
+
+            h6 {
+                width: 800px;
+            }
+        }
+    }
+
+    // -------------sns----------------
+    div.sns {
+        width: $RWD;
+        height: $Height;
+
+        @include LinkImg(about, about_spic7, jpeg, cover, null, null);
+
+        article.sns {
+            width: 1050px;
+
+            @include Flex(row);
+            @include HorizontalAlignCenter();
+
+            h3 {
+                color: $TextColor2;
+                text-align: center;
+                text-shadow: $TextShadow;
+            }
+
+            section.snsFb,
+            section.snsIg,
+            section.snsTwitter {
+                width: 350px;
+            }
+        }
+    }
+}

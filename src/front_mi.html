@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	@@include('./layout/head.html')
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<!-- 導覽列 -->
+		@@include('./layout/nav.html', {
+		"active5" : "active"
+		})
+
+		<main>
+			<!-- 這頁做彈窗 -->
+			<!-- 實際頁面作用區域 -->
+			<div class="member_modify_area">
+
+				<!-- 中央白框區域 -->
+				<article class="member_modify_main">
+
+					<!-- 清單內容 -->
+					<div class="member_modify_main_block">
+
+						<ul class="member_modify_main_ul">
+
+							<li class="mtSpace20 member_modify_main_li_title">
+								<h3>Overview</h3>
+							</li>
+
+							<li class="mtSpace30 member_modify_main_li">
+								<h5>Member information</h5>
+							</li>
+
+							<li class="mtSpace30 member_modify_main_li">
+								<h5 class="member_modify_inf">Name</h5>
+								<h5 class="member_modify_uninput">王大明</h5>
+							</li>
+
+							<li class="mtSpace40  member_modify_main_li">
+								<h5 class="member_modify_inf">Email address</h5>
+								<h5 class="member_modify_uninput">testtest@gmail.com</h5>
+							</li>
+
+							<li class="mtSpace40 member_modify_main_li">
+								<h5 class="member_modify_inf">Password</h5>
+								<h5 class="member_modify_uninput">0123456789</h5>
+							</li>
+
+							<!-- 整體調整 -->
+							<li class="mtSpace40 mbSpace20 member_modify_main_li">
+								<h5 class="member_modify_inf">Phone</h5>
+								<h5 class="member_modify_uninput">0999999999</h5>
+							</li>
+
+
+							<li class="mtSpace30 mbSpace10 member_modify_main_bt ">
+								<!-- 按鈕 -->
+								<a class="defaultBtn member_info_btc" href="./member_modify.html">
+									<span>modify</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</article>
+			</div>
+		</main>
+	</div>
+</body>
+
+</html>
