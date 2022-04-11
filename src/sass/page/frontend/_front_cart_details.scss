@@ -1,0 +1,90 @@
+li.step.one{
+    background-color: #E9E9E9;
+}
+
+li.step.two{
+    background-color: $AccentColor3;
+}
+
+article.cartDetails{
+    width: $RWD;
+
+    h3{
+        color: $TextColor2;
+        padding-top: 7%;
+        margin-left: 5%;
+    }
+
+    table.shopping{
+        width: 70%; 
+        margin-top: 5%; 
+        margin-left: 18%; 
+        margin-top: 10px; 
+        background-color: #E9E9E9;
+        color: black;
+        box-sizing: border-box;
+        td{
+            padding: 10px;
+        }
+    }
+}
+
+//輸入框
+.order_input_type{
+    width: 330px;
+    height: 30px;
+    background-color: #B5CDE2;
+    border: none;
+}
+
+.order_input_type:focus{
+    outline: none;
+    // box-shadow:rgba(0,0,0,0.4)2px 2px 2px inset;
+}
+
+.discount_send{
+    width: 70px;
+    height: 25px;
+    background-color: #C4C4C4;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+}
+
+// 按鈕
+
+
+.btn_order_previous{
+    width: 100px;
+    height: 30px;
+    background-color: #C4C4C4;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+    margin-bottom: 50px;
+}
+
+.btn_order_next{
+    margin-right: 145px;
+    width: 100px;
+    height: 30px;
+    background-color: #F29966;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+}
+
+
+//RWD
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+@media screen and (max-width: 575.98px) {
+
+}

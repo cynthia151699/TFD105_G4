@@ -1,0 +1,160 @@
+// 麵包屑位置
+.headerContainer{
+    h5.cart{
+        &:first-child{
+            left: 20px;
+        }
+
+        &:nth-child(2){
+            left: 115px;
+        }
+
+        &:nth-child(3){
+            left: 225px;
+        }
+
+        &:last-child{
+            left: 395px;
+        }
+    }
+}
+
+// 流程裝飾線
+ul.stepDecorate::before{
+    content: ' ';
+    height: 50%;
+    width: 5px;
+    background-color: $Gray;
+
+    position: absolute;
+    top: 25%;
+    left: 150px;
+    z-index: 0;
+}
+
+ul.stepDecorate{
+    width: 70px;
+    margin-left: 57px;
+
+    li.step{   
+        width: 50px;
+        height: 50px;
+
+        background-color: $Gray;
+        color: $TextColor3;
+
+        text-align: center;
+        border-radius: 50%;
+
+        position: absolute;
+        z-index: 2;
+
+        span{
+            width: 50px;
+
+            font-weight: map-get($FontWeight, regular);
+            font-size: map-get($FontSize, h4);
+            font-family: $SpecialFont;
+
+            position: absolute;
+            z-index: 3;
+
+            top: 10px;
+            left: 0px;
+        }
+    }
+}
+
+li.step.one{
+    background-color: $AccentColor3;
+
+    top: 22%;
+}
+
+li.step.two{
+    top: 38%;
+}
+
+
+li.step.three{
+    top: 54%;
+}
+
+li.step.four{
+    top: 70%;
+}
+
+article.cartOrder{
+    width: $RWD;
+
+    h3{
+        color: $TextColor2;
+        padding-top: 7%;
+        margin-left: 5%;
+    }
+
+    h4{
+        span{
+            color: $AccentColor3; 
+            font-family: $SpecialFont;
+        }
+    }
+
+    section.rollover{
+        width: 70%; 
+        margin-top: 5%; 
+        margin-left: 18%; 
+        padding: 20px;
+
+        box-sizing: border-box;
+        
+        background-color: $PopUpWindow;
+    }
+    
+    section.advance{
+        width: 70%; 
+        margin-top: 1%; 
+        margin-left: 18%; 
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: $PopUpWindow;
+    }
+}
+
+
+// 按鈕
+
+.btn_order_cancel{
+    width: 100px;
+    height: 30px;
+    background-color: #C4C4C4;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+    margin-bottom: 50px;
+}
+
+.btn_order_next{
+    margin-right: 145px;
+    width: 100px;
+    height: 30px;
+    background-color: #F29966;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+}
+
+
+//RWD
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+@media screen and (max-width: 575.98px) {
+
+}

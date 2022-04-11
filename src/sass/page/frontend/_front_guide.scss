@@ -1,0 +1,127 @@
+main.guide {
+    // -------開館時間-------
+    div.openContainer {
+        width: $RWD;
+        height: $Height;
+
+        @include LinkImg(visit, visit_pic1, png, cover, null, null);
+        @include VerticalAlignCenter();
+        @include Flex(row);
+
+        article.open {
+            width: $RWD;
+            height: 400px;
+            background-color: #2932419a;
+
+            section.left {
+                width: 60%;
+                display: inline-block;
+            }
+
+            div.right {
+                width: 40%;
+
+                display: block;
+                float: right;
+
+                @include VerticalAlignCenter();
+                @include HorizontalAlignCenter();
+            }
+
+            // --------飛入圖片-------------
+            figure.openhoursRightImg {
+                position: relative;
+                width: 400px;
+                height: 400px;
+                margin: 50px auto;
+            }
+
+            figure.openhoursRightImg .box {
+                position: absolute;
+                width: 100px;
+                height: 80px;
+            }
+        }
+    }
+
+
+
+    // ----------展覽票價資訊-----------
+    article.ticket {
+        width: $RWD;
+        height: $Height;
+
+        @include LinkImg(visit, visit_pic3, jpg, cover, no-repeat, null);
+        @include VerticalAlignCenter();
+
+        section.ticket {
+            width: $Width;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            div.content {
+                h2 {
+                    color: $AccentColor3;
+                    text-align: right;
+                }
+
+                h3 {
+                    color: $HFBGColor;
+                    text-align: right;
+                    span{
+                        color: $SecondaryColor;
+                    }
+                }
+    
+                hr{
+                    width: 600px;
+                    height: 1.5px;
+                    background-color: $NavBGColor;
+                }
+    
+                div.time,div.price {
+                    width: 550px;
+
+                    @include Flex (row);
+                    @include HorizontalAlignCenter();
+                }
+            }
+        }
+    }
+
+    // -----交通資訊----------
+    article.trans {
+        width: $RWD;
+        height: $Height;
+
+        @include Flex(row);
+        @include LinkImg(visit, visit_pic4, png, cover, no-repeat, center);
+
+        div.map {
+            width: 55%;
+            @include VerticalAlignCenter;
+            
+            iframe {
+                width: 400px;
+                height: 400px;
+
+                border: 3px solid $TextColor3;
+
+                @include HorizontalAlignCenter();
+            }
+        }
+
+        section.content {
+            width: 45%;
+            @include VerticalAlignCenter;
+
+            div.text {
+                width: 400px;
+                text-align: left;
+                @include HorizontalAlignCenter();
+            }
+        }
+    }
+}

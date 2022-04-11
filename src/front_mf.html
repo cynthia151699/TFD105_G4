@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	@@include('./layout/head.html')
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<!-- 導覽列 -->
+		@@include('./layout/nav.html', {
+		"active5" : "active"
+		})
+
+		<main>
+			<!-- 這頁做彈窗 -->
+			<!-- 實際頁面作用區域 -->
+			<div class="member_forget_main_area">
+
+				<!-- 中央白框區域 -->
+				<article class="member_forget_main_block">
+
+					<h3 class="mtSpace50 mbSpace50 member_forget_text_title">Password Reset</h3>
+
+					<h4 class="mbSpace50 member_forget_text prSpace30 plSpace30">
+						Please enter the email address that you used to sign up so we
+						can send you an email with your username and a link to reset
+						your password.
+					</h4>
+
+					<!-- 輸入框 -->
+					<div class="mbSpace30">
+
+						<input class="member_forget_input" type="name" />
+
+					</div>
+
+					<!-- 按鈕-->
+					<div class="mbSpace30 member_forget_bt">
+
+						<a class="defaultBtn member_forget_BtColor1 member_forget_width mrSpace60" href="./member.html">
+							<span class="member_forget_text">Cancel</span>
+						</a>
+
+						<a class="defaultBtn member_forget_BtColor2 member_forget_width"
+							href="./member_forget_change.html">
+							<span class="member_forget_text">Send</span>
+						</a>
+					</div>
+				</article>
+			</div>
+		</main>
+	</div>
+</body>
+
+</html>
