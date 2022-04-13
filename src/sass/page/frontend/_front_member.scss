@@ -1,4 +1,4 @@
-$contW: 850px;
+$contW: 900px;
 $imgW: 260px;
 $formW: $contW - $imgW;
 $switchAT: 1.2s;
@@ -22,7 +22,6 @@ $diffRatio: calc(calc($contW - $imgW) / $contW);
 
 main.member {
     @include VerticalAlignCenter();
-    // color: $TextColor;
 
     h2 {
         width: 100%;
@@ -31,7 +30,8 @@ main.member {
 
     input {
         display: block;
-        width: 100%;
+        width: 350px;
+        height: 20px;
         // font-size: 16px;
         // border-bottom: 1px solid rgba(0, 0, 0, 0.4);
         text-align: left;
@@ -39,7 +39,7 @@ main.member {
 
     label {
         display: block;
-        width: $inputW;
+        width: 350px;
         text-align: left;
 
         @include HorizontalAlignCenter();
@@ -57,7 +57,7 @@ main.member {
         width: $contW;
         height: 480px;
         background: #fff;
-        
+
         @include HorizontalAlignCenter();
     }
 
@@ -84,7 +84,7 @@ button.member {
     margin: 10px auto;
     width: $inputW;
     height: $btnH;
-    border-radius: 30px;
+    // border-radius: 30px;
     // color: #fff;
     // font-size: 15px;
     cursor: pointer;
@@ -144,7 +144,7 @@ div.img {
         top: 0;
         width: $contW;
         height: 100%;
-        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg');
+        background-image: url('./../img/member/member_pic1.jpeg');
         background-size: cover;
         transition: transform $switchAT ease-in-out;
     }
@@ -264,6 +264,7 @@ div.img {
 
 div.sign-in {
     transition-timing-function: ease-out;
+    color: $TextColor;
 
     @include signUpActive {
         transition-timing-function: ease-in-out;
@@ -272,10 +273,29 @@ div.sign-in {
     }
 }
 
+div.form.sign-in {
+    h2 {
+        color: $TextColor;
+    }
+}
+
 div.sign-up {
     transform: translate3d($contW * -1, 0, 0);
+    color: $TextColor;
 
     @include signUpActive {
         transform: translate3d(0, 0, 0);
+    }
+}
+
+div.form.sign-up {
+    h2 {
+        color: $TextColor;
+    }
+
+    input.check{
+        display: inline-block;
+        width: auto;
+        height: auto;
     }
 }

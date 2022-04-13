@@ -20,10 +20,18 @@ body.hotNews_page {
 	background-color: var(--color-bg);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	button.nav{
+		background-color: transparent;
+	}
+
+	button.content__close{
+		background-color: transparent;
+	}
 }
 
 h3,h4,h6{
-	color: $TextColor2;
+	color: #F4F4F4;
 	line-height: 1.6;
 }
 
