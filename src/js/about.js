@@ -66,7 +66,7 @@ AOS.init();
         }
         resize() {
             // reset styles
-            TweenMax.set(this.DOM.el, this.defaultStyle);
+            // TweenMax.set(this.DOM.el, this.defaultStyle);
             // get sizes/position
             this.getRect();
         }
@@ -75,7 +75,7 @@ AOS.init();
         }
         isActive() {
             // check if image is animating or if it's visible
-            return TweenMax.isTweening(this.DOM.el) || this.DOM.el.style.opacity != 0;
+            // return TweenMax.isTweening(this.DOM.el) || this.DOM.el.style.opacity != 0;
         }
     }
 

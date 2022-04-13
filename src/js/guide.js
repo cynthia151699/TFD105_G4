@@ -3,7 +3,7 @@ var myFullpage = new fullpage('#fullpage', {
     lazyLoad: true
 });
 
-AOS.init();
+// AOS.init();
 
 // ---------圖片飛入------------
 const openhoursRightImg = document.querySelector('.openhoursRightImg');
