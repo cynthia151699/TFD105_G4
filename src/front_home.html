@@ -5,11 +5,11 @@
     @@include('./layout/head.html')
 
     <!-- fullpage.js -->
-    <link rel="stylesheet" href="./../node_modules/fullpage.js/dist/fullpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" />
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="app">
 
         <!-- 導覽列 -->
         @@include('./layout/nav.html')
@@ -71,7 +71,7 @@
 
                     <article class="page3">
 
-                        <div class="part3_wrapper">
+                        <!-- <div class="part3_wrapper">
 
                             <div class="cols">
 
@@ -172,8 +172,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> -->
+                    </article>
                 </div>
             </div>
         </main>
@@ -181,20 +181,19 @@
 
     <!-- 載入套件 -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
-        integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"
-        integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"
-        integrity="sha512-gAY/etPYgEHDUW+GLBkxn90gKGHPlPCpRhXasGZHGx1Pk0QZw2bLRWCf1dOrY7UhHs8EV6KBSBq86206CJqrZA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
 
+    <script src="./js/vendors/fullpage.min.js"></script>
     <script src="./js/vendors/TweenMax.min.js"></script>
     <script src="./js/vendors/charming.min.js"></script>
-    <script src="./js/vendors/demo.min.js"></script>
+    <!-- <script src="./js/vendors/demo.min.js"></script> -->
 
+    <script>
+        document.documentElement.className = "js";
+        var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+        supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+    </script>
 
     <!-- 載入js -->
     <script src="./js/index.min.js"></script>

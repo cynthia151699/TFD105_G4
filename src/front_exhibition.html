@@ -4,23 +4,19 @@
 <head>
     @@include('./layout/head.html')
 
-    <!-- jquery.multiscroll -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.3/jquery.multiscroll.min.css"
-        integrity="sha512-3lY247bGPGvC0b7FoO7GXTyRj4PmvDUpZS1Ht74A9UlthJ7SJiGjrYxefSciQqhT6oEJeIgAHyw/w32JltqhaQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <!-- Link fullPage's CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css"
-        integrity="sha512-4rPgyv5iG0PZw8E+oRdfN/Gq+yilzt9rQ8Yci2jJ15rAyBmF0HBE4wFjBkoB72cxBeg63uobaj1UcNt/scV93w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link jquery.multiscroll.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.3/jquery.multiscroll.min.css" />
 
-    <!-- Link Swiper's CSS -->
+    <!-- Link fullpage.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" />
+
+    <!-- Link Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="app">
 
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
@@ -425,14 +421,9 @@
     </div>
 
     <!-- 載入套件 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.3/jquery.multiscroll.min.js"
-        integrity="sha512-5hsZ5Fd/rVNkL58Tx1cbPHYKKLe/PYjc0A4lKyN50W3m31GbcnMR91ZfLBYJnKW+pvOx1j/er52iGgGZEcOTYA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-    <!-- fullpage.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"
-        integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/vendors/jquery.multiscroll.min.js"></script>
+
+    <script src="./js/vendors/fullpage.min.js"></script>
     
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
