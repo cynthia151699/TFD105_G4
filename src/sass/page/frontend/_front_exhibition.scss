@@ -69,26 +69,31 @@ main.exhibition {
                 bottom: 0;
             }
 
-            h3 {
+            h3.tab_item_title {
                 @include PositionAlignCenter();
             }
+            figure.exPast_text{
+                @for $i from 1 to 10 {
+                    div.exPast_contentBg#{$i} {
+                        width: $RWD;
+                        height: $RWD;
 
-            @for $i from 1 to 4 {
-                figure.exPast_contentBg#{$i} {
-                    width: $RWD;
-                    height: $RWD;
+                        opacity: .1;
 
-                    opacity: .1;
-
-                    position: absolute;
-                    z-index: 31;
-                    
-                    @include LinkImg('exhibition', 'exhibition_pic#{$i+3}', 'jpeg', cover, no-repeat, center);
-                    
+                        position: absolute;
+                        z-index: 31;
+                        
+                        @include LinkImg('exhibition', 'exhibition_pic#{$i+3}', 'jpeg', cover, no-repeat, center);
+                    }
                     figcaption.exPast_content {
                         width: 90%;
+                        height: 60vh;
                         @include PositionAlignCenter();
                         z-index: 32;
+                        display: block;
+                        h3{
+                            text-align: center;
+                        }
                     }
                 }
             }
@@ -143,72 +148,125 @@ main.exhibition {
             opacity: .4;
         }
     }
+    
+}
 
-
-    //===============================RWD ===============================================//
+//===============================RWD ===============================================//
     //當瀏覽器寬度小於992的時候
-    main.exRelative {
-        div.mobile h2 {
-            font-size: 24px;
-            text-align: center;
-        }
-
-        div.mobile h3 {
-            font-size: 18px;
-        }
-
-        div.mobile h4 {
-            font-size: 16px;
-        }
-
-        div.mobile h5 {
-            font-size: 14px;
-        }
-
-        div.mobile p {
-            font-size: 12px;
-        }
+main.exhibition {
+    div.mobile h2 {
+        font-size: 24px;
+        text-align: center;
     }
 
-    div.mobile {
-        // @include Remind;
-
-        section {
-            @include Remind(blue);
-            width: 100%;
-            @include HorizontalAlignCenter;
-        }
+    div.mobile h3 {
+        font-size: 18px;
     }
 
-    @media screen and (max-width: 991.98px) {
-        div.desktop {
-            display: none;
-        }
-
-        div.mobile {
-            display: block;
-            overflow-y: auto;
-        }
+    div.mobile h4 {
+        font-size: 16px;
     }
 
-
-
-    //===============================RWD 當期展覽 ===============================================//
-
-    section.exBlock1_current {
-        h2.current_title {
-            color: #F0F28D;
-        }
-
+    div.mobile h5 {
+        font-size: 14px;
     }
 
-    //===============================RWD 未來展覽 ===============================================//
-    section.exBlock2_upcoming {
-        @include LinkImg('exhibition', 'exhibition_pic3', 'png', cover, no-repeat, center);
+    div.mobile p {
+        font-size: 12px;
+    }
+}
 
-        img.upcomingPic-1 {
-            width: 100%;
+    // div.mobile {
+    //     // @include Remind;
+
+    //     section {
+    //         @include Remind(blue);
+    //         width: 100%;
+    //         @include HorizontalAlignCenter;
+    //     }
+    // }
+
+@media screen and (max-width: 991.98px) {
+    div.desktop {
+        display: none;
+    }
+
+    div#fullpage {
+        display: block;
+    }
+}
+@media screen and (min-width: 991.98px){
+    div#fullpage {
+        display: none;
+    }
+}
+
+.fp-tableCell{
+    vertical-align: baseline;
+}
+
+section.exBlock1_current, section.exBlock2_upcoming, section.exBlock3_past{
+
+}   
+
+//===============================RWD 當期展覽 ===============================================//
+
+section.exBlock1_current {
+
+    h2.ex_title{
+        color: #F0F28D;
+        text-align: left;
+    }
+    h3,h5,p{
+        text-align: left;
+    }
+
+    div.currentContent{
+        @include Remind;
+        width: 90%;
+        @include HorizontalAlignCenter;
+        @extend %clearfix;
+    }
+
+    %clearfix {
+        *zoom: 1;
+        &:before, &:after {
+            display: table;
+            line-height: 0;
+            content: "";
         }
+        &:after {
+            clear: both;
+        }
+    }
+    div.currentPic-1::after {
+        position: absolute;
+        content: '';
+        right: 0;
+        bottom: 0;
+        width: 50px;
+        height: 200px;
+        background-color: #F0F28D;
+    }
+
+    div.currentPic-1 > img{
+        @include Remind;
+        display: block;
+        max-width: 200px;
+        width: 40%;
+        float: right;
+    }
+    
+
+}
+
+//===============================RWD 未來展覽 ===============================================//
+section.exBlock2_upcoming {
+    @include LinkImg('exhibition', 'exhibition_pic3', 'png', cover, no-repeat, center);
+
+    img.upcomingPic-1 {
+        width: 90%;
+        max-width: 500px;
     }
 }
 

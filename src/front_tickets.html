@@ -19,8 +19,91 @@
         })
 
         <main class="ticketsPage">
-
             <!-- coding here -->
+
+            <!------ 當期展覽彈窗 ------>
+            <div class="lightBox">
+
+                <div class="mask"></div>
+
+                <div class="wrapperTicketsCur ptSpace50 pbSpace50">
+
+                    <div class="ticketsCurCon">
+
+                        <div class="ticketsCurConUp pbSpace50"><!--文字 & 圖片-->
+
+                            <div class="ticketsCurLt mrSpace50"><!--文字-->
+
+                                <h4 class="mbSpace20">Current booking info</h4>
+                                <h6>Name:<span>BREAK the CLASSIC</span></h6>
+                                <h6>Time:<span>2022/2/5 09:00 ~ 2022/5/5 17:00</span></h6>
+                                <h6>Location:<span>Anno Museum South Building</span></h6>
+                                <h6>Tickets:<span>Advance Ticket X 2 </span></h6>
+                                <h6>Amount:<span>NTD$800</span></h6>
+                            </div>
+
+                            <div class="ticketsCurRi"><!--圖片-->
+                                <img src="./img/tickets/anno_qr.png" alt="">
+                            </div>
+                        </div>
+
+                        <!-- 普通按鈕 -->
+                        <a class="defaultBtn" href="#">
+                            <span>cancel</span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!------ 過往展覽彈窗 ------>
+                <div class="past_mainblock">
+
+                    <div class="ticketsPastCon ptSpace50 pbSpace50">
+
+                        <!-- 上面放文字跟圖片的區塊 -->
+                        <div class="past_topblock  pbSpace50">
+
+                            <!-- 文字區塊 -->
+                            <div class="past_textblock mrSpace50">
+
+                                <!-- 文字標題 -->
+                                <h4 class="mbSpace20">
+                                    Past booking info
+                                </h4>
+
+                                <!-- 文字內文 -->
+                                <h6>Name: ABSTRACT</h6>
+                                
+                                <h6>Time: 2020/08/05 09:00 ~ 2021/02/05 16:00</h6>
+
+                                <h6>Location: Anno Museum South Building</h6>
+                                    
+                                <h6>Tickets: Advance Ticket x 2</h6>
+
+                                <h6>Amout: NTD $800</h6>
+                                    
+                            </div>
+
+                            <!-- 放展覽圖的 -->
+                            <div class="past_imgblock">
+                                <img src="./img/tickets/tickets_pic7.jpeg" alt="">
+                            </div>
+                        </div>
+
+                        <!-- 按鈕區塊 -->
+                        <a class="defaultBtn" href="./tickets.html">
+                            <span>Cancel</span>
+                        </a>
+
+                    </div>
+ 
+                </div>
+            </div>
+
+
+
+
+
             <article class="tickets">
                 <!-- 當期票券管理 -->
                 <h4 class="tickets_bookingName ptSpace40 pbSpace20">
@@ -31,10 +114,10 @@
 
                     <li class="tickets_currentBooking mrSpace50">
 
-                        <a class="currentbookingPic-1" href="./tickets_current.html"></a>
+                        <a class="currentbookingPic-1 -current" href="#"></a>
 
-                        <h6 class="tickets_bookingName">
-                            <a href="./tickets_past.html">
+                        <h6 class="tickets_bookingName -check">
+                            <a href="#">
                                 BREAK the CLASSIC <span></span>
                             </a>
                         </h6>
@@ -42,10 +125,10 @@
 
                     <li class="tickets_currentBooking">
 
-                        <a class="currentbookingPic-2" href="./tickets_current.html"></a>
+                        <a class="currentbookingPic-2 -current" href="#"></a>
 
-                        <h6 class="tickets_bookingName">
-                            <a href="./tickets_past.html">
+                        <h6 class="tickets_bookingName -check">
+                            <a href="#">
                                 TRUE COLOR <span></span>
                             </a>
                         </h6>
@@ -65,19 +148,22 @@
 
                         <li class="swiper-slide tickets_pastBooking">
 
-                            <a class="pastPic-1" href="./tickets_past.html"></a>
+                            <a class="pastPic-1 -past" href="#"></a>
 
-                            <h6 class="tickets_bookingName"><a class="info" href="./tickets_past.html">INTERWEAVE
-                                    <span></span></a></h6>
+                            <h6 class="tickets_bookingName -check">
+                                <a class="info" href="#">
+                                    INTERWEAVE <span></span>
+                                </a>
+                            </h6>
 
                         </li>
 
                         <li class="swiper-slide tickets_pastBooking">
 
-                            <a class="pastPic-2" href="./tickets_past.html"></a>
+                            <a class="pastPic-2 -past" href="#"></a>
 
-                            <h6 class="tickets_bookingName">
-                                <a href="./tickets_past.html">
+                            <h6 class="tickets_bookingName -check">
+                                <a href="#">
                                     FOOD ART <span></span>
                                 </a>
                             </h6>
@@ -85,10 +171,10 @@
 
                         <li class="swiper-slide tickets_pastBooking">
 
-                            <a class="pastPic-3" href="./tickets_past.html"></a>
+                            <a class="pastPic-3 -past" href="#"></a>
 
-                            <h6 class="tickets_bookingName">
-                                <a href="./tickets_past.html">
+                            <h6 class="tickets_bookingName -check">
+                                <a href="#">
                                     ABSTRACT <span></span>
                                 </a>
                             </h6>
@@ -96,9 +182,10 @@
 
                         <li class="swiper-slide tickets_pastBooking">
 
-                            <a class="pastPic-4" href="./tickets_past.html"></a>
-                            <h6 class="tickets_bookingName">
-                                <a href="./tickets_past.html">
+                            <a class="pastPic-4 -past" href="#"></a>
+
+                            <h6 id="check" class="tickets_bookingName">
+                                <a href="#">
                                     MODERN TATTOO <span></span>
                                 </a>
                             </h6>
@@ -106,10 +193,10 @@
 
                         <li class="swiper-slide tickets_pastBooking">
 
-                            <a class="pastPic-5" href="./tickets_past.html"></a>
+                            <a class="pastPic-5 -past" href="#"></a>
 
-                            <h6 class="tickets_bookingName">
-                                <a href="./tickets_past.html">
+                            <h6 class="tickets_bookingName -check">
+                                <a href="#">
                                     ABSTRACT <span></span>
                                 </a>
                             </h6>
@@ -117,10 +204,10 @@
 
                         <li class="swiper-slide tickets_pastBooking">
 
-                            <a class="pastPic-6" href="./tickets_past.html"></a>
+                            <a class="pastPic-6 -past" href="#"></a>
 
-                            <h6 class="tickets_bookingName">
-                                <a href="./tickets_past.html">
+                            <h6 class="tickets_bookingName -check">
+                                <a href="#">
                                     Mémoire <span></span>
                                 </a>
                             </h6>
@@ -128,9 +215,9 @@
 
                         <li class="swiper-slide tickets_pastBooking">
 
-                            <a class="pastPic-7" href="./tickets_past.html"></a>
-                            <h6 class="tickets_bookingName">
-                                <a href="./tickets_past.html">
+                            <a class="pastPic-7 -past" href="#"></a>
+                            <h6 class="tickets_bookingName -check">
+                                <a href="#">
                                     Renaissance <span></span>
                                 </a>
                             </h6>
@@ -138,9 +225,9 @@
 
                         <li class="swiper-slide tickets_pastBooking">
 
-                            <a class="pastPic-8" href="./tickets_past.html"></a>
-                            <h6 class="tickets_bookingName">
-                                <a href="./tickets_past.html">
+                            <a class="pastPic-8 -past" href="#"></a>
+                            <h6 class="tickets_bookingName -check">
+                                <a href="#">
                                     Eye Contact <span></span>
                                 </a>
                             </h6>
