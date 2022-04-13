@@ -1,811 +1,281 @@
-// 麵包屑位置
-.headerContainer {
-	h5.member {
-		&:first-child {
-			left: 20px;
-		}
-
-		&:nth-child(2) {
-			left: 120px;
-		}
-
-		&:nth-child(3) {
-			left: 0px;
-		}
-
-		&:last-child {
-			left: 0px;
-		}
-	}
-}
-
-// 主要區域置中
-.member_main_all_area {
-	@include VerticalAlignCenter;
-	width: calc(100vw - 70px);
-	height: calc(100vh - 50px);
-	@include LinkImg('Logo', 'logo-o40-01', 'png', scale-down, repeat-y, left);
-	background-position: top 0% left 0%;
-	background-size: 20%;
-}
-
-.member_main_form {
-	@include VerticalAlignCenter;
-}
-
-.member_main_form_area {
-	@include HorizontalAlignCenter;
-}
-
-.member_text_title {
-	text-align: left;
-}
-
-// 主要區域  註冊內容  高度470 比內頁略高
-.member_main_all_block {
-	width: 900px;
-	height: 470px;
-	background-color: $TextColor2;
-}
-
-// 移動bar文字顏色
-.member_move_text {
-	color: $TextColor2;
-}
-
-//文字框顏色
-.member_input_text {
-	// background-color: ;
-	color: $TextColor2;
-	width: 100%;
-	height: 25px;
-}
-
-// 按鈕顏色
-.member_button_color1 {
-	background-color: $AccentColor2;
-}
-
-.member_button_color2 {
-	background-color: #AD9F9F;
-}
-
-
-
-// 跳窗背景
-.member_Terms_text {
-	position: fixed;
-	display: none;
-	z-index: 11;
-	width: 100vw;
-	height: 100vh;
-	background-color: $PrimaryColor;
-	opacity: 0.8;
-}
-
-// 跳窗
-.member_Terms_area {
-
-	display: none;
-	z-index: 11;
-
-	width: 600px;
-	height: 300px;
-	background-color: $TextColor2;
-	
-	position: fixed;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-
-}
-
-.member_Terms_inner {
-
-	width: 600px;
-	height: 270px;
-}
-
-//跳窗標題
-.member_Terms_title {
-	color: $TextColor2;
-	background-color: $TextColor;
-
-	text-align: center;
-}
-
-// 跳窗刪除
-.member_Terms_del {
-	position: absolute;
-	top: 0%;
-	right: 3%;
-	color: $TextColor2;
-	cursor: pointer;
-}
-
-// 滑動移動距離
-$contW: 900px;
+$contW: 850px;
 $imgW: 260px;
 $formW: $contW - $imgW;
 $switchAT: 1.2s;
-// $inputW: 390px;
+
+$inputW: 260px;
 $btnH: 36px;
 
+$diffRatio: calc(calc($contW - $imgW) / $contW);
 
+@mixin Reset {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-//下方全部為整個首頁滑動效果
 @mixin signUpActive {
-	.cont.s--signup & {
-		@content;
-	}
-}
-
-.cont {
-	overflow: hidden;
-	position: relative;
-	width: $contW;
-	margin: 0px auto;
-	background: #fff;
-}
-
-.member_main_form {
-	position: relative;
-	width: $formW;
-	height: 100%;
-	transition: transform $switchAT ease-in-out;
-}
-
-.sub-cont {
-	overflow: hidden;
-	position: absolute;
-	left: $formW;
-	top: 0;
-	width: $contW;
-	height: 100%;
-	padding-left: $imgW;
-	background: #fff;
-	transition: transform $switchAT ease-in-out;
-
-	@include signUpActive {
-		transform: translate3d($formW * -1, 0, 0);
-	}
-}
-
-.member_cla_button {
-	display: block;
-	width: 400px;
-	color: $TextColor;
-	@include HorizontalAlignCenter(20px, 20px);
-}
-
-.member_img {
-	overflow: hidden;
-	z-index: 11;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: $imgW;
-	height: 100%;
-	padding-top: 360px;
-
-	&:before {
-		content: '';
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: $contW;
-		height: 100%;
-		@include LinkImg('member', 'member_pic1', 'jpeg', cover, no-repeat, center);
-		background-size: cover;
-		transition: transform $switchAT ease-in-out;
-	}
-
-	&:after {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, 0.6);
-	}
-
-	@include signUpActive {
-		&:before {
-			transform: translate3d($formW, 0, 0);
-		}
-	}
-
-	&__text {
-		z-index: 11;
-		position: absolute;
-		left: 0;
-		top: 50px;
-		width: 100%;
-		text-align: center;
-		color: #fff;
-		transition: transform $switchAT ease-in-out;
-
-		&.m--up {
-
-			@include signUpActive {
-				transform: translateX($imgW*2);
-			}
-		}
-
-		&.m--in {
-			transform: translateX($imgW * -2);
-
-			@include signUpActive {
-				transform: translateX(0);
-			}
-		}
-	}
-
-	&__btn {
-		overflow: hidden;
-		z-index: 11;
-		position: relative;
-		width: 100px;
-		height: $btnH;
-		margin: 0 auto;
-		background: transparent;
-		color: #fff;
-		text-transform: uppercase;
-		font-size: 15px;
-		cursor: pointer;
-
-		&:after {
-			content: '';
-			z-index: 11;
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			border: 2px solid #fff;
-			border-radius: 30px;
-			box-sizing: border-box;
-		}
-
-		.member_span {
-			position: absolute;
-			left: 0;
-			top: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-			height: 100%;
-			transition: transform $switchAT;
-			box-sizing: border-box;
-
-			&.m--in {
-				transform: translateY($btnH*-2);
-
-				@include signUpActive {
-					transform: translateY(0);
-				}
-			}
-
-			&.m--up {
-				@include signUpActive {
-					transform: translateY($btnH*2);
-				}
-			}
-		}
-	}
-}
-
-.sign-in {
-	transition-timing-function: ease-out;
-	text-align: center;
-
-	@include signUpActive {
-		transition-timing-function: ease-in-out;
-		transition-duration: $switchAT;
-		transform: translate3d($formW, 0, 0);
-	}
-}
-
-.sign-up {
-	transform: translate3d($contW * -1, 0, 0);
-
-	@include signUpActive {
-		transform: translate3d(0, 0, 0);
-	}
-}
-
-
-
-
-
-
-
-
-// @media screen and (min-width: 768px) and (max-width: 991.98px) {
-// 	.member_main_all_block {
-// 		width: 700px;
-// 	}
-
-// 	.member_span_choose .member_p_style {
-// 		word-wrap:break-word;
-// 	}
-
-// 	// 滑動移動距離
-// 	$contW: 700px;
-// 	$imgW: 260px;
-// 	$formW: $contW - $imgW;
-// 	$switchAT: 1.2s;
-// 	$btnH: 36px;
-
-// 	.member_main_form {
-// 		width: $formW;
-// 	}
-
-// 	.sub-cont {
-// 		overflow: hidden;
-// 		position: absolute;
-// 		left: $formW;
-// 		top: 0;
-// 		width: $contW;
-// 		height: 100%;
-// 		padding-left: $imgW;
-// 		background: #fff;
-// 		transition: transform $switchAT ease-in-out;
-
-// 		@include signUpActive {
-// 			transform: translate3d($formW * -1, 0, 0);
-// 		}
-// 	}
-
-// 	.member_cla_button {
-// 		width: 350px;
-// 	}
-
-// }
-
-// @media screen and (min-width: 576px) and (max-width: 767.98px) {
-
-// 	.member_main_all_block {
-// 		width: 500px;
-
-// 	}
-// }
-
-
-
-// @media screen and (max-width: 575.98px) {
-
-
-// 	.member_main_all_block {
-// 		width: 350px;
-// 	}
-
-// }
-
-
-//基本同forget相關區域
-// 中央文字置中
-.member_forget_change_area {
-
-    @include VerticalAlignCenter;
-    position: fixed;
-    // 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
-    top: 50px;
-    width: calc(100vw - 70px);
-    height: calc(100vh - 50px);
-    @include LinkImg('Logo', 'logo-o40-01', 'png', scale-down, repeat-y, left);
-    background-position: top 0% left 0%;
-    background-size: 20%;
-
-
-
-    .member_forget_change_block {
-
-        @include HorizontalAlignCenter;
-        @include VerticalAlignCenter;
-        width: 900px;
-        height: 400px;
-        background-color: $TextColor2;
-        text-align: center;
-
-        .member_forget_change_text {
-
-            @include HorizontalAlignCenter;
-
-        }
-
-    }
-
-}
-
-//  選框於下方置中
-.member_forget_change_block {
-    position: relative;
-}
-
-.member_forget_change_Bt {
-    position: absolute;
-    background-color: $AccentColor2;
-    display: block;
-    bottom: 50px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-
-
-
-// RWD
-@media screen and (min-width: 768px) and (max-width: 991.98px) {
-    .member_forget_change_area {
-
-        .member_forget_change_block {
-
-            width: 700px;
-
-        }
-
+    .cont.s--signup & {
+        @content;
     }
 }
 
-@media screen and (min-width: 576px) and (max-width: 767.98px) {
-
-
-    .member_forget_change_area {
-
-        .member_forget_change_block {
-
-            width: 500px;
-
-
-        }
-
-    }
-
-}
-
-
-
-@media screen and (max-width: 575.98px) {
-
-
-    .member_forget_change_area {
-
-        .member_forget_change_block {
-
-            width: 350px;
-            height: 300px;
-
-            .member_forget_change_Bt {
-                width:70%;
-                font-size: 1rem;
-            }
-
-        }
-
-    }
-
-}
-
-
-// 主要區域置中
-.member_forget_main_area {
-    @include VerticalAlignCenter;
-    position: fixed;
-    // 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
-    top: 50px;
-    width: calc(100vw - 70px);
-    height: calc(100vh - 50px);
-    @include LinkImg('Logo', 'logo-o40-01', 'png', scale-down, repeat-y, left);
-    background-position: top 0% left 0%;
-    background-size: 20%;
-}
-
-.member_forget_main_block {
-    @include HorizontalAlignCenter;
-    width: 900px;
-    height: 400px;
-    background-color: $TextColor2;
-    text-align: center;
-}
-
-//文字顏色
-.member_forget_text {
-    color: $TextColor;
-}
-
-//輸入框
-.member_forget_input {
-    background-color: $HFBGColor;
-    color: $TextColor2;
-    font-size: 24px;
-    width: 80%;
-}
-
-//按鈕顏色,寬度
-.member_forget_width {
-    width: 150px;
-    display: inline-block;
-}
-
-.member_forget_BtColor1 {
-    background-color: #AD9F9F;
-}
-
-.member_forget_BtColor2 {
-    background-color: $AccentColor2;
-}
-
-
-
-
-// RWD
-@media screen and (min-width: 768px) and (max-width: 991.98px) {
-    .member_forget_main_block {
-        width: 700px;
-    }
-
-}
-
-@media screen and (min-width: 576px) and (max-width: 767.98px) {
-
-    .member_forget_main_block {
-        width: 500px;
-
-        .member_forget_text {
-            font-size: 1rem;
-        }
-
-        .member_forget_width {
-            width: 60px;
-        }
-
-
-
-    }
-
-}
-
-
-
-@media screen and (max-width: 575.98px) {
-
-    .member_forget_main_block {
-        width: 350px;
-        height: 500px;
-
-        .member_forget_text_title {
-            font-size: 1.5rem;
-
-
-        }
-
-
-
-        .member_forget_text {
-            font-size: 1rem;
-
-        }
-
-    }
-
-    .member_forget_width {
-        @include HorizontalAlignCenter;
-        width: 70%;
-        display: block;
-        margin-bottom: 10px;
-    }
-}
-
-
-// 基本框架同member_modify
-
-// 單個按鈕位置
-.member_info_btc {
-    display: block;
-    width: 20%;
-    text-align: center;
-    background-color: $AccentColor2;
-    @include HorizontalAlignCenter;
-}
-
-
-
-// 主要區域置中
-.member_modify_area {
-    @include VerticalAlignCenter;
-    position: fixed;
-    // 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
-    top: 50px;
-    width: calc(100vw - 70px);
-    height: calc(100vh - 50px);
-    text-align: center;
-    @include LinkImg('Logo', 'logo-o40-01', 'png', scale-down, repeat-y, left);
-    background-position: top 0% left 0%;
-    background-size: 20%;
-
-}
-
-// 主框框
-.member_modify_main {
-    @include HorizontalAlignCenter;
-    @include VerticalAlignCenter;
-    width: 750px;
-    height: 500px;
-    background-color: $TextColor2;
-}
-
-// 輸入框置中
-.member_modify_main_block {
-    @include HorizontalAlignCenter;
-    text-align: left;
-    width: 80%;
-
-    ul.member_modify_main_ul {
-
-        li.member_modify_main_li_title{
-            text-align: center;
-        }
-
-        li.member_modify_main_li {
-            @include VerticalAlignCenter;
-
-            // 內文屬性
-            .member_modify_inf {
-                width: 45%;
-            }
-
-            // 內文不可修改
-            .member_modify_uninput {
-                width: 45%;
-                display: block;
-            }
-
-            // 內文修改
-            .member_modify_input {
-                width: 45%;
-                background-color: $HFBGColor;
-                color: $TextColor2;
-                height: 32px;
-            }
-
-            .member_modify_link {
-                font-size: 0.9rem;
-            }
-        }
-    }
-}
-
-//輸入框預設文字
-.member_modify_input::placeholder {
-    color: $TextColor2;
-}
-
-// button位置
-
-.memberButton{
-    @include VerticalAlignCenter;
-    padding-left: 185px;
-}
-
-
-// .member_modify_main_bt {
-//     @include VerticalAlignCenter;
-//     width: 100%;
-
-//     .member_modify_Bt1 {
-//         display: block;
-//         width: 20%;
-//         text-align: center;
-//         background-color: #AD9F9F;
-//         left: 20%
-//     }
-
-//     .member_modify_Bt2 {
-//         display: block;
-//         width: 20%;
-//         text-align: center;
-//         background-color: $AccentColor2;
-//         left: 25%;
-//     }
-
-// }
-
-
-@media screen and (min-width: 768px) and (max-width: 991.98px) {
-    .member_modify_main {
-        width: 700px;
-    }
-
-
-}
-
-@media screen and (min-width: 576px) and (max-width: 767.98px) {
-
-    .member_modify_main {
-        width: 500px;
-        height: 500px;
-
-        li.member_modify_main_li_title{
-            font-size: 1.125rem;
-        }
-
-          
-
-
-            .member_modify_Bt1 {
-                width: 20%;
-
-            }
-
-            .member_modify_Bt2 {
-                width: 20%;
-
-            }
-
-            .memberButton{
-                padding-left: 0px;
-            }
-
-    }
-
-}
-
-
-
-@media screen and (max-width: 575.98px) {
-
-
-    .member_modify_main {
-        width: 350px;
-        height: 530px;
-
-        li.member_modify_main_li_title{
-            font-size: 1rem;
-        }
-
-        // 內文屬性
-        .member_modify_inf {
-
-            font-size: 1rem;
-        }
-
-        // 內文不可修改
-        .member_modify_uninput {
-
-            font-size: 1rem;
-        }
-
-        // 內文修改
-        .member_modify_input {
-            width: 50%;
-            background-color: $HFBGColor;
-            color: $TextColor2;
-            height: 32px;
-            font-size: 1rem;
-        }
-
-        .member_modify_link {
-            font-size: 0.8rem;
-        }
-
-
-    }
-
-    .member_modify_main_bt {
-        @include VerticalAlignCenter;
+main.member {
+    @include VerticalAlignCenter();
+    // color: $TextColor;
+
+    h2 {
         width: 100%;
+        text-align: center;
+    }
 
-        .member_modify_Bt1 {
-            width: 20%;
-            left: 10%
+    input {
+        display: block;
+        width: 100%;
+        // font-size: 16px;
+        // border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        width: $inputW;
+        text-align: left;
+
+        @include HorizontalAlignCenter();
+
+        span {
+            // font-size: 12px;
+            // color: #cfcfcf;
+            text-transform: uppercase;
+        }
+    }
+
+    div.cont {
+        overflow: hidden;
+        position: relative;
+        width: $contW;
+        height: 480px;
+        background: #fff;
+        
+        @include HorizontalAlignCenter();
+    }
+
+    div.form {
+        @include Reset();
+
+        position: relative;
+        width: $formW;
+        height: 100%;
+        transition: transform $switchAT ease-in-out;
+        padding: 50px;
+    }
+
+    p.forgot-pass {
+        margin-top: 15px;
+        text-align: center;
+        // font-size: 12px;
+        // color: #cfcfcf;
+    }
+}
+
+button.member {
+    display: block;
+    margin: 10px auto;
+    width: $inputW;
+    height: $btnH;
+    border-radius: 30px;
+    // color: #fff;
+    // font-size: 15px;
+    cursor: pointer;
+}
+
+button.member.submit {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background: #d4af7a;
+    text-transform: uppercase;
+}
+
+button.member.fb-btn {
+    border: 2px solid #d3dae9;
+    color: darken(#d3dae9, 20%);
+
+    span {
+        font-weight: bold;
+        color: darken(#768cb6, 20%);
+    }
+}
+
+div.sub-cont {
+    overflow: hidden;
+    position: absolute;
+    left: $formW;
+    top: 0;
+    width: $contW;
+    height: 100%;
+    padding-left: $imgW;
+    background: #fff;
+    transition: transform $switchAT ease-in-out;
+
+    @include signUpActive {
+        transform: translate3d($formW * -1, 0, 0);
+    }
+}
+
+div.img {
+    @include Reset();
+
+    overflow: hidden;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $imgW;
+    height: 100%;
+    padding-top: 360px;
+
+    &:before {
+        @include Reset();
+
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: $contW;
+        height: 100%;
+        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg');
+        background-size: cover;
+        transition: transform $switchAT ease-in-out;
+    }
+
+    &:after {
+        @include Reset();
+
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    @include signUpActive {
+        &:before {
+            @include Reset();
+
+            transform: translate3d($formW, 0, 0);
+        }
+    }
+
+    &__text {
+        @include Reset();
+
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        width: 100%;
+        padding: 0 20px;
+        text-align: center;
+        // color: #fff;
+        transition: transform $switchAT ease-in-out;
+
+        h2 {
+            // margin-bottom: 10px;
+            // font-weight: normal;
         }
 
-        .member_modify_Bt2 {
-            width: 20%;
-            left: 20%
+        p {
+            // font-size: 14px;
+            // line-height: 1.5;
         }
 
+        &.m--up {
+            @include signUpActive {
+                transform: translateX($imgW*2);
+            }
+        }
+
+        &.m--in {
+            transform: translateX($imgW * -2);
+
+            @include signUpActive {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__btn {
+        overflow: hidden;
+        z-index: 2;
+        position: relative;
+        width: 100px;
+        height: $btnH;
+        margin: 0 auto;
+        background: transparent;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 15px;
+        cursor: pointer;
+
+        &:after {
+            @include Reset();
+
+            content: '';
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #fff;
+            border-radius: 30px;
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            transition: transform $switchAT;
+
+            &.m--in {
+                transform: translateY($btnH*-2);
+
+                @include signUpActive {
+                    transform: translateY(0);
+                }
+            }
+
+            &.m--up {
+                @include signUpActive {
+                    transform: translateY($btnH*2);
+                }
+            }
+        }
+    }
+}
+
+div.sign-in {
+    transition-timing-function: ease-out;
+
+    @include signUpActive {
+        transition-timing-function: ease-in-out;
+        transition-duration: $switchAT;
+        transform: translate3d($formW, 0, 0);
+    }
+}
+
+div.sign-up {
+    transform: translate3d($contW * -1, 0, 0);
+
+    @include signUpActive {
+        transform: translate3d(0, 0, 0);
     }
 }

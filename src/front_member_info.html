@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active5" : "active"
+        })
+
+        <main class="memberInfo">
+            <!-- 確認會員資訊 -->
+			<article>
+
+				<h3>Overview</h3>
+				<h5>Member information
+					<br>Name
+					<br>王大明
+					<br>Email address
+					<br>testtest@gmail.com
+					<br>Password
+					<br>0123456789
+					<br>Phone
+					<br>0999999999
+				</h5>
+				<a href="./member_modify.html">modify</a>
+
+			</article>
+
+			<!-- 更改密碼 -->
+			<article style="display: none;">
+
+				<h3>Edit your member information</h3>
+
+				<h5>Member information
+					<br>Name
+					<br>王大明
+				</h5>
+
+				<h5>Email address
+					<br>testtest@gmail.com
+				</h5>
+
+
+				<h5>Password</h5>
+				<input type="password" placeholder="請輸入密碼" />
+
+				<h5>Password confirm</h5>
+				<input type="password" placeholder="請再次輸入密碼" />
+
+
+				<h5>Phone</h5>
+				<input type="phone" placeholder="請輸入手機" />
+
+				<h6>
+					<input type="checkbox">
+					I would like to receive news, tips and marketing offers from Anno.
+				</h6>
+
+				<input class="btn_previous" type="submit" value="Cancel" onclick="location.href='./member_info.html'">
+				<input class="btn_done" type="submit" value="Save" onclick="location.href='./member_info.html'">
+
+			</article>
+        </main>
+    </div>
+
+    <!-- 載入套件 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- 載入js -->
+    <script src="./js/member.min.js"></script>
+</body>
+
+</html>
