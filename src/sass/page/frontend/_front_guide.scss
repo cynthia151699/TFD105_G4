@@ -65,12 +65,12 @@ main.guide {
             div.content {
                 h2 {
                     color: $AccentColor3;
-                    text-align: right;
+                    text-align: center;
                 }
 
                 h3 {
                     color: $HFBGColor;
-                    text-align: right;
+                    text-align: center;
                     span{
                         color: $SecondaryColor;
                     }
@@ -84,7 +84,7 @@ main.guide {
     
                 div.time,div.price {
                     width: 550px;
-
+                    border:2px solid red;
                     @include Flex (row);
                     @include HorizontalAlignCenter();
                 }
@@ -96,7 +96,6 @@ main.guide {
     article.trans {
         width: $RWD;
         height: $Height;
-
         @include Flex(row);
         @include LinkImg(visit, visit_pic4, png, cover, no-repeat, center);
 
@@ -130,20 +129,15 @@ main.guide {
 // ------------rwd---------------
 @media screen and (max-width: 575.98px){
     // ------開館時間rwd------
-        .wrapperOpenhours{
-            @include Flex(column);
-            height:100vh;
-        }
-    .openhoursLeft{
-        width:120%;
-    
-        height: 100vh;
-        margin-top: 200px;
-        h4{
-          
-        }
+    div.openContainer{
+        @include Flex(row);
+        height: $Height;
     }
-    .openhoursRight{
+    section.left{
+        width:120%;
+        margin-top: 200px;
+    }
+    div.right{
        display: none;
     }
     // ------展覽資訊rwd------
@@ -160,14 +154,22 @@ main.guide {
         padding-bottom: 50px;
     }
     // -----交通資訊-------
-    .wapperTrans{
-      
-        .map{
+    main.guide article.trans {
+
+        div.map {
             display: none;
         }
-    
+        section.content {
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            div.text {
+                width: 300px;
+                text-align:center;
+            }
+        }
     }
-      }
+}
     @media (min-width: 576px) and (max-width: 767.98px){
     // ------開館時間rwd------
         .wrapperOpenhours{
@@ -204,28 +206,36 @@ main.guide {
         margin: 5px auto;
     }
     // -----交通資訊-------
-    .wapperTrans{
-      
-        .map{
+    main.guide article.trans {
+
+        div.map {
             display: none;
         }
-    
+        section.content {
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            div.text {
+                text-align: center;
+            }
+        }
     }
     }
     @media screen and (min-width:768px) and (max-width:991.98px){
     // ------開館時間rwd------
-    .wrapperOpenhours{
-            @include Flex(column);
+    div.openContainer{
+        @include Flex(row);
             height:100vh;
+            border:2px solid red;  
         }
-    .openhoursLeft{
+    section.left{
         width:100%;
-        padding-top: 50px;
+        padding-top: 20px;
         h4{
             padding-bottom: 10px;
         }
     }
-    .openhoursRight{
+    div.right{
         width: 100%;
     }
     // ------展覽資訊rwd------
@@ -244,12 +254,15 @@ main.guide {
     }
     
     // -----交通資訊-------
-    .wapperTrans{
-      
-        .map{
-            display: none;
+    main.guide article.trans {
+        div.map {
+            iframe {
+                width: 350px;
+                height: 350px;
+            }
+            
         }
-    
+
     }
     
       }
