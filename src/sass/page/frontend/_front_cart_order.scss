@@ -1,40 +1,53 @@
-
-
 article.cartOrder{
     width: $RWD;
-
-    h3{
-        color: $TextColor2;
-        padding-top: 7%;
-        margin-left: 5%;
-    }
-
-    h4{
-        span{
-            color: $AccentColor3; 
-            font-family: $SpecialFont;
-        }
-    }
 
     section.rollover{
         width: 70%; 
         margin-top: 5%; 
         margin-left: 18%; 
         padding: 20px;
+        box-sizing: border-box;
+        background-color: $PrimaryColor;
+    }
+}
 
-        box-sizing: border-box;
-        
-        background-color: $PopUpWindow;
+tr{
+    background-color: $PrimaryColor;
+    border-bottom: 1px #fff solid;
+}
+
+.table_title{
+    font-weight:450;
+}
+
+.count{
+    width: 700px;
+    margin-top: 10px; 
+    display: inline-block;
+
+}
+
+.c_amount{
+    text-align: right;
+    h6{
+        display: inline-block;
+        color:$TextColor2;
     }
-    
-    section.advance{
-        width: 70%; 
-        margin-top: 1%; 
-        margin-left: 18%; 
-        padding: 20px;
-        box-sizing: border-box;
-        background-color: $PopUpWindow;
+}
+
+.c_discount{
+    text-align: right;
+    h6{
+        display: inline-block;
+        text-align: right;
+        color:$TextColor2;
     }
+}
+
+.c_total{
+    text-align: right;
+    color:$TextColor2;
+
 }
 
 

@@ -37,6 +37,7 @@
     }
 }
 
+//PART 2 ORDER
 .order_list{
     h6{
         color:$TextColor2;
@@ -55,12 +56,17 @@ table.list_table{
     }
 }
 
-.first_order{
-    border-bottom: 1px solid #000;
+tr{
+    background-color: $PrimaryColor;
+    border-bottom: 1px #fff solid;
 }
 
-.count{
+.table_title{
+    font-weight:450;
+}
 
+
+.count{
     width: 700px;
     margin-top: 10px; 
     display: inline-block;
@@ -87,7 +93,12 @@ table.list_table{
 .c_total{
     text-align: right;
     color:$TextColor2;
+
 }
+
+
+
+//PART 3 PAYMENT 
 
 .payment{
     margin-top: 5%; 
