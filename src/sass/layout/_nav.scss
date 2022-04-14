@@ -22,10 +22,10 @@ nav.frontNav{
         @include Flex(column);
 
         li{
-            padding-top: 110%;
+            padding-top: 100%;
 
             &:nth-child(6){
-                padding-top: 225%;
+                // padding-top: 225%;
             }
         }
 
@@ -91,7 +91,7 @@ nav.backNav{
     figure.admin{
         width: 75px;
         height: 75px;
-        @include LinkImg(backend, admin, png);
+        @include LinkImg(logo, backend_admin, png);
         margin: 30px auto 0 auto;
     }
 
