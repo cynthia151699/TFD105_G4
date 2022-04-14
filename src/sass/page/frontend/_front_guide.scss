@@ -125,3 +125,139 @@ main.guide {
         }
     }
 }
+
+// ------------rwd---------------
+@media screen and (max-width: 575.98px){
+    // ------開館時間rwd------
+        .wrapperOpenhours{
+            @include Flex(column);
+            height:100vh;
+        }
+    .openhoursLeft{
+        width:120%;
+    
+        height: 100vh;
+        margin-top: 200px;
+        h4{
+          
+        }
+    }
+    .openhoursRight{
+       display: none;
+    }
+    // ------展覽資訊rwd------
+    .wrapperGuideticket{
+        border:2px solid red;   
+        width:$Width;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0px;
+        padding-right: 0px;
+    }
+    .guideticketCntPr{
+        padding-bottom: 50px;
+    }
+    // -----交通資訊-------
+    .wapperTrans{
+      
+        .map{
+            display: none;
+        }
+    
+    }
+      }
+    @media (min-width: 576px) and (max-width: 767.98px){
+    // ------開館時間rwd------
+        .wrapperOpenhours{
+            @include Flex(column);
+            height:100vh;
+        }
+    .openhoursLeft{
+        width:100%;
+        padding-top: 20px;
+        h4{
+            padding-bottom: 10px;
+        }
+    }
+    .openhoursRight{
+        width: 100%;
+        height: 420px;
+    }
+    // ------展覽資訊rwd------
+    .wrapperGuideticket{
+        border:2px solid red;   
+        width:$Width;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        padding-right: 0px;
+        background-color: #e9e9e9c8;
+    }
+    .guideticketCntPr{
+        padding-bottom: 50px;
+    }
+    .guideticketCntLine{
+        width: 400px;
+        margin: 5px auto;
+    }
+    // -----交通資訊-------
+    .wapperTrans{
+      
+        .map{
+            display: none;
+        }
+    
+    }
+    }
+    @media screen and (min-width:768px) and (max-width:991.98px){
+    // ------開館時間rwd------
+    .wrapperOpenhours{
+            @include Flex(column);
+            height:100vh;
+        }
+    .openhoursLeft{
+        width:100%;
+        padding-top: 50px;
+        h4{
+            padding-bottom: 10px;
+        }
+    }
+    .openhoursRight{
+        width: 100%;
+    }
+    // ------展覽資訊rwd------
+    .wrapperGuideticket{
+        border:2px solid red;   
+        width:$Width;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        padding-right: 0px;
+        background-color: #e9e9e9c8;
+    }
+    .guideticketCntPr{
+        padding-bottom: 50px;
+    }
+    
+    // -----交通資訊-------
+    .wapperTrans{
+      
+        .map{
+            display: none;
+        }
+    
+    }
+    
+      }
+      @media screen and (min-width:992px) and (max-width:1199.98px){
+    
+      }
+      @media screen and (min-width:1200px) and (max-width:1399.98px){
+    
+      }
+     
+    
+    
