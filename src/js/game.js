@@ -1,5 +1,12 @@
 "use strict";
 
+// 一開始進來自動亂數
+// window.onload = function () {
+//     for (let i = 0; i < swiper.length; i++) {
+//         swiper[i].slideTo(Math.floor(Math.random() * 10));
+//     }
+// };
+
 //rotation亂數
 let rotation = document.getElementsByClassName('rotate')[0];
 rotation.addEventListener("click", function (e) {
