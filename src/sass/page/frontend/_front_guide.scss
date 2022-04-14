@@ -10,7 +10,7 @@ main.guide {
 
         article.open {
             width: $RWD;
-            height: 400px;
+            height: 450px;
             background-color: #2932419a;
 
             section.left {
@@ -33,7 +33,8 @@ main.guide {
                 position: relative;
                 width: 400px;
                 height: 400px;
-                margin: 50px auto;
+
+                @include HorizontalAlignCenter(25px, 25px);
             }
 
             figure.openhoursRightImg .box {
