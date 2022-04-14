@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./layout/backnav.html', {
+        "active6" : "active"
+        })
+
+        <div class="popUp">
+
+            <div class="mask"></div>
+
+            <div class="popUpWindows">
+                <form>
+                    <div class="discount -add">
+                        <h5>新增折扣碼</h5>
+                        <ul>
+                            <li>
+                                <h6>折扣碼編號：</h6><input type="number">
+                            </li>
+                            <li>
+                                <h6>折扣碼名稱：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>折扣碼內容：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>折扣碼：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>折扣碼狀態：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>創建時間：</h6><h6 class="date">2022-02-22 00:00:00</h6>
+                            </li>
+                        </ul>
+
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
+                    </div>
+
+                    <div class="discount -edit">
+                        <h5>編輯折扣碼</h5>
+                        <ul>
+                            <li>
+                                <h6>折扣碼編號：</h6><input type="number">
+                            </li>
+                            <li>
+                                <h6>折扣碼名稱：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>折扣碼內容：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>折扣碼：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>折扣碼狀態：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>創建時間：</h6><h6 class="date">2022-02-22 00:00:00</h6>
+                            </li>
+                        </ul>
+
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
+                    </div>
+
+                    <div class="discount -store">
+                        <h5>編輯折扣碼</h5>
+                        <h6>尚未儲存，是否確認離開？</h6>
+
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="tableContainer">
+            <!-- 頁首 -->
+            @@include('./layout/header.html', {
+            tittle1: "折扣碼管理",
+            tittle2: "以折扣碼名稱查詢",
+            })
+
+            <form>
+                <table>
+                    <thead>
+                        <tr>
+                            <!-- table row -->
+                            <td>折扣碼編號</td>
+                            <td>折扣碼項目</td>
+                            <td>折扣碼內容</td>
+                            <td>折扣碼</td>
+                            <td>折扣碼狀態</td>
+                            <td>創建時間</td>
+                            <td>&nbsp</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>小禮物</td>
+                            <td>恭喜您獲得小禮物一份</td>
+                            <td>123456</td>
+                            <td>
+                                <input type="range" min="0" max="1">
+                            </td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>折價券</td>
+                            <td>恭喜您獲得50元折價券</td>
+                            <td>789101</td>
+                            <td>
+                                <input type="range" min="0" max="1">
+                            </td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>小禮物</td>
+                            <td>恭喜您獲得小禮物一份</td>
+                            <td>123456</td>
+                            <td>
+                                <input type="range" min="0" max="1">
+                            </td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>折價券</td>
+                            <td>恭喜您獲得50元折價券</td>
+                            <td>789101</td>
+                            <td>
+                                <input type="range" min="0" max="1">
+                            </td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/backend.min.js"></script>
+</body>
+
+</html>

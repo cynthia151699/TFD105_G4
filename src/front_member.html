@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	@@include('./layout/head.html')
+</head>
+
+<body>
+	<div class="wrapper" id="app">
+
+		<!-- 導覽列 -->
+		@@include('./layout/nav.html', {
+		"active5" : "active"
+		})
+
+		<main class="member">
+
+			<div class="cont">
+
+				<div class="form sign-in">
+
+					<h2>Welcome back,</h2>
+
+					<label class="ptSpace20">
+						<span>Email</span>
+						<input type="email" />
+					</label>
+
+					<label>
+						<span>Password</span>
+						<input type="password" />
+					</label>
+
+					<p class="forgot-pass">Forgot password?</p>
+
+					<button type="button" class="member submit">Sign In</button>
+					<button type="button" class="member fb-btn">Connect with <span>facebook</span></button>
+				</div>
+
+				<div class="sub-cont">
+
+					<div class="img">
+
+						<div class="img__text m--up">
+							<h2>New here?</h2>
+							<p>Sign up and discover great amount of new opportunities!</p>
+						</div>
+
+						<div class="img__text m--in">
+							<h2>One of us?</h2>
+							<p>If you already has an account, just sign in. We've missed you!</p>
+						</div>
+
+						<div class="img__btn" id="img__btn">
+							<span class="m--up">Sign Up</span>
+							<span class="m--in">Sign In</span>
+						</div>
+					</div>
+
+					<div class="form sign-up">
+
+						<h2>Time to feel like home,</h2>
+
+						<label class="ptSpace10">
+							<span>Name</span>
+							<input type="text" />
+						</label>
+
+						<label>
+							<span>Email</span>
+							<input type="email" />
+						</label>
+
+						<label>
+							<span>Password</span>
+							<input type="password" />
+						</label>
+
+						<label>
+							<span>PASSWORD CONFIRM</span>
+							<input type="password" />
+						</label>
+
+						<label>
+							<span>PHONE NUMBER</span>
+							<input type="password" />
+						</label>
+
+						<p><input type="checkbox" class="check"> I would like to receive news, tips and marketing offers from Anno.</p>
+						<p><input type="checkbox" class="check"> I have read and understood the Terms & Conditions and Privacy Policy.</p>
+
+						<button type="button" class="member submit">Sign Up</button>
+						<button type="button" class="member fb-btn">Join with <span>facebook</span></button>
+					</div>
+				</div>
+			</div>
+
+
+
+			<!-- 彈窗背景透明度 -->
+			<div class="mask"></div>
+
+			<!-- 彈窗內文 -->
+			<div class="popUp" style="display: none;">
+
+				<h6>
+					Terms & Conditions and Privacy Policy.<span>X</span>
+				</h6>
+
+				<h6>
+					Anno Account, Personal Information, and Security
+					By signing up for an account or placing an Order you agree and understand that we
+					may collect, use, store and process your Personal Information in accordance with our
+					Privacy & Cookie Policy. Anno Museum fully respects the privacy of individuals who
+					access
+					and use the Platforms. For details on the manner in which we use cookies, the type
+					of
+					information we collect, how and for what purpose, we use your information and under
+					what
+					circumstances we disclose information please see our Privacy & Cookie Policy, which
+					are
+					incorporated into and form part of these Terms.
+				</h6>
+			</div>
+
+			<!-- 忘記密碼變更彈窗 -->
+			<article style="display: none;">
+
+				<h3>Password Reset</h3>
+
+				<h4>
+					Please enter the email address that you used to sign up so we
+					can send you an email with your username and a link to reset
+					your password.
+				</h4>
+
+				<input type="name" />
+				<a href="#">Cancel</a>
+				<a href="#">Send</a>
+
+			</article>
+
+			<!-- 忘記密碼送出郵件彈窗 -->
+			<article style="display: none;">
+				<h5>
+					The password has already sent into your email address, please check it.
+				</h5>
+
+				<a href="./member.html">Back to login page</a>
+			</article>
+		</main>
+	</div>
+
+	<!-- 載入套件 -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+	<!-- 載入js -->
+	<script>
+		document.querySelector('#img__btn').addEventListener('click', function () {
+			console.log("aaa");
+			document.querySelector('.cont').classList.toggle('s--signup');
+		});
+	</script>
+
+	<!-- <script src="./js/member.min.js"></script> -->
+</body>
+
+</html>

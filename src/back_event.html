@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- 導覽列 -->
+        @@include('./layout/backnav.html', {
+        "active3" : "active"
+        })
+
+        <div class="popUp">
+
+            <div class="mask"></div>
+
+            <div class="popUpWindows">
+                <form>
+                    <div class="event -add">
+                        <h5>新增展覽訊息</h5>
+                        <ul>
+                            <li>
+                                <h6>展覽訊息編號：</h6><input type="number">
+                            </li>
+                            <li>
+                                <h6>展覽訊息分類：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>展覽訊息名稱：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>展覽開始日：</h6><input type="date">
+                            </li>
+                            <li>
+                                <h6>展覽結束日：</h6><input type="date">
+                            </li>
+                            <li>
+                                <h6>展覽訊息開放狀態：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>圖片1：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳">
+                            </li>
+                            <li>
+                                <h6>圖片2：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳">
+                            </li>
+                            <li>
+                                <h6>圖片3：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳">
+                            </li>
+                            <li>
+                                <h6>圖片4：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳">
+                            </li>
+                            <li>
+                                <h6>展覽活動內容：<input type="text"></h6>
+                            </li>
+                        </ul>
+
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
+                    </div>
+
+                    <div class="event -edit">
+                        <h5>編輯展覽訊息</h5>
+                        <ul>
+                            <li>
+                                <h6>展覽訊息編號：</h6><input type="number">
+                            </li>
+                            <li>
+                                <h6>展覽訊息分類：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>展覽訊息名稱：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>展覽開始日：</h6><input type="date">
+                            </li>
+                            <li>
+                                <h6>展覽結束日：</h6><input type="date">
+                            </li>
+                            <li>
+                                <h6>展覽訊息開放狀態：</h6><input type="text">
+                            </li>
+                            <li>
+                                <h6>圖片1：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳">
+                            </li>
+                            <li>
+                                <h6>圖片2：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳">
+                            </li>
+                            <li>
+                                <h6>圖片3：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳">
+                            </li>
+                            <li>
+                                <h6>圖片4：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳">
+                            </li>
+                            <li>
+                                <h6>展覽活動內容：</h6><input type="text">
+                            </li>
+                        </ul>
+
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
+                    </div>
+
+                    <div class="event -store">
+                        <h5>編輯展覽訊息</h5>
+                        <h6>尚未儲存，是否確認離開？</h6>
+                        
+                        <div class="checkButtons">
+                            <button class="cancel">取消</button>
+                            <button>確定</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="tableContainer">
+            <!-- 頁首 -->
+            @@include('./layout/header.html', {
+            tittle1: "展訊發布管理",
+            tittle2: "以展覽名稱查詢",
+            })
+
+            <form >
+                <table>
+                    <thead>
+                        <tr>
+                            <!-- table row -->
+                            <td>展訊編號</td>
+                            <td>展訊分類</td>
+                            <td>展訊名稱</td>
+                            <td>展訊開始日</td>
+                            <td>展訊結束日</td>
+                            <td>展訊狀態</td>
+                            <td>創建時間</td>
+                            <td> </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>當期展覽</td>
+                            <td>xxxxx</td>
+                            <td>2022-03-22</td>
+                            <td>2022-06-11</td>
+                            <td>
+                                <input type="range" min="0" max="1">
+                            </td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>過往展覽</td>
+                            <td>xxxxx</td>
+                            <td>2022-03-22</td>
+                            <td>2022-06-11</td>
+                            <td>
+                                <input type="range" min="0" max="1">
+                            </td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>未來展覽</td>
+                            <td>xxxxx</td>
+                            <td>2022-03-22</td>
+                            <td>2022-06-11</td>
+                            <td>
+                                <input type="range" min="0" max="1">
+                            </td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/backend.min.js"></script>
+</body>
+
+</html>

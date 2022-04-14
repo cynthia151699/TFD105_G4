@@ -1,0 +1,76 @@
+
+
+article.cartOrder{
+    width: $RWD;
+
+    h3{
+        color: $TextColor2;
+        padding-top: 7%;
+        margin-left: 5%;
+    }
+
+    h4{
+        span{
+            color: $AccentColor3; 
+            font-family: $SpecialFont;
+        }
+    }
+
+    section.rollover{
+        width: 70%; 
+        margin-top: 5%; 
+        margin-left: 18%; 
+        padding: 20px;
+
+        box-sizing: border-box;
+        
+        background-color: $PopUpWindow;
+    }
+    
+    section.advance{
+        width: 70%; 
+        margin-top: 1%; 
+        margin-left: 18%; 
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: $PopUpWindow;
+    }
+}
+
+
+// 按鈕
+
+.btn_order_cancel{
+    width: 100px;
+    height: 30px;
+    background-color: #C4C4C4;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+    margin-bottom: 50px;
+}
+
+.btn_order_next{
+    margin-right: 145px;
+    width: 100px;
+    height: 30px;
+    background-color: #F29966;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000;
+}
+
+
+//RWD
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+@media screen and (max-width: 575.98px) {
+
+}
