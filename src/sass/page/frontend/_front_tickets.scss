@@ -138,15 +138,57 @@ div.pastBooking_Management {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+// 彈窗
+.lightBox {
+    position: absolute;
+    z-index: 36;
+
+    width: $Width;
+    height: 100vh;
+
+    display: none;
+
+    .mask {
+        position: absolute;
+        z-index: 35;
+
+        width: $Width;
+        height: 100vh;
+
+        background-color: #293241;
+        opacity: 0.7;
+
+        display: none;
+    }
+}
+
+// =============當期展覽彈窗==============//
 // ---外框&按鈕------
-.wrapperTicketsCur{
+.wrapperTicketsCur, .past_mainblock{
     @include VerticalAlignCenter();
-    width: $RWD;
-    height: $RWD;
-    .ticketsCurCon{
+    z-index: 37;
+    background-color: $PopUpWindow;
+    width: 80%;
+    max-width: 800px;
+    border-radius: $BorderRadius;
+    box-shadow: 0 0 10px #ddd;
+    @include PositionAlignCenter;
+
+    .ticketsCurCon, .ticketsPastCon{
         @include Flex(column);
         align-content: center;
-        width: $RWD;
+        width: 90%;
         @include HorizontalAlignCenter();
        .defaultBtn{
         width: 200px;
@@ -160,61 +202,66 @@ div.pastBooking_Management {
 .ticketsCurConUp{
     @include Flex(row);
     @include HorizontalAlignCenter();
-    width: 1000px;
-    justify-content: space-between;
+    //justify-content: space-between;
+    z-index: 38;
     .ticketsCurLt{
-
-        line-height: 2.5;
-        h2{
-            color:$TextColor2;
-        }
         h4{
-            color:$TextColor2;
+            color:$TextColor3;
+            line-height: $LineHeight;
+        }
+        h6{
+            color:$TextColor3;
+            line-height: $LineHeight;
         }
     }
+    // ------qr code-----
+    .ticketsCurRi img{
+        display: block;
+        width:100%;
+        max-width: 200px;
+    }
 }
-// ------qr code-----
-.ticketsCurRi img{
-    width:350px;
-}
+
+
+
+
+
+
+
+
+// =============過往展覽彈窗==============//
 
 .past_mainblock {
-    // @include LinkImg(tickets, tickets_pic8, jpg, cover, null, null);
-    width: 100%;
-    height: $RWD;
-}
 
-.past_topblock {
-    width: 80vw;
-    height: 90vh;
-    @include Flex(row);
-    @include HorizontalAlignCenter($top: 30px, $bottom:30px);
-    @include VerticalAlignCenter;
-}
+    .past_topblock {
+        
+        @include VerticalAlignCenter;
+        @include HorizontalAlignCenter; 
 
-.past_textblock {
+        .past_textblock {
 
-    h3,
-    h5 {
-        color: $TextColor2;
+            h4,
+            h6 {
+                color: $TextColor3;
+                line-height: $LineHeight;
+            }
+        
+        }
+
+        .past_imgblock>img {
+            width: 100%;
+            max-width: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+
     }
-
-    width: 50%;
+    
 }
 
-.past_bottomblock {
-    @include Flex(row);
-}
 
-.past_bottomblock>.defaultBtn {
-    @include HorizontalAlignCenter();
-    background-color: $AccentColor2;
-}
 
-.past_imgblock {
-    width: 50%;
-}
 
-.past_imgblock>img {
-    width: $Width;
-}
+
+
+

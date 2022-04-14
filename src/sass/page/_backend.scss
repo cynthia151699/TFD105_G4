@@ -1,5 +1,5 @@
 // 彈窗
-.popUp {
+div.popUp {
     position: absolute;
     z-index: 57;
 
@@ -10,7 +10,7 @@
 
     display: none;
 
-    .mask {
+    div.mask {
         position: absolute;
         z-index: 58;
 
@@ -21,6 +21,26 @@
         opacity: 0.7;
 
         display: none;
+    }
+
+    div.popUpWindows{
+        ul{
+            width: fit-content;
+            @include HorizontalAlignCenter();
+            li{
+                text-align: right;
+                input{
+                    width: 350px;
+                    box-sizing: border-box;
+                }
+                h6.date{
+                    width: 350px;
+                    color: $TextColor;
+                    text-align: center;
+                    padding: 0;
+                }
+            }
+        }
     }
 
     @mixin PopUp {
@@ -44,12 +64,14 @@
 
 
         h5 {
+            color: $TextColor;
             background-color: $RemindBlue;
             border-radius: 10px 10px 0px 0px;
             padding: 10px;
         }
 
         h6 {
+            color: $TextColor;
             display: inline-block;
             padding: 7px;
         }

@@ -17,7 +17,11 @@ div.wrapperLoading {
     }
 
     .loadingPattern {
-        margin: 0 auto;
+        position: absolute;
+        top: 47%;
+        left: 47%;
+
+        // margin: 0 auto;
     }
     
     .loadingPattern>div {

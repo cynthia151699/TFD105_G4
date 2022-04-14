@@ -3,11 +3,12 @@
 
 <head>
 	@@include('./layout/head.html')
+	<link rel="stylesheet" href="./css/front_news.css">
 </head>
 
 
 <body class="hotNews_page">
-	<div class="wrapper">
+	<div class="wrapper" id="app">
 
 		<!-- 導覽列 -->
 		@@include('./layout/nav.html')
@@ -37,13 +38,13 @@
 			</symbol>
 		</svg>
 
-		<main class="infoBlock" style="width: 100%">
+		<main class="infoBlock">
 
 			<div class="slideshow">
 				<div class="slideshow__deco"></div>
 				<div class="slide">
 					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(./img/info_test/1.jpg);"></div>
+						<div class="slide__img" style="background-image: url(./img/index/index_pic2.jpeg);"></div>
 					</div>
 					<div class="slide__side">Venue Information</div>
 					<div class="slide__title-wrap">
@@ -54,7 +55,7 @@
 				</div>
 				<div class="slide">
 					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(./img/info_test/2.jpg);"></div>
+						<div class="slide__img" style="background-image: url(./img/index/index_pic4.jpeg);"></div>
 					</div>
 					<div class="slide__side">Award Information</div>
 					<div class="slide__title-wrap">
@@ -65,7 +66,7 @@
 				</div>
 				<div class="slide">
 					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(./img/info_test/3.jpg);"></div>
+						<div class="slide__img" style="background-image: url(./img/index/index_pic5.jpeg);"></div>
 					</div>
 					<div class="slide__side">Extension of the Exhibition</div>
 					<div class="slide__title-wrap">
@@ -76,7 +77,7 @@
 				</div>
 				<div class="slide">
 					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(./img/info_test/4.jpg);"></div>
+						<div class="slide__img" style="background-image: url(./img/index/index_pic6.jpeg);"></div>
 					</div>
 					<div class="slide__side">Opening Hours</div>
 					<div class="slide__title-wrap">
@@ -142,14 +143,13 @@
 		</main>
 	</div>
 
-	<!-- 載入套件 -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js" integrity="sha512-gAY/etPYgEHDUW+GLBkxn90gKGHPlPCpRhXasGZHGx1Pk0QZw2bLRWCf1dOrY7UhHs8EV6KBSBq86206CJqrZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
 	<script src="./js/vendors/charming.min.js"></script>
 	<script src="./js/vendors/TweenMax.min.js"></script>
 
 	<!-- 載入js -->
 	<script src="./js/hot_news.min.js"></script>
+
 	<script>
 		document.documentElement.className = "js";
 		var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
