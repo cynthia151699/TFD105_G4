@@ -163,7 +163,7 @@ div.pastBooking_Management {
         position: absolute;
         z-index: 35;
 
-        width: $Width;
+        width: $RWD;
         height: 100vh;
 
         background-color: #293241;
@@ -202,16 +202,17 @@ div.pastBooking_Management {
 .ticketsCurConUp{
     @include Flex(row);
     @include HorizontalAlignCenter();
-    //justify-content: space-between;
     z-index: 38;
     .ticketsCurLt{
         h4{
             color:$TextColor3;
             line-height: $LineHeight;
+            text-align: left;
         }
         h6{
             color:$TextColor3;
             line-height: $LineHeight;
+            text-align: left;
         }
     }
     // ------qr code-----
@@ -219,6 +220,23 @@ div.pastBooking_Management {
         display: block;
         width:100%;
         max-width: 200px;
+    }
+}
+
+
+
+@media screen and (max-width: 767.98px) {
+    // -----內容文字------
+    .ticketsCurConUp{
+        @include Flex(column);
+        .ticketsCurLt{
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+    // ------qr code-----
+    .ticketsCurRi {
+        @include HorizontalAlignCenter();
     }
 }
 
