@@ -67,6 +67,30 @@ tr{
 }
 
 
+//數量加減按鈕
+.add{
+    cursor: pointer;
+    color: $TextColor2;
+    background-color: $PrimaryColor;
+    font-size:16px;
+}
+
+
+.sub{
+    cursor: pointer;
+    color: $TextColor2;
+    background-color: $PrimaryColor;
+    font-size: 20px;
+}
+
+.qty{
+    width: 20px;
+    text-align: center;
+    color: $TextColor2;
+    background-color: $PrimaryColor;
+    font-size:16px;
+}
+
 // 按鈕
 
 .btn_checkout{

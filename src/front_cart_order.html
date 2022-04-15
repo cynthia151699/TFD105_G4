@@ -35,16 +35,24 @@
                                     <td>Rollover Ticket</td>
                                     <td>FEB 5 - MAY 5, 2022</td>
                                     <td>$450</td>
-                                    <td>- 2 +</td>
-                                    <td>NT$900</td>
+                                    <td>
+                                        <input type="button" value="-" class="sub">  
+                                        <input type="text" value="0" class="qty">  
+                                        <input type="button" value="+" class="add">
+                                    </td>
+                                    <td><p><span>0</span></p></td>
                                 </tr>
 
                                 <tr class="second_order" style="color:#fff; line-height: 5;" >
                                     <td>Advance Ticket</td>
                                     <td>MAY 15 - AUG 15, 2022</td>
                                     <td>$400</td>
-                                    <td>- 2 +</td>
-                                    <td>NT$800</td>
+                                    <td>
+                                        <input type="button" value="-" class="sub">  
+                                        <input type="text" value="0" class="qty">
+                                        <input type="button" value="+" class="add">
+                                    </td>
+                                    <td><p><span>0</span></p>  </td>
                                 </tr>
                             </table>
 
@@ -59,8 +67,8 @@
             
                                 <div class="c_count">
                                     <div class="c_amount">
-                                        <h6>Amount:</h6>
-                                        <h6>4</h6>
+                                        <h6>Amoumt:<span>0</span></h6>
+                                        
                                     </div>
             
                                     <div class="c_discount">
@@ -86,6 +94,30 @@
             </article>
         </main>
     </div>
+
+    <script>
+        var aAdd = document.querySelectorAll(".add");  
+        var sub = document.querySelectorAll(".sub");  
+        for (var i = 0; i < aAdd.length; i++) {  
+            aAdd[i].onclick = function () {  
+                var num = Number(this.previousElementSibling.value);  
+                num++;  
+                this.previousElementSibling.value = num;  
+                var price = this.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild.innerHTML;  
+                this.nextElementSibling.firstElementChild.innerHTML = price * num;  
+            }  
+        }  
+        for (var i = 0; i < sub.length; i++) {  
+            sub[i].onclick = function () {  
+                var num = Number(this.nextElementSibling.value);  
+                num--;  
+                this.nextElementSibling.value = num;  
+                var price = this.previousElementSibling.firstElementChild.innerHTML;  
+                this.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.innerHTML = price * num;  
+            }  
+        }  
+    </script>
+
 </body>
 
 </html>
