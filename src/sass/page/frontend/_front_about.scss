@@ -1,5 +1,6 @@
 // =====================about anno=======================
 main.about {
+
     h2,
     h6 {
         color: $TextColor2;
@@ -70,13 +71,13 @@ main.about {
 
         div.content {
             display: none;
-
             position: absolute;
             top: 80px;
             width: calc(100% - 100px);
             height: 700px;
-            h6{
-                width:600px;
+
+            h6 {
+                width: 600px;
             }
         }
 
@@ -86,37 +87,128 @@ main.about {
         }
     }
 
-    // -------------sns----------------
-    div.sns {
-        width: $RWD;
-        height: $Height;
+    //========== part 3 ===========//
 
-        @include LinkImg(about, about_spic7, jpeg, cover, null, null);
+    article.page3 {
+        height: 100%;
+        background-color: $PrimaryColor;
+        @include VerticalAlignCenter;
+        @include LinkImg(about, about_pic11, jpg, cover, null, left top);
 
-        article.sns {
-            width: 1050px;
-
-            @include Flex(row);
-            @include HorizontalAlignCenter();
-
-            h3 {
-                color: $TextColor2;
-                text-align: center;
-                text-shadow: $TextShadow;
-            }
-
-            section.snsFb,
-            section.snsIg,
-            section.snsTwitter {
-                width: 350px;
-            }
+        .part3_wrapper {
+            width: 100%;
+            margin: 0 auto;
         }
     }
+
+    .part3_wrapper {
+        border: 2px solid red;
+    }
+
+    .cols {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .col {
+        width: calc(25% - 30px);
+        margin: 20px;
+        cursor: pointer;
+    }
+
+    .container {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+
+    .front,
+    .back {
+        background-size: cover;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        background-position: center;
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        backface-visibility: hidden;
+        text-align: center;
+        min-height: 280px;
+        height: auto;
+        color: $PrimaryColor;
+    }
+
+    .back {
+        background: #456278;
+        background: linear-gradient(45deg, #466780 0%, #c1d6e0 100%);
+    }
+
+    .container:hover .front,
+    .container:hover .back {
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+
+    .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .inner {
+        transform: translateY(-50%) translateZ(60px) scale(0.94);
+        top: 50%;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        outline: 1px solid transparent;
+        perspective: inherit;
+        z-index: 2;
+    }
+
+    .container .back {
+        transform: rotateY(180deg);
+        transform-style: preserve-3d;
+    }
+
+    .container .front {
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+    }
+
+    .container .picOne {
+        @include LinkImg(about, about_pic8, jpg, cover, null, left top);
+    }
+
+    .container .picTwo {
+        @include LinkImg(about, about_pic9, jpg, cover, null, left top);
+    }
+
+    .container .picThree {
+        @include LinkImg(about, about_pic10, jpg, cover, null, left top);
+    }
+
+    .container:hover .back {
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+    }
+
+    .container:hover .front {
+        transform: rotateY(-180deg);
+        transform-style: preserve-3d;
+    }
+
+    .front .inner h3 {
+        position: relative;
+    }
+
+
 }
 
 // ------------rwd---------------
 @media screen and (max-width: 575.98px) {
     main.about {
+
         // =====================about anno=======================
         article.about {
             section.about {
@@ -141,28 +233,30 @@ main.about {
             position: relative;
             @include VerticalAlignCenter();
             @include LinkImg(about, about_pic1, png, cover, null, null);
-    
+
             h2.text {
                 display: none;
             }
-    
+
             div.content {
                 display: block;
                 padding-left: 30px;
                 top: 0px;
                 width: 80%;
                 height: 700px;
-                h2{
+
+                h2 {
                     font-size: 1.6em;
                     text-align: left;
 
-            }
-                h6{
-                    width:100%;
+                }
+
+                h6 {
+                    width: 100%;
                     margin-top: 30px;
                 }
             }
-    
+
             div.middle {
                 display: flex;
                 justify-content: flex-end;
@@ -177,23 +271,40 @@ main.about {
 
         // ======================history of anno======================
         div.history {
-    
+
             h2.text {
                 left: 30%;
                 margin-top: 30px;
             }
-    
+
             div.content {
 
-                h6{
-                    width:100%;
+                h6 {
+                    width: 100%;
                     margin-top: 30px;
                 }
             }
+
             div.middle {
                 margin-top: 0px;
             }
         }
+    }
 }
+
+@media screen and (min-width:768px) and (max-width:991.98px) {
+
+    main.about.cols{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-content: center;
+        }
+    main.about.col {
+            width: calc(50% - 30px);
+            margin: 20px;
+            cursor: pointer;
+        }
+
 }
-@media screen and (min-width:768px) and (max-width:991.98px) {}
