@@ -19,14 +19,13 @@
     }
 }
 
-@mixin APic ($var, $position, $color) {
+@mixin APic ($color) {
 
     display: block;
 
     width: 160px;
     height: 140px;
 
-    @include LinkImg('tickets', 'tickets_pic#{$var}', 'jpeg', cover, no-repeat, $position);
     @include HorizontalAlignCenter;
 
     border-left: 4px solid $color;
@@ -98,8 +97,9 @@ ul.tickets_currentBooking {
         width: fit-content;
 
         @for $i from 1 to 3 {
-            a.currentbookingPic-#{$i} {
-                @include APic($i, center, $AccentColor2);
+            img.currentbookingPic-#{$i} {
+                @include APic($AccentColor2);
+                cursor: pointer;
             }
         }
     }
@@ -119,8 +119,9 @@ div.pastBooking_Management {
             display: block;
 
             @for $i from 1 to 10 {
-                a.pastPic-#{$i} {
-                    @include APic($i+2, center, $AccentColor);
+                img.pastPic-#{$i} {
+                    @include APic($AccentColor);
+                    cursor: pointer;
                 }
             }
         }
@@ -163,7 +164,7 @@ div.pastBooking_Management {
         position: absolute;
         z-index: 35;
 
-        width: $Width;
+        width: $RWD;
         height: 100vh;
 
         background-color: #293241;
@@ -202,16 +203,17 @@ div.pastBooking_Management {
 .ticketsCurConUp{
     @include Flex(row);
     @include HorizontalAlignCenter();
-    //justify-content: space-between;
     z-index: 38;
     .ticketsCurLt{
         h4{
             color:$TextColor3;
             line-height: $LineHeight;
+            text-align: left;
         }
         h6{
             color:$TextColor3;
             line-height: $LineHeight;
+            text-align: left;
         }
     }
     // ------qr code-----
@@ -219,6 +221,35 @@ div.pastBooking_Management {
         display: block;
         width:100%;
         max-width: 200px;
+    }
+}
+
+
+
+@media screen and (max-width: 767.98px) {
+    main.ticketsPage article.tickets{
+        width: 90%;
+        @include HorizontalAlignCenter();
+    }
+    //當期票券
+    ul.tickets_currentBooking{
+        @include Flex(column);
+        li.tickets_currentBooking{
+            margin-right: 0;
+        }
+    }
+    //彈窗
+    // -----內容文字------
+    .ticketsCurConUp, .past_topblock{
+        @include Flex(column);
+        .ticketsCurLt, .past_textblock {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+    // ------qr code-----
+    .ticketsCurRi {
+        @include HorizontalAlignCenter();
     }
 }
 
@@ -244,6 +275,7 @@ div.pastBooking_Management {
             h6 {
                 color: $TextColor3;
                 line-height: $LineHeight;
+                text-align: left;
             }
         
         }

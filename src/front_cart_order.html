@@ -17,53 +17,115 @@
             <!-- coding here -->
             <article class="cartOrder">
                 <section class="rollover">
-                    <h4 class="ticketsType"><span>Rollover Ticket</span>
-                        <h6>Break the Classic - TAKIKAW RISA Solo Exhibition
-                            <br>Date: Feb 5 - May 5, 2022
-                            <br>Place: Anno Museum South Buliding
-                            <h5>NTD $450
-                                <select>
-                                    <option>Number of Tickets</option>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    </select></h5>
-                            </h5>
-                        </h6>
-                    </h4>
-                </section>
+                    <h4>CART</h4>
 
-                <section class="advance">
-                    <h4 class="ticketsType" ><span>Advance Ticket</span>
-                        <h6>True Color - KAYLA GILL Solo Exhibition (Upcoming)
-                        <br>Date: May 15 - Aug 17, 2022
-                        <br>Place: Anno Museum North Buliding
-                        <h5>NTD $400 
-                            <select>
-                            <option>Number of Tickets</option>
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            </select></h5>
-                    </h4>
+                        <div class="list_box">
+
+                            <table class="list_table">
+                                <!-- 項目 -->
+                                <tr class="table_title" style="color:#fff;">
+                                    <td>Tickets</td>
+                                    <td>Validity Period</td>
+                                    <td>Price</td>
+                                    <td>QTY</td>
+                                    <td>Total</td>
+                                </tr>
+
+                                <!-- 第一種票券 -->
+                                <tr class="first_order" style="color:#fff; line-height: 5;">
+                                    <td>Rollover Ticket</td>
+                                    <td>FEB 5 - MAY 5, 2022</td>
+                                    <td colspan="3">
+                                        <p style="display: inline;">
+                                        <p style="display: inline-block; margin-right: 30px;">$<span>450</span></p>  
+                                        <input type="button" value="-" class="sub">  
+                                        <input type="text" value="0" class="qty">  
+                                        <input type="button" value="+" class="add" style="margin-right: 20px;">
+                                        <p style="display: inline-block; width: 60px;">$<span>0</span></p>  
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <!-- 第二種票券 -->
+                                <tr class="second_order" style="color:#fff; line-height: 5;" >
+                                    <td>Advance Ticket</td>
+                                    <td>MAY 15 - AUG 15, 2022</td>
+                                    <td colspan="3">
+                                        <p style="display: inline;">
+                                        <p style="display: inline-block; margin-right: 30px;">$<span>400</span></p>  
+                                        <input type="button" value="-" class="sub">  
+                                        <input type="text" value="0" class="qty">  
+                                        <input type="button" value="+" class="add" style="margin-right: 20px;">
+                                        <p style="display: inline-block; width: 60px;">$<span>0</span></p>  
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- 結算欄位-->
+                            <div class="order_amount">
+                                <!-- 折扣碼 -->
+                                <div class="input_discount">
+                                    <h6>Coupon:</h6>
+                                    <input class="input_coupon" type="text" name="coupon" placeholder="Type here...">
+                                    <input class="btn_code_submit" type="submit" value="Apply">
+                                    <h6>Get Tickets: By QR-code</h6>
+                                </div>
+            
+                                <!-- 結算 -->
+                                <div class="c_count">
+                                    <div class="c_amount">
+                                        <h6>Amount:<span>0</span></h6>
+                                        
+                                    </div>
+            
+                                    <div class="c_discount">
+                                        <h6>Discount:</h6>
+                                        <h6>Without Using Coupon</h6>
+                                    </div>
+                                    <h6 class="c_total">Total: $0</h6>
+
+                                    
+                                </div>
+
+                                <!-- 送出按鈕 -->
+                                <div class="btn_group mtSpace20">
+                                    <!-- <input class="btn_order_cancel" type="submit" value="Cancel"
+                                        onclick="location.href='./tickets.html'"> -->
+                                    <input class="btn_checkout" type="submit" value="CHECKOUT"
+                                        onclick="location.href='./front_cart_info.html'">
+                                </div>
+            
+                            </div>
                 </section>
                 
-                <section class="cartButton mtSpace20">
-
-                    <div class="btn_group">
-                        <input class="btn_order_cancel" type="submit" value="Cancel"
-                            onclick="location.href='./tickets.html'">
-                        <input class="btn_order_next" type="submit" value="Next"
-                            onclick="location.href='./front_cart_info.html'">
-                    </div>
-                </section>
             </article>
         </main>
     </div>
+
+    <script>
+        var aAdd = document.querySelectorAll(".add");  
+        var sub = document.querySelectorAll(".sub");  
+        for (var i = 0; i < aAdd.length; i++) {  
+            aAdd[i].onclick = function () {  
+                var num = Number(this.previousElementSibling.value);  
+                num++;  
+                this.previousElementSibling.value = num;  
+                var price = this.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild.innerHTML;  
+                this.nextElementSibling.firstElementChild.innerHTML = price * num;  
+            }  
+        }  
+        for (var i = 0; i < sub.length; i++) {  
+            sub[i].onclick = function () {  
+                var num = Number(this.nextElementSibling.value);  
+                num--;  
+                this.nextElementSibling.value = num;  
+                var price = this.previousElementSibling.firstElementChild.innerHTML;  
+                this.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.innerHTML = price * num;  
+            }  
+        }  
+    </script>
+
 </body>
 
 </html>

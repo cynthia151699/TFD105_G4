@@ -5,7 +5,7 @@
     -ms-overflow-style: none; /* IE 10+ */
     overflow-x: hidden;
     overflow-y: auto;
-    width: 950px;
+    width: 100%;
     h3{
         color: $TextColor2;
         padding-top: 10%;
@@ -37,6 +37,7 @@
     }
 }
 
+//PART 2 ORDER
 .order_list{
     h6{
         color:$TextColor2;
@@ -53,17 +54,25 @@ table.list_table{
     td{
         padding: 10px;
     }
+
+    tr{
+        background-color: $PrimaryColor;
+        border-bottom: 1px #fff solid;
+    }
 }
 
-.first_order{
-    border-bottom: 1px solid #000;
+
+
+.table_title{
+    font-weight:450;
 }
 
-.count{
 
+.i_count{
     width: 700px;
-    margin-top: 10px; 
+    margin-top: 20px; 
     display: inline-block;
+    border: 1px red solid;
 
 }
 
@@ -87,7 +96,12 @@ table.list_table{
 .c_total{
     text-align: right;
     color:$TextColor2;
+
 }
+
+
+
+//PART 3 PAYMENT 
 
 .payment{
     margin-top: 5%; 
@@ -103,7 +117,6 @@ table.list_table{
 .input_type{
     width: 330px;
     height: 30px;
-    background-color: #B5CDE2;
     margin: 10px;
     border: none;
 }

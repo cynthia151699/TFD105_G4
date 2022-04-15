@@ -1,57 +1,103 @@
-
-
 article.cartOrder{
     width: $RWD;
-
-    h3{
-        color: $TextColor2;
-        padding-top: 7%;
-        margin-left: 5%;
-    }
-
-    h4{
-        span{
-            color: $AccentColor3; 
-            font-family: $SpecialFont;
-        }
-    }
 
     section.rollover{
         width: 70%; 
         margin-top: 5%; 
         margin-left: 18%; 
         padding: 20px;
-
         box-sizing: border-box;
-        
-        background-color: $PopUpWindow;
+        background-color: $PrimaryColor;
     }
-    
-    section.advance{
-        width: 70%; 
-        margin-top: 1%; 
-        margin-left: 18%; 
-        padding: 20px;
-        box-sizing: border-box;
-        background-color: $PopUpWindow;
+
+    //表格
+    tr{
+        background-color: $PrimaryColor;
+        border-bottom: 1px #fff solid;
     }
 }
 
 
-// 按鈕
 
-.btn_order_cancel{
-    width: 100px;
-    height: 30px;
-    background-color: #C4C4C4;
-    border: none;
+
+.table_title{
+    font-weight:450;
+}
+
+//order amount 結算區域
+
+.order_amount{
+    border: 1px green solid;
+    margin-top: 30px; 
+    box-sizing: border-box;
+    width: 700px;
+}
+
+
+.input_discount{
+    display: inline-block;
+    border: 1px red solid;
+}
+
+
+
+.c_count{
+    display: inline-block;
+    border: 1px blue solid;
+    padding-left: 180px;
+}
+
+.c_amount{
+    text-align: right;
+    h6{
+        display: inline-block;
+        color:$TextColor2;
+    }
+}
+
+.c_discount{
+    text-align: right;
+    h6{
+        display: inline-block;
+        text-align: right;
+        color:$TextColor2;
+    }
+}
+
+.c_total{
+    text-align: right;
+    color:$TextColor2;
+
+}
+
+
+//數量加減按鈕
+.add{
     cursor: pointer;
-    box-shadow: 1px 1px 1px #000;
-    margin-bottom: 50px;
+    color: $TextColor2;
+    background-color: $PrimaryColor;
+    font-size:16px;
 }
 
-.btn_order_next{
-    margin-right: 145px;
+
+.sub{
+    cursor: pointer;
+    color: $TextColor2;
+    background-color: $PrimaryColor;
+    font-size: 20px;
+}
+
+.qty{
+    width: 20px;
+    text-align: center;
+    color: $TextColor2;
+    background-color: $PrimaryColor;
+    font-size:16px;
+}
+
+// 送出按鈕
+
+.btn_checkout{
     width: 100px;
     height: 30px;
     background-color: #F29966;

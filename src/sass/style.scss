@@ -42,6 +42,8 @@
 @import './page/backend_login';
 @import './page/backend';
 
+
+@import './layout/hamberger';
 // -------------------- HTML --------------------
 
 body{
@@ -99,9 +101,6 @@ body{
             text-decoration: none;
         }
 
-        input{
-            background-color: $Gray;
-        }
 
         button{
             background-color: $Gray;
