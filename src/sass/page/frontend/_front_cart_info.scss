@@ -5,7 +5,7 @@
     -ms-overflow-style: none; /* IE 10+ */
     overflow-x: hidden;
     overflow-y: auto;
-    width: 950px;
+    width: 100%;
     h3{
         color: $TextColor2;
         padding-top: 10%;
@@ -115,7 +115,6 @@ tr{
 .input_type{
     width: 330px;
     height: 30px;
-    background-color: #B5CDE2;
     margin: 10px;
     border: none;
 }
