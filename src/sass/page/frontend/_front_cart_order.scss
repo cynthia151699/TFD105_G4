@@ -1,124 +1,69 @@
-// 麵包屑位置
-.headerContainer{
-    h5.cart{
-        &:first-child{
-            left: 20px;
-        }
-
-        &:nth-child(2){
-            left: 115px;
-        }
-
-        &:nth-child(3){
-            left: 225px;
-        }
-
-        &:last-child{
-            left: 395px;
-        }
-    }
-}
-
-// 流程裝飾線
-ul.stepDecorate::before{
-    content: ' ';
-    height: 50%;
-    width: 5px;
-    background-color: $Gray;
-
-    position: absolute;
-    top: 25%;
-    left: 150px;
-    z-index: 0;
-}
-
-ul.stepDecorate{
-    width: 70px;
-    margin-left: 57px;
-
-    li.step{   
-        width: 50px;
-        height: 50px;
-
-        background-color: $Gray;
-        color: $TextColor3;
-
-        text-align: center;
-        border-radius: 50%;
-
-        position: absolute;
-        z-index: 2;
-
-        span{
-            width: 50px;
-
-            font-weight: map-get($FontWeight, regular);
-            font-size: map-get($FontSize, h4);
-            font-family: $SpecialFont;
-
-            position: absolute;
-            z-index: 3;
-
-            top: 10px;
-            left: 0px;
-        }
-    }
-}
-
-li.step.one{
-    background-color: $AccentColor3;
-
-    top: 22%;
-}
-
-li.step.two{
-    top: 38%;
-}
-
-
-li.step.three{
-    top: 54%;
-}
-
-li.step.four{
-    top: 70%;
-}
-
 article.cartOrder{
     width: $RWD;
-
-    h3{
-        color: $TextColor2;
-        padding-top: 7%;
-        margin-left: 5%;
-    }
-
-    h4{
-        span{
-            color: $AccentColor3; 
-            font-family: $SpecialFont;
-        }
-    }
 
     section.rollover{
         width: 70%; 
         margin-top: 5%; 
         margin-left: 18%; 
         padding: 20px;
+        box-sizing: border-box;
+        background-color: $PrimaryColor;
+    }
+}
 
-        box-sizing: border-box;
-        
-        background-color: $PopUpWindow;
+tr{
+    background-color: $PrimaryColor;
+    border-bottom: 1px #fff solid;
+}
+
+.table_title{
+    font-weight:450;
+}
+
+//order amount
+
+.order_amount{
+    border: 1px green solid;
+    margin-top: 30px; 
+    box-sizing: border-box;
+    width: 700px;
+}
+
+
+.input_discount{
+    display: inline-block;
+    border: 1px red solid;
+}
+
+
+
+.c_count{
+    display: inline-block;
+    border: 1px blue solid;
+    padding-left: 180px;
+}
+
+.c_amount{
+    text-align: right;
+    h6{
+        display: inline-block;
+        color:$TextColor2;
     }
-    
-    section.advance{
-        width: 70%; 
-        margin-top: 1%; 
-        margin-left: 18%; 
-        padding: 20px;
-        box-sizing: border-box;
-        background-color: $PopUpWindow;
+}
+
+.c_discount{
+    text-align: right;
+    h6{
+        display: inline-block;
+        text-align: right;
+        color:$TextColor2;
     }
+}
+
+.c_total{
+    text-align: right;
+    color:$TextColor2;
+
 }
 
 

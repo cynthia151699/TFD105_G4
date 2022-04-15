@@ -15,61 +15,74 @@
 
         <main class="cartOrder">
             <!-- coding here -->
-
             <article class="cartOrder">
-
-                <h3>STEP 1. Order tickets</h3>
-
-                <ul class="stepDecorate">
-                    <li class="step one" style="background-color: #F25A38;"><span>1</span></li>
-                    <li class="step two"><span>2</span></li>
-                    <li class="step three"><span>3</span></li>
-                    <li class="step four"><span>4</span></li>
-                </ul>
-
                 <section class="rollover">
-                    <h4 class="ticketsType"><span>Rollover Ticket</span>
-                        <h6>Break the Classic - TAKIKAW RISA Solo Exhibition
-                            <br>Date: Feb 5 - May 5, 2022
-                            <br>Place: Anno Museum South Buliding
-                            <h5>NTD $450
-                                <select>
-                                    <option>Number of Tickets</option>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    </select></h5>
-                            </h5>
-                        </h6>
-                    </h4>
-                </section>
+                    <h4>CART</h4>
 
-                <section class="advance">
-                    <h4 class="ticketsType" ><span>Advance Ticket</span>
-                        <h6>True Color - KAYLA GILL Solo Exhibition (Upcoming)
-                        <br>Date: May 15 - Aug 17, 2022
-                        <br>Place: Anno Museum North Buliding
-                        <h5>NTD $400 
-                            <select>
-                            <option>Number of Tickets</option>
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            </select></h5>
-                    </h4>
+                        <div class="list_box">
+
+                            <table class="list_table">
+
+                                <tr class="table_title" style="color:#fff;">
+                                    <td>Tickets</td>
+                                    <td>Validity Period</td>
+                                    <td>Price</td>
+                                    <td>QTY</td>
+                                    <td>Total</td>
+                                </tr>
+
+                                <tr class="first_order" style="color:#fff; line-height: 5;">
+                                    <td>Rollover Ticket</td>
+                                    <td>FEB 5 - MAY 5, 2022</td>
+                                    <td>$450</td>
+                                    <td>- 2 +</td>
+                                    <td>NT$900</td>
+                                </tr>
+
+                                <tr class="second_order" style="color:#fff; line-height: 5;" >
+                                    <td>Advance Ticket</td>
+                                    <td>MAY 15 - AUG 15, 2022</td>
+                                    <td>$400</td>
+                                    <td>- 2 +</td>
+                                    <td>NT$800</td>
+                                </tr>
+                            </table>
+
+                            <div class="order_amount">
+
+                                <div class="input_discount">
+                                    <h6>Coupon:</h6>
+                                    <input class="input_coupon" type="text" name="coupon" placeholder="Type here...">
+                                    <input class="btn_code_submit" type="submit" value="Apply">
+                                    <h6>Get Tickets: By QR-code</h6>
+                                </div>
+            
+                                <div class="c_count">
+                                    <div class="c_amount">
+                                        <h6>Amount:</h6>
+                                        <h6>4</h6>
+                                    </div>
+            
+                                    <div class="c_discount">
+                                        <h6>Discount:</h6>
+                                        <h6>Without Using Coupon</h6>
+                                    </div>
+                                    <h6 class="c_total">Total: NT$1,700</h6>
+                                </div>
+            
+                            </div>
                 </section>
                 
+
+
+
                 <section class="cartButton mtSpace20">
 
                     <div class="btn_group">
-                        <input class="btn_order_cancel" type="submit" value="Cancel"
-                            onclick="location.href='./tickets.html'">
-                        <input class="btn_order_next" type="submit" value="Next"
-                            onclick="location.href='./cart_details.html'">
+                        <!-- <input class="btn_order_cancel" type="submit" value="Cancel"
+                            onclick="location.href='./tickets.html'"> -->
+                        <input class="btn_order_next" type="submit" value="CHECKOUT"
+                            onclick="location.href='./front_cart_info.html'">
                     </div>
                 </section>
             </article>
