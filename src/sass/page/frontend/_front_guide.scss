@@ -290,11 +290,6 @@ main.guide {
 
     // ------展覽資訊rwd------
     main.guide article.ticket {
-        width: $RWD;
-        height: $Height;
-
-        @include LinkImg(visit, visit_pic3, jpg, cover, no-repeat, null);
-        @include VerticalAlignCenter();
 
         section.ticket {
 
@@ -319,7 +314,3 @@ main.guide {
     }
 
 }
-
-@media screen and (min-width:992px) and (max-width:1199.98px) {}
-
-@media screen and (min-width:1200px) and (max-width:1399.98px) {}
