@@ -26,27 +26,30 @@
 //   );
 // });
 
-// 選單左右移動 
+// 彈出閱讀詳細事項 
 
-document.querySelector('.member_img__btn').addEventListener('click', function () {
-	document.querySelector('.cont').classList.toggle('s--signup');
-});
+// 連結彈窗
+let member_Terms = document.querySelector(".memberTerms");
 
+// mask
+let member_Mask = document.querySelector(".mask");
 
-// 跳出閱讀詳細事項 
-let member_Terms = document.querySelector(".member_Terms");
-let member_Terms_text = document.querySelector(".member_Terms_text");
-let member_Terms_del = document.querySelector(".member_Terms_del");
-let member_Terms_area = document.querySelector(".member_Terms_area");
-member_Terms.addEventListener('click', function () {
-	member_Terms_text.style.display = "block";
-	member_Terms_area.style.display = "block";
+// 關閉
+let member_Terms_Del = document.querySelector(".memberTermsDel");
+
+// 彈窗
+let member_Pop_UP = document.querySelector(".memberPopUp");
+
+// 彈窗開啟
+member_Terms.addEventListener('click', function (e) {
+	e.preventDefault;
+	member_Pop_UP.style.display = "block";
+	member_Mask.style.display = "block";
 })
-member_Terms_del.addEventListener('click', function () {
-	member_Terms_text.style.display = "none";
-	member_Terms_area.style.display = "none";
-})
-member_Terms_text.addEventListener('click', function () {
-	member_Terms_text.style.display = "none";
-	member_Terms_area.style.display = "none";
+
+// 彈窗關閉
+member_Terms_Del.addEventListener('click', function () {
+	e.preventDefault;
+	member_Pop_UP.style.display = "none";
+	member_Mask.style.display = "none";
 })

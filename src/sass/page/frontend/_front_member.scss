@@ -22,6 +22,7 @@ $diffRatio: calc(calc($contW - $imgW) / $contW);
 
 main.member {
     @include VerticalAlignCenter();
+    position: relative;
 
     h2 {
         width: 100%;
@@ -35,20 +36,166 @@ main.member {
         // font-size: 16px;
         // border-bottom: 1px solid rgba(0, 0, 0, 0.4);
         text-align: left;
+        box-sizing: border-box;
+    }
+
+    div.info {
+        width: fit-content;
+        @include HorizontalAlignCenter();
+    }
+
+    div.mask {
+        position: absolute;
+        z-index: 58;
+
+        width: 100%;
+        height: 100vh;
+
+        background-color: #293241;
+        opacity: 0.7;
+
+        display: none;
+    }
+
+    @mixin PopUp {
+        position: absolute;
+        z-index: 59;
+
+        width: 50%;
+        height: fit-content;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        opacity: 1;
+
+        display: none;
+    }
+
+    article.memberPopUp {
+        position: absolute;
+        z-index: 59;
+
+        width: 50%;
+        height: fit-content;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        opacity: 1;
+
+        display: none;
+
+        h6.title {
+            background-color: $PrimaryColor;
+            padding: 10px 25px;
+
+            a {
+                display: block;
+                float: right;
+                cursor: pointer;
+            }
+        }
+
+        h6.inner {
+            background-color: $TextColor2;
+            color: $TextColor3;
+            padding: 15px 25px;
+            text-align: left;
+        }
+    }
+
+    article.forgetChange {
+        @include VerticalAlignCenter();
+        @include PopUp();
+
+        background-color: white;
+        width: 75%;
+        height: 80vh;
+
+        section {
+            width: 80%;
+            height: 50%;
+            box-sizing: border-box;
+
+            @include HorizontalAlignCenter();
+
+            h3,
+            h4 {
+                color: black;
+            }
+
+            h3 {
+                width: 100%;
+                text-align: center;
+            }
+
+            input {
+                width: 80%;
+                height: 35px;
+                @include HorizontalAlignCenter();
+            }
+
+            div.btn {
+                width: fit-content;
+                @include HorizontalAlignCenter();
+
+                button {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    article.forgetSubmit {
+        @include VerticalAlignCenter();
+        @include PopUp();
+
+        background-color: white;
+        width: 75%;
+        height: 80vh;
+
+        section {
+            width: 70%;
+            height: fit-content;
+            box-sizing: border-box;
+
+            @include HorizontalAlignCenter();
+
+            h5 {
+                color: black;
+            }
+        }
     }
 
     label {
         display: block;
-        width: 350px;
-        text-align: left;
+        width: 100%;
+        text-align: right;
+        padding: 5px;
 
         @include HorizontalAlignCenter();
 
         span {
             // font-size: 12px;
             // color: #cfcfcf;
+            display: inline-block;
+            width: 200px;
+            text-align: left;
             text-transform: uppercase;
+            box-sizing: border-box;
         }
+
+        span.in {
+            width: 110px;
+        }
+
+        input {
+            display: inline-block;
+        }
+
     }
 
     div.cont {
@@ -68,11 +215,10 @@ main.member {
         width: $formW;
         height: 100%;
         transition: transform $switchAT ease-in-out;
-        padding: 50px;
+        padding: 20px; //50px
     }
 
     p.forgot-pass {
-        margin-top: 15px;
         text-align: center;
         // font-size: 12px;
         // color: #cfcfcf;
@@ -91,7 +237,7 @@ button.member {
 }
 
 button.member.submit {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
     background: #d4af7a;
     text-transform: uppercase;
@@ -293,9 +439,73 @@ div.form.sign-up {
         color: $TextColor;
     }
 
-    input.check{
+    p {
+        font-size: 12px;
+        display: block;
+        width: 540px;
+
+        @include HorizontalAlignCenter();
+    }
+
+    input.check {
         display: inline-block;
         width: auto;
         height: auto;
+    }
+}
+
+main.memberInfo {
+    @include VerticalAlignCenter();
+
+    article.checkMemberInfo {
+        width: 80%;
+        height: 80vh;
+        background-color: #fff;
+        @include HorizontalAlignCenter();
+        @include VerticalAlignCenter();
+
+        display: none;
+
+        table {
+            min-width: 80%;
+            background-color: #fff;
+
+            @include HorizontalAlignCenter();
+
+            h3,
+            h5,
+            td {
+                color: #293241;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            h3 {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    article.modifyMemberInfo {
+        width: 80%;
+        height: 80vh;
+        background-color: #fff;
+        @include HorizontalAlignCenter();
+        @include VerticalAlignCenter();
+
+        table {
+            @include HorizontalAlignCenter();
+            @include VerticalAlignCenter();
+            background-color: #fff;
+
+            h3,
+            h5,
+            h6 {
+                color: #293241;
+                padding: 5px;
+                box-sizing: border-box;
+            }
+        }
     }
 }
