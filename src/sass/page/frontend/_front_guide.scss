@@ -1,9 +1,9 @@
 main.guide {
+
     // -------開館時間-------
     div.openContainer {
         width: $RWD;
         height: $Height;
-
         @include LinkImg(visit, visit_pic1, png, cover, null, null);
         @include VerticalAlignCenter();
         @include Flex(row);
@@ -12,17 +12,18 @@ main.guide {
             width: $RWD;
             height: 450px;
             background-color: #2932419a;
+            display: flex;
 
             section.left {
-                width: 60%;
-                display: inline-block;
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
 
             div.right {
-                width: 40%;
-
+                width: 50%;
                 display: block;
-                float: right;
 
                 @include VerticalAlignCenter();
                 @include HorizontalAlignCenter();
@@ -56,8 +57,8 @@ main.guide {
         @include VerticalAlignCenter();
 
         section.ticket {
-            width: $Width;
-
+            width: $RWD;
+            margin-right: 50px;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
@@ -71,22 +72,24 @@ main.guide {
                 h3 {
                     color: $HFBGColor;
                     text-align: center;
-                    span{
+
+                    span {
                         color: $SecondaryColor;
                     }
                 }
-    
-                hr{
-                    width: 600px;
+
+                hr {
+                    width: 100%;
                     height: 1.5px;
                     background-color: $NavBGColor;
                 }
-    
-                div.time,div.price {
-                    width: 550px;
-                    border:2px solid red;
+
+                div.time,
+                div.price {
+                    width: 100%;
                     @include Flex (row);
                     @include HorizontalAlignCenter();
+                    justify-content: center;
                 }
             }
         }
@@ -102,7 +105,7 @@ main.guide {
         div.map {
             width: 55%;
             @include VerticalAlignCenter;
-            
+
             iframe {
                 width: 400px;
                 height: 400px;
@@ -127,132 +130,182 @@ main.guide {
 }
 
 // ------------rwd---------------
-@media screen and (max-width: 575.98px){
-    // ------開館時間rwd------
-    div.openContainer{
-        @include Flex(row);
-        height: $Height;
-    }
-    section.left{
-        width:120%;
-        margin-top: 200px;
-    }
-    div.right{
-       display: none;
-    }
-    // ------展覽資訊rwd------
-    .wrapperGuideticket{
-        border:2px solid red;   
-        width:$Width;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 0px;
-        padding-right: 0px;
-    }
-    .guideticketCntPr{
-        padding-bottom: 50px;
-    }
-    // -----交通資訊-------
-    main.guide article.trans {
+@media screen and (max-width: 575.98px) {
 
-        div.map {
-            display: none;
-        }
-        section.content {
-            width: 100%;
-            flex-direction: column;
-            justify-content: center;
-            div.text {
-                width: 300px;
-                text-align:center;
+    // ------開館時間rwd------
+    main.guide div.openContainer {
+
+        article.open {
+            height: 650px;
+
+            section.left {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+
+                h4 {
+                    margin: 30px;
+                }
+
+                h6 {
+                    margin: 30px;
+                }
+            }
+
+            div.right {
+                display: none;
             }
         }
     }
-}
-    @media (min-width: 576px) and (max-width: 767.98px){
-    // ------開館時間rwd------
-        .wrapperOpenhours{
-            @include Flex(column);
-            height:100vh;
-        }
-    .openhoursLeft{
-        width:100%;
-        padding-top: 20px;
-        h4{
-            padding-bottom: 10px;
-        }
-    }
-    .openhoursRight{
-        width: 100%;
-        height: 420px;
-    }
+    
     // ------展覽資訊rwd------
-    .wrapperGuideticket{
-        border:2px solid red;   
-        width:$Width;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 20px;
-        padding-right: 0px;
-        background-color: #e9e9e9c8;
+    main.guide article.ticket {
+        section.ticket {
+            margin-right: 0px;
+            div.content {
+                width: 300px;
+                background-color: #f4f4f49f;
+                margin: 0 auto 30px auto;
+
+            }
+            .buyTicket{
+                margin: 0 auto;
+            }
+        }
     }
-    .guideticketCntPr{
-        padding-bottom: 50px;
-    }
-    .guideticketCntLine{
-        width: 400px;
-        margin: 5px auto;
-    }
+
     // -----交通資訊-------
     main.guide article.trans {
 
         div.map {
             display: none;
         }
+
         section.content {
             width: 100%;
             flex-direction: column;
             justify-content: center;
+
             div.text {
+                width: 300px;
                 text-align: center;
             }
         }
     }
-    }
-    @media screen and (min-width:768px) and (max-width:991.98px){
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
     // ------開館時間rwd------
-    div.openContainer{
-        @include Flex(row);
-            height:100vh;
-            border:2px solid red;  
-        }
-    section.left{
-        width:100%;
-        padding-top: 20px;
-        h4{
-            padding-bottom: 10px;
+    main.guide div.openContainer {
+
+        article.open {
+            height: 550px;
+
+            section.left {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+
+                h4 {
+                    margin: 30px;
+                }
+
+                h6 {
+                    margin: 30px;
+                }
+            }
+
+            div.right {
+                display: none;
+            }
         }
     }
-    div.right{
-        width: 100%;
-    }
+
     // ------展覽資訊rwd------
-    .wrapperGuideticket{
-        border:2px solid red;   
-        width:$Width;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 20px;
-        padding-right: 0px;
-        background-color: #e9e9e9c8;
+    main.guide article.ticket {
+        section.ticket {
+            margin-right: 0px;
+            div.content {
+                width: 500px;
+                background-color: #f4f4f49f;
+                margin: 0 auto 30px auto;
+
+            }
+            .buyTicket{
+                margin-right: 90px;
+            }
+        }
     }
-    .guideticketCntPr{
-        padding-bottom: 50px;
+
+    // -----交通資訊-------
+    main.guide article.trans {
+
+        div.map {
+            display: none;
+        }
+
+        section.content {
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+
+            div.text {
+                width: 300px;
+                text-align: center;
+            }
+        }
     }
-    
+}
+
+@media screen and (min-width:768px) and (max-width:991.98px) {
+
+    // ------開館時間rwd------
+    main.guide div.openContainer {
+
+        article.open {
+            height: 550px;
+            justify-content: center;
+
+            section.left {
+                width: 30%;
+                margin-right: 0px;
+
+            }
+
+            div.right {
+                margin-left: 20px;
+
+            }
+
+
+        }
+    }
+
+    // ------展覽資訊rwd------
+    main.guide article.ticket {
+        width: $RWD;
+        height: $Height;
+
+        @include LinkImg(visit, visit_pic3, jpg, cover, no-repeat, null);
+        @include VerticalAlignCenter();
+
+        section.ticket {
+
+            div.content {
+                background-color: #f4f4f49f;
+
+            }
+        }
+    }
+
+
     // -----交通資訊-------
     main.guide article.trans {
         div.map {
@@ -260,18 +313,13 @@ main.guide {
                 width: 350px;
                 height: 350px;
             }
-            
+
         }
 
     }
-    
-      }
-      @media screen and (min-width:992px) and (max-width:1199.98px){
-    
-      }
-      @media screen and (min-width:1200px) and (max-width:1399.98px){
-    
-      }
-     
-    
-    
+
+}
+
+@media screen and (min-width:992px) and (max-width:1199.98px) {}
+
+@media screen and (min-width:1200px) and (max-width:1399.98px) {}
