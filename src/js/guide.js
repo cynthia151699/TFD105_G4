@@ -5,13 +5,15 @@ var myFullpage = new fullpage('#fullpage', {
 
 // AOS.init();
 
+
+
 // ---------圖片飛入------------
-const openhoursRightImg = document.querySelector('.openhoursRightImg');
+const openhoursRightImg = document.querySelector('#flyoutImg');
 const list = Array.from(Array(25).keys());
  //快速生成一个length为100的数组 生成一個100的數組
 list.sort((a, b) => Math.random() - 0.5);
 //亂數排序
-console.log(list);
+// console.log(list);
 
 
 let index = 0;
