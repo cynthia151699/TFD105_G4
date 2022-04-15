@@ -54,12 +54,14 @@ table.list_table{
     td{
         padding: 10px;
     }
+
+    tr{
+        background-color: $PrimaryColor;
+        border-bottom: 1px #fff solid;
+    }
 }
 
-tr{
-    background-color: $PrimaryColor;
-    border-bottom: 1px #fff solid;
-}
+
 
 .table_title{
     font-weight:450;
