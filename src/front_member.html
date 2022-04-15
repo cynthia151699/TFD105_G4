@@ -8,23 +8,13 @@
 <body>
 	<div class="wrapper" id="app">
 
-<!-- 導覽列 -->
-@@include('./layout/nav.html', {
+		<!-- 導覽列 -->
+		@@include('./layout/nav.html', {
 		"active5" : "active"
 		})
 
 		<main class="member">
 
-<!-- 實際頁面作用區域 -->
-<div style="display: flex; align-items: center;">
-
-<div class="member_main_all_area">
-
-<!-- 中央表單 -->
-<article class="cont member_main_all_block ">
-
-<!-- 登入 -->
-<div class="sign-in member_main_form">
 			<div class="cont">
 
 				<div class="form sign-in">
@@ -43,12 +33,6 @@
 
 					<p class="forgot-pass">Forgot password?</p>
 
-<!-- 按鈕 -->
-<a class="defaultBtn member_cla_button member_button_color1"
-									href="./member_info.html">LOG IN</a>
-								<a class="defaultBtn member_cla_button member_button_color2" href="#">Connect with
-									facebook</a>
-							</form>
 					<button type="button" class="member submit">Sign In</button>
 					<button type="button" class="member fb-btn">Connect with <span>facebook</span></button>
 				</div>
@@ -62,82 +46,11 @@
 							<p>Sign up and discover great amount of new opportunities!</p>
 						</div>
 
-<!-- 移動框 -->
-<div class="sub-cont">
-
-							<div class="member_img">
-
-								<div class=" m--up member_img__text">
-
-									<h3 class="mbSpace40 member_move_text">New here?</h3>
-									<h5 class="member_move_text">Sign up and discover great amount of new
-										opportunities!</h5>
-								</div>
-
-								<div class="m--in member_img__text">
-
-									<h3 class="mbSpace40 member_move_text">One of us?</h3>
-									<h5 class="member_move_text">If you already has an account, just sign in.
-										We've missed you!</h5>
-								</div>
-
-								<div class="member_img__btn" @click="move">
-
-									<span class="m--up member_span">SIGN UP</span>
-									<span class="m--in member_span">SIGN IN</span>
-								</div>
-
-							</div>
-
-<!-- 註冊 -->
-<div class="sign-up member_main_form">
-
-								<form class="member_main_form_area" id="member_form" style="width: 80%;">
-
-									<h5>NAME</h5>
-									<input type="text" class="member_input_text mbSpace10" />
-
-									<h5>EMAIL</h5>
-									<input type="text" name="mail" class="member_input_text mbSpace10"
-										id="member_mail" />
-
-									<h5>PASSWORD</h5>
-									<input type="password " class="member_input_text mbSpace10" />
-
-									<h5>PASSWORD CONFIRM</h5>
-									<input type="password" class="member_input_text mbSpace10" />
-
-									<h5>PHONE NUMBER</h5>
-									<input type="text" class="member_input_text mbSpace10" />
-
-<!-- 確認相關區域  待調整-->
-<p class="member_p_style" style="color: black; display: inline-block;">
-										<input type="checkbox" class="member_login_choose" />
-										&nbspI would like to receive news, tips and marketing offers from Anno.
-									</p>
-									<br>
-									<p class="member_p_style" style="color: black; display: inline-block;">
-										<input type="checkbox" class="member_login_confirm" />
-										&nbspI have read and understood the
-										<a href="#0" class="member_Terms">
-											Terms & Conditions and Privacy Policy.
-										</a>
-									</p>
-
-									<input class="btn_done" type="submit" value="SIGN UP"
-										onclick="location.href='./member.html'">
-								</form>
-							</div>
 						<div class="img__text m--in">
 							<h2>One of us?</h2>
 							<p>If you already has an account, just sign in. We've missed you!</p>
 						</div>
 
-<!-- 彈窗背景透明度 -->
-<div class="member_Terms_text"></div>
-
-<!-- 彈窗內文 -->
-<div class="member_Terms_area">
 						<div class="img__btn" id="img__btn">
 							<span class="m--up">Sign Up</span>
 							<span class="m--in">Sign In</span>
@@ -238,11 +151,9 @@
 		</main>
 	</div>
 
-<!-- 載入套件 -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+	<!-- 載入套件 -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<!-- 載入js -->
-<script src="./js/member.min.js"></script>
 	<!-- 載入js -->
 	<script>
 		document.querySelector('#img__btn').addEventListener('click', function () {
