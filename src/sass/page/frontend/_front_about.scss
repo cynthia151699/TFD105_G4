@@ -1,6 +1,5 @@
 // =====================about anno=======================
 main.about {
-
     h2,
     h6 {
         color: $TextColor2;
@@ -52,7 +51,6 @@ main.about {
     // ======================history of anno======================
     div.history {
         position: relative;
-        border:2px solid red;
         @include VerticalAlignCenter();
         @include LinkImg(about, about_pic1, png, cover, null, null);
 
@@ -75,18 +73,16 @@ main.about {
 
             position: absolute;
             top: 80px;
-            border:2px solid red;
-            width: $Width;
+            width: calc(100% - 100px);
             height: 700px;
+            h6{
+                width:600px;
+            }
         }
 
         div.middle {
-            
             display: flex;
             justify-content: flex-end;
-
-            h6 {
-            }
         }
     }
 
@@ -143,49 +139,61 @@ main.about {
         // ======================history of anno======================
         div.history {
             position: relative;
-
             @include VerticalAlignCenter();
             @include LinkImg(about, about_pic1, png, cover, null, null);
-
+    
             h2.text {
-                position: absolute;
-                top: 50%;
-                left: 50%;
+                display: none;
+            }
+    
+            div.content {
+                display: block;
+                padding-left: 30px;
+                top: 0px;
+                width: 80%;
+                height: 700px;
+                h2{
+                    font-size: 1.6em;
+                    text-align: left;
 
-                text-align: center;
-
-                cursor: pointer;
-
-                &:hover {
-                    color: $AccentColor2;
+            }
+                h6{
+                    width:100%;
+                    margin-top: 30px;
                 }
             }
-
-            div.content {
-                display: none;
-
-                position: absolute;
-                top: 80px;
-
-                width: $Width;
-                height: 500px;
-            }
-
+    
             div.middle {
-
                 display: flex;
                 justify-content: flex-end;
-
-                h6 {
-                    width: 800px;
-                }
+                margin-top: 0px;
             }
         }
     }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-    
-}
+    main.about {
 
+        // ======================history of anno======================
+        div.history {
+    
+            h2.text {
+                left: 30%;
+                margin-top: 30px;
+            }
+    
+            div.content {
+
+                h6{
+                    width:100%;
+                    margin-top: 30px;
+                }
+            }
+            div.middle {
+                margin-top: 0px;
+            }
+        }
+}
+}
 @media screen and (min-width:768px) and (max-width:991.98px) {}
