@@ -18,7 +18,7 @@ main.about {
 
         section.about {
             width: $Width;
-            height: 500px;
+            height: 600px;
 
             @include HorizontalAlignCenter();
 
@@ -52,7 +52,7 @@ main.about {
     // ======================history of anno======================
     div.history {
         position: relative;
-
+        border:2px solid red;
         @include VerticalAlignCenter();
         @include LinkImg(about, about_pic1, png, cover, null, null);
 
@@ -75,18 +75,17 @@ main.about {
 
             position: absolute;
             top: 80px;
-
+            border:2px solid red;
             width: $Width;
-            height: 500px;
+            height: 700px;
         }
 
         div.middle {
-
+            
             display: flex;
             justify-content: flex-end;
 
             h6 {
-                width: 800px;
             }
         }
     }
@@ -118,3 +117,75 @@ main.about {
         }
     }
 }
+
+// ------------rwd---------------
+@media screen and (max-width: 575.98px) {
+    main.about {
+        // =====================about anno=======================
+        article.about {
+            section.about {
+                height: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #293241ce;
+
+                h2.top,
+                h6.first,
+                h6.middle,
+                h6.end {
+                    margin-top: 20px;
+                    text-align: center;
+                }
+            }
+        }
+
+        // ======================history of anno======================
+        div.history {
+            position: relative;
+
+            @include VerticalAlignCenter();
+            @include LinkImg(about, about_pic1, png, cover, null, null);
+
+            h2.text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+
+                text-align: center;
+
+                cursor: pointer;
+
+                &:hover {
+                    color: $AccentColor2;
+                }
+            }
+
+            div.content {
+                display: none;
+
+                position: absolute;
+                top: 80px;
+
+                width: $Width;
+                height: 500px;
+            }
+
+            div.middle {
+
+                display: flex;
+                justify-content: flex-end;
+
+                h6 {
+                    width: 800px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    
+}
+
+@media screen and (min-width:768px) and (max-width:991.98px) {}

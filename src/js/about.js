@@ -3,6 +3,16 @@ var myFullpage = new fullpage('#fullpage', {
     lazyLoad: true
 });
 
+// $('.aos-init').removeClass('aos-animate'); //清除aos-animate元素
+// $('#fullpage').fullpage({
+// afterLoad: function(anchorLink, index){
+// $(".section .aos-init").removeClass("aos-animate");//清除aos-animate元素
+// if( $(".section").hasClass("active")){ //判断active元素
+// $(".active .aos-init").addClass('aos-animate'); //添加aos-animate
+// }
+// }
+// });
+
 AOS.init();
 
 // ========滑鼠圖片滾動========
