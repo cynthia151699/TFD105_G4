@@ -2,78 +2,134 @@
 <html lang="en">
 
 <head>
-    @@include('./layout/head.html')
+	@@include('./layout/head.html')
 </head>
 
 <body>
-    <div class="wrapper" id="app">
+	<div class="wrapper" id="app">
 
-        <!-- 導覽列 -->
-        @@include('./layout/nav.html', {
-        "active5" : "active"
-        })
+		<!-- 導覽列 -->
+		@@include('./layout/nav.html', {
+		"active5" : "active"
+		})
 
-        <main class="memberInfo">
-            <!-- 確認會員資訊 -->
-			<article>
+		<main class="memberInfo">
 
-				<h3>Overview</h3>
-				<h5>Member information
-					<br>Name
-					<br>王大明
-					<br>Email address
-					<br>testtest@gmail.com
-					<br>Password
-					<br>0123456789
-					<br>Phone
-					<br>0999999999
-				</h5>
-				<a href="./member_modify.html">modify</a>
+			<!-- 確認會員資訊 -->
+			<article class="checkMemberInfo">
+
+				<table>
+					<tr>
+						<td colspan="2">
+							<h3>Overview</h3>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="padding-left: 0px;">
+							<h5>Member information</h5>
+						</td>
+					</tr>
+					<tr>
+						<td class="first">Name</td>
+						<td>王大明</td>
+					</tr>
+					<tr>
+						<td class="first">Email address</td>
+						<td>test@gmail.com</td>
+					</tr>
+					<tr>
+						<td class="first">Password</td>
+						<td>p@ssw0rd</td>
+					</tr>
+					<tr>
+						<td class="first">Phone</td>
+						<td class="second">0912345678</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<button type="button" class="member submit">modify</button>
+						</td>
+					</tr>
+				</table>
 
 			</article>
 
 			<!-- 更改密碼 -->
-			<article style="display: none;">
+			<article class="modifyMemberInfo">
 
-				<h3>Edit your member information</h3>
-
-				<h5>Member information
-					<br>Name
-					<br>王大明
-				</h5>
-
-				<h5>Email address
-					<br>testtest@gmail.com
-				</h5>
-
-
-				<h5>Password</h5>
-				<input type="password" placeholder="請輸入密碼" />
-
-				<h5>Password confirm</h5>
-				<input type="password" placeholder="請再次輸入密碼" />
-
-
-				<h5>Phone</h5>
-				<input type="phone" placeholder="請輸入手機" />
-
-				<h6>
-					<input type="checkbox">
-					I would like to receive news, tips and marketing offers from Anno.
-				</h6>
-
-				<input class="btn_previous" type="submit" value="Cancel" onclick="location.href='./member_info.html'">
-				<input class="btn_done" type="submit" value="Save" onclick="location.href='./member_info.html'">
-
+				<table>
+					<tr>
+						<td colspan="2">
+							<h3>Edit your member information</h3>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<h5>Member information</h5>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h5>Name</h5>
+						</td>
+						<td>王大明</td>
+					</tr>
+					<tr>
+						<td>
+							<h5>Email address</h5>
+						</td>
+						<td>test@gmail.com</td>
+					</tr>
+					<tr>
+						<td>
+							<h5>Password</h5>
+						</td>
+						<td>
+							<input type="password" placeholder="請輸入密碼" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h5>Password confirm</h5>
+						</td>
+						<td>
+							<input type="password" placeholder="請再次輸入密碼" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h5>Phone</h5>
+						</td>
+						<td>
+							<input type="phone" placeholder="請輸入手機" />
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<h6>
+								<input type="checkbox">
+								I would like to receive news, tips and marketing offers from Anno.
+							</h6>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input class="btn_previous" type="submit" value="Cancel"
+								onclick="location.href='./member_info.html'">
+							<input class="btn_done" type="submit" value="Save"
+								onclick="location.href='./member_info.html'">
+						</td>
+					</tr>
+				</table>
 			</article>
-        </main>
-    </div>
+		</main>
+	</div>
 
-    <!-- 載入套件 -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+	<!-- 載入套件 -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    <!-- 載入js -->
-    <script src="./js/member.min.js"></script>
+	<!-- 載入js -->
+	<script src="./js/member.min.js"></script>
 </body>
 
 </html>

@@ -35,7 +35,6 @@
 
 // 前台購物車頁面連結
 @import './page/frontend/front_cart_order';
-@import './page/frontend/front_cart_details';
 @import './page/frontend/front_cart_info';
 @import './page/frontend/front_cart_done';
 
@@ -43,6 +42,8 @@
 @import './page/backend_login';
 @import './page/backend';
 
+
+@import './layout/hamberger';
 // -------------------- HTML --------------------
 
 body{
