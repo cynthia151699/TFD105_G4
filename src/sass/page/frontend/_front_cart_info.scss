@@ -5,8 +5,8 @@
     -ms-overflow-style: none; /* IE 10+ */
     overflow-x: hidden;
     overflow-y: auto;
-    width: 950px;
-    h3 {
+    width: 100%;
+    h3{
         color: $TextColor2;
         padding-top: 10%;
         margin-left: 5%;
@@ -58,11 +58,13 @@ table.list_table {
     td {
         padding: 10px;
     }
+
+    tr{
+        background-color: $PrimaryColor;
+        border-bottom: 1px #fff solid;
+    }
 }
 
-.table_title {
-    font-weight: 450;
-}
 
 .i_count {
     width: 700px;
@@ -109,7 +111,6 @@ table.list_table {
 .input_type {
     width: 330px;
     height: 30px;
-    background-color: #b5cde2;
     margin: 10px;
     border: none;
 }
