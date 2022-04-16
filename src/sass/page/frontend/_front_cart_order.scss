@@ -1,105 +1,96 @@
-article.cartOrder{
+article.cartOrder {
     width: $RWD;
 
-    section.rollover{
-        width: 70%; 
-        margin-top: 5%; 
-        margin-left: 18%; 
+    section.rollover {
+        width: 70%;
+        margin-top: 5%;
+        margin-left: 18%;
         padding: 20px;
         box-sizing: border-box;
         background-color: $PrimaryColor;
     }
+
+    tr {
+        background-color: $PrimaryColor;
+        border-bottom: 1px #fff solid;
+    }
 }
 
-tr{
-    background-color: $PrimaryColor;
-    border-bottom: 1px #fff solid;
-}
-
-.table_title{
-    font-weight:450;
+.table_title {
+    font-weight: 450;
 }
 
 //order amount
 
-.order_amount{
+.order_amount {
     border: 1px green solid;
-    margin-top: 30px; 
+    margin-top: 30px;
     box-sizing: border-box;
     width: 700px;
 }
 
-
-.input_discount{
+.input_discount {
     display: inline-block;
     border: 1px red solid;
 }
 
-
-
-.c_count{
+.c_count {
     display: inline-block;
     border: 1px blue solid;
     padding-left: 180px;
 }
 
-.c_amount{
+.c_amount {
     text-align: right;
-    h6{
+    h6 {
         display: inline-block;
-        color:$TextColor2;
+        color: $TextColor2;
     }
 }
 
-.c_discount{
+.c_discount {
     text-align: right;
-    h6{
+    h6 {
         display: inline-block;
         text-align: right;
-        color:$TextColor2;
+        color: $TextColor2;
     }
 }
 
-.c_total{
+.c_total {
     text-align: right;
-    color:$TextColor2;
-
+    color: $TextColor2;
 }
-
 
 // 按鈕
 
-.btn_order_cancel{
+.btn_order_cancel {
     width: 100px;
     height: 30px;
-    background-color: #C4C4C4;
+    background-color: #c4c4c4;
     border: none;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000;
     margin-bottom: 50px;
 }
 
-.btn_order_next{
+.btn_order_next {
     margin-right: 145px;
     width: 100px;
     height: 30px;
-    background-color: #F29966;
+    background-color: #f29966;
     border: none;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000;
 }
 
-
 //RWD
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
-
 }
 
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
-
 }
 
 @media screen and (max-width: 575.98px) {
-
 }

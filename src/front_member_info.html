@@ -1,135 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        @@include('./layout/head.html')
+    </head>
 
-<head>
-	@@include('./layout/head.html')
-</head>
+    <body>
+        <div class="wrapper" id="app">
+            <!-- 導覽列 -->
+            @@include('./layout/nav.html', { "active5" : "active" })
 
-<body>
-	<div class="wrapper" id="app">
+            <main class="memberInfo">
+                <!-- 確認會員資訊 -->
+                <article class="checkMemberInfo">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <h3>Overview</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding-left: 0px">
+                                <h5>Member information</h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="first">Name</td>
+                            <td>王大明</td>
+                        </tr>
+                        <tr>
+                            <td class="first">Email address</td>
+                            <td>test@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td class="first">Password</td>
+                            <td>p@ssw0rd</td>
+                        </tr>
+                        <tr>
+                            <td class="first">Phone</td>
+                            <td class="second">0912345678</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" class="member submit">
+                                    modify
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </article>
 
-		<!-- 導覽列 -->
-		@@include('./layout/nav.html', {
-		"active5" : "active"
-		})
+                <!-- 更改密碼 -->
+                <article class="modifyMemberInfo">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <h3>Edit your member information</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <h5>Member information</h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Name</h5>
+                            </td>
+                            <td>王大明</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Email address</h5>
+                            </td>
+                            <td>test@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Password</h5>
+                            </td>
+                            <td>
+                                <input
+                                    type="password"
+                                    placeholder="請輸入密碼"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Password confirm</h5>
+                            </td>
+                            <td>
+                                <input
+                                    type="password"
+                                    placeholder="請再次輸入密碼"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Phone</h5>
+                            </td>
+                            <td>
+                                <input type="phone" placeholder="請輸入手機" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <h6>
+                                    <input type="checkbox" />
+                                    I would like to receive news, tips and
+                                    marketing offers from Anno.
+                                </h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div style="width: fit-content; margin: 0 auto; padding-top: 10px;">
+                                    <input
+                                        class="btn_previous"
+                                        type="submit"
+                                        value="Cancel"
+                                        onclick="location.href='./member_info.html'"
+                                    />
+                                    <input
+                                        class="btn_done"
+                                        type="submit"
+                                        value="Save"
+                                        onclick="location.href='./member_info.html'"
+                                    />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </article>
+            </main>
+        </div>
 
-		<main class="memberInfo">
+        <!-- 載入套件 -->
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+        ></script>
 
-			<!-- 確認會員資訊 -->
-			<article class="checkMemberInfo">
-
-				<table>
-					<tr>
-						<td colspan="2">
-							<h3>Overview</h3>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2" style="padding-left: 0px;">
-							<h5>Member information</h5>
-						</td>
-					</tr>
-					<tr>
-						<td class="first">Name</td>
-						<td>王大明</td>
-					</tr>
-					<tr>
-						<td class="first">Email address</td>
-						<td>test@gmail.com</td>
-					</tr>
-					<tr>
-						<td class="first">Password</td>
-						<td>p@ssw0rd</td>
-					</tr>
-					<tr>
-						<td class="first">Phone</td>
-						<td class="second">0912345678</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<button type="button" class="member submit">modify</button>
-						</td>
-					</tr>
-				</table>
-
-			</article>
-
-			<!-- 更改密碼 -->
-			<article class="modifyMemberInfo">
-
-				<table>
-					<tr>
-						<td colspan="2">
-							<h3>Edit your member information</h3>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<h5>Member information</h5>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h5>Name</h5>
-						</td>
-						<td>王大明</td>
-					</tr>
-					<tr>
-						<td>
-							<h5>Email address</h5>
-						</td>
-						<td>test@gmail.com</td>
-					</tr>
-					<tr>
-						<td>
-							<h5>Password</h5>
-						</td>
-						<td>
-							<input type="password" placeholder="請輸入密碼" />
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h5>Password confirm</h5>
-						</td>
-						<td>
-							<input type="password" placeholder="請再次輸入密碼" />
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h5>Phone</h5>
-						</td>
-						<td>
-							<input type="phone" placeholder="請輸入手機" />
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<h6>
-								<input type="checkbox">
-								I would like to receive news, tips and marketing offers from Anno.
-							</h6>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<input class="btn_previous" type="submit" value="Cancel"
-								onclick="location.href='./member_info.html'">
-							<input class="btn_done" type="submit" value="Save"
-								onclick="location.href='./member_info.html'">
-						</td>
-					</tr>
-				</table>
-			</article>
-		</main>
-	</div>
-
-	<!-- 載入套件 -->
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-	<!-- 載入js -->
-	<script src="./js/member.min.js"></script>
-</body>
-
+        <!-- 載入js -->
+        <script src="./js/member.min.js"></script>
+    </body>
 </html>

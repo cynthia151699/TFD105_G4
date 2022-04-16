@@ -42,8 +42,6 @@
 @import './page/backend_login';
 @import './page/backend';
 
-
-@import './layout/hamberger';
 // -------------------- HTML --------------------
 
 body{
@@ -125,6 +123,17 @@ body{
             overflow: hidden;
 
             @include Flex(row);
+        }
+    }
+}
+
+@media screen and (max-width:797.98px) {
+    body{
+        div.wrapper{
+            main{
+                width: 100%;
+                margin-top: 60px;
+            }
         }
     }
 }
