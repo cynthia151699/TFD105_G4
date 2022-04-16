@@ -99,17 +99,11 @@ body{
             text-decoration: none;
         }
 
-
         button{
-            background-color: $Gray;
             border: none;
             &:hover{
                 cursor: pointer;
             }
-        }
-
-        table{
-            background-color: $Gray;
         }
 
         main{
