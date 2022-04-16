@@ -9,18 +9,22 @@ article.cartOrder{
         box-sizing: border-box;
         background-color: $PrimaryColor;
     }
+
+    //表格
+    tr{
+        background-color: $PrimaryColor;
+        border-bottom: 1px #fff solid;
+    }
 }
 
-tr{
-    background-color: $PrimaryColor;
-    border-bottom: 1px #fff solid;
-}
+
+
 
 .table_title{
     font-weight:450;
 }
 
-//order amount
+//order amount 結算區域
 
 .order_amount{
     border: 1px green solid;
@@ -67,20 +71,33 @@ tr{
 }
 
 
-// 按鈕
-
-.btn_order_cancel{
-    width: 100px;
-    height: 30px;
-    background-color: #C4C4C4;
-    border: none;
+//數量加減按鈕
+.add{
     cursor: pointer;
-    box-shadow: 1px 1px 1px #000;
-    margin-bottom: 50px;
+    color: $TextColor2;
+    background-color: $PrimaryColor;
+    font-size:16px;
 }
 
-.btn_order_next{
-    margin-right: 145px;
+
+.sub{
+    cursor: pointer;
+    color: $TextColor2;
+    background-color: $PrimaryColor;
+    font-size: 20px;
+}
+
+.qty{
+    width: 20px;
+    text-align: center;
+    color: $TextColor2;
+    background-color: $PrimaryColor;
+    font-size:16px;
+}
+
+// 送出按鈕
+
+.btn_checkout{
     width: 100px;
     height: 30px;
     background-color: #F29966;
