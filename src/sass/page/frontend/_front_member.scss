@@ -467,8 +467,6 @@ main.memberInfo {
         @include HorizontalAlignCenter();
         @include VerticalAlignCenter();
 
-        display: none;
-
         table {
             min-width: 80%;
             background-color: #fff;
@@ -479,7 +477,7 @@ main.memberInfo {
             h5,
             td {
                 color: #293241;
-                padding: 10px;
+                padding: 5px;
                 box-sizing: border-box;
             }
 
@@ -501,6 +499,7 @@ main.memberInfo {
             @include HorizontalAlignCenter();
             @include VerticalAlignCenter();
             background-color: #fff;
+            color: #293241;
 
             h3,
             h5,
@@ -509,6 +508,27 @@ main.memberInfo {
                 padding: 5px;
                 box-sizing: border-box;
             }
+
+            h3 {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    main.member{
+        div.cont{
+            width: 700px;
+        }
+
+        div.form{
+            width: 500px;
+        }
+
+        div.sub-cont{
+            width: 100px;
         }
     }
 }

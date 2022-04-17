@@ -11,7 +11,7 @@
 
             <main class="memberInfo">
                 <!-- 確認會員資訊 -->
-                <article class="checkMemberInfo">
+                <article class="checkMemberInfo" style="">
                     <table>
                         <tr>
                             <td colspan="2">
@@ -24,19 +24,27 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="first">Name</td>
+                            <td class="first">
+                                <h5>Name</h5>
+                            </td>
                             <td>王大明</td>
                         </tr>
                         <tr>
-                            <td class="first">Email address</td>
+                            <td class="first">
+                                <h5>Email address</h5>
+                            </td>
                             <td>test@gmail.com</td>
                         </tr>
                         <tr>
-                            <td class="first">Password</td>
+                            <td class="first">
+                                <h5>Password</h5>
+                            </td>
                             <td>p@ssw0rd</td>
                         </tr>
                         <tr>
-                            <td class="first">Phone</td>
+                            <td class="first">
+                                <h5>Phone</h5>
+                            </td>
                             <td class="second">0912345678</td>
                         </tr>
                         <tr>
@@ -50,7 +58,7 @@
                 </article>
 
                 <!-- 更改密碼 -->
-                <article class="modifyMemberInfo">
+                <article class="modifyMemberInfo" style="display: none">
                     <table>
                         <tr>
                             <td colspan="2">
@@ -115,18 +123,25 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <div style="width: fit-content; margin: 0 auto; padding-top: 10px;">
+                                <div
+                                    style="
+                                        width: fit-content;
+                                        height: 40px;
+                                        margin: 0 auto;
+                                        padding-top: 10px;
+                                    "
+                                >
                                     <input
                                         class="btn_previous"
                                         type="submit"
                                         value="Cancel"
-                                        onclick="location.href='./member_info.html'"
+                                        onclick="location.href='./front_member_info.html'"
                                     />
                                     <input
                                         class="btn_done"
                                         type="submit"
                                         value="Save"
-                                        onclick="location.href='./member_info.html'"
+                                        onclick="location.href='./front_member_info.html'"
                                     />
                                 </div>
                             </td>
@@ -143,6 +158,19 @@
         ></script>
 
         <!-- 載入js -->
-        <script src="./js/member.min.js"></script>
+        <!-- <script src="./js/member.min.js"></script> -->
+        <script>
+            $("button.member.submit").on("click", function () {
+                console.log("aaa");
+                $('article.modifyMemberInfo').css("display", "flex");
+                $('article.checkMemberInfo').css("display", "none");
+            });
+
+            $("button.member.submit").on("click", function () {
+                console.log("aaa");
+                $('article.modifyMemberInfo').css("display", "flex");
+                $('article.checkMemberInfo').css("display", "none");
+            });
+        </script>
     </body>
 </html>
