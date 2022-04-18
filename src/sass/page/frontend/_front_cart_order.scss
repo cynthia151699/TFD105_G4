@@ -1,33 +1,43 @@
 article.cartOrder {
     width: $RWD;
 
+
     section.rollover {
-        width: 70%;
-        margin-top: 5%;
-        margin-left: 18%;
         padding: 20px;
         box-sizing: border-box;
         background-color: $PrimaryColor;
+        // border: 1px blue solid;
+        display: flex;
+        /* 水平置中 */
+        justify-content: center; 
+
+    }
+
+    .list_box{
+        // border: 1px #fff solid;
+        //滾動卷軸 清單
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 
     //表格
     tr{
+        
         background-color: $PrimaryColor;
         border-bottom: 1px #fff solid;
     }
 }
 
-
-
-
 .table_title{
     font-weight:450;
+    
 }
 
 //order amount 結算區域
 
 .order_amount {
-    border: 1px green solid;
+    // border: 1px green solid;
     margin-top: 30px;
     box-sizing: border-box;
     width: 700px;
@@ -35,12 +45,12 @@ article.cartOrder {
 
 .input_discount {
     display: inline-block;
-    border: 1px red solid;
+    // border: 1px red solid;
 }
 
 .c_count {
     display: inline-block;
-    border: 1px blue solid;
+    // border: 1px blue solid;
     padding-left: 180px;
 }
 
@@ -105,10 +115,13 @@ article.cartOrder {
 //RWD
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
+//不需要寫
 }
 
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
+
 }
 
 @media screen and (max-width: 575.98px) {
+
 }

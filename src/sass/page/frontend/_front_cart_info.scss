@@ -7,12 +7,14 @@
     overflow-x: hidden;
     overflow-y: auto;
     // width: 100%;
+
     display: flex;
     /* 水平置中 */
     justify-content: center; 
 
-    margin: 5%;
+    padding: 20px;
 
+    
     h3{
         color: $TextColor2;
         padding-top: 10%;
@@ -28,8 +30,6 @@
 
 .main_box {
     width: $RWD;
-    
-    // border: 1px yellow solid;
     box-sizing: border-box;
 }
 
@@ -48,6 +48,15 @@
     }
     margin-top: 5%;
 }
+
+.list_box{
+    // border: 1px red solid;
+    //滾動卷軸 清單
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
 
 table.list_table {
     margin-top: 10px;
@@ -76,7 +85,7 @@ table.list_table {
     width: 700px;
     margin-top: 20px;
     display: inline-block;
-    border: 1px red solid;
+    // border: 1px red solid;
 }
 
 .c_amount {
@@ -188,7 +197,6 @@ select {
 
 .btn_group {
     text-align: right;
-    margin-bottom: 20px;
 }
 
 //RWD
