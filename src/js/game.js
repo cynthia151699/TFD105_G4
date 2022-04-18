@@ -63,10 +63,3 @@ const swiper = new Swiper('.mySwiper', {
     },
 
 });
-
-// discount("<strong>新增成功</strong>", "success");
-//                         let reset = document.querySelector(".reset")
-//                         reset.reset()
-//                     } else {
-//                         discount("<strong>請輸入內容</strong>", "warning");
-//                     }
