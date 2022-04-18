@@ -41,6 +41,7 @@ const swiper = new Swiper('.mySwiper', {
                     let disappear = document.querySelectorAll(".swiper"); //獲獎後消失圖層
                     let appear = document.getElementsByClassName("congrats")[0]; //獲獎後應出現圖層
                     if (upperImgId != "" && lowerImgId != "" && lowerImgId.includes(upperImgId)) { //符合需求
+                        // console.log(upperImgId, lowerImgId, lowerImgId.includes(upperImgId))
                         alert("Congrats");
                         for (let i = 0; i < disappear.length; i++) {
                             disappear[i].style = "display:none";

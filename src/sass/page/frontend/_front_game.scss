@@ -79,10 +79,8 @@
 .swiper.mySwiper {
     width: 100%;
     height: 50%;
-    /* cursor: grab; */
-    cursor: grabbing;
     display: block;
-    border: 3px solid $NavBGColor;
+    outline: 5px solid $NavBGColor;
 }
 
 .swiper-slide.game {
@@ -107,17 +105,14 @@
 .swiper-slide img {
     display: block;
     height: 100%;
-    object-fit: cover;
+    // object-fit: cover;
     pointer-events: auto;
 }
-
 
 .swiper-wrapper {
     width: 100%;
     height: 50vh;
 }
-
-
 
 .congrats {
     // width: 640px;
@@ -160,11 +155,13 @@
 .play_again_button>.defaultBtn {
     background-color: $HFBGColor;
     font-weight: map-get($FontWeight, medium);
+    width: 150px;
 }
 
 .play_bye_button>.defaultBtn {
     background-color: $HFBGColor;
     font-weight: map-get($FontWeight, medium);
+    width: 150px;
 }
 
 .congrats_text>h2 {
@@ -178,4 +175,84 @@
 .congrats_text>h3 {
     font-weight: map-get($FontWeight, medium);
     font-size: map-get($FontSize, h4);
+}
+
+
+//============================================= RWD ===============================================//
+@media screen and (max-width: 575.98px){
+
+    .congrats_text>h2{
+        font-weight: map-get($FontWeight, medium);
+        font-size: map-get($FontSize, h4);
+    }
+
+    .congrats_text>h2{
+        font-weight: map-get($FontWeight, medium);
+        font-size: map-get($FontSize, h5);
+    }
+
+    .play_again_button>.defaultBtn {
+        background-color: $HFBGColor;
+        font-weight: map-get($FontWeight, medium);
+        font-size: map-get($FontSize, h6);
+        width: 60px;
+        height: 50px;
+        text-align: center;
+    }
+    
+    .play_bye_button>.defaultBtn {
+        background-color: $HFBGColor;
+        font-weight: map-get($FontWeight, medium);
+        font-size: map-get($FontSize, h6);
+        width: 60px;
+        height: 50px;
+        text-align: center;
+    }
+    
+
+}
+
+
+// @media (min-width: 576px) and (max-width: 1198.98px){
+    @media screen and (max-width: 800px){
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        // object-fit: cover;
+        // object-fit: contain;
+        // object-fit: fill;
+        object-fit: none;
+        object-position: 45% 0%;
+        pointer-events: auto;
+    }
+
+    #g1>img, #g2>img, #g3>img, #g4>img, #g5>img, #g6>img, #g7>img, #g8>img, #g9>img, #g0>img{
+        margin-top: 160px;
+    }
+
+    }
+// }
+
+@media (min-width: 576px) and (max-width: 767.98px){
+
+    .play_again_button>.defaultBtn {
+        background-color: $HFBGColor;
+        font-weight: map-get($FontWeight, medium);
+        font-size: map-get($FontSize, h6);
+        width: 100px;
+        height: 50px;
+        text-align: center;
+    }
+    
+    .play_bye_button>.defaultBtn {
+        background-color: $HFBGColor;
+        font-weight: map-get($FontWeight, medium);
+        font-size: map-get($FontSize, h6);
+        width: 100px;
+        height: 50px;
+        text-align: center;
+    }
+
 }
