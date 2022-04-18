@@ -14,7 +14,7 @@ article.cartOrder {
     }
 
     .list_box{
-        // border: 1px #fff solid;
+        padding-top: 5%;
         //滾動卷軸 清單
         display: block;
         overflow-x: auto;
@@ -79,14 +79,17 @@ article.cartOrder {
 
 //數量加減按鈕
 .add{
+    border: none;
     cursor: pointer;
     color: $TextColor2;
     background-color: $PrimaryColor;
     font-size:16px;
+
 }
 
 
 .sub{
+    border: none;
     cursor: pointer;
     color: $TextColor2;
     background-color: $PrimaryColor;
@@ -94,6 +97,7 @@ article.cartOrder {
 }
 
 .qty{
+    border: none;
     width: 20px;
     text-align: center;
     color: $TextColor2;
