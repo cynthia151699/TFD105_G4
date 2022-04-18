@@ -42,7 +42,16 @@ const swiper = new Swiper('.mySwiper', {
                     let appear = document.getElementsByClassName("congrats")[0]; //獲獎後應出現圖層
                     if (upperImgId != "" && lowerImgId != "" && lowerImgId.includes(upperImgId)) { //符合需求
                         // console.log(upperImgId, lowerImgId, lowerImgId.includes(upperImgId))
-                        alert("Congrats");
+                        // alert("congrats!");
+                        // Swal.fire('Congrats!');
+                        Swal.fire({
+                            title: 'Congrats!',
+                            icon: 'success',
+                            background: '#161829',
+                            confirmButtonColor: '#F29966',
+                            confirmButtonText: 'OK!',
+                            timer: '2000',
+                        });
                         for (let i = 0; i < disappear.length; i++) {
                             disappear[i].style = "display:none";
                         }
