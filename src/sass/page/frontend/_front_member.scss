@@ -1,3 +1,4 @@
+//效果參數設定
 $contW: 900px;
 $imgW: 260px;
 $formW: $contW - $imgW;
@@ -8,16 +9,16 @@ $btnH: 36px;
 
 $diffRatio: calc(calc($contW - $imgW) / $contW);
 
-@mixin Reset {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 @mixin signUpActive {
     .cont.s--signup & {
         @content;
     }
+}
+
+@mixin Reset {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 main.member {
@@ -197,7 +198,7 @@ main.member {
         }
 
     }
-
+// codepen 效果設定
     div.cont {
         overflow: hidden;
         position: relative;
@@ -454,6 +455,8 @@ div.form.sign-up {
     }
 }
 
+
+// 詳細會員資訊樣式設定（另外一頁了）
 main.memberInfo {
     @include VerticalAlignCenter();
 
@@ -463,8 +466,6 @@ main.memberInfo {
         background-color: #fff;
         @include HorizontalAlignCenter();
         @include VerticalAlignCenter();
-
-        display: none;
 
         table {
             min-width: 80%;
@@ -476,7 +477,7 @@ main.memberInfo {
             h5,
             td {
                 color: #293241;
-                padding: 10px;
+                padding: 5px;
                 box-sizing: border-box;
             }
 
@@ -498,6 +499,7 @@ main.memberInfo {
             @include HorizontalAlignCenter();
             @include VerticalAlignCenter();
             background-color: #fff;
+            color: #293241;
 
             h3,
             h5,
@@ -506,6 +508,27 @@ main.memberInfo {
                 padding: 5px;
                 box-sizing: border-box;
             }
+
+            h3 {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    main.member{
+        div.cont{
+            width: 700px;
+        }
+
+        div.form{
+            width: 500px;
+        }
+
+        div.sub-cont{
+            width: 100px;
         }
     }
 }
