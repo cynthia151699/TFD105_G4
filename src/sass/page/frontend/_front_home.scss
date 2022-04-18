@@ -11,11 +11,15 @@ main.home {
 		overflow: hidden;
 		position: relative;
 
-		video {
+		.ori_video {
 			width: $RWD;
 			height: $Height;
 			object-fit: cover;
 			text-align: center;
+		}
+
+		.rwd_video{
+			visibility: hidden;
 		}
 
 		.btn_next {
@@ -51,11 +55,50 @@ main.home {
 
 	//part 1 RWD
 
-	@media screen and (min-width: 768px) and (max-width: 991.98px) {}
+	@media screen and (min-width: 768px) and (max-width: 991.98px) {
 
-	@media screen and (min-width: 576px) and (max-width: 767.98px) {}
 
-	@media screen and (max-width: 575.98px) {}
+	}
+
+	@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+		article.page1 {
+	
+			.ori_video {
+				display: none;
+			}
+	
+			.rwd_video{
+				visibility: visible;
+				width: $RWD;
+				height: $Height;
+				object-fit: cover;
+				text-align: center;
+		
+			}
+		}
+
+	}
+
+	@media screen and (max-width: 575.98px) {
+
+		article.page1 {
+
+			.ori_video {
+				display: none;
+			}
+	
+			.rwd_video{
+				visibility: visible;
+				width: $RWD;
+				height: $Height;
+				object-fit: cover;
+				text-align: center;
+		
+			}
+		}
+		
+	}
 
 	//========== part 2 ===========//
 
@@ -74,9 +117,10 @@ main.home {
 
 			h2 {
 				font-weight: map-get($FontWeight, 'medium');
-				font-size: 70px;
+				font-size: 85px;
+				text-align: left;
 				line-height: 1;
-
+				padding-bottom: 20px;
 				color: $FocusingColor2;
 				text-shadow: $TextShadow;
 			}
@@ -84,6 +128,10 @@ main.home {
 			section.right {
 				text-align: right;
 				text-shadow: $TextShadow;
+
+				h4{
+					padding-bottom: 20px;
+				}
 			}
 		}
 	}
@@ -92,9 +140,20 @@ main.home {
 
 	@media screen and (min-width: 768px) and (max-width: 991.98px) {}
 
-	@media screen and (min-width: 576px) and (max-width: 767.98px) {}
+	@media screen and (min-width: 576px) and (max-width: 767.98px) {
 
-	@media screen and (max-width: 575.98px) {}
+		article.page2 {
+			@include LinkImg(index, index_pic1-2, png, cover, null, null);
+			@include VerticalAlignCenter;
+			}
+	}
+
+	@media screen and (max-width: 575.98px) {
+		article.page2 {
+			@include LinkImg(index, index_pic1-3, png, cover, null, null);
+			@include VerticalAlignCenter;
+			}
+	}
 
 	//========== part 3 ===========//
 
