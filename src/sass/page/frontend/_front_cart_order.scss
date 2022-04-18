@@ -145,7 +145,7 @@ article.cartOrder {
     }
 
     table.list_table {
-        margin-top: 10px;
+        margin-top: 5px;
         width: 560px;
     }
 
@@ -157,7 +157,7 @@ article.cartOrder {
         display: block;
         td{
             display: block;
-            line-height: 2;
+            line-height: 1.8;
         }
     }
 
@@ -165,7 +165,7 @@ article.cartOrder {
         display: block;
         td{
             display: block;
-            line-height: 2;
+            line-height: 1.8;
         }
     }
 
@@ -179,7 +179,7 @@ article.cartOrder {
 
     .order_amount {
         // border: 1px green solid;
-        margin-top: 5px;
+        margin-top: 15px;
         box-sizing: border-box;
         width: 560px;
     }
@@ -191,6 +191,18 @@ article.cartOrder {
     .sub{
         margin-left: 290px;
     }
+
+    .roll_ticket{
+        font-size: 18px;
+        font-weight: 450;
+        color: $AccentColor2;
+    }
+
+    .adv_ticket{
+        font-size: 18px;
+        font-weight: 450;
+        color: $AccentColor2;
+    }
 }
 
 @media screen and (max-width: 575.98px) {
@@ -200,7 +212,7 @@ article.cartOrder {
     }
 
     table.list_table {
-        margin-top: 10px;
+        margin-top: 5px;
         width: 350px;
     }
 
@@ -213,7 +225,7 @@ article.cartOrder {
 
         td{
             display: block;
-            line-height: 2;
+            line-height: 1.8;
             
         }
         
@@ -224,7 +236,7 @@ article.cartOrder {
 
         td{
             display: block;
-            line-height: 2;
+            line-height: 1.8;
         }
     }
 
@@ -239,7 +251,7 @@ article.cartOrder {
 
     .order_amount {
         // border: 1px green solid;
-        margin-top: 5px;
+        margin-top: 15px;
         box-sizing: border-box;
         width: 350px;
     }
@@ -250,5 +262,18 @@ article.cartOrder {
 
     .sub{
         margin-left: 80px;
+        margin-top: 10px;
+    }
+
+    .roll_ticket{
+        font-size: 18px;
+        font-weight: 450;
+        color: $AccentColor2;
+    }
+
+    .adv_ticket{
+        font-size: 18px;
+        font-weight: 450;
+        color: $AccentColor2;
     }
 }
