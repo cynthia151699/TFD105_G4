@@ -3,7 +3,7 @@ nav.frontNav{
     display: inline-block;
 
     width: 70px;
-    height: calc(#{$Height} + 90px);
+    height: $Height;
 
     background-color: $NavBGColor;
 
@@ -14,25 +14,30 @@ nav.frontNav{
         margin: 0 auto;
     }
     
-    .navContainer{
-        height: calc(#{$Height} + 90px);
-        width: 35px;
+    ul.navContainer{
+        height: $Height;
+        width: 70px;
         margin: 0 auto;
 
         @include Flex(column);
+        justify-content: space-between;
 
-        li{
-            padding-top: 100%;
-
-            &:nth-child(6){
-                // padding-top: 225%;
-            }
+        a{
+            width: 35px;
+            display: block;
+            margin: 0 auto;
         }
+
+        a.home{
+                width: 70px;
+        }
+        
 
         svg{
             width: 35px;
             height: 30px;
             fill: $AccentColor3;
+            
 
             &:hover{
                 fill: $AccentColor;
