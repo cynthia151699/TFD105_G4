@@ -42,7 +42,3 @@ echo json_encode($discount);
 
  
 ?>
-
-
-
-456
