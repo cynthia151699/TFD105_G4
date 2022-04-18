@@ -1,20 +1,17 @@
-
 .cartDone{
+    margin: 0 auto;
     h3{
         color: $TextColor2;
         padding-top: 10%;
-        margin-left: 5%;
+        margin-left: 5%;   
     }
-
-    
+  
 }
 
 .done_center{
     // border: 1px yellow solid;       
-    width: 950px;
-    margin-top: 5%; 
-    margin-left: 20%; 
-    padding: 20px;
+    width: 95%;
+    margin-top: 15%; 
     box-sizing: border-box;
 
 }
@@ -25,9 +22,12 @@
 
 
 .info_left{
-    width: 400px;
+    width: 350px;
+    padding-top: 50px;
+    margin-left: 50px;
     // border: 1px #fff solid;
-    line-height: 3;
+    
+
 
     h4{
         color: $TextColor2;
@@ -35,14 +35,16 @@
 
     h6{
         color: $TextColor2;
+        padding-top: 20px;
     }
 
 }
 
 .info_right{
-    padding-left: 10%;
-    width: 400px;
     // border: 1px #fff solid;
+    margin-left: 30px;
+    width: 400px;
+
     line-height: 1.6;
     text-align: center;
 
