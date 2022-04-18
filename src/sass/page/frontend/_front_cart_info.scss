@@ -1,11 +1,20 @@
 //滾動區塊
 .cartInformation {
+    width: $RWD;
     // @include HorizontalAlignCenter;
     scrollbar-width: none; /* firefox */
     -ms-overflow-style: none; /* IE 10+ */
     overflow-x: hidden;
     overflow-y: auto;
-    width: 100%;
+    // width: 100%;
+
+    display: flex;
+    /* 水平置中 */
+    justify-content: center; 
+
+    padding: 20px;
+
+    
     h3{
         color: $TextColor2;
         padding-top: 10%;
@@ -20,10 +29,7 @@
 // main information
 
 .main_box {
-    // border: 1px yellow solid;
-    margin-top: 5%;
-    margin-left: 20%;
-    padding: 20px;
+    width: $RWD;
     box-sizing: border-box;
 }
 
@@ -42,6 +48,15 @@
     }
     margin-top: 5%;
 }
+
+.list_box{
+    // border: 1px red solid;
+    //滾動卷軸 清單
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
 
 table.list_table {
     margin-top: 10px;
@@ -70,7 +85,7 @@ table.list_table {
     width: 700px;
     margin-top: 20px;
     display: inline-block;
-    border: 1px red solid;
+    // border: 1px red solid;
 }
 
 .c_amount {
@@ -109,7 +124,7 @@ table.list_table {
 }
 
 .input_type {
-    width: 330px;
+    width: 250px;
     height: 30px;
     margin: 10px;
     border: none;
@@ -136,7 +151,7 @@ table.list_table {
 select {
     margin: 10px;
     background: $RemindBlue;
-    width: 150px;
+    width: 125px;
     font-size: 12px;
     height: 30px;
     padding: 0 5px;
@@ -190,7 +205,18 @@ select {
 }
 
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
+    //聲明文字
+    .cautions_box {
+    background-color: #efebeb;
+    width: 450px;
+    height: 150px;
+}
 }
 
 @media screen and (max-width: 575.98px) {
+    .cautions_box {
+        background-color: #efebeb;
+        width: 250px;
+        height: 100px;
+    }
 }
