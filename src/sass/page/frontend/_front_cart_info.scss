@@ -1,13 +1,17 @@
 //滾動區塊
 .cartInformation {
+    width: $RWD;
     // @include HorizontalAlignCenter;
     scrollbar-width: none; /* firefox */
     -ms-overflow-style: none; /* IE 10+ */
     overflow-x: hidden;
     overflow-y: auto;
-    width: 100%;
-    // display: flex; 
-    // align-items: center; 
+    // width: 100%;
+    display: flex;
+    /* 水平置中 */
+    justify-content: center; 
+
+    margin: 5%;
 
     h3{
         color: $TextColor2;
@@ -23,10 +27,8 @@
 // main information
 
 .main_box {
-    border: 1px yellow solid;
-    margin-top: 5%;
-    margin-left: 20%;
-    padding: 20px;
+    width: $RWD;
+    // border: 1px yellow solid;
     box-sizing: border-box;
 }
 
@@ -112,7 +114,7 @@ table.list_table {
 }
 
 .input_type {
-    width: 330px;
+    width: 250px;
     height: 30px;
     margin: 10px;
     border: none;
@@ -139,7 +141,7 @@ table.list_table {
 select {
     margin: 10px;
     background: $RemindBlue;
-    width: 150px;
+    width: 125px;
     font-size: 12px;
     height: 30px;
     padding: 0 5px;
@@ -185,6 +187,7 @@ select {
 
 .btn_group {
     text-align: right;
+    margin-bottom: 20px;
 }
 
 //RWD
@@ -193,7 +196,18 @@ select {
 }
 
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
+    //聲明文字
+    .cautions_box {
+    background-color: #efebeb;
+    width: 450px;
+    height: 150px;
+}
 }
 
 @media screen and (max-width: 575.98px) {
+    .cautions_box {
+        background-color: #efebeb;
+        width: 250px;
+        height: 100px;
+    }
 }
