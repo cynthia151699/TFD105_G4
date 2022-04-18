@@ -1,33 +1,59 @@
 article.cartOrder {
     width: $RWD;
 
+
     section.rollover {
-        width: 70%;
-        margin-top: 5%;
-        margin-left: 18%;
         padding: 20px;
         box-sizing: border-box;
         background-color: $PrimaryColor;
+        // border: 1px blue solid;
+        display: flex;
+        /* 水平置中 */
+        justify-content: center; 
+
     }
+
+    .list_box{
+        padding-top: 5%;
+        // //滾動卷軸 清單
+        // display: block;
+        // overflow-x: auto;
+        // white-space: nowrap;
+    }
+}
 
     //表格
-    tr{
-        background-color: $PrimaryColor;
-        border-bottom: 1px #fff solid;
+    table.list_table {
+        margin-top: 10px;
+        width: 700px;
+        background-color: #e9e9e9;
+        color: black;
+        box-sizing: border-box;
+    
+        tr {
+            background-color: $PrimaryColor;
+            border-bottom: 1px #fff solid;
+        }
+    
+        td {
+            padding: 10px;
+        }
+    
+        tr{
+            background-color: $PrimaryColor;
+            border-bottom: 1px #fff solid;
+        }
     }
-}
 
-
-
-
-.table_title{
-    font-weight:450;
-}
+        .table_title{
+            font-weight:450;
+            
+        }
 
 //order amount 結算區域
 
 .order_amount {
-    border: 1px green solid;
+    // border: 1px green solid;
     margin-top: 30px;
     box-sizing: border-box;
     width: 700px;
@@ -35,12 +61,12 @@ article.cartOrder {
 
 .input_discount {
     display: inline-block;
-    border: 1px red solid;
+    // border: 1px red solid;
 }
 
 .c_count {
     display: inline-block;
-    border: 1px blue solid;
+    // border: 1px blue solid;
     padding-left: 180px;
 }
 
@@ -69,14 +95,17 @@ article.cartOrder {
 
 //數量加減按鈕
 .add{
+    border: none;
     cursor: pointer;
     color: $TextColor2;
     background-color: $PrimaryColor;
     font-size:16px;
+
 }
 
 
 .sub{
+    border: none;
     cursor: pointer;
     color: $TextColor2;
     background-color: $PrimaryColor;
@@ -84,6 +113,7 @@ article.cartOrder {
 }
 
 .qty{
+    border: none;
     width: 20px;
     text-align: center;
     color: $TextColor2;
@@ -99,16 +129,151 @@ article.cartOrder {
     background-color: #f29966;
     border: none;
     cursor: pointer;
-    box-shadow: 1px 1px 1px #000;
+    float: right;
 }
 
 //RWD
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
+//不需要寫
 }
 
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+    .titleCart{
+        border-bottom: 1px #fff solid;
+    }
+
+    table.list_table {
+        margin-top: 5px;
+        width: 560px;
+    }
+
+    .table_title{
+        display: none;
+    }
+
+    .first_order{
+        display: block;
+        td{
+            display: block;
+            line-height: 1.8;
+        }
+    }
+
+    .second_order{
+        display: block;
+        td{
+            display: block;
+            line-height: 1.8;
+        }
+    }
+
+    .order_amount{
+        width: 300px;
+    }
+
+    .c_count {
+        padding-left: 0px;
+    }
+
+    .order_amount {
+        // border: 1px green solid;
+        margin-top: 15px;
+        box-sizing: border-box;
+        width: 560px;
+    }
+
+    .c_count {
+        padding-left: 260px;
+    }
+
+    .sub{
+        margin-left: 290px;
+    }
+
+    .roll_ticket{
+        font-size: 18px;
+        font-weight: 450;
+        color: $AccentColor2;
+    }
+
+    .adv_ticket{
+        font-size: 18px;
+        font-weight: 450;
+        color: $AccentColor2;
+    }
 }
 
 @media screen and (max-width: 575.98px) {
+
+    .titleCart{
+        border-bottom: 1px #fff solid;
+    }
+
+    table.list_table {
+        margin-top: 5px;
+        width: 350px;
+    }
+
+    .table_title{
+        display: none;
+    }
+
+    .first_order{
+        display: block;
+
+        td{
+            display: block;
+            line-height: 1.8;
+            
+        }
+        
+    }
+
+    .second_order{
+        display: block;
+
+        td{
+            display: block;
+            line-height: 1.8;
+        }
+    }
+
+    .order_amount{
+        width: 300px;
+    }
+
+    .c_count {
+        padding-left: 0px;
+    }
+
+
+    .order_amount {
+        // border: 1px green solid;
+        margin-top: 15px;
+        box-sizing: border-box;
+        width: 350px;
+    }
+
+    .c_count {
+        padding-left: 55px;
+    }
+
+    .sub{
+        margin-left: 80px;
+        margin-top: 10px;
+    }
+
+    .roll_ticket{
+        font-size: 18px;
+        font-weight: 450;
+        color: $AccentColor2;
+    }
+
+    .adv_ticket{
+        font-size: 18px;
+        font-weight: 450;
+        color: $AccentColor2;
+    }
 }
