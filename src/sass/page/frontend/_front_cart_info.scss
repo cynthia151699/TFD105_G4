@@ -4,17 +4,11 @@
     // @include HorizontalAlignCenter;
     scrollbar-width: none; /* firefox */
     -ms-overflow-style: none; /* IE 10+ */
+
     overflow-x: hidden;
     overflow-y: auto;
-    // width: 100%;
 
-    display: flex;
-    /* 水平置中 */
-    justify-content: center; 
 
-    padding: 20px;
-
-    
     h3{
         color: $TextColor2;
         padding-top: 10%;
@@ -29,7 +23,10 @@
 // main information
 
 .main_box {
-    width: $RWD;
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 30px;
+    // border: 1px red solid;
     box-sizing: border-box;
 }
 
@@ -43,77 +40,24 @@
 
 //PART 2 ORDER
 .order_list {
+    width: 700px;
+    // border: 1px red solid;
     h6 {
         color: $TextColor2;
     }
     margin-top: 5%;
 }
 
-.list_box{
-    // border: 1px red solid;
-    //滾動卷軸 清單
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-
-
-table.list_table {
-    margin-top: 10px;
-    width: 700px;
-    background-color: #e9e9e9;
-    color: black;
-    box-sizing: border-box;
-
-    tr {
-        background-color: $PrimaryColor;
-        border-bottom: 1px #fff solid;
-    }
-
-    td {
-        padding: 10px;
-    }
-
-    tr{
-        background-color: $PrimaryColor;
-        border-bottom: 1px #fff solid;
-    }
-}
-
 
 .i_count {
-    width: 700px;
     margin-top: 20px;
-    display: inline-block;
+    // display: inline-block;
     // border: 1px red solid;
-}
-
-.c_amount {
-    text-align: right;
-    h6 {
-        display: inline-block;
-        color: $TextColor2;
-    }
-}
-
-.c_discount {
-    text-align: right;
-    h6 {
-        display: inline-block;
-        text-align: right;
-        color: $TextColor2;
-    }
-}
-
-.c_total {
-    text-align: right;
-    color: $TextColor2;
 }
 
 //PART 3 PAYMENT
 
 .payment {
-    margin-top: 5%;
     h5 {
         color: $TextColor2;
     }
@@ -176,6 +120,11 @@ select {
 }
 
 // 完成按鈕
+.btn_group_info{
+    text-align: right;
+    margin-bottom: 30px;
+}
+
 .btn_previous {
     width: 100px;
     height: 30px;
@@ -195,9 +144,7 @@ select {
     box-shadow: 1px 1px 1px #000;
 }
 
-.btn_group {
-    text-align: right;
-}
+
 
 //RWD
 
@@ -205,6 +152,15 @@ select {
 }
 
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
+    .main_box {
+        width: 560px;
+        padding: 30px;
+    }
+
+    .order_list {
+        width: 560px;
+    }
+    
     //聲明文字
     .cautions_box {
     background-color: #efebeb;
@@ -214,9 +170,21 @@ select {
 }
 
 @media screen and (max-width: 575.98px) {
+    .main_box {
+        width: 350px;
+        padding: 0px;
+        padding-top: 30px;
+    }
+
+    .order_list {
+        width: 350px;
+    }
+
     .cautions_box {
         background-color: #efebeb;
         width: 250px;
         height: 100px;
     }
+
+    
 }
