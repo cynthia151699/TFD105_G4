@@ -58,6 +58,10 @@ main.member {
         display: none;
     }
 
+    article.phone {
+        display: none;
+    }
+
     @mixin PopUp {
         position: absolute;
         z-index: 59;
@@ -196,9 +200,8 @@ main.member {
         input {
             display: inline-block;
         }
-
     }
-// codepen 效果設定
+    // codepen 效果設定
     div.cont {
         overflow: hidden;
         position: relative;
@@ -285,13 +288,13 @@ div.img {
     &:before {
         @include Reset();
 
-        content: '';
+        content: "";
         position: absolute;
         right: 0;
         top: 0;
         width: $contW;
         height: 100%;
-        background-image: url('./../img/member/member_pic1.jpeg');
+        background-image: url("./../img/member/member_pic1.jpeg");
         background-size: cover;
         transition: transform $switchAT ease-in-out;
     }
@@ -299,7 +302,7 @@ div.img {
     &:after {
         @include Reset();
 
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         top: 0;
@@ -341,7 +344,7 @@ div.img {
 
         &.m--up {
             @include signUpActive {
-                transform: translateX($imgW*2);
+                transform: translateX($imgW * 2);
             }
         }
 
@@ -370,7 +373,7 @@ div.img {
         &:after {
             @include Reset();
 
-            content: '';
+            content: "";
             z-index: 2;
             position: absolute;
             left: 0;
@@ -393,7 +396,7 @@ div.img {
             transition: transform $switchAT;
 
             &.m--in {
-                transform: translateY($btnH*-2);
+                transform: translateY($btnH * -2);
 
                 @include signUpActive {
                     transform: translateY(0);
@@ -402,7 +405,7 @@ div.img {
 
             &.m--up {
                 @include signUpActive {
-                    transform: translateY($btnH*2);
+                    transform: translateY($btnH * 2);
                 }
             }
         }
@@ -454,7 +457,6 @@ div.form.sign-up {
         height: auto;
     }
 }
-
 
 // 詳細會員資訊樣式設定（另外一頁了）
 main.memberInfo {
@@ -517,18 +519,46 @@ main.memberInfo {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 991.98px) {
-    main.member{
-        div.cont{
-            width: 700px;
+@media screen and (max-width: 797.98px) {
+    main.member {
+        div.cont {
+            display: none;
         }
 
-        div.form{
-            width: 500px;
-        }
+        article.phone {
+            display: block;
+            width: 80%; 
+            height: 550px; 
+            background-color: white; 
 
-        div.sub-cont{
-            width: 100px;
+            @include HorizontalAlignCenter();
+
+            h2,p,span{
+                color: black;
+            }
+
+            section.phoneBottom{
+                height: 175px;
+
+                background-color: #768cb6;
+
+                display: flex;
+
+                div.left{
+                    width: 50%;
+                }
+
+                div.right{
+                    width: 50%;
+
+                    @include VerticalAlignCenter();
+
+                    p{
+                        width: 80%;
+                        text-align: left;
+                    }
+                }
+            }
         }
     }
 }

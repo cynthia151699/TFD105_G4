@@ -34,6 +34,9 @@ div.popUp {
                     box-sizing: border-box;
                     border: 1px solid $TextColor;
                 }
+                input.status{
+                    width:307px;
+                }
                 h6.date {
                     width: 350px;
                     color: $TextColor;
@@ -175,7 +178,15 @@ div.popUp {
 
         tbody {
             background-color: $InputColor;
-
+            tr{
+                td{
+                    vertical-align: middle;
+                }
+                img{
+                    width:100px;
+                    height:100px;
+                }
+            }
             tr:nth-child(even) {
                 td {
                     border-top: 3px solid $BHColor;

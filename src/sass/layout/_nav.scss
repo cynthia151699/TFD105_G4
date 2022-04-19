@@ -3,7 +3,7 @@ nav.frontNav{
     display: inline-block;
 
     width: 70px;
-    height: calc(#{$Height} + 90px);
+    height: $Height;
 
     background-color: $NavBGColor;
 
@@ -14,25 +14,30 @@ nav.frontNav{
         margin: 0 auto;
     }
     
-    .navContainer{
-        height: calc(#{$Height} + 90px);
-        width: 35px;
+    ul.navContainer{
+        height: $Height;
+        width: 70px;
         margin: 0 auto;
 
         @include Flex(column);
+        justify-content: space-between;
 
-        li{
-            padding-top: 100%;
-
-            &:nth-child(6){
-                // padding-top: 225%;
-            }
+        a{
+            width: 35px;
+            display: block;
+            margin: 0 auto;
         }
+
+        a.home{
+                width: 70px;
+        }
+        
 
         svg{
             width: 35px;
             height: 30px;
             fill: $AccentColor3;
+            
 
             &:hover{
                 fill: $AccentColor;
@@ -75,7 +80,7 @@ nav.frontNav{
     .wrapperHamCnt {
         .hamburgerCnt {
             height: 100vh;
-            background-color: $PrimaryColor;
+            background-color: rgba(41, 50, 65, .7);
     
             li {
                 background-color: $NavBGColor;
@@ -88,11 +93,12 @@ nav.frontNav{
                 background-color: $AccentColor3;
             }
     
-            h2 {
-                font-family: $SpecialFont;
+            h4 {
+                // font-family: $SpecialFont;
                 color: $InputColor;
                 text-align: center;
-                font-size: 24px;
+                // font-size: 24px;
+                line-height: 2.5;
             }
         }
     }
@@ -115,8 +121,9 @@ nav.frontNav{
             box-sizing: border-box;
     
             img {
-                height: 50px;
+                height: 40px;
                 display: inline-block;
+                margin-top: 5px;
             }
         }
     
@@ -132,12 +139,13 @@ nav.frontNav{
     }
     
     .hamburger {
-        width: 50px;
+        width: 40px;
         display: inline-block;
+        margin-top: 5px;
     
         .menu_icon {
             position: relative;
-            width: 50px;
+            width: 40px;
             height: 35px;
             margin: 0 auto;
         }

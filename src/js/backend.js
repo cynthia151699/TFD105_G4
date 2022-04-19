@@ -46,7 +46,7 @@ $('div.mask').on("click", function(){
     $('div.popUp').css("display", "none");
 });
 
-$('button.cancel').on("click", function(e){
+$('input.cancel').on("click", function(e){
     console.log('aaa');
     e.preventDefault (); // 停止button 的submit 的預設事件
 
