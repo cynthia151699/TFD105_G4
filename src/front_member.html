@@ -115,36 +115,6 @@
                     </div>
                 </div>
 
-						<h2>Time to feel like home,</h2>
-						<form id="member_form">
-							<div class="info ptSpace10">
-								<label>
-									<span>Name</span>
-									<input type="text" />
-								</label>
-
-								<label>
-									<span>Email</span>
-									<!-- <input type="email" id="member_mail"/> -->
-									<input type="text" name="mail" id="member_mail" />
-								</label>
-
-								<label>
-									<span>Password</span>
-									<input type="password" />
-								</label>
-
-								<label>
-									<span>PASSWORD CONFIRM</span>
-									<input type="password" />
-								</label>
-
-								<label>
-									<span>PHONE NUMBER</span>
-									<input type="password" />
-								</label>
-							</div>
-					
                 <article class="phone" style="display: none">
                     <h2 class="ptSpace30" style="">Welcome back,</h2>
                     <div class="info ptSpace20">
@@ -196,12 +166,6 @@
                             <input type="text" />
                         </label>
 
-						<button type="submit" class="member submit" id="member_button">Sign Up</button>
-						<button type="button" class="member fb-btn">Join with <span>facebook</span></button>
-					</form>
-					</div>
-				</div>
-			</div>
                         <label>
                             <span>Email</span>
                             <input type="email" />
@@ -318,37 +282,6 @@
             </main>
         </div>
 
-	<!-- 載入js -->
-	<!-- 選單左右移動 -->
-	<!-- <script>
-		document.querySelector('#img__btn').addEventListener('click', function () {
-			document.querySelector('.cont').classList.toggle('s--signup');
-		});
-	</script>
-	<script>
-		emailjs.init("rB4cW-mtW8WwyODex");
-
-		const btn = document.getElementById("member_button");
-		document.getElementById("member_form").addEventListener("submit", function (event) {
-			event.preventDefault();
-
-			btn.value = "Sending...";
-
-			const serviceID = "default_service";
-			const templateID = "template_c3rqluo";
-
-			emailjs.sendForm(serviceID, templateID, this).then(
-				() => {
-					btn.value = "Send Email";
-					alert("Welcome to Anno");
-				},
-				(err) => {
-					btn.value = "Send Email";
-					alert("Email format error, please re-enter");
-				}
-			);
-		}); -->
-	</script>
         <!-- 載入套件 -->
         <script
             type="text/javascript"
