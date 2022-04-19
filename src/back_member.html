@@ -71,7 +71,7 @@
             })
 
             <form>
-                <table class="maintable">
+                <table>
                     <thead>
                         <tr>
                             <!-- table row -->
@@ -84,34 +84,61 @@
                             <td> </td>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>abc@gmail.com</td>
+                            <td>12345</td>
+                            <td>王小明</td>
+                            <td>0912345678</td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>def@gmail.com</td>
+                            <td>asdfg</td>
+                            <td>李美麗</td>
+                            <td>0912345678</td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>3</td>
+                            <td>ghi@gmail.com</td>
+                            <td>67890</td>
+                            <td>陳小花</td>
+                            <td>0912345678</td>
+                            <td>2022-02-22<br>00:00:00</td>
+                            <td><button>編輯</button></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </form>
+        </div>
+    </div>
+
     <script src="./js/backend.min.js"></script>
-    <script>
-        const maintable = document.querySelector(".maintable");
-        const url = 'membersearch.php';
-
-
-
-        // 回傳檔案先轉譯
-        fetch(url).then(response => response.json()
-            .then(obj => {
-                console.log(obj)
-                obj.forEach((item, i) => {
-                    maintable.insertAdjacentHTML('beforeend', `<tr>
-                    <td>${item.ID}</td>
-                    <td>${item.ACCOUNT}</td>
-                    <td>${item.PASSWORD}</td>
-                    <td>${item.NAME}</td>
-                    <td>${item.PHONE}</td>
-                    <td>${item.DATE}</td>
-                    </tr>`)
-                });
-
-            })
-
-        )
-    </script>
 </body>
 
 </html>
