@@ -1,305 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        @@include('./layout/head.html')
-    </head>
 
-    <body>
-        <div class="wrapper" id="app">
-            <!-- 導覽列 -->
-            @@include('./layout/nav.html', { "active5" : "active" })
+<head>
+    @@include('./layout/head.html')
+</head>
 
-            <main class="member">
-                <div class="cont">
-                    <div class="form sign-in">
+<body>
+    <div class="wrapper" id="app">
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', { "active5" : "active" })
+
+        <main class="member">
+            <div class="cont">
+                <div class="form sign-in">
+                    <form method="post" action="./PHP/login.php">
                         <h2 class="ptSpace30">Welcome back,</h2>
 
                         <div class="info ptSpace20">
                             <label>
                                 <span class="in">Email</span>
-                                <input type="email" />
+                                <input type="email" name="mail" />
                             </label>
 
                             <label>
                                 <span class="in">Password</span>
-                                <input type="password" />
+                                <input type="password" name="PASSWORD" />
                             </label>
                         </div>
 
                         <p class="forgot-pass mtSpace50">Forgot password?</p>
 
-                        <a href="./front_login.html">
-                            <button type="button" class="member submit">
+                        <a href="./front_member_info.html">
+                            <button type="submit" class="member submit">
                                 Sign In
                             </button>
                         </a>
                         <button type="button" class="member fb-btn">
                             Connect with <span>facebook</span>
                         </button>
-                    </div>
-
-                    <div class="sub-cont">
-                        <div class="img">
-                            <div class="img__text m--up">
-                                <h2>New here?</h2>
-                                <p>
-                                    Sign up and discover great amount of new
-                                    opportunities!
-                                </p>
-                            </div>
-
-                            <div class="img__text m--in">
-                                <h2>One of us?</h2>
-                                <p>
-                                    If you already has an account, just sign in.
-                                    We've missed you!
-                                </p>
-                            </div>
-
-                            <div class="img__btn" id="img__btn">
-                                <span class="m--up">Sign Up</span>
-                                <span class="m--in">Sign In</span>
-                            </div>
-                        </div>
-
-                        <div class="form sign-up">
-                            <h2>Time to feel like home,</h2>
-
-                            <div class="info ptSpace10">
-                                <label>
-                                    <span>Name</span>
-                                    <input type="text" />
-                                </label>
-
-                                <label>
-                                    <span>Email</span>
-                                    <input type="email" />
-                                </label>
-
-                                <label>
-                                    <span>Password</span>
-                                    <input type="password" />
-                                </label>
-
-                                <label>
-                                    <span>PASSWORD CONFIRM</span>
-                                    <input type="password" />
-                                </label>
-
-                                <label>
-                                    <span>PHONE NUMBER</span>
-                                    <input type="password" />
-                                </label>
-                            </div>
-
-                            <p class="ptSpace20">
-                                <input type="checkbox" class="check" /> I would
-                                like to receive news, tips and marketing offers
-                                from Anno.
-                            </p>
-                            <p>
-                                <input type="checkbox" class="check" /> I have
-                                read and understood the
-                                <a href="#" class="memberTerms"
-                                    >Terms& Conditions and Privacy Policy.</a
-                                >
-                            </p>
-
-                            <button type="button" class="member submit">
-                                Sign Up
-                            </button>
-                            <button type="button" class="member fb-btn">
-                                Join with <span>facebook</span>
-                            </button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
 
-                <article class="phone" style="display: none">
-                    <h2 class="ptSpace30" style="">Welcome back,</h2>
-                    <div class="info ptSpace20">
-                        <label>
-                            <span class="in">Email</span>
-                            <input type="email" />
-                        </label>
-
-                        <label>
-                            <span class="in">Password</span>
-                            <input type="password" />
-                        </label>
-                    </div>
-
-                    <p class="forgot-pass mtSpace50">Forgot password?</p>
-
-                    <a href="./front_member_info.html">
-                        <button type="button" class="member submit">
-                            Sign In
-                        </button>
-                    </a>
-                    <button type="button" class="member fb-btn">
-                        Connect with <span>facebook</span>
-                    </button>
-
-                    <section class="phoneBottom">
-                        <div class="left">
+                <div class="sub-cont">
+                    <div class="img">
+                        <div class="img__text m--up">
                             <h2>New here?</h2>
-                            <div class="img__btn" id="img__btn">
-                                <span class="m--up">Sign Up</span>
-                                <span class="m--in">Sign In</span>
-                            </div>
-                        </div>
-                        <div class="right">
                             <p>
                                 Sign up and discover great amount of new
                                 opportunities!
                             </p>
                         </div>
-                    </section>
-                </article>
 
-                <article class="phone">
-                    <h2>Time to feel like home,</h2>
-
-                    <div class="info ptSpace10">
-                        <label>
-                            <span>Name</span>
-                            <input type="text" />
-                        </label>
-
-                        <label>
-                            <span>Email</span>
-                            <input type="email" />
-                        </label>
-
-                        <label>
-                            <span>Password</span>
-                            <input type="password" />
-                        </label>
-
-                        <label>
-                            <span>PASSWORD CONFIRM</span>
-                            <input type="password" />
-                        </label>
-
-                        <label>
-                            <span>PHONE NUMBER</span>
-                            <input type="password" />
-                        </label>
-                    </div>
-
-                    <a href="./front_member_info.html">
-                        <button type="button" class="member submit">
-                            Sign In
-                        </button>
-                    </a>
-                    <button type="button" class="member fb-btn">
-                        Connect with <span>facebook</span>
-                    </button>
-
-                    <section class="phoneBottom">
-                        <div class="left">
+                        <div class="img__text m--in">
                             <h2>One of us?</h2>
-
-                            <div class="img__btn" id="img__btn">
-                                <span class="m--up">Sign Up</span>
-                                <span class="m--in">Sign In</span>
-                            </div>
-                        </div>
-                        <div class="right">
                             <p>
                                 If you already has an account, just sign in.
                                 We've missed you!
                             </p>
                         </div>
-                    </section>
-                </article>
 
-                <!-- 彈窗背景透明度 -->
-                <div class="mask"></div>
-
-                <!-- 彈窗內文 -->
-                <article class="memberPopUp">
-                    <h6 class="title">
-                        Terms & Conditions and Privacy Policy.<a
-                            class="memberTermsDel"
-                            >X</a
-                        >
-                    </h6>
-
-                    <h6 class="inner">
-                        Anno Account, Personal Information, and Security By
-                        signing up for an account or placing an Order you agree
-                        and understand that we may collect, use, store and
-                        process your Personal Information in accordance with our
-                        Privacy & Cookie Policy. Anno Museum fully respects the
-                        privacy of individuals who access and use the Platforms.
-                        For details on the manner in which we use cookies, the
-                        type of information we collect, how and for what
-                        purpose, we use your information and under what
-                        circumstances we disclose information please see our
-                        Privacy & Cookie Policy, which are incorporated into and
-                        form part of these Terms.
-                    </h6>
-                </article>
-
-                <!-- 忘記密碼變更彈窗 -->
-                <article class="forgetChange">
-                    <section>
-                        <h3>Password Reset</h3>
-
-                        <h4 class="mtSpace30 mbSpace30">
-                            Please enter the email address that you used to sign
-                            up so we can send you an email with your username
-                            and a link to reset your password.
-                        </h4>
-
-                        <input type="name" />
-
-                        <div class="btn">
-                            <button type="button" class="member submit">
-                                Cancel
-                            </button>
-                            <button type="button" class="member fb-btn">
-                                Send
-                            </button>
+                        <div class="img__btn" id="img__btn">
+                            <span class="m--up">Sign Up</span>
+                            <span class="m--in">Sign In</span>
                         </div>
-                    </section>
-                </article>
+                    </div>
 
-                <!-- 忘記密碼送出郵件彈窗 -->
-                <article class="forgetSubmit">
-                    <section>
-                        <h5>
-                            The password has already sent into your email
-                            address, please check it.
-                        </h5>
+                    <div class="form sign-up">
+                        <form id="member_form" method="post" action="./PHP/newmember.php">
+                        <h2>Time to feel like home,</h2>
 
-                        <button type="button" class="member submit">
-                            Back to login page
+                        <div class="info ptSpace10">
+                            <label>
+                                <span>Name</span>
+                                <input type="text" name="NAME"/>
+                            </label>
+
+                            <label>
+                                <span>Email</span>
+                                <input type="email" name="mail" id="member_mail" />
+                            </label>
+
+                            <label>
+                                <span>Password</span>
+                                <input type="password" name="PASSWORD"/>
+                            </label>
+
+                            <label>
+                                <span>PASSWORD CONFIRM</span>
+                                <input type="password" />
+                            </label>
+
+                            <label>
+                                <span>PHONE NUMBER</span>
+                                <input type="password" name="PHONE"/>
+                            </label>
+                        </div>
+
+                        <p class="ptSpace20">
+                            <input type="checkbox" class="check" /> I would
+                            like to receive news, tips and marketing offers
+                            from Anno.
+                        </p>
+                        <p>
+                            <input type="checkbox" class="check" /> I have
+                            read and understood the
+                            <a href="#" class="memberTerms">Terms& Conditions and Privacy Policy.</a>
+                        </p>
+
+                        <button type="submit" class="member submit" id="member_button">
+                            Sign Up
                         </button>
-                    </section>
-                </article>
-            </main>
-        </div>
+                        <button type="button" class="member fb-btn">
+                            Join with <span>facebook</span>
+                        </button>
+                    </form>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 載入套件 -->
-        <script
-            type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-        ></script>
+            <article class="phone" style="display: none">
+                <h2 class="ptSpace30" style="">Welcome back,</h2>
+                <div class="info ptSpace20">
+                    <label>
+                        <span class="in">Email</span>
+                        <input type="email" />
+                    </label>
 
-        <!-- 載入js -->
-        <!-- 選單左右移動 -->
-        <script>
-            document
-                .querySelector("#img__btn")
-                .addEventListener("click", function () {
-                    document
-                        .querySelector(".cont")
-                        .classList.toggle("s--signup");
-                });
-        </script>
+                    <label>
+                        <span class="in">Password</span>
+                        <input type="password" />
+                    </label>
+                </div>
 
-        <script src="./js/member.min.js"></script>
-    </body>
+                <p class="forgot-pass mtSpace50">Forgot password?</p>
+
+                <a href="./front_member_info.html">
+                    <button type="button" class="member submit">
+                        Sign In
+                    </button>
+                </a>
+                <button type="button" class="member fb-btn">
+                    Connect with <span>facebook</span>
+                </button>
+
+                <section class="phoneBottom">
+                    <div class="left">
+                        <h2>New here?</h2>
+                        <div class="img__btn" id="img__btn">
+                            <span class="m--up">Sign Up</span>
+                            <span class="m--in">Sign In</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p>
+                            Sign up and discover great amount of new
+                            opportunities!
+                        </p>
+                    </div>
+                </section>
+            </article>
+
+            <article class="phone">
+                <h2>Time to feel like home,</h2>
+
+                <div class="info ptSpace10">
+                    <label>
+                        <span>Name</span>
+                        <input type="text" />
+                    </label>
+
+                    <label>
+                        <span>Email</span>
+                        <input type="email" />
+                    </label>
+
+                    <label>
+                        <span>Password</span>
+                        <input type="password" />
+                    </label>
+
+                    <label>
+                        <span>PASSWORD CONFIRM</span>
+                        <input type="password" />
+                    </label>
+
+                    <label>
+                        <span>PHONE NUMBER</span>
+                        <input type="password" />
+                    </label>
+                </div>
+
+                <a href="./front_member_info.html">
+                    <button type="button" class="member submit">
+                        Sign In
+                    </button>
+                </a>
+                <button type="button" class="member fb-btn">
+                    Connect with <span>facebook</span>
+                </button>
+
+                <section class="phoneBottom">
+                    <div class="left">
+                        <h2>One of us?</h2>
+
+                        <div class="img__btn" id="img__btn">
+                            <span class="m--up">Sign Up</span>
+                            <span class="m--in">Sign In</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p>
+                            If you already has an account, just sign in.
+                            We've missed you!
+                        </p>
+                    </div>
+                </section>
+            </article>
+
+            <!-- 彈窗背景透明度 -->
+            <div class="mask"></div>
+
+            <!-- 彈窗內文 -->
+            <article class="memberPopUp">
+                <h6 class="title">
+                    Terms & Conditions and Privacy Policy.<a class="memberTermsDel">X</a>
+                </h6>
+
+                <h6 class="inner">
+                    Anno Account, Personal Information, and Security By
+                    signing up for an account or placing an Order you agree
+                    and understand that we may collect, use, store and
+                    process your Personal Information in accordance with our
+                    Privacy & Cookie Policy. Anno Museum fully respects the
+                    privacy of individuals who access and use the Platforms.
+                    For details on the manner in which we use cookies, the
+                    type of information we collect, how and for what
+                    purpose, we use your information and under what
+                    circumstances we disclose information please see our
+                    Privacy & Cookie Policy, which are incorporated into and
+                    form part of these Terms.
+                </h6>
+            </article>
+
+            <!-- 忘記密碼變更彈窗 -->
+            <article class="forgetChange">
+                <section>
+                    <h3>Password Reset</h3>
+
+                    <h4 class="mtSpace30 mbSpace30">
+                        Please enter the email address that you used to sign
+                        up so we can send you an email with your username
+                        and a link to reset your password.
+                    </h4>
+
+                    <input type="name" />
+
+                    <div class="btn">
+                        <button type="button" class="member submit">
+                            Cancel
+                        </button>
+                        <button type="button" class="member fb-btn">
+                            Send
+                        </button>
+                    </div>
+                </section>
+            </article>
+
+            <!-- 忘記密碼送出郵件彈窗 -->
+            <article class="forgetSubmit">
+                <section>
+                    <h5>
+                        The password has already sent into your email
+                        address, please check it.
+                    </h5>
+
+                    <button type="button" class="member submit">
+                        Back to login page
+                    </button>
+                </section>
+            </article>
+        </main>
+    </div>
+
+    <!-- 載入套件 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- 載入js -->
+    <!-- 選單左右移動 -->
+    <script>
+        document
+            .querySelector("#img__btn")
+            .addEventListener("click", function () {
+                document
+                    .querySelector(".cont")
+                    .classList.toggle("s--signup");
+            });
+    </script>
+
+    <script src="./js/member.min.js"></script>
+</body>
+
 </html>

@@ -101,27 +101,47 @@
     </div>
 
     <script>
-        var aAdd = document.querySelectorAll(".add");  
-        var sub = document.querySelectorAll(".sub");  
-        for (var i = 0; i < aAdd.length; i++) {  
-            aAdd[i].onclick = function () {  
-                var num = Number(this.previousElementSibling.value);  
-                num++;  
-                this.previousElementSibling.value = num;  
-                var price = this.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild.innerHTML;  
-                this.nextElementSibling.firstElementChild.innerHTML = price * num;  
-            }  
-        }  
-        for (var i = 0; i < sub.length; i++) {  
-            sub[i].onclick = function () {  
-                var num = Number(this.nextElementSibling.value);  
-                num--;  
-                this.nextElementSibling.value = num;  
-                var price = this.previousElementSibling.firstElementChild.innerHTML;  
-                this.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.innerHTML = price * num;  
-            }  
-        }  
+        // var aAdd = document.querySelectorAll(".add");
+        // var sub = document.querySelectorAll(".sub");  
+        // var plus = 0;
+        // var minus = 0;
+        // // console.log(plus);
+        // // console.log(minus);
 
+        // for (var i = 0; i < aAdd.length; i++) {  
+        //     document.addEventListener("click", function(){
+        //         console.log("aaa");
+
+        //     });
+        //     aAdd[i].onclick = function () {  
+        //         // var num = Number(this.previousElementSibling.value);  
+        //         // num++;  
+        //         // this.previousElementSibling.value = num;  
+        //         // var price = this.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild.innerHTML;  
+        //         // this.nextElementSibling.firstElementChild.innerHTML = price * num; 
+        //         // var plusa = (plus + (price * num));
+        //         // console.log(plusa);
+        //     }  
+
+        //     for (var j = 0; j < sub.length; j++) {  
+        //     sub[j].onclick = function () {  
+        //         // var num = Number(this.nextElementSibling.value);  
+        //         // num--;  
+        //         // this.nextElementSibling.value = num;  
+        //         // var price = this.previousElementSibling.firstElementChild.innerHTML;  
+        //         // this.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.innerHTML = price * num; 
+        //         // var minusa = (minus + (price * num));
+        //         // console.log(minus);
+
+        //         // var total = (plusa + minusa);
+
+        //         // console.log(total);
+        //     }  
+        // }
+        // }  
+          
+        
+        
         
 
 

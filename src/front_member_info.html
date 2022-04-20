@@ -12,7 +12,7 @@
             <main class="memberInfo">
                 <!-- 確認會員資訊 -->
                 <article class="checkMemberInfo" style="">
-                    <table>
+                    <table id="appapp">
                         <tr>
                             <td colspan="2">
                                 <h3>Overview</h3>
@@ -27,25 +27,25 @@
                             <td class="first">
                                 <h5>Name</h5>
                             </td>
-                            <td>王大明</td>
+                            <td>{{MEMBER.NAME}}</td>
                         </tr>
                         <tr>
                             <td class="first">
                                 <h5>Email address</h5>
                             </td>
-                            <td>test@gmail.com</td>
+                            <td>{{MEMBER.mail}}</td>
                         </tr>
                         <tr>
                             <td class="first">
                                 <h5>Password</h5>
                             </td>
-                            <td>p@ssw0rd</td>
+                            <td>{{MEMBER.PASSWORD}}</td>
                         </tr>
                         <tr>
                             <td class="first">
                                 <h5>Phone</h5>
                             </td>
-                            <td class="second">0912345678</td>
+                            <td class="second">{{MEMBER.PHONE}}</td>
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -59,7 +59,7 @@
 
                 <!-- 更改密碼 -->
                 <article class="modifyMemberInfo" style="display: none">
-                    <table>
+                    <table id="appapp">
                         <tr>
                             <td colspan="2">
                                 <h3>Edit your member information</h3>
@@ -74,13 +74,13 @@
                             <td>
                                 <h5>Name</h5>
                             </td>
-                            <td>王大明</td>
+                            <td>{{MEMBER.NAME}}</td>
                         </tr>
                         <tr>
                             <td>
                                 <h5>Email address</h5>
                             </td>
-                            <td>test@gmail.com</td>
+                            <td>{{MEMBER.mail}}</td>
                         </tr>
                         <tr>
                             <td>
@@ -90,6 +90,7 @@
                                 <input
                                     type="password"
                                     placeholder="請輸入密碼"
+                                    name="PASSWORD"
                                 />
                             </td>
                         </tr>
@@ -109,7 +110,7 @@
                                 <h5>Phone</h5>
                             </td>
                             <td>
-                                <input type="phone" placeholder="請輸入手機" />
+                                <input type="phone" placeholder="請輸入手機" name="PHONE"/>
                             </td>
                         </tr>
                         <tr>
@@ -171,6 +172,32 @@
                 $('article.modifyMemberInfo').css("display", "flex");
                 $('article.checkMemberInfo').css("display", "none");
             });
+        </script>
+           <script>
+            new Vue({
+                el: '#appapp',
+    
+                data: {
+                    MEMBER: {
+                        NAME: '',
+                        mail: '',
+                        PASSWORD: '',
+                        PHONE: '',
+                    },
+                },
+                mounted() {
+                    fetch('./PHP/search1.php')
+                        .then(res => res.json())
+                        .then(res => {
+                            this.MEMBER = res[0]
+                        })
+                },
+                methods: {
+    
+                },
+    
+    
+            })
         </script>
     </body>
 </html>
