@@ -160,13 +160,133 @@ main.home {
 	article.page3 {
 		height: 100%;
 		background-color: $PrimaryColor;
-		@include VerticalAlignCenter;
+		// @include VerticalAlignCenter;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(3, 1fr);
 
 		.part3_wrapper {
 			width: 90%;
 			margin: 0 auto;
 			max-width: 80rem;
 		}
+	}
+
+	.page3{
+		// border: 1px red solid;
+
+		div{
+			border: 5px $PrimaryColor solid;
+			border-style:outset;
+		}
+
+		.pic1{
+			@include LinkImg(index, index_p3_pic5, jpg, cover, null, null);
+			grid-column-start: 1;
+			grid-column-end: 1;
+			grid-row-start: 1;
+			grid-row-end: 3;
+			transform:scale(1,1);transition: all 1s ease-out;
+		}
+
+		.pic1:hover{
+			transform: scale(1.2);
+		}
+
+		.pic2{
+			@include LinkImg(index, index_p3_pic2, jpg, cover, null, null);
+			grid-column-start: 2;
+			grid-column-end: 2;
+			grid-row-start: 1;
+			grid-row-end: 2;
+			transform:scale(1,1);transition: all 1s ease-out;
+		}
+
+		.pic2:hover{
+			transform: scale(1.2);
+		}
+
+		.pic3{
+			@include LinkImg(index, index_p3_pic7, jpg, cover, null, null);
+			grid-column-start: 3;
+			grid-column-end: 3;
+			grid-row-start: 1;
+			grid-row-end: 1;
+			transform:scale(1,1);transition: all 1s ease-out;
+		}
+
+		.pic3:hover{
+			transform: scale(1.2);
+		}
+
+		.pic4{
+			@include LinkImg(index, index_p3_pic4, jpg, cover, null, null);
+			grid-column-start: 4;
+			grid-column-end: 4;
+			grid-row-start: 1;
+			grid-row-end: 1;
+			transform:scale(1,1);transition: all 1s ease-out;
+		}
+
+		.pic4:hover{
+			transform: scale(1.2);
+		}
+
+		.pic5{
+			@include LinkImg(index, index_p3_pic8, jpg, cover, null, null);
+			grid-column-start: 2;
+			grid-column-end: 4;
+			grid-row-start: 2;
+			grid-row-end: 2;
+			transform:scale(1,1);transition: all 1s ease-out;
+		}
+
+		.pic5:hover{
+			transform: scale(1.2);
+		}
+
+		.pic6{
+			@include LinkImg(index, index_p3_pic9, jpg, cover, null, null);
+			grid-column-start: 4;
+			grid-column-end: 4;
+			grid-row-start: 2;
+			grid-row-end: 4;
+			transform:scale(1,1);transition: all 1s ease-out;
+		}
+
+		.pic6:hover{
+			transform: scale(1.2);
+		}
+
+		.pic7{
+			@include LinkImg(index, index_p3_pic3, jpg, cover, null, null);
+			transform:scale(1,1);transition: all 1s ease-out;
+		}
+
+		.pic7:hover{
+			transform: scale(1.2);
+		}
+
+		.pic8{
+			@include LinkImg(index, index_p3_pic1, jpg, cover, null, null);
+			transform:scale(1,1);transition: all 1s ease-out;
+		}
+
+		.pic8:hover{
+			transform: scale(1.2);
+		}
+
+		.pic9{
+			@include LinkImg(index, index_p3_pic6, jpg, cover, null, null);
+			transform:scale(1,1);transition: all 1s ease-out;
+		}
+
+		.pic9:hover{
+			transform: scale(1.2);
+		}
+
+
+
 	}
 
 	//part 3 RWD
