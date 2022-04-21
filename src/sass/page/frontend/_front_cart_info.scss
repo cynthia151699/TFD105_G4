@@ -170,6 +170,10 @@ select {
         width: 560px;
     }
 
+    .piece_info{
+        margin-left:250px;
+    }
+
     .sum_info {
         padding-left: 35px;
     }
@@ -201,6 +205,11 @@ select {
 
     .sum_info {
         padding-left: 0px;
+    }
+
+    .piece_info{
+        margin-right: 0px;
+        margin-left:50px;
     }
     
 }
