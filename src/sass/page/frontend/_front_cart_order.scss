@@ -36,7 +36,7 @@ article.cartOrder {
         }
     
         td {
-            padding: 10px;
+            // padding: 10px;
         }
     
         tr{
@@ -45,13 +45,18 @@ article.cartOrder {
         }
     }
 
-        .table_title{
-            font-weight:450;
+.table_title{
+    font-weight:450;
             
-        }
+}
 
 .decrease{
-    margin-left:45px;
+    width: 20px;
+    margin-left: 45px;
+}
+
+.increase{
+    width: 20px;
 }
 
 .smallPrice{
@@ -60,6 +65,7 @@ article.cartOrder {
     background-color:$PrimaryColor;
     border: none;
     font-size: 16px;
+
 }
 
 //order amount 結算區域
@@ -142,7 +148,7 @@ article.cartOrder {
     }
 
     .decrease{
-        margin-left:px;
+        margin-left: 320px;
     }
 
     .sum {
@@ -222,4 +228,17 @@ article.cartOrder {
         font-weight: 450;
         color: $AccentColor2;
     }
+
+    .decrease{
+        margin-left: 110px;
+    }
+
+    .sum {
+        padding-left: 0px;
+    }
+
+    .c_discount {
+        width: 350px;
+    }
+    
 }
