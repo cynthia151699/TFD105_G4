@@ -50,6 +50,18 @@ article.cartOrder {
             
         }
 
+.decrease{
+    margin-left:45px;
+}
+
+.smallPrice{
+    width: 50px; 
+    color:#fff; 
+    background-color:$PrimaryColor;
+    border: none;
+    font-size: 16px;
+}
+
 //order amount 結算區域
 
 .order_amount {
@@ -64,18 +76,10 @@ article.cartOrder {
     // border: 1px red solid;
 }
 
-.c_count {
+.sum {
     display: inline-block;
     // border: 1px blue solid;
     padding-left: 180px;
-}
-
-.c_amount {
-    text-align: right;
-    h6 {
-        display: inline-block;
-        color: $TextColor2;
-    }
 }
 
 .c_discount {
@@ -87,39 +91,6 @@ article.cartOrder {
     }
 }
 
-.c_total {
-    text-align: right;
-    color: $TextColor2;
-}
-
-
-//數量加減按鈕
-.add{
-    border: none;
-    cursor: pointer;
-    color: $TextColor2;
-    background-color: $PrimaryColor;
-    font-size:16px;
-
-}
-
-
-.sub{
-    border: none;
-    cursor: pointer;
-    color: $TextColor2;
-    background-color: $PrimaryColor;
-    font-size: 20px;
-}
-
-.qty{
-    border: none;
-    width: 20px;
-    text-align: center;
-    color: $TextColor2;
-    background-color: $PrimaryColor;
-    font-size:16px;
-}
 
 // 送出按鈕
 
@@ -170,27 +141,18 @@ article.cartOrder {
         }
     }
 
-    .order_amount{
-        width: 300px;
+    .decrease{
+        margin-left:px;
     }
 
-    .c_count {
-        padding-left: 0px;
+    .sum {
+        padding-left: 50px;
     }
 
     .order_amount {
-        // border: 1px green solid;
         margin-top: 15px;
         box-sizing: border-box;
         width: 560px;
-    }
-
-    .c_count {
-        padding-left: 260px;
-    }
-
-    .sub{
-        margin-left: 290px;
     }
 
     .roll_ticket{
@@ -241,15 +203,6 @@ article.cartOrder {
         }
     }
 
-    .order_amount{
-        width: 300px;
-    }
-
-    .c_count {
-        padding-left: 0px;
-    }
-
-
     .order_amount {
         // border: 1px green solid;
         margin-top: 15px;
@@ -257,14 +210,6 @@ article.cartOrder {
         width: 350px;
     }
 
-    .c_count {
-        padding-left: 55px;
-    }
-
-    .sub{
-        margin-left: 80px;
-        margin-top: 10px;
-    }
 
     .roll_ticket{
         font-size: 18px;
