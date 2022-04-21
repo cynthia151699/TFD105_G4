@@ -1,5 +1,5 @@
 <?php
-include("./connect.php");
+include("./Connection.php");
 //---------------------------------------------------
 //HTML來的資料是JSON，解扣成PHP看得懂的
 $discount = json_decode(file_get_contents("php://input"), true);

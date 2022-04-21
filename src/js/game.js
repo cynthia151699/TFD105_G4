@@ -12,7 +12,8 @@ let rotation = document.getElementsByClassName('rotate')[0];
 rotation.addEventListener("click", function (e) {
     // e.preventDefault();
     for (let i = 0; i < swiper.length; i++) {
-        swiper[i].slideTo(Math.floor(Math.random() * 10));
+        // swiper[i].slideTo(Math.floor(Math.random() * 10));
+        swiper[i].slideTo(Math.floor(Math.random() * (max - min)) + min);
     }
 });
 
@@ -41,17 +42,16 @@ const swiper = new Swiper('.mySwiper', {
                     let disappear = document.querySelectorAll(".swiper"); //獲獎後消失圖層
                     let appear = document.getElementsByClassName("congrats")[0]; //獲獎後應出現圖層
                     if (upperImgId != "" && lowerImgId != "" && lowerImgId.includes(upperImgId)) { //符合需求
-                        // console.log(upperImgId, lowerImgId, lowerImgId.includes(upperImgId))
-                        // alert("congrats!");
-                        // Swal.fire('Congrats!');
-                        Swal.fire({
-                            title: 'Congrats!',
-                            icon: 'success',
-                            background: '#161829',
-                            confirmButtonColor: '#F29966',
-                            confirmButtonText: 'OK!',
-                            timer: '2000',
-                        });
+                        console.log(upperImgId, lowerImgId, lowerImgId.includes(upperImgId));
+                        alert("congrats!");
+                        // Swal.fire({
+                        //     title: 'Congrats!',
+                        //     icon: 'success',
+                        //     background: '#161829',
+                        //     confirmButtonColor: '#F29966',
+                        //     confirmButtonText: 'OK!',
+                        //     timer: '2000',
+                        // });
                         for (let i = 0; i < disappear.length; i++) {
                             disappear[i].style = "display:none";
                         }

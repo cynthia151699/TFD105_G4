@@ -18,7 +18,9 @@
             <div class="mask"></div>
 
             <div class="popUpWindows">
-                <form>
+
+                <!-- 這裡加id -->
+                <form id="discount">
                     <div class="discount -add">
                         <h5>新增折扣碼</h5>
                         <ul>
@@ -26,25 +28,33 @@
                                 <h6>折扣碼編號：</h6><input type="number">
                             </li>
                             <li>
-                                <h6>折扣碼名稱：</h6><input type="text">
+                                <h6>折扣碼名稱：</h6><input type="text" v-model="DISCOUNT_NAME">
                             </li>
                             <li>
-                                <h6>折扣碼內容：</h6><input type="text">
+                                <h6>折扣碼內容：</h6><input type="text" v-model="DISCOUNT_CONTENT">
                             </li>
                             <li>
-                                <h6>折扣碼：</h6><input type="text">
+                                <h6>折扣碼：</h6><input type="text" v-model="DISCOUNT_CODE">
                             </li>
                             <li>
-                                <h6>折扣碼狀態：</h6><input type="text">
+                                <!-- <h6>折扣碼狀態：</h6><input type="text"> -->
+                                <h6>折扣碼狀態：
+                                    <input type="radio" v-model="DISCOUNT_STATUS" value="0">開放
+                                    <input type="radio" v-model="DISCOUNT_STATUS" value="1">關閉
+                                </h6>
                             </li>
                             <li>
-                                <h6>創建時間：</h6><h6 class="date">2022-02-22 00:00:00</h6>
+                                <!-- <h6>創建時間：</h6><h6 class="date">2022-02-22 00:00:00</h6> -->
+                                <h6>創建時間：<input type="text">2022-02-22 00:00:00</h6>
                             </li>
                         </ul>
 
+                        <!-- 這裡也有改 -->
                         <div class="checkButtons">
-                            <button class="cancel">取消</button>
-                            <button>確定</button>
+                            <!-- <button class="cancel">取消</button> -->
+                            <!-- <button>確定</button> -->
+                            <input type="button" value="取消" class="cancel">
+                            <input type="button" value="確定" @click="discount_add">
                         </div>
                     </div>
 
@@ -67,7 +77,8 @@
                                 <h6>折扣碼狀態：</h6><input type="text">
                             </li>
                             <li>
-                                <h6>創建時間：</h6><h6 class="date">2022-02-22 00:00:00</h6>
+                                <h6>創建時間：</h6>
+                                <h6 class="date">2022-02-22 00:00:00</h6>
                             </li>
                         </ul>
 
@@ -91,29 +102,77 @@
         </div>
 
 
+
         <div class="tableContainer">
             <!-- 頁首 -->
-            @@include('./layout/header.html', {
-            tittle1: "折扣碼管理",
-            tittle2: "以折扣碼名稱查詢",
-            })
+            <!-- @@include('./layout/header.html', {
+                tittle1: "折扣碼管理",
+                tittle2: "以折扣碼名稱查詢",
+            })  -->
+
+            <header class="backHeader">
+
+                <!-- 左邊區域 -->
+                <div class="headerContainer">
+                    <h3 class="ptSpace70 plSpace30">折扣碼管理</h3>
+
+                    <button class="@@btn mlSpace20" id="add" @click="openBoxAdd">
+                        <h6>新增</h6>
+                    </button>
+                </div>
+
+                <!-- 右邊區域 -->
+                <div class="search">
+                    <a href="./backend_login.html">
+                        <h6 class="ptSpace20 mlSpace150" style="color: black;">帳號登出</h6>
+                    </a>
+
+                    <input type="text" value="&nbsp; 以折扣碼名稱查詢" class="mtSpace10" id="check">
+
+                    <button class="mtSpace10 mlSpace20" id="search">
+                        <h6>查詢</h6>
+                    </button>
+                </div>
+
+            </header>
 
             <form>
-                <table>
+                <table class="maintable">
                     <thead>
                         <tr>
                             <!-- table row -->
+                            <!-- ID -->
                             <td>折扣碼編號</td>
+
+                            <!-- NAME -->
                             <td>折扣碼項目</td>
+
+                            <!-- CONTENT -->
                             <td>折扣碼內容</td>
+
+                            <!-- CODE -->
                             <td>折扣碼</td>
+
+                            <!-- STATUS -->
                             <td>折扣碼狀態</td>
+
+                            <!-- DATE -->
                             <td>創建時間</td>
+
+                            <!-- BUTTON -->
                             <td>&nbsp</td>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <!-- <tr v-for="(DISCOUNT index) in DISCOUNTS" v-if=":false">
+                            <td>{{DISCOUNT.NAME}}</td>
+                            <td>{{DISCOUNT.CONTENT}}</td>
+                            <td>{{DISCOUNT.CODE}}</td>
+                            <td>{{DISCOUNT.STATUS}}</td>
+                            <td>{{DISCOUNT.DATE}}</td>
+                            <td><button>編輯</button></td>
+                        </tr> -->
+                        <!-- <tr>
                             <td>1</td>
                             <td>小禮物</td>
                             <td>恭喜您獲得小禮物一份</td>
@@ -123,8 +182,8 @@
                             </td>
                             <td>2022-02-22<br>00:00:00</td>
                             <td><button>編輯</button></td>
-                        </tr>
-                        <tr>
+                        </tr> -->
+                        <!-- <tr>
                             <td>2</td>
                             <td>折價券</td>
                             <td>恭喜您獲得50元折價券</td>
@@ -134,8 +193,8 @@
                             </td>
                             <td>2022-02-22<br>00:00:00</td>
                             <td><button>編輯</button></td>
-                        </tr>
-                        <tr>
+                        </tr> -->
+                        <!-- <tr>
                             <td>3</td>
                             <td>小禮物</td>
                             <td>恭喜您獲得小禮物一份</td>
@@ -145,8 +204,8 @@
                             </td>
                             <td>2022-02-22<br>00:00:00</td>
                             <td><button>編輯</button></td>
-                        </tr>
-                        <tr>
+                        </tr> -->
+                        <!-- <tr>
                             <td>4</td>
                             <td>折價券</td>
                             <td>恭喜您獲得50元折價券</td>
@@ -156,7 +215,7 @@
                             </td>
                             <td>2022-02-22<br>00:00:00</td>
                             <td><button>編輯</button></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                     <tfoot>
                         <tr>
@@ -174,7 +233,138 @@
         </div>
     </div>
 
+
     <script src="./js/backend.min.js"></script>
+
+    <!-- 新增button_sweetalert2 -->
+    <script>
+        function discount(msg, icon, html) {
+            Swal.fire({
+                title: msg,
+                icon: icon,
+                html: html,
+
+                showConfirmButton: false, // 確認按鈕（預設會顯示不用設定）
+                confirmButtonText: '參加活動', //　按鈕顯示文字
+                confirmButtonAriaLabel: '參加活動', // 網頁無障礙用
+                confirmButtonColor: '#75706b', // 修改按鈕色碼
+
+                // 使用同確認按鈕
+                // showDenyButton: true, // 否定按鈕
+                showCancelButton: false, // 取消按鈕
+
+                buttonsStyling: false, // 是否使用sweetalert按鈕樣式（預設為true）
+            })
+        }
+    </script>
+
+
+    <!-- Vue_discount_create -->
+    <script>
+        new Vue({
+
+            el: '#discount',
+            data() {
+                return {
+                    DISCOUNT_NAME: '',
+                    DISCOUNT_CONTENT: '',
+                    DISCOUNT_CODE: '',
+                    DISCOUNT_STATUS: '',
+                    DISCOUNT_DATE: '',
+                    DISCOUNTS: [],
+                }
+            },
+            // mounted() { //當網頁開啟時馬上執行以下內容，撈出discount資料
+            //     console.log(this.DISCOUNTS)
+            //     fetch('./discount_create.php')
+            //         .then(res => {
+            //             console.log('ddddd', res)
+            //         })
+            //         .then(res => {
+            //             this.DISCOUNTS = res
+            //         })
+            // },
+            methods: {
+                discount_add() {
+                    if (this.DISCOUNT_NAME != "" && this.DISCOUNT_CONTENT != "") {
+                        // alert(this.DISCOUNT_NAME)
+                        fetch("./php/discount_create.php", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            mode: "cors",
+                            body: JSON.stringify({
+                                DISCOUNT_NAME: this.DISCOUNT_NAME,
+                                DISCOUNT_CONTENT: this.DISCOUNT_CONTENT,
+                                DISCOUNT_CODE: this.DISCOUNT_CODE,
+                                DISCOUNT_STATUS: this.DISCOUNT_STATUS,
+                                // DISCOUNT_DATE: this.DISCOUNT_DATE,
+                            }),
+
+                        })
+                            .then(resp => resp.json())
+                        // .then((body)=>{
+                        //     const { successful} = body ;
+                        //     console.log(body);
+
+                        // })
+                        discount("<strong>新增成功</strong>", "success");
+                        let reset = document.querySelector(".reset")
+                        reset.reset()
+                    } else {
+                        discount("<strong>請輸入內容</strong>", "warning");
+                    }
+                },
+                openBoxAdd() {
+                    ;
+                    $('div.popUp').css("display", "block");
+                    $('div.mask').css("display", "block");
+
+                    // 只顯示指定彈窗
+                    $('.-add').css("display", "block");
+
+                    $('.-edit').css("display", "none");
+                },
+                openBoxEdit() {
+                    $('div.popUp').css("display", "block");
+                    $('div.mask').css("display", "block");
+
+                    // 只顯示指定彈窗
+                    $('.-add').css("display", "none");
+
+                    $('.-edit').css("display", "block");
+                },
+            },
+        })
+    </script>
+
+
+    <!-- AJAX+JS查詢表單discount_read -->
+    <script>
+        const maintable = document.querySelector(".maintable");
+        const url = './php/discount_read.php';
+
+
+        fetch(url).then(response => response.json()
+            .then(obj => {
+                console.log(obj)
+                obj.forEach((item, i) => {
+                    maintable.insertAdjacentHTML('beforeend', `<tr>
+        <td>${item.ID}</td>
+        <td>${item.NAME}</td>
+        <td>${item.CONTENT}</td>
+        <td>${item.CODE}</td>
+        <td>${item.STATUS}</td>
+        <td>${item.DATE}</td>
+        <td><button>編輯</button></td>
+        </tr>`)
+                });
+
+            })
+
+        )
+    </script>
 </body>
 
 </html>

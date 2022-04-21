@@ -6,7 +6,7 @@ $news = json_decode(file_get_contents("php://input"), true);
 // echo json_encode($member);
 
 //建立SQL
-$sql = "insert into G4.NEWS(NEWS_NAME,NEWS_PIC,NEWS_CONTENT,NEWS_STATUS,NEWS_DATE)
+$sql = "insert into NEWS(NEWS_NAME,NEWS_PIC,NEWS_CONTENT,NEWS_STATUS,NEWS_DATE)
 values (:NEWS_NAME,:NEWS_PIC,:NEWS_CONTENT,:NEWS_STATUS,NOW());";
 
   // 包裝起來才可以使PHP 用bindValue
