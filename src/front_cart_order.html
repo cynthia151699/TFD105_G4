@@ -86,7 +86,7 @@
                                 <!-- 折扣碼 -->
                                 <div class="input_discount">
                                     <h6>Coupon:</h6>
-                                    <input class="input_coupon" type="text" name="coupon" placeholder="Type here...">
+                                    <input class="input_coupon" type="text" name="coupon" placeholder="Type here..." value="">
                                     <input class="btn_code_submit" type="submit" value="Apply">
                                     <h6>Get Tickets: By QR-code</h6>
                                 </div>
@@ -209,6 +209,11 @@
             }
         }
     }
+        // //9. sessionStorage拿折扣碼
+        // let input_coupon = document.getElementsByClassName('input_coupon')[0];
+        // // console.log(input_coupon);
+        // // input_coupon.innerText = sessionStorage.getItem('DISCOUNTCODE');
+        // input_coupon.textContent = "123";
         </script>
 
 </body>
