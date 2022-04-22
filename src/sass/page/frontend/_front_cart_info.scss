@@ -48,6 +48,11 @@
     margin-top: 5%;
 }
 
+.piece_qty{
+    padding-left: 60px;
+    margin-right: 60px;
+}
+
 
 .i_count {
     margin-top: 20px;
@@ -77,6 +82,10 @@
 .input_type:focus {
     outline: none;
     box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px inset;
+}
+
+.sum_info {
+    padding-left: 400px;
 }
 
 //選取框check box
@@ -160,6 +169,14 @@ select {
     .order_list {
         width: 560px;
     }
+
+    .piece_info{
+        margin-left:250px;
+    }
+
+    .sum_info {
+        padding-left: 35px;
+    }
     
     //聲明文字
     .cautions_box {
@@ -186,5 +203,13 @@ select {
         height: 100px;
     }
 
+    .sum_info {
+        padding-left: 0px;
+    }
+
+    .piece_info{
+        margin-right: 0px;
+        margin-left:50px;
+    }
     
 }
