@@ -7,14 +7,26 @@ const {
 } = require('gulp');
 
 // 搬檔案
+// 搬圖片
 function package() {
-   return src(['src/img/*.*', 'src/img/**/*.*']).pipe(dest('dist/img'))
+   return src(["src/img/*.*", "src/img/**/*.*"]).pipe(
+      dest("dist/img")
+   );
 }
-const rename = require('gulp-rename');
 
 exports.p = package;
 
+// 搬 php檔案
+function move() {
+    return src(["src/php/*.php", "src/php/**/*.*"]).pipe(dest("dist/php"));
+}
+
+exports.m = move;
+
+
 // css minify
+const rename = require("gulp-rename");
+
 const cleanCSS = require('gulp-clean-css');
 
 function minicss() {
@@ -107,7 +119,6 @@ exports.html = includeHTML;
 function watchall(){
    watch(['src/*.html', 'src/layout/*.html' ,] , includeHTML);
    watch(['src/sass/*.scss' , 'src/sass/**/*.scss' , 'src/sass/**/**/*.scss'] , sassstyle);
-   
 }
 
 exports.w = watchall
@@ -126,7 +137,7 @@ function browser(done) {
    watch(['src/*.html', 'src/layout/*.html' ,] , includeHTML).on('change' , reload);
    watch(['src/sass/*.scss' , 'src/sass/**/*.scss' , 'src/sass/**/**/*.scss'] , sassstyle).on('change' , reload);
    watch(['src/js/*.js' , 'src/js/**/*.js'] , minijs).on('change' , reload);
-   watch(['src/img/*.*' ,  'src/img/**/*.*'] , package).on('change' , reload);
+   watch(["src/img/*.*", "src/img/**/*.*"], package).on("change",reload);
    done();
 }
 
@@ -175,7 +186,9 @@ function clear() {
 exports.cls = clear
 
 // dev
-exports.default = series(parallel(includeHTML ,sassstyle, minijs ,package),browser)
+exports.default = series(
+   parallel(includeHTML, sassstyle, minijs, series(package, move)),browser
+);
 
 // online
 exports.online = series(clear, parallel(includeHTML ,sassstyle , babel5 , min_images))
