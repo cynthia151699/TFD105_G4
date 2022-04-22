@@ -38,9 +38,18 @@
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
     <style>
-        td{
+        td {
             vertical-align: middle;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
+
+        img{
+            object-fit: cover;
+        }
+
         div.popUp div.popUpWindows ul li {
             margin: 10px;
         }
@@ -235,6 +244,9 @@
                             </li>
                             <li>
                                 <h6>圖片：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳" style="color: #333;" @change="fileChange">
+                                <div style="border:5px solid #fff; width:100%; height:80px; display: flex; align-content: center;">
+                                    <img style="display: block; margin: 0 auto;" v-if="image" :src="image" width="100" />
+                                </div>
                             </li>
                             <li>
                                 <h6 style="vertical-align: top;">展覽活動內容:</h6><textarea v-model="EXHIBITION_CONTENT" style="resize: vertical; width: 350px; height: 100px;"></textarea>
@@ -246,7 +258,7 @@
                             <input type="button" value="確定" @click="event_add">
                         </div>
                     </div>
-                </form>    
+                </form>
 
                 <form class="reset">
                     <div class="event -edit">
@@ -254,32 +266,37 @@
                         <ul>
                             <li style="text-align: left;">
                                 <h6>展覽訊息分類：</h6>
-                                <select v-model="EXHIBITION_STYLE" style="margin: 0;">
+                                <select v-model="EDIT.EXHIBITION_STYLE" style="margin: 0;">
                                     <option value="當期展覽">當期展覽</option>
                                     <option value="過往展覽">過往展覽</option>
                                     <option value="未來展覽">未來展覽</option>
                                 </select>
                             </li>
+
                             <li>
-                                <h6>展覽訊息名稱：</h6><input type="text" v-model="EVENT_NAME">
+                                <h6>展覽訊息名稱：</h6><input type="text" v-model="EDIT.EVENT_NAME">
                             </li>
                             <li>
-                                <h6>展覽開始日：</h6><input type="date" v-model="EVENT_BEGIN">
+                                <h6>展覽開始日：</h6><input type="date" v-model="EDIT.EVENT_BEGIN">
                             </li>
                             <li>
-                                <h6>展覽結束日：</h6><input type="date" v-model="EVENT_END">
+                                <h6>展覽結束日：</h6><input type="date" v-model="EDIT.EVENT_END">
                             </li>
                             <li>
-                                <h6>圖片：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳" style="color: #333;" @change="fileChange">
+                                <h6>圖片：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳" style="color: #333;" @change="fileChangeEdit">
+                                <div style="border:5px solid #fff;width:100%;height:80px; display: flex; align-content: center;">
+                                    <img style="display: block; margin: 0 auto;" v-if="EDIT.EXHIBITION_PIC" :src="EDIT.EXHIBITION_PIC" width="100" />
+                                </div>
                             </li>
                             <li>
-                                <h6 style="vertical-align: top;">展覽活動內容:</h6><textarea v-model="EXHIBITION_CONTENT" style="resize: vertical; width: 350px; height: 100px;"></textarea>
+                                <h6 style="vertical-align: top;">展覽活動內容:</h6><textarea v-model="EDIT.EXHIBITION_CONTENT"
+                                    style="resize: vertical; width: 350px; height: 100px;"></textarea>
                             </li>
                         </ul>
 
                         <div class="checkButtons">
                             <input type="button" value="取消" @click="event_cancel">
-                            <input type="button" value="確定" @click="event_add">
+                            <input type="button" value="確定" @click="event_update(EDIT.ID)">
                         </div>
                     </div>
 
@@ -321,9 +338,9 @@
                         <h6>以展覽名稱查詢</h6>
                     </button> -->
 
-                    <input type="text" value="以展覽名稱查詢" class="mtSpace10" id="check">
+                    <input type="text" placeholder="以展覽名稱查詢" class="mtSpace10" id="check" v-model.trim="search">
 
-                    <button class="mtSpace10 mlSpace20" id="search">
+                    <button name="keyword" class="mtSpace10 mlSpace20" id="search" @click="search_Event">
                         <h6>查詢</h6>
                     </button>
                 </div>
@@ -348,7 +365,7 @@
                     </thead>
                     <tbody>
 
-                        <tr v-for="(EXHIBITION, index) in EXHIBITIONS" :key="EXHIBITION.ID">
+                        <tr v-for="EXHIBITION in EXHIBITIONS">
                             <td>{{EXHIBITION.ID}}</td>
                             <td>{{EXHIBITION.EXHIBITION_STYLE}}</td>
                             <td>{{EXHIBITION.EVENT_NAME}}</td>
@@ -357,7 +374,7 @@
                             <td><img :src="EXHIBITION.EXHIBITION_PIC" alt="" style="width: 60px;height: 60px;"></td>
                             <td>{{EXHIBITION.EXHIBITION_CONTENT}}</td>
                             <td>{{EXHIBITION.EXHIBITION_DATE}}</td>
-                            <td><button @click="openBoxEdit(EXHIBITION, index)">編輯</button></td>
+                            <td><button type="button" @click="openBoxEdit(EXHIBITION.ID)">編輯</button></td>
                         </tr>
 
                     </tbody>
@@ -368,6 +385,7 @@
 
 
     <script>
+
         function event(msg, icon, html) {
             Swal.fire({
                 title: msg,
@@ -385,15 +403,15 @@
 
                 buttonsStyling: false, // 是否使用sweetalert按鈕樣式（預設為true）
             })
-        }
+        }       
     </script>
 
     <script>
-
         new Vue({
             el: '#event_wrapper',
             data() {
                 return {
+                    image: '',
                     EXHIBITION_STYLE: '',
                     EVENT_NAME: '',
                     EVENT_BEGIN: '',
@@ -401,6 +419,16 @@
                     EXHIBITION_PIC: '',
                     EXHIBITION_CONTENT: '',
                     EXHIBITIONS: [],
+                    search: '',
+                    EDIT:{
+                        ID: '',
+                        EXHIBITION_STYLE: '',
+                        EVENT_NAME: '',
+                        EVENT_BEGIN: '',
+                        EVENT_END: '',
+                        EXHIBITION_PIC: '',
+                        EXHIBITION_CONTENT: '',
+                    },
                 }
             },
             // data:{
@@ -424,12 +452,11 @@
                                 EXHIBITION_CONTENT: this.EXHIBITION_CONTENT,
                             }),
 
-                        })
-                        .then(resp => resp.json())
+                        }).then(resp => resp.json())
                         //.then(resp => {this.EXHIBITIONS = resp}) 
 
                         event("<strong>新增成功</strong>", "success");
-                        $(".popUp").css("display","none");
+                        $(".popUp").css("display", "none");
                         let reset = document.querySelector(".reset")
                         reset.reset()
                     } else {
@@ -441,16 +468,87 @@
                     event("<strong>已取消</strong>", "success", "");
                     $('.popUp').css("display", "none");
                 },
+                search_Event(){
+                    if(this.search != "" ){
+                        fetch("./../src/php/SearchEvent.php", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body:JSON.stringify({
+                                KEY: this.search,
+                            })
+                        })
+                        .then(res =>
+                            res.json()
+                        )
+                        .then(res => {
+                            //console.log(res);
+                            this.EXHIBITIONS = res;
+                        })
+                        
+                        .catch(reason => event("<strong>查無這筆資料</strong>", "warning"));
+
+                        
+
+                    }else{
+                        event("<strong>請輸入內容</strong>", "warning");
+                    }
+                },
+
+                event_update(ID){
+                    //alert(ID);
+                    if (this.EDIT.EVENT_NAME != "" && this.EDIT.EXHIBITION_CONTENT != "") {
+                        fetch("./../src/php/UpdateEvent.php", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            mode: "cors",
+                            body: JSON.stringify({
+                                UP_ID: this.EDIT.ID,
+                                UP_EXHIBITION_STYLE: this.EDIT.EXHIBITION_STYLE,
+                                UP_EVENT_NAME: this.EDIT.EVENT_NAME,
+                                UP_EVENT_BEGIN: this.EDIT.EVENT_BEGIN,
+                                UP_EVENT_END: this.EDIT.EVENT_END,
+                                UP_EXHIBITION_PIC: this.EDIT.EXHIBITION_PIC,
+                                UP_EXHIBITION_CONTENT: this.EDIT.EXHIBITION_CONTENT,
+                            }),
+
+                        })
+                        .then(res => res.json())
+                        //.then(res => {this.EXHIBITIONS = res}) 
+
+                        event("<strong>修改成功</strong>", "success");
+                        $(".popUp").css("display", "none");
+                        let reset = document.querySelector(".reset")
+                        reset.reset()
+                    } else {
+                        event("<strong>請輸入內容</strong>", "warning");
+                    }
+                },
 
                 fileChange(e) {
                     let file = e.target.files.item(0); //取得File物件
                     let reader = new FileReader(); //建立FileReader 監聽 Load 事件
                     reader.addEventListener('load', this.imageLoader);
                     reader.readAsDataURL(file);
-                    this.EXHIBITION_PIC = `./../src/img/exhibition/${ file.name }`;
+                    this.EXHIBITION_PIC = `./img/exhibition/${file.name}`;
+                },
+                fileChangeEdit(e){
+                    let file = e.target.files.item(0); //取得File物件
+                    let reader = new FileReader(); //建立FileReader 監聽 Load 事件
+                    reader.addEventListener('load', this.imageLoader);
+                    reader.readAsDataURL(file);
+                    this.EDIT.EXHIBITION_PIC = `./img/exhibition/${file.name}`;
+                },
+                imageLoader(event) {
+                    this.image = event.target.result;
                 },
 
-                openBoxAdd() {;
+                
+
+                openBoxAdd() {
                     $('div.popUp').css("display", "block");
                     $('div.mask').css("display", "block");
 
@@ -459,14 +557,43 @@
 
                     $('.-edit').css("display", "none");
                 },
-                openBoxEdit(){
+
+
+                openBoxEdit(id) {
                     $('div.popUp').css("display", "block");
                     $('div.mask').css("display", "block");
 
                     $('.-add').css("display", "none");
+
                     // 只顯示指定彈窗
                     $('.-edit').css("display", "block");
-                }
+
+
+                    //alert(id);
+
+                    fetch("./../src/php/SelectEventID.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body:JSON.stringify({ eventId: id })
+                    })
+                    .then(res =>
+                        res.json()
+                    )
+                    .then(res => {
+                        this.EDIT.ID = res[0]['ID']
+                        this.EDIT.EXHIBITION_STYLE = res[0]['EXHIBITION_STYLE']
+                        this.EDIT.EVENT_NAME = res[0]['EVENT_NAME']
+                        this.EDIT.EVENT_BEGIN = res[0]['EVENT_BEGIN']
+                        this.EDIT.EVENT_END = res[0]['EVENT_END']
+                        this.EDIT.EXHIBITION_PIC = res[0]['EXHIBITION_PIC']
+                        this.EDIT.EXHIBITION_CONTENT = res[0]['EXHIBITION_CONTENT']
+                    })
+
+
+                },
+                
             },
 
             created() {
@@ -485,6 +612,22 @@
                 })
 
             },
+            // updated() {
+            //     fetch("./SelectEvent.php", {
+            //         method: "POST",
+            //         headers: {
+            //             "Content-Type": "application/json",
+            //         }
+            //     })
+            //     .then(res =>
+            //         res.json()
+            //     )
+            //     .then(res => {
+            //         //console.log(res);
+            //         this.EXHIBITIONS = res;
+            //     })
+
+            // },
         })
 
     </script>

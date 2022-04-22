@@ -1,13 +1,18 @@
-
 <?php
 include("Connection.php");
 //---------------------------------------------------
 $news = json_decode(file_get_contents("php://input"), true);
-// echo json_encode($member);
+// echo json_encode($news);
 
 //建立SQL
-$sql = "insert into G4.NEWS(NEWS_NAME,NEWS_PIC,NEWS_CONTENT,NEWS_STATUS,NEWS_DATE)
-values (:NEWS_NAME,'',:NEWS_CONTENT,:NEWS_STATUS,NOW());";
+$sql = "UPDATE NEWS 
+              SET 
+              NEWS_NAME = :UP_NAME,
+              NEWS_PIC = :UP_PIC,
+              NEWS_CONTENT = :UP_CONTENT,
+              NEWS_STATUS = :UP_STATUS
+               WHERE 
+               ID = :UP_ID";
 
   // 包裝起來才可以使PHP 用bindValue
 $statement = $link->prepare($sql);
@@ -18,13 +23,16 @@ $statement = $link->prepare($sql);
 // $statement->bindValue(":phone", $member->phone);
 // $statement->bindValue(":address", $member->address);
 // $statement->bindValue(":gender", $member->gender);
-$statement->bindValue(":NEWS_NAME", $news["NEWS_NAME"]);
-$statement->bindValue(":NEWS_CONTENT", $news["NEWS_CONTENT"]);
-$statement->bindValue(":NEWS_STATUS", $news["NEWS_STATUS"]);
+$statement->bindValue(":UP_ID", $news["UP_ID"]);
+$statement->bindValue(":UP_NAME", $news["UP_NAME"]);
+$statement->bindValue(":UP_PIC", $news["UP_PIC"]);
+$statement->bindValue(":UP_CONTENT", $news["UP_CONTENT"]);
+$statement->bindValue(":UP_STATUS", $news["UP_STATUS"]);
 
  //執行
 $statement->execute();
       //  echo json_encode(['status'=> 'SUCCESS']);
       //  echo "新增成功!";
+    echo json_encode($news);
  
 ?>

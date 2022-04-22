@@ -65,11 +65,13 @@ main.guide {
 
             div.content {
                 h2 {
+                    font-family: $FontFamily;
                     color: $AccentColor3;
                     text-align: center;
                 }
 
                 h3 {
+                    font-family: $FontFamily;
                     color: $HFBGColor;
                     text-align: center;
 

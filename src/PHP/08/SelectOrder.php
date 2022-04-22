@@ -3,19 +3,22 @@
        include("Connection.php");
        //---------------------------------------------------
 
+       $payment = json_decode(file_get_contents("php://input"), true);
+
        //建立SQL語法 //limit: 1不要在fetch改
-       $sql = "SELECT * FROM EXHIBITION";
+       $sql = "SELECT * FROM PAYMENT ";
 
 
        //執行並查詢，會回傳查詢結果的物件，必須使用fetch、fetchAll...等方式取得資料
        //$pdo = getConn("1");
-       $statement = $link->query($sql);
+       $statement = $link->prepare($sql);
 
+       $statement->execute();
        //抓出全部且依照順序封裝成一個二維陣列 //fetchColumn()
-       $data = $statement->fetchAll();
+    //    $data = $statement->fetchAll();
 
     //抓出全部且依照順序封裝成一個二維陣列
-    //$data = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $data = $statement->fetchAll(PDO::FETCH_ASSOC);
 
        //print_r($data);
 
