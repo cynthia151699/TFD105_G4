@@ -69,6 +69,7 @@ a:focus {
 
 .slideshow {
 	position: relative;
+	z-index: 1;
 	overflow: hidden;
 	margin: 0;
 	height: 100vh;
