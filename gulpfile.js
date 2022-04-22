@@ -8,11 +8,19 @@ const {
 
 // 搬檔案
 function package() {
-   return src(['src/img/*.*', 'src/img/**/*.*']).pipe(dest('dist/img'))
+   // return src(["src/img/*.*", "src/img/**/*.*"], ["src/php/*.php"]).pipe(
+   //    dest("dist/img", "dist/php")
+   // );
+
+   return src(["src/php/*.php"], ["src/img/*.*", "src/img/**/*.*"]).pipe(
+       dest("dist/php", "dist/img")
+   );
 }
+
 const rename = require('gulp-rename');
 
 exports.p = package;
+
 
 // css minify
 const cleanCSS = require('gulp-clean-css');
@@ -126,7 +134,7 @@ function browser(done) {
    watch(['src/*.html', 'src/layout/*.html' ,] , includeHTML).on('change' , reload);
    watch(['src/sass/*.scss' , 'src/sass/**/*.scss' , 'src/sass/**/**/*.scss'] , sassstyle).on('change' , reload);
    watch(['src/js/*.js' , 'src/js/**/*.js'] , minijs).on('change' , reload);
-   watch(['src/img/*.*' ,  'src/img/**/*.*'] , package).on('change' , reload);
+   watch(["src/img/*.*", "src/img/**/*.*"], package).on("change",reload);
    done();
 }
 
