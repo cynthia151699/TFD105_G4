@@ -437,7 +437,7 @@
             methods: {
                 event_add() {
                     if (this.EVENT_NAME != "" && this.EXHIBITION_CONTENT != "") {
-                        fetch("./../src/php/event.php", {
+                        fetch("./php/34/AddEvent.php", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -470,7 +470,7 @@
                 },
                 search_Event(){
                     if(this.search != "" ){
-                        fetch("./../src/php/SearchEvent.php", {
+                        fetch("./php/34/SearchEvent.php", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -499,7 +499,7 @@
                 event_update(ID){
                     //alert(ID);
                     if (this.EDIT.EVENT_NAME != "" && this.EDIT.EXHIBITION_CONTENT != "") {
-                        fetch("./../src/php/UpdateEvent.php", {
+                        fetch("./php/34/UpdateEvent.php", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -571,7 +571,7 @@
 
                     //alert(id);
 
-                    fetch("./../src/php/SelectEventID.php", {
+                    fetch("./php/34/SelectEventID.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -597,7 +597,7 @@
             },
 
             created() {
-                fetch("./../src/php/SelectEvent.php", {
+                fetch("./php/34/SelectEvent.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
