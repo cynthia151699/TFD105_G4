@@ -19,7 +19,7 @@
         //轉址
         session_start();
         $_SESSION["memberID"] = "$mail";
-        header("Location:../front_member_info.html");
+        header("Location:../front_login.html");
         }else{
         header("Location:../front_member.html");
         }
