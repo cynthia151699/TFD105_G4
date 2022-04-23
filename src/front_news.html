@@ -426,7 +426,7 @@
             methods: {
                 news_add() {
                     if (this.NEWS_NAME != "" && this.NEWS_CONTENT != "") {
-                        fetch("news.php", {
+                        fetch("./../src/php/19/AddNews.php", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -461,7 +461,7 @@
                 },
                 search_News() {
                     if (this.search != "") {
-                        fetch("SearchNews.php", {
+                        fetch("./../src/php/19/SearchNews.php", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -499,7 +499,7 @@
                     // let newa = $('#RESS').val()
                     // alert(newa)
                     if (this.NEW.NEWS_NAME != "" && this.NEW.NEWS_CONTENT != "") {
-                        fetch("UpdateNews.php", {
+                        fetch("./../src/php/19/UpdateNews.php", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -567,7 +567,7 @@
 
 
                     // alert(id)
-                    fetch("SelectNewsID.php", {
+                    fetch("./../src/php/19/SelectNewsID.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -592,7 +592,7 @@
             },
 
             created() {
-                fetch("Select_front_News.php", {
+                fetch("./../src/php/19/Select_front_News.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
