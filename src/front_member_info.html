@@ -325,9 +325,8 @@
 
             <!-- 更改密碼 -->
             <article class="modifyMemberInfo" style="display: none">
-
                 <table id="appupdate">
-                    <!-- <form method="post" action="./PHP/MemberUpdate.php"> -->
+               
                     <tr>
                         <td colspan="2">
                             <h3>Edit your member information</h3>
@@ -397,7 +396,6 @@
                             </div>
                         </td>
                     </tr>
-                    <!-- </form> -->
                 </table>
             </article>
         </main>
@@ -434,7 +432,7 @@
                 },
             },
             mounted() {
-                fetch('./PHP/search1.php')
+                fetch('./PHP/MemberSearch.php')
                     .then(res => res.json())
                     .then(res => {
                         this.MEMBER = res[0]
@@ -468,7 +466,7 @@
                 },
             },
             mounted() {
-                fetch('./PHP/search1.php')
+                fetch('./PHP/MemberSearch.php')
                     .then(res => res.json())
                     .then(res => {
                         this.MEMBER = res[0]
