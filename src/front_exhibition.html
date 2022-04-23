@@ -1,455 +1,563 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     @@include('./layout/head.html')
 
     <!-- Link jquery.multiscroll.js CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.3/jquery.multiscroll.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.3/jquery.multiscroll.min.css"
+    />
 
     <!-- Link fullpage.js CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css"
+    />
 
     <!-- Link Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
 
-</head>
+    <!-- 多國語系 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.5/vue-i18n.min.js"></script>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper" id="app">
-
-        <!-- 導覽列 -->
-        @@include('./layout/nav.html', {
-        "active1" : "active"
-        })
-
-        <main class="exhibition">
-            <!-- coding here -->
-
-            <div id="multiscroll" class="desktop">
-                <!--1440 桌面版-->
-
-                <div class="ms-left">
-                    <!--左邊區塊-->
-
-                    <div class="ms-section">
-                        <!--左邊第一區-->
-
-                        <article class="left1">
-
-                            <section class="current">
-
-                                <h2>Break the Classic</h2>
-                                <h3>TAKIKAW RISA Solo Exhibition</h3>
-                                <h5 class="mtSpace30">Place: Anno Museum South Building</h5>
-                                <h5>Date: Feb 5 - May 5, 2022</h5>
-
-                                <p class="mtSpace30 mbSpace30">
-                                    American-Japanese artist Takikaw Risa brings a series of composite sculptures,
-                                    showing the conflict between classical art and modern society.
-                                    It brings childishness and a sense of trend to the solemn atmosphere of the statue
-                                    and
-                                    hopes to bring the audience's imagination to break through the classics.
-                                </p>
-
-                                <!--買票按鈕-->
-                                <a class="buyTicket" href="front_cart_order.html">
-                                    <span class="top-key"></span>
-                                    <span class="text">Buy Tickets</span>
-                                    <span class="bottom-key-1"></span>
-                                    <span class="bottom-key-2"></span>
-                                </a>
-                            </section>
-                        </article>
-                    </div>
-                    <!--左邊第一區 end-->
-
-
-                    <div class="ms-section">
-                        <!--左邊第二區-->
-
-                        <article class="left2">
-
-                            <section class="upcoming">
-
-                                <h2>
-                                    UPCOMING UPCOMING<br>
-                                    UPCOMING UPCOMING<br>
-                                    UPCOMING UPCOMING<br>
-                                    UPCOMING UPCOMING<br>
-                                    UPCOMING UPCOMING<br>
-                                </h2>
-
-                                <figure class="upcomingPic"><img src="./img/exhibition/exhibition_pic2.png" alt="" style="width: 400px;"></figure>
-                            </section>
-                        </article>
-                    </div>
-                    <!--左邊第二區 end-->
-
-                    <div class="ms-section">
-                        <!--左邊第三區-->
-
-                        <article class="left3" id="tab_content">
-
-                            <div class="tab_item">
-
-                                <h3 class="tab_item_title">PAST EXHIBITION</h3>
-
-                                <h2>
-                                    PAST EXHIBITION<br>
-                                    PAST EXHIBITION<br>
-                                    PAST EXHIBITION<br>
-                                    PAST EXHIBITION<br>
-                                    PAST EXHIBITION<br>
-                                </h2>
-                            </div>
-
-                            <div class="tab_item">
-                                <!--展覽訊息1-->
-
-                                <figure class="exPast_text">
-
-                                    <div class="exPast_contentBg1"></div><!--展訊背景圖片1-->
-
-                                    <figcaption class="exPast_content">
-
-                                        <h3>PAST</h3>
-
-                                        <h5 class="mtSpace30">INTERWEAVE - LORIN DROGO Solo Exhibition</h5>
-
-                                        <h5>Place: Anno Museum South Building</h5>
-
-                                        <h5>Date: Apr 10 - Sep 15, 2021</h5>
-
-                                        <p class="mtSpace30">
-                                            LORIN DROGO will have his first solo exhibition after returning home at the
-                                            Anno
-                                            Museum,
-                                            The interweaving of lines presents life, dreams, and memories in different
-                                            times
-                                            and spaces.
-                                            The exhibition room is only presented in black and white so that the
-                                            audience
-                                            can think and experience without all interference.
-                                        </p>
-                                    </figcaption>
-                                </figure>
-                            </div> <!-- / tab_item -->
-
-                            <div class="tab_item">
-                                <!--展覽訊息2-->
-
-                                <figure class="exPast_text">
-
-                                    <div class="exPast_contentBg2"></div><!--展訊背景圖片2-->
-
-                                    <figcaption class="exPast_content">
-
-                                        <h3>PAST</h3>
-
-                                        <h5 class="mtSpace30">ABSTRACT - SHELDON PAUL Solo Exhibition</h5>
-
-                                        <h5>Place: Anno Museum South Building</h5>
-
-                                        <h5>Date: Jan 6 - Apr 2, 2021</h5>
-
-                                        <p class="mtSpace30">
-                                            LORIN DROGO will have his first solo exhibition after returning home at the
-                                            Anno
-                                            Museum,
-                                            The interweaving of lines presents life, dreams, and memories in different
-                                            times
-                                            and spaces.
-                                            The exhibition room is only presented in black and white so that the
-                                            audience
-                                            can think and experience without all interference.
-                                        </p>
-                                    </figcaption>
-                                </figure>
-                            </div> <!-- / tab_item -->
-
-                            <div class="tab_item">
-                                <!--展覽訊息3-->
-
-                                <figure class="exPast_text">
-
-                                    <div class="exPast_contentBg3"></div><!--展訊背景圖片3-->
-
-                                    <figcaption class="exPast_content">
-
-                                        <h3>PAST</h3>
-
-                                        <h5 class="mtSpace30">FOOD ART - CARSON HARRIS Solo Exhibition</h5>
-
-                                        <h5>Place: Anno Museum South Building</h5>
-
-                                        <h5>Date: Oct 13 - Dec 31, 2021</h5>
-
-                                        <p class="mtSpace30">
-                                            LORIN DROGO will have his first solo exhibition after returning home at the
-                                            Anno
-                                            Museum,
-                                            The interweaving of lines presents life, dreams, and memories in different
-                                            times
-                                            and spaces.
-                                            The exhibition room is only presented in black and white so that the
-                                            audience
-                                            can think and experience without all interference.
-                                        </p>
-                                    </figcaption>
-                                </figure>
-                            </div> <!-- / tab_item -->
-                        </article>
-                    </div>
-                    <!--左邊第三區 end-->
-                </div>
-                <!--左邊區塊 end-->
-
-
-
-                <div class="ms-right">
-                    <!--右邊區塊-->
-
-                    <div class="ms-section">
-                        <figure class="right1"></figure>
-                    </div>
-                    <!--右邊區塊1-->
-
-                    <div class="ms-section">
-                        <!--右邊區塊2-->
-
-                        <article class="right2">
-
-                            <section class="upcoming">
-
-                                <h2>Upcoming</h2>
-
-                                <h5 class="mtSpace30">True Color - KAYLA GILL Solo Exhibition</h5>
-
-                                <h5>Place: Anno Museum North Building</h5>
-
-                                <h5>Date: May 15 - Aug 17, 2022</h5>
-
-                                <p class="mtSpace30 mbSpace30">
-                                    What is your true color?<br>
-                                    Emerging artist KAYLA GILL will show her work that is using photography and digital
-                                    techniques. The display of hundreds of works and live interactive installations will
-                                    bring you to find your true color.
-                                </p>
-
-                                <!--買票按鈕-->
-                                <a class="buyTicket" href="front_cart_order.html">
-                                    <span class="top-key"></span>
-                                    <span class="text">Buy Tickets</span>
-                                    <span class="bottom-key-1"></span>
-                                    <span class="bottom-key-2"></span>
-                                </a>
-                            </section>
-                        </article>
-                    </div>
-                    <!--右邊區塊2 end-->
-
-
-                    <div class="ms-section">
-                        <!--右邊區塊3-->
-
-                        <article class="right3">
-
-                            <ul class="exBefore tabs">
-
-                                <h3 class="mbSpace10">2021</h3>
-
-                                <li class="tabs_beforePic mbSpace10">
-                                    <a href="#">
-                                        <img src="./img/exhibition/exhibition_pic4-1.png" alt="">
-                                    </a>
-                                </li>
-
-                                <li class="tabs_beforePic mbSpace10">
-                                    <a href="#">
-                                        <img src="./img/exhibition/exhibition_pic5-1.png" alt="">
-                                    </a>
-                                </li>
-
-                                <li class="tabs_beforePic">
-                                    <a href="#">
-                                        <img src="./img/exhibition/exhibition_pic6-1.png" alt="">
-                                    </a>
-                                </li>
-                            </ul> <!-- / tabs -->
-                        </article>
-                    </div>
-                    <!--右邊區塊3 end-->
-                </div>
-                <!--右邊區塊 end-->
+      <!-- 導覽列 -->
+      @@include('./layout/nav.html', { "active1" : "active" })
+
+      <main class="exhibition">
+        <!-- coding here -->
+
+        <div id="multiscroll" class="desktop">
+          <!--1440 桌面版-->
+
+          <div class="ms-left">
+            <!--左邊區塊-->
+
+            <div class="ms-section">
+              <!--左邊第一區-->
+
+              <article class="left1">
+                <section class="current">
+                  <!-- 這邊按了能切換語系 -->
+                  <a
+                    href="#"
+                    id="locale"
+                    v-model="locale"
+                    @click="changeLocale()"
+                  >
+                    <i class="fa-solid fa-language fa-2x"></i>
+                  </a>
+
+                  <!-- 要切換語系的地方 -->
+                  <h1 class="h2">{{$t("header.title")}}</h1>
+                  <!-- <h2>Break the Classic</h2> -->
+
+                  <h2 class="h2">{{$t("main.greeting")}}</h2>
+                  <!-- <h3>TAKIKAW RISA Solo Exhibition</h3> -->
+
+                  <!-- 多國語言 -->
+                  <script>
+                    // 這邊塞語言包
+                    const messages = {
+                      en: {
+                        header: {
+                          title: "Break the Classic",
+                        },
+                        main: {
+                          greeting: "TAKIKAW RISA Solo Exhibition",
+                          //   image: {
+                          //     text: "fake image",
+                          //     font: "lobster",
+                          //   },
+                          //   sheep: "no sheep | 1 sheep | {value} sheeps",
+                        },
+                      },
+                      //   jp: {
+                      //     header: {
+                      //       title: "サイト",
+                      //     },
+                      //     main: {
+                      //       greeting: "{name}さん、こんにちは",
+                      //       image: {
+                      //         text: "フェイク",
+                      //         font: "noto",
+                      //       },
+                      //       sheep: "羊がない | 羊 1 匹 | 羊 {value} 匹",
+                      //     },
+                      //   },
+                      tw: {
+                        header: {
+                          title: "打破傳統",
+                        },
+                        main: {
+                          greeting: "瀧川隆三個人展",
+                          //   image: {
+                          //     text: "假圖",
+                          //     font: "noto",
+                          //   },
+                          //   sheep: "沒有綿羊 | 1 隻綿羊 | {value} 隻綿羊",
+                        },
+                      },
+                    };
+                    // 載入切換套件
+                    const i18n = new VueI18n({ messages: messages });
+
+                    // 程式設定切換中文
+                    let app = new Vue({
+                      el: "#app",
+                      i18n: i18n,
+                      data: {
+                        locale: localStorage.getItem("locale") || "en",
+                      },
+                      methods: {
+                        changeLocale: function () {
+                          this.$i18n.locale = "tw";
+                          console.log(this.$t("header.title"));
+                          localStorage.setItem("locale", "tw");
+                        },
+                      },
+                      created() {
+                        this.$i18n.locale = this.locale;
+                      },
+                    });
+                  </script>
+                  <!-- 這邊結束 -->
+
+                  <h5 class="mtSpace30">Place: Anno Museum South Building</h5>
+                  <h5>Date: Feb 5 - May 5, 2022</h5>
+
+                  <p class="mtSpace30 mbSpace30">
+                    American-Japanese artist Takikaw Risa brings a series of
+                    composite sculptures, showing the conflict between classical
+                    art and modern society. It brings childishness and a sense
+                    of trend to the solemn atmosphere of the statue and hopes to
+                    bring the audience's imagination to break through the
+                    classics.
+                  </p>
+
+                  <!--買票按鈕-->
+                  <a class="buyTicket" href="front_cart_order.html">
+                    <span class="top-key"></span>
+                    <span class="text">Buy Tickets</span>
+                    <span class="bottom-key-1"></span>
+                    <span class="bottom-key-2"></span>
+                  </a>
+                </section>
+              </article>
             </div>
-            <!--desktop end-->
+            <!--左邊第一區 end-->
 
-            
+            <div class="ms-section">
+              <!--左邊第二區-->
 
-            <div id="fullpage" class="mobile">
-                <!-- RWD 手機版 -->
+              <article class="left2">
+                <section class="upcoming">
+                  <h2>
+                    UPCOMING UPCOMING<br />
+                    UPCOMING UPCOMING<br />
+                    UPCOMING UPCOMING<br />
+                    UPCOMING UPCOMING<br />
+                    UPCOMING UPCOMING<br />
+                  </h2>
 
-                <section id="section0" class="section exBlock1_current">
-                    <!--當期展覽-->
-                    
-                    <div class="currentContent">
-                        <!--當期文字內容 + 圖片-->
-
-                        <h2 class="current_title mtSpace30 mbSpace30">CURRENT EXHIBITION</h2>
-
-                        <img class="currentPic-1 " src="./img/exhibition/exhibition_pic1_2.png" alt=""><!--當期圖片-->
-                        <!-- <span></span> -->
-
-                        <div class="currentContent-text"><!--文字內容-->
-
-                            <h2 class="ex_title mtSpace30">Break the Classic</h2>
-
-                            <h3 class="ex_name">TAKIKAW RISA Solo Exhibition</h3>
-
-                            <h5 class="ex_place mtSpace30">Place: Anno Museum South Building</h5>
-
-                            <h5 class="ex_date">Date: Februrary 5, 2022 - May 5, 2022</h5>
-
-                            <p class="ex_content-detail mtSpace30 mbSpace30">
-                                American-Japanese artist Takikaw Risa brings a series of composite sculptures,
-                                showing the conflict between classical art and modern society.
-                                It brings childishness and a sense of trend to the solemn atmosphere of the statue
-                                and
-                                hopes to bring the audience's imagination to break through the classics.
-                            </p>
-
-                            <!--買票按鈕-->
-                            <a class="buyTicket" href="front_cart_order.html">
-                                <span class="top-key"></span>
-                                <span class="text">Buy Tickets</span>
-                                <span class="bottom-key-1"></span>
-                                <span class="bottom-key-2"></span>
-                            </a>
-
-                        </div>            
-
-                    </div>
-                    <!--當期文字內容 end-->
-
+                  <figure class="upcomingPic">
+                    <img
+                      src="./img/exhibition/exhibition_pic2.png"
+                      alt=""
+                      style="width: 400px"
+                    />
+                  </figure>
                 </section>
-
-                <section id="section1" class="section exBlock2_upcoming">
-                    <!-- 未來展覽 -->
-                    <div class="upcomingContent">
-                        <!--當期文字內容 + 圖片-->
-
-                        <h2 class="upcoming_title mtSpace30 mbSpace30">UPCOMING EXHIBITION</h2>
-
-                        <img class="upcomingPic-1" src="./img/exhibition/exhibition_pic2.png" alt="">
-
-                        <h5 class="ex_name mtSpace30">True Color - KAYLA GILL Solo Exhibition</h5>
-
-                        <h5 class="ex_place">Place: Anno Museum North Building</h5>
-
-                        <h5 class="ex_date">Date: May 5, 2022 - August 15, 2022</h5>
-
-                        <p class="ex_content-detail mtSpace30 mbSpace30">
-
-                            What is your true color?<br>
-                            Emerging artist KAYLA GILL will show her work that is using photography and digital
-                            techniques. The display of hundreds of works and live interactive installations will
-                            bring you to find your true color.
-
-                        </p>
-
-                        <!--買票按鈕-->
-                        <a class="buyTicket" href="front_cart_order.html">
-                            <span class="top-key"></span>
-                            <span class="text">Buy Tickets</span>
-                            <span class="bottom-key-1"></span>
-                            <span class="bottom-key-2"></span>
-                        </a>
-
-                    </div>
-
-                </section>
-
-                <section id="section2" class="section exBlock3_past">
-                    <!--過往展覽-->
-
-                    <h2 class="past_title mtSpace30 mbSpace30">PAST EXHIBITION</h2>
-
-                    <h2 class="past_title mbSpace10">2021</h2>
-
-                    <div class="swiper pastPic_swiper mbSpace30"><!--過往圖片輪播-->
-                        <div class="swiper-wrapper pastPic_swiper-wrapper">
-
-                            <div class="swiper-slide pastPic_swiper-slide"><!--past-slide 1-->
-                                <div class="pastPic_img1"></div>
-
-                                <div class="pastContent">
-                                <!--過往文字內容-->
-
-                                    <h5 class="ex_name mtSpace30">INTERWEAVE - LORIN DROGO Solo Exhibition</h5>
-
-                                    <h5 class="ex_place">Place：Anno Museum South Building</h5>
-
-                                    <h5 class="ex_date">Date：Apr 10 - Sep 15, 2021</h5>
-
-                                </div>
-                                <!--過往文字內容 end-->
-                            </div>
-
-                            <div class="swiper-slide pastPic_swiper-slide"><!--past-slide 2-->
-                                <div class="pastPic_img2"></div>
-
-                                <div class="pastContent">
-                                    <!--過往文字內容-->
-
-                                    <h5 class="ex_name mtSpace30">ABSTRACT - SHELDON PAUL Solo Exhibition</h5>
-
-                                    <h5 class="ex_place">Place：Anno Museum South Building</h5>
-
-                                    <h5 class="ex_date">Date：Jan 6 -  Apr 2, 2021</h5>
-                                </div>
-                                <!--過往文字內容 end-->
-
-                            </div>
-
-                            <div class="swiper-slide pastPic_swiper-slide"><!--past-slide 3-->
-                                <div class="pastPic_img3"></div>
-
-                                <div class="pastContent">
-                                    <!--過往文字內容-->
-                                    <h5 class="ex_name mtSpace30">FOOD ART - CARSON HARRIS Solo Exhibition</h5>
-
-                                    <h5 class="ex_place">Place：Anno Museum South Building</h5>
-
-                                    <h5 class="ex_date mbSpace50">Date：Oct 13 - Dec 31, 2021</h5>
-                                </div>
-                                <!--過往文字內容 end-->
-
-                            </div>
-                        </div>
-                        <!-- 分頁器 -->
-                        <div class="swiper-pagination"></div>
-                    </div><!--過往圖片輪播 end-->
-                    
-                </section>
-
+              </article>
             </div>
-            <!--RWD END-->
+            <!--左邊第二區 end-->
 
-        </main>
+            <div class="ms-section">
+              <!--左邊第三區-->
+
+              <article class="left3" id="tab_content">
+                <div class="tab_item">
+                  <h3 class="tab_item_title">PAST EXHIBITION</h3>
+
+                  <h2>
+                    PAST EXHIBITION<br />
+                    PAST EXHIBITION<br />
+                    PAST EXHIBITION<br />
+                    PAST EXHIBITION<br />
+                    PAST EXHIBITION<br />
+                  </h2>
+                </div>
+
+                <div class="tab_item">
+                  <!--展覽訊息1-->
+
+                  <figure class="exPast_text">
+                    <div class="exPast_contentBg1"></div>
+                    <!--展訊背景圖片1-->
+
+                    <figcaption class="exPast_content">
+                      <h3>PAST</h3>
+
+                      <h5 class="mtSpace30">
+                        INTERWEAVE - LORIN DROGO Solo Exhibition
+                      </h5>
+
+                      <h5>Place: Anno Museum South Building</h5>
+
+                      <h5>Date: Apr 10 - Sep 15, 2021</h5>
+
+                      <p class="mtSpace30">
+                        LORIN DROGO will have his first solo exhibition after
+                        returning home at the Anno Museum, The interweaving of
+                        lines presents life, dreams, and memories in different
+                        times and spaces. The exhibition room is only presented
+                        in black and white so that the audience can think and
+                        experience without all interference.
+                      </p>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!-- / tab_item -->
+
+                <div class="tab_item">
+                  <!--展覽訊息2-->
+
+                  <figure class="exPast_text">
+                    <div class="exPast_contentBg2"></div>
+                    <!--展訊背景圖片2-->
+
+                    <figcaption class="exPast_content">
+                      <h3>PAST</h3>
+
+                      <h5 class="mtSpace30">
+                        ABSTRACT - SHELDON PAUL Solo Exhibition
+                      </h5>
+
+                      <h5>Place: Anno Museum South Building</h5>
+
+                      <h5>Date: Jan 6 - Apr 2, 2021</h5>
+
+                      <p class="mtSpace30">
+                        LORIN DROGO will have his first solo exhibition after
+                        returning home at the Anno Museum, The interweaving of
+                        lines presents life, dreams, and memories in different
+                        times and spaces. The exhibition room is only presented
+                        in black and white so that the audience can think and
+                        experience without all interference.
+                      </p>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!-- / tab_item -->
+
+                <div class="tab_item">
+                  <!--展覽訊息3-->
+
+                  <figure class="exPast_text">
+                    <div class="exPast_contentBg3"></div>
+                    <!--展訊背景圖片3-->
+
+                    <figcaption class="exPast_content">
+                      <h3>PAST</h3>
+
+                      <h5 class="mtSpace30">
+                        FOOD ART - CARSON HARRIS Solo Exhibition
+                      </h5>
+
+                      <h5>Place: Anno Museum South Building</h5>
+
+                      <h5>Date: Oct 13 - Dec 31, 2021</h5>
+
+                      <p class="mtSpace30">
+                        LORIN DROGO will have his first solo exhibition after
+                        returning home at the Anno Museum, The interweaving of
+                        lines presents life, dreams, and memories in different
+                        times and spaces. The exhibition room is only presented
+                        in black and white so that the audience can think and
+                        experience without all interference.
+                      </p>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!-- / tab_item -->
+              </article>
+            </div>
+            <!--左邊第三區 end-->
+          </div>
+          <!--左邊區塊 end-->
+
+          <div class="ms-right">
+            <!--右邊區塊-->
+
+            <div class="ms-section">
+              <figure class="right1"></figure>
+            </div>
+            <!--右邊區塊1-->
+
+            <div class="ms-section">
+              <!--右邊區塊2-->
+
+              <article class="right2">
+                <section class="upcoming">
+                  <h2>Upcoming</h2>
+
+                  <h5 class="mtSpace30">
+                    True Color - KAYLA GILL Solo Exhibition
+                  </h5>
+
+                  <h5>Place: Anno Museum North Building</h5>
+
+                  <h5>Date: May 15 - Aug 17, 2022</h5>
+
+                  <p class="mtSpace30 mbSpace30">
+                    What is your true color?<br />
+                    Emerging artist KAYLA GILL will show her work that is using
+                    photography and digital techniques. The display of hundreds
+                    of works and live interactive installations will bring you
+                    to find your true color.
+                  </p>
+
+                  <!--買票按鈕-->
+                  <a class="buyTicket" href="front_cart_order.html">
+                    <span class="top-key"></span>
+                    <span class="text">Buy Tickets</span>
+                    <span class="bottom-key-1"></span>
+                    <span class="bottom-key-2"></span>
+                  </a>
+                </section>
+              </article>
+            </div>
+            <!--右邊區塊2 end-->
+
+            <div class="ms-section">
+              <!--右邊區塊3-->
+
+              <article class="right3">
+                <ul class="exBefore tabs">
+                  <h3 class="mbSpace10">2021</h3>
+
+                  <li class="tabs_beforePic mbSpace10">
+                    <a href="#">
+                      <img
+                        src="./img/exhibition/exhibition_pic4-1.png"
+                        alt=""
+                      />
+                    </a>
+                  </li>
+
+                  <li class="tabs_beforePic mbSpace10">
+                    <a href="#">
+                      <img
+                        src="./img/exhibition/exhibition_pic5-1.png"
+                        alt=""
+                      />
+                    </a>
+                  </li>
+
+                  <li class="tabs_beforePic">
+                    <a href="#">
+                      <img
+                        src="./img/exhibition/exhibition_pic6-1.png"
+                        alt=""
+                      />
+                    </a>
+                  </li>
+                </ul>
+                <!-- / tabs -->
+              </article>
+            </div>
+            <!--右邊區塊3 end-->
+          </div>
+          <!--右邊區塊 end-->
+        </div>
+        <!--desktop end-->
+
+        <div id="fullpage" class="mobile">
+          <!-- RWD 手機版 -->
+
+          <section id="section0" class="section exBlock1_current">
+            <!--當期展覽-->
+
+            <div class="currentContent">
+              <!--當期文字內容 + 圖片-->
+
+              <h2 class="current_title mtSpace30 mbSpace30">
+                CURRENT EXHIBITION
+              </h2>
+
+              <img
+                class="currentPic-1"
+                src="./img/exhibition/exhibition_pic1_2.png"
+                alt=""
+              /><!--當期圖片-->
+              <!-- <span></span> -->
+
+              <div class="currentContent-text">
+                <!--文字內容-->
+
+                <h2 class="ex_title mtSpace30">Break the Classic</h2>
+
+                <h3 class="ex_name">TAKIKAW RISA Solo Exhibition</h3>
+
+                <h5 class="ex_place mtSpace30">
+                  Place: Anno Museum South Building
+                </h5>
+
+                <h5 class="ex_date">Date: Februrary 5, 2022 - May 5, 2022</h5>
+
+                <p class="ex_content-detail mtSpace30 mbSpace30">
+                  American-Japanese artist Takikaw Risa brings a series of
+                  composite sculptures, showing the conflict between classical
+                  art and modern society. It brings childishness and a sense of
+                  trend to the solemn atmosphere of the statue and hopes to
+                  bring the audience's imagination to break through the
+                  classics.
+                </p>
+
+                <!--買票按鈕-->
+                <a class="buyTicket" href="front_cart_order.html">
+                  <span class="top-key"></span>
+                  <span class="text">Buy Tickets</span>
+                  <span class="bottom-key-1"></span>
+                  <span class="bottom-key-2"></span>
+                </a>
+              </div>
+            </div>
+            <!--當期文字內容 end-->
+          </section>
+
+          <section id="section1" class="section exBlock2_upcoming">
+            <!-- 未來展覽 -->
+            <div class="upcomingContent">
+              <!--當期文字內容 + 圖片-->
+
+              <h2 class="upcoming_title mtSpace30 mbSpace30">
+                UPCOMING EXHIBITION
+              </h2>
+
+              <img
+                class="upcomingPic-1"
+                src="./img/exhibition/exhibition_pic2.png"
+                alt=""
+              />
+
+              <h5 class="ex_name mtSpace30">
+                True Color - KAYLA GILL Solo Exhibition
+              </h5>
+
+              <h5 class="ex_place">Place: Anno Museum North Building</h5>
+
+              <h5 class="ex_date">Date: May 5, 2022 - August 15, 2022</h5>
+
+              <p class="ex_content-detail mtSpace30 mbSpace30">
+                What is your true color?<br />
+                Emerging artist KAYLA GILL will show her work that is using
+                photography and digital techniques. The display of hundreds of
+                works and live interactive installations will bring you to find
+                your true color.
+              </p>
+
+              <!--買票按鈕-->
+              <a class="buyTicket" href="front_cart_order.html">
+                <span class="top-key"></span>
+                <span class="text">Buy Tickets</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+              </a>
+            </div>
+          </section>
+
+          <section id="section2" class="section exBlock3_past">
+            <!--過往展覽-->
+
+            <h2 class="past_title mtSpace30 mbSpace30">PAST EXHIBITION</h2>
+
+            <h2 class="past_title mbSpace10">2021</h2>
+
+            <div class="swiper pastPic_swiper mbSpace30">
+              <!--過往圖片輪播-->
+              <div class="swiper-wrapper pastPic_swiper-wrapper">
+                <div class="swiper-slide pastPic_swiper-slide">
+                  <!--past-slide 1-->
+                  <div class="pastPic_img1"></div>
+
+                  <div class="pastContent">
+                    <!--過往文字內容-->
+
+                    <h5 class="ex_name mtSpace30">
+                      INTERWEAVE - LORIN DROGO Solo Exhibition
+                    </h5>
+
+                    <h5 class="ex_place">Place：Anno Museum South Building</h5>
+
+                    <h5 class="ex_date">Date：Apr 10 - Sep 15, 2021</h5>
+                  </div>
+                  <!--過往文字內容 end-->
+                </div>
+
+                <div class="swiper-slide pastPic_swiper-slide">
+                  <!--past-slide 2-->
+                  <div class="pastPic_img2"></div>
+
+                  <div class="pastContent">
+                    <!--過往文字內容-->
+
+                    <h5 class="ex_name mtSpace30">
+                      ABSTRACT - SHELDON PAUL Solo Exhibition
+                    </h5>
+
+                    <h5 class="ex_place">Place：Anno Museum South Building</h5>
+
+                    <h5 class="ex_date">Date：Jan 6 - Apr 2, 2021</h5>
+                  </div>
+                  <!--過往文字內容 end-->
+                </div>
+
+                <div class="swiper-slide pastPic_swiper-slide">
+                  <!--past-slide 3-->
+                  <div class="pastPic_img3"></div>
+
+                  <div class="pastContent">
+                    <!--過往文字內容-->
+                    <h5 class="ex_name mtSpace30">
+                      FOOD ART - CARSON HARRIS Solo Exhibition
+                    </h5>
+
+                    <h5 class="ex_place">Place：Anno Museum South Building</h5>
+
+                    <h5 class="ex_date mbSpace50">
+                      Date：Oct 13 - Dec 31, 2021
+                    </h5>
+                  </div>
+                  <!--過往文字內容 end-->
+                </div>
+              </div>
+              <!-- 分頁器 -->
+              <div class="swiper-pagination"></div>
+            </div>
+            <!--過往圖片輪播 end-->
+          </section>
+        </div>
+        <!--RWD END-->
+      </main>
     </div>
 
     <!-- 載入套件 -->
     <script src="./js/vendors/jquery.multiscroll.min.js"></script>
 
     <script src="./js/vendors/fullpage.min.js"></script>
-    
+
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
     <!-- 載入js -->
     <script src="./js/exhibition.min.js"></script>
-
-</body>
-
+  </body>
 </html>
