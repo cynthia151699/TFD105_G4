@@ -11,6 +11,7 @@
         @@include('./layout/nav.html', { "active5" : "active" })
 
         <main class="member">
+            <!-- 電腦版 -->
             <div class="cont">
                 <div class="form sign-in">
                     <form method="post" action="./PHP/login.php">
@@ -41,6 +42,7 @@
                     </form>
                 </div>
 
+                <!-- 動態切換效果框 -->
                 <div class="sub-cont">
                     <div class="img">
                         <div class="img__text m--up">
@@ -118,8 +120,8 @@
                 </div>
             </div>
 
-            <!-- 手機版 -->
-            <article class="phone" style="display: none">
+            <!-- 手機版會員登入 -->
+            <article class="phone" style="">
                 <h2 class="ptSpace30">Welcome back,</h2>
                 <div class="info ptSpace20">
                     <label>
@@ -133,7 +135,7 @@
                     </label>
                 </div>
 
-                <p class="forgot-pass mtSpace50">Forgot password?</p>
+                <a class="forgot-pass mtSpace50" style="color: black;">Forgot password?</ㄇ>
 
                 <a href="./front_login.html">
                     <button type="button" class="member submit">
@@ -161,7 +163,8 @@
                 </section>
             </article>
 
-            <article class="phone">
+            <!-- 手機版註冊會員 -->
+            <article class="phone" style="display: none;">
                 <h2>Time to feel like home,</h2>
 
                 <div class="info ptSpace10">
