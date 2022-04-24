@@ -131,6 +131,9 @@ main.guide {
                 width: 400px;
                 text-align: left;
                 @include HorizontalAlignCenter();
+                h6{
+                    font-size: 1rem;
+                }
             }
         }
     }
@@ -204,11 +207,18 @@ main.guide {
         section.content {
             width: 100%;
             flex-direction: column;
-            justify-content: center;
+            justify-content: normal;
 
             div.text {
+                padding-top: 30px;
                 width: 300px;
                 text-align: center;
+                h4{
+                    margin-top: 30px;
+                }
+                h6{
+                    font-size: 0.875rem;
+                }
             }
         }
     }

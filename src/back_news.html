@@ -223,7 +223,7 @@
                                 </div>
                             </li>
                             <li>
-                                <h6>消息內容:<input v-model="NEWS_CONTENT"></h6>
+                                <h6 style="vertical-align: top;">消息內容:</h6><textarea v-model="NEWS_CONTENT" style="resize: vertical; width: 350px; height: 100px;"></textarea>
                             </li>
                             <li>
                                 <h6>展覽狀態：<input class="status" type="radio" v-model="NEWS_STATUS" value="開放">開放
@@ -261,7 +261,7 @@
                                 </div>
                             </li>
                             <li>
-                                <h6>消息內容：<input type="textarea" v-model="NEW.NEWS_CONTENT"></h6>
+                                <h6 style="vertical-align: top;">消息內容：</h6><textarea v-model="NEW.NEWS_CONTENT" style="resize: vertical; width: 350px; height: 100px;"></textarea>
                             </li>
                             <li>
                                 <h6>展覽狀態：<input class="status" type="radio" v-model="NEW.NEWS_STATUS" value="開放">開放
