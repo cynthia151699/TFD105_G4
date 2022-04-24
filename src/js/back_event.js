@@ -1,23 +1,3 @@
-function event(msg, icon, html) {
-    Swal.fire({
-        title: msg,
-        icon: icon,
-        html: html,
-
-        showConfirmButton: false, // 確認按鈕（預設會顯示不用設定）
-        confirmButtonText: '', //　按鈕顯示文字
-        confirmButtonAriaLabel: '', // 網頁無障礙用
-        confirmButtonColor: '#75706b', // 修改按鈕色碼
-
-        // 使用同確認按鈕
-        // showDenyButton: true, // 否定按鈕
-        showCancelButton: false, // 取消按鈕
-
-        buttonsStyling: false, // 是否使用sweetalert按鈕樣式（預設為true）
-    })
-} 
-
-
 new Vue({
     el: '#event_wrapper',
     data() {
@@ -46,7 +26,7 @@ new Vue({
     methods: {
         event_add() {
             if (this.EVENT_NAME != "" && this.EXHIBITION_CONTENT != "") {
-                fetch("./../php/34/AddEvent.php", {
+                fetch("./php/34/AddEvent.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -78,7 +58,7 @@ new Vue({
         },
         search_Event(){
             if(this.search != "" ){
-                fetch("./../php/34/SearchEvent.php", {
+                fetch("./php/34/SearchEvent.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -107,7 +87,7 @@ new Vue({
         event_update(ID){
             //alert(ID);
             if (this.EDIT.EVENT_NAME != "" && this.EDIT.EXHIBITION_CONTENT != "") {
-                fetch("./../php/34/UpdateEvent.php", {
+                fetch("./php/34/UpdateEvent.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -177,7 +157,7 @@ new Vue({
 
             //alert(id);
 
-            fetch("./../php/34/SelectEventID.php", {
+            fetch("./php/34/SelectEventID.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -202,7 +182,7 @@ new Vue({
     },
 
     created() {
-        fetch("./../php/34/SelectEvent.php", {
+        fetch("./php/34/SelectEvent.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -218,7 +198,7 @@ new Vue({
 
     },
     // updated() {
-    //     fetch("./SelectEvent.php", {
+    //     fetch("./php/34/SelectEvent.php", {
     //         method: "POST",
     //         headers: {
     //             "Content-Type": "application/json",
@@ -233,4 +213,24 @@ new Vue({
     //     })
 
     // },
-})
+});
+
+
+function event(msg, icon, html) {
+    Swal.fire({
+        title: msg,
+        icon: icon,
+        html: html,
+
+        showConfirmButton: false, // 確認按鈕（預設會顯示不用設定）
+        confirmButtonText: '', //　按鈕顯示文字
+        confirmButtonAriaLabel: '', // 網頁無障礙用
+        confirmButtonColor: '#75706b', // 修改按鈕色碼
+
+        // 使用同確認按鈕
+        // showDenyButton: true, // 否定按鈕
+        showCancelButton: false, // 取消按鈕
+
+        buttonsStyling: false, // 是否使用sweetalert按鈕樣式（預設為true）
+    })
+} 

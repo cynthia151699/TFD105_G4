@@ -27,7 +27,7 @@ main.exhibition {
 
         figure.upcomingPic {
             img{
-                width: 40%;
+                width: 70%;
                 max-width: 500px;
                 @include PositionAlignCenter();
                 z-index: 31;
@@ -105,7 +105,12 @@ main.exhibition {
         width: $RWD;
         height: $Height;
 
-        @include LinkImg('exhibition', 'exhibition_pic1', 'png', cover, no-repeat, center);
+        img{
+            display: block; 
+            width: 100vh; 
+            object-fit: cover; 
+            height: 100vh;
+        }
     }
 
     article.right2 {
@@ -132,9 +137,16 @@ main.exhibition {
         ul.exBefore {
             @include HorizontalAlignCenter;
 
-            h3 {
-                text-align: center;
+            li>a{
+                display: block;
             }
+
+            li>a>img{
+                width: 400px; 
+                height: 110px; 
+                object-fit: cover;
+            }
+
 
             .on a>img {
                 border: 4px solid $AccentColor2;
@@ -257,7 +269,7 @@ main.exhibition {
 
         img.upcomingPic-1 {
             display: block;
-            width: 70%;
+            width: 60%;
             max-width: 400px;
             @include HorizontalAlignCenter;
         }
@@ -278,13 +290,13 @@ main.exhibition {
             div.pastPic_swiper-slide{
 
                 width: $RWD;
+                height: 330px;
 
-                @for $i from 1 to 4 {
-                    div.pastPic_img#{$i}{
-                        width: $RWD;
-                        height: 200px;
-                        @include LinkImg('exhibition', 'exhibition_pic#{$i+3}', 'jpeg', cover, no-repeat, center);
-                    }
+                img{
+                    width: 90%; 
+                    height: 150px;
+                    object-fit: cover; 
+                    margin: 0 auto;
                 }
             }
         }
