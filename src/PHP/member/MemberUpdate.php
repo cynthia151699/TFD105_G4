@@ -1,6 +1,6 @@
 <?php
 
-      include("./Connection.php");
+      include("../Connection.php");
 
       //---------------------------------------------------
        $member = json_decode(file_get_contents("php://input"), true);
@@ -14,5 +14,5 @@
        $statement->bindValue(":PASSWORD", $member["PASSWORD"]);
        $statement->bindValue(":PHONE", $member["PHONE"]);
        $statement->execute();
-       header("Location:../front_member_info.html");
+       header("Location:../../front_member_info.html");
  ?>

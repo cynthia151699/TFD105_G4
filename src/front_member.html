@@ -338,7 +338,7 @@
 <main class="member">
     <div class="cont">
         <div class="form sign-in">
-            <form method="post" action="./php/Memberlogin.php">
+            <form method="post" action="./PHP/member/Memberlogin.php">
                 <h2 class="ptSpace30">Welcome back,</h2>
 
                 <div class="info ptSpace20">
@@ -390,7 +390,7 @@
             </div>
 
             <div class="form sign-up">
-                <form id="member_form" method="post" action="./PHP/MemberNew.php">
+                <form id="member_form" method="post" action="./PHP/member/MemberNew.php">
                 <h2>Time to feel like home,</h2>
 
                 <div class="info ptSpace10">
@@ -487,7 +487,7 @@
 
     <article class="phone">
         <h2>Time to feel like home,</h2>
-        <form method="post" action="./PHP/MemberNew.php">
+        <form method="post" action="./PHP/member/MemberNew.php">
         <div class="info ptSpace10">
             <label>
                 <span>Name</span>
@@ -571,7 +571,7 @@
     <!-- 忘記密碼變更彈窗 -->
     <article class="forgetChange">
         <section>
-            <form method="post" action="./php/Memberforgetemail.php" id="form">
+            <form method="post" action="./PHP/member/Memberforgetemail.php" id="form">
             <h3>Password Reset</h3>
             <h4 class="mtSpace30 mbSpace30">
                 Please enter the email address that you used to sign
@@ -672,7 +672,7 @@ document.getElementById('form')
         event.preventDefault();
         $.ajax({
             type:'POST',
-            url:'./php/Memberforgetemail.php',
+            url:'./PHP/member/Memberforgetemail.php',
             dataType:'json',
             async: false,
             data:{
