@@ -419,7 +419,7 @@
                 },
             },
             mounted() {
-                fetch('./PHP/MemberSearch.php')
+                fetch('./PHP/member/MemberSearch.php')
                     .then(res => res.json())
                     .then(res => {
                         this.MEMBER = res[0]
@@ -453,7 +453,7 @@
                 },
             },
             mounted() {
-                fetch('./PHP/MemberSearch.php')
+                fetch('./PHP/member/MemberSearch.php')
                     .then(res => res.json())
                     .then(res => {
                         this.MEMBER = res[0]
@@ -461,7 +461,7 @@
             },
             methods: {
                 memberdataupdate() {
-                    fetch('./PHP/MemberUpdate.php', {
+                    fetch('./PHP/member/MemberUpdate.php', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
