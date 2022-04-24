@@ -86,7 +86,7 @@
                                 <!-- 折扣碼 -->
                                 <div class="input_discount">
                                     <h6>Coupon:</h6>
-                                    <input class="input_coupon" type="text" name="coupon" placeholder="Type here...">
+                                    <input class="input_coupon" type="text" name="coupon" value="" disabled>
                                     <input class="btn_code_submit" type="submit" value="Apply">
                                     <h6>Get Tickets: By QR-code</h6>
                                 </div>
@@ -125,9 +125,11 @@
         </main>
     </div>
 
+    <!-- 載入js -->
+    <script src="./js/cart_orders.min.js"></script>
     <script>
-        // 1.頁面載入後執行
-        window.onload = function() {    
+               // 1.頁面載入後執行
+       window.onload = function() {    
         // 2.獲取元素
         var liCheck = document.getElementsByName("liCheck"); //li裡面的核取方塊
         var decrease = document.getElementsByClassName("decrease"); //減號
@@ -208,8 +210,18 @@
                 }
             }
         }
+
+        //9. sessionStorage拿折扣碼
+        // document.getElementsByClassName('input_coupon')[0].value = sessionStorage.getItem('DISCOUNTCODE');
+        document.getElementsByClassName('input_coupon')[0].value = 123;
+        let sessionCode = document.getElementsByClassName('input_coupon')[0].value = 123;
+        if (sessionCode == "") {
+            return
+        } else {
+            //-100的環節
+        }
     }
-        </script>
+    </script>
 
 </body>
 

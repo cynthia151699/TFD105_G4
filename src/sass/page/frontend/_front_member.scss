@@ -115,6 +115,7 @@ main.member {
     article.forgetChange {
         @include VerticalAlignCenter();
         @include PopUp();
+        // display: block;
 
         background-color: white;
         width: 75%;
@@ -222,7 +223,8 @@ main.member {
         padding: 20px; //50px
     }
 
-    p.forgot-pass {
+    a.forgot-pass {
+        display: block;
         text-align: center;
         // font-size: 12px;
         // color: #cfcfcf;

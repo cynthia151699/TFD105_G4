@@ -316,7 +316,7 @@
                     <!-- <button class="mtSpace10" id="check">
             <h6>以訊息名稱查詢</h6>
         </button> -->
-                    <form method="post" action="SearchNews.php" style=" width:100%;background-color: #D6ECFF;">
+                    <form method="post" action="./../src/php/19/SearchNews.php" style=" width:100%;background-color: #D6ECFF;">
                         <input type="text" name="keyword" v-model.trim="search" placeholder="以消息名稱查詢" class="mtSpace10"
                             id="check">
                         <button type="button" class="mtSpace10 mlSpace20" id="search" @click="search_News">
@@ -409,7 +409,7 @@
             methods: {
                 news_add() {
                     if (this.NEWS_NAME != "" && this.NEWS_CONTENT != "") {
-                        fetch("./../src/php/news.php", {
+                        fetch("./../src/php/19/AddNews.php", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -444,7 +444,7 @@
                 },
                 search_News() {
                 if(this.search !=""){
-                    fetch("./../src/php/SearchNews.php", {
+                    fetch("./../src/php/19/SearchNews.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -482,7 +482,7 @@
                     // let newa = $('#RESS').val()
                     // alert(newa)
                     if (this.NEW.NEWS_NAME != "" && this.NEW.NEWS_CONTENT != "") {
-                        fetch("./../src/php/UpdateNews.php", {
+                        fetch("./../src/php/19/UpdateNews.php", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -550,7 +550,7 @@
 
 
                     // alert(id)
-                    fetch("SelectNewsID.php", {
+                    fetch("./../src/php/19/SelectNewsID.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -575,7 +575,7 @@
             },
 
             created() {
-                fetch("./../src/php/SelectNews.php", {
+                fetch("./../src/php/19/SelectNews.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
