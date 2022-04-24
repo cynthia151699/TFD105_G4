@@ -1,593 +1,604 @@
-/**
- * demo.js
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2018, Codrops
- * http://www.codrops.com
- */
-{
-    // From http://www.quirksmode.org/js/events_properties.html#position
-    // Get the mouse position.
-	const getMousePos = (e) => {
-        let posx = 0;
-        let posy = 0;
-		if (!e) e = window.event;
-		if (e.pageX || e.pageY) 	{
-			posx = e.pageX;
-			posy = e.pageY;
-		}
-		else if (e.clientX || e.clientY) 	{
-			posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-			posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-		}
-		return { x : posx, y : posy }
-    };
-    // Gets a random integer.
-    const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-    // Equation of a line (y = mx + b ).
-    const lineEq = (y2, y1, x2, x1, currentVal) => {
-        const m = (y2 - y1) / (x2 - x1);
-        const b = y1 - m * x1;
-        return m * currentVal + b;
-    };
 
-    // Some random chars.
-    const chars = ['$','%','#','&','=','*','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.',':',',','^'];
-    const charsTotal = chars.length;
-    
-    // Randomize letters function. Used when navigating the slideshow to switch the curretn slide´s texts.
-    const randomizeLetters = (letters) => {
-        return new Promise((resolve, reject) => {
-            const lettersTotal = letters.length;
-            let cnt = 0;
+document.documentElement.className = "js";
+var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
 
-            letters.forEach((letter, pos) => { 
-                let loopTimeout;
-                const loop = () => {
-                    letter.innerHTML = chars[getRandomInt(0,charsTotal-1)];
-                    loopTimeout = setTimeout(loop, getRandomInt(50,500));
-                };
-                loop();
-
-                const timeout = setTimeout(() => {
-                    clearTimeout(loopTimeout);
-                    letter.style.opacity = 1;
-                    letter.innerHTML = letter.dataset.initial;
-                    ++cnt;
-                    if ( cnt === lettersTotal ) {
-                        resolve();
-                    }
-                }, pos*lineEq(40,0,8,200,lettersTotal));
-            });
-        });
-    };
-
-    // Hide each of the letters with random delays. Used when showing the current slide´s content.
-    const disassembleLetters = (letters) => {
-        return new Promise((resolve, reject) => {
-            const lettersTotal = letters.length;
-            let cnt = 0;
-            
-            letters.forEach((letter, pos) => {
-                setTimeout(() => {
-                    letter.style.opacity = 0;
-                    ++cnt;
-                    if ( cnt === lettersTotal ) {
-                        resolve();
-                    }
-                }, pos*30);
-            });
-        });
-    }
-    
-    // The Slide class.
-    class Slide {
-        constructor(el) {
-            this.DOM = {el: el};
-            // The image wrap element.
-            this.DOM.imgWrap = this.DOM.el.querySelector('.slide__img-wrap');
-            // The image element.
-            this.DOM.img = this.DOM.imgWrap.querySelector('.slide__img');
-            // The texts: the parent wrap, title, number and side text.
-            this.DOM.texts = {
-                wrap: this.DOM.el.querySelector('.slide__title-wrap'),
-                title: this.DOM.el.querySelector('.slide__title'),
-                number: this.DOM.el.querySelector('.slide__number'),
-                side: this.DOM.el.querySelector('.slide__side'),
-            };
-            // Split the title and side texts into spans, one per letter. Sort these so we can later animate then with the 
-            // randomizeLetters or disassembleLetters functions when navigating and showing the content.
-            charming(this.DOM.texts.title);
-            charming(this.DOM.texts.side);
-            this.DOM.titleLetters = Array.from(this.DOM.texts.title.querySelectorAll('span')).sort(() => 0.5 - Math.random());
-            this.DOM.sideLetters = Array.from(this.DOM.texts.side.querySelectorAll('span')).sort(() => 0.5 - Math.random());
-            this.DOM.titleLetters.forEach(letter => letter.dataset.initial = letter.innerHTML);
-            this.DOM.sideLetters.forEach(letter => letter.dataset.initial = letter.innerHTML);
-            // Calculate the sizes of the image wrap. 
-            this.calcSizes();
-            // And also the transforms needed per position. 
-            // We have 5 different possible positions for a slide: center, bottom right, top left and outside the viewport (top left or bottom right).
-            this.calcTransforms();
-            // Init/Bind events.
-            this.initEvents();
+new Vue({
+    el: '#news_wrapper',
+    data() {
+        return {
+            image: '',
+            NEWS_NAME: '',
+            NEWS_PIC: '',
+            NEWS_CONTENT: '',
+            NEWS_STATUS: '',
+            NEWS: [],
+            search: '',
+            NEW: {
+                NEWS_ID: '',
+                NEWS_NAME: '',
+                NEWS_PIC: '',
+                NEWS_CONTENT: '',
+                NEWS_STATUS: '',
+            }
         }
-        // Gets the size of the image wrap.
-        calcSizes() {
-            this.width = this.DOM.imgWrap.offsetWidth;
-            this.height = this.DOM.imgWrap.offsetHeight;
-        }
-        // Gets the transforms per slide position.
-        calcTransforms() {
-            /*
-            Each position corresponds to the position of a given slide:
-            0: left top corner outside the viewport
-            1: left top corner (prev slide position)
-            2: center (current slide position)
-            3: right bottom corner (next slide position)
-            4: right bottom corner outside the viewport
-            5: left side, for when the content is shown
-            */
-            this.transforms = [
-                {x: -1*(winsize.width/2+this.width), y: -1*(winsize.height/2+this.height), rotation: -30},
-                {x: -1*(winsize.width/2-this.width/3), y: -1*(winsize.height/2-this.height/3), rotation: 0},
-                {x: 0, y: 0, rotation: 0},
-                {x: winsize.width/2-this.width/3, y: winsize.height/2-this.height/3, rotation: 0},
-                {x: winsize.width/2+this.width, y: winsize.height/2+this.height, rotation: 30},
-                {x: -1*(winsize.width/2 - this.width/2 - winsize.width*0.075), y: 0, rotation: 0}
-            ];
-        }
-        // Init events:
-        // Mouseevents for mousemove/tilt/scale on the current image, and window resize.
-        initEvents() {
-            this.mouseenterFn = () => {
-                if ( !this.isPositionedCenter() || !allowTilt ) return;
-                clearTimeout(this.mousetime);
-                this.mousetime = setTimeout(() => {
-                    // Scale the image.
-                    TweenMax.to(this.DOM.img, 0.8, {
-                        ease: Power3.easeOut,
-                        scale: 1.1
-                    });
-                }, 40);
-            };
-            this.mousemoveFn = ev => requestAnimationFrame(() => {
-                // Tilt the current slide.
-                if ( !allowTilt || !this.isPositionedCenter() ) return;
-                this.tilt(ev);
-            });
-            this.mouseleaveFn = (ev) => requestAnimationFrame(() => {
-                if ( !allowTilt || !this.isPositionedCenter() ) return;
-                clearTimeout(this.mousetime);
+    },
+    // data:{
+    //     news:[],
+    // },
 
-                // Reset tilt and image scale.
-                TweenMax.to([this.DOM.imgWrap,this.DOM.texts.wrap], 1.8, {
-                    ease: 'Power4.easeOut',
-                    x: 0,
-                    y: 0,
-                    rotationX: 0,
-                    rotationY: 0
-                });
-                TweenMax.to(this.DOM.img, 1.8, {
-                    ease: 'Power4.easeOut',
-                    scale: 1
-                });
-            });
-            // When resizing the window recalculate size and transforms, since both will depend on the window size.
-            this.resizeFn = () => {
-                this.calcSizes();
-                this.calcTransforms();
-            };
-            this.DOM.imgWrap.addEventListener('mouseenter', this.mouseenterFn);
-            this.DOM.imgWrap.addEventListener('mousemove', this.mousemoveFn);
-            this.DOM.imgWrap.addEventListener('mouseleave', this.mouseleaveFn);
-            window.addEventListener('resize', this.resizeFn);
-        }
-        // Tilt the image wrap and texts when mouse moving the current slide.
-        tilt(ev) {
-            const mousepos = getMousePos(ev);
-            // Document scrolls.
-            const docScrolls = {
-                left : document.body.scrollLeft + document.documentElement.scrollLeft, 
-                top : document.body.scrollTop + document.documentElement.scrollTop
-            };
-            const bounds = this.DOM.imgWrap.getBoundingClientRect();;
-            // Mouse position relative to the main element (this.DOM.el).
-            const relmousepos = { 
-                x : mousepos.x - bounds.left - docScrolls.left, 
-                y : mousepos.y - bounds.top - docScrolls.top 
-            };
-            
-            // Move the element from -20 to 20 pixels in both x and y axis.
-            // Rotate the element from -15 to 15 degrees in both x and y axis.
-            let t = {x:[-20,20],y:[-20,20]},
-                r = {x:[-15,15],y:[-15,15]};
+    methods: {
+        news_add() {
+            if (this.NEWS_NAME != "" && this.NEWS_CONTENT != "") {
+                fetch("./../src/php/19/AddNews.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    mode: "cors",
+                    body: JSON.stringify({
+                        NEWS_NAME: this.NEWS_NAME,
+                        NEWS_PIC: this.NEWS_PIC,
+                        NEWS_CONTENT: this.NEWS_CONTENT,
+                        NEWS_STATUS: this.NEWS_STATUS,
 
-            const transforms = {
-                translation : {
-                    x: (t.x[1]-t.x[0])/bounds.width*relmousepos.x + t.x[0],
-                    y: (t.y[1]-t.y[0])/bounds.height*relmousepos.y + t.y[0]
+                    }),
+
+                })
+                    .then(resp => resp.json())
+                // .then((body)=>{
+                //     const { successful} = body ;
+                //     console.log(body);
+
+                // })
+                news("<strong>新增成功</strong>", "success");
+                $(".popUp").css("display", "none");
+                let reset = document.querySelector(".reset")
+                reset.reset()
+            } else {
+                news("<strong>請輸入內容</strong>", "warning");
+            }
+        },
+        news_cancel() {
+            news("<strong>已取消</strong>", "success", "");
+            $(".popUp").css("display", "none");
+        },
+        search_News() {
+            if (this.search != "") {
+                fetch("./../src/php/19/SearchNews.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    // mode: "cors",
+                    body: JSON.stringify({
+                        KEY: this.search,
+
+                    }),
+
+                })
+                    .then(res =>
+                        res.json()
+                        // if(response.ok){
+                        //     console.log(response);
+                        //     return response.json();
+                        // }else{
+                        //     alert('false')
+                        // }
+                    )
+
+                    .then(res => {
+                        console.log(res);
+                        this.NEWS = res;
+                    })
+                    .catch(res => news("<strong>查無這筆資料</strong>", "warning"))
+            } else {
+                news("<strong>請輸入內容</strong>", "warning");
+            }
+        },
+        news_update(ID) {
+            alert(ID)
+            // console.log(this.NEW);
+            // console.log(this.NEW.NEWS_STATUS);
+            // let newa = $('#RESS').val()
+            // alert(newa)
+            if (this.NEW.NEWS_NAME != "" && this.NEW.NEWS_CONTENT != "") {
+                fetch("./../src/php/19/UpdateNews.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    mode: "cors",
+                    body: JSON.stringify({
+                        UP_ID: this.NEW.NEWS_ID,
+                        UP_NAME: this.NEW.NEWS_NAME,
+                        UP_PIC: this.NEW.NEWS_PIC,
+                        UP_CONTENT: this.NEW.NEWS_CONTENT,
+                        UP_STATUS: this.NEW.NEWS_STATUS,
+
+                    }),
+
+                }).then(resp => resp.json())
+                // .then((body)=>{
+                //     const { successful} = body ;
+                //     console.log(body);
+                // })
+                news("<strong>新增成功</strong>", "success");
+                $(".popUp").css("display", "none");
+                let reset = document.querySelector(".reset")
+                reset.reset()
+            } else {
+                news("<strong>請輸入內容</strong>", "warning");
+            }
+        },
+        fileChange(e) {
+            let file = e.target.files.item(0); //取得File物件
+            let reader = new FileReader(); //建立FileReader 監聽 Load 事件
+            reader.addEventListener('load', this.imageLoader);
+            reader.readAsDataURL(file);
+
+            this.NEWS_PIC = `./img/index/${file.name}`;
+        },
+        fileChangeEdit(e) {
+            let file = e.target.files.item(0); //取得File物件
+            let reader = new FileReader(); //建立FileReader 監聽 Load 事件
+            reader.addEventListener('load', this.imageLoader);
+            reader.readAsDataURL(file);
+
+            this.NEW.NEWS_PIC = `./img/index/${file.name}`;
+        },
+        imageLoader(event) {
+            this.image = event.target.result;
+        },
+        openBoxAdd() {
+            $('div.popUp').css("display", "block");
+            $('div.mask').css("display", "block");
+
+            // 只顯示指定彈窗
+            $('.-add').css("display", "block");
+
+            $('.-edit').css("display", "none");
+        },
+        openBoxEdit(id) {
+            $('div.popUp').css("display", "block");
+            $('div.mask').css("display", "block");
+
+            // 只顯示指定彈窗
+            $('.-add').css("display", "none");
+
+            $('.-edit').css("display", "block");
+
+
+
+            // alert(id)
+            fetch("./../src/php/19/SelectNewsID.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
                 },
-                rotation : {
-                    x: (r.x[1]-r.x[0])/bounds.height*relmousepos.y + r.x[0],
-                    y: (r.y[1]-r.y[0])/bounds.width*relmousepos.x + r.y[0]
-                }
-            };
+                // mode: "cors",
+                body: JSON.stringify({ newsId: id })
 
-            // Move the image wrap.
-            TweenMax.to(this.DOM.imgWrap, 1.5, {
-                ease: 'Power1.easeOut',
-                x: transforms.translation.x,
-                y: transforms.translation.y,
-                rotationX: transforms.rotation.x,
-                rotationY: transforms.rotation.y
-            }); 
+            })
+                .then(res =>
+                    res.json()
+                )
+                .then(res => {
+                    console.log(res)
+                    this.NEW.NEWS_ID = res[0]['ID']
+                    this.NEW.NEWS_NAME = res[0]['NEWS_NAME']
+                    this.NEW.NEWS_PIC = res[0]['NEWS_PIC']
+                    this.NEW.NEWS_CONTENT = res[0]['NEWS_CONTENT']
+                    this.NEW.NEWS_STATUS = res[0]['NEWS_STATUS']
+                })
+        },
 
-            // Move the texts wrap.
-            TweenMax.to(this.DOM.texts.wrap, 1.5, {
-                ease: 'Power1.easeOut',
-                x: -1*transforms.translation.x,
-                y: -1*transforms.translation.y
-            }); 
-        }
-        // Positions one slide (left, right or current) in the viewport.
-        position(pos) {
-            TweenMax.set(this.DOM.imgWrap, {
-                x: this.transforms[pos].x, 
-                y: this.transforms[pos].y, 
-                rotationX: 0,
-                rotationY: 0,
-                opacity: 1,
-                rotationZ: this.transforms[pos].rotation
-            });
-        }
-        // Sets it as current.
-        setCurrent(isContentOpen) {
-            this.isCurrent = true;
-            this.DOM.el.classList.add('slide--current', 'slide--visible');
-            // Position it on the current´s position.
-            this.position(isContentOpen ? 5 : 2);
-        }
-        // Position the slide on the left side.
-        setLeft(isContentOpen) {
-            this.isRight = this.isCurrent = false;
-            this.isLeft = true;
-            this.DOM.el.classList.add('slide--visible');
-            // Position it on the left position.
-            this.position(isContentOpen ? 0 : 1);
-        }
-        // Position the slide on the right side.
-        setRight(isContentOpen) {
-            this.isLeft = this.isCurrent = false;
-            this.isRight = true;
-            this.DOM.el.classList.add('slide--visible');
-            // Position it on the right position.
-            this.position(isContentOpen ? 4 : 3);
-        }
-        // Check if the slide is positioned on the right side (if it´s the next slide in the slideshow).
-        isPositionedRight() {
-            return this.isRight;
-        }
-        // Check if the slide is positioned on the left side (if it´s the previous slide in the slideshow).
-        isPositionedLeft() {
-            return this.isLeft;
-        }
-        // Check if the slide is the current one.
-        isPositionedCenter() {
-            return this.isCurrent;
-        }
-        // Reset classes and state.
-        reset() {
-            this.isRight = this.isLeft = this.isCurrent = false;
-            this.DOM.el.classList = 'slide';
-        }
-        hide() {
-            TweenMax.set(this.DOM.imgWrap, {x:0, y:0, rotationX:0, rotationY:0, rotationZ:0, opacity:0});
-        }
-        // Moves a slide to a specific position defined in settings.position.
-        // Also, moves it from position settings.from and if we need to reset the image scale when moving the slide then settings.resetImageScale should be true.
-        moveToPosition(settings) {
-            return new Promise((resolve, reject) => {
-                /*
-                Moves the slide to a specific position:
-                -2: left top corner outside the viewport
-                -1: left top corner (prev slide position)
-                0: center (current slide position)
-                1: right bottom corner (next slide position)
-                2: right bottom corner outside the viewport
-                3: left side, for when the content is shown
-                */
-                TweenMax.to(this.DOM.imgWrap, .8, {
-                    ease: Power4.easeInOut,
-                    delay: settings.delay || 0,
-                    startAt: settings.from !== undefined ? {
-                        x: this.transforms[settings.from+2].x,
-                        y: this.transforms[settings.from+2].y,
-                        rotationX: 0,
-                        rotationY: 0,
-                        rotationZ: this.transforms[settings.from+2].rotation
-                    } : {},
-                    x: this.transforms[settings.position+2].x,
-                    y: this.transforms[settings.position+2].y,
-                    rotationX: 0,
-                    rotationY: 0,
-                    rotationZ: this.transforms[settings.position+2].rotation,
-                    onStart: settings.from !== undefined ? () => TweenMax.set(this.DOM.imgWrap, {opacity: 1}) : null,
-                    onComplete: resolve
-                });
+    },
+
+    created() {
+        fetch("./../src/php/19/Select_front_News.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }
+            // mode: "cors",
+            // body: JSON.stringify({
+            //     NEWS_NAME: this.NEWS_NAME,
+            //     NEWS_PIC:this.NEWS_PIC,
+            //     NEWS_CONTENT: this.NEWS_CONTENT,
+            //     NEWS_STATUS: this.NEWS_STATUS,
+
+            // }),
+
+        })
+            .then(res =>
+                res.json()
+                // if(response.ok){
+                //     console.log(response);
+                //     return response.json();
+                // }else{
+                //     alert('false')
+                // }
+            )
+
+            .then(res => {
+                // console.log(res);
+                    this.NEWS = res;
+
                 
-                // Reset image scale when showing the content of the current slide.
-                if ( settings.resetImageScale ) {
-                    TweenMax.to(this.DOM.img, .8, {
-                        ease: Power4.easeInOut,
-                        scale: 1
-                    });
-                }
-            });
-        }
-        // Hides the current slide´s texts.
-        hideTexts(animation = false) {
-            if ( animation ) {
-                disassembleLetters(this.DOM.titleLetters).then(() => TweenMax.set(this.DOM.texts.wrap, {opacity: 0}));
-                disassembleLetters(this.DOM.sideLetters).then(() => TweenMax.set(this.DOM.texts.side, {opacity: 0}));
-            }
-            else {
-                TweenMax.set(this.DOM.texts.wrap, {opacity: 0});
-                TweenMax.set(this.DOM.texts.side, {opacity: 0});
-            }
-        }
-        // Shows the current slide´s texts.
-        showTexts(animation = true) {
-            TweenMax.set(this.DOM.texts.wrap, {opacity: 1});
-            TweenMax.set(this.DOM.texts.side, {opacity: 1});
 
-            if ( animation ) { 
-                randomizeLetters(this.DOM.titleLetters);
-                randomizeLetters(this.DOM.sideLetters);
-                TweenMax.to(this.DOM.texts.number, 0.6, {
-                    ease: Elastic.easeOut.config(1,0.5),
-                    startAt: {x: '-10%', opacity: 0},
-                    x: '0%',
-                    opacity: 1 
-                });
-            }
-        }
-    }
+                this.$nextTick(() => {
+                    const a = t => {
+                        let e = 0,
+                            i = 0;
+                        return (t = t || window.event).pageX || t.pageY ? (e = t.pageX, i = t.pageY) : (t.clientX || t.clientY) && (e = t.clientX + document.body.scrollLeft + document.documentElement.scrollLeft, i = t.clientY + document.body.scrollTop + document.documentElement.scrollTop), {
+                            x: e,
+                            y: i
+                        }
+                    },
+                        b = (t, e) => Math.floor(Math.random() * (e - t + 1)) + t,
+                        c = (t, e, i, s, o) => {
+                            t = (t - e) / (i - s);
+                            return t * o + (e - t * s)
+                        },
+                        d = ["$", "%", "#", "&", "=", "*", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", ".", ":", ",", "^"],
+                        e = d.length,
+                        f = i => new Promise((n, t) => {
+                            const r = i.length;
+                            let h = 0;
+                            i.forEach((t, i) => {
+                                let s;
+                                const o = () => {
+                                    t.innerHTML = d[b(0, e - 1)], s = setTimeout(o, b(50, 500))
+                                };
+                                o();
+                                setTimeout(() => {
+                                    clearTimeout(s), t.style.opacity = 1, t.innerHTML = t.dataset.initial, ++h === r && n()
+                                }, i * c(40, 0, 8, 200, r))
+                            })
+                        }),
+                        g = e => new Promise((i, t) => {
+                            const s = e.length;
+                            let o = 0;
+                            e.forEach((t, e) => {
+                                setTimeout(() => {
+                                    t.style.opacity = 0, ++o === s && i()
+                                }, 30 * e)
+                            })
+                        });
+                    class h {
+                        constructor(t) {
+                            this.DOM = {
+                                el: t
+                            }, this.DOM.imgWrap = this.DOM.el.querySelector(".slide__img-wrap"), this.DOM.img = this.DOM.imgWrap.querySelector(".slide__img"), this.DOM.texts = {
+                                wrap: this.DOM.el.querySelector(".slide__title-wrap"),
+                                title: this.DOM.el.querySelector(".slide__title"),
+                                number: this.DOM.el.querySelector(".slide__number"),
+                                side: this.DOM.el.querySelector(".slide__side")
+                            }, charming(this.DOM.texts.title), charming(this.DOM.texts.side), this.DOM.titleLetters = Array.from(this.DOM.texts.title.querySelectorAll("span")).sort(() => .5 - Math.random()), this.DOM.sideLetters = Array.from(this.DOM.texts.side.querySelectorAll("span")).sort(() => .5 - Math.random()), this.DOM.titleLetters.forEach(t => t.dataset.initial = t.innerHTML), this.DOM.sideLetters.forEach(t => t.dataset.initial = t.innerHTML), this.calcSizes(), this.calcTransforms(), this.initEvents()
+                        }
+                        calcSizes() {
+                            this.width = this.DOM.imgWrap.offsetWidth, this.height = this.DOM.imgWrap.offsetHeight
+                        }
+                        calcTransforms() {
+                            this.transforms = [{
+                                x: -1 * (t.width / 2 + this.width),
+                                y: -1 * (t.height / 2 + this.height),
+                                rotation: -30
+                            }, {
+                                x: -1 * (t.width / 2 - this.width / 3),
+                                y: -1 * (t.height / 2 - this.height / 3),
+                                rotation: 0
+                            }, {
+                                x: 0,
+                                y: 0,
+                                rotation: 0
+                            }, {
+                                x: t.width / 2 - this.width / 3,
+                                y: t.height / 2 - this.height / 3,
+                                rotation: 0
+                            }, {
+                                x: t.width / 2 + this.width,
+                                y: t.height / 2 + this.height,
+                                rotation: 30
+                            }, {
+                                x: -1 * (t.width / 2 - this.width / 2 - .075 * t.width),
+                                y: 0,
+                                rotation: 0
+                            }]
+                        }
+                        initEvents() {
+                            this.mouseenterFn = () => {
+                                this.isPositionedCenter() && s && (clearTimeout(this.mousetime), this.mousetime = setTimeout(() => {
+                                    TweenMax.to(this.DOM.img, .8, {
+                                        ease: Power3.easeOut,
+                                        scale: 1.1
+                                    })
+                                }, 40))
+                            }, this.mousemoveFn = t => requestAnimationFrame(() => {
+                                s && this.isPositionedCenter() && this.tilt(t)
+                            }), this.mouseleaveFn = t => requestAnimationFrame(() => {
+                                s && this.isPositionedCenter() && (clearTimeout(this.mousetime), TweenMax.to([this.DOM.imgWrap, this.DOM.texts.wrap], 1.8, {
+                                    ease: "Power4.easeOut",
+                                    x: 0,
+                                    y: 0,
+                                    rotationX: 0,
+                                    rotationY: 0
+                                }), TweenMax.to(this.DOM.img, 1.8, {
+                                    ease: "Power4.easeOut",
+                                    scale: 1
+                                }))
+                            }), this.resizeFn = () => {
+                                this.calcSizes(), this.calcTransforms()
+                            }, this.DOM.imgWrap.addEventListener("mouseenter", this.mouseenterFn), this.DOM.imgWrap.addEventListener("mousemove", this.mousemoveFn), this.DOM.imgWrap.addEventListener("mouseleave", this.mouseleaveFn), window.addEventListener("resize", this.resizeFn)
+                        }
+                        tilt(t) {
+                            t = a(t);
+                            const e = document.body.scrollLeft + document.documentElement.scrollLeft,
+                                i = document.body.scrollTop + document.documentElement.scrollTop;
+                            var s = this.DOM.imgWrap.getBoundingClientRect();
+                            const o = t.x - s.left - e,
+                                n = t.y - s.top - i;
+                            let r = [-20, 20],
+                                h = [-20, 20],
+                                l = [-15, 15],
+                                d = [-15, 15];
+                            t = {
+                                translation: {
+                                    x: (r[1] - r[0]) / s.width * o + r[0],
+                                    y: (h[1] - h[0]) / s.height * n + h[0]
+                                },
+                                rotation: {
+                                    x: (l[1] - l[0]) / s.height * n + l[0],
+                                    y: (d[1] - d[0]) / s.width * o + d[0]
+                                }
+                            };
+                            TweenMax.to(this.DOM.imgWrap, 1.5, {
+                                ease: "Power1.easeOut",
+                                x: t.translation.x,
+                                y: t.translation.y,
+                                rotationX: t.rotation.x,
+                                rotationY: t.rotation.y
+                            }), TweenMax.to(this.DOM.texts.wrap, 1.5, {
+                                ease: "Power1.easeOut",
+                                x: -1 * t.translation.x,
+                                y: -1 * t.translation.y
+                            })
+                        }
+                        position(t) {
+                            TweenMax.set(this.DOM.imgWrap, {
+                                x: this.transforms[t].x,
+                                y: this.transforms[t].y,
+                                rotationX: 0,
+                                rotationY: 0,
+                                opacity: 1,
+                                rotationZ: this.transforms[t].rotation
+                            })
+                        }
+                        setCurrent(t) {
+                            this.isCurrent = !0, this.DOM.el.classList.add("slide--current", "slide--visible"), this.position(t ? 5 : 2)
+                        }
+                        setLeft(t) {
+                            this.isRight = this.isCurrent = !1, this.isLeft = !0, this.DOM.el.classList.add("slide--visible"), this.position(t ? 0 : 1)
+                        }
+                        setRight(t) {
+                            this.isLeft = this.isCurrent = !1, this.isRight = !0, this.DOM.el.classList.add("slide--visible"), this.position(t ? 4 : 3)
+                        }
+                        isPositionedRight() {
+                            return this.isRight
+                        }
+                        isPositionedLeft() {
+                            return this.isLeft
+                        }
+                        isPositionedCenter() {
+                            return this.isCurrent
+                        }
+                        reset() {
+                            this.isRight = this.isLeft = this.isCurrent = !1, this.DOM.el.classList = "slide"
+                        }
+                        hide() {
+                            TweenMax.set(this.DOM.imgWrap, {
+                                x: 0,
+                                y: 0,
+                                rotationX: 0,
+                                rotationY: 0,
+                                rotationZ: 0,
+                                opacity: 0
+                            })
+                        }
+                        moveToPosition(i) {
+                            return new Promise((t, e) => {
+                                TweenMax.to(this.DOM.imgWrap, .8, {
+                                    ease: Power4.easeInOut,
+                                    delay: i.delay || 0,
+                                    startAt: void 0 !== i.from ? {
+                                        x: this.transforms[i.from + 2].x,
+                                        y: this.transforms[i.from + 2].y,
+                                        rotationX: 0,
+                                        rotationY: 0,
+                                        rotationZ: this.transforms[i.from + 2].rotation
+                                    } : {},
+                                    x: this.transforms[i.position + 2].x,
+                                    y: this.transforms[i.position + 2].y,
+                                    rotationX: 0,
+                                    rotationY: 0,
+                                    rotationZ: this.transforms[i.position + 2].rotation,
+                                    onStart: void 0 !== i.from ? () => TweenMax.set(this.DOM.imgWrap, {
+                                        opacity: 1
+                                    }) : null,
+                                    onComplete: t
+                                }), i.resetImageScale && TweenMax.to(this.DOM.img, .8, {
+                                    ease: Power4.easeInOut,
+                                    scale: 1
+                                })
+                            })
+                        }
+                        hideTexts(t = !1) {
+                            t ? (g(this.DOM.titleLetters).then(() => TweenMax.set(this.DOM.texts.wrap, {
+                                opacity: 0
+                            })), g(this.DOM.sideLetters).then(() => TweenMax.set(this.DOM.texts.side, {
+                                opacity: 0
+                            }))) : (TweenMax.set(this.DOM.texts.wrap, {
+                                opacity: 0
+                            }), TweenMax.set(this.DOM.texts.side, {
+                                opacity: 0
+                            }))
+                        }
+                        showTexts(t = !0) {
+                            TweenMax.set(this.DOM.texts.wrap, {
+                                opacity: 1
+                            }), TweenMax.set(this.DOM.texts.side, {
+                                opacity: 1
+                            }), t && (f(this.DOM.titleLetters), f(this.DOM.sideLetters), TweenMax.to(this.DOM.texts.number, .6, {
+                                ease: Elastic.easeOut.config(1, .5),
+                                startAt: {
+                                    x: "-10%",
+                                    opacity: 0
+                                },
+                                x: "0%",
+                                opacity: 1
+                            }))
+                        }
+                    }
+                    class i {
+                        constructor(t) {
+                            this.DOM = {
+                                el: t
+                            }, this.DOM.number = this.DOM.el.querySelector(".content__number"), this.DOM.title = this.DOM.el.querySelector(".content__title"), this.DOM.subtitle = this.DOM.el.querySelector(".content__subtitle"), this.DOM.text = this.DOM.el.querySelector(".content__text"), this.DOM.backCtrl = this.DOM.el.parentNode.querySelector(".content__close"), this.DOM.backCtrl.addEventListener("click", () => n.hideContent())
+                        }
+                        show() {
+                            this.DOM.el.classList.add("content__item--current"), TweenMax.staggerTo([this.DOM.backCtrl, this.DOM.number, this.DOM.title, this.DOM.subtitle, this.DOM.text], .8, {
+                                ease: Power4.easeOut,
+                                delay: .4,
+                                opacity: 1,
+                                startAt: {
+                                    y: 40
+                                },
+                                y: 0
+                            }, .05)
+                        }
+                        hide() {
+                            this.DOM.el.classList.remove("content__item--current"), TweenMax.staggerTo([this.DOM.backCtrl, this.DOM.number, this.DOM.title, this.DOM.subtitle, this.DOM.text].reverse(), .3, {
+                                ease: Power3.easeIn,
+                                opacity: 0,
+                                y: 10
+                            }, .01)
+                        }
+                    }
+                    class j {
+                        constructor(t) {
+                            if (this.DOM = {
+                                el: t
+                            }, this.slides = [], Array.from(this.DOM.el.querySelectorAll(".slide")).forEach(t => this.slides.push(new h(t))), this.slidesTotal = this.slides.length, this.slidesTotal < 4) return !1;
+                            this.current = 0, this.DOM.deco = this.DOM.el.querySelector(".slideshow__deco"), this.contents = [], Array.from(document.querySelectorAll(".content > .content__item")).forEach(t => this.contents.push(new i(t))), this.render(), this.currentSlide.showTexts(!1), this.initEvents()
+                        }
+                        render() {
+                            this.currentSlide = this.slides[this.current], this.nextSlide = this.slides[this.current + 1 <= this.slidesTotal - 1 ? this.current + 1 : 0], this.prevSlide = this.slides[0 <= this.current - 1 ? this.current - 1 : this.slidesTotal - 1], this.currentSlide.setCurrent(), this.nextSlide.setRight(), this.prevSlide.setLeft()
+                        }
+                        initEvents() {
+                            this.clickFn = t => {
+                                t.isPositionedRight() ? this.navigate("next") : t.isPositionedLeft() ? this.navigate("prev") : this.showContent()
+                            };
+                            for (let t of this.slides) t.DOM.imgWrap.addEventListener("click", () => this.clickFn(t));
+                            this.resizeFn = () => {
+                                this.nextSlide.setRight(this.isContentOpen), this.prevSlide.setLeft(this.isContentOpen), this.currentSlide.setCurrent(this.isContentOpen), this.isContentOpen && TweenMax.set(this.DOM.deco, {
+                                    scaleX: t.width / this.DOM.deco.offsetWidth,
+                                    scaleY: t.height / this.DOM.deco.offsetHeight,
+                                    x: -20,
+                                    y: 20
+                                })
+                            }, window.addEventListener("resize", this.resizeFn)
+                        }
+                        showContent() {
+                            this.isContentOpen || this.isAnimating || (s = !1, this.isContentOpen = !0, this.DOM.el.classList.add("slideshow--previewopen"), TweenMax.to(this.DOM.deco, .8, {
+                                ease: Power4.easeInOut,
+                                scaleX: t.width / this.DOM.deco.offsetWidth,
+                                scaleY: t.height / this.DOM.deco.offsetHeight,
+                                x: -20,
+                                y: 20
+                            }), this.prevSlide.moveToPosition({
+                                position: -2
+                            }), this.nextSlide.moveToPosition({
+                                position: 2
+                            }), this.currentSlide.moveToPosition({
+                                position: 3,
+                                resetImageScale: !0
+                            }), this.contents[this.current].show(), this.currentSlide.hideTexts(!0))
+                        }
+                        hideContent() {
+                            this.isContentOpen && !this.isAnimating && (this.DOM.el.classList.remove("slideshow--previewopen"), this.contents[this.current].hide(), TweenMax.to(this.DOM.deco, .8, {
+                                ease: Power4.easeInOut,
+                                scaleX: 1,
+                                scaleY: 1,
+                                x: 0,
+                                y: 0
+                            }), this.prevSlide.moveToPosition({
+                                position: -1
+                            }), this.nextSlide.moveToPosition({
+                                position: 1
+                            }), this.currentSlide.moveToPosition({
+                                position: 0
+                            }).then(() => {
+                                s = !0, this.isContentOpen = !1
+                            }), this.currentSlide.showTexts())
+                        }
+                        bounceDeco(t, e) {
+                            TweenMax.to(this.DOM.deco, .4, {
+                                ease: "Power2.easeIn",
+                                delay: e + .2 * e,
+                                x: "next" === t ? -40 : 40,
+                                y: "next" === t ? -40 : 40,
+                                onComplete: () => {
+                                    TweenMax.to(this.DOM.deco, .6, {
+                                        ease: "Power2.easeOut",
+                                        x: 0,
+                                        y: 0
+                                    })
+                                }
+                            })
+                        }
+                        navigate(t) {
+                            var e;
+                            this.isAnimating || (this.isAnimating = !0, s = !1, e = "next" === t ? this.current < this.slidesTotal - 2 ? this.current + 2 : Math.abs(this.slidesTotal - 2 - this.current) : 2 <= this.current ? this.current - 2 : Math.abs(this.slidesTotal - 2 + this.current), this.upcomingSlide = this.slides[e], this.current = "next" === t ? this.current < this.slidesTotal - 1 ? this.current + 1 : 0 : 0 < this.current ? this.current - 1 : this.slidesTotal - 1, this.prevSlide.moveToPosition({
+                                position: "next" === t ? -2 : 0,
+                                delay: "next" === t ? 0 : .14
+                            }).then(() => {
+                                "next" === t && this.prevSlide.hide()
+                            }), this.currentSlide.moveToPosition({
+                                position: "next" === t ? -1 : 1,
+                                delay: .07
+                            }), this.currentSlide.hideTexts(), this.bounceDeco(t, .07), this.nextSlide.moveToPosition({
+                                position: "next" === t ? 0 : 2,
+                                delay: "next" === t ? .14 : 0
+                            }).then(() => {
+                                "prev" === t && this.nextSlide.hide()
+                            }), ("next" === t ? this.nextSlide : this.prevSlide).showTexts(), this.upcomingSlide.moveToPosition({
+                                position: "next" === t ? 1 : -1,
+                                from: "next" === t ? 2 : -2,
+                                delay: .21
+                            }).then(() => {
+                                [this.nextSlide, this.currentSlide, this.prevSlide].forEach(t => t.reset()), this.render(), s = !0, this.isAnimating = !1
+                            }))
+                        }
+                    }
+                    let t;
+                    const l = () => t = {
+                        width: window.innerWidth,
+                        height: window.innerHeight
+                    };
+                    l(), window.addEventListener("resize", l);
+                    let s = !0;
+                    const n = new j(document.querySelector(".slideshow")),
+                        o = document.querySelector(".loader");
+                    imagesLoaded(document.querySelectorAll(".slide__img"), {
+                        background: !0
+                    }, () => document.body.classList.remove("loading"))
 
-    // The Content class. Represents one content item per slide.
-    class Content {
-        constructor(el) {
-            this.DOM = {el: el};
-            this.DOM.number = this.DOM.el.querySelector('.content__number');
-            this.DOM.title = this.DOM.el.querySelector('.content__title');
-            this.DOM.subtitle = this.DOM.el.querySelector('.content__subtitle');
-            this.DOM.text = this.DOM.el.querySelector('.content__text');
-            this.DOM.backCtrl = this.DOM.el.parentNode.querySelector('.content__close');
-            this.DOM.backCtrl.addEventListener('click', () => slideshow.hideContent());
-        }
-        show() {
-            this.DOM.el.classList.add('content__item--current');
 
-            TweenMax.staggerTo([this.DOM.backCtrl,this.DOM.number,this.DOM.title,this.DOM.subtitle,this.DOM.text], 0.8, {
-                ease: Power4.easeOut,
-                delay: 0.4,
-                opacity: 1,
-                startAt: {y: 40},
-                y: 0
-            }, 0.05);
-        }
-        hide() {
-            this.DOM.el.classList.remove('content__item--current');
 
-            TweenMax.staggerTo([this.DOM.backCtrl,this.DOM.number,this.DOM.title,this.DOM.subtitle,this.DOM.text].reverse(), 0.3, {
-                ease: Power3.easeIn,
-                opacity: 0,
-                y: 10
-            }, 0.01);
-        }
-    }
+                })
+            })
 
-    // The Slideshow class.
-    class Slideshow {
-        constructor(el) {
-            this.DOM = {el: el};
-            // The slides.
-            this.slides = [];
-            Array.from(this.DOM.el.querySelectorAll('.slide')).forEach(slideEl => this.slides.push(new Slide(slideEl)));
-            // The total number of slides.
-            this.slidesTotal = this.slides.length;
-            // At least 4 slides to continue...
-            if ( this.slidesTotal < 4 ) {
-                return false;
-            }
-            // Current slide position.
-            this.current = 0;
-            this.DOM.deco = this.DOM.el.querySelector('.slideshow__deco');
+    },
 
-            this.contents = [];
-            Array.from(document.querySelectorAll('.content > .content__item')).forEach(contentEl => this.contents.push(new Content(contentEl)));
-
-            // Set the current/next/previous slides. 
-            this.render();
-            this.currentSlide.showTexts(false);
-            // Init/Bind events.
-            this.initEvents();
-        }
-        render() {
-            // The current, next, and previous slides.
-            this.currentSlide = this.slides[this.current];
-            this.nextSlide = this.slides[this.current+1 <= this.slidesTotal-1 ? this.current+1 : 0];
-            this.prevSlide = this.slides[this.current-1 >= 0 ? this.current-1 : this.slidesTotal-1];
-            this.currentSlide.setCurrent();
-            this.nextSlide.setRight();
-            this.prevSlide.setLeft();
-        }
-        initEvents() {
-            // Clicking the next and previous slide starts the navigation / clicking the current shows its content..
-            this.clickFn = (slide) => {
-                if ( slide.isPositionedRight() ) {
-                    this.navigate('next');
-                }
-                else if ( slide.isPositionedLeft() ) {
-                    this.navigate('prev');
-                }
-                else {
-                    this.showContent();
-                }
-            };
-            for (let slide of this.slides) {
-                slide.DOM.imgWrap.addEventListener('click', () => this.clickFn(slide));
-            }
-
-            this.resizeFn = () => {
-                // Reposition the slides.
-                this.nextSlide.setRight(this.isContentOpen);
-                this.prevSlide.setLeft(this.isContentOpen);
-                this.currentSlide.setCurrent(this.isContentOpen);
-
-                if ( this.isContentOpen ) {
-                    TweenMax.set(this.DOM.deco, {
-                        scaleX: winsize.width/this.DOM.deco.offsetWidth,
-                        scaleY: winsize.height/this.DOM.deco.offsetHeight,
-                        x: -20,
-                        y: 20
-                    });
-                }
-            };
-            window.addEventListener('resize', this.resizeFn);
-        }
-        showContent() {
-            if ( this.isContentOpen || this.isAnimating ) return;
-            allowTilt = false;
-            this.isContentOpen = true;
-            this.DOM.el.classList.add('slideshow--previewopen');
-            TweenMax.to(this.DOM.deco, .8, {
-                ease: Power4.easeInOut,
-                scaleX: winsize.width/this.DOM.deco.offsetWidth,
-                scaleY: winsize.height/this.DOM.deco.offsetHeight,
-                x: -20,
-                y: 20
-            });
-            // Move away right/left slides.
-            this.prevSlide.moveToPosition({position: -2});
-            this.nextSlide.moveToPosition({position: 2});
-            // Position the current slide and reset its image scale value.
-            this.currentSlide.moveToPosition({position: 3, resetImageScale: true});
-            // Show content and back arrow (to close the content).
-            this.contents[this.current].show();
-            // Hide texts.
-            this.currentSlide.hideTexts(true);
-        }
-        hideContent() {
-            if ( !this.isContentOpen || this.isAnimating ) return;
-
-            this.DOM.el.classList.remove('slideshow--previewopen');
-
-            // Hide content.
-            this.contents[this.current].hide();
-
-            TweenMax.to(this.DOM.deco, .8, {
-                ease: Power4.easeInOut,
-                scaleX: 1,
-                scaleY: 1,
-                x: 0,
-                y: 0
-            });
-            // Move in right/left slides.
-            this.prevSlide.moveToPosition({position: -1});
-            this.nextSlide.moveToPosition({position: 1});
-            // Position the current slide.
-            this.currentSlide.moveToPosition({position: 0}).then(() => {
-                allowTilt = true;
-                this.isContentOpen = false;
-            });
-            // Show texts.
-            this.currentSlide.showTexts();
-        }
-        // Animates the element behind the current slide.
-        bounceDeco(direction, delay) {
-            TweenMax.to(this.DOM.deco, .4, {
-                ease: 'Power2.easeIn',
-                delay: delay+delay*0.2,
-                x: direction === 'next' ? -40 : 40,
-                y: direction === 'next' ? -40 : 40,
-                onComplete: () => {
-                    TweenMax.to(this.DOM.deco, 0.6, {
-                        //ease: Elastic.easeOut.config(1, 0.65),
-                        ease: 'Power2.easeOut',
-                        x: 0,
-                        y: 0
-                    });
-                }
-            });
-        }
-        // Navigate the slideshow.
-        navigate(direction) {
-            // If animating return.
-            if ( this.isAnimating ) return;
-            this.isAnimating = true;
-            allowTilt = false;
-
-            const upcomingPos = direction === 'next' ? 
-                    this.current < this.slidesTotal-2 ? this.current+2 : Math.abs(this.slidesTotal-2-this.current):
-                    this.current >= 2 ? this.current-2 : Math.abs(this.slidesTotal-2+this.current);
-            
-            this.upcomingSlide = this.slides[upcomingPos];
-
-            // Update current.
-            this.current = direction === 'next' ? 
-                    this.current < this.slidesTotal-1 ? this.current+1 : 0 :
-                    this.current > 0 ? this.current-1 : this.slidesTotal-1;
-            
-            // Move slides (the previous, current, next and upcoming slide).
-            this.prevSlide.moveToPosition({position: direction === 'next' ? -2 : 0, delay: direction === 'next' ? 0 : 0.14}).then(() => {
-                if ( direction === 'next' ) {
-                    this.prevSlide.hide();
-                }
-            });
-            
-            this.currentSlide.moveToPosition({position: direction === 'next' ? -1 : 1, delay: 0.07 });
-            this.currentSlide.hideTexts();
-            
-            this.bounceDeco(direction, 0.07);
-            
-            this.nextSlide.moveToPosition({position: direction === 'next' ? 0 : 2, delay: direction === 'next' ? 0.14 : 0 }).then(() => {
-                if ( direction === 'prev' ) {
-                    this.nextSlide.hide();
-                }
-            });
-
-            if ( direction === 'next' ) {
-                this.nextSlide.showTexts();
-            }
-            else {
-                this.prevSlide.showTexts();
-            }
-            
-            this.upcomingSlide.moveToPosition({position: direction === 'next' ? 1 : -1, from: direction === 'next' ? 2 : -2, delay: 0.21 }).then(() => {
-                // Reset classes.
-                [this.nextSlide,this.currentSlide,this.prevSlide].forEach(slide => slide.reset());
-                this.render();
-                allowTilt = true;
-                this.isAnimating = false;
-            });
-        }
-    }
-
-    // Window sizes.
-    let winsize;
-    const calcWinsize = () => winsize = {width: window.innerWidth, height: window.innerHeight};
-    calcWinsize();
-    window.addEventListener('resize', calcWinsize);
-
-    let allowTilt = true;
-
-    // Init slideshow.
-    const slideshow = new Slideshow(document.querySelector('.slideshow'));
-    
-    // Preload all the images in the page..
-    // const loader = document.querySelector('.loader');
-    // imagesLoaded(document.querySelectorAll('.slide__img'), {background: true}, () => document.body.classList.remove('loading'));
-}
+})

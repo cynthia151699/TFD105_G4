@@ -56,7 +56,14 @@ main.home {
 	//part 1 RWD
 
 	@media screen and (min-width: 768px) and (max-width: 991.98px) {
+		article.page1 {
 
+			.btn_next{
+				left: 0;
+				right: 0;
+				bottom: 100px;
+			}
+		}
 
 	}
 
@@ -75,6 +82,11 @@ main.home {
 				object-fit: cover;
 				text-align: center;
 		
+			}
+			.btn_next{
+				left: 0;
+				right: 0;
+				bottom: 150px;
 			}
 		}
 
@@ -96,6 +108,11 @@ main.home {
 				text-align: center;
 		
 			}
+			.btn_next{
+				left: 0;
+				right: 0;
+				bottom: 150px;
+			}
 		}
 		
 	}
@@ -112,6 +129,7 @@ main.home {
 
 		section.text {
 			width: 95%;
+		
 
 			@include HorizontalAlignCenter;
 
@@ -152,6 +170,15 @@ main.home {
 		article.page2 {
 			@include LinkImg(index, index_pic1-3, png, cover, null, null);
 			@include VerticalAlignCenter;
+
+			section.text {
+				width: 80%;
+    			height: 90%;
+	
+				h2 {
+					font-size: 70px;
+				}
+			}
 			}
 	}
 
@@ -178,6 +205,15 @@ main.home {
 		div{
 			border: 5px $PrimaryColor solid;
 			border-style:outset;
+			position: relative;
+		}
+		h3{
+			text-align: right;
+			text-shadow: $TextShadow;
+			padding: 5px;
+    		position: absolute;
+    		right: 0;
+    		bottom: 0;
 		}
 
 		.pic1{
@@ -291,8 +327,21 @@ main.home {
 
 	//part 3 RWD
 
-	// @media screen and (min-width: 768px) and (max-width: 991.98px) {}
+	@media screen and (min-width: 768px) and (max-width: 991.98px) {}
 
-	// @media screen and (min-width: 576px) and (max-width: 767.98px) {}
-	// @media screen and (max-width: 575.98px) {}
+	@media screen and (min-width: 576px) and (max-width: 767.98px) {}
+	@media screen and (max-width: 575.98px) {
+		article.page3 {
+			height: 500px;	
+
+			h3{
+				text-align: right;
+				text-shadow: $TextShadow;
+				padding: 5px;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+		}
+	}
 }
