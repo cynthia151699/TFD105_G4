@@ -38,14 +38,6 @@
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
     <style>
-        td {
-            vertical-align: middle;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-
         img{
             object-fit: cover;
         }
@@ -237,11 +229,9 @@
                                 <h6>展覽訊息名稱：</h6><input type="text" v-model="EVENT_NAME">
                             </li>
                             <li>
-                                <h6>展覽開始日：</h6><input type="date" v-model="EVENT_BEGIN">
+                                <h6>展覽時間：</h6><input type="text" v-model="EXHIBITION_DATE">
                             </li>
-                            <li>
-                                <h6>展覽結束日：</h6><input type="date" v-model="EVENT_END">
-                            </li>
+
                             <li>
                                 <h6>圖片：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳" style="color: #333;" @change="fileChange">
                                 <div style="border:5px solid #fff; width:100%; height:80px; display: flex; align-content: center;">
@@ -277,11 +267,9 @@
                                 <h6>展覽訊息名稱：</h6><input type="text" v-model="EDIT.EVENT_NAME">
                             </li>
                             <li>
-                                <h6>展覽開始日：</h6><input type="date" v-model="EDIT.EVENT_BEGIN">
+                                <h6>展覽時間：</h6><input type="text" v-model="EDIT.EXHIBITION_DATE">
                             </li>
-                            <li>
-                                <h6>展覽結束日：</h6><input type="date" v-model="EDIT.EVENT_END">
-                            </li>
+
                             <li>
                                 <h6>圖片：</h6><input type="file" accept=".jpg,.png,.jpeg" placeholder="請選擇圖片上傳" style="color: #333;" @change="fileChangeEdit">
                                 <div style="border:5px solid #fff;width:100%;height:80px; display: flex; align-content: center;">
@@ -299,16 +287,6 @@
                             <input type="button" value="確定" @click="event_update(EDIT.ID)">
                         </div>
                     </div>
-
-                    <!-- <div class="event -store">
-                        <h5>編輯展覽訊息</h5>
-                        <h6>尚未儲存，是否確認離開？</h6>
-                        
-                        <div class="checkButtons">
-                            <button class="cancel">取消</button>
-                            <button>確定</button>
-                        </div>
-                    </div> -->
                 </form>
             </div>
         </div>
@@ -334,9 +312,6 @@
                         <h6 class="ptSpace20 mlSpace150" style="color: black;">帳號登出</h6>
                     </a>
 
-                    <!-- <button class="mtSpace10" id="check">
-                        <h6>以展覽名稱查詢</h6>
-                    </button> -->
 
                     <input type="text" placeholder="以展覽名稱查詢" class="mtSpace10" id="check" v-model.trim="search">
 
@@ -355,8 +330,7 @@
                             <td>展訊編號</td>
                             <td>展訊分類</td>
                             <td>展訊名稱</td>
-                            <td>展訊開始日</td>
-                            <td>展訊結束日</td>
+                            <td>展覽時間</td>
                             <td>展訊圖片</td>
                             <td>展訊內容</td>
                             <td>創建時間</td>
@@ -368,12 +342,11 @@
                         <tr v-for="EXHIBITION in EXHIBITIONS">
                             <td>{{EXHIBITION.ID}}</td>
                             <td>{{EXHIBITION.EXHIBITION_STYLE}}</td>
-                            <td>{{EXHIBITION.EVENT_NAME}}</td>
-                            <td>{{EXHIBITION.EVENT_BEGIN}}</td>
-                            <td>{{EXHIBITION.EVENT_END}}</td>
-                            <td><img :src="EXHIBITION.EXHIBITION_PIC" alt="" style="width: 60px;height: 60px;"></td>
-                            <td>{{EXHIBITION.EXHIBITION_CONTENT}}</td>
+                            <td><div style="width: 100px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{EXHIBITION.EVENT_NAME}}</div></td>
                             <td>{{EXHIBITION.EXHIBITION_DATE}}</td>
+                            <td><img :src="EXHIBITION.EXHIBITION_PIC" alt="" style="width: 60px;height: 60px;"></td>
+                            <td><div style="width: 150px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{EXHIBITION.EXHIBITION_CONTENT}}</div></td>
+                            <td>{{EXHIBITION.EXHIBITION_CREATE}}</td>
                             <td><button type="button" @click="openBoxEdit(EXHIBITION.ID)">編輯</button></td>
                         </tr>
 
@@ -383,256 +356,7 @@
         </div>
     </div>
 
-
-    <script>
-
-        function event(msg, icon, html) {
-            Swal.fire({
-                title: msg,
-                icon: icon,
-                html: html,
-
-                showConfirmButton: false, // 確認按鈕（預設會顯示不用設定）
-                confirmButtonText: '', //　按鈕顯示文字
-                confirmButtonAriaLabel: '', // 網頁無障礙用
-                confirmButtonColor: '#75706b', // 修改按鈕色碼
-
-                // 使用同確認按鈕
-                // showDenyButton: true, // 否定按鈕
-                showCancelButton: false, // 取消按鈕
-
-                buttonsStyling: false, // 是否使用sweetalert按鈕樣式（預設為true）
-            })
-        }       
-    </script>
-
-    <script>
-        new Vue({
-            el: '#event_wrapper',
-            data() {
-                return {
-                    image: '',
-                    EXHIBITION_STYLE: '',
-                    EVENT_NAME: '',
-                    EVENT_BEGIN: '',
-                    EVENT_END: '',
-                    EXHIBITION_PIC: '',
-                    EXHIBITION_CONTENT: '',
-                    EXHIBITIONS: [],
-                    search: '',
-                    EDIT:{
-                        ID: '',
-                        EXHIBITION_STYLE: '',
-                        EVENT_NAME: '',
-                        EVENT_BEGIN: '',
-                        EVENT_END: '',
-                        EXHIBITION_PIC: '',
-                        EXHIBITION_CONTENT: '',
-                    },
-                }
-            },
-            // data:{
-            //     EXHIBITIONS:[],
-            // },
-            methods: {
-                event_add() {
-                    if (this.EVENT_NAME != "" && this.EXHIBITION_CONTENT != "") {
-                        fetch("./../src/php/event.php", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            mode: "cors",
-                            body: JSON.stringify({
-                                EXHIBITION_STYLE: this.EXHIBITION_STYLE,
-                                EVENT_NAME: this.EVENT_NAME,
-                                EVENT_BEGIN: this.EVENT_BEGIN,
-                                EVENT_END: this.EVENT_END,
-                                EXHIBITION_PIC: this.EXHIBITION_PIC,
-                                EXHIBITION_CONTENT: this.EXHIBITION_CONTENT,
-                            }),
-
-                        }).then(resp => resp.json())
-                        //.then(resp => {this.EXHIBITIONS = resp}) 
-
-                        event("<strong>新增成功</strong>", "success");
-                        $(".popUp").css("display", "none");
-                        let reset = document.querySelector(".reset")
-                        reset.reset()
-                    } else {
-                        event("<strong>請輸入內容</strong>", "warning");
-                    }
-                },
-
-                event_cancel() {
-                    event("<strong>已取消</strong>", "success", "");
-                    $('.popUp').css("display", "none");
-                },
-                search_Event(){
-                    if(this.search != "" ){
-                        fetch("./../src/php/SearchEvent.php", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            body:JSON.stringify({
-                                KEY: this.search,
-                            })
-                        })
-                        .then(res =>
-                            res.json()
-                        )
-                        .then(res => {
-                            //console.log(res);
-                            this.EXHIBITIONS = res;
-                        })
-                        
-                        .catch(reason => event("<strong>查無這筆資料</strong>", "warning"));
-
-                        
-
-                    }else{
-                        event("<strong>請輸入內容</strong>", "warning");
-                    }
-                },
-
-                event_update(ID){
-                    //alert(ID);
-                    if (this.EDIT.EVENT_NAME != "" && this.EDIT.EXHIBITION_CONTENT != "") {
-                        fetch("./../src/php/UpdateEvent.php", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            mode: "cors",
-                            body: JSON.stringify({
-                                UP_ID: this.EDIT.ID,
-                                UP_EXHIBITION_STYLE: this.EDIT.EXHIBITION_STYLE,
-                                UP_EVENT_NAME: this.EDIT.EVENT_NAME,
-                                UP_EVENT_BEGIN: this.EDIT.EVENT_BEGIN,
-                                UP_EVENT_END: this.EDIT.EVENT_END,
-                                UP_EXHIBITION_PIC: this.EDIT.EXHIBITION_PIC,
-                                UP_EXHIBITION_CONTENT: this.EDIT.EXHIBITION_CONTENT,
-                            }),
-
-                        })
-                        .then(res => res.json())
-                        //.then(res => {this.EXHIBITIONS = res}) 
-
-                        event("<strong>修改成功</strong>", "success");
-                        $(".popUp").css("display", "none");
-                        let reset = document.querySelector(".reset")
-                        reset.reset()
-                    } else {
-                        event("<strong>請輸入內容</strong>", "warning");
-                    }
-                },
-
-                fileChange(e) {
-                    let file = e.target.files.item(0); //取得File物件
-                    let reader = new FileReader(); //建立FileReader 監聽 Load 事件
-                    reader.addEventListener('load', this.imageLoader);
-                    reader.readAsDataURL(file);
-                    this.EXHIBITION_PIC = `./img/exhibition/${file.name}`;
-                },
-                fileChangeEdit(e){
-                    let file = e.target.files.item(0); //取得File物件
-                    let reader = new FileReader(); //建立FileReader 監聽 Load 事件
-                    reader.addEventListener('load', this.imageLoader);
-                    reader.readAsDataURL(file);
-                    this.EDIT.EXHIBITION_PIC = `./img/exhibition/${file.name}`;
-                },
-                imageLoader(event) {
-                    this.image = event.target.result;
-                },
-
-                
-
-                openBoxAdd() {
-                    $('div.popUp').css("display", "block");
-                    $('div.mask').css("display", "block");
-
-                    // 只顯示指定彈窗
-                    $('.-add').css("display", "block");
-
-                    $('.-edit').css("display", "none");
-                },
-
-
-                openBoxEdit(id) {
-                    $('div.popUp').css("display", "block");
-                    $('div.mask').css("display", "block");
-
-                    $('.-add').css("display", "none");
-
-                    // 只顯示指定彈窗
-                    $('.-edit').css("display", "block");
-
-
-                    //alert(id);
-
-                    fetch("./../src/php/SelectEventID.php", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body:JSON.stringify({ eventId: id })
-                    })
-                    .then(res =>
-                        res.json()
-                    )
-                    .then(res => {
-                        this.EDIT.ID = res[0]['ID']
-                        this.EDIT.EXHIBITION_STYLE = res[0]['EXHIBITION_STYLE']
-                        this.EDIT.EVENT_NAME = res[0]['EVENT_NAME']
-                        this.EDIT.EVENT_BEGIN = res[0]['EVENT_BEGIN']
-                        this.EDIT.EVENT_END = res[0]['EVENT_END']
-                        this.EDIT.EXHIBITION_PIC = res[0]['EXHIBITION_PIC']
-                        this.EDIT.EXHIBITION_CONTENT = res[0]['EXHIBITION_CONTENT']
-                    })
-
-
-                },
-                
-            },
-
-            created() {
-                fetch("./../src/php/SelectEvent.php", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    }
-                })
-                .then(res =>
-                    res.json()
-                )
-                .then(res => {
-                    //console.log(res);
-                    this.EXHIBITIONS = res;
-                })
-
-            },
-            // updated() {
-            //     fetch("./SelectEvent.php", {
-            //         method: "POST",
-            //         headers: {
-            //             "Content-Type": "application/json",
-            //         }
-            //     })
-            //     .then(res =>
-            //         res.json()
-            //     )
-            //     .then(res => {
-            //         //console.log(res);
-            //         this.EXHIBITIONS = res;
-            //     })
-
-            // },
-        })
-
-    </script>
-
-    <!-- <script src="./js/backend.min.js"></script> -->
+    <script src="./js/back_event.min.js"></script>
 
 
 </body>

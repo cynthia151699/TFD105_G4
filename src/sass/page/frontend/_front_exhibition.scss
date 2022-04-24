@@ -235,7 +235,7 @@ main.exhibition {
             position: relative;
             display: block;
             max-width: 200px;
-            width: 40%;
+            width: 30%;
             float: right;
             z-index: 32;
         }
@@ -257,8 +257,8 @@ main.exhibition {
 
         img.upcomingPic-1 {
             display: block;
-            width: $RWD;
-            max-width: 450px;
+            width: 70%;
+            max-width: 400px;
             @include HorizontalAlignCenter;
         }
 
@@ -290,4 +290,17 @@ main.exhibition {
         }
     }
 }
+
+
+main.exhibition article.right3 {
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (min-width: 991.98px){
+        div#app_fullpage {
+            display: none;
+        }
+    }
+}
+
 
