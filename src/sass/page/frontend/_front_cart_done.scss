@@ -42,7 +42,7 @@
     width: 400px;
 
     line-height: 1.6;
-    text-align: center;
+    // text-align: center;
 
     h4{
         font-family: Fredoka;
@@ -53,12 +53,12 @@
         color: $InputColor;
     }
 
-    p{
-        margin: 20px auto;
-        @include LinkImg(Logo, anno_qr, png, cover, null, null);
-        width: 200px;
-        height: 200px;
-    }
+    // p{
+    //     margin: 20px auto;
+    //     @include LinkImg(Logo, anno_qr, png, cover, null, null);
+    //     width: 200px;
+    //     height: 200px;
+    // }
 
 }
 

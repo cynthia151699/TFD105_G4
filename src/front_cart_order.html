@@ -87,7 +87,8 @@
                                 <div class="input_discount">
                                     <h6>Coupon:</h6>
                                     <input class="input_coupon" type="text" name="coupon" value="" disabled>
-                                    <input class="btn_code_submit" type="submit" value="Apply">
+                                    <button type="button" class="applyCoupon">Apply</button>
+                                    <!-- <input class="btn_code_submit" type="submit" value="Apply"> -->
                                     <h6>Get Tickets: By QR-code</h6>
                                 </div>
             
@@ -103,7 +104,7 @@
 
                                         <div class="c_discount">
                                             <h6>Discount:</h6>
-                                            <h6>Without Using Coupon</h6>
+                                            <h6 id="couponUse">Without Using Coupon</h6>
                                         </div>
 
                                         <p style="text-align: right;">
@@ -128,7 +129,7 @@
     <!-- 載入js -->
     <script src="./js/cart_orders.min.js"></script>
     <script>
-               // 1.頁面載入後執行
+        // 1.頁面載入後執行
        window.onload = function() {    
         // 2.獲取元素
         var liCheck = document.getElementsByName("liCheck"); //li裡面的核取方塊
@@ -140,23 +141,27 @@
         var checkAll = document.getElementById("checkAll"); //全選核取方塊
         var totalCount = document.getElementById("totalCount"); //總計
         var totalPrice = document.getElementById("totalPrice"); //總價
+        var applyCoupon = document.getElementsByClassName("applyCoupon")[0]; //送出折扣碼
+        var discount = 100
+        var couponUse = document.getElementById("couponUse"); //使用狀態
+
         // 3.加減按鈕
         for (var i = 0; i < decrease.length; i++) {
-            // 4.另存下標
+        // 4.另存下標
             decrease[i].index = i;
             increase[i].index = i;
             liCheck[i].index = i;
-            // 5.減號的點選事件
+        // 5.減號的點選事件
             decrease[i].onclick = function() {
                 // 5-1.判斷件數是否大於0
                 if (piece[this.index].innerHTML <= 1) {
                     this.disabled = true; //當件數小於等於0時, 將減號按鈕禁用
                 }
-                // 5-1-1.當前件數-1
+                // 5-2.當前件數-1
                 piece[this.index].innerHTML--;
-                // 5-1-2.計算小計
+                // 5-3.計算小計
                 smallPrice[this.index].value = Number(smallPrice[this.index].value) - Number(price[this.index].innerHTML);
-                // 6-4.如果當前條目是被選中狀態, 則需要將該商品計入總計和總價
+                // 5-4.如果當前條目是被選中狀態, 則需要將該商品計入總計和總價
                 if (liCheck[this.index].checked) { //選中
                     totalCount.innerHTML--;
                     totalPrice.innerHTML = Number(totalPrice.innerHTML) - Number(price[this.index].innerHTML);
@@ -213,13 +218,28 @@
 
         //9. sessionStorage拿折扣碼
         // document.getElementsByClassName('input_coupon')[0].value = sessionStorage.getItem('DISCOUNTCODE');
-        document.getElementsByClassName('input_coupon')[0].value = 123;
-        let sessionCode = document.getElementsByClassName('input_coupon')[0].value = 123;
-        if (sessionCode == "") {
-            return
-        } else {
-            //-100的環節
-        }
+        document.getElementsByClassName('input_coupon')[0].value = "123";
+        let sessionCode = document.getElementsByClassName('input_coupon')[0].value = "123";
+
+
+        applyCoupon.addEventListener("click", function(){
+            if (sessionCode == "") { //無折扣碼
+                return
+            } else { //有折扣碼
+                totalPrice.innerHTML = Number(totalPrice.innerHTML) - Number(discount); //show在畫面上的
+                $('.applyCoupon').css('display', 'none');
+                couponUse.innerHTML = "Coupon used!";
+            }
+
+        });
+        let checkoutButton = document.getElementsByClassName('btn_checkout')[0];
+        checkoutButton.addEventListener('click', function(){
+        sessionStorage.setItem('checkoutTotal', Number(totalPrice.innerHTML)); //總價錢
+            
+            
+        });
+
+
     }
     </script>
 
