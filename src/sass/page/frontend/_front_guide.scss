@@ -19,6 +19,9 @@ main.guide {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                h4{
+                    line-height: 1.2em;
+                }
             }
 
             div.right {
@@ -65,12 +68,14 @@ main.guide {
 
             div.content {
                 h2 {
+                    font-size: 2.25rem;
                     font-family: $FontFamily;
                     color: $AccentColor3;
                     text-align: center;
                 }
 
                 h3 {
+                    font-size: 1.875rem;
                     font-family: $FontFamily;
                     color: $HFBGColor;
                     text-align: center;
@@ -138,22 +143,22 @@ main.guide {
     main.guide div.openContainer {
 
         article.open {
-            height: 650px;
+            height: 700px;
 
             section.left {
                 width: 100%;
-                height: 100%;
+                height: 80%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 text-align: center;
 
                 h4 {
-                    margin: 30px;
+                    margin: 10px;
                 }
 
                 h6 {
-                    margin: 30px;
+                    margin: 10px;
                 }
             }
 
@@ -165,13 +170,23 @@ main.guide {
     
     // ------展覽資訊rwd------
     main.guide article.ticket {
+        align-items: baseline;
         section.ticket {
             margin-right: 0px;
+            margin-top: 100px;
             div.content {
-                width: 300px;
+                width: 100%;
                 background-color: #f4f4f49f;
                 margin: 0 auto 30px auto;
-
+                h2{
+                    font-size: 1.875rem;
+                }
+                h3 {
+                    font-size: 1.25rem;
+                    font-family: $FontFamily;
+                    color: $HFBGColor;
+                    text-align: center;
+                    }
             }
             .buyTicket{
                 margin: 0 auto;
