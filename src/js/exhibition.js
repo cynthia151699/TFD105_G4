@@ -92,7 +92,7 @@ new Vue({
 
 
 new Vue({
-    el: '#app',
+    el: '#app_fullpage',
     data() {
         return {
             EXHIBITIONS: {},
