@@ -133,7 +133,7 @@
                                         <h6>Without Using Coupon</h6>
                                     </div>
 
-                                    <p style="text-align: right;">
+                                    <p style="text-align: right;" id="sum">
                                         Total:$
                                         <span id="totalPrice">0</span>
                                     </p>
@@ -269,6 +269,11 @@
            
         </main>
     </div>
+
+    <script>
+        //session抓到的價錢，丟進渲染
+        document.getElementById('totalPrice').innerText = sessionStorage.getItem('checkoutTotal');
+    </script>
 </body>
 
 </html>
