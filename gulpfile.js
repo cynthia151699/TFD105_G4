@@ -18,7 +18,7 @@ exports.p = package;
 
 // 搬 php檔案
 function move() {
-    return src(["src/php/*.php", "src/php/**/*.*"]).pipe(dest("dist/php"));
+    return src(["src/php/*.php", "src/php/**/*.php"]).pipe(dest("dist/php"));
 }
 
 exports.m = move;
@@ -191,4 +191,7 @@ exports.default = series(
 );
 
 // online
-exports.online = series(clear, parallel(includeHTML ,sassstyle , babel5 , min_images))
+exports.online = series(
+    clear,
+    parallel(includeHTML, sassstyle, babel5, min_images, move)
+);
