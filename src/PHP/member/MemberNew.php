@@ -1,6 +1,6 @@
 <?php
 
-  include("./Connection.php");
+  include("../Connection.php");
 
   //---------------------------------------------------
    $member = json_decode(file_get_contents("php://input"), true);
@@ -21,6 +21,6 @@
 
   session_start();
   $_SESSION["memberID"] = "$mail";
-  header("Location:../front_member_info.html");
+  header("Location:../../front_member_info.html");
 
 ?>
