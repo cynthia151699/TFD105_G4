@@ -444,29 +444,31 @@
 
     <!-- 手機版 -->
     <article class="phone" style="display: none">
+        <form method="post" action="./PHP/member/Memberlogin.php">
         <h2 class="ptSpace30">Welcome back,</h2>
         <div class="info ptSpace20">
             <label>
                 <span class="in">Email</span>
-                <input type="email" />
+                <input type="email" name="mail"/>
             </label>
 
             <label>
                 <span class="in">Password</span>
-                <input type="password" />
+                <input type="password" name="PASSWORD"/>
             </label>
         </div>
 
         <p class="forgot-pass mtSpace50">Forgot password?</p>
 
         <a href="./front_login.html">
-            <button type="button" class="member submit">
+            <button type="submit" class="member submit">
                 Sign In
             </button>
         </a>
         <button type="button" class="member fb-btn">
             Connect with <span>facebook</span>
         </button>
+        </form>
 
         <section class="phoneBottom">
             <div class="left">
@@ -516,7 +518,7 @@
         </div>
 
         <a href="./front_member_info.html">
-            <button type="button" class="member submit">
+            <button type="submit" class="member submit">
                 Sign In
             </button>
         </a>
