@@ -52,6 +52,19 @@ const swiper = new Swiper('.mySwiper', {
                     disappear[i].style = "display:none"; //成功後上下swiper套件要消失
                 }
                 appear.style = "display:flex"; //成功後祝賀層要出來
+
+                // 隨機抓後台折扣碼至前台
+                fetch('./../php/discount/discount_game_show.php')
+                    .then(res => res.json())
+                    .then(res => {
+                        // console.log(res);
+                        let backCode = res[(Math.floor(Math.random() * (res.length)))].CODE
+                        let codeValue = document.getElementById("DISCOUNT_CODE"); //找到要丟進的地方
+                        codeValue.innerText = backCode; //寫入後台折扣碼資料
+                        // sessionStorage
+                        sessionStorage.setItem('DISCOUNTCODE', backCode);
+                        // sessionStorage.getItem('DISCOUNTCODE');
+                    });
             }
         }
     }
