@@ -291,3 +291,16 @@ main.exhibition {
     }
 }
 
+
+main.exhibition article.right3 {
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (min-width: 991.98px){
+        div#app {
+            display: none;
+        }
+    }
+}
+
+

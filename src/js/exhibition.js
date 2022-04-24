@@ -16,11 +16,6 @@ $(document).ready(function() {
     });
 });
 
-var myFullpage = new fullpage('#fullpage', {
-    sectionsColor: ['#293241', '#293241'],
-    lazyLoad: true
-});
-
 
 // <!-- Initialize Swiper -->
 const swiper = new Swiper('.swiper', {
@@ -53,17 +48,83 @@ const swiper = new Swiper('.swiper', {
     }
 });
 
-$(function(){
-    $(".ms-section").find("li").click(function(){
-        //console.log(this);
-        $(this).addClass("on");
-        $(this).siblings().removeClass("on");
 
-        let tabs_itemAll = $(this).index();
-        console.log(tabs_itemAll);
-        $(".tab_item").eq(tabs_itemAll).show();
-        $(".tab_item").eq(tabs_itemAll).siblings().hide();
-    });
+
+new Vue({
+    el: '#exhibition_wrapper',
+    data() {
+        return {
+            EXHIBITIONS: {},
+        }
+    },
+    methods: {
+
+        exContent() {
+            $(".ms-section").find("li").click(function () {
+                //console.log(this);
+                $(this).addClass("on");
+                $(this).siblings().removeClass("on");
+
+                let tabs_itemAll = $(this).index() + 1;
+                //console.log(tabs_itemAll);
+                $(".tab_item").eq(tabs_itemAll).show();
+                $(".tab_item").eq(tabs_itemAll).siblings().hide();
+            });
+        }
+    },
+    created() {
+        fetch("./../php/34/Select_front_Exhibition.php")
+
+            .then(res =>
+                res.json()
+            )
+            .then(body => {
+                this.EXHIBITIONS = {
+                    '1': body.filter(e => e.EXHIBITION_STYLE_ID === '1'),
+                    '2': body.filter(e => e.EXHIBITION_STYLE_ID === '2'),
+                    '3': body.filter(e => e.EXHIBITION_STYLE_ID === '3')
+                };
+                
+            })
+    },
+
+});
+
+
+new Vue({
+    el: '#app',
+    data() {
+        return {
+            EXHIBITIONS: {},
+            options: {
+                afterLoad: this.afterLoad,
+                navigation: false,
+                anchors: ['page1', 'page2', 'page3'],
+                sectionsColor: ['#293241', '#293241', '#293241']
+            },
+        }
+    },
+    methods: {
+        afterLoad: function () {
+        //console.log('After load')
+        },     
+    },
+    created() {
+        fetch("./../php/34/Select_front_Exhibition.php")
+
+            .then(res =>
+                res.json()
+            )
+            .then(body => {
+                this.EXHIBITIONS = {
+                    '1': body.filter(e => e.EXHIBITION_STYLE_ID === '1'),
+                    '2': body.filter(e => e.EXHIBITION_STYLE_ID === '2'),
+                    '3': body.filter(e => e.EXHIBITION_STYLE_ID === '3')
+                };
+                
+            })
+    },
+
 });
 
 
