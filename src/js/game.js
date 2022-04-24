@@ -1,19 +1,18 @@
 "use strict";
 
 // 一開始進來自動亂數
-// window.onload = function () {
-//     for (let i = 0; i < swiper.length; i++) {
-//         swiper[i].slideTo(Math.floor(Math.random() * 10));
-//     }
-// };
+window.onload = function () {
+    for (let i = 0; i < swiper.length; i++) {
+        swiper[i].slideTo(Math.floor(Math.random() * 10));
+    }
+};
 
 //rotation亂數
 let rotation = document.getElementsByClassName('rotate')[0];
 rotation.addEventListener("click", function (e) {
     // e.preventDefault();
     for (let i = 0; i < swiper.length; i++) {
-        // swiper[i].slideTo(Math.floor(Math.random() * 10));
-        swiper[i].slideTo(Math.floor(Math.random() * (max - min)) + min);
+        swiper[i].slideTo(Math.floor(Math.random() * 10));
     }
 });
 
@@ -30,36 +29,43 @@ const swiper = new Swiper('.mySwiper', {
             // console.log('swiper initialized');
         },
         slideChangeTransitionEnd: function (e) { // 圖片改變完後執行下面function
-            let slides = e.slides; // 取得所有的圖片
-            for (let i in slides) { //看圖片資訊
-                if ("swiper-slide game swiper-slide-active" == slides[i].className) { //當圖片為當前圖片時
-                    let elementId = slides[i].id; //取得圖片id
-                    if (elementId.includes("_")) { // id裡面有_ 表示是下邊圖片
-                        lowerImgId = elementId; //紀錄下面圖片
-                    } else { // upper images
-                        upperImgId = elementId; //紀錄上面圖片
-                    }
-                    let disappear = document.querySelectorAll(".swiper"); //獲獎後消失圖層
-                    let appear = document.getElementsByClassName("congrats")[0]; //獲獎後應出現圖層
-                    if (upperImgId != "" && lowerImgId != "" && lowerImgId.includes(upperImgId)) { //符合需求
-                        console.log(upperImgId, lowerImgId, lowerImgId.includes(upperImgId));
-                        alert("congrats!");
-                        // Swal.fire({
-                        //     title: 'Congrats!',
-                        //     icon: 'success',
-                        //     background: '#161829',
-                        //     confirmButtonColor: '#F29966',
-                        //     confirmButtonText: 'OK!',
-                        //     timer: '2000',
-                        // });
-                        for (let i = 0; i < disappear.length; i++) {
-                            disappear[i].style = "display:none";
-                        }
-                        appear.style = "display:flex";
-                    }
+            const active = document.querySelectorAll('.swiper-slide-active'); //當前畫面作用的class
+            upperImgId = active[0]?.id; //接上面的圖id，?如果是空值，往後就不執行
+            lowerImgId = active[1]?.id; //接下面的圖id
+            if (lowerImgId?.startsWith(upperImgId)) { //如果下面的id有對應到上面的id
+                setTimeout(() => {
+                    success();
+                }, 300);
+            };
+            function success() {
+                Swal.fire({ //sweetAlert2彈窗套件
+                    title: 'Congrats!',
+                    icon: 'success',
+                    background: '#161829',
+                    confirmButtonColor: '#F29966',
+                    confirmButtonText: 'OK!',
+                    timer: '5000',
+                });
+                let disappear = document.querySelectorAll(".swiper");
+                let appear = document.getElementsByClassName("congrats")[0];
+                for (let i = 0; i < disappear.length; i++) {
+                    disappear[i].style = "display:none"; //成功後上下swiper套件要消失
                 }
+                appear.style = "display:flex"; //成功後祝賀層要出來
+
+                // 隨機抓後台折扣碼至前台
+                fetch('./../php/discount/discount_game_show.php')
+                    .then(res => res.json())
+                    .then(res => {
+                        // console.log(res);
+                        let backCode = res[(Math.floor(Math.random() * (res.length)))].CODE
+                        let codeValue = document.getElementById("DISCOUNT_CODE"); //找到要丟進的地方
+                        codeValue.innerText = backCode; //寫入後台折扣碼資料
+                        // sessionStorage
+                        sessionStorage.setItem('DISCOUNTCODE', backCode);
+                        // sessionStorage.getItem('DISCOUNTCODE');
+                    });
             }
         }
-    },
-
+    }
 });
