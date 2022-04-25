@@ -38,13 +38,13 @@ new Vue({
     };
   },
   methods: {
-  //   fetchOrder(){
-  //     axios.post('Connection.php', {
-  //       action:'fetchall'
-  //     }).then(function(response){
-  //       application.ORDERS = response.data;
-  //     });
-  //   },
+    //   fetchOrder(){
+    //     axios.post('Connection.php', {
+    //       action:'fetchall'
+    //     }).then(function(response){
+    //       application.ORDERS = response.data;
+    //     });
+    //   },
 
     order_cancel() {
       order("<strong>已取消</strong>", "success", "");
@@ -53,7 +53,7 @@ new Vue({
 
     search_Order() {
       if (this.search != "") {
-        fetch("search.php", {
+        fetch("./php/order/SearchOrder.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -64,8 +64,8 @@ new Vue({
         })
           .then((res) => res.json())
           .then((res) => {
-            //console.log(res);
-            this.PAYMENT = res;
+            // console.log(res);
+            this.ORDERS = res;
           })
 
           .catch((reason) => order("<strong>查無這筆資料</strong>", "warning"));
@@ -79,7 +79,7 @@ new Vue({
     order_update(ID) {
       //alert(ID);
       if (this.EDIT.PAY_STATUS != "" && this.EDIT.ORDER_STATUS != "") {
-        fetch("update.php", {
+        fetch("./php/order/UpdateOrder.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -121,7 +121,7 @@ new Vue({
       $(".-edit").css("display", "block");
       $(".-add").css("display", "none");
 
-      fetch("editid.php", {
+      fetch("./php/order/EditOrderID.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -148,7 +148,7 @@ new Vue({
 
   // 將php抓到的資料經由vue渲染到網頁上（轉成json格式才能讀取）
   created() {
-    fetch("getall.php")
+    fetch("./php/order/SelectAllOrder.php")
       .then((res) => res.json())
       .then((res) => {
         //console.log(res);
