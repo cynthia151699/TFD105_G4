@@ -48,8 +48,11 @@ const swiper = new Swiper('.mySwiper', {
                 });
                 let disappear = document.querySelectorAll(".swiper");
                 let appear = document.getElementsByClassName("congrats")[0];
+                let link = document.getElementsByClassName("link")[0];
                 for (let i = 0; i < disappear.length; i++) {
                     disappear[i].style = "display:none"; //成功後上下swiper套件要消失
+                    rotation.style = "display:none"; //成功後rotation按鈕消失
+                    link.style = "display:none"; //成功後link按鈕消失
                 }
                 appear.style = "display:flex"; //成功後祝賀層要出來
 
