@@ -16,8 +16,6 @@
 
   $statement = $link->prepare($sql);
   $statement -> execute();
-  $data = $statement->fetchAll(); 
-
 
   session_start();
   $_SESSION["memberID"] = "$mail";
