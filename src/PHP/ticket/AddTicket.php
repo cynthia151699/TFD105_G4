@@ -6,7 +6,7 @@ $ticket = json_decode(file_get_contents("php://input"), true);
 // echo json_encode($member);
 
 //建立SQL
-$sql = "insert into G4.TICKET(TICKET_NAME,TICKET_TYPE,TICKET_PRICE,TICKET_STATUS,TICKET_DATE,TICKET_CREATE)
+$sql = "insert into TICKET(TICKET_NAME,TICKET_TYPE,TICKET_PRICE,TICKET_STATUS,TICKET_DATE,TICKET_CREATE)
 values (:TICKET_NAME,:TICKET_TYPE,:TICKET_PRICE,:TICKET_STATUS,:TICKET_DATE,NOW());";
 
   // 包裝起來才可以使PHP 用bindValue
