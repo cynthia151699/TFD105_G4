@@ -3,6 +3,7 @@ new Vue({
     data() {
         return {
             image: '',
+            EXHIBITION_STYLE_ID: '',
             EXHIBITION_STYLE: '',
             EVENT_NAME: '',
             EXHIBITION_DATE: '',
@@ -12,6 +13,7 @@ new Vue({
             search: '',
             EDIT:{
                 ID: '',
+                EXHIBITION_STYLE_ID: '',
                 EXHIBITION_STYLE: '',
                 EVENT_NAME: '',
                 EXHIBITION_DATE: '',
@@ -33,6 +35,7 @@ new Vue({
                     },
                     mode: "cors",
                     body: JSON.stringify({
+                        EXHIBITION_STYLE_ID: this.EXHIBITION_STYLE_ID,
                         EXHIBITION_STYLE: this.EXHIBITION_STYLE,
                         EVENT_NAME: this.EVENT_NAME,
                         EXHIBITION_DATE: this.EXHIBITION_DATE,
@@ -56,6 +59,7 @@ new Vue({
             event("<strong>已取消</strong>", "success", "");
             $('.popUp').css("display", "none");
 
+            this.EXHIBITION_STYLE_ID = '',
             this.EXHIBITION_STYLE = '',
             this.EVENT_NAME = '',
             this.EXHIBITION_DATE = '',
@@ -101,6 +105,7 @@ new Vue({
                     mode: "cors",
                     body: JSON.stringify({
                         UP_ID: this.EDIT.ID,
+                        UP_EXHIBITION_STYLE_ID: this.EDIT.EXHIBITION_STYLE_ID,
                         UP_EXHIBITION_STYLE: this.EDIT.EXHIBITION_STYLE,
                         UP_EVENT_NAME: this.EDIT.EVENT_NAME,
                         UP_EXHIBITION_DATE: this.EDIT.EXHIBITION_DATE,
@@ -175,6 +180,7 @@ new Vue({
             )
             .then(res => {
                 this.EDIT.ID = res[0]['ID']
+                this.EDIT.EXHIBITION_STYLE_ID = res[0]['EXHIBITION_STYLE_ID']
                 this.EDIT.EXHIBITION_STYLE = res[0]['EXHIBITION_STYLE']
                 this.EDIT.EVENT_NAME = res[0]['EVENT_NAME']
                 this.EDIT.EXHIBITION_DATE = res[0]['EXHIBITION_DATE']
