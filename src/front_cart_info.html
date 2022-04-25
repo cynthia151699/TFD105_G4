@@ -26,23 +26,25 @@
 
                         <form>
                             <label class="s-check_box">
-                                <input class="check_box" type="checkbox" id="info"/>&nbsp;&nbsp;Same as member info
+                                <input class="check_box" type="checkbox" id="info" />&nbsp;&nbsp;Same as member info
                             </label>
 
                             <div class="order_info_text">
                                 <h6>Name:</h6>
-                                <input class="input_type" type="text" name="input_name" placeholder="  Name" id="Name" required>
-                            </div>
-
-                            <div class="order_info_text">
-                                <h6>Phone:</h6>
-                                <input class="input_type" type="text" name="input_phone:" placeholder="  Phone Number" id="Phone"
+                                <input class="input_type" type="text" name="input_name" placeholder="  Name" id="Name"
                                     required>
                             </div>
 
                             <div class="order_info_text">
+                                <h6>Phone:</h6>
+                                <input class="input_type" type="text" name="input_phone:" placeholder="  Phone Number"
+                                    id="Phone" required>
+                            </div>
+
+                            <div class="order_info_text">
                                 <h6>Email:</h6>
-                                <input class="input_type" type="text" name="input_email" placeholder="  Email" id="Email" required>
+                                <input class="input_type" type="text" name="input_email" placeholder="  Email"
+                                    id="Email" required>
                             </div>
 
                             <p>Ticket Collection: By (QR code)</p>
@@ -54,96 +56,102 @@
 
                         <h5>Your Order:</h5>
 
+                        <div class="list_box">
+
                             <div class="list_box">
 
-                                <div class="list_box">
+                                <table class="list_table">
+                                    <!-- 項目 -->
+                                    <tr class="table_title" style="color:#fff;">
+                                        <td>Tickets</td>
+                                        <td style="width: 230px;">Validity Period</td>
+                                        <td>Price</td>
+                                        <td>QTY</td>
+                                        <td>Total</td>
+                                    </tr>
 
-                                    <table class="list_table">
-                                        <!-- 項目 -->
-                                        <tr class="table_title" style="color:#fff;">
-                                            <td>Tickets</td>
-                                            <td style="width: 230px;">Validity Period</td>
-                                            <td>Price</td>
-                                            <td>QTY</td>
-                                            <td>Total</td>
-                                        </tr>
-        
-                                        <!-- 第一種票券 -->
-                                        <tr class="first_order" style="color:#fff; line-height: 5;">
-                                            <td class="roll_ticket">Rollover Ticket</td>
-                                            <td style="width: 230px;">FEB 5 - MAY 5, 2022</td>
-                                            <td colspan="3">
-                                                <div class="price_1" style="display: inline;">
-                                                <input type="checkbox" name="liCheck" id="" value="" checked style="display: none;">
+                                    <!-- 第一種票券 -->
+                                    <tr class="first_order" style="color:#fff; line-height: 5;">
+                                        <td class="roll_ticket">Rollover Ticket</td>
+                                        <td style="width: 230px;">FEB 5 - MAY 5, 2022</td>
+                                        <td colspan="3">
+                                            <div class="price_1" style="display: inline;">
+                                                <input type="checkbox" name="liCheck" id="" value="" checked
+                                                    style="display: none;">
                                                 <p style="display: inline-block;">
                                                     $<span class="price" style="margin-right:50px;">400</span>
                                                 </p>
-                                                <button type="button" class="decrease" disabled="disabled" style="display: none;"  >-</button>
+                                                <button type="button" class="decrease" disabled="disabled"
+                                                    style="display: none;">-</button>
                                                 <p style="display: inline-block; margin: 10px;">
                                                     <span class="piece_info" style="margin-right:50px;">0</span>
                                                 </p>
                                                 <button type="button" class="increase" style="display: none;">+</button>
-        
+
                                                 <p style="display: inline-block; margin-left:30px;">
-                                                    $<input class="smallPrice" type="text" name="" id="" value="0" disabled="disabled" >
+                                                    $<input class="smallPrice" type="text" name="" id="" value="0"
+                                                        disabled="disabled">
                                                 </p>
-                                                </div>
-        
-                                            </td>
-                                        </tr>
-        
-                                        <!-- 第二種票券 -->
-                                        <tr class="second_order" style="color:#fff; line-height: 5;" >
-                                            <td class="adv_ticket">Advance Ticket</td>
-                                            <td style="width: 230px;">MAY 15 - AUG 15, 2022</td>
-                                            <td colspan="3">
-                                                <div class="price_2" style="display: inline;">
-                                                    <input type="checkbox" name="liCheck" id="" value="" checked style="display: none;">
-                                                    <p style="display: inline-block;">
-                                                        $<span class="price" style="margin-right:50px;">450</span>
-                                                    </p>
-                                                    <button type="button" class="decrease" disabled="disabled" style="display: none;">-</button>
-                                                    <p style="display: inline-block; margin: 10px;">
-                                                        <span class="piece_info" style="margin-right:50px;">0</span>
-                                                    </p>
-                                                    <button type="button" class="increase" style="display: none;">+</button>
-            
-                                                    <p style="display: inline-block; margin-left:30px;">
-                                                        $<input class="smallPrice" type="text" name="" id="" value="0" disabled="disabled" >
-                                                    </p>
-                                                    </div>
-                                                    
-                                            </td>
-                                        </tr>
-                                    </table>
-                          <!-- 結算欄位-->
-                          <div class="order_amount">
-                            <!-- 結算 -->
-                            <div class="sum_info">
-                                <!-- <label>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                    <!-- 第二種票券 -->
+                                    <tr class="second_order" style="color:#fff; line-height: 5;">
+                                        <td class="adv_ticket">Advance Ticket</td>
+                                        <td style="width: 230px;">MAY 15 - AUG 15, 2022</td>
+                                        <td colspan="3">
+                                            <div class="price_2" style="display: inline;">
+                                                <input type="checkbox" name="liCheck" id="" value="" checked
+                                                    style="display: none;">
+                                                <p style="display: inline-block;">
+                                                    $<span class="price" style="margin-right:50px;">450</span>
+                                                </p>
+                                                <button type="button" class="decrease" disabled="disabled"
+                                                    style="display: none;">-</button>
+                                                <p style="display: inline-block; margin: 10px;">
+                                                    <span class="piece_info" style="margin-right:50px;">0</span>
+                                                </p>
+                                                <button type="button" class="increase" style="display: none;">+</button>
+
+                                                <p style="display: inline-block; margin-left:30px;">
+                                                    $<input class="smallPrice" type="text" name="" id="" value="0"
+                                                        disabled="disabled">
+                                                </p>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- 結算欄位-->
+                                <div class="order_amount">
+                                    <!-- 結算 -->
+                                    <div class="sum_info">
+                                        <!-- <label>
                                 <input type="checkbox" name="" id="checkAll" value="" checked style="display: none;">
                                 </label> -->
-                                    <p style="text-align: right;">
-                                        Amount:
-                                        <span id="totalCount">0</span>
-                                    </p>
+                                        <p style="text-align: right;">
+                                            Amount:
+                                            <span id="totalCount">0</span>
+                                        </p>
 
-                                    <div class="c_discount">
-                                        <h6>Discount:</h6>
-                                        <h6>Without Using Coupon</h6>
+                                        <div class="c_discount">
+                                            <h6>Discount:</h6>
+                                            <h6 id="couponUse">NONE</h6>
+                                        </div>
+
+                                        <p style="text-align: right;" id="sum">
+                                            Total:$
+                                            <span id="totalPrice">0</span>
+                                        </p>
                                     </div>
 
-                                    <p style="text-align: right;" id="sum">
-                                        Total:$
-                                        <span id="totalPrice">0</span>
-                                    </p>
-                                </div>
-   
-    
 
+
+                                </div>
+                            </div>
                         </div>
-                    </div> 
-                </div> 
                         <br>
 
                         <!-- part3 -->
@@ -164,8 +172,7 @@
                             <input class="input_type" placeholder="Name on the card">
 
                             <h6>Card Numbers:</h6>
-                            <input class="input_type"
-                                placeholder="Example:1234-5678-8907-5674">
+                            <input class="input_type" placeholder="Example:1234-5678-8907-5674">
                             <h6>Expiration Date:</h6>
 
                             <select>
@@ -198,8 +205,7 @@
 
                             <h6>CVC Code:</h6>
 
-                            <input class="input_type"
-                                placeholder="Example:123">
+                            <input class="input_type" placeholder="Example:123">
                             <h6>Invioce Numbers:</h6>
 
                             <select>
@@ -218,30 +224,38 @@
                                     Cautions:
                                     <br>
                                     <br>
-                                    If you purchase according to the system program and complete all the programs, the
-                                    ordering behavior is regarded as the transaction is completed, and the system has
-                                    fulfilled the relevant notification obligations. and other factors), and claim to
+                                    If you purchase according to the system program and complete all the programs,
+                                    the
+                                    ordering behavior is regarded as the transaction is completed, and the system
+                                    has
+                                    fulfilled the relevant notification obligations. and other factors), and claim
+                                    to
                                     stop payment or refuse payment, this system will not accept.
                                     <br>
                                     <br>
                                     Taxable/tax-exempt invoices shall be issued for exhibition tickets in accordance
                                     with the law.
-                                    Tickets are regarded as securities, if lost, damaged or unrecognizable, they will
+                                    Tickets are regarded as securities, if lost, damaged or unrecognizable, they
+                                    will
                                     not be reissued, please keep them properly.
-                                    After checkout, please check your order in the member area to confirm whether the
+                                    After checkout, please check your order in the member area to confirm whether
+                                    the
                                     order is successful, so as to avoid repeated ticket purchases.
                                     <br>
                                     <br>
                                     In order to ensure the safety of online transactions, you agree that the company
                                     shall inform the issuing bank, the acquirer and the cardholder whether the
-                                    transaction information is true, and remind you that if you fraudulently use another
+                                    transaction information is true, and remind you that if you fraudulently use
+                                    another
                                     person's credit card or other personal information for the transaction, the If
                                     found, they must be brought to justice.
                                     <br>
                                     <br>
-                                    It is strictly prohibited to resell tickets at a higher price for profit in any form
+                                    It is strictly prohibited to resell tickets at a higher price for profit in any
+                                    form
                                     not for personal use. Those who are verified to be true may be reported to the
-                                    police in accordance with Article 64, paragraph 2, of the Social Order Maintenance
+                                    police in accordance with Article 64, paragraph 2, of the Social Order
+                                    Maintenance
                                     Act.
                                     If you need a refund, please contact the website administrator by email within 7
                                     days after purchasing the ticket.
@@ -249,41 +263,58 @@
                             </div>
 
                             <label class="s-check_box">
-                                <input class="check_box" type="checkbox" value="second_checkbox" />&nbsp;&nbsp; I agree
+                                <input class="check_box" type="checkbox" value="second_checkbox" />&nbsp;&nbsp; I
+                                agree
                                 to the terms of service and return policy on Anno Museum.
                             </label>
 
                             <section class="cartButton mtSpace20">
-
                                 <div class="btn_group_info">
-                                    <input class="btn_previous" type="submit" value="Previous" onclick="location.href='./front_cart_order.html'">
-                                    <input class="btn_done" type="submit" value="Next"
-                                        onclick="location.href='./front_cart_done.html'">
+                                    <form method="get" action="./orderSend.php">
+                                        <input type="text" id="orderSend" name="orderSend" value=""
+                                            style="display:none;">
+
+                                        <input class="btn_previous" type="submit" value="Previous"
+                                            onclick="location.href='./front_cart_order.html'">
+                                        <!-- 送出鈕 -->
+                                        <input class="btn_done" type="submit" value="Next">
+                                        <!-- onclick="location.href='./front_cart_done.html'"> -->
+                                    </form>
                                 </div>
                             </section>
 
-                            
+
                         </div>
                     </div>
-            </div>
-           
+                    </form>
+
+                </div>
+
         </main>
     </div>
 
     <script>
         //session抓到的價錢，丟進渲染
-        document.getElementById('totalPrice').innerText = sessionStorage.getItem('checkoutTotal');
+        document.getElementsByClassName('piece_info')[0].innerHTML = sessionStorage.getItem('piece1'); //1.數量1從sessionStorage抓
+        document.getElementsByClassName('piece_info')[1].innerHTML = sessionStorage.getItem('piece2'); //2.數量2從sessionStorage抓
+        document.getElementsByClassName('smallPrice')[0].value = sessionStorage.getItem('smallPrice1'); //3.小計1從sessionStorage抓
+        document.getElementsByClassName('smallPrice')[1].value = sessionStorage.getItem('smallPrice2'); //4.小計2從sessionStorage抓
+        document.getElementById('totalCount').innerHTML = sessionStorage.getItem('totalCount'); //5.總數從sessionStorage抓
+        document.getElementById('totalPrice').innerHTML = sessionStorage.getItem('totalPrice'); //6.總價從sessionStorage抓
+        document.getElementById('couponUse').innerHTML = sessionStorage.getItem('couponUse'); //7.coupon使用狀態從sessionStorage抓
+        //點擊送出按鈕會轉址
+        document.getElementById('orderSend').value = sessionStorage.getItem('totalPrice');
     </script>
-    <script>    
+    <script>
         document.getElementById('info')
             .addEventListener('click', function (event) {
                 event.preventDefault();
                 $.ajax({
-                    type:'POST',
-                    url:'./PHP/Memberticket.php',
-                    dataType:'json',
+                    type: 'POST',
+                    url: './PHP/Memberticket.php',
+                    dataType: 'json',
                     async: false,
-                    success:function(data){ 
+                    success: function (data) {
                         let Namevalue = data[0].NAME;
                         let Namecode = document.getElementById("Name");
                         Namecode.value = Namevalue;
@@ -295,10 +326,10 @@
                         emailcode.value = emailvalue;
                     }
                 })
-        
+
             });
-        
-        </script>
+
+    </script>
 </body>
 
 </html>

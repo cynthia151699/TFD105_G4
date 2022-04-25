@@ -60,6 +60,9 @@ main.member {
 
     article.phone {
         display: none;
+        h2{
+            font-size: 2.25rem;
+        }
     }
 
     @mixin PopUp {
@@ -192,6 +195,7 @@ main.member {
             text-align: left;
             text-transform: uppercase;
             box-sizing: border-box;
+            font-size: 1rem;
         }
 
         span.in {
@@ -520,11 +524,74 @@ main.memberInfo {
         }
     }
 }
-
-@media screen and (max-width: 797.98px) {
+@media screen and (max-width: 575.98px){
     main.member {
         div.cont {
             display: none;
+        }
+        label{
+            text-align: left;
+            padding: 0px;
+            padding-left: 20px;
+            span{
+                font-size: 0.875rem;
+            }
+        }
+        input{
+            width:250px;
+        }
+        div.info{
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        article.phone {
+            display: block;
+            width: 80%; 
+            height: 490px; 
+            background-color: white; 
+
+            @include HorizontalAlignCenter();
+            h2{
+                font-size: 1.125rem;
+            }
+            h2,p,span{
+                color: black;
+            }
+
+            section.phoneBottom{
+                height: 70px;
+
+                background-color: #768cb6;
+
+                display: flex;
+
+                div.left{
+                    width: 100%;
+                }
+
+                div.right{
+                    display:none;
+
+                    p{
+                        width: 80%;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    main.member {
+        div.cont {
+            display: none;
+        }
+        label{
+            text-align: center;
+            span{
+                width:350px;
+            }
         }
 
         article.phone {
@@ -534,13 +601,15 @@ main.memberInfo {
             background-color: white; 
 
             @include HorizontalAlignCenter();
-
+            h2{
+                font-size: 1.875rem;
+            }
             h2,p,span{
                 color: black;
             }
 
             section.phoneBottom{
-                height: 175px;
+                height: 120px;
 
                 background-color: #768cb6;
 
@@ -548,6 +617,9 @@ main.memberInfo {
 
                 div.left{
                     width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                 }
 
                 div.right{
@@ -563,4 +635,64 @@ main.memberInfo {
             }
         }
     }
+}
+
+@media screen and (min-width:768px) and (max-width:991.98px) {
+
+    main.member {
+        div.cont {
+            display: none;
+        }
+        label{
+            text-align: center;
+            span{
+                width:250px;
+            }
+        }
+        input{
+            width:300px;
+        }
+
+        article.phone {
+            display: block;
+            width: 80%; 
+            // height: 550px; 
+            background-color: white; 
+
+            @include HorizontalAlignCenter();
+            h2{
+                font-size: 1.875rem;
+            }
+            h2,p,span{
+                color: black;
+            }
+
+            section.phoneBottom{
+                height: 120px;
+
+                background-color: #768cb6;
+
+                display: flex;
+
+                div.left{
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                div.right{
+                    width: 50%;
+
+                    @include VerticalAlignCenter();
+
+                    p{
+                        width: 80%;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+
 }
