@@ -24,6 +24,7 @@ $diffRatio: calc(calc($contW - $imgW) / $contW);
 main.member {
     @include VerticalAlignCenter();
     position: relative;
+    margin-top: 60px;
 
     h2 {
         width: 100%;
@@ -526,7 +527,7 @@ main.memberInfo {
 }
 @media screen and (max-width: 575.98px){
     main.member {
-
+        margin-top: 0px;
         div.cont {
             display: none;
         }
