@@ -207,13 +207,13 @@ main.home {
 			border-style:outset;
 			position: relative;
 		}
-		h3{
-			text-align: right;
+		h4{
+			// text-align: right;
 			text-shadow: $TextShadow;
 			padding: 5px;
-    		position: absolute;
-    		right: 0;
-    		bottom: 0;
+    		// position: absolute;
+    		// right: 0;
+    		// bottom: 0;
 		}
 
 		.pic1{
@@ -332,15 +332,16 @@ main.home {
 	@media screen and (min-width: 576px) and (max-width: 767.98px) {}
 	@media screen and (max-width: 575.98px) {
 		article.page3 {
-			height: 500px;	
+			// height: 500px;	
 
-			h3{
-				text-align: right;
+			h4{
+				// text-align: right;
 				text-shadow: $TextShadow;
 				padding: 5px;
-				position: absolute;
-				right: 0;
-				bottom: 0;
+				font-size: 16px;
+				// position: absolute;
+				// right: 0;
+				// bottom: 0;
 			}
 		}
 	}
