@@ -163,7 +163,7 @@ new Vue({
 
             //alert(id);
 
-            fetch("./php/34/SelectEventID.php", {
+            fetch("./php/exhibition/SelectEventID.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

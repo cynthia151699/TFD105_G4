@@ -16,10 +16,10 @@
         // 指定PDO錯誤模式和錯誤處理
         $link->setAttribute(PDO::ATTR_ERRMODE, 
             PDO::ERRMODE_EXCEPTION);
-        echo "成功建立MySQL伺服器連接和開啟test資料庫"; 
-        print_r ($link);
+        // echo "成功建立MySQL伺服器連接和開啟test資料庫"; 
+        // print_r ($link);
     } catch (PDOException $e) {
-        echo "連接失敗: " . $e->getMessage();
+        // echo "連接失敗: " . $e->getMessage();
     }
     
      
