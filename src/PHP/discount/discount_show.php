@@ -1,5 +1,5 @@
 <?php
-    include("Connection.php");
+    include("../Connection.php");
     //---------------------------------------------------
 
     $discount = json_decode(file_get_contents("php://input"), true);
