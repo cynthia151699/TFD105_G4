@@ -313,7 +313,7 @@
                     </a>
 
 
-                    <input type="text" placeholder="以展覽名稱查詢" class="mtSpace10" id="check" v-model.trim="search">
+                    <input type="text" placeholder="以展覽名稱查詢" class="mtSpace10" id="check" v-model.trim="search" v-on:keyup.enter="search_Event">
 
                     <button name="keyword" class="mtSpace10 mlSpace20" id="search" @click="search_Event">
                         <h6>查詢</h6>

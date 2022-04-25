@@ -21,7 +21,7 @@ new Vue({
         }
     },
     created() {
-        fetch("./php/34/Select_front_Exhibition.php")
+        fetch("./php/exhibition/Select_front_Exhibition.php")
 
             .then(res =>
                 res.json()
@@ -59,7 +59,7 @@ new Vue({
         },     
     },
     created() {
-        fetch("./php/34/Select_front_Exhibition.php")
+        fetch("./php/exhibition/Select_front_Exhibition.php")
 
         .then(res =>
             res.json()

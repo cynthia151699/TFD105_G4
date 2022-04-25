@@ -10,8 +10,7 @@
                      SET 
                      EXHIBITION_STYLE = :UP_EXHIBITION_STYLE,
                      EVENT_NAME = :UP_EVENT_NAME,
-                     EVENT_BEGIN = :UP_EVENT_BEGIN,
-                     EVENT_END = :UP_EVENT_END,
+                     EVENT_EXHIBITION_DATE= :UP_EXHIBITION_DATE,
                      EXHIBITION_PIC = :UP_EXHIBITION_PIC,
                      EXHIBITION_CONTENT = :UP_EXHIBITION_CONTENT
                      WHERE 
@@ -23,8 +22,7 @@
 
        $statement->bindValue(":UP_EXHIBITION_STYLE", $event["UP_EXHIBITION_STYLE"]);
        $statement->bindValue(":UP_EVENT_NAME", $event["UP_EVENT_NAME"]);
-       $statement->bindValue(":UP_EVENT_BEGIN", $event["UP_EVENT_BEGIN"]);
-       $statement->bindValue(":UP_EVENT_END", $event["UP_EVENT_END"]);
+       $statement->bindValue(":UP_EXHIBITION_DATE", $event["UP_EXHIBITION_DATE"]);
        $statement->bindValue(":UP_EXHIBITION_PIC", $event["UP_EXHIBITION_PIC"]);
        $statement->bindValue(":UP_EXHIBITION_CONTENT", $event["UP_EXHIBITION_CONTENT"]);
        $statement->bindValue(":UP_ID", $event["UP_ID"]);
