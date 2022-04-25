@@ -192,6 +192,20 @@ new Vue({
                     this.NEW.NEWS_STATUS = res[0]['NEWS_STATUS']
                 })
         },
+        showoff() {
+            //     console.log("ddd");
+            if($( ".slideshow" ).hasClass( "slideshow--previewopen" )){
+                $('.slide__title-wrap').css("display", "none");
+            }else{
+                $('.slide__title-wrap').css("display", "block");
+            }
+                
+
+            },
+            showon() {
+                // console.log("ttt");
+                $('.slide__title-wrap').css("display", "block");
+            }
 
     },
     mounted() {
