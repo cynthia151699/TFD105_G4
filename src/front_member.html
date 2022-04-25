@@ -338,7 +338,7 @@
 <main class="member">
     <div class="cont">
         <div class="form sign-in">
-            <form method="post" action="./PHP/member/Memberlogin.php">
+            <form method="post" action="./php/member/Memberlogin.php">
                 <h2 class="ptSpace30">Welcome back,</h2>
 
                 <div class="info ptSpace20">
@@ -390,7 +390,7 @@
             </div>
 
             <div class="form sign-up">
-                <form id="member_form" method="post" action="./PHP/member/MemberNew.php">
+                <form id="member_form" method="post" action="./php/member/MemberNew.php">
                 <h2>Time to feel like home,</h2>
 
                 <div class="info ptSpace10">
@@ -444,7 +444,7 @@
 
     <!-- 手機版 -->
     <article class="phone" style="display: none">
-        <form method="post" action="./PHP/member/Memberlogin.php">
+        <form method="post" action="./php/member/Memberlogin.php">
         <h2 class="ptSpace30">Welcome back,</h2>
         <div class="info ptSpace20">
             <label>
@@ -489,7 +489,7 @@
 
     <article class="phone">
         <h2>Time to feel like home,</h2>
-        <form method="post" action="./PHP/member/MemberNew.php">
+        <form method="post" action="./php/member/MemberNew.php">
         <div class="info ptSpace10">
             <label>
                 <span>Name</span>
@@ -573,7 +573,7 @@
     <!-- 忘記密碼變更彈窗 -->
     <article class="forgetChange">
         <section>
-            <form method="post" action="./PHP/member/Memberforgetemail.php" id="form">
+            <form method="post" action="./php/member/Memberforgetemail.php" id="form">
             <h3>Password Reset</h3>
             <h4 class="mtSpace30 mbSpace30">
                 Please enter the email address that you used to sign
@@ -659,44 +659,54 @@ $('a.forgot-pass').on("click",function(e){
 <script src="./js/member.min.js"></script>
 
 
-<!-- Emailforgetcode -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- Emailforgetcode -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<script type="text/javascript">
-emailjs.init('rB4cW-mtW8WwyODex')
-</script>
-<script>
-const btn = document.getElementById('forgetmail');
-let forgermail = $('#mail');
+  <script type="text/javascript">
+      emailjs.init('rB4cW-mtW8WwyODex')
+  </script>
+  <script>
+      const btn = document.getElementById('forgetmail');                
+      let forgermail = $('#mail');
+      document.getElementById('form')
+          .addEventListener('submit', function (event) {
+              event.preventDefault();
 
-document.getElementById('form')
-    .addEventListener('submit', function (event) {
-        event.preventDefault();
-        $.ajax({
-            type:'POST',
-            url:'./PHP/member/Memberforgetemail.php',
-            dataType:'json',
-            async: false,
-            data:{
-                mail: forgermail.val(),
-            },
-            success:function(data){ 
-                let passwordvalue = data[0].PASSWORD;
-                let PASSWORDcode = document.getElementById("PASSWORD");
-                PASSWORDcode.value = passwordvalue;
-            }
-        })
-        const serviceID = 'default_service';
-        const templateID = 'template_1idmmrm';
-        emailjs.sendForm(serviceID, templateID, this)
-            .then((event) => {
-                alert('The password has already sent into your email address, please check it.');
-                window.location.href = 'front_member.html';
-            }, (err) => {
-                alert("信箱錯誤");
-            });
-    });
-</script>
+              if ($(forgermail).val() != '') {
+                  var that = this;
+                  $.ajax({
+                      type: 'POST',
+                      url: './php/member/Memberforgetemail.php',
+                      dataType: 'json',
+                      async: false,
+                      data: {
+                          mail: forgermail.val(),
+                      },
+                      success: function (data) {
+                          let passwordvalue = data[0].PASSWORD;
+                          let PASSWORDcode = document.getElementById("PASSWORD");
+                          PASSWORDcode.value = passwordvalue;  
+                          const serviceID = 'default_service';
+                          const templateID = 'template_1idmmrm';
+                          emailjs.sendForm(serviceID, templateID, that)
+                              .then((event) => {
+                                  alert(
+                                      'The password has already sent into your email address, please check it.'
+                                  );
+                                  window.location.href = 'front_member.html';
+                              },
+                              );
+                      }
+                  })
+              } else{
+                  alert("請輸入信箱");
+              }            
+              let PASSWORD =  document.getElementById("PASSWORD");
+              if( $(forgermail).val() != '' && PASSWORD.value == '' ){ 
+              alert("查無此信箱")
+                  }
+          });
+  </script>
 </body>
 
 </html>

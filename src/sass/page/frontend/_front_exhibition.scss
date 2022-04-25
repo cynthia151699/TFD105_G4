@@ -1,6 +1,10 @@
 main.exhibition {
     position: relative;
 
+    .fp-tableCell {
+        vertical-align: top;
+    }
+
     // =========================左邊區塊=============================//
     article.left1 {
         height: $Height;
