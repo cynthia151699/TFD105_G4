@@ -57,7 +57,7 @@ const swiper = new Swiper('.mySwiper', {
                 appear.style = "display:flex"; //成功後祝賀層要出來
 
                 // 隨機抓後台折扣碼至前台
-                fetch('./../php/discount/discount_game_show.php')
+                fetch('./php/discount/discount_game_show.php')
                     .then(res => res.json())
                     .then(res => {
                         // console.log(res);
