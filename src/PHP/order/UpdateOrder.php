@@ -1,5 +1,5 @@
 <?php
-include("Connection.php");
+include("./../Connection.php");
 //---------------------------------------------------
 $order = json_decode(file_get_contents("php://input"), true);
 // echo json_encode($news);
@@ -17,7 +17,7 @@ $sql = "UPDATE `ORDER` SET
               WHERE ID = :UP_ID";
 
   // 包裝起來才可以使PHP 用bindValue
-$statement = $pdo->prepare($sql);
+$statement = $link->prepare($sql);
 
   // 下列都是自定義PHP變數  , 不然看面資料庫看不懂 :price
 $statement->bindValue(":UP_ID", $order["UP_ID"]);
