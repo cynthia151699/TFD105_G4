@@ -26,23 +26,23 @@
 
                         <form>
                             <label class="s-check_box">
-                                <input class="check_box" type="checkbox" />&nbsp;&nbsp;Same as member info
+                                <input class="check_box" type="checkbox" id="info"/>&nbsp;&nbsp;Same as member info
                             </label>
 
                             <div class="order_info_text">
                                 <h6>Name:</h6>
-                                <input class="input_type" type="text" name="input_name" placeholder="  Name" required>
+                                <input class="input_type" type="text" name="input_name" placeholder="  Name" id="Name" required>
                             </div>
 
                             <div class="order_info_text">
                                 <h6>Phone:</h6>
-                                <input class="input_type" type="text" name="input_phone:" placeholder="  Phone Number"
+                                <input class="input_type" type="text" name="input_phone:" placeholder="  Phone Number" id="Phone"
                                     required>
                             </div>
 
                             <div class="order_info_text">
                                 <h6>Email:</h6>
-                                <input class="input_type" type="text" name="input_email" placeholder="  Email" required>
+                                <input class="input_type" type="text" name="input_email" placeholder="  Email" id="Email" required>
                             </div>
 
                             <p>Ticket Collection: By (QR code)</p>
@@ -285,6 +285,31 @@
         document.getElementById('totalPrice').innerHTML = sessionStorage.getItem('totalPrice'); //6.總價從sessionStorage抓
         document.getElementById('couponUse').innerHTML = sessionStorage.getItem('couponUse'); //7.coupon使用狀態從sessionStorage抓
     </script>
+    <script>    
+        document.getElementById('info')
+            .addEventListener('click', function (event) {
+                event.preventDefault();
+                $.ajax({
+                    type:'POST',
+                    url:'./PHP/Memberticket.php',
+                    dataType:'json',
+                    async: false,
+                    success:function(data){ 
+                        let Namevalue = data[0].NAME;
+                        let Namecode = document.getElementById("Name");
+                        Namecode.value = Namevalue;
+                        let Phonevalue = data[0].PHONE;
+                        let Phonecode = document.getElementById("Phone");
+                        Phonecode.value = Phonevalue;
+                        let emailvalue = data[0].mail;
+                        let emailcode = document.getElementById("Email");
+                        emailcode.value = emailvalue;
+                    }
+                })
+        
+            });
+        
+        </script>
 </body>
 
 </html>
