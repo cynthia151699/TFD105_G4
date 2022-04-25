@@ -1,6 +1,6 @@
 <?php
 
-        include("Connection.php");
+        include("../Connection.php");
        //---------------------------------------------------
 
        //將帳號密碼的資料post過來~!

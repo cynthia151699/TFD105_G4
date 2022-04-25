@@ -1,6 +1,6 @@
 <?php
 
-       include("Connection.php");
+       include("../Connection.php");
        //---------------------------------------------------
 
        //建立SQL語法 //limit: 1不要在fetch改
