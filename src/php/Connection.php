@@ -5,7 +5,7 @@
     $db_user = "tibamefe_since2021";
     $db_pass = "vwRBSb.j&K#E";
     $db_select = "tibamefe_tfd105g4";
-    $db_name = "G4";
+    // $db_name = "G4";
 
     //建立資料庫連線物件
     $dsn = "mysql:host=".$db_host.";dbname=".$db_name;
