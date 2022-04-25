@@ -5,10 +5,9 @@
     $db_user = "tibamefe_since2021";
     $db_pass = "vwRBSb.j&K#E";
     $db_select = "tibamefe_tfd105g4";
-    $db_name = "G4";
 
     //建立資料庫連線物件
-    $dsn = "mysql:host=".$db_host.";dbname=".$db_name;
+    $dsn = "mysql:host=".$db_host.";dbname=".$db_select;
 
     // 連線資訊
     try {
@@ -17,10 +16,10 @@
         // 指定PDO錯誤模式和錯誤處理
         $link->setAttribute(PDO::ATTR_ERRMODE, 
             PDO::ERRMODE_EXCEPTION);
-        // echo "成功建立MySQL伺服器連接和開啟test資料庫"; 
-        // print_r ($link);
+        echo "成功建立MySQL伺服器連接和開啟test資料庫"; 
+        print_r ($link);
     } catch (PDOException $e) {
-        // echo "連接失敗: " . $e->getMessage();
+        echo "連接失敗: " . $e->getMessage();
     }
     
      

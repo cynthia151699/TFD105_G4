@@ -30,7 +30,7 @@ new Vue({
     methods: {
         news_add() {
             if (this.NEWS_NAME != "" && this.NEWS_CONTENT != "") {
-                fetch("./../src/php/19/AddNews.php", {
+                fetch("./php/news/AddNews.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -65,7 +65,7 @@ new Vue({
         },
         search_News() {
             if (this.search != "") {
-                fetch("./../src/php/19/SearchNews.php", {
+                fetch("./php/news/SearchNews.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -103,7 +103,7 @@ new Vue({
             // let newa = $('#RESS').val()
             // alert(newa)
             if (this.NEW.NEWS_NAME != "" && this.NEW.NEWS_CONTENT != "") {
-                fetch("./../src/php/19/UpdateNews.php", {
+                fetch("./php/news/UpdateNews.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -171,7 +171,7 @@ new Vue({
 
 
             // alert(id)
-            fetch("./../src/php/19/SelectNewsID.php", {
+            fetch("./php/news/SelectNewsID.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -196,7 +196,7 @@ new Vue({
     },
 
     created() {
-        fetch("./../src/php/19/Select_front_News.php", {
+        fetch("./php/news/Select_front_News.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -1,10 +1,10 @@
 // =====================about anno=======================
 main.about {
-
     h2,
     h6 {
         color: $TextColor2;
         text-shadow: $TextShadow;
+        
     }
 
     article.about {
@@ -21,7 +21,9 @@ main.about {
             height: 600px;
 
             @include HorizontalAlignCenter();
-
+            h2{
+                font-size:2.25rem ;
+            }
             h2,
             h6 {
                 width: $RWD;
@@ -78,6 +80,7 @@ main.about {
 
             h6 {
                 width: 600px;
+                line-height: 1.6em;
             }
         }
 
@@ -201,13 +204,15 @@ main.about {
 
         // =====================about anno=======================
         article.about {
+            align-items: normal;
             section.about {
                 height: 500px;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 background-color: #293241ce;
-
+                h2{
+                    font-size:1.875rem ;
+                }
                 h2.top,
                 h6.first,
                 h6.middle,
@@ -236,14 +241,16 @@ main.about {
                 height: 700px;
 
                 h2 {
-                    font-size: 1.6em;
+                    font-size: 1.25em;
                     text-align: left;
-
+                    margin-top: 10px;
                 }
 
                 h6 {
+                    font-size: 0.875rem;
                     width: 100%;
-                    margin-top: 30px;
+                    margin-top: 10px;
+                    line-height: 1.4em;
                 }
             }
 
@@ -254,7 +261,8 @@ main.about {
             }
         }
         //================person========================
-        article.page3 {   
+        article.page3 {  
+            align-items: baseline; 
             .cols {
                 display: flex;
                 flex-wrap: wrap;
@@ -262,7 +270,7 @@ main.about {
                 align-content: center;
     
                 .col {
-                    width: calc(100% - 150px);
+                    width: calc(100% - 200px);
                     margin: 10px;
                     cursor: pointer;
                 }
@@ -271,7 +279,7 @@ main.about {
 
                 .front,
                 .back {
-                    min-height: 200px;
+                    min-height: 130px;
                 }
             }
         }
