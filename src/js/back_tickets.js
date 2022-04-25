@@ -157,7 +157,7 @@ new Vue({
     },
 
     created() {
-        fetch("./php/ticket/SelectTicket.php", {
+        fetch("./php/ticket/SelectTicket.php", {   
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
