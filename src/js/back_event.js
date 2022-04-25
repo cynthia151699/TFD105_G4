@@ -26,7 +26,7 @@ new Vue({
     methods: {
         event_add() {
             if (this.EVENT_NAME != "" && this.EXHIBITION_CONTENT != "") {
-                fetch("./php/34/AddEvent.php", {
+                fetch("./php/exhibition/AddEvent.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -55,10 +55,16 @@ new Vue({
         event_cancel() {
             event("<strong>已取消</strong>", "success", "");
             $('.popUp').css("display", "none");
+
+            this.EXHIBITION_STYLE = '',
+            this.EVENT_NAME = '',
+            this.EXHIBITION_DATE = '',
+            this.EXHIBITION_PIC = '',
+            this.EXHIBITION_CONTENT = ''
         },
         search_Event(){
             if(this.search != "" ){
-                fetch("./php/34/SearchEvent.php", {
+                fetch("./php/exhibition/SearchEvent.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -87,7 +93,7 @@ new Vue({
         event_update(ID){
             //alert(ID);
             if (this.EDIT.EVENT_NAME != "" && this.EDIT.EXHIBITION_CONTENT != "") {
-                fetch("./php/34/UpdateEvent.php", {
+                fetch("./php/exhibition/UpdateEvent.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -182,7 +188,7 @@ new Vue({
     },
 
     created() {
-        fetch("./php/34/SelectEvent.php", {
+        fetch("./php/exhibition/SelectEvent.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

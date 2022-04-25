@@ -54,96 +54,102 @@
 
                         <h5>Your Order:</h5>
 
+                        <div class="list_box">
+
                             <div class="list_box">
 
-                                <div class="list_box">
+                                <table class="list_table">
+                                    <!-- 項目 -->
+                                    <tr class="table_title" style="color:#fff;">
+                                        <td>Tickets</td>
+                                        <td style="width: 230px;">Validity Period</td>
+                                        <td>Price</td>
+                                        <td>QTY</td>
+                                        <td>Total</td>
+                                    </tr>
 
-                                    <table class="list_table">
-                                        <!-- 項目 -->
-                                        <tr class="table_title" style="color:#fff;">
-                                            <td>Tickets</td>
-                                            <td style="width: 230px;">Validity Period</td>
-                                            <td>Price</td>
-                                            <td>QTY</td>
-                                            <td>Total</td>
-                                        </tr>
-        
-                                        <!-- 第一種票券 -->
-                                        <tr class="first_order" style="color:#fff; line-height: 5;">
-                                            <td class="roll_ticket">Rollover Ticket</td>
-                                            <td style="width: 230px;">FEB 5 - MAY 5, 2022</td>
-                                            <td colspan="3">
-                                                <div class="price_1" style="display: inline;">
-                                                <input type="checkbox" name="liCheck" id="" value="" checked style="display: none;">
+                                    <!-- 第一種票券 -->
+                                    <tr class="first_order" style="color:#fff; line-height: 5;">
+                                        <td class="roll_ticket">Rollover Ticket</td>
+                                        <td style="width: 230px;">FEB 5 - MAY 5, 2022</td>
+                                        <td colspan="3">
+                                            <div class="price_1" style="display: inline;">
+                                                <input type="checkbox" name="liCheck" id="" value="" checked
+                                                    style="display: none;">
                                                 <p style="display: inline-block;">
                                                     $<span class="price" style="margin-right:50px;">400</span>
                                                 </p>
-                                                <button type="button" class="decrease" disabled="disabled" style="display: none;"  >-</button>
+                                                <button type="button" class="decrease" disabled="disabled"
+                                                    style="display: none;">-</button>
                                                 <p style="display: inline-block; margin: 10px;">
                                                     <span class="piece_info" style="margin-right:50px;">0</span>
                                                 </p>
                                                 <button type="button" class="increase" style="display: none;">+</button>
-        
+
                                                 <p style="display: inline-block; margin-left:30px;">
-                                                    $<input class="smallPrice" type="text" name="" id="" value="0" disabled="disabled" >
+                                                    $<input class="smallPrice" type="text" name="" id="" value="0"
+                                                        disabled="disabled">
                                                 </p>
-                                                </div>
-        
-                                            </td>
-                                        </tr>
-        
-                                        <!-- 第二種票券 -->
-                                        <tr class="second_order" style="color:#fff; line-height: 5;" >
-                                            <td class="adv_ticket">Advance Ticket</td>
-                                            <td style="width: 230px;">MAY 15 - AUG 15, 2022</td>
-                                            <td colspan="3">
-                                                <div class="price_2" style="display: inline;">
-                                                    <input type="checkbox" name="liCheck" id="" value="" checked style="display: none;">
-                                                    <p style="display: inline-block;">
-                                                        $<span class="price" style="margin-right:50px;">450</span>
-                                                    </p>
-                                                    <button type="button" class="decrease" disabled="disabled" style="display: none;">-</button>
-                                                    <p style="display: inline-block; margin: 10px;">
-                                                        <span class="piece_info" style="margin-right:50px;">0</span>
-                                                    </p>
-                                                    <button type="button" class="increase" style="display: none;">+</button>
-            
-                                                    <p style="display: inline-block; margin-left:30px;">
-                                                        $<input class="smallPrice" type="text" name="" id="" value="0" disabled="disabled" >
-                                                    </p>
-                                                    </div>
-                                                    
-                                            </td>
-                                        </tr>
-                                    </table>
-                          <!-- 結算欄位-->
-                          <div class="order_amount">
-                            <!-- 結算 -->
-                            <div class="sum_info">
-                                <!-- <label>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                    <!-- 第二種票券 -->
+                                    <tr class="second_order" style="color:#fff; line-height: 5;">
+                                        <td class="adv_ticket">Advance Ticket</td>
+                                        <td style="width: 230px;">MAY 15 - AUG 15, 2022</td>
+                                        <td colspan="3">
+                                            <div class="price_2" style="display: inline;">
+                                                <input type="checkbox" name="liCheck" id="" value="" checked
+                                                    style="display: none;">
+                                                <p style="display: inline-block;">
+                                                    $<span class="price" style="margin-right:50px;">450</span>
+                                                </p>
+                                                <button type="button" class="decrease" disabled="disabled"
+                                                    style="display: none;">-</button>
+                                                <p style="display: inline-block; margin: 10px;">
+                                                    <span class="piece_info" style="margin-right:50px;">0</span>
+                                                </p>
+                                                <button type="button" class="increase" style="display: none;">+</button>
+
+                                                <p style="display: inline-block; margin-left:30px;">
+                                                    $<input class="smallPrice" type="text" name="" id="" value="0"
+                                                        disabled="disabled">
+                                                </p>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- 結算欄位-->
+                                <div class="order_amount">
+                                    <!-- 結算 -->
+                                    <div class="sum_info">
+                                        <!-- <label>
                                 <input type="checkbox" name="" id="checkAll" value="" checked style="display: none;">
                                 </label> -->
-                                    <p style="text-align: right;">
-                                        Amount:
-                                        <span id="totalCount">0</span>
-                                    </p>
+                                        <p style="text-align: right;">
+                                            Amount:
+                                            <span id="totalCount">0</span>
+                                        </p>
 
-                                    <div class="c_discount">
-                                        <h6>Discount:</h6>
-                                        <h6>Without Using Coupon</h6>
+                                        <div class="c_discount">
+                                            <h6>Discount:</h6>
+                                            <h6 id="couponUse">NONE</h6>
+                                        </div>
+
+                                        <p style="text-align: right;" id="sum">
+                                            Total:$
+                                            <span id="totalPrice">0</span>
+                                        </p>
                                     </div>
 
-                                    <p style="text-align: right;" id="sum">
-                                        Total:$
-                                        <span id="totalPrice">0</span>
-                                    </p>
-                                </div>
-   
-    
 
+
+                                </div>
+                            </div>
                         </div>
-                    </div> 
-                </div> 
                         <br>
 
                         <!-- part3 -->
@@ -164,8 +170,7 @@
                             <input class="input_type" placeholder="Name on the card">
 
                             <h6>Card Numbers:</h6>
-                            <input class="input_type"
-                                placeholder="Example:1234-5678-8907-5674">
+                            <input class="input_type" placeholder="Example:1234-5678-8907-5674">
                             <h6>Expiration Date:</h6>
 
                             <select>
@@ -198,8 +203,7 @@
 
                             <h6>CVC Code:</h6>
 
-                            <input class="input_type"
-                                placeholder="Example:123">
+                            <input class="input_type" placeholder="Example:123">
                             <h6>Invioce Numbers:</h6>
 
                             <select>
@@ -256,23 +260,30 @@
                             <section class="cartButton mtSpace20">
 
                                 <div class="btn_group_info">
-                                    <input class="btn_previous" type="submit" value="Previous" onclick="location.href='./front_cart_order.html'">
+                                    <input class="btn_previous" type="submit" value="Previous"
+                                        onclick="location.href='./front_cart_order.html'">
                                     <input class="btn_done" type="submit" value="Next"
                                         onclick="location.href='./front_cart_done.html'">
                                 </div>
                             </section>
 
-                            
+
                         </div>
                     </div>
-            </div>
-           
+                </div>
+
         </main>
     </div>
 
     <script>
         //session抓到的價錢，丟進渲染
-        document.getElementById('totalPrice').innerText = sessionStorage.getItem('checkoutTotal');
+        document.getElementsByClassName('piece_info')[0].innerHTML = sessionStorage.getItem('piece1'); //1.數量1從sessionStorage抓
+        document.getElementsByClassName('piece_info')[1].innerHTML = sessionStorage.getItem('piece2'); //2.數量2從sessionStorage抓
+        document.getElementsByClassName('smallPrice')[0].value = sessionStorage.getItem('smallPrice1'); //3.小計1從sessionStorage抓
+        document.getElementsByClassName('smallPrice')[1].value = sessionStorage.getItem('smallPrice2'); //4.小計2從sessionStorage抓
+        document.getElementById('totalCount').innerHTML = sessionStorage.getItem('totalCount'); //5.總數從sessionStorage抓
+        document.getElementById('totalPrice').innerHTML = sessionStorage.getItem('totalPrice'); //6.總價從sessionStorage抓
+        document.getElementById('couponUse').innerHTML = sessionStorage.getItem('couponUse'); //7.coupon使用狀態從sessionStorage抓
     </script>
     <script>    
         document.getElementById('info')
