@@ -23,7 +23,7 @@ new Vue({
     methods: {
         ticket_add() {
             if (this.TICKET_NAME != "" && this.TICKET_STATUS != "") {
-                fetch("AddTicket.php", {
+                fetch("./php/ticket/AddTicket.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ new Vue({
 
         search_Ticket(){
             if(this.search != ""){
-                fetch("SearchTicket.php", {
+                fetch("./php/ticket/SearchTicket.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -86,7 +86,7 @@ new Vue({
         ticket_update(ID){
             //alert(ID);
             if (this.EDIT.TICKET_NAME != "" && this.EDIT.TICKET_CREATE != "") {
-                fetch("UpdateTicket.php", {
+                fetch("./php/ticket/UpdateTicket.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -135,7 +135,7 @@ new Vue({
 
 
 
-            fetch("./SelectTicketID.php", {
+            fetch("./php/ticket/SelectTicketID.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -157,7 +157,7 @@ new Vue({
     },
 
     created() {
-        fetch("SelectTicket.php", {
+        fetch("./php/ticket/SelectTicket.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

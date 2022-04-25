@@ -27,16 +27,20 @@ div.popUp {
         ul {
             width: fit-content;
             @include HorizontalAlignCenter();
+
             li {
                 text-align: right;
+
                 input {
                     width: 350px;
                     box-sizing: border-box;
                     border: 1px solid $TextColor;
                 }
-                input.status{
-                    width:307px;
+
+                input.status {
+                    width: 307px;
                 }
+
                 h6.date {
                     width: 350px;
                     color: $TextColor;
@@ -116,6 +120,14 @@ div.popUp {
     .checkButtons {
         width: fit-content;
         margin: 20px auto 20px auto;
+
+        input {
+            background-color: #B5CDE2;
+            border: none;
+            width: 100px;
+            font-weight: bold;
+            cursor: pointer;
+        }
     }
 }
 
@@ -154,7 +166,7 @@ div.popUp {
                 width: 50px;
                 height: 25px;
 
-                &:hover{
+                &:hover {
                     color: $InputColor;
                 }
             }
@@ -178,15 +190,18 @@ div.popUp {
 
         tbody {
             background-color: $InputColor;
-            tr{
-                td{
+
+            tr {
+                td {
                     vertical-align: middle;
                 }
-                img{
-                    width:100px;
-                    height:100px;
+
+                img {
+                    width: 100px;
+                    height: 100px;
                 }
             }
+
             tr:nth-child(even) {
                 td {
                     border-top: 3px solid $BHColor;
