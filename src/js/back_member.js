@@ -28,7 +28,7 @@ new Vue({
         },
         search_member() {
             if (this.search != "") {
-                fetch("./PHP/member/back_membersearch.php", {
+                fetch("./php/member/back_membersearch.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -53,7 +53,7 @@ new Vue({
         member_update(ID) {
             // alert(ID);
             if (this.EDIT.mail != "" && this.EDIT.phone != "") {
-                fetch("./PHP/member/back_memberupdate.php", {
+                fetch("./php/member/back_memberupdate.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -97,7 +97,7 @@ new Vue({
             $('.-edit').css("display", "block");
 
 
-            fetch("./PHP/member/back_memberselectID.php", {
+            fetch("./php/member/back_memberselectID.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -121,7 +121,7 @@ new Vue({
 
     },
     created() {
-        fetch("./PHP/member/back_memberall.php", {
+        fetch("./php/member/back_memberall.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
