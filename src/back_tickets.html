@@ -169,20 +169,22 @@
                                 <h6>場次編號</h6><input type="text" v-model="ID">
                             </li> -->
                             <li>
-                                <h6>展覽名稱</h6><input type="text" v-model="TICKET_NAME">
+                                <h6>展覽名稱：</h6><input type="text" v-model="TICKET_NAME">
                             </li>
                             <li>
-                                <h6>票別</h6><input type="text" v-model="TICKET_TYPE">
+                                <h6>票別：</h6><input type="text" v-model="TICKET_TYPE">
                             </li>
                             <li>
-                                <h6>票價</h6><input type="text" v-model="TICKET_PRICE">
+                                <h6>票價：</h6><input type="text" v-model="TICKET_PRICE">
                             </li>
                             <li>
-                                <h6>展覽時間</h6><input type="text" v-model="TICKET_DATE">
+                                <h6>展覽時間：</h6><input type="text" v-model="TICKET_DATE">
                             </li>
                             <li>
-                                <h6>票券狀態</h6><input type="radio" v-model="TICKET_STATUS" value="0">關閉
-                                <input type="radio" v-model="TICKET_STATUS" value="1">開放
+                                <h6>票券狀態：<input class="status" type="radio" v-model="EDIT.TICKET_STATUS" value="開放">開放
+                                    <br>
+                                    <input class="status" type="radio" v-model="EDIT.TICKET_STATUS" value="關閉">關閉
+                                </h6>
                             </li>
                             <!-- <li>
                                 <h6>創建時間</h6><input class="date" v-model="TICKET_CREATE"></input>
@@ -202,21 +204,27 @@
                                 <h6>場次編號</h6><input type="text" v-model="ID">
                             </li> -->
                             <li>
-                                <h6>展覽名稱</h6><input type="text" v-model="EDIT.TICKET_NAME">
+                                <h6>展覽名稱：</h6><input type="text" v-model="EDIT.TICKET_NAME">
                             </li>
                             <li>
-                                <h6>票別</h6><input type="text" v-model="EDIT.TICKET_TYPE">
+                                <h6>票別：</h6><input type="text" v-model="EDIT.TICKET_TYPE">
                             </li>
                             <li>
-                                <h6>票價</h6><input type="text" v-model="EDIT.TICKET_PRICE">
+                                <h6>票價：</h6><input type="text" v-model="EDIT.TICKET_PRICE">
                             </li>
                             <li>
-                                <h6>展覽時間</h6><input type="text" v-model="EDIT.TICKET_DATE">
+                                <h6>展覽時間：</h6><input type="text" v-model="EDIT.TICKET_DATE">
                             </li>
                             <li>
+                                <h6>票券狀態：<input class="status" type="radio" v-model="EDIT.TICKET_STATUS" value="開放">開放
+                                    <br>
+                                    <input class="status" type="radio" v-model="EDIT.TICKET_STATUS" value="關閉">關閉
+                                </h6>
+                            </li>
+                            <!-- <li>
                                 <h6>票券狀態</h6><input type="radio" v-model="EDIT.TICKET_STATUS" value="0">關閉
                                 <input type="radio" v-model="EDIT.TICKET_STATUS" value="1">開放
-                            </li>
+                            </li> -->
                             <!-- <li>
                                 <h6>創建時間</h6><input class="date" v-model="TICKET_CREATE"></input>
                             </li> -->

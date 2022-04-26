@@ -26,23 +26,25 @@
 
                         <form>
                             <label class="s-check_box">
-                                <input class="check_box" type="checkbox" id="info"/>&nbsp;&nbsp;Same as member info
+                                <input class="check_box" type="checkbox" id="info" />&nbsp;&nbsp;Same as member info
                             </label>
 
                             <div class="order_info_text">
                                 <h6>Name:</h6>
-                                <input class="input_type" type="text" name="input_name" placeholder="  Name" id="Name" required>
-                            </div>
-
-                            <div class="order_info_text">
-                                <h6>Phone:</h6>
-                                <input class="input_type" type="text" name="input_phone:" placeholder="  Phone Number" id="Phone"
+                                <input class="input_type" type="text" name="input_name" placeholder="  Name" id="Name"
                                     required>
                             </div>
 
                             <div class="order_info_text">
+                                <h6>Phone:</h6>
+                                <input class="input_type" type="text" name="input_phone:" placeholder="  Phone Number"
+                                    id="Phone" required>
+                            </div>
+
+                            <div class="order_info_text">
                                 <h6>Email:</h6>
-                                <input class="input_type" type="text" name="input_email" placeholder="  Email" id="Email" required>
+                                <input class="input_type" type="text" name="input_email" placeholder="  Email"
+                                    id="Email" required>
                             </div>
 
                             <p>Ticket Collection: By (QR code)</p>
@@ -222,30 +224,38 @@
                                     Cautions:
                                     <br>
                                     <br>
-                                    If you purchase according to the system program and complete all the programs, the
-                                    ordering behavior is regarded as the transaction is completed, and the system has
-                                    fulfilled the relevant notification obligations. and other factors), and claim to
+                                    If you purchase according to the system program and complete all the programs,
+                                    the
+                                    ordering behavior is regarded as the transaction is completed, and the system
+                                    has
+                                    fulfilled the relevant notification obligations. and other factors), and claim
+                                    to
                                     stop payment or refuse payment, this system will not accept.
                                     <br>
                                     <br>
                                     Taxable/tax-exempt invoices shall be issued for exhibition tickets in accordance
                                     with the law.
-                                    Tickets are regarded as securities, if lost, damaged or unrecognizable, they will
+                                    Tickets are regarded as securities, if lost, damaged or unrecognizable, they
+                                    will
                                     not be reissued, please keep them properly.
-                                    After checkout, please check your order in the member area to confirm whether the
+                                    After checkout, please check your order in the member area to confirm whether
+                                    the
                                     order is successful, so as to avoid repeated ticket purchases.
                                     <br>
                                     <br>
                                     In order to ensure the safety of online transactions, you agree that the company
                                     shall inform the issuing bank, the acquirer and the cardholder whether the
-                                    transaction information is true, and remind you that if you fraudulently use another
+                                    transaction information is true, and remind you that if you fraudulently use
+                                    another
                                     person's credit card or other personal information for the transaction, the If
                                     found, they must be brought to justice.
                                     <br>
                                     <br>
-                                    It is strictly prohibited to resell tickets at a higher price for profit in any form
+                                    It is strictly prohibited to resell tickets at a higher price for profit in any
+                                    form
                                     not for personal use. Those who are verified to be true may be reported to the
-                                    police in accordance with Article 64, paragraph 2, of the Social Order Maintenance
+                                    police in accordance with Article 64, paragraph 2, of the Social Order
+                                    Maintenance
                                     Act.
                                     If you need a refund, please contact the website administrator by email within 7
                                     days after purchasing the ticket.
@@ -253,63 +263,37 @@
                             </div>
 
                             <label class="s-check_box">
-                                <input class="check_box" type="checkbox" value="second_checkbox" />&nbsp;&nbsp; I agree
+                                <input class="check_box" type="checkbox" value="second_checkbox" />&nbsp;&nbsp; I
+                                agree
                                 to the terms of service and return policy on Anno Museum.
                             </label>
 
                             <section class="cartButton mtSpace20">
-
                                 <div class="btn_group_info">
-                                    <input class="btn_previous" type="submit" value="Previous"
-                                        onclick="location.href='./front_cart_order.html'">
-                                    <input class="btn_done" type="submit" value="Next"
-                                        onclick="location.href='./front_cart_done.html'">
+                                    <form method="get" action="./orderSend.php">
+                                        <input type="text" id="orderSend" name="orderSend" value=""
+                                            style="display:none;">
+
+                                        <input class="btn_previous" type="submit" value="Previous"
+                                            onclick="location.href='./front_cart_order.html'">
+                                        <!-- 送出鈕 -->
+                                        <input class="btn_done" type="submit" value="Next">
+                                        <!-- onclick="location.href='./front_cart_done.html'"> -->
+                                    </form>
                                 </div>
                             </section>
 
 
                         </div>
                     </div>
+                    </form>
+
                 </div>
 
         </main>
     </div>
 
-    <script>
-        //session抓到的價錢，丟進渲染
-        document.getElementsByClassName('piece_info')[0].innerHTML = sessionStorage.getItem('piece1'); //1.數量1從sessionStorage抓
-        document.getElementsByClassName('piece_info')[1].innerHTML = sessionStorage.getItem('piece2'); //2.數量2從sessionStorage抓
-        document.getElementsByClassName('smallPrice')[0].value = sessionStorage.getItem('smallPrice1'); //3.小計1從sessionStorage抓
-        document.getElementsByClassName('smallPrice')[1].value = sessionStorage.getItem('smallPrice2'); //4.小計2從sessionStorage抓
-        document.getElementById('totalCount').innerHTML = sessionStorage.getItem('totalCount'); //5.總數從sessionStorage抓
-        document.getElementById('totalPrice').innerHTML = sessionStorage.getItem('totalPrice'); //6.總價從sessionStorage抓
-        document.getElementById('couponUse').innerHTML = sessionStorage.getItem('couponUse'); //7.coupon使用狀態從sessionStorage抓
-    </script>
-    <script>    
-        document.getElementById('info')
-            .addEventListener('click', function (event) {
-                event.preventDefault();
-                $.ajax({
-                    type:'POST',
-                    url:'./PHP/Memberticket.php',
-                    dataType:'json',
-                    async: false,
-                    success:function(data){ 
-                        let Namevalue = data[0].NAME;
-                        let Namecode = document.getElementById("Name");
-                        Namecode.value = Namevalue;
-                        let Phonevalue = data[0].PHONE;
-                        let Phonecode = document.getElementById("Phone");
-                        Phonecode.value = Phonevalue;
-                        let emailvalue = data[0].mail;
-                        let emailcode = document.getElementById("Email");
-                        emailcode.value = emailvalue;
-                    }
-                })
-        
-            });
-        
-        </script>
+    <script src="./js/front_cart_info.js"></script>
 </body>
 
 </html>
