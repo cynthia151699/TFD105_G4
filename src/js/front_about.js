@@ -14,17 +14,22 @@ const messages = {
       section6: "Let us open our minds,",
       section7: "Create your own Anno.",
       section8:
-        "Anno Museum is a new museum located in Taipei.The museum was founded in 2015, by six students inTIBAMI who have a lot of enthusiasm for art and life.Anno Museum collects various works of art, ranging from classical art works of the 18th and 19th centuries tomodern contemporary art works,",
+        "Anno Museum is a new museum located in Taipei.The museum was founded in 2015, by six students in TIBAMI who have a lot of enthusiasm for art and life.",
       section9:
-        "so that visitors to Anno Museum can freely view the beauty of  various arts.Anno Museum also hosts regular exhibitions.They hope that through the establishment of the museum, education, and culture can be promoted so that more people can know and getclose to art.",
+        "Anno Museum collects more than 200 artworks, not only ranging from classical artworks of the 18th to 19th centuries but also contemporary artworks.The biggest wish of Anno Museum is that everyone can get closer to art. Anno Museum launched new exhibitions for every season.",
       section10:
-        "Without setting limits on style, they want to show a wide range of artworks from classic to trendy for the general public.",
+        "We hope that the establishment of the museum can promote education, culture, and history. From now to the future, making art became a part of our life.",
+        section11: "Position:", 
+        section12: "Chairman", 
+        section13: "Curator", 
+        section14: "Art director", 
     },
+     
   },
   jp: {
     header: {
-      title1: "ANNO について",
-      title2: "ANNO の歴史",
+      title1: "ANNO とは",
+      title2: "ANNO について",
     },
     main: {
       section1: "芸術は紀元間の推移や変化を記します",
@@ -34,9 +39,13 @@ const messages = {
       section5: "ここで夢と幻想を叶えよう",
       section6: "心を開いて、",
       section7: "自分の紀元を創りましょう",
-      section8: "",
-      section9: "",
-      section10: "",
+      section8: "紀元美術館は、芸術と生活に情熱を持った6人の学生が設立した台北の新興美術館です。教育や文化を広める熱意を持って、博物館の設立を通じて、より多くの人々に芸術に親しむ機会を増やすことを願っています。",
+      section9: "絵画、彫刻、アニメ、ファッションなど、国内外を問わず幅広いジャンルで、文化性、話題性の高い展覧会を企画し、皆さまに親しみ愛される美術館となるよう、努力しています。当美術館では、約２００点の収蔵作品を活かして、現代美術の流れを展望できるコレクション展示や絵画、ファッション、、彫刻、デザイン等幅広く現代美術に関する展覧会を開催しています。色々な作品を、間近でじっくりとご覧いただけます。",
+      section10: "紀元美術館は、展覧会を鑑賞したい人々が何のためらいもなく来館できる、すべての人に開かれた「アートへの入口」となることを目指します。",
+      section11: "職位:", 
+      section12: "社長", 
+      section13: "キュレーター", 
+      section14: "アートディレクター", 
     },
   },
   tw: {
@@ -53,8 +62,12 @@ const messages = {
       section6: "讓我們一起敞開心扉",
       section7: "創造屬於自己的紀元",
       section8: "紀元美術館是位於台北市的新興美術館，由六位對藝術與生活充滿熱情的緯育前端班學生創辦。秉持著推廣教育與文化的熱忱，希望藉由博物館的成立，讓更多人擁有親近藝術的機會。",
-      section9: "紀元美術館館內收藏各種藝術作品，從18.19世紀的古典藝術作品到近現代的當代藝術作品，讓來紀元美術館參觀的民眾可以自由觀覽各個時代、各式各樣藝術的美。紀元美術館也經常定期舉辦展覽。",
-      section10: "不限制風格與展覽的形式，紀元團隊想讓各種天馬行空的創意，皆有機會展現在公眾的眼前，讓藝術家們有不受拘束的創作機會。從經典到現代、具象到抽象、平面繪畫到空間裝置，靜態的展示或是具有互動性的新媒體藝術，邀請您一起來紀元美術館中，體驗跨紀元的藝術饗宴。",
+      section9: "企劃繪畫、雕刻、動畫、時尚等等各種類型，具有文化性及話題性的展覽，為了成為大家都喜愛的美術館而努力著。紀元美術館活用約200件收藏作品，除了展示現代美術的發展軌跡也積極開辦繪畫、雕刻、設計等現代美術展覽，讓來訪者可以近距離接觸各式各樣的展覽作品。",
+      section10: "紀元美術館期望能提供更多親近藝術的機會給大眾，拉近人們與藝術的距離，可以更輕鬆、愜意地將藝術融入生活的一部分，成為為人們開啟「藝術之路」的美術館。",
+      section11: "職位:", 
+      section12: "董事長", 
+      section13: "策展人", 
+      section14: "美術總監", 
     },
   },
 };

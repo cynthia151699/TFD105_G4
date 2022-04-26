@@ -223,12 +223,14 @@
                                 </div>
                             </li>
                             <li>
-                                <h6 style="vertical-align: top;">消息內容:</h6><textarea v-model="NEWS_CONTENT" style="resize: vertical; width: 350px; height: 100px;"></textarea>
+                                <h6 style="vertical-align: top;">消息內容:</h6><textarea v-model="NEWS_CONTENT"
+                                    style="resize: vertical; width: 350px; height: 100px;"></textarea>
                             </li>
-                            <li>
-                                <h6>展覽狀態：<input class="status" type="radio" v-model="NEWS_STATUS" value="開放">開放
-                                    <br>
-                                    <input class="status" type="radio" v-model="NEWS_STATUS" value="關閉">關閉
+                            <li style="text-align: left;">
+                                <h6>展覽狀態：<input class="status" type="radio" v-model="NEWS_STATUS" value="開放"
+                                        style="width: 50px;">開放
+                                    <input class="status" type="radio" v-model="NEWS_STATUS" value="關閉"
+                                        style="width: 50px;">關閉
                                 </h6>
                             </li>
                             <!-- <li>
@@ -261,12 +263,14 @@
                                 </div>
                             </li>
                             <li>
-                                <h6 style="vertical-align: top;">消息內容：</h6><textarea v-model="NEW.NEWS_CONTENT" style="resize: vertical; width: 350px; height: 100px;"></textarea>
+                                <h6 style="vertical-align: top;">消息內容：</h6><textarea v-model="NEW.NEWS_CONTENT"
+                                    style="resize: vertical; width: 350px; height: 100px;"></textarea>
                             </li>
-                            <li>
-                                <h6>展覽狀態：<input class="status" type="radio" v-model="NEW.NEWS_STATUS" value="開放">開放
-                                    <br>
-                                    <input class="status" type="radio" v-model="NEW.NEWS_STATUS" value="關閉">關閉
+                            <li style="text-align: left;">
+                                <h6>展覽狀態：<input class="status" type="radio" v-model="NEW.NEWS_STATUS" value="開放"
+                                        style="width: 50px;">開放
+                                    <input class="status" type="radio" v-model="NEW.NEWS_STATUS" value="關閉"
+                                        style="width: 50px;">關閉
                                 </h6>
                             </li>
                             <!-- <li>
@@ -316,7 +320,8 @@
                     <!-- <button class="mtSpace10" id="check">
             <h6>以訊息名稱查詢</h6>
         </button> -->
-                    <form method="post" action="./../src/php/19/SearchNews.php" style=" width:100%;background-color: #D6ECFF;">
+                    <form method="post" action="./../src/php/19/SearchNews.php"
+                        style=" width:100%;background-color: #D6ECFF;">
                         <input type="text" name="keyword" v-model.trim="search" placeholder="以消息名稱查詢" class="mtSpace10"
                             id="check">
                         <button type="button" class="mtSpace10 mlSpace20" id="search" @click="search_News">
@@ -361,7 +366,7 @@
     </div>
 
 
-<script src="./js/back_news.min.js"></script>
+    <script src="./js/back_news.min.js"></script>
 </body>
 
 </html>
