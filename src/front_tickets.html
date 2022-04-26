@@ -18,17 +18,14 @@
 
   <body>
     <div class="wrapper" id="app">
-      @@include('./layout/login.html')
 
-      <!-- 導覽列 -->
-      @@include('./layout/nav.html', { "active5" : "active" })
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active5" : "active"
+        })
 
-      <main class="ticketsPage">
-        <!-- coding here -->
-
-        <!------ 當期展覽彈窗 ------>
-        <div class="lightBox">
-          <div class="mask"></div>
+        <main class="ticketsPage" style="overflow-y: auto;margin-top: 0;">
+            <!-- coding here -->
 
           <div class="wrapperTicketsCur ptSpace50 pbSpace50">
             <div class="ticketsCurCon">

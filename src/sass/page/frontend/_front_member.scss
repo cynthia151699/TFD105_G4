@@ -227,13 +227,188 @@ main.member {
     padding: 20px; //50px
   }
 
-  a.forgot-pass {
-    display: block;
-    text-align: center;
-    // font-size: 12px;
-    // color: #cfcfcf;
-  }
-}
+        background-color: #293241;
+        opacity: 0.7;
+
+        display: none;
+    }
+
+    article.phone {
+        display: none;
+        h2{
+            font-size: 2.25rem;
+        }
+    }
+
+    @mixin PopUp {
+        position: absolute;
+        z-index: 59;
+
+        width: 50%;
+        height: fit-content;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        opacity: 1;
+
+        display: none;
+    }
+
+    article.memberPopUp {
+        position: absolute;
+        z-index: 59;
+
+        width: 50%;
+        height: fit-content;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        opacity: 1;
+
+        display: none;
+
+        h6.title {
+            background-color: $PrimaryColor;
+            padding: 10px 25px;
+            text-align: center;
+
+            a {
+                display: block;
+                float: right;
+                cursor: pointer;
+            }
+        }
+
+        h6.inner {
+            background-color: $TextColor2;
+            color: $TextColor3;
+            padding: 15px 25px;
+            text-align: center;
+        }
+    }
+
+    article.forgetChange {
+        @include VerticalAlignCenter();
+        @include PopUp();
+        // display: block;
+
+        background-color: white;
+        width: 85%;
+
+        section {
+            width: 80%;
+            height: 50%;
+            box-sizing: border-box;
+
+            @include HorizontalAlignCenter();
+
+            h3,
+            h4 {
+                color: black;
+            }
+
+            h3 {
+                width: 100%;
+                text-align: center;
+            }
+
+            input {
+                width: 80%;
+                height: 35px;
+                @include HorizontalAlignCenter();
+            }
+
+            div.btn {
+                width: fit-content;
+                @include HorizontalAlignCenter();
+
+                button {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    article.forgetSubmit {
+        @include VerticalAlignCenter();
+        @include PopUp();
+
+        background-color: white;
+        width: 75%;
+        height: 80vh;
+
+        section {
+            width: 70%;
+            height: fit-content;
+            box-sizing: border-box;
+
+            @include HorizontalAlignCenter();
+
+            h5 {
+                color: black;
+            }
+        }
+    }
+
+    label {
+        display: block;
+        width: 100%;
+        text-align: right;
+        padding: 5px;
+
+        @include HorizontalAlignCenter();
+
+        span {
+            // font-size: 12px;
+            // color: #cfcfcf;
+            display: inline-block;
+            width: 200px;
+            text-align: left;
+            text-transform: uppercase;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        span.in {
+            width: 110px;
+        }
+
+        input {
+            display: inline-block;
+        }
+    }
+    // codepen 效果設定
+    div.cont {
+        overflow: hidden;
+        position: relative;
+        width: $contW;
+        height: 480px;
+        background: #fff;
+
+        @include HorizontalAlignCenter();
+    }
+
+    div.form {
+        @include Reset();
+
+        position: relative;
+        width: $formW;
+        height: 100%;
+        transition: transform $switchAT ease-in-out;
+        padding: 20px; //50px
+    }
+
+    a.forgot-pass {
+        display: block;
+        text-align: center;
+        // font-size: 12px;
+        // color: #cfcfcf;
+    }
+
 
 button.member {
   display: block;
@@ -522,18 +697,111 @@ main.memberInfo {
         text-align: center;
       }
     }
-    tbody {
-      tr {
-        height: 60px;
-        padding-left: 5px;
-      }
+
+    article.modifyMemberInfo {
+        width: 80%;
+        height: 80vh;
+        background-color: #fff;
+        @include HorizontalAlignCenter();
+        @include VerticalAlignCenter();
+
+        table {
+            @include HorizontalAlignCenter();
+            @include VerticalAlignCenter();
+            justify-content: center;
+            background-color: #fff;
+            color: #293241;
+            h3,
+            h5,
+            h6 {
+                color: #293241;
+                padding: 5px;
+                box-sizing: border-box;
+            }
+
+            h3 {
+                width: 100%;
+                text-align: center;
+            }
+            
+            tbody{
+                width: 90%;
+            }
+        }
+        tbody{
+            tr{
+                height:60px;
+                padding-left: 5px;
+            }
+        }
     }
   }
 }
-@media screen and (max-width: 575.98px) {
-  main.member {
-    div.cont {
-      display: none;
+@media screen and (max-width: 575.98px){
+    main.member {
+        div.cont {
+            display: none;
+        }
+        label{
+            text-align: left;
+            padding: 0px;
+            padding-left: 20px;
+            span{
+                font-size: 0.875rem;
+            }
+        }
+        input{
+            width:250px;
+        }
+        div.info{
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        article.phone {
+            margin-top: 60px;
+            display: block;
+            width: 80%; 
+            //height: 490px; 
+            background-color: white; 
+
+            @include HorizontalAlignCenter();
+            h2{
+                font-size: 1.125rem;
+            }
+            h2,p,span{
+                color: black;
+            }
+        
+
+            section.phoneBottom{
+                height: 70px;
+
+                background-color: #768cb6;
+
+                display: flex;
+
+                div.left{
+                    width: 100%;
+                }
+
+                div.right{
+                    display:none;
+
+                    p{
+                        width: 80%;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        
+        article.memberPopUp {
+            width: 80%;
+            h6{
+                font-size: 12px;
+            }
+        }
     }
     label {
       text-align: left;
@@ -554,7 +822,7 @@ main.memberInfo {
     article.phone {
       display: block;
       width: 80%;
-      height: 490px;
+      //height: 490px;
       background-color: white;
 
       @include HorizontalAlignCenter();
@@ -592,8 +860,8 @@ main.memberInfo {
     article.memberPopUp {
       width: 80%;
     }
-  }
 }
+
 @media (min-width: 576px) and (max-width: 767.98px) {
   main.member {
     div.cont {
