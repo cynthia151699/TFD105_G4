@@ -14,7 +14,7 @@ document.getElementById("info").addEventListener("click", function (event) {
   event.preventDefault();
   $.ajax({
     type: "POST",
-    url: "./PHP/Memberticket.php",
+    url: "./php/Memberticket.php",
     dataType: "json",
     async: false,
     success: function (data) {
