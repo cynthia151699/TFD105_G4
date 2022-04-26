@@ -33,9 +33,9 @@
                   Log In
                 </button>
               </a>
-              <!-- <button type="button" class="member fb-btn">
+              <button type="button" class="member fb-btn">
                 Connect with <span>facebook</span>
-              </button> -->
+              </button>
             </form>
           </div>
 
@@ -109,199 +109,218 @@
                 <button type="submit" class="member submit" id="member_button">
                   Sign Up
                 </button>
-                <!-- <button type="button" class="member fb-btn">
+                <button type="button" class="member fb-btn">
                   Join with <span>facebook</span>
-                </button> -->
+                </button>
               </form>
             </div>
           </div>
         </div>
 
-       <!-- 手機版 -->
-       <article class="phone" id="phonelog">
-        <form method="post" action="./php/member/Memberlogin.php">
-        <h2 class="ptSpace30">Welcome back,</h2>
-        <div class="info ptSpace20">
-            <label>
+        <!-- 手機版 -->
+        <article class="phone" id="phonelog">
+          <form method="post" action="./php/member/Memberlogin.php">
+            <h2 class="ptSpace30">Welcome back,</h2>
+            <div class="info ptSpace20">
+              <label>
                 <span class="in">Email</span>
-                <input type="email" name="mail" id="phonemail"/>
-            </label>
+                <input type="email" name="mail" id="phonemail" />
+              </label>
 
-            <label>
+              <label>
                 <span class="in">Password</span>
-                <input type="password" name="PASSWORD" id="phonepassword"/>
-            </label>
-        </div>
+                <input type="password" name="PASSWORD" id="phonepassword" />
+              </label>
+            </div>
 
         <a href="#" class="forgot-pass mtSpace50">Forgot password?</a>
 
-        <a href="./front_login.html">
-            <button type="submit" class="member submit" id="phonelogin">
+            <a href="./front_login.html">
+              <button type="submit" class="member submit" id="phonelogin">
                 Sign In
+              </button>
+            </a>
+            <button type="button" class="member fb-btn">
+              Connect with <span>facebook</span>
             </button>
-        </a>
-        <button type="button" class="member fb-btn">
-            Connect with <span>facebook</span>
-        </button>
-        </form>
+          </form>
 
-        <section class="phoneBottom">
+          <section class="phoneBottom">
             <div class="left">
-                <h2>New here?</h2>
-                <div class="img__btn" id="phonedisplaysignin">
-                    <span class="m--up">Sign Up</span>
-                    <span class="m--in">Sign In</span>
-                </div>
-            </div>
-            <div class="right">
-                <p>
-                    Sign up and discover great amount of new
-                    opportunities!
-                </p>
-            </div>
-        </section>
-    </article>
-
-    <article class="phone" id="phonesignin" style="display: none">
-        <h2>Time to feel like home,</h2>
-        <form method="post" action="./php/member/MemberNew.php">
-        <div class="info ptSpace10">
-            <label>
-                <span>Name</span>
-                <input type="text" name="NAME" id="phonename"/>
-            </label>
-
-            <label>
-                <span>Email</span>
-                <input type="email" name="mail" id="phonemember_mail"/>
-            </label>
-
-            <label>
-                <span>Password</span>
-                <input type="password" name="PASSWORD" id="phonePasswordcheck"/>
-            </label>
-
-            <label>
-                <span>PASSWORD CONFIRM</span>
-                <input type="password" id="phonePassword_confirm"/>
-            </label>
-
-            <label>
-                <span>PHONE NUMBER</span>
-                <input type="text" name="PHONE" id="cellphonePHONE" maxlength="10"/>
-            </label>
-        </div>
-
-        <a href="./front_member_info.html">
-            <button type="submit" class="member submit" id="phone_button">
-                Sign In
-            </button>
-        </a>
-        <button type="button" class="member fb-btn">
-            Connect with <span>facebook</span>
-        </button>
-    </form>
-
-        <section class="phoneBottom">
-            <div class="left">
-                <h2>One of us?</h2>
-
-                <div class="img__btn" id="phonedisplaylogin">
-                    <span class="m--up">Sign Up</span>
-                    <span class="m--in">Sign In</span>
-                </div>
-            </div>
-            <div class="right">
-                <p>
-                    If you already has an account, just sign in.
-                    We've missed you!
-                </p>
-            </div>
-        </section>
-    </article>
-
-    <!-- 彈窗背景透明度 -->
-    <div class="mask"></div>
-
-    <!-- 彈窗內文 -->
-    <article class="memberPopUp">
-        <h6 class="title">
-            Terms & Conditions and Privacy Policy.<a class="memberTermsDel">X</a>
-        </h6>
-
-        <h6 class="inner">
-            Anno Account, Personal Information, and Security By
-            signing up for an account or placing an Order you agree
-            and understand that we may collect, use, store and
-            process your Personal Information in accordance with our
-            Privacy & Cookie Policy. Anno Museum fully respects the
-            privacy of individuals who access and use the Platforms.
-            For details on the manner in which we use cookies, the
-            type of information we collect, how and for what
-            purpose, we use your information and under what
-            circumstances we disclose information please see our
-            Privacy & Cookie Policy, which are incorporated into and
-            form part of these Terms.
-        </h6>
-    </article>
-
-    <!-- 忘記密碼變更彈窗 -->
-    <article class="forgetChange">
-        <section>
-            <form method="post" action="./php/member/Memberforgetemail.php" id="form">
-            <h3>Password Reset</h3>
-            <h4 class="mtSpace30 mbSpace30">
-                Please enter the email address that you used to sign
-                up so we can send you an email with your username
-                and a link to reset your password.
-            </h4>
-
-            <input type="name" name="mail" id="mail"/>
-            <!-- 接回傳的code  不用顯示 -->
-            <div style="display:none">
-                <label for="PASSWORD">PASSWORD</label>
-                <input type="text" name="PASSWORD" id="PASSWORD">
+              <h2>New here?</h2>
+              <div class="img__btn" id="phonedisplaysignin">
+                <span class="m--up">Sign Up</span>
+                <span class="m--in">Sign In</span>
               </div>
             <div class="btn" style="text-align: center;">
                 <button type="button" class="member submit" onclick="document.location.href='./front_member.html'">
                     Cancel
+            </div>
+            <div class="right">
+              <p>Sign up and discover great amount of new opportunities!</p>
+            </div>
+          </section>
+        </article>
+
+        <article class="phone" id="phonesignin" style="display: none">
+          <h2>Time to feel like home,</h2>
+          <form method="post" action="./php/member/MemberNew.php">
+            <div class="info ptSpace10">
+              <label>
+                <span>Name</span>
+                <input type="text" name="NAME" id="phonename" />
+              </label>
+
+              <label>
+                <span>Email</span>
+                <input type="email" name="mail" id="phonemember_mail" />
+              </label>
+
+              <label>
+                <span>Password</span>
+                <input
+                  type="password"
+                  name="PASSWORD"
+                  id="phonePasswordcheck"
+                />
+              </label>
+
+              <label>
+                <span>PASSWORD CONFIRM</span>
+                <input type="password" id="phonePassword_confirm" />
+              </label>
+
+              <label>
+                <span>PHONE NUMBER</span>
+                <input
+                  type="text"
+                  name="PHONE"
+                  id="cellphonePHONE"
+                  maxlength="10"
+                />
+              </label>
+            </div>
+
+            <a href="./front_member_info.html">
+              <button type="submit" class="member submit" id="phone_button">
+                Sign In
+              </button>
+            </a>
+            <button type="button" class="member fb-btn">
+              Connect with <span>facebook</span>
+            </button>
+          </form>
+
+          <section class="phoneBottom">
+            <div class="left">
+              <h2>One of us?</h2>
+
+              <div class="img__btn" id="phonedisplaylogin">
+                <span class="m--up">Sign Up</span>
+                <span class="m--in">Sign In</span>
+              </div>
+            </div>
+            <div class="right">
+              <p>
+                If you already has an account, just sign in. We've missed you!
+              </p>
+            </div>
+          </section>
+        </article>
+
+        <!-- 彈窗背景透明度 -->
+        <div class="mask"></div>
+
+        <!-- 彈窗內文 -->
+        <article class="memberPopUp">
+          <h6 class="title">
+            Terms & Conditions and Privacy Policy.<a class="memberTermsDel"
+              >X</a
+            >
+          </h6>
+
+          <h6 class="inner">
+            Anno Account, Personal Information, and Security By signing up for
+            an account or placing an Order you agree and understand that we may
+            collect, use, store and process your Personal Information in
+            accordance with our Privacy & Cookie Policy. Anno Museum fully
+            respects the privacy of individuals who access and use the
+            Platforms. For details on the manner in which we use cookies, the
+            type of information we collect, how and for what purpose, we use
+            your information and under what circumstances we disclose
+            information please see our Privacy & Cookie Policy, which are
+            incorporated into and form part of these Terms.
+          </h6>
+        </article>
+
+        <!-- 忘記密碼變更彈窗 -->
+        <article class="forgetChange">
+          <section>
+            <form
+              method="post"
+              action="./php/member/Memberforgetemail.php"
+              id="form"
+            >
+              <h3>Password Reset</h3>
+              <h4 class="mtSpace30 mbSpace30">
+                Please enter the email address that you used to sign up so we
+                can send you an email with your username and a link to reset
+                your password.
+              </h4>
+
+              <input type="name" name="mail" id="mail" />
+              <!-- 接回傳的code  不用顯示 -->
+              <div style="display: none">
+                <label for="PASSWORD">PASSWORD</label>
+                <input type="text" name="PASSWORD" id="PASSWORD" />
+              </div>
+              <div class="btn">
+                <button
+                  type="button"
+                  class="member submit"
+                  onclick="document.location.href='./front_member.html'"
+                >
+                  Cancel
                 </button>
                 <button type="submit" id="forgetmail" class="member fb-btn">
-                    Send
+                  Send
                 </button>
-            </div>
-        </form>
-        </section>
-    </article>
+              </div>
+            </form>
+          </section>
+        </article>
 
-    <!-- 忘記密碼送出郵件彈窗 -->
-    <article class="forgetSubmit">
-        <section>
+        <!-- 忘記密碼送出郵件彈窗 -->
+        <article class="forgetSubmit">
+          <section>
             <h5>
-                The password has already sent into your email
-                address, please check it.
+              The password has already sent into your email address, please
+              check it.
             </h5>
 
             <button type="button" class="member submit">
-                Back to login page
+              Back to login page
             </button>
-        </section>
-    </article>
-</main>
-</div>
+          </section>
+        </article>
+      </main>
+    </div>
 
-<!-- 載入套件 -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- 載入套件 -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
 
+    <script src="./js/front_member.min.js"></script>
 
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
 
-<script src="./js/front_member.min.js"></script>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script type="text/javascript">
-    emailjs.init('rB4cW-mtW8WwyODex')
-</script>
-
+    <script type="text/javascript">
+      emailjs.init("rB4cW-mtW8WwyODex");
+    </script>
   </body>
 </html>

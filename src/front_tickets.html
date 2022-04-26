@@ -6,6 +6,12 @@
 
     <!-- Swiper.js -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.css" />
+    
+    <style>
+        div.wrapperLoading{
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,7 +19,7 @@
 
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
-        "active3" : "active"
+        "active5" : "active"
         })
 
         <main class="ticketsPage" style="overflow-y: auto;margin-top: 0;">
@@ -41,7 +47,7 @@
                             </div>
 
                             <div class="ticketsCurRi"><!--圖片-->
-                                <img src="./img/tickets/anno_qr.png" alt="">
+                                <img src="./img/logo/anno_qr.png" alt="">
                             </div>
                         </div>
 
@@ -97,10 +103,6 @@
  
                 </div>
             </div>
-
-
-
-
 
             <article class="tickets">
                 <!-- 當期票券管理 -->
