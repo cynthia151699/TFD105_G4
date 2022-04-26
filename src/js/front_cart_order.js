@@ -86,6 +86,7 @@ window.onload = function () {
     let sessionCode = document.getElementsByClassName('input_coupon')[0].value;
     // document.getElementsByClassName('input_coupon')[0].value = "123";
     // let sessionCode = document.getElementsByClassName('input_coupon')[0].value = "123";
+    let applyCoupon = document.getElementsByClassName('applyCoupon')[0];
 
     applyCoupon.addEventListener("click", function () { //apply按鈕按下去觸發的事件
         if (sessionCode == "") { //無折扣碼
