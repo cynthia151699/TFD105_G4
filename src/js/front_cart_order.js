@@ -1,3 +1,8 @@
+new Vue({
+    
+})
+
+
 // 1.頁面載入後執行
 window.onload = function () {
     // 2.獲取元素
