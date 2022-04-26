@@ -38,16 +38,17 @@
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
     <style>
-        td {
-            vertical-align: middle;
-        }
-
         img {
             object-fit: cover;
         }
 
         div.popUp div.popUpWindows ul li {
             margin: 10px;
+            text-align: left;
+        }
+
+        #radio {
+            width: 50px;
         }
     </style>
 </head>
@@ -211,7 +212,7 @@
 
         </nav>
 
-        <div class="popUp">
+        <div class="light-box popUp">
 
             <div class="mask"></div>
 
@@ -224,19 +225,19 @@
                             <!-- <li>
                                 <h6>折扣碼編號：</h6><input type="number">
                             </li> -->
-                            <li style="text-align:left;">
+                            <li>
                                 <h6>折扣碼名稱：</h6><input type="text" v-model="DISCOUNT_NAME">
                             </li>
-                            <li style="text-align:left;">
+                            <li>
                                 <h6>折扣碼內容：</h6><input type="text" v-model="DISCOUNT_CONTENT">
                             </li>
-                            <li style="text-align:left;">
-                                <h6>折扣碼：</h6><input type="text" v-model="DISCOUNT_CODE">
+                            <li>
+                                <h6 style="margin-right: 35px;">折扣碼：</h6><input type="text" v-model="DISCOUNT_CODE">
                             </li>
-                            <li style="text-align:left;">
+                            <li>
                                 <h6>折扣碼狀態：
-                                    <input type="radio" v-model="DISCOUNT_STATUS" value="0">關閉
-                                    <input type="radio" v-model="DISCOUNT_STATUS" value="1">開放
+                                    <input type="radio" v-model="DISCOUNT_STATUS" value="0" id="radio">關閉
+                                    <input type="radio" v-model="DISCOUNT_STATUS" value="1" id="radio">開放
                                 </h6>
                             </li>
                             <li>
@@ -262,20 +263,20 @@
                             <!-- <li>
                                 <h6>折扣碼編號：</h6><input type="number">
                             </li> -->
-                            <li style="text-align: left;">
+                            <li>
                                 <h6>折扣碼名稱：</h6><input type="text" v-model="EDIT.NAME">
                             </li>
-                            <li style="text-align: left;">
+                            <li>
                                 <h6>折扣碼內容：</h6><input type="text" v-model="EDIT.CONTENT">
                             </li>
-                            <li style="text-align: left;">
-                                <h6>折扣碼：</h6><input type="text" v-model="EDIT.CODE">
+                            <li>
+                                <h6 style="margin-right: 35px;">折扣碼：</h6><input type="text" v-model="EDIT.CODE">
                             </li>
-                            <li style="text-align: left;">
+                            <li>
                                 <h6>折扣碼狀態：
                                     <!-- <input type="range" min="0" max="1" v-model="EDIT.STATUS"> -->
-                                    <input type="radio" v-model="EDIT.STATUS" value="0">關閉
-                                    <input type="radio" v-model="EDIT.STATUS" value="1">開放
+                                    <input type="radio" v-model="EDIT.STATUS" value="0" id="radio">關閉
+                                    <input type="radio" v-model="EDIT.STATUS" value="1" id="radio">開放
                                 </h6>
                             </li>
                             <li>
