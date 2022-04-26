@@ -277,7 +277,7 @@
 
         <main class="memberInfo">
             <!-- 確認會員資訊 -->
-            <article class="checkMemberInfo" style="">
+            <article class="checkMemberInfo">
                 <table id="appapp">
                     <tr>
                         <td colspan="2">
@@ -324,12 +324,12 @@
             </article>
 
             <!-- 更改密碼 -->
-            <article class="modifyMemberInfo" style="display: none">
+            <article class="modifyMemberInfo " style="display: none">
                 <table id="appupdate">
-               
+
                     <tr>
                         <td colspan="2">
-                            <h3>Edit your member information</h3>
+                            <h3 class="mbSpace10">Edit your member information</h3>
                         </td>
                     </tr>
                     <tr>
@@ -354,7 +354,8 @@
                             <h5>Password</h5>
                         </td>
                         <td>
-                            <input type="password" placeholder="請輸入密碼" name="PASSWORD" v-model="MEMBER.PASSWORD" />
+                            <input type="password" placeholder="請輸入密碼" name="PASSWORD" v-model="MEMBER.PASSWORD"
+                                id="Password" />
                         </td>
                     </tr>
                     <tr>
@@ -362,7 +363,7 @@
                             <h5>Password confirm</h5>
                         </td>
                         <td>
-                            <input type="password" placeholder="請再次輸入密碼" />
+                            <input type="password" placeholder="請再次輸入密碼" id="Password_confirm" />
                         </td>
                     </tr>
                     <tr>
@@ -370,7 +371,8 @@
                             <h5>Phone</h5>
                         </td>
                         <td>
-                            <input type="phone" placeholder="請輸入手機" name="PHONE" v-model="MEMBER.PHONE" />
+                            <input type="phone" placeholder="請輸入手機" name="PHONE" v-model="MEMBER.PHONE" id="PHONE"
+                                maxlength="10" />
                         </td>
                     </tr>
                     <tr>
@@ -385,14 +387,15 @@
                     <tr>
                         <td colspan="2">
                             <div style="
-                                        width: fit-content;
-                                        height: 40px;
-                                        margin: 0 auto;
-                                        padding-top: 10px;
-                                    ">
+                                width: fit-content;
+                                height: 40px;
+                                margin: 0 auto;
+                                padding-top: 10px;
+                            ">
                                 <input class="btn_previous" type="submit" value="Cancel"
                                     onclick="location.href='./front_member_info.html'" />
-                                <input class="btn_done" type="submit" value="Save" @click="memberdataupdate" />
+                                <input class="btn_done" type="submit" value="Save" @click="memberdataupdate"
+                                    id="inputcode" />
                             </div>
                         </td>
                     </tr>
@@ -419,7 +422,7 @@
                 },
             },
             mounted() {
-                fetch('./PHP/member/MemberSearch.php')
+                fetch('./php/member/MemberSearch.php')
                     .then(res => res.json())
                     .then(res => {
                         this.MEMBER = res[0]
@@ -453,7 +456,7 @@
                 },
             },
             mounted() {
-                fetch('./PHP/member/MemberSearch.php')
+                fetch('./php/member/MemberSearch.php')
                     .then(res => res.json())
                     .then(res => {
                         this.MEMBER = res[0]
@@ -461,7 +464,7 @@
             },
             methods: {
                 memberdataupdate() {
-                    fetch('./PHP/member/MemberUpdate.php', {
+                    fetch('./php/member/MemberUpdate.php', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -473,7 +476,20 @@
                             PHONE: this.MEMBER.PHONE,
                         }),
                     }).then(resp => {
-                        location = 'front_member_info.html';
+                        let Password = document.querySelector('#Password');
+                        let Password_confirm = document.querySelector('#Password_confirm');
+                        let phonenumber = document.getElementById('PHONE').value;
+                        let Password_value = Password.value;
+                        let Password_confirm_value = Password_confirm.value;
+                        if (!(/^[09]{2}[0-9]{8}$/.test(phonenumber))) {
+                            alert("The Phone number is incorrect, please re-fill");
+                            event.preventDefault();
+                        } else if (Password_value != Password_confirm_value) {
+                            alert("Password confirm does not match");
+                            event.preventDefault();
+                        } else {
+                            location = 'front_member_info.html';
+                        };
                     });
                 }
             },

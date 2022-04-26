@@ -1,17 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    @@include('./layout/head.html')
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- fullpage.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" />
+        <!-- RWD 設定 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-</head>
+        <!-- 網頁頁籤小icon -->
+        <link rel="shortcut icon" href="./img/logo/logo_square.ico" type="image/x-icon">
 
-<body>
+        <!-- 網站名稱 -->
+        <title>ANNO museum</title>
+
+        <!-- Vue.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script> -->
+
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+        <!-- Vue I18n CDN -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.5/vue-i18n.min.js"></script> -->
+
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+        <!-- 自訂css -->
+        <link rel="stylesheet" href="./css/style.css">
+
+        <!-- Link jquery.multiscroll.js CSS -->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.3/jquery.multiscroll.min.css"
+        />
+
+        <!-- Link fullpage.js CSS -->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css"
+        />
+
+        <!-- Link Swiper CSS -->
+        <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+        />
+
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
+
+        <!-- 多國語系 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.5/vue-i18n.min.js"></script>
+
+        <!-- AOS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    </head>
+
+
+<body >
     <div class="wrapper" id="app">
 
         <!-- 導覽列 -->
@@ -23,184 +73,183 @@
 
             <div id="fullpage">
 
-                <!-- fullpage 第一頁 -->
-                <div class="section active" id="section0">
+                <full-page :options="options" id="fullpage" class="mobile" ref="fullpage">
+                        
+                    <div class="section active" id="section0">
 
-                    <article class="about" data-aos="fade-down" data-aos-easing="linear"
-                        data-aos-duration="1500">
+                        <article class="about" data-aos="fade-down" data-aos-easing="linear"
+                            data-aos-duration="1500">
 
-                        <section class="about">
+                            <section class="about">
 
-                            <h2 class="top">
-                                About ANNO Museum
-                            </h2>
+                                <h2 class="top">
+                                    {{$t("header.title1")}}
+                                    <select name="locale" id="locale" v-model="locale" @change="changeLocale()">
+                                        <option value="en">English</option>
+                                        <option value="tw">繁體中文</option>
+                                        <option value="jp">日本語</option>
+                                    </select>
+                                </h2>
 
-                            <h6 class="first mtSpace80">
-                                Art records the deduction in ANNO Museum,
-                                <br>
-                                All is exist in the past, present, and future.
-                            </h6>
+                                <h6 class="first mtSpace80">
+                                    {{$t("main.section1")}}
+                                    <br>
+                                    {{$t("main.section2")}}
+                                </h6>
 
-                            <h6 class="middle mtSpace260">
-                                Not only for us,
-                                <br>
-                                You can accomplish every single dream here,
-                                <br>
-                                ANNO can be everyone's Utopia,
-                            </h6>
+                                <h6 class="middle mtSpace260">
+                                    {{$t("main.section3")}}
+                                    <br>
+                                    {{$t("main.section4")}}
+                                    <br>
+                                    {{$t("main.section5")}}
+                                </h6>
 
-                            <h6 class="end mtSpace30">
-                                Let us open our minds,
-                                <br>
-                                Create your own Anno.
-                            </h6>
-                        </section>
+                                <h6 class="end mtSpace30">
+                                    {{$t("main.section6")}}
+                                    <br>
+                                    {{$t("main.section7")}}
+                                </h6>
+                            </section>
 
-                        <div class="content">
-                            <img class="content__img" src="./img/about/about_spic1.jpg" alt="Some image" />
-                            <img class="content__img" src="./img/about/about_spic2.jpg" alt="Some image" />
-                            <img class="content__img" src="./img/about/about_spic3.jpg" alt="Some image" />
-                            <img class="content__img" src="./img/about/about_spic4.jpg" alt="Some image" />
-                            <img class="content__img" src="./img/about/about_spic5.jpg" alt="Some image" />
-                            <img class="content__img" src="./img/about/about_spic6.jpg" alt="Some image" />
-                        </div>
-                    </article>
-                </div>
-
-                <!-- fullpage 第二頁 -->
-                <div class="section history" id="section1">
-
-                    <h2 class="text" id="aboutHistoryText">History of Anno</h2>
-
-                    <div class="content plSpace50" id="aboutHistoryContent">
-
-                        <h2 class="mtSpace40">History of Anno</h2>
-
-                        <h6 class="first mtSpace50">
-                            Anno Museum is a new museum located in Taipei.
-                            The museum was founded in 2015, by six students in
-                            TIBAMI who have a lot of enthusiasm for art and life.Anno Museum collects various works of art, ranging from classical art works of the 18th and 19th centuries tomodern contemporary art works,
-                        </h6>
-
-                        <div class="middle mtSpace50">
-
-                            <h6>
-                                 so that visitors to Anno Museum can freely view the beauty of  various arts.Anno Museum also hosts regular exhibitions.They hope that through the establishment of the museum, education, and culture can be promoted so that more people can know and getclose to art.
-                            </h6>
-                        </div>
-
-                        <h6 class="mtSpace50">
-                            Without setting limits on style, they want to show a wide range of artworks from classic to trendy for the general public.
-                        </h6>
+                            <div class="content">
+                                <img class="content__img" src="./img/about/about_spic1.jpg" alt="Some image" />
+                                <img class="content__img" src="./img/about/about_spic2.jpg" alt="Some image" />
+                                <img class="content__img" src="./img/about/about_spic3.jpg" alt="Some image" />
+                                <img class="content__img" src="./img/about/about_spic4.jpg" alt="Some image" />
+                                <img class="content__img" src="./img/about/about_spic5.jpg" alt="Some image" />
+                                <img class="content__img" src="./img/about/about_spic6.jpg" alt="Some image" />
+                            </div>
+                        </article>
                     </div>
-                </div>
 
-                <!-- fullpage 第三頁 -->
-                <div class="section sns" id="section2">
+                    <!-- fullpage 第二頁 -->
+                    <div class="section history" id="section1">
 
-                    <article class="page3">
+                        <h2 class="text" id="aboutHistoryText">
+                            {{$t("header.title2")}}
+                        </h2>
 
-                        <div class="part3_wrapper">
+                        <div class="content plSpace50" id="aboutHistoryContent">
 
-                            <div class="cols">
+                            <h2 class="mtSpace40">{{$t("header.title2")}}</h2>
 
-                                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                            <h6 class="first mtSpace50">
+                                {{$t("main.section8")}}
+                            </h6>
 
-                                    <div class="container">
+                            <div class="middle mtSpace50">
 
-                                        <div class="front picOne">
+                                <h6>
+                                    {{$t("main.section9")}}
+                                </h6>
+                            </div>
 
-                                            <div class="inner">
-                                                <h4>John Lee</h4>
+                            <h6 class="mtSpace50">
+                                {{$t("main.section10")}}
+                            </h6>
+                        </div>
+                    </div>
+
+                    <!-- fullpage 第三頁 -->
+                    <div class="section sns" id="section2">
+
+                        <article class="page3">
+
+                            <div class="part3_wrapper">
+
+                                <div class="cols">
+
+                                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+
+                                        <div class="container">
+
+                                            <div class="front picOne">
+
+                                                <div class="inner">
+                                                    <h4>John Lee</h4>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="back">
+                                            <div class="back">
 
-                                            <div class="inner">
-                                                <h4>Position:<br>Chairman</h4>
+                                                <div class="inner">
+                                                    <h4>Position:<br>Chairman</h4>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                                    <div class="col" ontouchstart="this.classList.toggle('hover');">
 
-                                    <div class="container">
+                                        <div class="container">
 
-                                        <div class="front picTwo">
+                                            <div class="front picTwo">
 
-                                            <div class="inner">
-                                                <h4>Peter Chao</h4>
+                                                <div class="inner">
+                                                    <h4>Peter Chao</h4>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="back">
+                                            <div class="back">
 
-                                            <div class="inner">
+                                                <div class="inner">
 
-                                                <h4>Position:<br>Curator
-                                                </h4>
+                                                    <h4>Position:<br>Curator
+                                                    </h4>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                                    <div class="col" ontouchstart="this.classList.toggle('hover');">
 
-                                    <div class="container">
+                                        <div class="container">
 
-                                        <div class="front picThree">
+                                            <div class="front picThree">
 
-                                            <div class="inner">
-                                                <h4>Rita Su</h4>
+                                                <div class="inner">
+                                                    <h4>Rita Su</h4>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="back">
+                                            <div class="back">
 
-                                            <div class="inner">
-                                                <h4>Position:<br>Art director
-                                                </h4>
+                                                <div class="inner">
+                                                    <h4>Position:<br>Art director
+                                                    </h4>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </article>
-                </div>
+                        </article>
+                    </div>
+
+                </full-page>
             </div>
         </main>
     </div>
 
     <!-- 載入套件 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v13.0"
-        nonce="NxXdDjCx"></script>
+    <!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v13.0"
+        nonce="NxXdDjCx"></script> -->
 
-    <script src="./js/vendors/fullpage.min.js"></script>
+    <!-- <script src="./js/vendors/fullpage.min.js"></script> -->
+    <script src="./js/vendors/vue-fullpage.min.js"></script>
     <script src="./js/vendors/TweenMax.min.js"></script>
+
+    <script src="./js/vendors/vue-fullpage.min.js"></script>
 
 
     <!-- 載入js -->
-    <script src="./js/about.min.js"></script>
-    <script>
-        $("#aboutHistoryText").click(function () {
-            restart();
-        });
+    <script src="./js/front_about.min.js"></script>
 
-        function restart() {
-            $('#aboutHistoryContent').css({ 'top': '80px' }),
-            $('#aboutHistoryText').css({ 'display': 'none' }),
-            $("#aboutHistoryContent").css({ 'display': 'block' }),
-            $('#aboutHistoryContent').animate({ 'top': 0 }, { "duration": 2000, "queue": false });
-            $('#aboutHistoryContent').fadeIn(2000);
-        }
-    </script>
 </body>
 
 </html>

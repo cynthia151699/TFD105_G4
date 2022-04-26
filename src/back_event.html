@@ -217,6 +217,16 @@
                     <div class="event -add">
                         <h5>新增展覽訊息</h5>
                         <ul>
+
+                            <li style="text-align: left;">
+                                <h6>展覽訊息分類編號：</h6>
+                                <select v-model="EXHIBITION_STYLE_ID" style="margin: 0;">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </li>
+
                             <li style="text-align: left;">
                                 <h6>展覽訊息分類：</h6>
                                 <select v-model="EXHIBITION_STYLE" style="margin: 0;">
@@ -254,6 +264,16 @@
                     <div class="event -edit">
                         <h5>編輯展覽訊息</h5>
                         <ul>
+                            
+                            <li style="text-align: left;">
+                                <h6>展覽訊息分類編號：</h6>
+                                <select v-model="EDIT.EXHIBITION_STYLE_ID" style="margin: 0;">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </li>
+
                             <li style="text-align: left;">
                                 <h6>展覽訊息分類：</h6>
                                 <select v-model="EDIT.EXHIBITION_STYLE" style="margin: 0;">

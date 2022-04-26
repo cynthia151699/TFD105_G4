@@ -316,7 +316,18 @@
 
                 <li class="prSpace40">
                   <h6>付款狀態：</h6>
-                  <select name="pay" id="pay" v-model="EDIT.PAY_STATUS" style="width: 350px; box-sizing: border-box; margin: 0; height: 25px; background-color: white;">
+                  <select
+                    name="pay"
+                    id="pay"
+                    v-model="EDIT.PAY_STATUS"
+                    style="
+                      width: 350px;
+                      box-sizing: border-box;
+                      margin: 0;
+                      height: 25px;
+                      background-color: white;
+                    "
+                  >
                     <option value="done">已付款</option>
                     <option value="none">未付款</option>
                   </select>
@@ -324,7 +335,18 @@
 
                 <li class="prSpace40">
                   <h6>訂單狀態：</h6>
-                  <select name="order" id="order" v-model="EDIT.ORDER_STATUS" style="width: 350px; box-sizing: border-box; margin: 0; height: 25px; background-color: white;">
+                  <select
+                    name="order"
+                    id="order"
+                    v-model="EDIT.ORDER_STATUS"
+                    style="
+                      width: 350px;
+                      box-sizing: border-box;
+                      margin: 0;
+                      height: 25px;
+                      background-color: white;
+                    "
+                  >
                     <option value="done">已完成</option>
                     <option value="doing">處理中</option>
                   </select>
@@ -372,12 +394,22 @@
 
                 <li class="prSpace40">
                   <h6>使用折扣：</h6>
-                  <input type="text" placeholder="無" v-model="EDIT.DISCOUNT_CODE" disabled/>
+                  <input
+                    type="text"
+                    placeholder="無"
+                    v-model="EDIT.DISCOUNT_CODE"
+                    disabled
+                  />
                 </li>
 
                 <li class="prSpace40">
                   <h6>折扣金額：</h6>
-                  <input type="text" placeholder="NT.400" v-model="EDIT.DISCOUNT_TOTAL" disabled/>
+                  <input
+                    type="text"
+                    placeholder="NT.400"
+                    v-model="EDIT.DISCOUNT_TOTAL"
+                    disabled
+                  />
                 </li>
 
                 <!-- <li class="prSpace40">
@@ -387,16 +419,19 @@
 
                 <li class="prSpace40">
                   <h6>創建時間：</h6>
-                  <input type="text" v-model="EDIT.ORDER_DATE" disabled/>
+                  <input type="text" v-model="EDIT.ORDER_DATE" disabled />
                 </li>
               </ul>
 
               <div class="checkButtons">
                 <input type="button" value="取消" @click="order_cancel" />
                 <!-- <input type="button" value="確定"/> -->
-                <input type="button" value="確定" @click="order_update(EDIT.ID)" />
+                <input
+                  type="button"
+                  value="確定"
+                  @click="order_update(EDIT.ID)"
+                />
               </div>
-
             </div>
           </form>
         </div>
@@ -422,10 +457,19 @@
               </h6>
             </a>
 
-            <input type="text" placeholder=" 以訂單編號查詢" class="mtSpace10" id="check" v-model.trim="search" />
+            <input
+              type="text"
+              placeholder=" 以訂單編號查詢"
+              class="mtSpace10"
+              id="check"
+              v-model.trim="search"
+            />
 
-            
-            <button class="mtSpace10 mlSpace20" id="search" @click="search_Order">
+            <button
+              class="mtSpace10 mlSpace20"
+              id="search"
+              @click="search_Order"
+            >
               <h6>查詢</h6>
             </button>
           </div>
@@ -439,7 +483,7 @@
                 <td>編號</td>
                 <td>訂單編號</td>
                 <td>會員帳號</td>
-                <td>展訊QRcode</td>
+                <!-- <td>展訊QRcode</td> -->
                 <td>付款狀態</td>
                 <td>訂單狀態</td>
                 <td>創建時間</td>
@@ -451,13 +495,13 @@
                 <td>{{ORDER.ID}}</td>
                 <td>{{ORDER.INVOICE}}</td>
                 <td>{{ORDER.ACCOUNT}}</td>
-                <td>
+                <!-- <td>
                   <img
                     :src="ORDER.QRCODE"
                     alt=""
                     style="width: 60px; height: 60px"
                   />
-                </td>
+                </td> -->
                 <td>{{ORDER.PAY_STATUS}}</td>
                 <td>{{ORDER.ORDER_STATUS}}</td>
                 <td>{{ORDER.ORDER_DATE}}</td>
@@ -495,6 +539,6 @@
       </div>
     </div>
 
-    <script src="./back_order.min.js"></script>
+    <script src="./js/back_order.min.js"></script>
   </body>
 </html>

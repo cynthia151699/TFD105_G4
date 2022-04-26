@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layout/head.html')
+
+    <!-- fullpage.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" />
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+
+<body>
+    <div class="wrapper" id="app">
+
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active4" : "active"
+        })
+
+        <main class="about">
+
+            <div id="fullpage">
+
+                <!-- fullpage 第一頁 -->
+                <div class="section active" id="section0">
+
+                    <article class="about" data-aos="fade-down" data-aos-easing="linear"
+                        data-aos-duration="1500">
+
+                        <section class="about">
+
+                            <h2 class="top">
+                                About ANNO Museum
+                            </h2>
+
+                            <h6 class="first mtSpace80">
+                                Art records the deduction in ANNO Museum,
+                                <br>
+                                All is exist in the past, present, and future.
+                            </h6>
+
+                            <h6 class="middle mtSpace260">
+                                Not only for us,
+                                <br>
+                                You can accomplish every single dream here,
+                                <br>
+                                ANNO can be everyone's Utopia,
+                            </h6>
+
+                            <h6 class="end mtSpace30">
+                                Let us open our minds,
+                                <br>
+                                Create your own Anno.
+                            </h6>
+                        </section>
+
+                        <div class="content">
+                            <img class="content__img" src="./img/about/about_spic1.jpg" alt="Some image" />
+                            <img class="content__img" src="./img/about/about_spic2.jpg" alt="Some image" />
+                            <img class="content__img" src="./img/about/about_spic3.jpg" alt="Some image" />
+                            <img class="content__img" src="./img/about/about_spic4.jpg" alt="Some image" />
+                            <img class="content__img" src="./img/about/about_spic5.jpg" alt="Some image" />
+                            <img class="content__img" src="./img/about/about_spic6.jpg" alt="Some image" />
+                        </div>
+                    </article>
+                </div>
+
+                <!-- fullpage 第二頁 -->
+                <div class="section history" id="section1">
+
+                    <h2 class="text" id="aboutHistoryText">History of Anno</h2>
+
+                    <div class="content plSpace50" id="aboutHistoryContent">
+
+                        <h2 class="mtSpace40">History of Anno</h2>
+
+                        <h6 class="first mtSpace50">
+                            Anno Museum is a new museum located in Taipei.
+                            The museum was founded in 2015, by six students in
+                            TIBAMI who have a lot of enthusiasm for art and life.Anno Museum collects various works of art, ranging from classical art works of the 18th and 19th centuries tomodern contemporary art works,
+                        </h6>
+
+                        <div class="middle mtSpace50">
+
+                            <h6>
+                                 so that visitors to Anno Museum can freely view the beauty of  various arts.Anno Museum also hosts regular exhibitions.They hope that through the establishment of the museum, education, and culture can be promoted so that more people can know and getclose to art.
+                            </h6>
+                        </div>
+
+                        <h6 class="mtSpace50">
+                            Without setting limits on style, they want to show a wide range of artworks from classic to trendy for the general public.
+                        </h6>
+                    </div>
+                </div>
+
+                <!-- fullpage 第三頁 -->
+                <div class="section sns" id="section2">
+
+                    <article class="page3">
+
+                        <div class="part3_wrapper">
+
+                            <div class="cols">
+
+                                <div class="col" ontouchstart="this.classList.toggle('hover');">
+
+                                    <div class="container">
+
+                                        <div class="front picOne">
+
+                                            <div class="inner">
+                                                <h4>John Lee</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="back">
+
+                                            <div class="inner">
+                                                <h4>Position:<br>Chairman</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col" ontouchstart="this.classList.toggle('hover');">
+
+                                    <div class="container">
+
+                                        <div class="front picTwo">
+
+                                            <div class="inner">
+                                                <h4>Peter Chao</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="back">
+
+                                            <div class="inner">
+
+                                                <h4>Position:<br>Curator
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col" ontouchstart="this.classList.toggle('hover');">
+
+                                    <div class="container">
+
+                                        <div class="front picThree">
+
+                                            <div class="inner">
+                                                <h4>Rita Su</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="back">
+
+                                            <div class="inner">
+                                                <h4>Position:<br>Art director
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 載入套件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v13.0"
+        nonce="NxXdDjCx"></script>
+
+    <script src="./js/vendors/fullpage.min.js"></script>
+    <script src="./js/vendors/TweenMax.min.js"></script>
+
+
+    <!-- 載入js -->
+    <script src="./js/about.min.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
