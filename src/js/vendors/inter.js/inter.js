@@ -1,7 +1,10 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 import { preloadFonts } from './utils.min.js';
 import { Intro } from './intro.min.js';
 
-let fetch = require(`node-fetch`);
+
 
 const intro = new Intro(document.querySelector('.circles'));
 
