@@ -10,6 +10,10 @@ window.onload = function () {
     var checkAll = document.getElementById("checkAll"); //全選核取方塊
     var totalCount = document.getElementById("totalCount"); //總計
     var totalPrice = document.getElementById("totalPrice"); //總價
+    var applyCoupon = document.getElementsByClassName("applyCoupon")[0]; //送出折扣碼
+    var discount = 100
+    var couponUse = document.getElementById("couponUse"); //使用狀態
+
     // 3.加減按鈕
     for (var i = 0; i < decrease.length; i++) {
         // 4.另存下標
@@ -86,7 +90,7 @@ window.onload = function () {
     let sessionCode = document.getElementsByClassName('input_coupon')[0].value;
     // document.getElementsByClassName('input_coupon')[0].value = "123";
     // let sessionCode = document.getElementsByClassName('input_coupon')[0].value = "123";
-    let applyCoupon = document.getElementsByClassName('applyCoupon')[0];
+
 
     applyCoupon.addEventListener("click", function () { //apply按鈕按下去觸發的事件
         if (sessionCode == "") { //無折扣碼
@@ -134,7 +138,7 @@ new Vue({
                 res.json()
             )
 
-            .then(body => {
+            .then(res => {
                 this.TICKETS = res
             })
     },
