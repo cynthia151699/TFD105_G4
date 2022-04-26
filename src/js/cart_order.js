@@ -1,4 +1,5 @@
-       // 1.頁面載入後執行
+ 
+  // 1.頁面載入後執行
        window.onload = function() {    
         // 2.獲取元素
         var liCheck = document.getElementsByName("liCheck"); //li裡面的核取方塊
