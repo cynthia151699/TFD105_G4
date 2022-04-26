@@ -1,6 +1,23 @@
 new Vue({
-    
-})
+    el: "#ticket_wrapper",
+    data() {
+      return {
+        TICKETS: [],
+      };
+    },
+
+    created() {
+        fetch("./php/ticket/Select_front_Ticket.php")
+
+            .then(res =>
+                res.json()
+            )
+
+            .then(body => {
+                this.TICKETS = body
+            })
+    },
+});
 
 
 // 1.頁面載入後執行
