@@ -27,7 +27,7 @@
     // border: 1px #fff solid;
     
     h4{
-        color: $TextColor2;
+        color: $AccentColor2;
     }
 
     h6{
@@ -39,14 +39,13 @@
 .info_right{
     // border: 1px #fff solid;
     margin-left: 30px;
+    padding-top: 50px;
     width: 400px;
 
     line-height: 1.6;
     // text-align: center;
-
     h4{
-        font-family: Fredoka;
-        color: $AccentColor3;
+        color: $AccentColor2;
     }
 
     h6{
@@ -96,6 +95,7 @@
         // border: 1px #fff solid;
         margin: 0 auto;
         width: 350px;
+        text-align: center;
     }
 
 
@@ -128,5 +128,6 @@
         // border: 1px #fff solid;
         margin: 0 auto;
         width: 350px;
+        text-align: center;
     }
 }
