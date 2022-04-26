@@ -1,7 +1,94 @@
-var myFullpage = new fullpage('#fullpage', {
-    sectionsColor: ['#293241', '#293241'],
-    lazyLoad: true
-});
+// 多國語言
+const messages = {
+    en: {
+      header: {
+        title1: "About ANNO Museum",
+        title2: "History of Anno",
+      },
+      main: {
+        section1: "Art records the deduction in ANNO Museum,",
+        section2: "All is exist in the past, present, and future.",
+        section3: "Not only for us,",
+        section4: "You can accomplish every single dream here,",
+        section5: "ANNO can be everyone's Utopia,",
+        section6: "Let us open our minds,",
+        section7: "Create your own Anno.",
+      },
+    },
+    jp: {
+      header: {
+        title1: "ANNO について",
+        title2: "ANNO の歴史",
+      },
+      main: {
+        section1: "芸術は紀元間の推移や変化を記します",
+        section2: "過去も未来も、現在にも存在します",
+        section3: "紀元美術館はみんなのユートピアでありたい",
+        section4: "芸術家とともに、",
+        section5: "ここで夢と幻想を叶えよう",
+        section6: "心を開いて、",
+        section7: "自分の紀元を創りましょう",
+      },
+    },
+    tw: {
+      header: {
+        title1: "關於紀元美術館",
+        title2: "關於紀元美術館",
+      },
+      main: {
+        section1: "藝術編寫紀元之間的推演",
+        section2: "存在於過去、現在與未來",
+        section3: "紀元美術館願成為大家的烏托邦",
+        section4: "讓藝術家與你",
+        section5: "在這裡實現你的夢境與幻想",
+        section6: "讓我們一起敞開心扉",
+        section7: "創造屬於自己的紀元",
+      },
+    },
+  };
+  
+  const i18n = new VueI18n({ messages: messages });
+  
+  let app = new Vue({
+    el: "#app",
+    i18n: i18n,
+    // data: {
+    //   locale: localStorage.getItem("en") || "en",
+    //   // locale: localStorage.getItem("locale") || "tw",
+    // },
+    data() {
+        return {
+            locale: localStorage.getItem("en") || "en",
+            options: {
+                afterLoad: this.afterLoad,
+                navigation: false,
+                anchors: ['page1', 'page2', 'page3'],
+                sectionsColor: ['#293241', '#293241', '#293241']
+            },
+        }
+    },
+    methods: {
+        changeLocale: function () {
+            this.$i18n.locale = this.locale;
+            console.log(this.$t("header.title"));
+            localStorage.setItem("locale", this.locale);
+        },
+        afterLoad: function () {
+            //console.log('After load')
+        }, 
+    },
+    created() {
+      this.$i18n.locale = this.locale;
+    },
+  });
+
+
+
+
+// var myFullpage = new fullpage('#fullpage', {
+//     sectionsColor: ['#293241', '#293241'],
+//     lazyLoad: true
+// });
 
 // $('.aos-init').removeClass('aos-animate'); //清除aos-animate元素
 // $('#fullpage').fullpage({
@@ -211,72 +298,7 @@ function restart() {
 }
 
 
-// 多國語言
-const messages = {
-  en: {
-    header: {
-      title1: "About ANNO Museum",
-      title2: "History of Anno",
-    },
-    main: {
-      section1: "Art records the deduction in ANNO Museum,",
-      section2: "All is exist in the past, present, and future.",
-      section3: "Not only for us,",
-      section4: "You can accomplish every single dream here,",
-      section5: "ANNO can be everyone's Utopia,",
-      section6: "Let us open our minds,",
-      section7: "Create your own Anno.",
-    },
-  },
-  jp: {
-    header: {
-      title1: "ANNO について",
-      title2: "ANNO の歴史",
-    },
-    main: {
-      section1: "",
-      section2: "",
-      section3: "",
-      section4: "",
-      section5: "",
-      section6: "",
-      section7: "",
-    },
-  },
-  tw: {
-    header: {
-      title1: "關於紀元美術館",
-      title2: "關於紀元美術館",
-    },
-    main: {
-      section1: "藝術編寫紀元之間的推演",
-      section2: "存在於過去、現在與未來",
-      section3: "紀元美術館願成為大家的烏托邦",
-      section4: "讓藝術家與你",
-      section5: "在這裡實現你的夢境與幻想",
-      section6: "讓我們一起敞開心扉",
-      section7: "創造屬於自己的紀元",
-    },
-  },
-};
 
-const i18n = new VueI18n({ messages: messages });
 
-let app = new Vue({
-  el: "#app",
-  i18n: i18n,
-  data: {
-    locale: localStorage.getItem("en") || "en",
-    // locale: localStorage.getItem("locale") || "tw",
-  },
-  methods: {
-    changeLocale: function () {
-      this.$i18n.locale = this.locale;
-      console.log(this.$t("header.title"));
-      localStorage.setItem("locale", this.locale);
-    },
-  },
-  created() {
-    this.$i18n.locale = this.locale;
-  },
-});
+
+
