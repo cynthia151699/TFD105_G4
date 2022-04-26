@@ -192,3 +192,91 @@ AOS.init();
         new ImageTrail();
     });
 }
+
+
+// history of anno 動畫效果
+$("#aboutHistoryText").click(function () {
+  restart();
+});
+
+function restart() {
+  $("#aboutHistoryContent").css({ top: "80px" }),
+    $("#aboutHistoryText").css({ display: "none" }),
+    $("#aboutHistoryContent").css({ display: "block" }),
+    $("#aboutHistoryContent").animate(
+      { top: 0 },
+      { duration: 2000, queue: false }
+    );
+  $("#aboutHistoryContent").fadeIn(2000);
+}
+
+
+// 多國語言
+const messages = {
+  en: {
+    header: {
+      title1: "About ANNO Museum",
+      title2: "History of Anno",
+    },
+    main: {
+      section1: "Art records the deduction in ANNO Museum,",
+      section2: "All is exist in the past, present, and future.",
+      section3: "Not only for us,",
+      section4: "You can accomplish every single dream here,",
+      section5: "ANNO can be everyone's Utopia,",
+      section6: "Let us open our minds,",
+      section7: "Create your own Anno.",
+    },
+  },
+  jp: {
+    header: {
+      title1: "ANNO について",
+      title2: "ANNO の歴史",
+    },
+    main: {
+      section1: "",
+      section2: "",
+      section3: "",
+      section4: "",
+      section5: "",
+      section6: "",
+      section7: "",
+    },
+  },
+  tw: {
+    header: {
+      title1: "關於紀元美術館",
+      title2: "關於紀元美術館",
+    },
+    main: {
+      section1: "藝術編寫紀元之間的推演",
+      section2: "存在於過去、現在與未來",
+      section3: "紀元美術館願成為大家的烏托邦",
+      section4: "讓藝術家與你",
+      section5: "在這裡實現你的夢境與幻想",
+      section6: "讓我們一起敞開心扉",
+      section7: "創造屬於自己的紀元",
+    },
+  },
+};
+
+const i18n = new VueI18n({ messages: messages });
+
+let app = new Vue({
+  el: "#app",
+  i18n: i18n,
+  data: {
+    locale: localStorage.getItem("en") || "en",
+    // locale: localStorage.getItem("locale") || "tw",
+  },
+  methods: {
+    changeLocale: function () {
+      this.$i18n.locale = this.locale;
+      console.log(this.$t("header.title"));
+      localStorage.setItem("locale", this.locale);
+    },
+  },
+  created() {
+    this.$i18n.locale = this.locale;
+  },
+});

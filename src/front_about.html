@@ -189,17 +189,7 @@
     <!-- 載入js -->
     <script src="./js/about.min.js"></script>
     <script>
-        $("#aboutHistoryText").click(function () {
-            restart();
-        });
 
-        function restart() {
-            $('#aboutHistoryContent').css({ 'top': '80px' }),
-            $('#aboutHistoryText').css({ 'display': 'none' }),
-            $("#aboutHistoryContent").css({ 'display': 'block' }),
-            $('#aboutHistoryContent').animate({ 'top': 0 }, { "duration": 2000, "queue": false });
-            $('#aboutHistoryContent').fadeIn(2000);
-        }
     </script>
 </body>
 
