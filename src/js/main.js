@@ -2,6 +2,21 @@ console.log('ok')
 
 "use strict";
 
+//進入頁動畫
+window.addEventListener("load", function () {
+  document.querySelector(".wrapperLoading").classList.add("-hide");
+  // document.getElementsByClassName("wrapperLoading")[0].remove();
+});
+
+// 漢堡jQuery
+$(function () {
+  $(".menu_icon").click(function () {
+    $(this).toggleClass("active");
+    $(".hamburgerCnt").slideToggle();
+  });
+});
+
+
 // 從外部html 載入nav, header, footer (此方法會產生快取，抓到舊的檔案)
 // $(".Mynav").load("nav.html");
 // $(".Myheader").load("header.html");

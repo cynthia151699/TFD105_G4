@@ -51,22 +51,22 @@ let member_Mask = document.querySelector(".mask");
 // 	member_Terms_text.style.display = "none";
 // 	member_Terms_area.style.display = "none";
 // })
-// 關閉
-let member_Terms_Del = document.querySelector(".memberTermsDel");
+// // 關閉
+// let member_Terms_Del = document.querySelector(".memberTermsDel");
 
-// 彈窗
-let member_Pop_UP = document.querySelector(".memberPopUp");
+// // 彈窗
+// let member_Pop_UP = document.querySelector(".memberPopUp");
 
-// 彈窗開啟
-member_Terms.addEventListener('click', function (e) {
-	e.preventDefault;
-	member_Pop_UP.style.display = "block";
-	member_Mask.style.display = "block";
-})
+// // 彈窗開啟
+// member_Terms.addEventListener('click', function (e) {
+// 	e.preventDefault;
+// 	member_Pop_UP.style.display = "block";
+// 	member_Mask.style.display = "block";
+// })
 
-// 彈窗關閉
-member_Terms_Del.addEventListener('click', function () {
-	e.preventDefault;
-	member_Pop_UP.style.display = "none";
-	member_Mask.style.display = "none";
-})
+// // 彈窗關閉
+// member_Terms_Del.addEventListener('click', function () {
+// 	e.preventDefault;
+// 	member_Pop_UP.style.display = "none";
+// 	member_Mask.style.display = "none";
+// })
