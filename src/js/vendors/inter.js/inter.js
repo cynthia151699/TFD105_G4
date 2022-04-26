@@ -1,6 +1,8 @@
 import { preloadFonts } from './utils.min.js';
 import { Intro } from './intro.min.js';
 
+let fetch = require(`node-fetch`);
+
 const intro = new Intro(document.querySelector('.circles'));
 
 // Preload images and fonts
