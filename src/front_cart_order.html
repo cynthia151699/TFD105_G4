@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="ticket_wrapper">
 
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
@@ -32,7 +32,7 @@
                                 <td>Total</td>
                             </tr>
 
-                            <!-- 第一種票券 -->
+                            <!-- 票券 -->
                             <tr class="first_order" style="color:#fff; line-height: 5;" v-for="TICKET in TICKETS">
                                 <td class="roll_ticket">{{TICKET.TICKET_TYPE}}</td>
                                 <td style="width: 230px;">{{TICKET.TICKET_DATE}}</td>
@@ -132,7 +132,7 @@
     </div>
 
     <!-- 載入js -->
-    <script src="./js/cart_orders.min.js"></script>
+    <script src="./js/front_cart_order.min.js"></script>
 
 </body>
 

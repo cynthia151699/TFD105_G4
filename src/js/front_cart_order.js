@@ -86,6 +86,7 @@ window.onload = function () {
     let sessionCode = document.getElementsByClassName('input_coupon')[0].value;
     // document.getElementsByClassName('input_coupon')[0].value = "123";
     // let sessionCode = document.getElementsByClassName('input_coupon')[0].value = "123";
+    let applyCoupon = document.getElementsByClassName('applyCoupon')[0];
 
     applyCoupon.addEventListener("click", function () { //apply按鈕按下去觸發的事件
         if (sessionCode == "") { //無折扣碼
@@ -117,3 +118,24 @@ window.onload = function () {
         sessionStorage.setItem('couponUse', couponUse.innerHTML); //7.coupon使用狀態
     });
 }
+
+new Vue({
+    el: "#ticket_wrapper",
+    data() {
+      return {
+        TICKETS: [],
+      };
+    },
+
+    created() {
+        fetch("./php/ticket/Select_front_Ticket.php")
+
+            .then(res =>
+                res.json()
+            )
+
+            .then(body => {
+                this.TICKETS = body
+            })
+    },
+});
