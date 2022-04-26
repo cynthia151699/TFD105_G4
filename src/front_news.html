@@ -313,7 +313,7 @@
                 </svg>
                 <div class="slideshow">
                     <div class="slideshow__deco"></div>
-                    <div class="slide" v-for="sss in NEWS">
+                    <div class="slide" v-for="sss in NEWS" @click="showoff">
                         <div class="slide__img-wrap">
                             <div class="slide__img" :style="'background-image: url('+ sss.NEWS_PIC +');'">
                             </div>
@@ -371,7 +371,7 @@
                         <div class="content__text">{{NEW.NEWS_CONTENT}}</div>
                     </div> -->
 
-                <button class="content__close">
+                <button class="content__close" @click="showon">
                     <svg class="icon icon--longarrow">
                         <use xlink:href="#icon-longarrow"></use>
                     </svg>
