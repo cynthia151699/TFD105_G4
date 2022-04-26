@@ -12,12 +12,12 @@ $ClientBackURL   = "https://tibamef2e.com/tfd105/g4/front_home.html"; 	  			//�
 
 $orderSend = $_POST["orderSend"];
 settype($orderSend,"integer");
-echo $orderSend;
+// echo $orderSend;
 
 $NTD = 1600;											//商品價格
 // mwt-newebpay/all.php?pay=y
 // $NTD = $orderSend;									//商品價格
-echo gettype($NTD);
+// echo gettype($NTD);
 $Order_Title = "票券";		//商品名稱
 $ATM_ExpireDate = 3;						//ATM付款到期日
 ?>
