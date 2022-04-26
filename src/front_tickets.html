@@ -11,14 +11,12 @@
 <body>
     <div class="wrapper" id="app">
 
-        @@include('./layout/login.html')
-
         <!-- 導覽列 -->
         @@include('./layout/nav.html', {
         "active3" : "active"
         })
 
-        <main class="ticketsPage">
+        <main class="ticketsPage" style="overflow-y: auto;margin-top: 0;">
             <!-- coding here -->
 
             <!------ 當期展覽彈窗 ------>
