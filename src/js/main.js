@@ -1,6 +1,6 @@
-console.log('ok')
+console.log("ok");
 
-"use strict";
+("use strict");
 
 //進入頁動畫
 window.addEventListener("load", function () {
@@ -15,7 +15,6 @@ $(function () {
     $(".hamburgerCnt").slideToggle();
   });
 });
-
 
 // 從外部html 載入nav, header, footer (此方法會產生快取，抓到舊的檔案)
 // $(".Mynav").load("nav.html");

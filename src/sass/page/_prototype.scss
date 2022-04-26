@@ -1,18 +1,18 @@
-figure.demo{
-    width: calc(#{$Width} * 0.5);
-    height: $Height;
+figure.demo {
+  width: calc(#{$Width} * 0.5);
+  height: $Height;
 
-    @include LinkImg(null, 'demo', 'png', contain, no-repeat, null);
+  @include LinkImg(null, "demo", "png", contain, no-repeat, null);
 }
 
-figcaption{
-    width: calc(#{$Width} * 0.5);
-    height: $Height;
+figcaption {
+  width: calc(#{$Width} * 0.5);
+  height: $Height;
 
-    @include VerticalAlignCenter();
+  @include VerticalAlignCenter();
 
-    section{
-        width: 85%;
-        height: fit-content;
-    }
+  section {
+    width: 85%;
+    height: fit-content;
+  }
 }

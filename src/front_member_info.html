@@ -1,141 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     @@include('./layout/head.html')
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper" id="app">
-        <!-- 導覽列 -->
-        @@include('./layout/nav.html')
+      <!-- 導覽列 -->
+      @@include('./layout/nav.html')
 
+      <main class="memberInfo">
+        <!-- 確認會員資訊 -->
+        <article class="checkMemberInfo">
+          <table id="appapp">
+            <tr>
+              <td colspan="2">
+                <h3>Overview</h3>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="padding-left: 0px">
+                <h5>Member information</h5>
+              </td>
+            </tr>
+            <tr>
+              <td class="first">
+                <h5>Name</h5>
+              </td>
+              <td>{{MEMBER.NAME}}</td>
+            </tr>
+            <tr>
+              <td class="first">
+                <h5>Email address</h5>
+              </td>
+              <td>{{MEMBER.mail}}</td>
+            </tr>
+            <tr>
+              <td class="first">
+                <h5>Password</h5>
+              </td>
+              <td>{{MEMBER.PASSWORD}}</td>
+            </tr>
+            <tr>
+              <td class="first">
+                <h5>Phone</h5>
+              </td>
+              <td class="second">{{MEMBER.PHONE}}</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <button type="button" class="member submit" @click="update">
+                  modify
+                </button>
+              </td>
+            </tr>
+          </table>
+        </article>
 
-        <main class="memberInfo">
-            <!-- 確認會員資訊 -->
-            <article class="checkMemberInfo">
-                <table id="appapp">
-                    <tr>
-                        <td colspan="2">
-                            <h3>Overview</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="padding-left: 0px">
-                            <h5>Member information</h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="first">
-                            <h5>Name</h5>
-                        </td>
-                        <td>{{MEMBER.NAME}}</td>
-                    </tr>
-                    <tr>
-                        <td class="first">
-                            <h5>Email address</h5>
-                        </td>
-                        <td>{{MEMBER.mail}}</td>
-                    </tr>
-                    <tr>
-                        <td class="first">
-                            <h5>Password</h5>
-                        </td>
-                        <td>{{MEMBER.PASSWORD}}</td>
-                    </tr>
-                    <tr>
-                        <td class="first">
-                            <h5>Phone</h5>
-                        </td>
-                        <td class="second">{{MEMBER.PHONE}}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <button type="button" class="member submit" @click="update">
-                                modify
-                            </button>
-                        </td>
-                    </tr>
-                </table>
-            </article>
-
-            <!-- 更改密碼 -->
-            <article class="modifyMemberInfo " style="display: none">
-                <table id="appupdate">
-
-                    <tr>
-                        <td colspan="2">
-                            <h3 class="mbSpace10">Edit your member information</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <h5>Member information</h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h5>Name</h5>
-                        </td>
-                        <td>{{MEMBER.NAME}}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h5>Email address</h5>
-                        </td>
-                        <td name="mail">{{MEMBER.mail}}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h5>Password</h5>
-                        </td>
-                        <td>
-                            <input type="password" placeholder="請輸入密碼" name="PASSWORD" v-model="MEMBER.PASSWORD"
-                                id="Password" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h5>Password confirm</h5>
-                        </td>
-                        <td>
-                            <input type="password" placeholder="請再次輸入密碼" id="Password_confirm" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h5>Phone</h5>
-                        </td>
-                        <td>
-                            <input type="phone" placeholder="請輸入手機" name="PHONE" v-model="MEMBER.PHONE" id="PHONE"
-                                maxlength="10" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div style="
-                                width: fit-content;
-                                height: 40px;
-                                margin: 0 auto;
-                                padding-top: 10px;
-                            ">
-                                <input class="btn_previous" type="submit" value="Cancel"
-                                onclick="location.href='./front_member_info.html'" />
-                                <input class="btn_done" type="submit" value="Save" @click="memberdataupdate"
-                                    id="inputcode" />
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </article>
-        </main>
+        <!-- 更改密碼 -->
+        <article class="modifyMemberInfo" style="display: none">
+          <table id="appupdate">
+            <tr>
+              <td colspan="2">
+                <h3 class="mbSpace10">Edit your member information</h3>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <h5>Member information</h5>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5>Name</h5>
+              </td>
+              <td>{{MEMBER.NAME}}</td>
+            </tr>
+            <tr>
+              <td>
+                <h5>Email address</h5>
+              </td>
+              <td name="mail">{{MEMBER.mail}}</td>
+            </tr>
+            <tr>
+              <td>
+                <h5>Password</h5>
+              </td>
+              <td>
+                <input
+                  type="password"
+                  placeholder="請輸入密碼"
+                  name="PASSWORD"
+                  v-model="MEMBER.PASSWORD"
+                  id="Password"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5>Password confirm</h5>
+              </td>
+              <td>
+                <input
+                  type="password"
+                  placeholder="請再次輸入密碼"
+                  id="Password_confirm"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5>Phone</h5>
+              </td>
+              <td>
+                <input
+                  type="phone"
+                  placeholder="請輸入手機"
+                  name="PHONE"
+                  v-model="MEMBER.PHONE"
+                  id="PHONE"
+                  maxlength="10"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div
+                  style="
+                    width: fit-content;
+                    height: 40px;
+                    margin: 0 auto;
+                    padding-top: 10px;
+                  "
+                >
+                  <input
+                    class="btn_previous"
+                    type="submit"
+                    value="Cancel"
+                    onclick="location.href='./front_member_info.html'"
+                  />
+                  <input
+                    class="btn_done"
+                    type="submit"
+                    value="Save"
+                    @click="memberdataupdate"
+                    id="inputcode"
+                  />
+                </div>
+              </td>
+            </tr>
+          </table>
+        </article>
+      </main>
     </div>
 
     <!-- 載入套件 -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
 
     <!-- 載入js -->
     <script src="./js/front_member_info.min.js"></script>
-</body>
-
+  </body>
 </html>

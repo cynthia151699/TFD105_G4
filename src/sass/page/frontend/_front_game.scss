@@ -1,10 +1,10 @@
 .game_body {
-    position: relative;
-    height: 100vh;
-    background: -webkit-linear-gradient($HFBGColor, $NavBGColor);
-    background: -o-linear-gradient($HFBGColor, $NavBGColor);
-    background: -moz-linear-gradient($HFBGColor, $NavBGColor);
-    background: linear-gradient($HFBGColor, $NavBGColor);
+  position: relative;
+  height: 100vh;
+  background: -webkit-linear-gradient($HFBGColor, $NavBGColor);
+  background: -o-linear-gradient($HFBGColor, $NavBGColor);
+  background: -moz-linear-gradient($HFBGColor, $NavBGColor);
+  background: linear-gradient($HFBGColor, $NavBGColor);
 }
 
 #g1,
@@ -17,246 +17,245 @@
 #g8,
 #g9,
 #g0 {
-    background-color: $HFBGColor;
+  background-color: $HFBGColor;
 }
 
 /* closebutton */
 .closebutton {
-    background-color: $AccentColor2;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 9;
+  background-color: $AccentColor2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9;
 }
 
 /* rotatebutton */
-.buttons>.rotate {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    z-index: 9;
-    background-color: $AccentColor2;
-    border-radius: 50%;
+.buttons > .rotate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  z-index: 9;
+  background-color: $AccentColor2;
+  border-radius: 50%;
 }
 
-.buttons>.rotate>a>i {
-    font-size: 35px;
-    // font-size: map-get($FontSize, h3);
-    color: $NavBGColor;
-    position: absolute;
-    top: 50%;
-    left: 15%;
-    transform: translateY(-50%);
+.buttons > .rotate > a > i {
+  font-size: 35px;
+  // font-size: map-get($FontSize, h3);
+  color: $NavBGColor;
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
 }
 
 /* linkbutton */
-.buttons>.link {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    transform: translateY(-50%);
-    z-index: 9;
-    background-color: $AccentColor2;
-    border-radius: 50%;
+.buttons > .link {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  z-index: 9;
+  background-color: $AccentColor2;
+  border-radius: 50%;
 }
 
-.buttons>.link>a>i {
-    font-size: 35px;
-    // font-size: map-get($FontSize, h3);
-    color: $NavBGColor;
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
+.buttons > .link > a > i {
+  font-size: 35px;
+  // font-size: map-get($FontSize, h3);
+  color: $NavBGColor;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
 }
-
 
 .swiper.mySwiper {
-    width: 100%;
-    height: 50%;
-    display: block;
-    outline: 5px solid $NavBGColor;
+  width: 100%;
+  height: 50%;
+  display: block;
+  outline: 5px solid $NavBGColor;
 }
 
 .swiper-slide.game {
-    text-align: center;
-    font-size: map-get($FontSize, h6);
-    background: $NavBGColor;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+  text-align: center;
+  font-size: map-get($FontSize, h6);
+  background: $NavBGColor;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 .swiper-slide img {
-    display: block;
-    height: 100%;
-    // object-fit: cover;
-    pointer-events: auto;
+  display: block;
+  height: 100%;
+  // object-fit: cover;
+  pointer-events: auto;
 }
 
 .swiper-wrapper {
-    width: 100%;
-    height: 50vh;
+  width: 100%;
+  height: 50vh;
 }
 
 .congrats {
-    // width: 640px;
-    // height: 460px;
-    width: 70%;
-    height: 80%;
-    @include Flex (column);
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9;
-    display: none;
+  // width: 640px;
+  // height: 460px;
+  width: 70%;
+  height: 80%;
+  @include Flex(column);
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  display: none;
 }
 
 .congrats_top {
-    width: 100%;
-    height: 100px;
-    // height: 15%;
-    background-color: $NavBGColor;
+  width: 100%;
+  height: 100px;
+  // height: 15%;
+  background-color: $NavBGColor;
 }
 
 .congrats_text {
-    width: 100%;
-    height: 320px;
-    // height: 60%;
-    background-color: $AccentColor2;
-    text-align: center;
+  width: 100%;
+  height: 320px;
+  // height: 60%;
+  background-color: $AccentColor2;
+  text-align: center;
 }
 
 .congrats_bottom {
-    width: 100%;
-    height: 100px;
-    // height: 15%;
-    background-color: $NavBGColor;
-    @include Flex (row);
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100px;
+  // height: 15%;
+  background-color: $NavBGColor;
+  @include Flex(row);
+  justify-content: center;
+  align-items: center;
 }
 
-.play_again_button>.defaultBtn {
-    background-color: $HFBGColor;
-    font-weight: map-get($FontWeight, medium);
-    width: 150px;
+.play_again_button > .defaultBtn {
+  background-color: $HFBGColor;
+  font-weight: map-get($FontWeight, medium);
+  width: 150px;
 }
 
-.play_bye_button>.defaultBtn {
-    background-color: $HFBGColor;
-    font-weight: map-get($FontWeight, medium);
-    width: 150px;
+.play_bye_button > .defaultBtn {
+  background-color: $HFBGColor;
+  font-weight: map-get($FontWeight, medium);
+  width: 150px;
 }
 
-.congrats_text>h2 {
-    font-weight: map-get($FontWeight, medium);
-    font-size: map-get($FontSize, h3);
-    // color: $AccentColor3;
-    color: red;
-    @include HorizontalAlignCenter ($top: 50px, $bottom: 50px);
+.congrats_text > h2 {
+  font-weight: map-get($FontWeight, medium);
+  font-size: map-get($FontSize, h3);
+  // color: $AccentColor3;
+  color: red;
+  @include HorizontalAlignCenter($top: 50px, $bottom: 50px);
 }
 
-.congrats_text>h3 {
-    font-weight: map-get($FontWeight, medium);
-    font-size: map-get($FontSize, h4);
+.congrats_text > h3 {
+  font-weight: map-get($FontWeight, medium);
+  font-size: map-get($FontSize, h4);
 }
-
 
 //============================================= RWD ===============================================//
-@media screen and (max-width: 575.98px){
+@media screen and (max-width: 575.98px) {
+  .congrats_text > h2 {
+    font-weight: map-get($FontWeight, medium);
+    font-size: map-get($FontSize, h4);
+  }
 
-    .congrats_text>h2{
-        font-weight: map-get($FontWeight, medium);
-        font-size: map-get($FontSize, h4);
-    }
+  .congrats_text > h2 {
+    font-weight: map-get($FontWeight, medium);
+    font-size: map-get($FontSize, h5);
+  }
 
-    .congrats_text>h2{
-        font-weight: map-get($FontWeight, medium);
-        font-size: map-get($FontSize, h5);
-    }
+  .play_again_button > .defaultBtn {
+    background-color: $HFBGColor;
+    font-weight: map-get($FontWeight, medium);
+    font-size: map-get($FontSize, h6);
+    width: 100px;
+    height: 50px;
+    text-align: center;
+  }
 
-    .play_again_button>.defaultBtn {
-        background-color: $HFBGColor;
-        font-weight: map-get($FontWeight, medium);
-        font-size: map-get($FontSize, h6);
-        width: 100px;
-        height: 50px;
-        text-align: center;
-    }
-    
-    .play_bye_button>.defaultBtn {
-        background-color: $HFBGColor;
-        font-weight: map-get($FontWeight, medium);
-        font-size: map-get($FontSize, h6);
-        width: 100px;
-        height: 50px;
-        text-align: center;
-    }
-    
-
+  .play_bye_button > .defaultBtn {
+    background-color: $HFBGColor;
+    font-weight: map-get($FontWeight, medium);
+    font-size: map-get($FontSize, h6);
+    width: 100px;
+    height: 50px;
+    text-align: center;
+  }
 }
 
-
 // @media (min-width: 576px) and (max-width: 1198.98px){
-    @media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    // object-fit: cover;
+    // object-fit: contain;
+    // object-fit: fill;
+    object-fit: none;
+    object-position: 45% 0%;
+    pointer-events: auto;
+  }
 
-    .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        // object-fit: cover;
-        // object-fit: contain;
-        // object-fit: fill;
-        object-fit: none;
-        object-position: 45% 0%;
-        pointer-events: auto;
-    }
-
-    #g1>img, #g2>img, #g3>img, #g4>img, #g5>img, #g6>img, #g7>img, #g8>img, #g9>img, #g0>img{
-        // margin-top: 160px;
-        object-position: 45% 100%;
-    }
-
-    }
+  #g1 > img,
+  #g2 > img,
+  #g3 > img,
+  #g4 > img,
+  #g5 > img,
+  #g6 > img,
+  #g7 > img,
+  #g8 > img,
+  #g9 > img,
+  #g0 > img {
+    // margin-top: 160px;
+    object-position: 45% 100%;
+  }
+}
 // }
 
-@media (min-width: 576px) and (max-width: 767.98px){
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .play_again_button > .defaultBtn {
+    background-color: $HFBGColor;
+    font-weight: map-get($FontWeight, medium);
+    font-size: map-get($FontSize, h6);
+    width: 100px;
+    height: 50px;
+    text-align: center;
+  }
 
-    .play_again_button>.defaultBtn {
-        background-color: $HFBGColor;
-        font-weight: map-get($FontWeight, medium);
-        font-size: map-get($FontSize, h6);
-        width: 100px;
-        height: 50px;
-        text-align: center;
-    }
-    
-    .play_bye_button>.defaultBtn {
-        background-color: $HFBGColor;
-        font-weight: map-get($FontWeight, medium);
-        font-size: map-get($FontSize, h6);
-        width: 100px;
-        height: 50px;
-        text-align: center;
-    }
-
+  .play_bye_button > .defaultBtn {
+    background-color: $HFBGColor;
+    font-weight: map-get($FontWeight, medium);
+    font-size: map-get($FontSize, h6);
+    width: 100px;
+    height: 50px;
+    text-align: center;
+  }
 }

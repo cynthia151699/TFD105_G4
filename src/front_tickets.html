@@ -1,257 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     @@include('./layout/head.html')
 
     <!-- Swiper.js -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.css" />
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.css"
+    />
+
     <style>
-        div.wrapperLoading{
-            display: none;
-        }
+      div.wrapperLoading {
+        display: none;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper" id="app">
+      @@include('./layout/login.html')
 
-        @@include('./layout/login.html')
+      <!-- 導覽列 -->
+      @@include('./layout/nav.html', { "active5" : "active" })
 
-        <!-- 導覽列 -->
-        @@include('./layout/nav.html', {
-        "active5" : "active"
-        })
+      <main class="ticketsPage">
+        <!-- coding here -->
 
-        <main class="ticketsPage">
-            <!-- coding here -->
+        <!------ 當期展覽彈窗 ------>
+        <div class="lightBox">
+          <div class="mask"></div>
 
-            <!------ 當期展覽彈窗 ------>
-            <div class="lightBox">
+          <div class="wrapperTicketsCur ptSpace50 pbSpace50">
+            <div class="ticketsCurCon">
+              <div class="ticketsCurConUp pbSpace50">
+                <!--文字 & 圖片-->
 
-                <div class="mask"></div>
+                <div class="ticketsCurLt mrSpace50">
+                  <!--文字-->
 
-                <div class="wrapperTicketsCur ptSpace50 pbSpace50">
-
-                    <div class="ticketsCurCon">
-
-                        <div class="ticketsCurConUp pbSpace50"><!--文字 & 圖片-->
-
-                            <div class="ticketsCurLt mrSpace50"><!--文字-->
-
-                                <h4 class="mbSpace20">Current booking info</h4>
-                                <h6>Name:<span>BREAK the CLASSIC</span></h6>
-                                <h6>Time:<span>2022/2/5 09:00 ~ 2022/5/5 17:00</span></h6>
-                                <h6>Location:<span>Anno Museum South Building</span></h6>
-                                <h6>Tickets:<span>Advance Ticket X 2 </span></h6>
-                                <h6>Amount:<span>NTD$800</span></h6>
-                            </div>
-
-                            <div class="ticketsCurRi"><!--圖片-->
-                                <img src="./img/logo/anno_qr.png" alt="">
-                            </div>
-                        </div>
-
-                        <!-- 普通按鈕 -->
-                        <a class="defaultBtn" href="#">
-                            <span>cancel</span>
-                        </a>
-                    </div>
+                  <h4 class="mbSpace20">Current booking info</h4>
+                  <h6>Name:<span>BREAK the CLASSIC</span></h6>
+                  <h6>Time:<span>2022/2/5 09:00 ~ 2022/5/5 17:00</span></h6>
+                  <h6>Location:<span>Anno Museum South Building</span></h6>
+                  <h6>Tickets:<span>Advance Ticket X 2 </span></h6>
+                  <h6>Amount:<span>NTD$800</span></h6>
                 </div>
 
-
-                <!------ 過往展覽彈窗 ------>
-                <div class="past_mainblock">
-
-                    <div class="ticketsPastCon ptSpace50 pbSpace50">
-
-                        <!-- 上面放文字跟圖片的區塊 -->
-                        <div class="past_topblock  pbSpace50">
-
-                            <!-- 文字區塊 -->
-                            <div class="past_textblock mrSpace50">
-
-                                <!-- 文字標題 -->
-                                <h4 class="mbSpace20">
-                                    Past booking info
-                                </h4>
-
-                                <!-- 文字內文 -->
-                                <h6>Name: ABSTRACT</h6>
-                                
-                                <h6>Time: 2020/08/05 09:00 ~ 2021/02/05 16:00</h6>
-
-                                <h6>Location: Anno Museum South Building</h6>
-                                    
-                                <h6>Tickets: Advance Ticket x 2</h6>
-
-                                <h6>Amout: NTD $800</h6>
-                                    
-                            </div>
-
-                            <!-- 放展覽圖的 -->
-                            <div class="past_imgblock">
-                                <img src="./img/tickets/tickets_pic7.jpeg" alt="">
-                            </div>
-                        </div>
-
-                        <!-- 按鈕區塊 -->
-                        <a class="defaultBtn" href="./tickets.html">
-                            <span>Cancel</span>
-                        </a>
-
-                    </div>
- 
+                <div class="ticketsCurRi">
+                  <!--圖片-->
+                  <img src="./img/logo/anno_qr.png" alt="" />
                 </div>
+              </div>
+
+              <!-- 普通按鈕 -->
+              <a class="defaultBtn" href="#">
+                <span>cancel</span>
+              </a>
             </div>
+          </div>
 
-            <article class="tickets">
-                <!-- 當期票券管理 -->
-                <h4 class="tickets_bookingName ptSpace40 pbSpace20">
-                    Current booking management (click it to show QR code)
-                </h4>
+          <!------ 過往展覽彈窗 ------>
+          <div class="past_mainblock">
+            <div class="ticketsPastCon ptSpace50 pbSpace50">
+              <!-- 上面放文字跟圖片的區塊 -->
+              <div class="past_topblock pbSpace50">
+                <!-- 文字區塊 -->
+                <div class="past_textblock mrSpace50">
+                  <!-- 文字標題 -->
+                  <h4 class="mbSpace20">Past booking info</h4>
 
-                <ul class="tickets_currentBooking">
+                  <!-- 文字內文 -->
+                  <h6>Name: ABSTRACT</h6>
 
-                    <li class="tickets_currentBooking mrSpace50">
+                  <h6>Time: 2020/08/05 09:00 ~ 2021/02/05 16:00</h6>
 
-                        <img class="currentbookingPic-1 -current"  src="./img/tickets/tickets_pic1_1.jpg" alt="">
+                  <h6>Location: Anno Museum South Building</h6>
 
-                        <h6 class="tickets_bookingName -check">
-                            <a href="#">
-                                BREAK the CLASSIC <span></span>
-                            </a>
-                        </h6>
-                    </li>
+                  <h6>Tickets: Advance Ticket x 2</h6>
 
-                    <li class="tickets_currentBooking">
-
-                        <img  class="currentbookingPic-2 -current" src="./img/tickets/tickets_pic2_1.jpg" alt="">
-
-                        <h6 class="tickets_bookingName -check">
-                            <a href="#">
-                                TRUE COLOR <span></span>
-                            </a>
-                        </h6>
-                    </li>
-                </ul>
-                <!--當期票券管理 end-->
-
-                <!-- 過往票券管理 -->
-                <h4 class="tickets_pastbookingName ptSpace40 pbSpace20">
-                    Past booking Management
-                </h4>
-
-                <div class="swiper pastBooking_Management">
-                    <!--過往圖片輪播-->
-
-                    <ul class="swiper-wrapper tickets_pastBooking">
-
-                        <li class="swiper-slide tickets_pastBooking">
-
-                            <img class="pastPic-1 -past" src="./img/tickets/tickets_pic3_1.jpg" alt="">
-
-                            <h6 class="tickets_bookingName -check">
-                                <a class="info" href="#">
-                                    INTERWEAVE <span></span>
-                                </a>
-                            </h6>
-
-                        </li>
-
-                        <li class="swiper-slide tickets_pastBooking">
-
-                            <img class="pastPic-2 -past" src="./img/tickets/tickets_pic4_1.jpg" alt="">
-
-                            <h6 class="tickets_bookingName -check">
-                                <a href="#">
-                                    FOOD ART <span></span>
-                                </a>
-                            </h6>
-                        </li>
-
-                        <li class="swiper-slide tickets_pastBooking">
-
-                            <img class="pastPic-3 -past" src="./img/tickets/tickets_pic5_1.jpg" alt="">
-
-                            <h6 class="tickets_bookingName -check">
-                                <a href="#">
-                                    ABSTRACT <span></span>
-                                </a>
-                            </h6>
-                        </li>
-
-                        <li class="swiper-slide tickets_pastBooking">
-
-                            <img class="pastPic-4 -past" src="./img/tickets/tickets_pic6_1.jpg" alt="">
-
-                            <h6 id="check" class="tickets_bookingName">
-                                <a href="#">
-                                    MODERN TATTOO <span></span>
-                                </a>
-                            </h6>
-                        </li>
-
-                        <li class="swiper-slide tickets_pastBooking">
-
-                            <img class="pastPic-5 -past" src="./img/tickets/tickets_pic7_1.jpg" alt="">
-
-                            <h6 class="tickets_bookingName -check">
-                                <a href="#">
-                                    ABSTRACT <span></span>
-                                </a>
-                            </h6>
-                        </li>
-
-                        <li class="swiper-slide tickets_pastBooking">
-
-                            <img class="pastPic-6 -past" src="./img/tickets/tickets_pic8_1.jpg" alt="">
-
-                            <h6 class="tickets_bookingName -check">
-                                <a href="#">
-                                    Mémoire <span></span>
-                                </a>
-                            </h6>
-                        </li>
-
-                        <li class="swiper-slide tickets_pastBooking">
-
-                            <img class="pastPic-7 -past" src="./img/tickets/tickets_pic9_1.jpg" alt="">
-
-                            <h6 class="tickets_bookingName -check">
-                                <a href="#">
-                                    Renaissance <span></span>
-                                </a>
-                            </h6>
-                        </li>
-
-                        <li class="swiper-slide tickets_pastBooking">
-
-                            <img class="pastPic-8 -past" src="./img/tickets/tickets_pic10_1.jpg" alt="">
-
-                            <h6 class="tickets_bookingName -check">
-                                <a href="#">
-                                    Eye Contact <span></span>
-                                </a>
-                            </h6>
-                        </li>
-                    </ul>
-
-                    <!-- 輪播箭頭 -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                  <h6>Amout: NTD $800</h6>
                 </div>
-                <!--輪播 end-->
-            </article>
-        </main>
+
+                <!-- 放展覽圖的 -->
+                <div class="past_imgblock">
+                  <img src="./img/tickets/tickets_pic7.jpeg" alt="" />
+                </div>
+              </div>
+
+              <!-- 按鈕區塊 -->
+              <a class="defaultBtn" href="./tickets.html">
+                <span>Cancel</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <article class="tickets">
+          <!-- 當期票券管理 -->
+          <h4 class="tickets_bookingName ptSpace40 pbSpace20">
+            Current booking management (click it to show QR code)
+          </h4>
+
+          <ul class="tickets_currentBooking">
+            <li class="tickets_currentBooking mrSpace50">
+              <img
+                class="currentbookingPic-1 -current"
+                src="./img/tickets/tickets_pic1_1.jpg"
+                alt=""
+              />
+
+              <h6 class="tickets_bookingName -check">
+                <a href="#"> BREAK the CLASSIC <span></span> </a>
+              </h6>
+            </li>
+
+            <li class="tickets_currentBooking">
+              <img
+                class="currentbookingPic-2 -current"
+                src="./img/tickets/tickets_pic2_1.jpg"
+                alt=""
+              />
+
+              <h6 class="tickets_bookingName -check">
+                <a href="#"> TRUE COLOR <span></span> </a>
+              </h6>
+            </li>
+          </ul>
+          <!--當期票券管理 end-->
+
+          <!-- 過往票券管理 -->
+          <h4 class="tickets_pastbookingName ptSpace40 pbSpace20">
+            Past booking Management
+          </h4>
+
+          <div class="swiper pastBooking_Management">
+            <!--過往圖片輪播-->
+
+            <ul class="swiper-wrapper tickets_pastBooking">
+              <li class="swiper-slide tickets_pastBooking">
+                <img
+                  class="pastPic-1 -past"
+                  src="./img/tickets/tickets_pic3_1.jpg"
+                  alt=""
+                />
+
+                <h6 class="tickets_bookingName -check">
+                  <a class="info" href="#"> INTERWEAVE <span></span> </a>
+                </h6>
+              </li>
+
+              <li class="swiper-slide tickets_pastBooking">
+                <img
+                  class="pastPic-2 -past"
+                  src="./img/tickets/tickets_pic4_1.jpg"
+                  alt=""
+                />
+
+                <h6 class="tickets_bookingName -check">
+                  <a href="#"> FOOD ART <span></span> </a>
+                </h6>
+              </li>
+
+              <li class="swiper-slide tickets_pastBooking">
+                <img
+                  class="pastPic-3 -past"
+                  src="./img/tickets/tickets_pic5_1.jpg"
+                  alt=""
+                />
+
+                <h6 class="tickets_bookingName -check">
+                  <a href="#"> ABSTRACT <span></span> </a>
+                </h6>
+              </li>
+
+              <li class="swiper-slide tickets_pastBooking">
+                <img
+                  class="pastPic-4 -past"
+                  src="./img/tickets/tickets_pic6_1.jpg"
+                  alt=""
+                />
+
+                <h6 id="check" class="tickets_bookingName">
+                  <a href="#"> MODERN TATTOO <span></span> </a>
+                </h6>
+              </li>
+
+              <li class="swiper-slide tickets_pastBooking">
+                <img
+                  class="pastPic-5 -past"
+                  src="./img/tickets/tickets_pic7_1.jpg"
+                  alt=""
+                />
+
+                <h6 class="tickets_bookingName -check">
+                  <a href="#"> ABSTRACT <span></span> </a>
+                </h6>
+              </li>
+
+              <li class="swiper-slide tickets_pastBooking">
+                <img
+                  class="pastPic-6 -past"
+                  src="./img/tickets/tickets_pic8_1.jpg"
+                  alt=""
+                />
+
+                <h6 class="tickets_bookingName -check">
+                  <a href="#"> Mémoire <span></span> </a>
+                </h6>
+              </li>
+
+              <li class="swiper-slide tickets_pastBooking">
+                <img
+                  class="pastPic-7 -past"
+                  src="./img/tickets/tickets_pic9_1.jpg"
+                  alt=""
+                />
+
+                <h6 class="tickets_bookingName -check">
+                  <a href="#"> Renaissance <span></span> </a>
+                </h6>
+              </li>
+
+              <li class="swiper-slide tickets_pastBooking">
+                <img
+                  class="pastPic-8 -past"
+                  src="./img/tickets/tickets_pic10_1.jpg"
+                  alt=""
+                />
+
+                <h6 class="tickets_bookingName -check">
+                  <a href="#"> Eye Contact <span></span> </a>
+                </h6>
+              </li>
+            </ul>
+
+            <!-- 輪播箭頭 -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <!--輪播 end-->
+        </article>
+      </main>
     </div>
 
     <!-- 載入套件 -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.js"></script>
 
     <!-- 載入js -->
     <script src="./js/front_tickets.min.js"></script>
-</body>
-
+  </body>
 </html>

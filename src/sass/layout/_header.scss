@@ -1,97 +1,96 @@
 /* BackHeader */
-header.backHeader{
-    width: $RWD;
+header.backHeader {
+  width: $RWD;
+  height: 130px;
+
+  background-color: $BHColor;
+
+  .headerContainer {
+    width: fit-content;
     height: 130px;
 
-    background-color: $BHColor;
+    @include Flex(row);
 
-    .headerContainer{
-        width: fit-content;
-        height: 130px;
+    display: inline-flex;
 
-        @include Flex(row);
-
-        display: inline-flex;
-
-        h3{
-            color: $TextColor;
-            font-weight: map-get($FontWeight, regular);
-        }
-
-        h6{
-            border-bottom: 1.5px solid $TextColor;
-        }
-
-        button{
-            height: 35px;
-
-            background-color: $HFBGColor;
-
-            border: none;
-            border-radius: $BorderRadius;
-
-            box-shadow: $BoxShadow;
-
-            margin-top: 76px;
-
-            h6{
-                color: $InputColor;
-                font-weight: map-get($FontWeight, light);
-                border: none;
-            }
-        }
-
-        .btn{
-            display: none;
-        }
+    h3 {
+      color: $TextColor;
+      font-weight: map-get($FontWeight, regular);
     }
 
-    .search{
-        width: 260px;
-        height: 130px;
-
-        float: right;
-
-        display: flex;
-        flex-flow: row wrap;
-
-        button{
-            height: 35px;
-
-            background-color: $HFBGColor;
-
-            border: none;
-            border-radius: $BorderRadius;
-
-            box-shadow: $BoxShadow;
-            
-            h6{
-                color: $InputColor;
-                font-weight: map-get($FontWeight, light);
-            }
-        }
-
-        a{
-            display: inline-block;
-            height: fit-content;
-
-            h5{
-                border-bottom: 1.5px solid $TextColor;
-            }
-        }
-
-        input{
-            height: 35px;
-
-            // background-color: $HFBGColor;
-
-            // border: none;
-            // border-radius: $BorderRadius;
-
-            // box-shadow: $BoxShadow;
-
-            // margin-top: 76px;
-        }
-
+    h6 {
+      border-bottom: 1.5px solid $TextColor;
     }
+
+    button {
+      height: 35px;
+
+      background-color: $HFBGColor;
+
+      border: none;
+      border-radius: $BorderRadius;
+
+      box-shadow: $BoxShadow;
+
+      margin-top: 76px;
+
+      h6 {
+        color: $InputColor;
+        font-weight: map-get($FontWeight, light);
+        border: none;
+      }
+    }
+
+    .btn {
+      display: none;
+    }
+  }
+
+  .search {
+    width: 260px;
+    height: 130px;
+
+    float: right;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    button {
+      height: 35px;
+
+      background-color: $HFBGColor;
+
+      border: none;
+      border-radius: $BorderRadius;
+
+      box-shadow: $BoxShadow;
+
+      h6 {
+        color: $InputColor;
+        font-weight: map-get($FontWeight, light);
+      }
+    }
+
+    a {
+      display: inline-block;
+      height: fit-content;
+
+      h5 {
+        border-bottom: 1.5px solid $TextColor;
+      }
+    }
+
+    input {
+      height: 35px;
+
+      // background-color: $HFBGColor;
+
+      // border: none;
+      // border-radius: $BorderRadius;
+
+      // box-shadow: $BoxShadow;
+
+      // margin-top: 76px;
+    }
+  }
 }

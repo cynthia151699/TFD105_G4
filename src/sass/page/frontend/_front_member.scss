@@ -10,708 +10,711 @@ $btnH: 36px;
 $diffRatio: calc(calc($contW - $imgW) / $contW);
 
 @mixin signUpActive {
-    .cont.s--signup & {
-        @content;
-    }
+  .cont.s--signup & {
+    @content;
+  }
 }
 
 @mixin Reset {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 main.member {
-    @include VerticalAlignCenter();
-    position: relative;
+  @include VerticalAlignCenter();
+  position: relative;
 
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  input {
+    display: block;
+    width: 350px;
+    height: 20px;
+    // font-size: 16px;
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  div.info {
+    width: fit-content;
+    @include HorizontalAlignCenter();
+  }
+
+  div.mask {
+    position: absolute;
+    z-index: 58;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: #293241;
+    opacity: 0.7;
+
+    display: none;
+  }
+
+  article.phone {
+    display: none;
     h2 {
+      font-size: 2.25rem;
+    }
+  }
+
+  @mixin PopUp {
+    position: absolute;
+    z-index: 59;
+
+    width: 50%;
+    height: fit-content;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 1;
+
+    display: none;
+  }
+
+  article.memberPopUp {
+    position: absolute;
+    z-index: 59;
+
+    width: 50%;
+    height: fit-content;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 1;
+
+    display: none;
+
+    h6.title {
+      background-color: $PrimaryColor;
+      padding: 10px 25px;
+      text-align: center;
+
+      a {
+        display: block;
+        float: right;
+        cursor: pointer;
+      }
+    }
+
+    h6.inner {
+      background-color: $TextColor2;
+      color: $TextColor3;
+      padding: 15px 25px;
+      text-align: center;
+    }
+  }
+
+  article.forgetChange {
+    @include VerticalAlignCenter();
+    @include PopUp();
+    // display: block;
+
+    background-color: white;
+    width: 75%;
+
+    section {
+      width: 80%;
+      height: 50%;
+      box-sizing: border-box;
+
+      @include HorizontalAlignCenter();
+
+      h3,
+      h4 {
+        color: black;
+      }
+
+      h3 {
         width: 100%;
         text-align: center;
+      }
+
+      input {
+        width: 80%;
+        height: 35px;
+        @include HorizontalAlignCenter();
+      }
+
+      div.btn {
+        width: fit-content;
+        @include HorizontalAlignCenter();
+
+        button {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  article.forgetSubmit {
+    @include VerticalAlignCenter();
+    @include PopUp();
+
+    background-color: white;
+    width: 75%;
+    height: 80vh;
+
+    section {
+      width: 70%;
+      height: fit-content;
+      box-sizing: border-box;
+
+      @include HorizontalAlignCenter();
+
+      h5 {
+        color: black;
+      }
+    }
+  }
+
+  label {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding: 5px;
+
+    @include HorizontalAlignCenter();
+
+    span {
+      // font-size: 12px;
+      // color: #cfcfcf;
+      display: inline-block;
+      width: 200px;
+      text-align: left;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    span.in {
+      width: 110px;
     }
 
     input {
-        display: block;
-        width: 350px;
-        height: 20px;
-        // font-size: 16px;
-        // border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-        text-align: left;
-        box-sizing: border-box;
+      display: inline-block;
     }
+  }
+  // codepen 效果設定
+  div.cont {
+    overflow: hidden;
+    position: relative;
+    width: $contW;
+    height: 480px;
+    background: #fff;
 
-    div.info {
-        width: fit-content;
-        @include HorizontalAlignCenter();
-    }
+    @include HorizontalAlignCenter();
+  }
 
-    div.mask {
-        position: absolute;
-        z-index: 58;
+  div.form {
+    @include Reset();
 
-        width: 100%;
-        height: 100vh;
+    position: relative;
+    width: $formW;
+    height: 100%;
+    transition: transform $switchAT ease-in-out;
+    padding: 20px; //50px
+  }
 
-        background-color: #293241;
-        opacity: 0.7;
-
-        display: none;
-    }
-
-    article.phone {
-        display: none;
-        h2{
-            font-size: 2.25rem;
-        }
-    }
-
-    @mixin PopUp {
-        position: absolute;
-        z-index: 59;
-
-        width: 50%;
-        height: fit-content;
-
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        opacity: 1;
-
-        display: none;
-    }
-
-    article.memberPopUp {
-        position: absolute;
-        z-index: 59;
-
-        width: 50%;
-        height: fit-content;
-
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        opacity: 1;
-
-        display: none;
-
-        h6.title {
-            background-color: $PrimaryColor;
-            padding: 10px 25px;
-            text-align: center;
-
-            a {
-                display: block;
-                float: right;
-                cursor: pointer;
-            }
-        }
-
-        h6.inner {
-            background-color: $TextColor2;
-            color: $TextColor3;
-            padding: 15px 25px;
-            text-align: center;
-        }
-    }
-
-    article.forgetChange {
-        @include VerticalAlignCenter();
-        @include PopUp();
-        // display: block;
-
-        background-color: white;
-        width: 75%;
-
-        section {
-            width: 80%;
-            height: 50%;
-            box-sizing: border-box;
-
-            @include HorizontalAlignCenter();
-
-            h3,
-            h4 {
-                color: black;
-            }
-
-            h3 {
-                width: 100%;
-                text-align: center;
-            }
-
-            input {
-                width: 80%;
-                height: 35px;
-                @include HorizontalAlignCenter();
-            }
-
-            div.btn {
-                width: fit-content;
-                @include HorizontalAlignCenter();
-
-                button {
-                    display: inline-block;
-                }
-            }
-        }
-    }
-
-    article.forgetSubmit {
-        @include VerticalAlignCenter();
-        @include PopUp();
-
-        background-color: white;
-        width: 75%;
-        height: 80vh;
-
-        section {
-            width: 70%;
-            height: fit-content;
-            box-sizing: border-box;
-
-            @include HorizontalAlignCenter();
-
-            h5 {
-                color: black;
-            }
-        }
-    }
-
-    label {
-        display: block;
-        width: 100%;
-        text-align: right;
-        padding: 5px;
-
-        @include HorizontalAlignCenter();
-
-        span {
-            // font-size: 12px;
-            // color: #cfcfcf;
-            display: inline-block;
-            width: 200px;
-            text-align: left;
-            text-transform: uppercase;
-            box-sizing: border-box;
-            font-size: 1rem;
-        }
-
-        span.in {
-            width: 110px;
-        }
-
-        input {
-            display: inline-block;
-        }
-    }
-    // codepen 效果設定
-    div.cont {
-        overflow: hidden;
-        position: relative;
-        width: $contW;
-        height: 480px;
-        background: #fff;
-
-        @include HorizontalAlignCenter();
-    }
-
-    div.form {
-        @include Reset();
-
-        position: relative;
-        width: $formW;
-        height: 100%;
-        transition: transform $switchAT ease-in-out;
-        padding: 20px; //50px
-    }
-
-    a.forgot-pass {
-        display: block;
-        text-align: center;
-        // font-size: 12px;
-        // color: #cfcfcf;
-    }
+  a.forgot-pass {
+    display: block;
+    text-align: center;
+    // font-size: 12px;
+    // color: #cfcfcf;
+  }
 }
 
 button.member {
-    display: block;
-    margin: 10px auto;
-    width: $inputW;
-    height: $btnH;
-    // border-radius: 30px;
-    // color: #fff;
-    // font-size: 15px;
-    cursor: pointer;
+  display: block;
+  margin: 10px auto;
+  width: $inputW;
+  height: $btnH;
+  // border-radius: 30px;
+  // color: #fff;
+  // font-size: 15px;
+  cursor: pointer;
 }
 
 button.member.submit {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background: #d4af7a;
-    text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #d4af7a;
+  text-transform: uppercase;
 }
 
 button.member.fb-btn {
-    border: 2px solid #d3dae9;
-    color: darken(#d3dae9, 20%);
+  border: 2px solid #d3dae9;
+  color: darken(#d3dae9, 20%);
 
-    span {
-        font-weight: bold;
-        color: darken(#768cb6, 20%);
-    }
+  span {
+    font-weight: bold;
+    color: darken(#768cb6, 20%);
+  }
 }
 
 div.sub-cont {
-    overflow: hidden;
-    position: absolute;
-    left: $formW;
-    top: 0;
-    width: $contW;
-    height: 100%;
-    padding-left: $imgW;
-    background: #fff;
-    transition: transform $switchAT ease-in-out;
+  overflow: hidden;
+  position: absolute;
+  left: $formW;
+  top: 0;
+  width: $contW;
+  height: 100%;
+  padding-left: $imgW;
+  background: #fff;
+  transition: transform $switchAT ease-in-out;
 
-    @include signUpActive {
-        transform: translate3d($formW * -1, 0, 0);
-    }
+  @include signUpActive {
+    transform: translate3d($formW * -1, 0, 0);
+  }
 }
 
 div.img {
+  @include Reset();
+
+  overflow: hidden;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: $imgW;
+  height: 100%;
+  padding-top: 360px;
+
+  &:before {
     @include Reset();
 
-    overflow: hidden;
-    z-index: 2;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $contW;
+    height: 100%;
+    background-image: url("./../img/member/member_pic1.jpeg");
+    background-size: cover;
+    transition: transform $switchAT ease-in-out;
+  }
+
+  &:after {
+    @include Reset();
+
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
-    width: $imgW;
+    width: 100%;
     height: 100%;
-    padding-top: 360px;
+    background: rgba(0, 0, 0, 0.6);
+  }
 
+  @include signUpActive {
     &:before {
-        @include Reset();
+      @include Reset();
 
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: $contW;
-        height: 100%;
-        background-image: url("./../img/member/member_pic1.jpeg");
-        background-size: cover;
-        transition: transform $switchAT ease-in-out;
+      transform: translate3d($formW, 0, 0);
     }
+  }
 
-    &:after {
-        @include Reset();
+  &__text {
+    @include Reset();
 
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-    }
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+    // color: #fff;
+    transition: transform $switchAT ease-in-out;
 
-    @include signUpActive {
-        &:before {
-            @include Reset();
-
-            transform: translate3d($formW, 0, 0);
-        }
-    }
-
-    &__text {
-        @include Reset();
-
-        z-index: 2;
-        position: absolute;
-        left: 0;
-        top: 50px;
-        width: 100%;
-        padding: 0 20px;
-        text-align: center;
-        // color: #fff;
-        transition: transform $switchAT ease-in-out;
-
-        h2 {
-            // margin-bottom: 10px;
-            // font-weight: normal;
-        }
-
-        p {
-            // font-size: 14px;
-            // line-height: 1.5;
-        }
-
-        &.m--up {
-            @include signUpActive {
-                transform: translateX($imgW * 2);
-            }
-        }
-
-        &.m--in {
-            transform: translateX($imgW * -2);
-
-            @include signUpActive {
-                transform: translateX(0);
-            }
-        }
-    }
-
-    &__btn {
-        overflow: hidden;
-        z-index: 2;
-        position: relative;
-        width: 100px;
-        height: $btnH;
-        margin: 0 auto;
-        background: transparent;
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 15px;
-        cursor: pointer;
-
-        &:after {
-            @include Reset();
-
-            content: "";
-            z-index: 2;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            border: 2px solid #fff;
-            border-radius: 30px;
-        }
-
-        span {
-            position: absolute;
-            left: 0;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            transition: transform $switchAT;
-
-            &.m--in {
-                transform: translateY($btnH * -2);
-
-                @include signUpActive {
-                    transform: translateY(0);
-                }
-            }
-
-            &.m--up {
-                @include signUpActive {
-                    transform: translateY($btnH * 2);
-                }
-            }
-        }
-    }
-}
-
-div.sign-in {
-    transition-timing-function: ease-out;
-    color: $TextColor;
-
-    @include signUpActive {
-        transition-timing-function: ease-in-out;
-        transition-duration: $switchAT;
-        transform: translate3d($formW, 0, 0);
-    }
-}
-
-div.form.sign-in {
     h2 {
-        color: $TextColor;
-    }
-}
-
-div.sign-up {
-    transform: translate3d($contW * -1, 0, 0);
-    color: $TextColor;
-
-    @include signUpActive {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-div.form.sign-up {
-    h2 {
-        color: $TextColor;
+      // margin-bottom: 10px;
+      // font-weight: normal;
     }
 
     p {
-        font-size: 12px;
-        display: block;
-        width: 540px;
-
-        @include HorizontalAlignCenter();
+      // font-size: 14px;
+      // line-height: 1.5;
     }
 
-    input.check {
-        display: inline-block;
-        width: auto;
-        height: auto;
+    &.m--up {
+      @include signUpActive {
+        transform: translateX($imgW * 2);
+      }
     }
+
+    &.m--in {
+      transform: translateX($imgW * -2);
+
+      @include signUpActive {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__btn {
+    overflow: hidden;
+    z-index: 2;
+    position: relative;
+    width: 100px;
+    height: $btnH;
+    margin: 0 auto;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+    cursor: pointer;
+
+    &:after {
+      @include Reset();
+
+      content: "";
+      z-index: 2;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #fff;
+      border-radius: 30px;
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      transition: transform $switchAT;
+
+      &.m--in {
+        transform: translateY($btnH * -2);
+
+        @include signUpActive {
+          transform: translateY(0);
+        }
+      }
+
+      &.m--up {
+        @include signUpActive {
+          transform: translateY($btnH * 2);
+        }
+      }
+    }
+  }
+}
+
+div.sign-in {
+  transition-timing-function: ease-out;
+  color: $TextColor;
+
+  @include signUpActive {
+    transition-timing-function: ease-in-out;
+    transition-duration: $switchAT;
+    transform: translate3d($formW, 0, 0);
+  }
+}
+
+div.form.sign-in {
+  h2 {
+    color: $TextColor;
+  }
+}
+
+div.sign-up {
+  transform: translate3d($contW * -1, 0, 0);
+  color: $TextColor;
+
+  @include signUpActive {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+div.form.sign-up {
+  h2 {
+    color: $TextColor;
+  }
+
+  p {
+    font-size: 12px;
+    display: block;
+    width: 540px;
+
+    @include HorizontalAlignCenter();
+  }
+
+  input.check {
+    display: inline-block;
+    width: auto;
+    height: auto;
+  }
 }
 
 // 詳細會員資訊樣式設定（另外一頁了）
 main.memberInfo {
+  @include VerticalAlignCenter();
+
+  article.checkMemberInfo {
+    width: 80%;
+    height: 80vh;
+    background-color: #fff;
+    @include HorizontalAlignCenter();
+    // @include VerticalAlignCenter();
+
+    table {
+      min-width: 80%;
+      background-color: #fff;
+
+      @include HorizontalAlignCenter();
+
+      h3,
+      h5,
+      td {
+        color: #293241;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+
+      h3 {
+        width: 100%;
+        padding-top: 50px;
+        text-align: center;
+      }
+    }
+  }
+
+  article.modifyMemberInfo {
+    width: 80%;
+    height: 80vh;
+    background-color: #fff;
+    @include HorizontalAlignCenter();
     @include VerticalAlignCenter();
 
-    article.checkMemberInfo {
-        width: 80%;
-        height: 80vh;
-        background-color: #fff;
-        @include HorizontalAlignCenter();
-        // @include VerticalAlignCenter();
+    table {
+      @include HorizontalAlignCenter();
+      @include VerticalAlignCenter();
+      background-color: #fff;
+      color: #293241;
+      h3,
+      h5,
+      h6 {
+        color: #293241;
+        padding: 5px;
+        box-sizing: border-box;
+      }
 
-        table {
-            min-width: 80%;
-            background-color: #fff;
-
-            @include HorizontalAlignCenter();
-
-            h3,
-            h5,
-            td {
-                color: #293241;
-                padding: 5px;
-                box-sizing: border-box;
-            }
-
-            h3 {
-                width: 100%;
-                padding-top: 50px;
-                text-align: center;
-            }
-        }
+      h3 {
+        width: 100%;
+        text-align: center;
+      }
     }
-
-    article.modifyMemberInfo {
-        width: 80%;
-        height: 80vh;
-        background-color: #fff;
-        @include HorizontalAlignCenter();
-        @include VerticalAlignCenter();
-
-        table {
-            @include HorizontalAlignCenter();
-            @include VerticalAlignCenter();
-            background-color: #fff;
-            color: #293241;
-            h3,
-            h5,
-            h6 {
-                color: #293241;
-                padding: 5px;
-                box-sizing: border-box;
-            }
-
-            h3 {
-                width: 100%;
-                text-align: center;
-            }
-        }
-        tbody{
-            tr{
-                height:60px;
-                padding-left: 5px;
-            }
-        }
+    tbody {
+      tr {
+        height: 60px;
+        padding-left: 5px;
+      }
     }
+  }
 }
-@media screen and (max-width: 575.98px){
-    main.member {
-        div.cont {
-            display: none;
-        }
-        label{
-            text-align: left;
-            padding: 0px;
-            padding-left: 20px;
-            span{
-                font-size: 0.875rem;
-            }
-        }
-        input{
-            width:250px;
-        }
-        div.info{
-            width: 300px;
-            margin: 0 auto;
-        }
-
-        article.phone {
-            display: block;
-            width: 80%; 
-            height: 490px; 
-            background-color: white; 
-
-            @include HorizontalAlignCenter();
-            h2{
-                font-size: 1.125rem;
-            }
-            h2,p,span{
-                color: black;
-            }
-
-            section.phoneBottom{
-                height: 70px;
-
-                background-color: #768cb6;
-
-                display: flex;
-
-                div.left{
-                    width: 100%;
-                }
-
-                div.right{
-                    display:none;
-
-                    p{
-                        width: 80%;
-                        text-align: left;
-                    }
-                }
-            }
-        }
-        
-        article.memberPopUp {
-            width: 80%;
-        }
+@media screen and (max-width: 575.98px) {
+  main.member {
+    div.cont {
+      display: none;
     }
+    label {
+      text-align: left;
+      padding: 0px;
+      padding-left: 20px;
+      span {
+        font-size: 0.875rem;
+      }
+    }
+    input {
+      width: 250px;
+    }
+    div.info {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    article.phone {
+      display: block;
+      width: 80%;
+      height: 490px;
+      background-color: white;
+
+      @include HorizontalAlignCenter();
+      h2 {
+        font-size: 1.125rem;
+      }
+      h2,
+      p,
+      span {
+        color: black;
+      }
+
+      section.phoneBottom {
+        height: 70px;
+
+        background-color: #768cb6;
+
+        display: flex;
+
+        div.left {
+          width: 100%;
+        }
+
+        div.right {
+          display: none;
+
+          p {
+            width: 80%;
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    article.memberPopUp {
+      width: 80%;
+    }
+  }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
-    main.member {
-        div.cont {
-            display: none;
-        }
-        label{
-            text-align: center;
-            span{
-                width:350px;
-            }
-        }
-
-        article.phone {
-            display: block;
-            width: 80%; 
-            height: 550px; 
-            background-color: white; 
-
-            @include HorizontalAlignCenter();
-            h2{
-                font-size: 1.875rem;
-            }
-            h2,p,span{
-                color: black;
-            }
-
-            section.phoneBottom{
-                height: 120px;
-
-                background-color: #768cb6;
-
-                display: flex;
-
-                div.left{
-                    width: 50%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                }
-
-                div.right{
-                    width: 50%;
-
-                    @include VerticalAlignCenter();
-
-                    p{
-                        width: 80%;
-                        text-align: left;
-                    }
-                }
-            }
-        }
-        
-        article.memberPopUp {
-            width: 70%;
-        }
+  main.member {
+    div.cont {
+      display: none;
     }
+    label {
+      text-align: center;
+      span {
+        width: 350px;
+      }
+    }
+
+    article.phone {
+      display: block;
+      width: 80%;
+      height: 550px;
+      background-color: white;
+
+      @include HorizontalAlignCenter();
+      h2 {
+        font-size: 1.875rem;
+      }
+      h2,
+      p,
+      span {
+        color: black;
+      }
+
+      section.phoneBottom {
+        height: 120px;
+
+        background-color: #768cb6;
+
+        display: flex;
+
+        div.left {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        div.right {
+          width: 50%;
+
+          @include VerticalAlignCenter();
+
+          p {
+            width: 80%;
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    article.memberPopUp {
+      width: 70%;
+    }
+  }
 }
 
-@media screen and (min-width:768px) and (max-width:991.98px) {
-
-    main.member {
-        div.cont {
-            display: none;
-        }
-        label{
-            text-align: center;
-            span{
-                width:250px;
-            }
-        }
-        input{
-            width:300px;
-        }
-
-        article.phone {
-            display: block;
-            width: 80%; 
-            // height: 550px; 
-            background-color: white; 
-
-            @include HorizontalAlignCenter();
-            h2{
-                font-size: 1.875rem;
-            }
-            h2,p,span{
-                color: black;
-            }
-
-            section.phoneBottom{
-                height: 120px;
-
-                background-color: #768cb6;
-
-                display: flex;
-
-                div.left{
-                    width: 50%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                }
-
-                div.right{
-                    width: 50%;
-
-                    @include VerticalAlignCenter();
-
-                    p{
-                        width: 80%;
-                        text-align: left;
-                    }
-                }
-            }
-        }
-
-        article.memberPopUp {
-            width: 70%;
-        }
-    
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  main.member {
+    div.cont {
+      display: none;
+    }
+    label {
+      text-align: center;
+      span {
+        width: 250px;
+      }
+    }
+    input {
+      width: 300px;
     }
 
+    article.phone {
+      display: block;
+      width: 80%;
+      // height: 550px;
+      background-color: white;
+
+      @include HorizontalAlignCenter();
+      h2 {
+        font-size: 1.875rem;
+      }
+      h2,
+      p,
+      span {
+        color: black;
+      }
+
+      section.phoneBottom {
+        height: 120px;
+
+        background-color: #768cb6;
+
+        display: flex;
+
+        div.left {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        div.right {
+          width: 50%;
+
+          @include VerticalAlignCenter();
+
+          p {
+            width: 80%;
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    article.memberPopUp {
+      width: 70%;
+    }
+  }
 }

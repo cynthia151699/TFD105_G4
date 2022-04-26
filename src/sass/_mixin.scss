@@ -1,78 +1,89 @@
 // 圖片連結
-@mixin LinkImg($link, $img, $type, $size: contain, $repeat: no-repeat, $position: center) {
-    background-image : url('./../img/#{$link}/#{$img}.#{$type}');
-    background-size: $size;
-    background-repeat: $repeat;
-    background-position: $position;
+@mixin LinkImg(
+  $link,
+  $img,
+  $type,
+  $size: contain,
+  $repeat: no-repeat,
+  $position: center
+) {
+  background-image: url("./../img/#{$link}/#{$img}.#{$type}");
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
 }
 
 // 單欄版面記得要置中！
 // 水平置中（加在目標元素上！）
 @mixin HorizontalAlignCenter($top: 0, $bottom: 0) {
-    margin: $top auto $bottom auto;
+  margin: $top auto $bottom auto;
 }
 
 // 垂直置中（寫在父元素上！）
 @mixin VerticalAlignCenter {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 // 絕對定位的置中寫法（寫在子元素上！）
 @mixin PositionAlignCenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 // 提示框：預設是紅色
-@mixin Remind($color:red) {
-    border: 1px solid $color;
+@mixin Remind($color: red) {
+  border: 1px solid $color;
 }
 
 // flex 排版
-@mixin Flex ($ver) {
-    display: flex;
-    flex-flow: $ver nowrap;
+@mixin Flex($ver) {
+  display: flex;
+  flex-flow: $ver nowrap;
 }
 
 // n 欄版面（記得另一欄是要寫 1-$col 的結果）
 @mixin Col($col: 50%) {
-    width:calc(#{$Width} * #{$col});
-    height: fit-content;
+  width: calc(#{$Width} * #{$col});
+  height: fit-content;
 
-    @include Flex(row);
+  @include Flex(row);
 
-    @include Remind(); // 使用時請先看一下框著的地方是不是預想所需的區域，確認後即可拿掉
+  @include Remind(
+
+  ); // 使用時請先看一下框著的地方是不是預想所需的區域，確認後即可拿掉
 }
 
 // n 列版面（記得另一欄是要寫 1-$row 的結果）
 @mixin Row($row: 50%) {
-    width: fit-content;
-    height: calc(#{$Height} * #{$row});
+  width: fit-content;
+  height: calc(#{$Height} * #{$row});
 
-    @include Flex(column);
+  @include Flex(column);
 
-    @include Remind(); // 使用時請先看一下框著的地方是不是預想所需的區域，確認後即可拿掉
+  @include Remind(
+
+  ); // 使用時請先看一下框著的地方是不是預想所需的區域，確認後即可拿掉
 }
 
 // 底線
 @mixin BorderBottom($color) {
-    border-bottom: 1.5px solid $color;
+  border-bottom: 1.5px solid $color;
 }
 
 // 文字單行刪節
 @mixin SingleEllipsis {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 // 文字多行刪節（需手動設定第幾行刪節）
 @mixin MultilineEllipsis($row) {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: $row;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $row;
 }
