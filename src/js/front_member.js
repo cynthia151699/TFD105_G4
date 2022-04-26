@@ -275,8 +275,18 @@ phonelogin.addEventListener("click", function () {
         } 
 
     })
-
-
-
-
+// 手機換頁
+    let phonedisplaylogin = document.querySelector("#phonedisplaylogin");
+    let phonein = document.querySelector("#phonelogin");
+    let phonelog = document.querySelector("#phonelog");
+    let phonesignin = document.querySelector("#phonesignin");
+    let phonedisplaysignin = document.querySelector("#phonedisplaysignin");
+     phonedisplaylogin.addEventListener('click',function(){
+        phonesignin.setAttribute('style', 'display:none');
+        phonelog.setAttribute('style', 'display:auto');
+     })
+     phonedisplaysignin.addEventListener('click',function(){
+        phonelog.setAttribute('style', 'display:none');
+        phonesignin.setAttribute('style', 'display:auto');
+     })
 
