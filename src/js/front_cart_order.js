@@ -11,7 +11,7 @@ window.onload = function () {
     var totalCount = document.getElementById("totalCount"); //總計
     var totalPrice = document.getElementById("totalPrice"); //總價
     var applyCoupon = document.getElementsByClassName("applyCoupon")[0]; //送出折扣碼
-    var discount = 100
+    var discount = 100;
     var couponUse = document.getElementById("couponUse"); //使用狀態
 
     // 3.加減按鈕
@@ -123,23 +123,23 @@ window.onload = function () {
     });
 }
 
-new Vue({
-    el: "#ticket_wrapper",
-    data() {
-      return {
-        TICKETS: [],
-      };
-    },
+// new Vue({
+//     el: "#ticket_wrapper",
+//     data() {
+//       return {
+//         TICKETS: [],
+//       };
+//     },
 
-    created() {
-        fetch("./php/ticket/Select_front_Ticket.php")
+//     created() {
+//         fetch("./php/ticket/Select_front_Ticket.php")
 
-            .then(res =>
-                res.json()
-            )
+//             .then(res =>
+//                 res.json()
+//             )
 
-            .then(res => {
-                this.TICKETS = res
-            })
-    },
-});
+//             .then(res => {
+//                 this.TICKETS = res
+//             })
+//     },
+// });
