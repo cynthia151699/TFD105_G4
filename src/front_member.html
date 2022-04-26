@@ -642,11 +642,22 @@ document
 //         }
 //     },
 // });
+$('a.memberTerms').on("click",function(e){
+    e.preventDefault();
+    $('article.memberPopUp').css("display", "block");
+})
 
+$('a.memberTermsDel').on("click",function(e){
+    e.preventDefault();
+    $('article.memberPopUp').css("display", "none");
+    
+})
 $('a.forgot-pass').on("click",function(e){
     e.preventDefault();
     // console.log("aaa");
     $('article.forgetChange').css("display", "block");
+    $('div.cont').css("display", "none");
+    $('div.phone').css("display", "none");
 });
 
 // $('article.forgetChange button.member.fb-btn').on("click",function(e){
