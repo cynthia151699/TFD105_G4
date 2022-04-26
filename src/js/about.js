@@ -1,51 +1,63 @@
 // 多國語言
 const messages = {
-    en: {
-      header: {
-        title1: "About ANNO Museum",
-        title2: "History of Anno",
-      },
-      main: {
-        section1: "Art records the deduction in ANNO Museum,",
-        section2: "All is exist in the past, present, and future.",
-        section3: "Not only for us,",
-        section4: "You can accomplish every single dream here,",
-        section5: "ANNO can be everyone's Utopia,",
-        section6: "Let us open our minds,",
-        section7: "Create your own Anno.",
-      },
+  en: {
+    header: {
+      title1: "About ANNO Museum",
+      title2: "History of Anno",
     },
-    jp: {
-      header: {
-        title1: "ANNO について",
-        title2: "ANNO の歴史",
-      },
-      main: {
-        section1: "芸術は紀元間の推移や変化を記します",
-        section2: "過去も未来も、現在にも存在します",
-        section3: "紀元美術館はみんなのユートピアでありたい",
-        section4: "芸術家とともに、",
-        section5: "ここで夢と幻想を叶えよう",
-        section6: "心を開いて、",
-        section7: "自分の紀元を創りましょう",
-      },
+    main: {
+      section1: "Art records the deduction in ANNO Museum,",
+      section2: "All is exist in the past, present, and future.",
+      section3: "Not only for us,",
+      section4: "You can accomplish every single dream here,",
+      section5: "ANNO can be everyone's Utopia,",
+      section6: "Let us open our minds,",
+      section7: "Create your own Anno.",
+      section8:
+        "Anno Museum is a new museum located in Taipei.The museum was founded in 2015, by six students inTIBAMI who have a lot of enthusiasm for art and life.Anno Museum collects various works of art, ranging from classical art works of the 18th and 19th centuries tomodern contemporary art works,",
+      section9:
+        "so that visitors to Anno Museum can freely view the beauty of  various arts.Anno Museum also hosts regular exhibitions.They hope that through the establishment of the museum, education, and culture can be promoted so that more people can know and getclose to art.",
+      section10:
+        "Without setting limits on style, they want to show a wide range of artworks from classic to trendy for the general public.",
     },
-    tw: {
-      header: {
-        title1: "關於紀元美術館",
-        title2: "關於紀元美術館",
-      },
-      main: {
-        section1: "藝術編寫紀元之間的推演",
-        section2: "存在於過去、現在與未來",
-        section3: "紀元美術館願成為大家的烏托邦",
-        section4: "讓藝術家與你",
-        section5: "在這裡實現你的夢境與幻想",
-        section6: "讓我們一起敞開心扉",
-        section7: "創造屬於自己的紀元",
-      },
+  },
+  jp: {
+    header: {
+      title1: "ANNO について",
+      title2: "ANNO の歴史",
     },
-  };
+    main: {
+      section1: "芸術は紀元間の推移や変化を記します",
+      section2: "過去も未来も、現在にも存在します",
+      section3: "紀元美術館はみんなのユートピアでありたい",
+      section4: "芸術家とともに、",
+      section5: "ここで夢と幻想を叶えよう",
+      section6: "心を開いて、",
+      section7: "自分の紀元を創りましょう",
+      section8: "",
+      section9: "",
+      section10: "",
+    },
+  },
+  tw: {
+    header: {
+      title1: "關於紀元美術館",
+      title2: "關於紀元美術館",
+    },
+    main: {
+      section1: "藝術編寫紀元之間的推演",
+      section2: "存在於過去、現在與未來",
+      section3: "紀元美術館願成為大家的烏托邦",
+      section4: "讓藝術家與你",
+      section5: "在這裡實現你的夢境與幻想",
+      section6: "讓我們一起敞開心扉",
+      section7: "創造屬於自己的紀元",
+      section8: "紀元美術館是位於台北市的新興美術館，由六位對藝術與生活充滿熱情的緯育前端班學生創辦。秉持著推廣教育與文化的熱忱，希望藉由博物館的成立，讓更多人擁有親近藝術的機會。",
+      section9: "紀元美術館館內收藏各種藝術作品，從18.19世紀的古典藝術作品到近現代的當代藝術作品，讓來紀元美術館參觀的民眾可以自由觀覽各個時代、各式各樣藝術的美。紀元美術館也經常定期舉辦展覽。",
+      section10: "不限制風格與展覽的形式，紀元團隊想讓各種天馬行空的創意，皆有機會展現在公眾的眼前，讓藝術家們有不受拘束的創作機會。從經典到現代、具象到抽象、平面繪畫到空間裝置，靜態的展示或是具有互動性的新媒體藝術，邀請您一起來紀元美術館中，體驗跨紀元的藝術饗宴。",
+    },
+  },
+};
   
   const i18n = new VueI18n({ messages: messages });
   
@@ -296,9 +308,3 @@ function restart() {
     );
   $("#aboutHistoryContent").fadeIn(2000);
 }
-
-
-
-
-
-
