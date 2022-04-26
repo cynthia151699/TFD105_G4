@@ -449,19 +449,19 @@
         <div class="info ptSpace20">
             <label>
                 <span class="in">Email</span>
-                <input type="email" name="mail"/>
+                <input type="email" name="mail" id="phonemail"/>
             </label>
 
             <label>
                 <span class="in">Password</span>
-                <input type="password" name="PASSWORD"/>
+                <input type="password" name="PASSWORD" id="phonepassword"/>
             </label>
         </div>
 
         <p class="forgot-pass mtSpace50">Forgot password?</p>
 
         <a href="./front_login.html">
-            <button type="submit" class="member submit">
+            <button type="submit" class="member submit" id="phonelogin">
                 Sign In
             </button>
         </a>
@@ -493,32 +493,32 @@
         <div class="info ptSpace10">
             <label>
                 <span>Name</span>
-                <input type="text" name="NAME"/>
+                <input type="text" name="NAME" id="phonename"/>
             </label>
 
             <label>
                 <span>Email</span>
-                <input type="email" name="mail"/>
+                <input type="email" name="mail" id="phonemember_mail"/>
             </label>
 
             <label>
                 <span>Password</span>
-                <input type="password" name="PASSWORD"/>
+                <input type="password" name="PASSWORD" id="phonePasswordcheck"/>
             </label>
 
             <label>
                 <span>PASSWORD CONFIRM</span>
-                <input type="password" />
+                <input type="password" id="phonePassword_confirm"/>
             </label>
 
             <label>
                 <span>PHONE NUMBER</span>
-                <input type="password" name="PHONE"/>
+                <input type="text" name="PHONE" id="cellphonePHONE" maxlength="10"/>
             </label>
         </div>
 
         <a href="./front_member_info.html">
-            <button type="submit" class="member submit">
+            <button type="submit" class="member submit" id="phone_button">
                 Sign In
             </button>
         </a>
@@ -618,161 +618,18 @@
 <!-- 載入套件 -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<!-- 載入js -->
-<!-- 選單左右移動 -->
-<script>
-document
-    .querySelector("#img__btn")
-    .addEventListener("click", function () {
-        document
-            .querySelector(".cont")
-            .classList.toggle("s--signup");
-    });
-</script>
 
-<script>
-// new Vue({
-//     el: '#member',
-//     data: {
-//         isShow: true
-//     },
-//     methods: {
-//         toggle: function() {
-//             this.isShow = !this.isShow;
-//         }
-//     },
-// });
-$('a.memberTerms').on("click",function(e){
-    e.preventDefault();
-    $('article.memberPopUp').css("display", "block");
-})
-
-$('a.memberTermsDel').on("click",function(e){
-    e.preventDefault();
-    $('article.memberPopUp').css("display", "none");
-    
-})
-$('a.forgot-pass').on("click",function(e){
-    e.preventDefault();
-    // console.log("aaa");
-    $('article.forgetChange').css("display", "block");
-    $('div.cont').css("display", "none");
-    $('div.phone').css("display", "none");
-});
-
-// $('article.forgetChange button.member.fb-btn').on("click",function(e){
-//     e.preventDefault();
-//     // console.log("bbb");
-//     $('article.forgetSubmit').css("display", "block");
-// })
-</script>
 
 <script src="./js/front_member.min.js"></script>
 
-
-<!-- Emailforgetcode -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script type="text/javascript">
     emailjs.init('rB4cW-mtW8WwyODex')
 </script>
-<script>
-    const btn = document.getElementById('forgetmail');
-    let forgermail = $('#mail');
-    document.getElementById('form')
-        .addEventListener('submit', function (event) {
-            event.preventDefault();
 
-            if ($(forgermail).val() != '') {
-                var that = this;
-                $.ajax({
-                    type: 'POST',
-                    url: './php/member/Memberforgetemail.php',
-                    dataType: 'json',
-                    async: false,
-                    data: {
-                        mail: forgermail.val(),
-                    },
-                    success: function (data) {
-                        let passwordvalue = data[0].PASSWORD;
-                        let PASSWORDcode = document.getElementById("PASSWORD");
-                        PASSWORDcode.value = passwordvalue;
-                        const serviceID = 'default_service';
-                        const templateID = 'template_1idmmrm';
-                        emailjs.sendForm(serviceID, templateID, that)
-                            .then((event) => {
-                                alert(
-                                    'The password has already sent into your email address, please check it.'
-                                );
-                                window.location.href = 'front_member.html';
-                            }, );
-                    }
-                })
-            } else {
-                alert("Please type your mail");
-            }
-            let PASSWORD = document.getElementById("PASSWORD");
-            if ($(forgermail).val() != '' && PASSWORD.value == '') {
-                alert("No such registered mail");
-            }
-        });
-</script>
-<script>
-    let inputcode = document.querySelector('#member_button');
-    inputcode.addEventListener("click", function () {
-        let NAME = document.querySelector('#name');
-        let member_mail = document.querySelector('#member_mail');
-        let Password = document.querySelector('#Passwordcheck');
-        let Password_confirm = document.querySelector('#Password_confirm');
-        let PHONE = document.querySelector('#PHONE');
-        let number = document.getElementById('PHONE').value;
-        let check = document.getElementById("check").checked;
-        let Password_value = Password.value;
-        let Password_confirm_value = Password_confirm.value;
-        if (NAME.value == '') {
-            alert("Please type your name");
-            event.preventDefault();
-        } else if (member_mail.value == '') {
-            alert("Please type your mail");
-            event.preventDefault();
-        } else if (Password.value == '') {
-            alert("Please type your Password");
-            event.preventDefault();
-        } else if (Password_value != Password_confirm_value) {
-            alert("Password confirm does not match");
-            event.preventDefault();
-        } else if (Password_confirm.value == '') {
-            alert("Please type Password confirm");
-            event.preventDefault();
-        } else if (PHONE.value == '') {
-            alert("Please type Phone");
-            event.preventDefault();
-        }else if (!(/^[09]{2}[0-9]{8}$/.test(number))) {
-            alert("The Phone number is incorrect, please re-fill");
-            event.preventDefault();
-        } else if (check == false ) {
-            alert("Please agree Terms& Conditions and Privacy Policy");
-            event.preventDefault();
-        }
-    })
-</script>
-<script>
-  let signinputcode = document.querySelector('#signlogin');
-  signinputcode.addEventListener("click", function () {
-    let signmail = document.querySelector('#signmail');
-    console.log(signmail);
-    let signpassword = document.querySelector('#signpassword');
-    console.log(signpassword);
-    if (signmail.value == '') {
-            alert("Please type your mail");
-            event.preventDefault();
-        } else if (signpassword.value == '') {
-            alert("Please type your Password");
-            event.preventDefault();
-        }
-  });
 
-</script>
+
 </body>
 
 </html>
