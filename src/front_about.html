@@ -1,212 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    @@include('./layout/head.html')
 
-    <head>
-        @@include('./layout/head.html')
+    <!-- Link jquery.multiscroll.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.3/jquery.multiscroll.min.css"
+    />
 
-        <!-- Link jquery.multiscroll.js CSS -->
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.3/jquery.multiscroll.min.css"
-        />
+    <!-- Link fullpage.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css"
+    />
 
-        <!-- Link fullpage.js CSS -->
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css"
-        />
+    <!-- Link Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
 
-        <!-- Link Swiper CSS -->
-        <link
-        rel="stylesheet"
-        href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-        />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/fullpage.js/dist/fullpage.min.css"
+    />
 
-        <link rel="stylesheet" type="text/css" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
+    <!-- 多國語系 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.5/vue-i18n.min.js"></script>
 
-        <!-- 多國語系 -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.5/vue-i18n.min.js"></script>
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+  </head>
 
-        <!-- AOS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    div.wrapperLoading {
+      display: none;
+    }
+  </style>
 
-    </head>
-
-    <style>
-        div.wrapperLoading{
-            display: none;
-        }
-    </style>
-
-<body >
+  <body>
     <div class="wrapper" id="app">
+      <!-- 導覽列 -->
+      @@include('./layout/nav.html', { "active4" : "active" })
 
-        <!-- 導覽列 -->
-        @@include('./layout/nav.html', {
-        "active4" : "active"
-        })
+      <main class="about">
+        <div id="fullpage">
+          <full-page
+            :options="options"
+            id="fullpage"
+            class="mobile"
+            ref="fullpage"
+          >
+            <div class="section active" id="section0">
+              <article
+                class="about"
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+              >
+                <section class="about">
+                  <h2 class="top ptSpace30">
+                    {{$t("header.title1")}}<br />
+                    <select
+                      name="locale"
+                      id="locale"
+                      v-model="locale"
+                      @change="changeLocale()"
+                    >
+                      <option value="en">English</option>
+                      <option value="tw">繁體中文</option>
+                      <option value="jp">日本語</option>
+                    </select>
+                  </h2>
 
-        <main class="about">
+                  <h6 class="first mtSpace20">
+                    {{$t("main.section1")}}
+                    <br />
+                    {{$t("main.section2")}}
+                  </h6>
 
-            <div id="fullpage">
+                  <h6 class="middle mtSpace40">
+                    {{$t("main.section3")}}
+                    <br />
+                    {{$t("main.section4")}}
+                    <br />
+                    {{$t("main.section5")}}
+                  </h6>
 
-                <full-page :options="options" id="fullpage" class="mobile" ref="fullpage">
-                        
-                    <div class="section active" id="section0">
+                  <h6 class="end mtSpace140">
+                    {{$t("main.section6")}}
+                    <br />
+                    {{$t("main.section7")}}
+                  </h6>
+                </section>
 
-                        <article class="about" data-aos="fade-down" data-aos-easing="linear"
-                            data-aos-duration="1500">
-
-                            <section class="about">
-
-                                <h2 class="top ptSpace30" >
-                                    {{$t("header.title1")}}<br>
-                                    <select name="locale" id="locale" v-model="locale" @change="changeLocale()">
-                                        <option value="en">English</option>
-                                        <option value="tw">繁體中文</option>
-                                        <option value="jp">日本語</option>
-                                    </select>
-                                </h2>
-
-                                <h6 class="first mtSpace20">
-                                    {{$t("main.section1")}}
-                                    <br>
-                                    {{$t("main.section2")}}
-                                </h6>
-
-                                <h6 class="middle mtSpace40">
-                                    {{$t("main.section3")}}
-                                    <br>
-                                    {{$t("main.section4")}}
-                                    <br>
-                                    {{$t("main.section5")}}
-                                </h6>
-
-                                <h6 class="end mtSpace140">
-                                    {{$t("main.section6")}}
-                                    <br>
-                                    {{$t("main.section7")}}
-                                </h6>
-                            </section>
-
-                            <div class="content">
-                                <img class="content__img" src="./img/about/about_spic1.jpg" alt="Some image" />
-                                <img class="content__img" src="./img/about/about_spic2.jpg" alt="Some image" />
-                                <img class="content__img" src="./img/about/about_spic3.jpg" alt="Some image" />
-                                <img class="content__img" src="./img/about/about_spic4.jpg" alt="Some image" />
-                                <img class="content__img" src="./img/about/about_spic5.jpg" alt="Some image" />
-                                <img class="content__img" src="./img/about/about_spic6.jpg" alt="Some image" />
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- fullpage 第二頁 -->
-                    <div class="section history" id="section1">
-
-                        <h2 class="text" id="aboutHistoryText">
-                            {{$t("header.title2")}}
-                        </h2>
-
-                        <div class="content plSpace50 ptSpace60" id="aboutHistoryContent">
-
-                            <h2>{{$t("header.title2")}}</h2>
-
-                            <h6 class="first mtSpace50">
-                                {{$t("main.section8")}}
-                            </h6>
-
-                            <div class="middle mtSpace50">
-
-                                <h6>
-                                    {{$t("main.section9")}}
-                                </h6>
-                            </div>
-
-                            <h6 class="mtSpace50">
-                                {{$t("main.section10")}}
-                            </h6>
-                        </div>
-                    </div>
-
-                    <!-- fullpage 第三頁 -->
-                    <div class="section sns" id="section2">
-
-                        <article class="page3">
-
-                            <div class="part3_wrapper">
-
-                                <div class="cols">
-
-                                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-
-                                        <div class="container">
-
-                                            <div class="front picOne">
-
-                                                <div class="inner">
-                                                    <h4>John Lee</h4>
-                                                </div>
-                                            </div>
-
-                                            <div class="back">
-
-                                                <div class="inner">
-                                                    <h4>{{$t("main.section11")}}<br> {{$t("main.section12")}}</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-
-                                        <div class="container">
-
-                                            <div class="front picTwo">
-
-                                                <div class="inner">
-                                                    <h4>Peter Chao</h4>
-                                                </div>
-                                            </div>
-
-                                            <div class="back">
-
-                                                <div class="inner">
-
-                                                    <h4>{{$t("main.section11")}}<br>{{$t("main.section13")}}
-                                                    </h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-
-                                        <div class="container">
-
-                                            <div class="front picThree">
-
-                                                <div class="inner">
-                                                    <h4>Rita Su</h4>
-                                                </div>
-                                            </div>
-
-                                            <div class="back">
-
-                                                <div class="inner">
-                                                    <h4>{{$t("main.section11")}}<br>{{$t("main.section14")}}
-                                                    </h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                </full-page>
+                <div class="content">
+                  <img
+                    class="content__img"
+                    src="./img/about/about_spic1.jpg"
+                    alt="Some image"
+                  />
+                  <img
+                    class="content__img"
+                    src="./img/about/about_spic2.jpg"
+                    alt="Some image"
+                  />
+                  <img
+                    class="content__img"
+                    src="./img/about/about_spic3.jpg"
+                    alt="Some image"
+                  />
+                  <img
+                    class="content__img"
+                    src="./img/about/about_spic4.jpg"
+                    alt="Some image"
+                  />
+                  <img
+                    class="content__img"
+                    src="./img/about/about_spic5.jpg"
+                    alt="Some image"
+                  />
+                  <img
+                    class="content__img"
+                    src="./img/about/about_spic6.jpg"
+                    alt="Some image"
+                  />
+                </div>
+              </article>
             </div>
-        </main>
+
+            <!-- fullpage 第二頁 -->
+            <div class="section history" id="section1">
+              <h2 class="text" id="aboutHistoryText">
+                {{$t("header.title2")}}
+              </h2>
+
+              <div class="content plSpace50 ptSpace60" id="aboutHistoryContent">
+                <h2>{{$t("header.title2")}}</h2>
+
+                <h6 class="first mtSpace50">{{$t("main.section8")}}</h6>
+
+                <div class="middle mtSpace50">
+                  <h6>{{$t("main.section9")}}</h6>
+                </div>
+
+                <h6 class="mtSpace50">{{$t("main.section10")}}</h6>
+              </div>
+            </div>
+
+            <!-- fullpage 第三頁 -->
+            <div class="section sns" id="section2">
+              <article class="page3">
+                <div class="part3_wrapper">
+                  <div class="cols">
+                    <div
+                      class="col"
+                      ontouchstart="this.classList.toggle('hover');"
+                    >
+                      <div class="container">
+                        <div class="front picOne">
+                          <div class="inner">
+                            <h4>John Lee</h4>
+                          </div>
+                        </div>
+
+                        <div class="back">
+                          <div class="inner">
+                            <h4>
+                              {{$t("main.section11")}}<br />
+                              {{$t("main.section12")}}
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="col"
+                      ontouchstart="this.classList.toggle('hover');"
+                    >
+                      <div class="container">
+                        <div class="front picTwo">
+                          <div class="inner">
+                            <h4>Peter Chao</h4>
+                          </div>
+                        </div>
+
+                        <div class="back">
+                          <div class="inner">
+                            <h4>
+                              {{$t("main.section11")}}<br />{{$t("main.section13")}}
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="col"
+                      ontouchstart="this.classList.toggle('hover');"
+                    >
+                      <div class="container">
+                        <div class="front picThree">
+                          <div class="inner">
+                            <h4>Rita Su</h4>
+                          </div>
+                        </div>
+
+                        <div class="back">
+                          <div class="inner">
+                            <h4>
+                              {{$t("main.section11")}}<br />{{$t("main.section14")}}
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </full-page>
+        </div>
+      </main>
     </div>
 
     <!-- 載入套件 -->
@@ -223,6 +244,5 @@
 
     <!-- 載入js -->
     <script src="./js/front_about.min.js"></script>
-</body>
-
+  </body>
 </html>

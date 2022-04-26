@@ -1,322 +1,330 @@
 main.exhibition {
+  position: relative;
+
+  .fp-tableCell {
+    vertical-align: top;
+  }
+
+  // =========================左邊區塊=============================//
+  article.left1 {
+    height: $Height;
+    @include VerticalAlignCenter;
+
+    section.current {
+      width: 85%;
+      @include HorizontalAlignCenter;
+
+      h2 {
+        color: $FocusingColor;
+      }
+
+      a.buyTicket {
+        float: right;
+      }
+    }
+  }
+
+  article.left2 {
+    height: $Height;
+    @include VerticalAlignCenter;
     position: relative;
 
-    .fp-tableCell {
-        vertical-align: top;
+    figure.upcomingPic {
+      img {
+        width: 70%;
+        max-width: 500px;
+        @include PositionAlignCenter();
+        z-index: 31;
+      }
     }
 
-    // =========================左邊區塊=============================//
-    article.left1 {
-        height: $Height;
-        @include VerticalAlignCenter;
+    h2 {
+      line-height: 1;
+      opacity: 0.1;
 
-        section.current {
-            width: 85%;
-            @include HorizontalAlignCenter;
-
-            h2 {
-                color: $FocusingColor;
-            }
-
-            a.buyTicket {
-                float: right
-            }
-        }
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 30;
     }
+  }
 
-    article.left2 {
-        height: $Height;
-        @include VerticalAlignCenter;
-        position: relative;
+  article.left3 {
+    height: $Height;
 
-        figure.upcomingPic {
-            img{
-                width: 70%;
-                max-width: 500px;
-                @include PositionAlignCenter();
-                z-index: 31;
-            }
-        }
+    div.tab_item {
+      @include VerticalAlignCenter;
+      width: $RWD;
+      height: $RWD;
 
-        h2 {
-            line-height: 1;
-            opacity: .1;
+      position: relative;
+      display: none;
 
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            z-index: 30;
-        }
-    }
+      &:first-child {
+        display: block;
+      }
 
-    article.left3 {
-        height: $Height;
+      h2 {
+        line-height: 1;
+        opacity: 0.1;
 
-        div.tab_item {
-            @include VerticalAlignCenter;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      h3.tab_item_title {
+        @include PositionAlignCenter();
+      }
+      figure.exPast_text {
+        @for $i from 1 to 10 {
+          div.exPast_contentBg#{$i} {
             width: $RWD;
             height: $RWD;
 
-            position: relative;
-            display: none;
+            opacity: 0.1;
 
-            &:first-child {
-                display: block;
+            position: absolute;
+            z-index: 31;
+
+            @include LinkImg(
+              "exhibition",
+              "exhibition_pic#{$i+3}",
+              "jpeg",
+              cover,
+              no-repeat,
+              center
+            );
+          }
+          figcaption.exPast_content {
+            width: 90%;
+            height: 60vh;
+            @include PositionAlignCenter();
+            z-index: 32;
+            display: block;
+            h3 {
+              text-align: center;
             }
-
-            h2 {
-                line-height: 1;
-                opacity: .1;
-
-                position: absolute;
-                left: 0;
-                bottom: 0;
-            }
-
-            h3.tab_item_title {
-                @include PositionAlignCenter();
-            }
-            figure.exPast_text{
-                @for $i from 1 to 10 {
-                    div.exPast_contentBg#{$i} {
-                        width: $RWD;
-                        height: $RWD;
-
-                        opacity: .1;
-
-                        position: absolute;
-                        z-index: 31;
-                        
-                        @include LinkImg('exhibition', 'exhibition_pic#{$i+3}', 'jpeg', cover, no-repeat, center);
-                    }
-                    figcaption.exPast_content {
-                        width: 90%;
-                        height: 60vh;
-                        @include PositionAlignCenter();
-                        z-index: 32;
-                        display: block;
-                        h3{
-                            text-align: center;
-                        }
-                    }
-                }
-            }
+          }
         }
+      }
+    }
+  }
+
+  //===============================右邊區塊===============================================//
+  figure.right1 {
+    width: $RWD;
+    height: $Height;
+
+    img {
+      display: block;
+      width: 100vh;
+      object-fit: cover;
+      height: 100vh;
+    }
+  }
+
+  article.right2 {
+    height: $Height;
+
+    @include VerticalAlignCenter;
+    @include LinkImg(
+      "exhibition",
+      "exhibition_pic3",
+      "png",
+      cover,
+      no-repeat,
+      center
+    );
+
+    section.upcoming {
+      width: 85%;
+      @include HorizontalAlignCenter;
     }
 
-    //===============================右邊區塊===============================================//
-    figure.right1 {
-        width: $RWD;
-        height: $Height;
-
-        img{
-            display: block; 
-            width: 100vh; 
-            object-fit: cover; 
-            height: 100vh;
-        }
+    a.buyTicket {
+      float: right;
     }
+  }
 
-    article.right2 {
-        height: $Height;
+  article.right3 {
+    height: $Height;
 
-        @include VerticalAlignCenter;
-        @include LinkImg('exhibition', 'exhibition_pic3', 'png', cover, no-repeat, center);
+    @include VerticalAlignCenter;
 
-        section.upcoming {
-            width: 85%;
-            @include HorizontalAlignCenter;
-        }
+    ul.exBefore {
+      @include HorizontalAlignCenter;
 
-        a.buyTicket {
-            float: right;
-        }
+      li > a {
+        display: block;
+      }
+
+      li > a > img {
+        width: 400px;
+        height: 110px;
+        object-fit: cover;
+      }
+
+      .on a > img {
+        border: 4px solid $AccentColor2;
+      }
     }
+  }
 
-    article.right3 {
-        height: $Height;
-
-        @include VerticalAlignCenter;
-
-        ul.exBefore {
-            @include HorizontalAlignCenter;
-
-            li>a{
-                display: block;
-            }
-
-            li>a>img{
-                width: 400px; 
-                height: 110px; 
-                object-fit: cover;
-            }
-
-
-            .on a>img {
-                border: 4px solid $AccentColor2;
-            }
-        }
-
+  ul.exBefore > li > a > img {
+    &:hover {
+      opacity: 0.4;
     }
-
-    ul.exBefore>li>a>img {
-        &:hover {
-            opacity: .4;
-        }
-    }
-    
+  }
 }
 
-
-
 //===============================RWD ===============================================//
-    //當瀏覽器寬度小於992的時候
+//當瀏覽器寬度小於992的時候
 main.exhibition {
-    
-    div.mobile h2 {
-        font-size: 24px;
-        text-align: center;
-    }
+  div.mobile h2 {
+    font-size: 24px;
+    text-align: center;
+  }
 
-    div.mobile h3 {
-        font-size: 18px;
-        text-align: left;
-    }
+  div.mobile h3 {
+    font-size: 18px;
+    text-align: left;
+  }
 
-    div.mobile h4 {
-        font-size: 16px;
-        text-align: left;
-    }
+  div.mobile h4 {
+    font-size: 16px;
+    text-align: left;
+  }
 
-    div.mobile h5 {
-        font-size: 14px;
-        text-align: left;
-    }
+  div.mobile h5 {
+    font-size: 14px;
+    text-align: left;
+  }
 
-    div.mobile p {
-        font-size: 12px;
-        text-align: left;
-    }
+  div.mobile p {
+    font-size: 12px;
+    text-align: left;
+  }
 
-
-    @media screen and (max-width: 991.98px) {
+  @media screen and (max-width: 991.98px) {
     div.desktop {
-        display: none;
+      display: none;
     }
 
     div#fullpage {
-        display: block;
+      display: block;
     }
+  }
+  @media screen and (min-width: 991.98px) {
+    div#fullpage {
+      display: none;
     }
-    @media screen and (min-width: 991.98px){
-        div#fullpage {
-            display: none;
-        }
+  }
+
+  //===============================RWD 當期展覽 ===============================================//
+
+  section.exBlock1_current {
+    h2.ex_title {
+      color: #f0f28d;
+      text-align: left;
     }
-
-
-
-    //===============================RWD 當期展覽 ===============================================//
-
-    section.exBlock1_current {
-
-        h2.ex_title{
-            color: #F0F28D;
-            text-align: left;
-        }
-        h3,h5,p{
-            text-align: left;
-        }
-
-        div.currentContent{
-            position: relative;
-            width: 90%;
-            @include HorizontalAlignCenter;
-            @extend %clearfix;
-        }
-
-        %clearfix {
-            *zoom: 1;
-            &:before, &:after {
-                display: table;
-                line-height: 0;
-                content: "";
-            }
-            &:after {
-                clear: both;
-            }
-        }
-
-        img.currentPic-1 {
-            position: relative;
-            display: block;
-            max-width: 200px;
-            width: 30%;
-            float: right;
-            z-index: 32;
-        }
-
-        a.buyTicket {
-            padding: 1em 1.5em;
-        }
-        
+    h3,
+    h5,
+    p {
+      text-align: left;
     }
 
-    //===============================RWD 未來展覽 ===============================================//
-    section.exBlock2_upcoming {
-        @include LinkImg('exhibition', 'exhibition_pic3', 'png', cover, no-repeat, center);
-        div.upcomingContent{
-    
-            width: 90%;
-            @include HorizontalAlignCenter;
-        }
-
-        img.upcomingPic-1 {
-            display: block;
-            width: 60%;
-            max-width: 400px;
-            @include HorizontalAlignCenter;
-        }
-
-        a.buyTicket {
-            padding: 1em 1.5em;
-        }
+    div.currentContent {
+      position: relative;
+      width: 90%;
+      @include HorizontalAlignCenter;
+      @extend %clearfix;
     }
 
-    //===============================RWD 過往展覽 ===============================================//
-    section.exBlock3_past{
-        @include HorizontalAlignCenter;
-        width: 90%;
-
-        div.pastPic_swiper {
-            width: 90%;
-            --swiper-theme-color: #F29966;
-            div.pastPic_swiper-slide{
-
-                width: $RWD;
-                height: 330px;
-
-                img{
-                    width: 90%; 
-                    height: 150px;
-                    object-fit: cover; 
-                    margin: 0 auto;
-                }
-            }
-        }
+    %clearfix {
+      *zoom: 1;
+      &:before,
+      &:after {
+        display: table;
+        line-height: 0;
+        content: "";
+      }
+      &:after {
+        clear: both;
+      }
     }
+
+    img.currentPic-1 {
+      position: relative;
+      display: block;
+      max-width: 200px;
+      width: 30%;
+      float: right;
+      z-index: 32;
+    }
+
+    a.buyTicket {
+      padding: 1em 1.5em;
+    }
+  }
+
+  //===============================RWD 未來展覽 ===============================================//
+  section.exBlock2_upcoming {
+    @include LinkImg(
+      "exhibition",
+      "exhibition_pic3",
+      "png",
+      cover,
+      no-repeat,
+      center
+    );
+    div.upcomingContent {
+      width: 90%;
+      @include HorizontalAlignCenter;
+    }
+
+    img.upcomingPic-1 {
+      display: block;
+      width: 60%;
+      max-width: 400px;
+      @include HorizontalAlignCenter;
+    }
+
+    a.buyTicket {
+      padding: 1em 1.5em;
+    }
+  }
+
+  //===============================RWD 過往展覽 ===============================================//
+  section.exBlock3_past {
+    @include HorizontalAlignCenter;
+    width: 90%;
+
+    div.pastPic_swiper {
+      width: 90%;
+      --swiper-theme-color: #f29966;
+      div.pastPic_swiper-slide {
+        width: $RWD;
+        height: 330px;
+
+        img {
+          width: 90%;
+          height: 150px;
+          object-fit: cover;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
 }
-
 
 main.exhibition article.right3 {
-    flex-direction: column;
-    justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 
-    @media screen and (min-width: 991.98px){
-        div#app_fullpage {
-            display: none;
-        }
+  @media screen and (min-width: 991.98px) {
+    div#app_fullpage {
+      display: none;
     }
+  }
 }
-
-

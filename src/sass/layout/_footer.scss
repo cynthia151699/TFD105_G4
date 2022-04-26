@@ -1,15 +1,15 @@
 /* Footer */
-footer{
-    width: $RWD;
-    height: 30px;
-    
-    background-color: $HFBGColor;
-    font-family: $SpecialFont;
-    
-    @include VerticalAlignCenter();
-    display: none;
-    
-    span{
-        font-size: 12px;
-    }
+footer {
+  width: $RWD;
+  height: 30px;
+
+  background-color: $HFBGColor;
+  font-family: $SpecialFont;
+
+  @include VerticalAlignCenter();
+  display: none;
+
+  span {
+    font-size: 12px;
+  }
 }

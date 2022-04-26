@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     @@include('./layout/head.html')
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper" id="app">
-        <!-- 導覽列 -->
-        @@include('./layout/nav.html')
+      <!-- 導覽列 -->
+      @@include('./layout/nav.html')
 
+      <main class="memberInfo">
+        <!-- 確認會員資訊 -->
+        <article class="checkMemberInfo">
+          <table id="appapp">
+            <tr>
+              <td colspan="2">
+                <h3>Overview</h3>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="padding-left: 0px">
+                <h5>Member information</h5>
+              </td>
+            </tr>
+            <tr>
+              <td class="first">
+                <h5>Name</h5>
+              </td>
+              <td>{{MEMBER.NAME}}</td>
+            </tr>
+            <tr>
+              <td class="first">
+                <h5>Email address</h5>
+              </td>
+              <td>{{MEMBER.mail}}</td>
+            </tr>
+            <tr>
+              <td class="first">
+                <h5>Password</h5>
+              </td>
+              <td>{{MEMBER.PASSWORD}}</td>
+            </tr>
+            <tr>
+              <td class="first">
+                <h5>Phone</h5>
+              </td>
+              <td class="second">{{MEMBER.PHONE}}</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <button type="button" class="member submit" @click="update">
+                  modify
+                </button>
+              </td>
+            </tr>
+          </table>
+        </article>
 
         <main class="memberInfo" style="margin-top: 0;">
             <!-- 確認會員資訊 -->
@@ -141,10 +187,12 @@
     </div>
 
     <!-- 載入套件 -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
 
     <!-- 載入js -->
     <script src="./js/front_member_info.min.js"></script>
-</body>
-
+  </body>
 </html>
