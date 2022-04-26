@@ -1,10 +1,11 @@
 // =====================about anno=======================
 main.about {
+
     h2,
     h6 {
         color: $TextColor2;
         text-shadow: $TextShadow;
-        
+
     }
 
     article.about {
@@ -21,9 +22,11 @@ main.about {
             height: 600px;
 
             @include HorizontalAlignCenter();
-            h2{
-                font-size:2.25rem ;
+
+            h2 {
+                font-size: 2.25rem;
             }
+
             h2,
             h6 {
                 width: $RWD;
@@ -33,6 +36,11 @@ main.about {
             h6.first,
             h6.end {
                 text-align: right;
+            }
+            select{
+                color:#fff;
+                background-color: #456278;
+                border: #fff;
             }
         }
 
@@ -205,14 +213,19 @@ main.about {
         // =====================about anno=======================
         article.about {
             align-items: normal;
+
             section.about {
                 height: 500px;
                 display: flex;
                 flex-direction: column;
                 background-color: #293241ce;
-                h2{
-                    font-size:1.875rem ;
+                padding-left: 10px;
+                padding-right: 10px;
+
+                h2 {
+                    font-size: 1.875rem;
                 }
+
                 h2.top,
                 h6.first,
                 h6.middle,
@@ -239,6 +252,7 @@ main.about {
                 top: 0px;
                 width: 80%;
                 height: 700px;
+                padding-top: 10px;
 
                 h2 {
                     font-size: 1.25em;
@@ -260,21 +274,25 @@ main.about {
                 margin-top: 0px;
             }
         }
+
         //================person========================
-        article.page3 {  
-            align-items: baseline; 
+        article.page3 {
+            align-items: baseline;
+
             .cols {
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: column;
                 align-content: center;
-    
+                padding-top: 45px;
+
                 .col {
-                    width: calc(100% - 200px);
+                    width: calc(100% - 250px);
                     margin: 10px;
                     cursor: pointer;
                 }
             }
+
             .container {
 
                 .front,
@@ -289,15 +307,25 @@ main.about {
 @media (min-width: 576px) and (max-width: 767.98px) {
     main.about {
 
+        // =====================about anno=======================
+        article.about {
+
+            section.about {
+                height: 640px;
+            }
+        }
+
         // ======================history of anno======================
         div.history {
 
             h2.text {
                 left: 30%;
-                margin-top: 30px;
             }
 
             div.content {
+                h2 {
+                    margin-top: 10px;
+                }
 
                 h6 {
                     width: 100%;
@@ -309,15 +337,17 @@ main.about {
                 margin-top: 0px;
             }
         }
+
         //=========person===========
-        main.about{
+        main.about {
+
             .cols {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-content: center;
             }
-        
+
             .col {
                 width: calc(50% - 30px);
                 margin: 20px;
@@ -328,19 +358,19 @@ main.about {
 }
 
 @media screen and (min-width:768px) and (max-width:991.98px) {
-    main.about{
-    .cols {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: center;
-    }
+    main.about {
+        .cols {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
 
-    .col {
-        width: calc(50% - 30px);
-        margin: 20px;
-        cursor: pointer;
+        .col {
+            width: calc(50% - 30px);
+            margin: 20px;
+            cursor: pointer;
+        }
     }
-}
 
 }
