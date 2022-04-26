@@ -135,7 +135,7 @@ new Vue({
             )
 
             .then(body => {
-                this.TICKETS = body
+                this.TICKETS = res
             })
     },
 });
