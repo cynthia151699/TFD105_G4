@@ -1,10 +1,5 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-
 import { preloadFonts } from './utils.min.js';
 import { Intro } from './intro.min.js';
-
-
 
 const intro = new Intro(document.querySelector('.circles'));
 
@@ -15,4 +10,5 @@ Promise.all([preloadFonts('kxo3pgz')]).then(() => {
     // start intro
     intro.start();
 });
+
 
