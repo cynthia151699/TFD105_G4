@@ -1,70 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    @@include('./layout/head.html')
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <!-- 導覽列 -->
-      @@include('./layout/nav.html')
+<head>
+	@@include('./layout/head.html')
+</head>
 
-      <main>
-			
-				<!-- 實際頁面作用區域 -->
-				<div class="member_main_all_area">
+<body>
+	<div class="wrapper">
+		<!-- 導覽列 -->
+		@@include('./layout/nav.html')
 
+		<main>
 
-					<!-- 中央表單 -->
-					<article class="cont member_main_all_block ">
+			<!-- 實際頁面作用區域 -->
+			<div class="member_main_all_area">
 
 
-						<!-- 登入 -->
-						<div class="sign-in member_main_form">
+				<!-- 中央表單 -->
+				<article class="cont member_main_all_block ">
 
 
-							<form class="member_main_form_area" method="post" action="./php/member/Memberlogin.php">
+					<!-- 登入 -->
+					<div class="sign-in member_main_form">
 
 
-								<h3 class="mbSpace30" style="color:black;">Welcome back</h3>
+						<form class="member_main_form_area" method="post" action="./php/member/Memberlogin.php">
 
 
-								<span class="member_text_span">
+							<h3 class="mbSpace30" style="color:black;">Welcome back</h3>
 
 
-									<h6 class="member_text_title" style="color:black;">EMAIL</h6>
+							<span class="member_text_span">
 
 
-									<input type="email" class="member_input_text mbSpace20" name="mail" id="signmail"/>
+								<h6 class="member_text_title" style="color:black;">EMAIL</h6>
 
 
-								</span>
+								<input type="email" class="member_input_text mbSpace20" name="mail" id="signmail"
+									style="background-color: #293241;">
 
 
-								<span class="member_text_span">
+							</span>
 
 
-									<h6 class="member_text_title" style="color:black;">PASSWORD</h6>
+							<span class="member_text_span">
 
 
-									<input type="password" class="member_input_text mbSpace20"  name="PASSWORD" id="signpassword" />
-
-								</span>
+								<h6 class="member_text_title" style="color:black;">PASSWORD</h6>
 
 
-								<span class="member_text_span">
+								<input type="password" class="member_input_text mbSpace20" name="PASSWORD"
+									id="signpassword" style="background-color: #293241;">
 
-									<h6>
-
-										<a calss="forgot_password" href="./member_forget.html">Forgot password?</a>
-
-									</h6>
-								</span>
+							</span>
 
 
-								<!-- 按鈕 -->
-								<span class="member_text_span">
-<!-- 
+							<span class="member_text_span">
+
+								<h6>
+
+									<a calss="forgot_password" href="./member_forget.html">Forgot password?</a>
+
+								</h6>
+							</span>
+
+
+							<!-- 按鈕 -->
+							<span class="member_text_span">
+								<!-- 
 									<a class="defaultBtn member_cla_button member_button_color1"
 										href="./member_info.html">
 
@@ -72,25 +75,28 @@
 
 
 									</a> -->
-                  <a class="defaultBtn member_cla_button member_button_color1"
-                >
-                  <button type="submit" class="member submit" id="signlogin"  style="background-color:#F29966; width:100%">
-                    Log In
-                  </button>
+								<a class="defaultBtn member_cla_button member_button_color1">
+									<button type="submit" class="member submit" id="signlogin"
+										style="background-color:#F29966; width:100%; color:#f4f4f4;">
+										Log In
+									</button>
 
-                </a>
+								</a>
 
-								</span>
+							</span>
 
 
-								<span class="member_text_span">
-
-									<a class="defaultBtn member_cla_button member_button_color2" href="#" id="facebook">
-
-										<span class="member_forget_text">Connect with facebook</span>
-
-									</a>
-                  <!-- <a href="./front_login.html">
+							<span class="member_text_span">
+								<a class="defaultBtn member_cla_button member_button_color2"
+									href="https://www.facebook.com/ANNO_Taiwan-102648079085520/?ref=page_internal"
+									id="facebook">
+									<button type="button" class="member fb-btn"
+										style="background-color:#AD9F9F; color:#f4f4f4;">
+										Connect with facebook
+									</button>
+								</a>
+							</span>
+							<!-- <a href="./front_login.html">
                     <button type="submit" class="member submit" id="signlogin">
                       Log In
                     </button>
@@ -100,136 +106,137 @@
                   </button> -->
 
 
-								</span>
+						</form>
 
 
-							</form>
+					</div>
+
+					<!-- 移動框 -->
+					<div class="sub-cont">
 
 
-						</div>
-
-						<!-- 移動框 -->
-						<div class="sub-cont">
+						<div class="member_img">
 
 
-							<div class="member_img">
+							<div class=" m--up member_img__text">
 
 
-								<div class=" m--up member_img__text">
+								<h3 class="mbSpace40 member_move_text">New here?</h3>
 
 
-									<h3 class="mbSpace40 member_move_text">New here?</h3>
-
-
-									<h5 class="member_move_text">Sign up and discover great amount of new
-										opportunities!</h5>
-
-
-								</div>
-
-
-								<div class="m--in member_img__text">
-
-
-									<h3 class="mbSpace40 member_move_text">One of us?</h3>
-
-
-									<h5 class="member_move_text">If you already has an account, just sign in.
-										We've missed you!</h5>
-
-
-								</div>
-
-
-								<div class="member_img__btn">
-
-
-									<span class="m--up member_span">SIGN UP</span>
-
-
-									<span class="m--in member_span">SIGN IN</span>
-
-
-								</div>
+								<h5 class="member_move_text">Sign up and discover great amount of new
+									opportunities!</h5>
 
 
 							</div>
 
 
-							<!-- 註冊 -->
-							<div class="sign-up member_main_form">
+							<div class="m--in member_img__text">
 
 
-								<form class="member_main_form_area" id="member_form"  method="post"
-                action="./php/member/MemberNew.php">
-
-                <!-- <h2>Time to feel like home,</h2> -->
-									<span class="member_text_span">
+								<h3 class="mbSpace40 member_move_text">One of us?</h3>
 
 
-										<h6 style="color:black;">NAME</h6>
+								<h5 class="member_move_text">If you already has an account, just sign in.
+									We've missed you!</h5>
 
 
-										<input type="text" class="member_input_text mbSpace10" name="NAME" id="name"/>
+							</div>
 
 
-									</span>
+							<div class="member_img__btn">
 
 
-									<span class="member_text_span">
+								<span class="m--up member_span">SIGN UP</span>
 
 
-										<h6 style="color:black;">EMAIL</h6>
+								<span class="m--in member_span">SIGN IN</span>
 
 
-										<input type="text" name="mail" class="member_input_text mbSpace10"
-											id="member_mail" />
+							</div>
 
 
-									</span>
+						</div>
 
 
-									<span class="member_text_span">
+						<!-- 註冊 -->
+						<div class="sign-up member_main_form">
 
 
-										<h6 style="color:black;">PASSWORD</h6>
+							<form class="member_main_form_area" id="member_form" method="post"
+								action="./php/member/MemberNew.php">
+
+								<!-- <h2>Time to feel like home,</h2> -->
+								<span class="member_text_span">
 
 
-										<input type="password " class="member_input_text mbSpace10" name="PASSWORD" id="Passwordcheck" />
+									<h6 style="color:black;">NAME</h6>
 
 
-									</span>
+									<input type="text" class="member_input_text mbSpace10" name="NAME" id="name"
+										style="background-color: #293241;">
 
 
-									<span class="member_text_span">
+								</span>
 
 
-										<h6 style="color:black;">PASSWORD CONFIRM</h6>
+								<span class="member_text_span">
 
 
-										<input type="password" class="member_input_text mbSpace10" id="Password_confirm" />
+									<h6 style="color:black;">EMAIL</h6>
 
 
-									</span>
+									<input type="text" name="mail" class="member_input_text mbSpace10" id="member_mail"
+										style="background-color: #293241;">
 
 
-									<span class="member_text_span">
+								</span>
 
 
-										<h6 style="color:black;">PHONE NUMBER</h6>
+								<span class="member_text_span">
 
 
-										<input type="text" class="member_input_text mbSpace10" name="PHONE" id="PHONE" maxlength="10" />
+									<h6 style="color:black;">PASSWORD</h6>
 
 
-									</span>
+									<input type="password " class="member_input_text mbSpace10" name="PASSWORD"
+										id="Passwordcheck" style="background-color: #293241;">
 
 
-									<!-- 確認相關區域  待調整-->
-									<label class="mtSpace20">
+								</span>
 
 
-										<!-- <span class="member_span_choose  mbSpace10">
+								<span class="member_text_span">
+
+
+									<h6 style="color:black;">PASSWORD CONFIRM</h6>
+
+
+									<input type="password" class="member_input_text mbSpace10" id="Password_confirm"
+										style="background-color: #293241;">
+
+
+								</span>
+
+
+								<span class="member_text_span">
+
+
+									<h6 style="color:black;">PHONE NUMBER</h6>
+
+
+									<input type="text" class="member_input_text mbSpace10" name="PHONE" id="PHONE"
+										maxlength="10" style="background-color: #293241;">
+
+
+								</span>
+
+
+								<!-- 確認相關區域  待調整-->
+								<label class="mtSpace20">
+
+
+									<!-- <span class="member_span_choose  mbSpace10">
 
 
 											<input type="checkbox" class="member_login_choose" />
@@ -243,98 +250,93 @@
 										</span> -->
 
 
-									</label>
+								</label>
 
 
-									<label>
+								<label>
 
 
-										<span class="member_span_choose">
+									<span class="member_span_choose">
 
 
-											<input type="checkbox" class="member_login_confirm" class="check" id="check"/>
+										<input type="checkbox" class="member_login_confirm" class="check" id="check" />
 
 
-											<p class="member_p_style">
-												I have read and understood the <a href="#0" class="member_Terms">Terms &
-													Conditions and Privacy Policy.</a>
-											</p>
+										<p class="member_p_style">
+											I have read and understood the <a href="#0" class="member_Terms">Terms &
+												Conditions and Privacy Policy.</a>
+										</p>
 
 
-										</span>
+									</span>
 
 
-									</label>
-
-			
-									<button type="submit" class="mtSpace10" id="member_button">
-										SIGN UP
-									</button>
-
-								</form>
+								</label>
 
 
-							</div>
+								<button type="submit" class="mtSpace10" id="member_button" style="color: #f4f4f4;">
+									SIGN UP
+								</button>
+
+							</form>
 
 
 						</div>
 
 
-					</article>
+					</div>
 
 
-					<!-- 跳窗樣式待確認更改 -->
-					<!-- 跳窗背景透明度 -->
-					<div class="member_Terms_text"></div>
+				</article>
 
 
-					<!-- 跳窗內文 -->
-					<div class="member_Terms_area">
+				<!-- 跳窗樣式待確認更改 -->
+				<!-- 跳窗背景透明度 -->
+				<div class="member_Terms_text"></div>
 
 
-						<h6 class="member_Terms_title">Terms & Conditions and Privacy Policy.</h6>
+				<!-- 跳窗內文 -->
+				<div class="member_Terms_area">
 
 
-						<h6 class="member_Terms_del">X</h6>
+					<h6 class="member_Terms_title">Terms & Conditions and Privacy Policy.</h6>
 
-						<div class="member_Terms_inner" >
 
-							<h6 style="color:black;">Anno Account, Personal Information, and Security
-								By signing up for an account or placing an Order you agree and understand that we
-								may collect, use, store and process your Personal Information in accordance with our
-								Privacy & Cookie Policy. Anno Museum fully respects the privacy of individuals who
-								access
-								and use the Platforms. For details on the manner in which we use cookies, the type
-								of
-								information we collect, how and for what purpose, we use your information and under
-								what
-								circumstances we disclose information please see our Privacy & Cookie Policy, which
-								are
-								incorporated into and form part of these Terms.
-							</h6>
+					<h6 class="member_Terms_del">X</h6>
 
-						</div>
-						
+					<div class="member_Terms_inner">
+
+						<h6 style="color:black;">Anno Account, Personal Information, and Security
+							By signing up for an account or placing an Order you agree and understand that we
+							may collect, use, store and process your Personal Information in accordance with our
+							Privacy & Cookie Policy. Anno Museum fully respects the privacy of individuals who
+							access
+							and use the Platforms. For details on the manner in which we use cookies, the type
+							of
+							information we collect, how and for what purpose, we use your information and under
+							what
+							circumstances we disclose information please see our Privacy & Cookie Policy, which
+							are
+							incorporated into and form part of these Terms.
+						</h6>
+
 					</div>
 
 				</div>
 
-			</main>
-    </div>
+			</div>
 
-    <!-- 載入套件 -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
+		</main>
+	</div>
 
-    <script src="./js/front_member.min.js"></script>
+	<!-- 載入套件 -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
+	<script src="./js/front_member.min.js"></script>
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 
-  </body>
+</body>
+
 </html>

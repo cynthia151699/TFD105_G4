@@ -2,88 +2,91 @@
 <html lang="en">
 
 <head>
-	@@include('./layout/head.html')
+  @@include('./layout/head.html')
 </head>
+
 <body>
-	<div class="wrapper" id="app">
-		<!-- 導覽列 -->
-		@@include('./layout/nav.html')
-		<div class="mainContainer">
+  <div class="wrapper" id="app">
+    <!-- 導覽列 -->
+    @@include('./layout/nav.html')
+    <div class="mainContainer">
 
 
-			<main>
+      <main>
 
-				<!-- 實際頁面作用區域 -->
-				<div class="member_modify_area" id="checkcode">
+        <!-- 實際頁面作用區域 -->
+        <div class="member_modify_area" id="checkcode">
 
-					<!-- 中央白框區域 -->
-					<article class="member_modify_main">
+          <!-- 中央白框區域 -->
+          <article class="member_modify_main">
 
-						<!-- 上方title -->
-
-
-						<!-- 清單內容 -->
-						<div class="member_modify_main_block" id="appupdate">
-
-							<ul class="member_modify_main_ul">
-
-								<li class="mtSpace20 member_modify_main_li_title">
-
-									<h3 style="color:black;">Edit your member information</h3>
-
-								</li>
-
-								<li class="mtSpace20 member_modify_main_li">
+            <!-- 上方title -->
 
 
-									<h5 style="color:black;">Member information</h5>
+            <!-- 清單內容 -->
+            <div class="member_modify_main_block" id="appupdate">
+
+              <ul class="member_modify_main_ul">
+
+                <li class="mtSpace20 member_modify_main_li_title">
+
+                  <h3 style="color:black;">Edit your member information</h3>
+
+                </li>
+
+                <li class="mtSpace20 member_modify_main_li">
 
 
-								</li>
+                  <h5 style="color:black;">Member information</h5>
 
-								<li class="mtSpace20 member_modify_main_li">
 
-									<h5 class="member_modify_inf" style="color:black;">Name</h5>
+                </li>
 
-									<h5 class="member_modify_uninput" style="color:black;">{{MEMBER.NAME}}</h5>
+                <li class="mtSpace20 member_modify_main_li">
 
-								</li>
+                  <h5 class="member_modify_inf" style="color:black;">Name</h5>
 
-								<li class="mtSpace20  member_modify_main_li">
+                  <h5 class="member_modify_uninput" style="color:black; word-wrap:break-word;">{{MEMBER.NAME}}</h5>
 
-									<h5 class="member_modify_inf" style="color:black;">Email address</h5>
+                </li>
 
-									<h5 class="member_modify_uninput" style="color:black;" name="mail">{{MEMBER.mail}}</h5>
+                <li class="mtSpace20  member_modify_main_li">
 
-								</li>
+                  <h5 class="member_modify_inf" style="color:black;">Email address</h5>
 
-								<li class="mtSpace20 member_modify_main_li">
+                  <h5 class="member_modify_uninput" style="color:black; word-wrap:break-word;" name="mail">
+                    {{MEMBER.mail}}</h5>
 
-									<h5 class="member_modify_inf" style="color:black;">Password</h5>
+                </li>
 
-									<input class="member_modify_input" type="password" placeholder="請輸入密碼"  name="PASSWORD" v-model="MEMBER.PASSWORD"
-									id="Password"/>
+                <li class="mtSpace20 member_modify_main_li">
 
-								</li>
+                  <h5 class="member_modify_inf" style="color:black;">Password</h5>
 
-								<li class="mtSpace20 member_modify_main_li">
+                  <input class="member_modify_input" type="password" placeholder="請輸入密碼" name="PASSWORD"
+                    v-model="MEMBER.PASSWORD" id="Password" style="background-color: #293241;">
 
-									<h5 class="member_modify_inf" style="color:black;">Password confirm</h5>
+                </li>
 
-									<input class="member_modify_input" type="password" id="Password_confirm" placeholder="請再次輸入密碼" />
+                <li class="mtSpace20 member_modify_main_li">
 
-								</li>
+                  <h5 class="member_modify_inf" style="color:black;">Password confirm</h5>
 
-								<li class="mtSpace20 member_modify_main_li">
+                  <input class="member_modify_input" type="password" id="Password_confirm" placeholder="請再次輸入密碼"
+                    style="background-color: #293241;">
 
-									<h5 class="member_modify_inf" style="color:black;">Phone</h5>
+                </li>
 
-									<input class="member_modify_input" type="phone" placeholder="請輸入手機" name="PHONE" v-model="MEMBER.PHONE" id="PHONE"
-									maxlength="10"/>
+                <li class="mtSpace20 member_modify_main_li">
 
-								</li>
+                  <h5 class="member_modify_inf" style="color:black;">Phone</h5>
 
-								<!-- <li class="mtSpace20 member_modify_main_li">
+                  <input class="member_modify_input" type="phone" placeholder="請輸入手機" name="PHONE"
+                    v-model="MEMBER.PHONE" id="PHONE" maxlength="10" style="background-color: #293241;">
+
+                </li>
+
+                <!-- <li class="mtSpace20 member_modify_main_li">
 
 									<h6 class="member_modify_link"><input type="checkbox" class="mrSpace10">I would like
 										to receive news,
@@ -92,138 +95,139 @@
 
 								</li> -->
 
-								<!-- 按鈕 -->
-							<!-- <div style="align-items: center;"> -->
-								<div style="width:fit-content;  margin:0px auto;">
-								<li class="mtSpace10 mbSpace10 member_modify_main_bt mrSpace30">
+                <!-- 按鈕 -->
+                <!-- <div style="align-items: center;"> -->
+                <div style="width:fit-content;  margin:0px auto;">
+                  <li class="mtSpace10 mbSpace10 member_modify_main_bt mrSpace30">
 
-									<!-- <a class="defaultBtn member_modify_Bt1" href="./front_member_info.html" style="width:100%">
+                    <!-- <a class="defaultBtn member_modify_Bt1" href="./front_member_info.html" style="width:100%">
 
 										<span class="member_forget_text">Cancel</span>
 
 									</a> -->
-									<input class="defaultBtn member_modify_Bt1" type="button" value="Cancel" style="width:100%" onclick="location.href='./front_member_info.html'"/>
+                    <input class="btn_done member_modify_Bt1" type="button" value="Cancel"
+                      style="width:100%; color: #f4f4f4;" onclick="location.href='./front_member_info.html'" />
 
-									<!-- <a class="defaultBtn member_modify_Bt2" href="./member_info.html">
+                    <!-- <a class="defaultBtn member_modify_Bt2" href="./member_info.html">
 
 										<span class="member_forget_text">Save</span>
 
 									</a> -->
-									<!-- <input class="btn_previous" type="submit" value="Cancel"
+                    <!-- <input class="btn_previous" type="submit" value="Cancel"
                                 onclick="location.href='./front_member_info.html'" /> -->
-                                <input class="btn_done mlSpace30" type="submit" value="Save" style="width:100%" @click="memberdataupdate"
-                                    id="inputcode" />
+                    <input class="btn_done mlSpace30" type="submit" value="Save" style="width:100%; color: #f4f4f4;"
+                      @click="memberdataupdate" id="inputcode">
 
-								</li>
-							</div>
-							</ul>
-
-
-						</div>
+                  </li>
+                </div>
+              </ul>
 
 
-					</article>
-
-				</div>
+            </div>
 
 
-			</main>
+          </article>
+
+        </div>
 
 
-		</div>
+      </main>
 
-	</div>
-	<script>
-new Vue({
-  el: "#appapp",
 
-  data: {
-    MEMBER: {
-      NAME: "",
-      mail: "",
-      PASSWORD: "",
-      PHONE: "",
-    },
-  },
-  mounted() {
-    fetch("./php/member/MemberSearch.php")
-      .then((res) => res.json())
-      .then((res) => {
-        this.MEMBER = res[0];
-      });
-  },
-  methods: {
-    update() {
-      $("button.member.submit").on("click", function () {
-        console.log("aaa");
-        $("article.modifyMemberInfo").css("display", "flex");
-        $("article.checkMemberInfo").css("display", "none");
-      });
+    </div>
 
-      $("button.member.submit").on("click", function () {
-        console.log("aaa");
-        $("article.modifyMemberInfo").css("display", "flex");
-        $("article.checkMemberInfo").css("display", "none");
-      });
-    },
-  },
-});
-new Vue({
-  el: "#appupdate",
+  </div>
+  <script>
+    new Vue({
+      el: "#appapp",
 
-  data: {
-    MEMBER: {
-      NAME: "",
-      mail: "",
-      PASSWORD: "",
-      PHONE: "",
-    },
-  },
-  mounted() {
-    fetch("./php/member/MemberSearch.php")
-      .then((res) => res.json())
-      .then((res) => {
-        this.MEMBER = res[0];
-      });
-  },
-  methods: {
-    memberdataupdate() {
-      fetch("./php/member/MemberUpdate.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      data: {
+        MEMBER: {
+          NAME: "",
+          mail: "",
+          PASSWORD: "",
+          PHONE: "",
         },
-        mode: "cors",
-        body: JSON.stringify({
-          mail: this.MEMBER.mail,
-          PASSWORD: this.MEMBER.PASSWORD,
-          PHONE: this.MEMBER.PHONE,
-        }),
-      }).then((resp) => {
-        let Password = document.querySelector("#Password");
-        let Password_confirm = document.querySelector("#Password_confirm");
-        let phonenumber = document.getElementById("PHONE").value;
-        let Password_value = Password.value;
-        let Password_confirm_value = Password_confirm.value;
-        if (!/^[09]{2}[0-9]{8}$/.test(phonenumber)) {
-          alert("The Phone number is incorrect, please re-fill");
-          event.preventDefault();
-        } else if (Password_value != Password_confirm_value) {
-          alert("Password confirm does not match");
-          event.preventDefault();
-        } else {
-          location = "front_member_info.html";
-        }
-      });
-    },
-  },
-});
+      },
+      mounted() {
+        fetch("./php/member/MemberSearch.php")
+          .then((res) => res.json())
+          .then((res) => {
+            this.MEMBER = res[0];
+          });
+      },
+      methods: {
+        update() {
+          $("button.member.submit").on("click", function () {
+            console.log("aaa");
+            $("article.modifyMemberInfo").css("display", "flex");
+            $("article.checkMemberInfo").css("display", "none");
+          });
+
+          $("button.member.submit").on("click", function () {
+            console.log("aaa");
+            $("article.modifyMemberInfo").css("display", "flex");
+            $("article.checkMemberInfo").css("display", "none");
+          });
+        },
+      },
+    });
+    new Vue({
+      el: "#appupdate",
+
+      data: {
+        MEMBER: {
+          NAME: "",
+          mail: "",
+          PASSWORD: "",
+          PHONE: "",
+        },
+      },
+      mounted() {
+        fetch("./php/member/MemberSearch.php")
+          .then((res) => res.json())
+          .then((res) => {
+            this.MEMBER = res[0];
+          });
+      },
+      methods: {
+        memberdataupdate() {
+          fetch("./php/member/MemberUpdate.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            mode: "cors",
+            body: JSON.stringify({
+              mail: this.MEMBER.mail,
+              PASSWORD: this.MEMBER.PASSWORD,
+              PHONE: this.MEMBER.PHONE,
+            }),
+          }).then((resp) => {
+            let Password = document.querySelector("#Password");
+            let Password_confirm = document.querySelector("#Password_confirm");
+            let phonenumber = document.getElementById("PHONE").value;
+            let Password_value = Password.value;
+            let Password_confirm_value = Password_confirm.value;
+            if (!/^[09]{2}[0-9]{8}$/.test(phonenumber)) {
+              alert("The Phone number is incorrect, please re-fill");
+              event.preventDefault();
+            } else if (Password_value != Password_confirm_value) {
+              alert("Password confirm does not match");
+              event.preventDefault();
+            } else {
+              location = "front_member_info.html";
+            }
+          });
+        },
+      },
+    });
 
 
 
 
 
-	</script>
+  </script>
 </body>
 
 </html>
