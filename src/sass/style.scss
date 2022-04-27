@@ -2,130 +2,132 @@
 // @import './vendor/example';
 
 // 基礎設定
-@import './base/var';
-@import './base/reset';
+@import "./base/var";
+@import "./base/reset";
 
 // 元件
-@import './component/space';
-@import './component/button';
-@import './mixin';
+@import "./component/space";
+@import "./component/button";
+@import "./mixin";
 
 // 模版連結
-@import './layout/login';
-@import './layout/nav';
-@import './layout/header';
-@import './layout/footer';
+@import "./layout/login";
+@import "./layout/nav";
+@import "./layout/header";
+@import "./layout/footer";
 
-@import './layout/RWD';
+@import "./layout/RWD";
 
-@import './page/prototype';
+@import "./page/prototype";
 
 // 前後台頁面連結
-@import './page/switch';
-@import './page/index';
+@import "./page/switch";
+@import "./page/index";
 
 // 前台頁面連結
-@import './page/frontend/front_home';
-@import './page/frontend/front_about';
-@import './page/frontend/front_exhibition';
-@import './page/frontend/front_guide';
-@import './page/frontend/front_member';
-@import './page/frontend/front_login';
-@import './page/frontend/front_tickets';
-@import './page/frontend/front_game';
+@import "./page/frontend/front_home";
+@import "./page/frontend/front_about";
+@import "./page/frontend/front_exhibition";
+@import "./page/frontend/front_guide";
+@import "./page/frontend/front_member";
+@import "./page/frontend/front_login";
+@import "./page/frontend/front_tickets";
+@import "./page/frontend/front_game";
 
 // 前台購物車頁面連結
-@import './page/frontend/front_cart_order';
-@import './page/frontend/front_cart_info';
-@import './page/frontend/front_cart_done';
+@import "./page/frontend/front_cart_order";
+@import "./page/frontend/front_cart_info";
+@import "./page/frontend/front_cart_done";
 
 // 後台頁面連結
-@import './page/backend_login';
-@import './page/backend';
+@import "./page/backend_login";
+@import "./page/backend";
 
 // -------------------- HTML --------------------
 
-body{
-    font-weight: map-get($FontWeight, light);
-    font-size: map-get($FontSize, h6);
-    line-height: $LineHeight;
-    font-family: $FontFamily;
+body {
+  font-weight: map-get($FontWeight, light);
+  font-size: map-get($FontSize, h6);
+  line-height: $LineHeight;
+  font-family: $FontFamily;
 
-    letter-spacing: $LetterSpaceing;
-    word-spacing: $WordSpaceing;
-    text-align: justify;
+  letter-spacing: $LetterSpaceing;
+  word-spacing: $WordSpaceing;
+  text-align: justify;
 
-    color: $TextColor2;
+  color: $TextColor2;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    div.wrapper{
-        width: $RWD;
-        height: $Height;
+  div.wrapper {
+    width: $RWD;
+    height: $Height;
 
-        overflow: hidden;
-        
-        position: relative;
+    overflow: hidden;
 
-        @include Flex(row);
+    position: relative;
 
-        @each $FontSize, $value in $FontSize {
-            #{$FontSize} {
-                font-size: $value;
-                
-                line-height: $LineHeight;
-                color: $TextColor2;
-            }
-        }
+    @include Flex(row);
 
-        // h1{ // SEO
-        //     font-family: $SpecialFont;
-        //     font-weight: map-get($FontWeight, medium);
-        // }
+    @each $FontSize, $value in $FontSize {
+      #{$FontSize} {
+        font-size: $value;
 
-        h2, h3{
-            font-family: $SpecialFont;
-            font-weight: map-get($FontWeight, medium);
-        }
-
-        h4, h5{
-            font-weight: map-get($FontWeight, regular);
-        }
-
-        h6{
-            font-weight: map-get($FontWeight, light);
-        }
-
-        a{
-            text-decoration: none;
-        }
-
-        button{
-            border: none;
-            &:hover{
-                cursor: pointer;
-            }
-        }
-
-        main{
-            width: $Width;
-            height: $Height;
-
-            background-color: $PrimaryColor;
-            overflow: hidden;
-
-            @include Flex(row);
-        }
+        line-height: $LineHeight;
+        color: $TextColor2;
+      }
     }
+
+    // h1{ // SEO
+    //     font-family: $SpecialFont;
+    //     font-weight: map-get($FontWeight, medium);
+    // }
+
+    h2,
+    h3 {
+      font-family: $SpecialFont;
+      font-weight: map-get($FontWeight, medium);
+    }
+
+    h4,
+    h5 {
+      font-weight: map-get($FontWeight, regular);
+    }
+
+    h6 {
+      font-weight: map-get($FontWeight, light);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button {
+      border: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    main {
+      width: $Width;
+      height: $Height;
+
+      background-color: $PrimaryColor;
+      overflow: hidden;
+
+      @include Flex(row);
+    }
+  }
 }
 
-@media screen and (max-width:797.98px) {
-    body{
-        div.wrapper{
-            main{
-                width: 100%;
-                margin-top: 60px;
-            }
-        }
+@media screen and (max-width: 797.98px) {
+  body {
+    div.wrapper {
+      main {
+        width: 100%;
+        margin-top: 60px;
+      }
     }
+  }
 }

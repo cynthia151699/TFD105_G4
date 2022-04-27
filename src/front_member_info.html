@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     @@include('./layout/head.html')
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper" id="app">
-        <!-- 導覽列 -->
-        @@include('./layout/nav.html')
+      <!-- 導覽列 -->
+      @@include('./layout/nav.html')
 
 
-        <main class="memberInfo">
+
+        <main class="memberInfo" style="margin-top: 0;">
             <!-- 確認會員資訊 -->
             <article class="checkMemberInfo">
                 <table id="appapp">
@@ -60,7 +60,7 @@
             </article>
 
             <!-- 更改密碼 -->
-            <article class="modifyMemberInfo " style="display: none">
+            <article class="modifyMemberInfo " style="display: none; background-color: rgba(0, 0, 0, .1);">
                 <table id="appupdate">
 
                     <tr>
@@ -111,15 +111,15 @@
                                 maxlength="10" />
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td colspan="2">
-                            <!-- <h6>
+                            <h6>
                                 <input type="checkbox" />
                                 I would like to receive news, tips and
                                 marketing offers from Anno.
-                            </h6> -->
+                            </h6>
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <td colspan="2">
                             <div style="
@@ -128,7 +128,6 @@
                                 margin: 0 auto;
                                 padding-top: 10px;
                             ">
-                                <!-- <input class="btn_previous" type="submit" value="Cancel"/> -->
                                 <input class="btn_previous" type="submit" value="Cancel"
                                 onclick="location.href='./front_member_info.html'" />
                                 <input class="btn_done" type="submit" value="Save" @click="memberdataupdate"
@@ -142,16 +141,12 @@
     </div>
 
     <!-- 載入套件 -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
 
     <!-- 載入js -->
     <script src="./js/front_member_info.min.js"></script>
-    <script>
-        $("input.btn_previous").on("click", function(){
-            console.log("bbb");
-        })
-    </script>
-    
-</body>
-
+  </body>
 </html>

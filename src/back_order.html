@@ -1,49 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- RWD 設定 -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
-    />
-
-    <!-- 網頁頁籤小icon -->
-    <link
-      rel="shortcut icon"
-      href="./img/logo/logo_square.ico"
-      type="image/x-icon"
-    />
-
-    <!-- 網站名稱 -->
-    <title>ANNO museum</title>
-
-    <!-- Vue.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script> -->
-
-    <!-- Vue I18n CDN -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.5/vue-i18n.min.js"></script> -->
-
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-
-    <!-- FontAwesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-
-    <!-- 自訂css -->
-    <link rel="stylesheet" href="./css/style.css" />
-
-    <!-- sweetheart -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <!-- 若需相容 IE11，要加載 Promise Polyfill-->
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    @@include('./layout/head.html')
 
     <!-- axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -352,46 +310,6 @@
                   </select>
                 </li>
 
-                <!-- <li class="prSpace40">
-                  <h6>展覽QR code：</h6>
-                  <input type="file" placeholder="請選擇圖片上傳" />
-                </li>
-
-                <li class="prSpace40">
-                  <h6>訂單內容：</h6>
-                  <input type="text" placeholder="展期票一張" />
-                </li>
-
-                <li class="prSpace40">
-                  <h6>展覽名稱：</h6>
-                  <input type="text" placeholder="湯姆沃克的一生" />
-                </li>
-
-                <li class="prSpace40">
-                  <h6>展覽時間：</h6>
-                  <input type="text" placeholder="2022.02.14~2022.03.14" />
-                </li>
-
-                <li class="prSpace40">
-                  <h6>展覽地點：</h6>
-                  <input type="text" placeholder="Anno museum North Building" />
-                </li>
-
-                <li class="prSpace40">
-                  <h6>預售單人票：</h6>
-                  <input type="text" placeholder="0" />
-                </li>
-
-                <li class="prSpace40">
-                  <h6>展期單人票：</h6>
-                  <input type="text" placeholder="1" />
-                </li>
-
-                <li class="prSpace40">
-                  <h6>購票金額：</h6>
-                  <input type="text" placeholder="NT.400" />
-                </li> -->
-
                 <li class="prSpace40">
                   <h6>使用折扣：</h6>
                   <input
@@ -411,11 +329,6 @@
                     disabled
                   />
                 </li>
-
-                <!-- <li class="prSpace40">
-                  <h6>總金額：</h6>
-                  <input type="text" placeholder="NT.400" />
-                </li> -->
 
                 <li class="prSpace40">
                   <h6>創建時間：</h6>
@@ -483,7 +396,6 @@
                 <td>編號</td>
                 <td>訂單編號</td>
                 <td>會員帳號</td>
-                <!-- <td>展訊QRcode</td> -->
                 <td>付款狀態</td>
                 <td>訂單狀態</td>
                 <td>創建時間</td>
@@ -495,13 +407,6 @@
                 <td>{{ORDER.ID}}</td>
                 <td>{{ORDER.INVOICE}}</td>
                 <td>{{ORDER.ACCOUNT}}</td>
-                <!-- <td>
-                  <img
-                    :src="ORDER.QRCODE"
-                    alt=""
-                    style="width: 60px; height: 60px"
-                  />
-                </td> -->
                 <td>{{ORDER.PAY_STATUS}}</td>
                 <td>{{ORDER.ORDER_STATUS}}</td>
                 <td>{{ORDER.ORDER_DATE}}</td>

@@ -1,44 +1,44 @@
 .member_inter_main {
-    width: calc(100vw - 70px);
-    display: flex;
-    background-image: url("./../img/member/member-pic2.jpg");
-    background-size: cover;
-    background-position: center center;
-    position: relative;
+  width: calc(100vw - 70px);
+  display: flex;
+  background-image: url("./../img/member/member-pic2.jpg");
+  background-size: cover;
+  background-position: center center;
+  position: relative;
 }
 
 .member_inter_member {
-    position: absolute;
-    left: 30%;
-    top: 50%
+  position: absolute;
+  left: 30%;
+  top: 50%;
 }
 
 .member_inter_tickets {
-    position: absolute;
-    left: 55%;
-    top: 50%
+  position: absolute;
+  left: 55%;
+  top: 50%;
 }
 
 .member_inter_member .member_inter_member_text {
-    color: black;
-    margin-bottom: 10px;
+  color: black;
+  margin-bottom: 10px;
 }
 
 .member_inter_tickets .member_inter_tickets_text {
-    color: white;
-    margin-bottom: 10px;
+  color: white;
+  margin-bottom: 10px;
 }
 
 .member_inter_Bt1 {
-    display: block;
-    width: 100px;
-    text-align: center;
-    margin: 0 auto;
+  display: block;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .member_inter_Bt2 {
-    display: block;
-    width: 100px;
-    text-align: center;
-    margin: 0 auto;
+  display: block;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
 }
