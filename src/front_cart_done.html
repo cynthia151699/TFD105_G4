@@ -6,47 +6,44 @@
 
   <body>
     <div class="wrapper">
-      <!-- 導覽列 -->
-      @@include('./layout/nav.html', { "active5" : "active" })
 
-      <main class="cartDone">
-        <!-- coding here -->
+        <!-- 導覽列 -->
+        @@include('./layout/nav.html', {
+        "active3" : "active"
+        })
 
-        <div class="cartDone">
-          <div class="done_center">
-            <div class="main_info">
-              <div class="info_left">
-                <h4>Your Order:</h4>
-                <br />
-                <h6>Name: Garry Robinson</h6>
-                <br />
-                <h6>Phone: 0967567456</h6>
-                <br />
-                <h6>Email: robinsonps999@gmail.com</h6>
-                <br />
-                <h6>Ticket Collection: By (QR code)</h6>
-              </div>
+        <main class="cartDone">
+            <!-- coding here -->
 
-              <div class="info_right">
-                <h4>Rollover Ticket</h4>
-                <h6>Amount:2</h6>
-                <span></span>
-                <br />
-                <h4>Advance Ticket</h4>
-                <h6>Amount:2</h6>
-                <span></span>
-                <br />
-                <h6>Total Price:$1600</h6>
-                <span></span>
-                <!-- <p></p> -->
+            <div class="cartDone">
 
-                <div class="btn_group mtSpace20">
-                  <input
-                    class="btn_checkout"
-                    type="submit"
-                    value="Back to Anno"
-                    onclick="location.href='./front_home.html'"
-                  />
+                <div class="done_center">
+
+                    <div class="main_info">
+
+                        <div class="info_left">
+                            <h3>Payment Completed!</h3>
+                        </div>
+
+                        <div class="info_right">
+                            <h4>Your Order:</h4>
+                            <br>
+                            <h6>Name: Garry Robinson</h6>
+                            <br>
+                            <h6>Phone: 0967567456 </h6>
+                            <br>
+                            <h6>Email: robinsonps999@gmail.com</h6>
+                            <br>
+                            <h6>Ticket Collection: By (QR code)</h6>
+
+                            <!-- <p></p> -->
+
+                            <div class="btn_group mtSpace20">
+                                <input class="btn_checkout" type="submit" value="Back to Anno"
+                                    onclick="location.href='./front_home.html'">
+                            </div>
+                        </div>
+                    </div>
                 </div>
               </div>
             </div>
