@@ -1,10 +1,9 @@
-.cartDone {
-  margin: 0 auto;
-  h3 {
-    color: $TextColor2;
-    padding-top: 10%;
-    margin-left: 5%;
-  }
+.cartDone{
+    margin: 0 auto;
+    h3{
+        color: $TextColor2; 
+    }
+  
 }
 
 .done_center {
@@ -33,28 +32,22 @@
   }
 }
 
-.info_right {
-  // border: 1px #fff solid;
-  margin-left: 30px;
-  padding-top: 50px;
-  width: 400px;
+.info_right{
+    // border: 1px #fff solid;
+    margin-left: 30px;
+    padding-top: 50px;
+    width: 400px;
 
-  line-height: 1.6;
-  // text-align: center;
-  h4 {
-    color: $AccentColor2;
-  }
+    line-height: 1.6;
+    // text-align: center;
+    h4{
+        color: $AccentColor2;
+    }
 
-  h6 {
-    color: $InputColor;
-  }
+    h6{
+        color: $InputColor;
+    }
 
-  // p{
-  //     margin: 20px auto;
-  //     @include LinkImg(Logo, anno_qr, png, cover, null, null);
-  //     width: 200px;
-  //     height: 200px;
-  // }
 }
 
 //RWD
@@ -69,9 +62,35 @@
     margin-top: 15%;
   }
 
-  .main_info {
-    display: table;
-  }
+    .done_center{
+        // border: 1px yellow solid;       
+        width: 100%;
+        margin-top: 10%; 
+    }
+    
+
+    .main_info{
+        display: table;
+    }
+    
+    .info_left{
+        margin-top: 0px;
+        vertical-align: middle;
+        width: 350px;
+        padding-top: 0px;
+        margin: 0 auto;
+        // border: 1px #fff solid;
+        text-align: center;
+
+    }
+    
+    .info_right{
+        padding-top: 20px;
+        // border: 1px #fff solid;
+        margin: 0 auto;
+        width: 350px;
+        text-align: center;
+    }
 
   .info_left {
     vertical-align: middle;
@@ -92,30 +111,32 @@
 }
 
 @media screen and (max-width: 575.98px) {
-  .done_center {
-    // border: 1px yellow solid;
-    width: 100%;
-    margin-top: 15%;
-  }
+    .done_center{
+        // border: 1px yellow solid;       
+        width: 100%;
+        margin-top: 10%; 
+    }
+    
 
-  .main_info {
-    display: table;
-  }
+    .main_info{
+        display: table;
+    }
+    
+    .info_left{
+        vertical-align: middle;
+        width: 350px;
+        padding-top: 10px;
+        margin: 0 auto;
+        // border: 1px #fff solid;
+        text-align: center;
 
-  .info_left {
-    vertical-align: middle;
-    width: 350px;
-    padding-top: 10px;
-    margin: 0 auto;
-    // border: 1px #fff solid;
-    text-align: center;
-  }
-
-  .info_right {
-    padding-top: 20px;
-    // border: 1px #fff solid;
-    margin: 0 auto;
-    width: 350px;
-    text-align: center;
-  }
+    }
+    
+    .info_right{
+        padding-top: 20px;
+        // border: 1px #fff solid;
+        margin: 0 auto;
+        width: 350px;
+        text-align: center;
+    }
 }
