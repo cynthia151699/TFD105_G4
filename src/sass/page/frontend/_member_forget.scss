@@ -3,9 +3,9 @@
     @include VerticalAlignCenter;
     position: fixed;
     // border: 10px solid red;
-
     width: calc(100vw - 70px);
-    height: calc(100vh);
+    // height: calc(100vh);
+    height: 100vh;
     @include LinkImg('Logo', 'logo', 'png', scale-down, repeat-y, left);
     background-position: top 0% left 0%;
     background-size: 20%;
@@ -87,6 +87,7 @@
 @media screen and (max-width: 575.98px) {
     .member_forget_main_area {
         width: calc(100vw);
+        height: 85vh;
     }
     .member_forget_main_block {
         width: 350px;
