@@ -1385,6 +1385,9 @@ new Vue({
   },
 });
 
+<<<<<<< HEAD
+
+=======
 document.documentElement.className = "js";
 var supportsCssVars = function () {
   var e,
@@ -1405,3 +1408,4 @@ supportsCssVars() ||
   alert(
     "Please view this demo in a modern browser that supports CSS Variables."
   );
+>>>>>>> dev
