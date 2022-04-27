@@ -456,7 +456,18 @@
                 <td>{{NEW.ID}}</td>
                 <td>{{NEW.NEWS_NAME}}</td>
                 <td><img :src="NEW.NEWS_PIC" alt="" /></td>
-                <td>{{NEW.NEWS_CONTENT}}</td>
+                <td>
+                  <div
+                  style="
+                    width: 100px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                  "
+                >
+                {{NEW.NEWS_CONTENT}}</div></td>
                 <td>{{NEW.NEWS_STATUS}}</td>
                 <td>{{NEW.NEWS_DATE}}</td>
                 <td>
