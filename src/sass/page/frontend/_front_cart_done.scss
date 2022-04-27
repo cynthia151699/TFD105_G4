@@ -1,9 +1,7 @@
 .cartDone{
     margin: 0 auto;
     h3{
-        color: $TextColor2;
-        padding-top: 10%;
-        margin-left: 5%;   
+        color: $TextColor2; 
     }
   
 }
@@ -52,13 +50,6 @@
         color: $InputColor;
     }
 
-    // p{
-    //     margin: 20px auto;
-    //     @include LinkImg(Logo, anno_qr, png, cover, null, null);
-    //     width: 200px;
-    //     height: 200px;
-    // }
-
 }
 
 //RWD
@@ -72,7 +63,7 @@
     .done_center{
         // border: 1px yellow solid;       
         width: 100%;
-        margin-top: 15%; 
+        margin-top: 10%; 
     }
     
 
@@ -81,9 +72,10 @@
     }
     
     .info_left{
+        margin-top: 0px;
         vertical-align: middle;
         width: 350px;
-        padding-top: 10px;
+        padding-top: 0px;
         margin: 0 auto;
         // border: 1px #fff solid;
         text-align: center;
@@ -105,7 +97,7 @@
     .done_center{
         // border: 1px yellow solid;       
         width: 100%;
-        margin-top: 15%; 
+        margin-top: 10%; 
     }
     
 
