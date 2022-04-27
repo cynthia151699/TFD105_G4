@@ -18,13 +18,13 @@ new Vue({
     },
     methods: {
         showoff() {
-        //     console.log("ddd");
-        if($( ".slideshow" ).hasClass( "slideshow--previewopen" )){
-            $('.slide__title-wrap').css("display", "none");
-        }else{
-            $('.slide__title-wrap').css("display", "block");
-        }
-            
+            //     console.log("ddd");
+            if ($(".slideshow").hasClass("slideshow--previewopen")) {
+                $('.slide__title-wrap').css("display", "none");
+            } else {
+                $('.slide__title-wrap').css("display", "block");
+            }
+
 
         },
         showon() {
@@ -442,6 +442,10 @@ new Vue({
     },
 
     mounted() {
+        document.documentElement.className = "js";
+        var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+        supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+        
         ! function (e) {
             "undefined" == typeof module ? this.charming = e : module.exports = e
         }(function (e, n) {
@@ -828,11 +832,9 @@ new Vue({
             background: !0
         }, () => document.body.classList.remove("loading"))
     },
-    
+
 
 });
 
 
-document.documentElement.className = "js";
-var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
-supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+
