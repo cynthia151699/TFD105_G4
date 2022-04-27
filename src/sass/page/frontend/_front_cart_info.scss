@@ -1,159 +1,155 @@
 //滾動區塊
 .cartInformation {
-    width: $RWD;
-    // @include HorizontalAlignCenter;
-    scrollbar-width: none; /* firefox */
-    -ms-overflow-style: none; /* IE 10+ */
+  width: $RWD;
+  // @include HorizontalAlignCenter;
+  scrollbar-width: none; /* firefox */
+  -ms-overflow-style: none; /* IE 10+ */
 
-    overflow-x: hidden;
-    overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 
-
-    h3{
-        color: $TextColor2;
-        padding-top: 10%;
-        margin-left: 5%;
-    }
+  h3 {
+    color: $TextColor2;
+    padding-top: 10%;
+    margin-left: 5%;
+  }
 }
 
 .cartInformation::-webkit-scrollbar {
-    display: none; /* Chrome Safari */
+  display: none; /* Chrome Safari */
 }
 
 // main information
 
 .main_box {
-    width: 700px;
-    margin: 0 auto;
-    padding-top: 30px;
-    // border: 1px red solid;
-    box-sizing: border-box;
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 30px;
+  // border: 1px red solid;
+  box-sizing: border-box;
 }
 
 .order_info_text {
-    h6 {
-        display: inline-block;
-        width: 50px;
-        color: $TextColor2;
-    }
+  h6 {
+    display: inline-block;
+    width: 50px;
+    color: $TextColor2;
+  }
 }
 
 //PART 2 ORDER
 .order_list {
-    width: 700px;
-    // border: 1px red solid;
-    h6 {
-        color: $TextColor2;
-    }
-    margin-top: 5%;
+  width: 700px;
+  // border: 1px red solid;
+  h6 {
+    color: $TextColor2;
+  }
+  margin-top: 5%;
 }
 
-.piece_qty{
-    padding-left: 60px;
-    margin-right: 60px;
+.piece_qty {
+  padding-left: 60px;
+  margin-right: 60px;
 }
-
 
 .i_count {
-    margin-top: 20px;
-    // display: inline-block;
-    // border: 1px red solid;
+  margin-top: 20px;
+  // display: inline-block;
+  // border: 1px red solid;
 }
 
 //PART 3 PAYMENT
 
 .payment {
-    h5 {
-        color: $TextColor2;
-    }
-    h6 {
-        margin-top: 20px;
-        color: $TextColor2;
-    }
+  h5 {
+    color: $TextColor2;
+  }
+  h6 {
+    margin-top: 20px;
+    color: $TextColor2;
+  }
 }
 
 .input_type {
-    width: 250px;
-    height: 30px;
-    margin: 10px;
-    border: none;
+  width: 250px;
+  height: 30px;
+  margin: 10px;
+  border: none;
 }
 
 .input_type:focus {
-    outline: none;
-    box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px inset;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px inset;
 }
 
 .sum_info {
-    padding-left: 400px;
+  padding-left: 400px;
 }
 
 //選取框check box
 
 .s-check_box {
-    font-size: 12px;
-    letter-spacing: normal;
+  font-size: 12px;
+  letter-spacing: normal;
 }
 
 .check_box {
-    margin: 0;
-    vertical-align: middle;
+  margin: 0;
+  vertical-align: middle;
 }
 
 //下拉選單
 select {
-    margin: 10px;
-    background: $RemindBlue;
-    width: 125px;
-    font-size: 12px;
-    height: 30px;
-    padding: 0 5px;
-    outline: none;
+  margin: 10px;
+  background: $RemindBlue;
+  width: 125px;
+  font-size: 12px;
+  height: 30px;
+  padding: 0 5px;
+  outline: none;
 }
 
 //聲明文字
 .cautions_box {
-    background-color: #efebeb;
-    width: 600px;
-    height: 200px;
-    overflow: auto;
-    margin: 10px;
-    padding: 0 30px 30px 30px;
+  background-color: #efebeb;
+  width: 600px;
+  height: 200px;
+  overflow: auto;
+  margin: 10px;
+  padding: 0 30px 30px 30px;
 }
 
 .caution_text {
-    color: #000;
-    line-height: 1;
-    letter-spacing: normal;
-    margin: 0px;
+  color: #000;
+  line-height: 1;
+  letter-spacing: normal;
+  margin: 0px;
 }
 
 // 完成按鈕
-.btn_group_info{
-    text-align: right;
-    margin-bottom: 30px;
+.btn_group_info {
+  text-align: right;
+  margin-bottom: 30px;
 }
 
 .btn_previous {
-    width: 100px;
-    height: 30px;
-    background-color: #c4c4c4;
-    border: none;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000;
-    margin-bottom: 50px;
+  width: 100px;
+  height: 30px;
+  background-color: #c4c4c4;
+  border: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000;
+  margin-bottom: 50px;
 }
 
 .btn_done {
-    width: 100px;
-    height: 30px;
-    background-color: #f29966;
-    border: none;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000;
+  width: 100px;
+  height: 30px;
+  background-color: #f29966;
+  border: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000;
 }
-
-
 
 //RWD
 
@@ -161,55 +157,54 @@ select {
 }
 
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
-    .main_box {
-        width: 560px;
-        padding: 30px;
-    }
+  .main_box {
+    width: 560px;
+    padding: 30px;
+  }
 
-    .order_list {
-        width: 560px;
-    }
+  .order_list {
+    width: 560px;
+  }
 
-    .piece_info{
-        margin-left:250px;
-    }
+  .piece_info {
+    margin-left: 250px;
+  }
 
-    .sum_info {
-        padding-left: 35px;
-    }
-    
-    //聲明文字
-    .cautions_box {
+  .sum_info {
+    padding-left: 35px;
+  }
+
+  //聲明文字
+  .cautions_box {
     background-color: #efebeb;
     width: 450px;
     height: 150px;
-}
+  }
 }
 
 @media screen and (max-width: 575.98px) {
-    .main_box {
-        width: 350px;
-        padding: 0px;
-        padding-top: 30px;
-    }
+  .main_box {
+    width: 350px;
+    padding: 0px;
+    padding-top: 30px;
+  }
 
-    .order_list {
-        width: 350px;
-    }
+  .order_list {
+    width: 350px;
+  }
 
-    .cautions_box {
-        background-color: #efebeb;
-        width: 250px;
-        height: 100px;
-    }
+  .cautions_box {
+    background-color: #efebeb;
+    width: 250px;
+    height: 100px;
+  }
 
-    .sum_info {
-        padding-left: 0px;
-    }
+  .sum_info {
+    padding-left: 0px;
+  }
 
-    .piece_info{
-        margin-right: 0px;
-        margin-left:50px;
-    }
-    
+  .piece_info {
+    margin-right: 0px;
+    margin-left: 50px;
+  }
 }

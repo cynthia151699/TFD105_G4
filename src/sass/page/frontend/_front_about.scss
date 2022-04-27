@@ -1,376 +1,366 @@
 // =====================about anno=======================
 main.about {
+  h2,
+  h6 {
+    color: $TextColor2;
+    text-shadow: $TextShadow;
+  }
 
-    h2,
-    h6 {
-        color: $TextColor2;
-        text-shadow: $TextShadow;
+  article.about {
+    position: relative;
 
-    }
+    width: $RWD;
+    height: $Height;
 
-    article.about {
-        position: relative;
+    @include VerticalAlignCenter();
+    @include LinkImg(about, about_pic1, jpg, cover, null, null);
 
+    section.about {
+      width: $Width;
+      height: 600px;
+
+      @include HorizontalAlignCenter();
+
+      h2 {
+        font-size: 2.25rem;
+      }
+
+      h2,
+      h6 {
         width: $RWD;
-        height: $Height;
+        text-align: left;
+      }
 
-        @include VerticalAlignCenter();
-        @include LinkImg(about, about_pic1, jpg, cover, null, null);
-
-        section.about {
-            width: $Width;
-            height: 600px;
-
-            @include HorizontalAlignCenter();
-
-            h2 {
-                font-size: 2.25rem;
-            }
-
-            h2,
-            h6 {
-                width: $RWD;
-                text-align: left;
-            }
-
-            h6.first,
-            h6.end {
-                text-align: right;
-            }
-            select{
-                color:#fff;
-                background-color: #456278;
-                border: #fff;
-            }
-        }
-
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            isolation: isolate;
-        }
-
-        .content__img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-        }
+      h6.first,
+      h6.end {
+        text-align: right;
+      }
+      select {
+        color: #fff;
+        background-color: #456278;
+        border: #fff;
+      }
     }
 
-    // ======================history of anno======================
-    div.history {
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      isolation: isolate;
+    }
+
+    .content__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
+
+  // ======================history of anno======================
+  div.history {
+    position: relative;
+    @include VerticalAlignCenter();
+    @include LinkImg(about, about_pic1, png, cover, null, null);
+
+    h2.text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      text-align: center;
+
+      cursor: pointer;
+
+      &:hover {
+        color: $AccentColor2;
+      }
+    }
+
+    div.content {
+      display: none;
+      position: absolute;
+      top: 80px;
+      width: calc(100% - 100px);
+      height: 700px;
+
+      h6 {
+        width: 600px;
+        line-height: 1.6em;
+      }
+    }
+
+    div.middle {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  //========== part 3 ===========//
+
+  article.page3 {
+    height: 100%;
+    background-color: $PrimaryColor;
+    @include VerticalAlignCenter;
+    @include LinkImg(about, about_pic11, jpg, cover, null, left top);
+
+    .part3_wrapper {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .cols {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .col {
+        width: calc(25% - 30px);
+        margin: 20px;
+        cursor: pointer;
+      }
+    }
+
+    .container {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+
+      .picOne {
+        @include LinkImg(about, about_pic8, jpg, cover, null, left top);
+      }
+
+      .picTwo {
+        @include LinkImg(about, about_pic9, jpg, cover, null, left top);
+      }
+
+      .picThree {
+        @include LinkImg(about, about_pic10, jpg, cover, null, left top);
+      }
+
+      .inner {
+        transform: translateY(-50%) translateZ(60px) scale(0.94);
+        top: 50%;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        outline: 1px solid transparent;
+        perspective: inherit;
+        z-index: 2;
+      }
+
+      .front .inner h4 {
         position: relative;
-        @include VerticalAlignCenter();
-        @include LinkImg(about, about_pic1, png, cover, null, null);
+      }
 
-        h2.text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
+      .front,
+      .back {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        backface-visibility: hidden;
+        text-align: center;
+        min-height: 280px;
+        height: auto;
+        color: $PrimaryColor;
+      }
 
-            text-align: center;
+      .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #456278;
+        background: linear-gradient(45deg, #466780 0%, #c1d6e0 100%);
+      }
 
-            cursor: pointer;
+      &:hover .front,
+      &:hover .back {
+        transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      }
 
-            &:hover {
-                color: $AccentColor2;
-            }
-        }
+      .back {
+        transform: rotateY(180deg);
+        transform-style: preserve-3d;
+      }
 
-        div.content {
-            display: none;
-            position: absolute;
-            top: 80px;
-            width: calc(100% - 100px);
-            height: 700px;
+      .front {
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+      }
 
-            h6 {
-                width: 600px;
-                line-height: 1.6em;
-            }
-        }
+      &:hover .back {
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+      }
 
-        div.middle {
-            display: flex;
-            justify-content: flex-end;
-        }
+      &:hover .front {
+        transform: rotateY(-180deg);
+        transform-style: preserve-3d;
+      }
     }
-
-    //========== part 3 ===========//
-
-    article.page3 {
-        height: 100%;
-        background-color: $PrimaryColor;
-        @include VerticalAlignCenter;
-        @include LinkImg(about, about_pic11, jpg, cover, null, left top);
-
-        .part3_wrapper {
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .cols {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-
-            .col {
-                width: calc(25% - 30px);
-                margin: 20px;
-                cursor: pointer;
-            }
-        }
-
-        .container {
-            transform-style: preserve-3d;
-            perspective: 1000px;
-
-            .picOne {
-                @include LinkImg(about, about_pic8, jpg, cover, null, left top);
-            }
-
-            .picTwo {
-                @include LinkImg(about, about_pic9, jpg, cover, null, left top);
-            }
-
-            .picThree {
-                @include LinkImg(about, about_pic10, jpg, cover, null, left top);
-            }
-
-            .inner {
-                transform: translateY(-50%) translateZ(60px) scale(0.94);
-                top: 50%;
-                position: absolute;
-                left: 0;
-                width: 100%;
-                padding: 20px;
-                box-sizing: border-box;
-                outline: 1px solid transparent;
-                perspective: inherit;
-                z-index: 2;
-            }
-
-            .front .inner h4 {
-                position: relative;
-            }
-
-            .front,
-            .back {
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
-                border-radius: 10px;
-                transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-                backface-visibility: hidden;
-                text-align: center;
-                min-height: 280px;
-                height: auto;
-                color: $PrimaryColor;
-            }
-
-            .back {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                background: #456278;
-                background: linear-gradient(45deg, #466780 0%, #c1d6e0 100%);
-            }
-
-            &:hover .front,
-            &:hover .back {
-                transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-            }
-
-            .back {
-                transform: rotateY(180deg);
-                transform-style: preserve-3d;
-            }
-
-            .front {
-                transform: rotateY(0deg);
-                transform-style: preserve-3d;
-            }
-
-            &:hover .back {
-                transform: rotateY(0deg);
-                transform-style: preserve-3d;
-            }
-
-            &:hover .front {
-                transform: rotateY(-180deg);
-                transform-style: preserve-3d;
-            }
-        }
-    }
-
+  }
 }
 
 // ------------rwd---------------
 @media screen and (max-width: 575.98px) {
-    main.about {
+  main.about {
+    // =====================about anno=======================
+    article.about {
+      align-items: normal;
 
-        // =====================about anno=======================
-        article.about {
-            align-items: normal;
+      section.about {
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        background-color: #293241ce;
+        padding-left: 10px;
+        padding-right: 10px;
 
-            section.about {
-                height: 500px;
-                display: flex;
-                flex-direction: column;
-                background-color: #293241ce;
-                padding-left: 10px;
-                padding-right: 10px;
-
-                h2 {
-                    font-size: 1.875rem;
-                }
-
-                h2.top,
-                h6.first,
-                h6.middle,
-                h6.end {
-                    margin-top: 20px;
-                    text-align: center;
-                }
-            }
+        h2 {
+          font-size: 1.875rem;
         }
 
-        // ======================history of anno======================
-        div.history {
-            position: relative;
-            @include VerticalAlignCenter();
-            @include LinkImg(about, about_pic1, png, cover, null, null);
-
-            h2.text {
-                display: none;
-            }
-
-            div.content {
-                display: block;
-                padding-left: 30px;
-                top: 0px;
-                width: 80%;
-                height: 700px;
-                padding-top: 10px;
-
-                h2 {
-                    font-size: 1.25em;
-                    text-align: left;
-                    margin-top: 10px;
-                }
-
-                h6 {
-                    font-size: 0.875rem;
-                    width: 100%;
-                    margin-top: 10px;
-                    line-height: 1.4em;
-                }
-            }
-
-            div.middle {
-                display: flex;
-                justify-content: flex-end;
-                margin-top: 0px;
-            }
+        h2.top,
+        h6.first,
+        h6.middle,
+        h6.end {
+          margin-top: 20px;
+          text-align: center;
         }
-
-        //================person========================
-        article.page3 {
-            align-items: baseline;
-
-            .cols {
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: column;
-                align-content: center;
-                padding-top: 45px;
-
-                .col {
-                    width: calc(100% - 250px);
-                    margin: 10px;
-                    cursor: pointer;
-                }
-            }
-
-            .container {
-
-                .front,
-                .back {
-                    min-height: 130px;
-                }
-            }
-        }
+      }
     }
+
+    // ======================history of anno======================
+    div.history {
+      position: relative;
+      @include VerticalAlignCenter();
+      @include LinkImg(about, about_pic1, png, cover, null, null);
+
+      h2.text {
+        display: none;
+      }
+
+      div.content {
+        display: block;
+        padding-left: 30px;
+        top: 0px;
+        width: 80%;
+        height: 700px;
+        padding-top: 10px;
+
+        h2 {
+          font-size: 1.25em;
+          text-align: left;
+          margin-top: 10px;
+        }
+
+        h6 {
+          font-size: 0.875rem;
+          width: 100%;
+          margin-top: 10px;
+          line-height: 1.4em;
+        }
+      }
+
+      div.middle {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 0px;
+      }
+    }
+
+    //================person========================
+    article.page3 {
+      align-items: baseline;
+
+      .cols {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        padding-top: 45px;
+
+        .col {
+          width: calc(100% - 250px);
+          margin: 10px;
+          cursor: pointer;
+        }
+      }
+
+      .container {
+        .front,
+        .back {
+          min-height: 130px;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-    main.about {
-
-        // =====================about anno=======================
-        article.about {
-
-            section.about {
-                height: 640px;
-            }
-        }
-
-        // ======================history of anno======================
-        div.history {
-
-            h2.text {
-                left: 30%;
-            }
-
-            div.content {
-                h2 {
-                    margin-top: 10px;
-                }
-
-                h6 {
-                    width: 100%;
-                    margin-top: 30px;
-                }
-            }
-
-            div.middle {
-                margin-top: 0px;
-            }
-        }
-
-        //=========person===========
-        main.about {
-
-            .cols {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-content: center;
-            }
-
-            .col {
-                width: calc(50% - 30px);
-                margin: 20px;
-                cursor: pointer;
-            }
-        }
+  main.about {
+    // =====================about anno=======================
+    article.about {
+      section.about {
+        height: 640px;
+      }
     }
+
+    // ======================history of anno======================
+    div.history {
+      h2.text {
+        left: 30%;
+      }
+
+      div.content {
+        h2 {
+          margin-top: 10px;
+        }
+
+        h6 {
+          width: 100%;
+          margin-top: 30px;
+        }
+      }
+
+      div.middle {
+        margin-top: 0px;
+      }
+    }
+
+    //=========person===========
+    main.about {
+      .cols {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .col {
+        width: calc(50% - 30px);
+        margin: 20px;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
-@media screen and (min-width:768px) and (max-width:991.98px) {
-    main.about {
-        .cols {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-content: center;
-        }
-
-        .col {
-            width: calc(50% - 30px);
-            margin: 20px;
-            cursor: pointer;
-        }
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  main.about {
+    .cols {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
     }
 
+    .col {
+      width: calc(50% - 30px);
+      margin: 20px;
+      cursor: pointer;
+    }
+  }
 }

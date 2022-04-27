@@ -1,92 +1,90 @@
 // -------LOADING-----------
 div.wrapperLoading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    background-color: $NavBGColor;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: $NavBGColor;
 
-    &.-hide {
-        opacity: 0;
-        transition: 1.6s .6s ease;
-        pointer-events: none;
-
-        .loadingPattern {
-            opacity: 0;
-            transition: opacity .6s;
-        }
-    }
-
-
-
-    .loadingPattern,
-    .loadingPattern>div {
-        position: relative;
-        box-sizing: border-box;
-    }
+  &.-hide {
+    opacity: 0;
+    transition: 1.6s 0.6s ease;
+    pointer-events: none;
 
     .loadingPattern {
-        position: absolute;
-        // top: 47%;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        // left: 47%;
-        width: 64px;
-        height: 64px;
+      opacity: 0;
+      transition: opacity 0.6s;
+    }
+  }
 
-        // margin: 0 auto;
+  .loadingPattern,
+  .loadingPattern > div {
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .loadingPattern {
+    position: absolute;
+    // top: 47%;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    // left: 47%;
+    width: 64px;
+    height: 64px;
+
+    // margin: 0 auto;
+  }
+
+  .loadingPattern > div {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    border: 0 solid white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 2px;
+    border-radius: 100%;
+    opacity: 0;
+    animation: loadingPattern 1.5s infinite;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
     }
 
-    .loadingPattern>div {
-        width: 100%;
-        height: 100%;
-        display: inline-block;
-        border: 0 solid white;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-width: 2px;
-        border-radius: 100%;
-        opacity: 0;
-        animation: loadingPattern 1.5s infinite;
-
-        &:nth-child(1) {
-            animation-delay: 0s;
-        }
-
-        &:nth-child(2) {
-            animation-delay: .25s;
-        }
-
-        &:nth-child(3) {
-            animation-delay: .5s;
-        }
+    &:nth-child(2) {
+      animation-delay: 0.25s;
     }
+
+    &:nth-child(3) {
+      animation-delay: 0.5s;
+    }
+  }
 }
 
 /*Animation*/
 @keyframes loadingPattern {
-    0% {
-        opacity: 1;
-        transform: scale(0.1);
-    }
+  0% {
+    opacity: 1;
+    transform: scale(0.1);
+  }
 
-    70% {
-        opacity: .5;
-        transform: scale(1);
-    }
+  70% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
 
-    95% {
-        opacity: 0;
-    }
+  95% {
+    opacity: 0;
+  }
 }

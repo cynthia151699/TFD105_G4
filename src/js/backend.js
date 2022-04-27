@@ -59,19 +59,19 @@
 // });
 
 new Vue({
-    el: ".wrapper",
-    data() {
-        return {
-            popup_open: false,
-        };
-    },
+  el: ".wrapper",
+  data() {
+    return {
+      popup_open: false,
+    };
+  },
 
-    methods: {
-        open() {
-            this.popup_open = true;
-        },
-        close() {
-            this.popup_open = false;
-        },
+  methods: {
+    open() {
+      this.popup_open = true;
     },
+    close() {
+      this.popup_open = false;
+    },
+  },
 });

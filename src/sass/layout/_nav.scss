@@ -1,443 +1,440 @@
 /* Frontend Navigation Bar */
-nav.frontNav{
-    display: inline-block;
+nav.frontNav {
+  display: inline-block;
 
-    width: 70px;
+  width: 70px;
+  height: $Height;
+
+  background-color: $NavBGColor;
+
+  figure.home {
+    width: 60px;
+    height: 35px;
+    @include LinkImg(logo, logo_rw, png);
+    margin: 0 auto;
+  }
+
+  ul.navContainer {
     height: $Height;
+    width: 70px;
+    margin: 0 auto;
 
-    background-color: $NavBGColor;
+    @include Flex(column);
+    justify-content: space-between;
 
-    figure.home{
-        width: 60px;
-        height: 35px;
-        @include LinkImg(logo, logo_rw, png);
-        margin: 0 auto;
+    a {
+      width: 35px;
+      display: block;
+      margin: 0 auto;
     }
-    
-    ul.navContainer{
-        height: $Height;
-        width: 70px;
-        margin: 0 auto;
 
-        @include Flex(column);
-        justify-content: space-between;
-
-        a{
-            width: 35px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        a.home{
-                width: 70px;
-        }
-        
-
-        svg{
-            width: 35px;
-            height: 30px;
-            fill: $AccentColor3;
-            
-
-            &:hover{
-                fill: $AccentColor;
-            }
-        }
-        
-        .active a svg{
-            fill: $AccentColor;
-        }
+    a.home {
+      width: 70px;
     }
+
+    svg {
+      width: 35px;
+      height: 30px;
+      fill: $AccentColor3;
+
+      &:hover {
+        fill: $AccentColor;
+      }
+    }
+
+    .active a svg {
+      fill: $AccentColor;
+    }
+  }
 }
 
 /* Hamburger */
-.wrapperHam{
-    display: none;
+.wrapperHam {
+  display: none;
 }
 
-@media screen and (max-width:797.98px){
-    nav.frontNav{
-        display: none;
-    }
+@media screen and (max-width: 797.98px) {
+  nav.frontNav {
+    display: none;
+  }
 
-    div.wrapperHam{
-        position: absolute;
-        // padding-top: 65px;
-        // text-align: center;
-        display: block;
-        z-index: 50;
-        // background-color: $NavBGColor;
-        // color: $TextColor2;
-        // h6{
-        //     padding-top: 15px;
-        // }
-        // ol{
-        //     display: none;
-        // }
-    }
+  div.wrapperHam {
+    position: absolute;
+    // padding-top: 65px;
+    // text-align: center;
+    display: block;
+    z-index: 50;
+    // background-color: $NavBGColor;
+    // color: $TextColor2;
+    // h6{
+    //     padding-top: 15px;
+    // }
+    // ol{
+    //     display: none;
+    // }
+  }
 
-    //漢堡內容
-    .wrapperHamCnt {
-        .hamburgerCnt {
-            height: 100vh;
-            background-color: rgba(41, 50, 65, .7);
-    
-            li {
-                background-color: $NavBGColor;
-                line-height: 50px;
-                border: 1px solid $InputColor;
-                cursor: pointer;
-            }
-    
-            li:hover {
-                background-color: $AccentColor3;
-            }
-    
-            h4 {
-                // font-family: $SpecialFont;
-                color: $InputColor;
-                text-align: center;
-                // font-size: 24px;
-                line-height: 2.5;
-            }
-        }
+  //漢堡內容
+  .wrapperHamCnt {
+    .hamburgerCnt {
+      height: 100vh;
+      background-color: rgba(41, 50, 65, 0.7);
+
+      li {
+        background-color: $NavBGColor;
+        line-height: 50px;
+        border: 1px solid $InputColor;
+        cursor: pointer;
+      }
+
+      li:hover {
+        background-color: $AccentColor3;
+      }
+
+      h4 {
+        // font-family: $SpecialFont;
+        color: $InputColor;
+        text-align: center;
+        // font-size: 24px;
+        line-height: 2.5;
+      }
     }
-    
-    // 漢堡icon
-    div.wrapperHam {
-        width: 100%;
-        box-sizing: border-box;
-    
-        section {
-            width: 100%;
-            height: 60px;
-    
-            background-color: $HFBGColor;
-    
-            display: flex;
-            justify-content: space-between;
-    
-            padding: 5px 15px 5px 10px;
-            box-sizing: border-box;
-    
-            img {
-                height: 40px;
-                display: inline-block;
-                margin-top: 5px;
-            }
-        }
-    
-        .hamburgerCnt {
-            display: none;
-            color: $TextColor2;
-        }
-    }
-    
-    .hamAni {
-        display: inline-block;
-        padding-top: 5px;
-    }
-    
-    .hamburger {
-        width: 40px;
+  }
+
+  // 漢堡icon
+  div.wrapperHam {
+    width: 100%;
+    box-sizing: border-box;
+
+    section {
+      width: 100%;
+      height: 60px;
+
+      background-color: $HFBGColor;
+
+      display: flex;
+      justify-content: space-between;
+
+      padding: 5px 15px 5px 10px;
+      box-sizing: border-box;
+
+      img {
+        height: 40px;
         display: inline-block;
         margin-top: 5px;
-    
-        .menu_icon {
-            position: relative;
-            width: 40px;
-            height: 35px;
-            margin: 0 auto;
-        }
-    
-        .border {
-            position: absolute;
-            left: 0;
-            display: inline-block;
-            width: 100%;
-            height: 4px;
-            border-radius: 5px;
-            transition: all .3s;
-        }
-    
-        .border1 {
-            top: 0;
-        }
-    
-        .border2 {
-            top: 0;
-            bottom: 0;
-            margin: auto;
-        }
-    
-        .border3 {
-            bottom: 0px;
-        }
-    
-        //漢堡下方文字
-        .hamText {
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-            font-size: 14px;
-            color: $InputColor;
-            font-weight: bolder;
-    
-            // &::after {
-            //     display: block;
-            //     content: "MENU";
-            // }
-        }
-    
-        .active {
-            &+.text {
-                &::after {
-                    content: "CLOSE";
-                }
-            }
-        }
+      }
     }
-    
-    .hamAni {
-        overflow: hidden;
-    
-        .border {
-            background: transparent;
-    
-            &::before {
-                position: absolute;
-                left: 0;
-                display: block;
-                content: "";
-                width: 100%;
-                height: 4px;
-                border-radius: 5px;
-                background: $InputColor;
-                transition: all .3s;
-            }
-    
-            &::after {
-                position: absolute;
-                left: -100px;
-                display: block;
-                content: "";
-                width: 100%;
-                height: 4px;
-                border-radius: 5px;
-                background: $TextColor;
-                transition: all .3s;
-            }
-        }
-    
-        .border1,
-        .border2,
-        .border3 {
-            &::before {
-                transition: all 0s linear;
-            }
-        }
-    
-        &:hover {
-            .border {
-                &::before {
-                    left: 100px;
-                }
-    
-                &::after {
-                    left: 0;
-                }
-            }
-    
-    
-            .border1 {
-                &::before {
-                    transition: all .2s linear;
-                }
-    
-                &::after {
-                    transition: all .2s linear;
-                }
-            }
-    
-            .border2 {
-                &::before {
-                    transition: all .25s linear;
-                }
-    
-                &::after {
-                    transition: all .25s linear;
-                }
-            }
-    
-            .border3 {
-                &::before {
-                    transition: all .3s linear;
-                }
-    
-                &::after {
-                    transition: all .3s linear;
-                }
-            }
-        }
-    
-        .border1 {
-            animation: hamAni_menu_bar01 0.5s;
-            animation-fill-mode: forwards; //動畫結束後保持最後結束的樣子
-        }
-    
-        .border3 {
-            animation: hamAni_menu_bar03 0.5s;
-            animation-fill-mode: forwards;
-        }
-    
-        .active {
-            .border {
-                background: $InputColor;
-                transition: none;
-    
-                &::before {
-                    transition: none;
-                }
-    
-                &::after {
-                    transition: none;
-                }
-            }
-    
-            .border1 {
-                animation: hamAni_active_menu_bar01 0.5s forwards;
-            }
-    
-            .border2 {
-                opacity: 0;
-            }
-    
-            .border3 {
-                animation: hamAni_active_menu_bar03 0.5s forwards;
-            }
-    
-            //關menu的動畫
-            @keyframes hamAni_menu_bar01 {
-                0% {
-                    transform: translateY(16px) rotate(45deg);
-                }
-    
-                50% {
-                    transform: translateY(16px) rotate(0);
-                }
-    
-                100% {
-                    transform: translateY(0) rotate(0);
-                }
-            }
-    
-            @keyframes hamAni_menu_bar03 {
-                0% {
-                    transform: translateY(-16px) rotate(-45deg);
-                }
-    
-                50% {
-                    transform: translateY(-16px) rotate(0);
-                }
-    
-                100% {
-                    transform: translateY(0) rotate(0);
-                }
-            }
-    
-            //開menu的動畫
-            @keyframes hamAni_active_menu_bar01 {
-                0% {
-                    transform: translateY(0) rotate(0);
-                }
-    
-                50% {
-                    transform: translateY(16px) rotate(0);
-                }
-    
-                100% {
-                    transform: translateY(16px) rotate(45deg);
-                }
-            }
-    
-            @keyframes hamAni_active_menu_bar03 {
-                0% {
-                    transform: translateY(0) rotate(0);
-                }
-    
-                50% {
-                    transform: translateY(-15px) rotate(0);
-                }
-    
-                100% {
-                    transform: translateY(-15px) rotate(-45deg);
-                }
-            }
-        }
+
+    .hamburgerCnt {
+      display: none;
+      color: $TextColor2;
     }
+  }
+
+  .hamAni {
+    display: inline-block;
+    padding-top: 5px;
+  }
+
+  .hamburger {
+    width: 40px;
+    display: inline-block;
+    margin-top: 5px;
+
+    .menu_icon {
+      position: relative;
+      width: 40px;
+      height: 35px;
+      margin: 0 auto;
+    }
+
+    .border {
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: 4px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    .border1 {
+      top: 0;
+    }
+
+    .border2 {
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    .border3 {
+      bottom: 0px;
+    }
+
+    //漢堡下方文字
+    .hamText {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: $InputColor;
+      font-weight: bolder;
+
+      // &::after {
+      //     display: block;
+      //     content: "MENU";
+      // }
+    }
+
+    .active {
+      & + .text {
+        &::after {
+          content: "CLOSE";
+        }
+      }
+    }
+  }
+
+  .hamAni {
+    overflow: hidden;
+
+    .border {
+      background: transparent;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 4px;
+        border-radius: 5px;
+        background: $InputColor;
+        transition: all 0.3s;
+      }
+
+      &::after {
+        position: absolute;
+        left: -100px;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 4px;
+        border-radius: 5px;
+        background: $TextColor;
+        transition: all 0.3s;
+      }
+    }
+
+    .border1,
+    .border2,
+    .border3 {
+      &::before {
+        transition: all 0s linear;
+      }
+    }
+
+    &:hover {
+      .border {
+        &::before {
+          left: 100px;
+        }
+
+        &::after {
+          left: 0;
+        }
+      }
+
+      .border1 {
+        &::before {
+          transition: all 0.2s linear;
+        }
+
+        &::after {
+          transition: all 0.2s linear;
+        }
+      }
+
+      .border2 {
+        &::before {
+          transition: all 0.25s linear;
+        }
+
+        &::after {
+          transition: all 0.25s linear;
+        }
+      }
+
+      .border3 {
+        &::before {
+          transition: all 0.3s linear;
+        }
+
+        &::after {
+          transition: all 0.3s linear;
+        }
+      }
+    }
+
+    .border1 {
+      animation: hamAni_menu_bar01 0.5s;
+      animation-fill-mode: forwards; //動畫結束後保持最後結束的樣子
+    }
+
+    .border3 {
+      animation: hamAni_menu_bar03 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    .active {
+      .border {
+        background: $InputColor;
+        transition: none;
+
+        &::before {
+          transition: none;
+        }
+
+        &::after {
+          transition: none;
+        }
+      }
+
+      .border1 {
+        animation: hamAni_active_menu_bar01 0.5s forwards;
+      }
+
+      .border2 {
+        opacity: 0;
+      }
+
+      .border3 {
+        animation: hamAni_active_menu_bar03 0.5s forwards;
+      }
+
+      //關menu的動畫
+      @keyframes hamAni_menu_bar01 {
+        0% {
+          transform: translateY(16px) rotate(45deg);
+        }
+
+        50% {
+          transform: translateY(16px) rotate(0);
+        }
+
+        100% {
+          transform: translateY(0) rotate(0);
+        }
+      }
+
+      @keyframes hamAni_menu_bar03 {
+        0% {
+          transform: translateY(-16px) rotate(-45deg);
+        }
+
+        50% {
+          transform: translateY(-16px) rotate(0);
+        }
+
+        100% {
+          transform: translateY(0) rotate(0);
+        }
+      }
+
+      //開menu的動畫
+      @keyframes hamAni_active_menu_bar01 {
+        0% {
+          transform: translateY(0) rotate(0);
+        }
+
+        50% {
+          transform: translateY(16px) rotate(0);
+        }
+
+        100% {
+          transform: translateY(16px) rotate(45deg);
+        }
+      }
+
+      @keyframes hamAni_active_menu_bar03 {
+        0% {
+          transform: translateY(0) rotate(0);
+        }
+
+        50% {
+          transform: translateY(-15px) rotate(0);
+        }
+
+        100% {
+          transform: translateY(-15px) rotate(-45deg);
+        }
+      }
+    }
+  }
 }
 
 /* Backend Navigation Bar */
-nav.backNav{
-    width: 175px;
-    height: calc($Height + 90px);
+nav.backNav {
+  width: 175px;
+  height: calc($Height + 90px);
 
-    background-color: $HFBGColor;
+  background-color: $HFBGColor;
 
-    figure.logo{
-        width: 100px;
-        height: 50px;
-        @include LinkImg(logo, logo_rw, png);
-        margin: 30px auto 0 auto;
+  figure.logo {
+    width: 100px;
+    height: 50px;
+    @include LinkImg(logo, logo_rw, png);
+    margin: 30px auto 0 auto;
+  }
+
+  figure.admin {
+    width: 75px;
+    height: 75px;
+    @include LinkImg(logo, backend_admin, png);
+    margin: 30px auto 0 auto;
+  }
+
+  h5 {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    color: $TextColor2;
+  }
+
+  ul {
+    width: fit-content;
+    margin: 30px auto 0 auto;
+
+    li {
+      width: 145px;
+      height: 40px;
+      font-size: map-get($FontSize, min);
+
+      border: 1px solid $InputColor;
+      border-radius: $BorderRadius;
     }
 
-    figure.admin{
-        width: 75px;
-        height: 75px;
-        @include LinkImg(logo, backend_admin, png);
-        margin: 30px auto 0 auto;
+    svg {
+      height: 20px;
+
+      fill: $TextColor2;
     }
 
-    h5{
-        display: block;
-        width: fit-content;
-        margin: 20px auto 0 auto;
-        color: $TextColor2;
+    .active {
+      background-color: $AccentColor2;
+
+      border: none;
+      box-shadow: $BoxShadow;
     }
-    
-    ul{
-        width: fit-content;
-        margin: 30px auto 0 auto;
 
-        li{
-            width: 145px;
-            height: 40px;
-            font-size: map-get($FontSize, min);
+    a {
+      display: block;
+      width: 145px;
+      height: 40px;
+      color: $TextColor2;
 
-            border: 1px solid $InputColor;
-            border-radius: $BorderRadius;
-        }
-
-        svg{
-            height: 20px;
-
-            fill: $TextColor2;
-        }
-
-        .active{
-            background-color: $AccentColor2;
-
-            border: none;
-            box-shadow: $BoxShadow;
-        }
-
-        a{
-            display: block;
-            width: 145px;
-            height: 40px;
-            color: $TextColor2;
-
-            @include VerticalAlignCenter();
-        }
+      @include VerticalAlignCenter();
     }
+  }
 }

@@ -1,206 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    @@include('./layout/head.html')
 
-<head>
-	@@include('./layout/head.html')
+    <!-- Swiper.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.css"
+    />
 
-	<!-- FontAwesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <!-- sweetalert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  </head>
 
-	<!-- Swiper.js -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.css" />
+  <body>
+    <div class="game_body">
+      <!-- disappear block -->
+      <div class="congrats">
+        <div class="congrats_top"></div>
 
-	<!-- sweetalert -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-</head>
+        <div class="congrats_text">
+          <h2>Congratulations!</h2>
+          <h3>You just won a special discount!</h3>
+          <h3 type="text" id="DISCOUNT_CODE"></h3>
+          <h2>COUPON NT$100!</h2>
+        </div>
 
+        <div class="congrats_bottom">
+          <div class="play_again_button mrSpace50">
+            <a class="defaultBtn" href="./front_game.html">
+              <span>Play again!</span>
+            </a>
+          </div>
 
-<body>
-	<div class="game_body">
+          <div class="play_bye_button">
+            <a class="defaultBtn" href="./front_cart_order.html">
+              <span>Use it!</span>
+            </a>
+          </div>
+        </div>
+      </div>
 
-		<!-- disappear block -->
-		<div class="congrats">
+      <!-- closebutton -->
+      <div class="closebutton">
+        <a class="buyTicket" href="./index.html">
+          <span class="top-key"></span>
+          <span class="text">Close</span>
+          <span class="bottom-key-1"></span>
+          <span class="bottom-key-2"></span>
+        </a>
+      </div>
 
-			<div class="congrats_top"></div>
+      <!-- icons -->
 
-			<div class="congrats_text">
-				<h2>Congratulations!</h2>
-				<h3>You just won a special discount!</h3>
-				<h3 type="text" id="DISCOUNT_CODE"></h3>
-				<h2>COUPON NT$100!</h2>
-			</div>
+      <div class="buttons">
+        <!-- rotate -->
+        <div class="rotate">
+          <a href="#">
+            <i class="fa-solid fa-rotate"></i>
+            <!-- <img src="./../../img/game/rotate-solid.svg"> -->
+          </a>
+        </div>
 
-			<div class="congrats_bottom">
-				<div class="play_again_button mrSpace50">
-					<a class="defaultBtn" href="./front_game.html">
-						<span>Play again!</span>
-					</a>
-				</div>
+        <!-- lock -->
+        <!-- <i class="fa-solid fa-lock"></i> -->
 
-				<div class="play_bye_button">
-					<a class="defaultBtn" href="./front_cart_order.html">
-						<span>Use it!</span>
-					</a>
-				</div>
+        <!-- unlock -->
+        <!-- <i class="fa-solid fa-lock-open"></i> -->
 
-			</div>
+        <!-- link -->
+        <div class="link">
+          <a
+            href="https://www.facebook.com/media/set/?set=a.117133754303619&type=3"
+          >
+            <i class="fa-solid fa-link"></i>
+            <!-- <img src="./../../img/game/circle-nodes-solid.svg"> -->
+          </a>
+        </div>
+      </div>
 
-		</div>
+      <!-- Swiper -->
+      <!-- 上半邊圖 -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide game" id="g1">
+            <img src="./img/game/1.png" />
+          </div>
 
+          <div class="swiper-slide game" id="g2">
+            <img src="./img/game/2.png" />
+          </div>
 
+          <div class="swiper-slide game" id="g3">
+            <img src="./img/game/3.png" />
+          </div>
 
-		<!-- closebutton -->
-		<div class="closebutton">
-			<a class="buyTicket" href="./index.html">
-				<span class="top-key"></span>
-				<span class="text">Close</span>
-				<span class="bottom-key-1"></span>
-				<span class="bottom-key-2"></span>
-			</a>
-		</div>
+          <div class="swiper-slide game" id="g4">
+            <img src="./img/game/4.png" />
+          </div>
 
-		<!-- icons -->
+          <div class="swiper-slide game" id="g5">
+            <img src="./img/game/5.png" />
+          </div>
 
-		<div class="buttons">
+          <div class="swiper-slide game" id="g6">
+            <img src="./img/game/6.png" />
+          </div>
 
-			<!-- rotate -->
-			<div class="rotate">
-				<a href="#">
-					<i class="fa-solid fa-rotate"></i>
-					<!-- <img src="./../../img/game/rotate-solid.svg"> -->
-				</a>
-			</div>
+          <div class="swiper-slide game" id="g7">
+            <img src="./img/game/7.png" />
+          </div>
 
-			<!-- lock -->
-			<!-- <i class="fa-solid fa-lock"></i> -->
+          <div class="swiper-slide game" id="g8">
+            <img src="./img/game/8.png" />
+          </div>
 
-			<!-- unlock -->
-			<!-- <i class="fa-solid fa-lock-open"></i> -->
+          <div class="swiper-slide game" id="g9">
+            <img src="./img/game/9.png" />
+          </div>
 
-			<!-- link -->
-			<div class="link">
-				<a href="https://www.facebook.com/media/set/?set=a.117133754303619&type=3">
-					<i class="fa-solid fa-link"></i>
-					<!-- <img src="./../../img/game/circle-nodes-solid.svg"> -->
-				</a>
-			</div>
+          <div class="swiper-slide game" id="g0">
+            <img src="./img/game/0.png" />
+          </div>
+        </div>
+      </div>
 
-		</div>
+      <!-- 下半邊圖 -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide game" id="g7_1">
+            <img src="./img/game/7-1.png" />
+          </div>
 
-		<!-- Swiper -->
-		<!-- 上半邊圖 -->
-		<div class="swiper mySwiper">
+          <div class="swiper-slide game" id="g4_1">
+            <img src="./img/game/4-1.png" />
+          </div>
 
-			<div class="swiper-wrapper">
+          <div class="swiper-slide game" id="g5_1">
+            <img src="./img/game/5-1.png" />
+          </div>
 
-				<div class="swiper-slide game" id="g1">
-					<img src="./img/game/1.png">
-				</div>
+          <div class="swiper-slide game" id="g2_1">
+            <img src="./img/game/2-1.png" />
+          </div>
 
-				<div class="swiper-slide game" id="g2">
-					<img src="./img/game/2.png">
+          <div class="swiper-slide game" id="g1_1">
+            <img src="./img/game/1-1.png" />
+          </div>
 
-				</div>
+          <div class="swiper-slide game" id="g0_1">
+            <img src="./img/game/0-1.png" />
+          </div>
 
-				<div class="swiper-slide game" id="g3">
-					<img src="./img/game/3.png">
-				</div>
+          <div class="swiper-slide game" id="g9_1">
+            <img src="./img/game/9-1.png" />
+          </div>
 
-				<div class="swiper-slide game" id="g4">
-					<img src="./img/game/4.png">
-				</div>
+          <div class="swiper-slide game" id="g8_1">
+            <img src="./img/game/8-1.png" />
+          </div>
 
-				<div class="swiper-slide game" id="g5">
-					<img src="./img/game/5.png">
-				</div>
+          <div class="swiper-slide game" id="g3_1">
+            <img src="./img/game/3-1.png" />
+          </div>
 
-				<div class="swiper-slide game" id="g6">
-					<img src="./img/game/6.png">
-				</div>
+          <div class="swiper-slide game" id="g6_1">
+            <img src="./img/game/6-1.png" />
+          </div>
+        </div>
+      </div>
+    </div>
 
-				<div class="swiper-slide game" id="g7">
-					<img src="./img/game/7.png">
-				</div>
+    <!-- 載入套件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.js"></script>
 
-				<div class="swiper-slide game" id="g8">
-					<img src="./img/game/8.png">
-				</div>
-
-				<div class="swiper-slide game" id="g9">
-					<img src="./img/game/9.png">
-				</div>
-
-				<div class="swiper-slide game" id="g0">
-					<img src="./img/game/0.png">
-				</div>
-			</div>
-
-		</div>
-
-
-
-		<!-- 下半邊圖 -->
-		<div class="swiper mySwiper">
-
-			<div class="swiper-wrapper">
-
-				<div class="swiper-slide game" id="g7_1">
-					<img src="./img/game/7-1.png">
-				</div>
-
-				<div class="swiper-slide game" id="g4_1">
-					<img src="./img/game/4-1.png">
-				</div>
-
-				<div class="swiper-slide game" id="g5_1">
-					<img src="./img/game/5-1.png">
-				</div>
-
-				<div class="swiper-slide game" id="g2_1">
-					<img src="./img/game/2-1.png">
-				</div>
-
-				<div class="swiper-slide game" id="g1_1">
-					<img src="./img/game/1-1.png">
-				</div>
-
-				<div class="swiper-slide game" id="g0_1">
-					<img src="./img/game/0-1.png">
-				</div>
-
-				<div class="swiper-slide game" id="g9_1">
-					<img src="./img/game/9-1.png">
-				</div>
-
-				<div class="swiper-slide game" id="g8_1">
-					<img src="./img/game/8-1.png">
-				</div>
-
-				<div class="swiper-slide game" id="g3_1">
-					<img src="./img/game/3-1.png">
-				</div>
-
-				<div class="swiper-slide game" id="g6_1">
-					<img src="./img/game/6-1.png">
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-
-	<!-- 載入套件 -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.js"></script>
-
-	<!-- 載入js -->
-	<script src="./js/front_game.min.js"></script>
-
-	<!-- sweetalert2 -->
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
-	<!-- 若需相容 IE11，要加載 Promise Polyfill-->
-	<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-
-</body>
-
+    <!-- 載入js -->
+    <script src="./js/front_game.min.js"></script>
+  </body>
 </html>
