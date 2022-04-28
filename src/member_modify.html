@@ -86,35 +86,13 @@
 
                 </li>
 
-                <!-- <li class="mtSpace20 member_modify_main_li">
-
-									<h6 class="member_modify_link"><input type="checkbox" class="mrSpace10">I would like
-										to receive news,
-										tips
-										and marketing offers from Anno.</h6>
-
-								</li> -->
-
                 <!-- 按鈕 -->
-                <!-- <div style="align-items: center;"> -->
+
                 <div style="width:fit-content;  margin:0px auto;">
                   <li class="mtSpace10 mbSpace10 member_modify_main_bt mrSpace30">
 
-                    <!-- <a class="defaultBtn member_modify_Bt1" href="./front_member_info.html" style="width:100%">
-
-										<span class="member_forget_text">Cancel</span>
-
-									</a> -->
                     <input class="btn_done member_modify_Bt1" type="button" value="Cancel"
                       style="width:100%; color: #f4f4f4;" onclick="location.href='./front_member_info.html'" />
-
-                    <!-- <a class="defaultBtn member_modify_Bt2" href="./member_info.html">
-
-										<span class="member_forget_text">Save</span>
-
-									</a> -->
-                    <!-- <input class="btn_previous" type="submit" value="Cancel"
-                                onclick="location.href='./front_member_info.html'" /> -->
                     <input class="btn_done mlSpace30" type="submit" value="Save" style="width:100%; color: #f4f4f4;"
                       @click="memberdataupdate" id="inputcode">
 
@@ -137,97 +115,8 @@
     </div>
 
   </div>
-  <script>
-    new Vue({
-      el: "#appapp",
-
-      data: {
-        MEMBER: {
-          NAME: "",
-          mail: "",
-          PASSWORD: "",
-          PHONE: "",
-        },
-      },
-      mounted() {
-        fetch("./php/member/MemberSearch.php")
-          .then((res) => res.json())
-          .then((res) => {
-            this.MEMBER = res[0];
-          });
-      },
-      methods: {
-        update() {
-          $("button.member.submit").on("click", function () {
-            console.log("aaa");
-            $("article.modifyMemberInfo").css("display", "flex");
-            $("article.checkMemberInfo").css("display", "none");
-          });
-
-          $("button.member.submit").on("click", function () {
-            console.log("aaa");
-            $("article.modifyMemberInfo").css("display", "flex");
-            $("article.checkMemberInfo").css("display", "none");
-          });
-        },
-      },
-    });
-    new Vue({
-      el: "#appupdate",
-
-      data: {
-        MEMBER: {
-          NAME: "",
-          mail: "",
-          PASSWORD: "",
-          PHONE: "",
-        },
-      },
-      mounted() {
-        fetch("./php/member/MemberSearch.php")
-          .then((res) => res.json())
-          .then((res) => {
-            this.MEMBER = res[0];
-          });
-      },
-      methods: {
-        memberdataupdate() {
-          fetch("./php/member/MemberUpdate.php", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            mode: "cors",
-            body: JSON.stringify({
-              mail: this.MEMBER.mail,
-              PASSWORD: this.MEMBER.PASSWORD,
-              PHONE: this.MEMBER.PHONE,
-            }),
-          }).then((resp) => {
-            let Password = document.querySelector("#Password");
-            let Password_confirm = document.querySelector("#Password_confirm");
-            let phonenumber = document.getElementById("PHONE").value;
-            let Password_value = Password.value;
-            let Password_confirm_value = Password_confirm.value;
-            if (!/^[09]{2}[0-9]{8}$/.test(phonenumber)) {
-              alert("The Phone number is incorrect, please re-fill");
-              event.preventDefault();
-            } else if (Password_value != Password_confirm_value) {
-              alert("Password confirm does not match");
-              event.preventDefault();
-            } else {
-              location = "front_member_info.html";
-            }
-          });
-        },
-      },
-    });
-
-
-
-
-
-  </script>
+  <script src="./js/member_modify.min.js"></script>
+ 
 </body>
 
 </html>

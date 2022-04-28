@@ -1,19 +1,7 @@
-// 這邊是測試用連結按鈕  之後會拔掉
-#member_button_text {
-	box-sizing: border-box;
-	display: block;
-	width: 100%;
-	height: 40px;
-	line-height: 35px;
-	z-index: 12;
-}
-
 // 主要區域置中
 .member_main_all_area {
 	@include VerticalAlignCenter;
 	position: fixed;
-	// 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
-	// top: 50px;
 	width: calc(100vw - 70px);
 	height: calc(100vh);
 	@include LinkImg('Logo', 'logo', 'png', scale-down, repeat-y, left);
@@ -398,7 +386,6 @@ $btnH: 36px;
 			position: absolute;
 			right: 0;
 			top: 0;
-			// width: $contW;
 			height: 100%;
 			@include LinkImg('member', 'member_pic1', 'jpeg', cover, no-repeat, center);
 			background-size: cover;
@@ -479,7 +466,6 @@ $btnH: 36px;
 			position: absolute;
 			right: 0;
 			top: 0;
-			// width: $contW;
 			height: 100%;
 			@include LinkImg('member', 'member_pic1', 'jpeg', cover, no-repeat, center);
 			background-size: cover;
@@ -537,6 +523,7 @@ $btnH: 36px;
 
 @media screen and (max-width: 575.98px) {
   .member_main_all_area {
+	height: calc(90vh);
     width: calc(100vw);
   }
 	.member_main_all_block {
@@ -585,7 +572,5 @@ $btnH: 36px;
 		padding: 10px;
 
 	}
-//   .member_forget_text{
-//     font-size: 12px;
-//   }
+
 }
