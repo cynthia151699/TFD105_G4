@@ -48,8 +48,7 @@
 
                 <article class="left1">
                   <section class="current" v-for="EXHIBITION in EXHIBITIONS[1]">
-                    <!-- <h2>Break the Classic</h2>
-                                    <h3>TAKIKAW RISA Solo Exhibition</h3> -->
+
                     <h3>{{EXHIBITION.EVENT_NAME}}</h3>
                     <h5 class="mtSpace30">Place: Anno Museum South Building</h5>
                     <h5>Date: {{EXHIBITION.EXHIBITION_DATE}}</h5>
@@ -251,8 +250,10 @@
 
                   <h5 class="ex_date">Date: {{EXHIBITION.EXHIBITION_DATE}}</h5>
 
-                  <p class="ex_content-detail mtSpace30 mbSpace30">
-                    {{EXHIBITION.EXHIBITION_CONTENT}}
+                  <p class="ex_content-detail mtSpace30">
+                    <span class="mbSpace20" style="text-align: left; height: 100px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; text-overflow: ellipsis; -webkit-box-orient: vertical;">
+                        {{EXHIBITION.EXHIBITION_CONTENT}}
+                    </span>  
                   </p>
 
                   <!--買票按鈕-->
@@ -288,9 +289,9 @@
 
                   <h5 class="ex_date">Date: {{EXHIBITION.EXHIBITION_DATE}}</h5>
 
-                  <p class="ex_content-detail mtSpace30 mbSpace30">
+                  <!-- <p class="ex_content-detail mtSpace30 mbSpace30">
                     {{EXHIBITION.EXHIBITION_CONTENT}}
-                  </p>
+                  </p> -->
 
                   <!--買票按鈕-->
                   <a class="buyTicket" href="front_cart_order.html">
