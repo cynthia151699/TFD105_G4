@@ -33,15 +33,15 @@
                             </tr>
 
                             <!-- 票券 -->
-                            <tr class="first_order" style="color:#fff; line-height: 5;">
-                                <td class="roll_ticket">Rollover Ticket</td>
-                                <td style="width: 230px;">FEB 5 - MAY 5, 2022</td>
+                            <tr class="first_order" style="color:#fff; line-height: 5;" v-for="TICKET in TICKETS">
+                                <td class="roll_ticket">{{TICKET.TICKET_TYPE}}</td>
+                                <td style="width: 230px;">{{TICKET.TICKET_DATE}}</td>
                                 <td colspan="3">
                                     <div class="price_1" style="display: inline;">
                                         <input type="checkbox" name="liCheck" id="" value="" checked
                                             style="display: none;">
                                         <p style="display: inline-block;">
-                                            $<span class="price">450</span>
+                                            $<span class="price">{{TICKET.TICKET_PRICE}}</span>
                                         </p>
                                         <button type="button" class="decrease" disabled="disabled">-</button>
                                         <p style="display: inline-block; margin: 10px;">
@@ -58,31 +58,6 @@
                                 </td>
                             </tr>
 
-                            <!-- 第二種票券 -->
-                            <tr class="second_order" style="color:#fff; line-height: 5;" >
-                                <td class="adv_ticket">Advance Ticket</td>
-                                <td style="width: 230px;">MAY 15 - AUG 15, 2022</td>
-                                <td colspan="3">
-                                    <div class="price_2" style="display: inline;">
-                                        <input type="checkbox" name="liCheck" id="" value="" checked
-                                            style="display: none;">
-                                        <p style="display: inline-block;">
-                                            $<span class="price">400</span>
-                                        </p>
-                                        <button type="button" class="decrease" disabled="disabled">-</button>
-                                        <p style="display: inline-block; margin: 10px;">
-                                            <span class="piece">0</span>
-                                        </p>
-                                        <button type="button" class="increase">+</button>
-
-                                        <p style="display: inline-block; margin-left:30px;">
-                                            $<input class="smallPrice" type="text" name="" id="" value="0"
-                                                disabled="disabled">
-                                        </p>
-                                    </div>
-
-                                </td>
-                            </tr>
                         </table>
 
                         <!-- 結算欄位-->
