@@ -144,23 +144,23 @@ window.onload = function () {
   });
 };
 
-new Vue({
-    el: "#ticket_wrapper",
-    data() {
-      return {
-        TICKETS: [],
-      };
-    },
+// new Vue({
+//     el: "#ticket_wrapper",
+//     data() {
+//       return {
+//         TICKETS: [],
+//       };
+//     },
 
-    created() {
-        fetch("./php/ticket/Select_front_Ticket.php")
+//     created() {
+//         fetch("./php/ticket/Select_front_Ticket.php")
 
-            .then(res =>
-                res.json()
-            )
+//             .then(res =>
+//                 res.json()
+//             )
 
-            .then(res => {
-                this.TICKETS = res
-            })
-    },
-});
+//             .then(res => {
+//                 this.TICKETS = res
+//             })
+//     },
+// });

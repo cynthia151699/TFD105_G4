@@ -27,5 +27,5 @@ $statement->bindValue(":NEWS_STATUS", $news["NEWS_STATUS"]);
 $statement->execute();
       //  echo json_encode(['status'=> 'SUCCESS']);
       //  echo "新增成功!";
- 
+
 ?>
