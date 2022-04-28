@@ -23,7 +23,7 @@ new Vue({
   methods: {
     ticket_add() {
       if (this.TICKET_NAME != "" && this.TICKET_STATUS != "") {
-        fetch("./php/ticket/AddTicket.php", {
+        fetch("./PHP/ticket/AddTicket.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

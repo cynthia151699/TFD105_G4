@@ -29,6 +29,6 @@ $statement->bindValue(":TICKET_DATE", $ticket["TICKET_DATE"]);
 $statement->execute();
       //  echo json_encode(['status'=> 'SUCCESS']);
       //  echo "新增成功!";
-// echo json_encode($ticket);
- 
+  echo json_encode($ticket);
+  
 ?>
