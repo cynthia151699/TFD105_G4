@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	@@include('./layout/head.html')
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- 導覽列 -->
+		@@include('./layout/nav.html')
+		<main>
+
+			<div>
+
+				<!-- 實際頁面作用區域 -->
+				<div class="member_forget_main_area">
+
+					<!-- 中央白框區域 -->
+					<article class="member_forget_main_block">
+						<h3 class="mtSpace50 mbSpace50 member_forget_text_title" style="color:black;">Password Reset
+						</h3>
+
+						<h4 class="mbSpace50 member_forget_text prSpace30 plSpace30" style="color:black;">
+							Please enter the email address that you used to sign up so we
+							can send you an email with your username and a link to reset
+							your password.
+						</h4>
+
+						<!-- 輸入框 -->
+						<div class="mbSpace30">
+							<form method="post" action="forget.php" id="form">
+								<!-- <input type="text" name="mail" id="mail"> -->
+								<input class="member_forget_input" type="name" name="mail" id="mail"
+									style="background-color: #293241;">
+						</div>
+						<div style="display:none">
+							<label for="PASSWORD">PASSWORD</label>
+							<input type="text" name="PASSWORD" id="PASSWORD">
+						</div>
+
+						<!-- 按鈕-->
+						<div class="mbSpace30 member_forget_bt">
+
+							<!-- <a class="defaultBtn member_forget_BtColor1 member_forget_width mrSpace60"  
+								href="./member.html">
+								<span class="member_forget_text">Cancel</span>
+							</a> -->
+							<input type="button" value="Cancel"
+								class="btn_done member_forget_BtColor1 member_forget_width mrSpace60 "
+								style="cursor: pointer; color: #f4f4f4; background-color: #AD9F9F;"
+								onclick="location.href='./front_member.html'">
+							<!-- <button input type="submit" value="送出" class="member_forget_text">LOG IN</button> -->
+
+							<!-- <input type="submit" id="button" value="Send Email" class="defaultBtn member_forget_BtColor2 member_forget_width " style="cursor: pointer;"> -->
+							<input type="submit" id="forgetmail" value="Send"
+								class="btn_done member_forget_BtColor2 member_forget_width "
+								style="cursor: pointer; color: #f4f4f4;">
+
+							<!-- <a class="defaultBtn member_forget_BtColor2 member_forget_width" href="./member_forget_change.html">
+							<span class="member_forget_text">Send</span>
+						</a> -->
+							</form>
+						</div>
+						</form>
+					</article>
+
+				</div>
+			</div>
+		</main>
+		<!-- 輸入錯誤用文本 之後寫JS Something wrong! Please try again Please type in your email address -->
+	</div>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+	<script type="text/javascript">
+		emailjs.init("rB4cW-mtW8WwyODex");
+	</script>
+	<script>
+
+		const btn = document.getElementById("forgetmail");
+		let forgermail = $("#mail");
+		document.getElementById("form").addEventListener("submit", function (event) {
+			event.preventDefault();
+
+			if ($(forgermail).val() != "") {
+				var that = this;
+				$.ajax({
+					type: "POST",
+					url: "./php/member/Memberforgetemail.php",
+					dataType: "json",
+					async: false,
+					data: {
+						mail: forgermail.val(),
+					},
+					success: function (data) {
+						let passwordvalue = data[0].PASSWORD;
+						let PASSWORDcode = document.getElementById("PASSWORD");
+						PASSWORDcode.value = passwordvalue;
+						const serviceID = "default_service";
+						const templateID = "template_1idmmrm";
+						emailjs.sendForm(serviceID, templateID, that).then((event) => {
+							alert(
+								"The password has already sent into your email address, please check it."
+							);
+							window.location.href = "front_member.html";
+						});
+					},
+				});
+			} else {
+				alert("Please type your mail");
+			}
+			let PASSWORD = document.getElementById("PASSWORD");
+			if ($(forgermail).val() != "" && PASSWORD.value == "") {
+				alert("No such registered mail");
+			}
+		});
+
+
+
+	</script>
+
+</body>
+
+</html>

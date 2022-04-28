@@ -1,988 +1,591 @@
-//效果參數設定
+// 這邊是測試用連結按鈕  之後會拔掉
+#member_button_text {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	height: 40px;
+	line-height: 35px;
+	z-index: 12;
+}
+
+// 主要區域置中
+.member_main_all_area {
+	@include VerticalAlignCenter;
+	position: fixed;
+	// 這邊的50px是為了讓中央白框於實際區域置中所以推開header區域
+	// top: 50px;
+	width: calc(100vw - 70px);
+	height: calc(100vh);
+	@include LinkImg('Logo', 'logo', 'png', scale-down, repeat-y, left);
+	background-position: top 0% left 0%;
+	background-size: 20%;
+}
+
+.member_main_form {
+	@include VerticalAlignCenter;
+}
+
+.member_main_form_area {
+	@include HorizontalAlignCenter;
+}
+
+.member_text_span {
+	width: 100%;
+}
+
+.member_text_title {
+	text-align: left;
+}
+
+// 選框區域 框和文字水平排列
+.member_span_choose {
+	@include Flex (row);
+	line-height: 12px;
+}
+
+.member_span_choose .member_p_style {
+	color: $TextColor;
+	font-size: 12px;
+}
+
+// 主要區域  註冊內容  高度470 比內頁略高
+.member_main_all_block {
+	width: 900px;
+	height: 470px;
+	background-color: $TextColor2;
+}
+
+// 註冊按鈕id
+#member_button {
+	background-color: $AccentColor2;
+	width: 100%;
+	height: 40px;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+// 移動bar文字顏色
+.member_move_text {
+	color: $TextColor2;
+	padding: 0 15px;
+}
+
+//文字框顏色
+.member_input_text {
+	background-color: $HFBGColor;
+	color: $TextColor2;
+	width: 100%;
+	height: 26px;
+	box-sizing: border-box;
+}
+
+// 按鈕顏色
+.member_button_color1 {
+	background-color: $AccentColor2;
+}
+
+.member_button_color2 {
+	background-color: #AD9F9F;
+}
+
+
+
+// 跳窗背景
+.member_Terms_text {
+	position: fixed;
+	display: none;
+	z-index: 11;
+	width: 100vw;
+	height: 100vh;
+	background-color: $PrimaryColor;
+	opacity: 0.8;
+}
+
+// 跳窗
+.member_Terms_area {
+	top: 50px;
+	display: none;
+	z-index: 11;
+	width: 620px;
+	height: 300px;
+	background-color: $TextColor2;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+}
+
+.member_Terms_inner {
+	// overflow-y: scroll;
+	width: 600px;
+	height: 270px;
+	padding: 10px;
+
+}
+
+//跳窗標題
+.member_Terms_title {
+	color: $TextColor2;
+	background-color: $TextColor;
+	text-align: center;
+	position: relative;
+}
+
+// 跳窗刪除
+.member_Terms_del {
+	position: absolute;
+	top: 0%;
+	right: 3%;
+	color: $TextColor2;
+	cursor: pointer;
+}
+
+// 滑動移動距離
 $contW: 900px;
 $imgW: 260px;
 $formW: $contW - $imgW;
 $switchAT: 1.2s;
-
-$inputW: 260px;
+$inputW: 390px;
 $btnH: 36px;
 
-$diffRatio: calc(calc($contW - $imgW) / $contW);
 
+
+//下方全部為整個首頁滑動效果
 @mixin signUpActive {
-  .cont.s--signup & {
-    @content;
-  }
+	.cont.s--signup & {
+		@content;
+	}
 }
 
-@mixin Reset {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+
+
+.cont {
+	overflow: hidden;
+	position: relative;
+	width: $contW;
+	margin: 0px auto;
+	background: #fff;
 }
 
-main.member {
-  @include VerticalAlignCenter();
-  position: relative;
-
-  h2 {
-    width: 100%;
-    text-align: center;
-  }
-
-  input {
-    display: block;
-    width: 350px;
-    height: 20px;
-    // font-size: 16px;
-    // border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-    text-align: left;
-    box-sizing: border-box;
-  }
-
-  div.info {
-    width: fit-content;
-    @include HorizontalAlignCenter();
-  }
-
-  div.mask {
-    position: absolute;
-    z-index: 58;
-
-    width: 100%;
-    height: 100vh;
-
-    background-color: #293241;
-    opacity: 0.7;
-
-    display: none;
-  }
-
-  article.phone {
-    display: none;
-    h2 {
-      font-size: 2.25rem;
-    }
-  }
-
-  @mixin PopUp {
-    position: absolute;
-    z-index: 59;
-
-    width: 50%;
-    height: fit-content;
-
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    opacity: 1;
-
-    display: none;
-  }
-
-  article.memberPopUp {
-    position: absolute;
-    z-index: 59;
-
-    width: 50%;
-    height: fit-content;
-
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    opacity: 1;
-
-    display: none;
-
-    h6.title {
-      background-color: $PrimaryColor;
-      padding: 10px 25px;
-      text-align: center;
-
-      a {
-        display: block;
-        float: right;
-        cursor: pointer;
-      }
-    }
-
-    h6.inner {
-      background-color: $TextColor2;
-      color: $TextColor3;
-      padding: 15px 25px;
-      text-align: center;
-    }
-  }
-
-  article.forgetChange {
-    @include VerticalAlignCenter();
-    @include PopUp();
-    // display: block;
-
-    background-color: white;
-    width: 75%;
-
-    section {
-      width: 80%;
-      height: 50%;
-      box-sizing: border-box;
-
-      @include HorizontalAlignCenter();
-
-      h3,
-      h4 {
-        color: black;
-      }
-
-      h3 {
-        width: 100%;
-        text-align: center;
-      }
-
-      input {
-        width: 80%;
-        height: 35px;
-        @include HorizontalAlignCenter();
-      }
-
-      div.btn {
-        width: fit-content;
-        @include HorizontalAlignCenter();
-
-        button {
-          display: inline-block;
-        }
-      }
-    }
-  }
-
-  article.forgetSubmit {
-    @include VerticalAlignCenter();
-    @include PopUp();
-
-    background-color: white;
-    width: 75%;
-    height: 80vh;
-
-    section {
-      width: 70%;
-      height: fit-content;
-      box-sizing: border-box;
-
-      @include HorizontalAlignCenter();
-
-      h5 {
-        color: black;
-      }
-    }
-  }
-
-  label {
-    display: block;
-    width: 100%;
-    text-align: right;
-    padding: 5px;
-
-    @include HorizontalAlignCenter();
-
-    span {
-      // font-size: 12px;
-      // color: #cfcfcf;
-      display: inline-block;
-      width: 200px;
-      text-align: left;
-      text-transform: uppercase;
-      box-sizing: border-box;
-      font-size: 1rem;
-    }
-
-    span.in {
-      width: 110px;
-    }
-
-    input {
-      display: inline-block;
-    }
-  }
-  // codepen 效果設定
-  div.cont {
-    overflow: hidden;
-    position: relative;
-    width: $contW;
-    height: 480px;
-    background: #fff;
-
-    @include HorizontalAlignCenter();
-  }
-
-  div.form {
-    @include Reset();
-
-    position: relative;
-    width: $formW;
-    height: 100%;
-    transition: transform $switchAT ease-in-out;
-    padding: 20px; //50px
-  }
-
-        background-color: #293241;
-        opacity: 0.7;
-
-        display: none;
-    }
-
-    article.phone {
-        display: none;
-        h2{
-            font-size: 2.25rem;
-        }
-    }
-
-    @mixin PopUp {
-        position: absolute;
-        z-index: 59;
-
-        width: 50%;
-        height: fit-content;
-
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        opacity: 1;
-
-        display: none;
-    }
-
-    article.memberPopUp {
-        position: absolute;
-        z-index: 59;
-
-        width: 50%;
-        height: fit-content;
-
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        opacity: 1;
-
-        display: none;
-
-        h6.title {
-            background-color: $PrimaryColor;
-            padding: 10px 25px;
-            text-align: center;
-
-            a {
-                display: block;
-                float: right;
-                cursor: pointer;
-            }
-        }
-
-        h6.inner {
-            background-color: $TextColor2;
-            color: $TextColor3;
-            padding: 15px 25px;
-            text-align: center;
-        }
-    }
-
-    article.forgetChange {
-        @include VerticalAlignCenter();
-        @include PopUp();
-        // display: block;
-
-        background-color: white;
-        width: 85%;
-
-        section {
-            width: 80%;
-            height: 50%;
-            box-sizing: border-box;
-
-            @include HorizontalAlignCenter();
-
-            h3,
-            h4 {
-                color: black;
-            }
-
-            h3 {
-                width: 100%;
-                text-align: center;
-            }
-
-            input {
-                width: 80%;
-                height: 35px;
-                @include HorizontalAlignCenter();
-            }
-
-            div.btn {
-                width: fit-content;
-                @include HorizontalAlignCenter();
-
-                button {
-                    display: inline-block;
-                }
-            }
-        }
-    }
-
-    article.forgetSubmit {
-        @include VerticalAlignCenter();
-        @include PopUp();
-
-        background-color: white;
-        width: 75%;
-        height: 80vh;
-
-        section {
-            width: 70%;
-            height: fit-content;
-            box-sizing: border-box;
-
-            @include HorizontalAlignCenter();
-
-            h5 {
-                color: black;
-            }
-        }
-    }
-
-    label {
-        display: block;
-        width: 100%;
-        text-align: right;
-        padding: 5px;
-
-        @include HorizontalAlignCenter();
-
-        span {
-            // font-size: 12px;
-            // color: #cfcfcf;
-            display: inline-block;
-            width: 200px;
-            text-align: left;
-            text-transform: uppercase;
-            box-sizing: border-box;
-            font-size: 1rem;
-        }
-
-        span.in {
-            width: 110px;
-        }
-
-        input {
-            display: inline-block;
-        }
-    }
-    // codepen 效果設定
-    div.cont {
-        overflow: hidden;
-        position: relative;
-        width: $contW;
-        height: 480px;
-        background: #fff;
-
-        @include HorizontalAlignCenter();
-    }
-
-    div.form {
-        @include Reset();
-
-        position: relative;
-        width: $formW;
-        height: 100%;
-        transition: transform $switchAT ease-in-out;
-        padding: 20px; //50px
-    }
-
-    a.forgot-pass {
-        display: block;
-        text-align: center;
-        // font-size: 12px;
-        // color: #cfcfcf;
-    }
-
-
-button.member {
-  display: block;
-  margin: 10px auto;
-  width: $inputW;
-  height: $btnH;
-  // border-radius: 30px;
-  // color: #fff;
-  // font-size: 15px;
-  cursor: pointer;
+.member_main_form {
+	position: relative;
+	width: $formW;
+	height: 100%;
+	transition: transform $switchAT ease-in-out;
 }
 
-button.member.submit {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background: #d4af7a;
-  text-transform: uppercase;
+.sub-cont {
+	overflow: hidden;
+	position: absolute;
+	left: $formW;
+	top: 0;
+	width: $contW;
+	height: 100%;
+	padding-left: $imgW;
+	background: #fff;
+	transition: transform $switchAT ease-in-out;
+
+	@include signUpActive {
+		transform: translate3d($formW * -1, 0, 0);
+	}
 }
 
-button.member.fb-btn {
-  border: 2px solid #d3dae9;
-  color: darken(#d3dae9, 20%);
-
-  span {
-    font-weight: bold;
-    color: darken(#768cb6, 20%);
-  }
+.member_cla_button {
+	display: block;
+	width: 400px;
+	color: $TextColor;
+	@include HorizontalAlignCenter(20px, 20px);
 }
 
-div.sub-cont {
-  overflow: hidden;
-  position: absolute;
-  left: $formW;
-  top: 0;
-  width: $contW;
-  height: 100%;
-  padding-left: $imgW;
-  background: #fff;
-  transition: transform $switchAT ease-in-out;
+.member_img {
+	overflow: hidden;
+	z-index: 11;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: $imgW;
+	height: 100%;
+	padding-top: 360px;
 
-  @include signUpActive {
-    transform: translate3d($formW * -1, 0, 0);
-  }
+	&:before {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: $contW;
+		height: 100%;
+		@include LinkImg('member', 'member_pic1', 'jpeg', cover, no-repeat, center);
+		background-size: cover;
+		transition: transform $switchAT ease-in-out;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.6);
+	}
+
+	@include signUpActive {
+		&:before {
+			transform: translate3d($formW, 0, 0);
+		}
+	}
+
+	&__text {
+		z-index: 11;
+		position: absolute;
+		left: 0;
+		top: 50px;
+		width: 100%;
+		text-align: center;
+		color: #fff;
+		transition: transform $switchAT ease-in-out;
+
+		&.m--up {
+
+			@include signUpActive {
+				transform: translateX($imgW*2);
+			}
+		}
+
+		&.m--in {
+			transform: translateX($imgW * -2);
+
+			@include signUpActive {
+				transform: translateX(0);
+			}
+		}
+	}
+
+	&__btn {
+		overflow: hidden;
+		z-index: 11;
+		position: relative;
+		width: 100px;
+		height: $btnH;
+		margin: 0 auto;
+		background: transparent;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 15px;
+		cursor: pointer;
+
+		&:after {
+			content: '';
+			z-index: 11;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			border: 2px solid #fff;
+			border-radius: 30px;
+			box-sizing: border-box;
+		}
+
+		.member_span {
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			transition: transform $switchAT;
+			box-sizing: border-box;
+
+			&.m--in {
+				transform: translateY($btnH*-2);
+
+				@include signUpActive {
+					transform: translateY(0);
+				}
+			}
+
+			&.m--up {
+				@include signUpActive {
+					transform: translateY($btnH*2);
+				}
+			}
+		}
+	}
 }
 
-div.img {
-  @include Reset();
+.sign-in {
+	transition-timing-function: ease-out;
+	text-align: center;
 
-  overflow: hidden;
-  z-index: 2;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: $imgW;
-  height: 100%;
-  padding-top: 360px;
-
-  &:before {
-    @include Reset();
-
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: $contW;
-    height: 100%;
-    background-image: url("./../img/member/member_pic1.jpeg");
-    background-size: cover;
-    transition: transform $switchAT ease-in-out;
-  }
-
-  &:after {
-    @include Reset();
-
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-  }
-
-  @include signUpActive {
-    &:before {
-      @include Reset();
-
-      transform: translate3d($formW, 0, 0);
-    }
-  }
-
-  &__text {
-    @include Reset();
-
-    z-index: 2;
-    position: absolute;
-    left: 0;
-    top: 50px;
-    width: 100%;
-    padding: 0 20px;
-    text-align: center;
-    // color: #fff;
-    transition: transform $switchAT ease-in-out;
-
-    h2 {
-      // margin-bottom: 10px;
-      // font-weight: normal;
-    }
-
-    p {
-      // font-size: 14px;
-      // line-height: 1.5;
-    }
-
-    &.m--up {
-      @include signUpActive {
-        transform: translateX($imgW * 2);
-      }
-    }
-
-    &.m--in {
-      transform: translateX($imgW * -2);
-
-      @include signUpActive {
-        transform: translateX(0);
-      }
-    }
-  }
-
-  &__btn {
-    overflow: hidden;
-    z-index: 2;
-    position: relative;
-    width: 100px;
-    height: $btnH;
-    margin: 0 auto;
-    background: transparent;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 15px;
-    cursor: pointer;
-
-    &:after {
-      @include Reset();
-
-      content: "";
-      z-index: 2;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      border: 2px solid #fff;
-      border-radius: 30px;
-    }
-
-    span {
-      position: absolute;
-      left: 0;
-      top: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      transition: transform $switchAT;
-
-      &.m--in {
-        transform: translateY($btnH * -2);
-
-        @include signUpActive {
-          transform: translateY(0);
-        }
-      }
-
-      &.m--up {
-        @include signUpActive {
-          transform: translateY($btnH * 2);
-        }
-      }
-    }
-  }
+	@include signUpActive {
+		transition-timing-function: ease-in-out;
+		transition-duration: $switchAT;
+		transform: translate3d($formW, 0, 0);
+	}
 }
 
-div.sign-in {
-  transition-timing-function: ease-out;
-  color: $TextColor;
+.sign-up {
+	transform: translate3d($contW * -1, 0, 0);
 
-  @include signUpActive {
-    transition-timing-function: ease-in-out;
-    transition-duration: $switchAT;
-    transform: translate3d($formW, 0, 0);
-  }
+	@include signUpActive {
+		transform: translate3d(0, 0, 0);
+	}
 }
 
-div.form.sign-in {
-  h2 {
-    color: $TextColor;
-  }
-}
-
-div.sign-up {
-  transform: translate3d($contW * -1, 0, 0);
-  color: $TextColor;
-
-  @include signUpActive {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-div.form.sign-up {
-  h2 {
-    color: $TextColor;
-  }
-
-  p {
-    font-size: 12px;
-    display: block;
-    width: 540px;
-
-    @include HorizontalAlignCenter();
-  }
-
-  input.check {
-    display: inline-block;
-    width: auto;
-    height: auto;
-  }
-}
-
-// 詳細會員資訊樣式設定（另外一頁了）
-main.memberInfo {
-  @include VerticalAlignCenter();
-
-  article.checkMemberInfo {
-    width: 80%;
-    height: 80vh;
-    background-color: #fff;
-    @include HorizontalAlignCenter();
-    // @include VerticalAlignCenter();
-
-    table {
-      min-width: 80%;
-      background-color: #fff;
-
-      @include HorizontalAlignCenter();
-
-      h3,
-      h5,
-      td {
-        color: #293241;
-        padding: 5px;
-        box-sizing: border-box;
-      }
-
-      h3 {
-        width: 100%;
-        padding-top: 50px;
-        text-align: center;
-      }
-    }
-  }
-
-  article.modifyMemberInfo {
-    width: 80%;
-    height: 80vh;
-    background-color: #fff;
-    @include HorizontalAlignCenter();
-    @include VerticalAlignCenter();
-
-    table {
-      @include HorizontalAlignCenter();
-      @include VerticalAlignCenter();
-      background-color: #fff;
-      color: #293241;
-      h3,
-      h5,
-      h6 {
-        color: #293241;
-        padding: 5px;
-        box-sizing: border-box;
-      }
-
-      h3 {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    article.modifyMemberInfo {
-        width: 80%;
-        height: 80vh;
-        background-color: #fff;
-        @include HorizontalAlignCenter();
-        @include VerticalAlignCenter();
-
-        table {
-            @include HorizontalAlignCenter();
-            @include VerticalAlignCenter();
-            justify-content: center;
-            background-color: #fff;
-            color: #293241;
-            h3,
-            h5,
-            h6 {
-                color: #293241;
-                padding: 5px;
-                box-sizing: border-box;
-            }
-
-            h3 {
-                width: 100%;
-                text-align: center;
-            }
-            
-            tbody{
-                width: 90%;
-            }
-        }
-        tbody{
-            tr{
-                height:60px;
-                padding-left: 5px;
-            }
-        }
-    }
-  }
-}
-@media screen and (max-width: 575.98px){
-    main.member {
-        div.cont {
-            display: none;
-        }
-        label{
-            text-align: left;
-            padding: 0px;
-            padding-left: 20px;
-            span{
-                font-size: 0.875rem;
-            }
-        }
-        input{
-            width:250px;
-        }
-        div.info{
-            width: 300px;
-            margin: 0 auto;
-        }
-
-        article.phone {
-            margin-top: 60px;
-            display: block;
-            width: 80%; 
-            //height: 490px; 
-            background-color: white; 
-
-            @include HorizontalAlignCenter();
-            h2{
-                font-size: 1.125rem;
-            }
-            h2,p,span{
-                color: black;
-            }
-        
-
-            section.phoneBottom{
-                height: 70px;
-
-                background-color: #768cb6;
-
-                display: flex;
-
-                div.left{
-                    width: 100%;
-                }
-
-                div.right{
-                    display:none;
-
-                    p{
-                        width: 80%;
-                        text-align: left;
-                    }
-                }
-            }
-        }
-        
-        article.memberPopUp {
-            width: 80%;
-            h6{
-                font-size: 12px;
-            }
-        }
-    }
-    label {
-      text-align: left;
-      padding: 0px;
-      padding-left: 20px;
-      span {
-        font-size: 0.875rem;
-      }
-    }
-    input {
-      width: 250px;
-    }
-    div.info {
-      width: 300px;
-      margin: 0 auto;
-    }
-
-    article.phone {
-      display: block;
-      width: 80%;
-      //height: 490px;
-      background-color: white;
-
-      @include HorizontalAlignCenter();
-      h2 {
-        font-size: 1.125rem;
-      }
-      h2,
-      p,
-      span {
-        color: black;
-      }
-
-      section.phoneBottom {
-        height: 70px;
-
-        background-color: #768cb6;
-
-        display: flex;
-
-        div.left {
-          width: 100%;
-        }
-
-        div.right {
-          display: none;
-
-          p {
-            width: 80%;
-            text-align: left;
-          }
-        }
-      }
-    }
-
-    article.memberPopUp {
-      width: 80%;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-  main.member {
-    div.cont {
-      display: none;
-    }
-    label {
-      text-align: center;
-      span {
-        width: 350px;
-      }
-    }
-
-    article.phone {
-      display: block;
-      width: 80%;
-      height: 550px;
-      background-color: white;
-
-      @include HorizontalAlignCenter();
-      h2 {
-        font-size: 1.875rem;
-      }
-      h2,
-      p,
-      span {
-        color: black;
-      }
-
-      section.phoneBottom {
-        height: 120px;
-
-        background-color: #768cb6;
-
-        display: flex;
-
-        div.left {
-          width: 50%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-
-        div.right {
-          width: 50%;
-
-          @include VerticalAlignCenter();
-
-          p {
-            width: 80%;
-            text-align: left;
-          }
-        }
-      }
-    }
-
-    article.memberPopUp {
-      width: 70%;
-    }
-  }
-}
+// RWD
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
-  main.member {
-    div.cont {
-      display: none;
-    }
-    label {
-      text-align: center;
-      span {
-        width: 250px;
-      }
-    }
-    input {
-      width: 300px;
-    }
-
-    article.phone {
-      display: block;
-      width: 80%;
-      // height: 550px;
-      background-color: white;
-
-      @include HorizontalAlignCenter();
-      h2 {
-        font-size: 1.875rem;
-      }
-      h2,
-      p,
-      span {
-        color: black;
-      }
-
-      section.phoneBottom {
-        height: 120px;
-
-        background-color: #768cb6;
-
-        display: flex;
-
-        div.left {
-          width: 50%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-
-        div.right {
-          width: 50%;
-
-          @include VerticalAlignCenter();
-
-          p {
-            width: 80%;
-            text-align: left;
-          }
-        }
-      }
-    }
-
-    article.memberPopUp {
-      width: 70%;
-    }
+  .member_main_all_area {
+    width: calc(100vw);
   }
+	.member_main_all_block {
+		width: 700px;
+	}
+
+	.member_span_choose .member_p_style {
+		word-wrap: break-word;
+	}
+
+	// 滑動移動距離
+	$contW: 700px;
+	$imgW: 260px;
+	$formW: $contW - $imgW;
+	$switchAT: 1.2s;
+	$btnH: 36px;
+
+	.member_main_form {
+		width: $formW;
+		letter-spacing: 0em;
+		word-spacing: 0em;
+	}
+
+	.sub-cont {
+		overflow: hidden;
+		position: absolute;
+		left: $formW;
+		top: 0;
+		width: $contW;
+		height: 100%;
+		padding-left: $imgW;
+		background: #fff;
+		transition: transform $switchAT ease-in-out;
+
+		@include signUpActive {
+			transform: translate3d($formW * -1, 0, 0);
+		}
+	}
+
+	.member_cla_button {
+		width: 350px;
+	}
+
+	.member_img {
+		overflow: hidden;
+		z-index: 11;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: $imgW;
+		height: 100%;
+		padding-top: 360px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			// width: $contW;
+			height: 100%;
+			@include LinkImg('member', 'member_pic1', 'jpeg', cover, no-repeat, center);
+			background-size: cover;
+			transition: transform $switchAT ease-in-out;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.6);
+		}
+
+	}
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+  .member_main_all_area {
+    width: calc(100vw);
+  }
+	.member_main_all_block {
+		width: 500px;
+
+	}
+
+	.member_span_choose .member_p_style {
+		word-wrap: break-word;
+	}
+
+	// 滑動移動距離
+	$contW: 500px;
+	$imgW: 150px;
+	$formW: $contW - $imgW;
+	$switchAT: 1.2s;
+	$btnH: 36px;
+
+	.member_main_form {
+		width: $formW;
+		letter-spacing: 0em;
+		word-spacing: 0em;
+	}
+
+	.sub-cont {
+		overflow: hidden;
+		position: absolute;
+		left: $formW;
+		top: 0;
+		width: $contW;
+		height: 100%;
+		padding-left: $imgW;
+		background: #fff;
+		transition: transform $switchAT ease-in-out;
+
+		@include signUpActive {
+			transform: translate3d($formW * -1, 0, 0);
+		}
+	}
+
+	.member_cla_button {
+		width: 180px;
+	}
+
+	.member_img {
+		overflow: hidden;
+		z-index: 11;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: $imgW;
+		height: 100%;
+		padding-top: 360px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			// width: $contW;
+			height: 100%;
+			@include LinkImg('member', 'member_pic1', 'jpeg', cover, no-repeat, center);
+			background-size: cover;
+			transition: transform $switchAT ease-in-out;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.6);
+		}
+	}
+
+	// 跳窗背景
+	.member_Terms_text {
+		position: fixed;
+		display: none;
+		z-index: 11;
+		width: 100vw;
+		height: 100vh;
+		background-color: $PrimaryColor;
+		opacity: 0.8;
+	}
+
+	// 跳窗
+	.member_Terms_area {
+		display: none;
+		z-index: 11;
+		width: 440px;
+		height: 260px;
+		background-color: $TextColor2;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+	}
+
+	.member_Terms_inner {
+		overflow-y: scroll;
+		width: 420px;
+		height: 210px;
+		padding: 10px;
+	}
+	.member_img__text .member_move_text {
+		font-size: 12px;
+	}
+
+}
+
+
+@media screen and (max-width: 575.98px) {
+  .member_main_all_area {
+    width: calc(100vw);
+  }
+	.member_main_all_block {
+		width: 350px;
+		display: flex;
+	}
+
+	.member_cla_button {
+		width: 220px;
+	}
+
+	.member_span_choose .member_p_style {
+		word-wrap: break-word;
+	}
+	
+
+	// 跳窗背景
+	.member_Terms_text {
+		position: fixed;
+		display: none;
+		z-index: 11;
+		width: 100vw;
+		height: 100vh;
+		background-color: $PrimaryColor;
+		opacity: 0.8;
+	}
+
+	// 跳窗
+	.member_Terms_area {
+		display: none;
+		z-index: 11;
+		width: 350px;
+		height: 400px;
+		background-color: $TextColor2;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+	}
+
+	.member_Terms_inner {
+		overflow-y: scroll;
+		width: 330px;
+		height: 330px;
+		padding: 10px;
+
+	}
+//   .member_forget_text{
+//     font-size: 12px;
+//   }
 }

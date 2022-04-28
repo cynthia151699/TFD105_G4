@@ -1,154 +1,19 @@
-// 歡迎信件
-
-// 測試路徑期間先關掉JS
-
-// emailjs.init("rB4cW-mtW8WwyODex");
-
-// const btn = document.getElementById("member_button");
-// document.getElementById("member_form").addEventListener("submit", function (event) {
-//   event.preventDefault();
-
-//   btn.value = "Sending...";
-
-//   const serviceID = "default_service";
-//   const templateID = "template_c3rqluo";
-
-//   emailjs.sendForm(serviceID, templateID, this).then(
-//     () => {
-//       btn.value = "Send Email";
-//       alert("Welcome to Anno");
-//       window.location.assign("../../dist/member_info.html")
-//     },
-//     (err) => {
-//       btn.value = "Send Email";
-//       alert("Email format error, please re-enter");
-//     }
-//   );
-// });
-
-// 彈出閱讀詳細事項
-
-// 連結彈窗
-let member_Terms = document.querySelector(".memberTerms");
-
-// mask
-let member_Mask = document.querySelector(".mask");
-
-// 跳出閱讀詳細事項
-// let member_Terms = document.querySelector(".member_Terms");
-// let member_Terms_text = document.querySelector(".member_Terms_text");
-// let member_Terms_del = document.querySelector(".member_Terms_del");
-// let member_Terms_area = document.querySelector(".member_Terms_area");
-// member_Terms.addEventListener('click', function () {
-// 	member_Terms_text.style.display = "block";
-// 	member_Terms_area.style.display = "block";
-// })
-// member_Terms_del.addEventListener('click', function () {
-// 	member_Terms_text.style.display = "none";
-// 	member_Terms_area.style.display = "none";
-// })
-// member_Terms_text.addEventListener('click', function () {
-// 	member_Terms_text.style.display = "none";
-// 	member_Terms_area.style.display = "none";
-// })
-// // 關閉
-// let member_Terms_Del = document.querySelector(".memberTermsDel");
-
-// // 彈窗
-// let member_Pop_UP = document.querySelector(".memberPopUp");
-
-// // 彈窗開啟
-// member_Terms.addEventListener('click', function (e) {
-// 	e.preventDefault;
-// 	member_Pop_UP.style.display = "block";
-// 	member_Mask.style.display = "block";
-// })
-
-// // 彈窗關閉
-// member_Terms_Del.addEventListener('click', function () {
-// 	e.preventDefault;
-// 	member_Pop_UP.style.display = "none";
-// 	member_Mask.style.display = "none";
-// })
-
-//  選單左右移動
-document.querySelector("#img__btn").addEventListener("click", function () {
-  document.querySelector(".cont").classList.toggle("s--signup");
+document.querySelector(".member_img__btn").addEventListener("click", function () {
+  document.querySelector(".cont").classList.toggle("s--signup")
+});
+let member_Terms = document.querySelector(".member_Terms"),
+  member_Terms_text = document.querySelector(".member_Terms_text"),
+  member_Terms_del = document.querySelector(".member_Terms_del"),
+  member_Terms_area = document.querySelector(".member_Terms_area");
+member_Terms.addEventListener("click", function () {
+  member_Terms_text.style.display = "block", member_Terms_area.style.display = "block"
+}), member_Terms_del.addEventListener("click", function () {
+  member_Terms_text.style.display = "none", member_Terms_area.style.display = "none"
+}), member_Terms_text.addEventListener("click", function () {
+  member_Terms_text.style.display = "none", member_Terms_area.style.display = "none"
 });
 
-// new Vue({
-//     el: '#member',
-//     data: {
-//         isShow: true
-//     },
-//     methods: {
-//         toggle: function() {
-//             this.isShow = !this.isShow;
-//         }
-//     },
-// });
-$("a.memberTerms").on("click", function (e) {
-  e.preventDefault();
-  $("article.memberPopUp").css("display", "block");
-});
 
-$("a.memberTermsDel").on("click", function (e) {
-  e.preventDefault();
-  $("article.memberPopUp").css("display", "none");
-});
-$("a.forgot-pass").on("click", function (e) {
-  e.preventDefault();
-  // console.log("aaa");
-  $("article.forgetChange").css("display", "block");
-  $("div.cont").css("display", "none");
-  $("div.phone").css("display", "none");
-});
-
-// $('article.forgetChange button.member.fb-btn').on("click",function(e){
-//     e.preventDefault();
-//     // console.log("bbb");
-//     $('article.forgetSubmit').css("display", "block");
-// })
-
-// Emailforgetcode  && login check
-
-const btn = document.getElementById("forgetmail");
-let forgermail = $("#mail");
-document.getElementById("form").addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  if ($(forgermail).val() != "") {
-    var that = this;
-    $.ajax({
-      type: "POST",
-      url: "./php/member/Memberforgetemail.php",
-      dataType: "json",
-      async: false,
-      data: {
-        mail: forgermail.val(),
-      },
-      success: function (data) {
-        let passwordvalue = data[0].PASSWORD;
-        let PASSWORDcode = document.getElementById("PASSWORD");
-        PASSWORDcode.value = passwordvalue;
-        const serviceID = "default_service";
-        const templateID = "template_1idmmrm";
-        emailjs.sendForm(serviceID, templateID, that).then((event) => {
-          alert(
-            "The password has already sent into your email address, please check it."
-          );
-          window.location.href = "front_member.html";
-        });
-      },
-    });
-  } else {
-    alert("Please type your mail");
-  }
-  let PASSWORD = document.getElementById("PASSWORD");
-  if ($(forgermail).val() != "" && PASSWORD.value == "") {
-    alert("No such registered mail");
-  }
-});
 
 let inputcode = document.querySelector("#member_button");
 inputcode.addEventListener("click", function () {
