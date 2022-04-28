@@ -68,7 +68,7 @@ new Vue({
             UP_DATE: this.EDIT.DATE,
           }),
         }).then((res) => res.json());
-        //.then(res => {this.EXHIBITIONS = res})
+
 
         member("<strong>修改成功</strong>", "success");
         $(".popUp").css("display", "none");

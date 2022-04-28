@@ -34,8 +34,6 @@
 
 						<ul class="member_modify_main_ul">
 
-							<!-- v-for="(MEMBER, index) in MEMBERS" :key="index" -->
-
 							<li class="mtSpace20 member_modify_main_li_title">
 
 								<h3 style="color:black;"> Overview</h3>
@@ -111,43 +109,9 @@
 
 		</main>
 	</div>
+	<script src="./js/front_member_info.min.js"></script>
 
-	<script>
-		new Vue({
-			el: "#appapp",
-
-			data: {
-				MEMBER: {
-					NAME: "",
-					mail: "",
-					PASSWORD: "",
-					PHONE: "",
-				},
-			},
-			mounted() {
-				fetch("./php/member/MemberSearch.php")
-					.then((res) => res.json())
-					.then((res) => {
-						this.MEMBER = res[0];
-					});
-			},
-			methods: {
-				// update() {
-				//   $("button.member.submit").on("click", function () {
-				//     console.log("aaa");
-				//     $("article.modifyMemberInfo").css("display", "flex");
-				//     $("article.checkMemberInfo").css("display", "none");
-				//   });
-
-				//   $("button.member.submit").on("click", function () {
-				//     console.log("aaa");
-				//     $("article.modifyMemberInfo").css("display", "flex");
-				//     $("article.checkMemberInfo").css("display", "none");
-				//   });
-				// },
-			},
-		});
-	</script>
+	
 </body>
 
 </html>

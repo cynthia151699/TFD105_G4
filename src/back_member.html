@@ -179,16 +179,12 @@
             <h5>編輯會員</h5>
             <ul>
               <li>
-                <h6>密碼：</h6>
-                <input type="text" readonly="readonly" v-model="EDIT.PASSWORD">
-              </li>
-              <li>
                 <h6>姓名：</h6>
                 <input type="text" v-model="EDIT.NAME" />
               </li>
               <li>
                 <h6>手機：</h6>
-                <input type="text" v-model="EDIT.PHONE" />
+                <input type="text" v-model="EDIT.PHONE" maxlength="10"/>
               </li>
             </ul>
 
@@ -235,7 +231,6 @@
               <!-- table row -->
               <td>會員編號</td>
               <td>帳號</td>
-              <td>密碼</td>
               <td>姓名</td>
               <td>手機</td>
               <td>創建時間</td>
@@ -246,7 +241,6 @@
             <tr v-for="MEMBER in MEMBERS">
               <td>{{MEMBER.ID}}</td>
               <td>{{MEMBER.mail}}</td>
-              <td>{{MEMBER.PASSWORD}}</td>
               <td>{{MEMBER.NAME}}</td>
               <td>{{MEMBER.PHONE}}</td>
               <td>{{MEMBER.DATE}}</td>
@@ -257,28 +251,6 @@
               </td>
             </tr>
           </tbody>
-          <tfoot>
-            <tr>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-            </tr>
-            <tr>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-              <td>&nbsp</td>
-            </tr>
-          </tfoot>
         </table>
       </form>
     </div>
