@@ -129,6 +129,15 @@
 	cursor: pointer;
 }
 
+
+#cellsignin {
+	display: none;
+}
+
+#cellsignup {
+	display: none;
+}
+
 // 滑動移動距離
 $contW: 900px;
 $imgW: 260px;
@@ -327,9 +336,10 @@ $btnH: 36px;
 // RWD
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
-  .member_main_all_area {
-    width: calc(100vw);
-  }
+	.member_main_all_area {
+		width: calc(100vw - 70px);
+	}
+
 	.member_main_all_block {
 		width: 700px;
 	}
@@ -406,17 +416,38 @@ $btnH: 36px;
 }
 
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
-  .member_main_all_area {
-    width: calc(100vw);
-  }
+	.member_main_all_area {
+		width: calc(100vw);
+	}
+
 	.member_main_all_block {
 		width: 500px;
 
 	}
 
+	// 註冊按鈕id
+	#member_button {
+		width: 80%;
+	}
+
+	//文字框顏色
+	.member_input_text {
+		width: 100%;
+	}
+
 	.member_span_choose .member_p_style {
 		word-wrap: break-word;
+		width: 70%;
 	}
+
+	#member_form {
+		margin-left: 60px;
+	}
+
+	#member_form .member_signin_text {
+		width: 80%;
+	}
+
 
 	// 滑動移動距離
 	$contW: 500px;
@@ -514,18 +545,21 @@ $btnH: 36px;
 		height: 210px;
 		padding: 10px;
 	}
+
 	.member_img__text .member_move_text {
 		font-size: 12px;
+
 	}
 
 }
 
 
 @media screen and (max-width: 575.98px) {
-  .member_main_all_area {
-	height: calc(90vh);
-    width: calc(100vw);
-  }
+	.member_main_all_area {
+		height: calc(90vh);
+		width: calc(100vw);
+	}
+
 	.member_main_all_block {
 		width: 350px;
 		display: flex;
@@ -535,10 +569,39 @@ $btnH: 36px;
 		width: 220px;
 	}
 
+	// 註冊按鈕id
+	#member_button {
+		width: 47%;
+		margin-left: 44px;
+		box-sizing: border-box;
+
+	}
+
+	//文字框顏色
+	.member_input_text {
+		width: 100%;
+	}
+
 	.member_span_choose .member_p_style {
 		word-wrap: break-word;
+		width: 46%;
 	}
-	
+
+	.cell_text_span{
+		margin-left: 44px;
+		color:black;
+	}
+	#member_form {
+		margin-left: -212px;
+	}
+	.member_span_choose{
+		margin-left: 44px;
+
+	}
+	#member_form .member_signin_text {
+		width: 47%;
+		margin-left: 44px;
+	}
 
 	// 跳窗背景
 	.member_Terms_text {
@@ -556,21 +619,76 @@ $btnH: 36px;
 		display: none;
 		z-index: 11;
 		width: 350px;
-		height: 400px;
+		height: 376px;
 		background-color: $TextColor2;
 		position: fixed;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
 
+		.member_Terms_title {
+			font-size: 14px;
+		}
 	}
-
 	.member_Terms_inner {
 		overflow-y: scroll;
 		width: 330px;
 		height: 330px;
 		padding: 10px;
 
+	}
+
+	.member_Terms_del {
+		right: 1%;
+	}
+
+
+	.member_img {
+		display: none;
+	}
+
+	#cellsignin {
+		background-color: #768cb6;
+		display: block;
+		margin-top: 363px;
+		height:65px;
+
+		.member_span {
+			box-sizing: border-box;
+			cursor: pointer;
+			border: 2px solid #fff;
+			border-radius: 30px;
+			padding: 2px;
+			color: black;
+			font-size: 12px;
+		}
+	}
+
+	.sub-cont {
+		left: 592px;
+
+		@include signUpActive {
+			transform: translate3d($formW * -1, 0, 0);
+		}
+	}
+
+	#cellsignup {
+		background-color: #768cb6;
+		display: block;
+		width: 350px;
+		margin-top: 16px;
+		text-align: center;
+		height:60px;
+
+		.member_span {
+			box-sizing: border-box;
+			cursor: pointer;
+			border: 2px solid #fff;
+			border-radius: 30px;
+			padding: 2px;
+			color: black;
+			font-size: 12px;
+		}
 	}
 
 }
