@@ -67,13 +67,28 @@ main.about {
       position: absolute;
       top: 50%;
       left: 50%;
-
+      padding-top: 300px;
       text-align: center;
-
+      -webkit-animation: shake .8s infinite;
       cursor: pointer;
 
       &:hover {
         color: $AccentColor2;
+      }
+      &:after{
+        content: "↓";
+        width:5px;
+      }
+      @-webkit-keyframes shake{
+        0%{
+          top:30px;
+        }
+        50%{
+          top:40px; 
+        }
+        100%{
+          top:30px;
+        }
       }
     }
 
