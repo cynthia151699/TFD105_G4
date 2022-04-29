@@ -1,6 +1,12 @@
 document.querySelector(".member_img__btn").addEventListener("click", function () {
   document.querySelector(".cont").classList.toggle("s--signup")
 });
+document.querySelector(".member_img__cellbtn").addEventListener("click", function () {
+  document.querySelector(".cont").classList.toggle("s--signup")
+});
+document.querySelector(".member_img__cellbtnin").addEventListener("click", function () {
+  document.querySelector(".cont").classList.toggle("s--signup")
+});
 let member_Terms = document.querySelector(".member_Terms"),
   member_Terms_text = document.querySelector(".member_Terms_text"),
   member_Terms_del = document.querySelector(".member_Terms_del"),
