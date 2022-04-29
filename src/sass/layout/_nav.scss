@@ -438,3 +438,54 @@ nav.backNav {
     }
   }
 }
+
+
+.balloon {
+    position: relative;
+}
+.balloon:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-right: 10px solid rgba(22, 24, 41, 0.9);;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 10px solid transparent;
+}
+.balloon:before{
+    bottom: 14px;
+    left: 40px;
+    position: absolute;
+    z-index: 999;
+    transition: all 0.18s ease-out 0.18s;
+    opacity: 0;
+}
+.balloon::after{
+    bottom: 0px;
+    left: 50px;
+    /* transform: translate(-50%, 0); */
+    position: absolute;
+    z-index: 999;
+    transition: all 0.18s ease-out 0.18s;
+    opacity: 0;
+}
+.balloon::after{
+    background-color: rgba(22, 24, 41, 0.9);
+    border-radius: 4px;
+    color: white;
+    content: attr(balloon-data);
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.balloon:hover:before,.balloon:hover:after {
+    opacity: 1;
+}
+
+.balloon_game::before{
+  top: 7px;
+}
+
+.balloon_game::after{
+  bottom: 20px;
+}
