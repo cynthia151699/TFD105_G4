@@ -11,7 +11,7 @@
                      EXHIBITION_STYLE_ID = :UP_EXHIBITION_STYLE_ID,
                      EXHIBITION_STYLE = :UP_EXHIBITION_STYLE,
                      EVENT_NAME = :UP_EVENT_NAME,
-                     EVENT_EXHIBITION_DATE= :UP_EXHIBITION_DATE,
+                     EXHIBITION_DATE= :UP_EXHIBITION_DATE,
                      EXHIBITION_PIC = :UP_EXHIBITION_PIC,
                      EXHIBITION_CONTENT = :UP_EXHIBITION_CONTENT
                      WHERE 
