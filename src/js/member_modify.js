@@ -38,6 +38,9 @@ new Vue({
         if (!/^[09]{2}[0-9]{8}$/.test(phonenumber)) {
           alert("The Phone number is incorrect, please re-fill");
           event.preventDefault();
+        } else if (Password_value == "") {
+          alert("Please type your Password");
+          event.preventDefault();
         } else if (Password_value != Password_confirm_value) {
           alert("Password confirm does not match");
           event.preventDefault();
